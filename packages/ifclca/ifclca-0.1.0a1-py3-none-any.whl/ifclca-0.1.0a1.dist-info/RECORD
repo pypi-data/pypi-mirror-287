@@ -1,0 +1,13 @@
+IfcLCA/__init__.py,sha256=5nFOcyK3esZzGZJDwJl3dwCFfn_8j55-fB6zgkiVeNI,67
+IfcLCA/analysis.py,sha256=3HQM9ZNf2wEWd9OqhKkPhOyYqDeZw0RFy7PkjKnn2Ig,967
+IfcLCA/db_reader.py,sha256=lr8kjDbb1rMa2OIaO-nWjGJCAFWCpXpnB_QalwHdjmk,315
+IfcLCA/lca.py,sha256=MIkraeYikkYHY90uiKRTxFCFXhqCWeJZbXAbugZDi1c,482
+IfcLCA/optioneering.py,sha256=_k1nDelmKx9D8hUN-uk0Ksbai2kGz2atqHyWUSi46Mk,712
+IfcLCA/reporter.py,sha256=SWB-lY1mx6T_k2Khl1vwv4EJJgwqKWSQl83JM691CZ4,184
+IfcLCA/utils/__init__.py,sha256=3zL-X58ugariEr8UXkO4lHNkaLMP5AURvz6fyW6Z8go,31
+IfcLCA/utils/selector.py,sha256=AQq_7gU4rlxWKDJJl088_A9WRdvMJeup6sREI_t1GE8,583
+ifclca-0.1.0a1.dist-info/LICENSE,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+ifclca-0.1.0a1.dist-info/METADATA,sha256=cojN5swrs8pYwv7y8DzE-PfCmyAZbASNRKwZMKrgyko,2110
+ifclca-0.1.0a1.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+ifclca-0.1.0a1.dist-info/top_level.txt,sha256=gMBfWzpqP5h9jLnuMlaRWPXHotdG1ZaVn4YdEUUqSYU,7
+ifclca-0.1.0a1.dist-info/RECORD,,
