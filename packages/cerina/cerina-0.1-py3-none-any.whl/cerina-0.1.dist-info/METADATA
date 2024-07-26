@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: cerina
+Version: 0.1
+Requires-Dist: aiohttp
+Requires-Dist: nest-asyncio
+Requires-Dist: requests
+Requires-Dist: pytest
+
