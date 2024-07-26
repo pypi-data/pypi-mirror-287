@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+postit/__init__.py
+postit/documents.py
+postit/files.py
+postit.egg-info/PKG-INFO
+postit.egg-info/SOURCES.txt
+postit.egg-info/dependency_links.txt
+postit.egg-info/top_level.txt
+tests/test_documents.py
+tests/test_files.py

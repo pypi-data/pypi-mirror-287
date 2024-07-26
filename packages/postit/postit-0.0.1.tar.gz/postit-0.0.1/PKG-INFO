@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: postit
+Version: 0.0.1
+Summary: A flexible Python data tagging framework for pre-training of AI models.
+Author-email: Brennen Ho <postit@brennen.dev>
+Project-URL: Homepage, https://github.com/brennenho/postit
+Project-URL: Issues, https://github.com/brennenho/postit/issues
+Description-Content-Type: text/markdown
+
+# Post-it
+
+A flexible Python data tagging framework for pre-training of AI models.
