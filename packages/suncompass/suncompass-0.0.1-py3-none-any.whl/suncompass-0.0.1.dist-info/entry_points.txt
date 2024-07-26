@@ -1,0 +1,5 @@
+[console_scripts]
+add_sun_vector = add_sun_vector:main
+extract_motion = extract_motion:main
+pretrained_resnet = pretrained_resnet:main
+run_model_on_images = run_model_on_images:main
