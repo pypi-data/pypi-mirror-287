@@ -1,0 +1,8 @@
+drug_nme/__init__.py,sha256=QHoGIZOLRJaireHGmnIApR43kPV3ZrKYefYGqIupWf8,86
+drug_nme/fetch.py,sha256=snBdtCf9NcnGQED0gPlBHtw-Gd2cBrlDCl3LA29gQIw,12748
+drug_nme/plot.py,sha256=GgteKuTF_2O542C6CC-2Zj4tPfQKo__bydhAC5PGjZo,10185
+drug_nme/scrape.py,sha256=97rjHx98wae-beeud9DIQ5WRunoIehNPZaLjUVGE3dE,10805
+drug_nme-0.1.0.dist-info/LICENSE,sha256=FJMsEHHM-V3neLKDzElod-Od8FwqFJlglpMx7_6A4Y8,1068
+drug_nme-0.1.0.dist-info/METADATA,sha256=-mL2RkZhFHm_ZLr8Yy-Cgu7eJy6bRFCoGkhaD5pKvrw,2563
+drug_nme-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+drug_nme-0.1.0.dist-info/RECORD,,
