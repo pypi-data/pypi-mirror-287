@@ -1,0 +1,9 @@
+README.md
+setup.py
+frontivice/__init__.py
+frontivice/main.py
+frontivice.egg-info/PKG-INFO
+frontivice.egg-info/SOURCES.txt
+frontivice.egg-info/dependency_links.txt
+frontivice.egg-info/requires.txt
+frontivice.egg-info/top_level.txt
