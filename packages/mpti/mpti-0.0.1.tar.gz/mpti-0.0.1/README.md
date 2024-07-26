@@ -1,0 +1,2 @@
+# MyPathTemperImporter
+Sys.path autoset

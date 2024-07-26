@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+mpti/__init__.py
+mpti/dir_import_man.py
+mpti.egg-info/PKG-INFO
+mpti.egg-info/SOURCES.txt
+mpti.egg-info/dependency_links.txt
+mpti.egg-info/not-zip-safe
+mpti.egg-info/requires.txt
+mpti.egg-info/top_level.txt
