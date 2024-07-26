@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: visier.sdk.api.data-version-export
+Version: 0.0.5
+Summary: Visier Data Version Export APIs
+Home-page: UNKNOWN
+Author: OpenAPI Generator community
+Author-email: team@openapitools.org
+License: Apache License, Version 2.0
+Keywords: OpenAPI,OpenAPI-Generator,Visier Data Version Export APIs
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+
+    Visier APIs for exporting data version information, such as tables, columns, and file information, in CSV format.
+    
+
