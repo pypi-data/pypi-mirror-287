@@ -1,0 +1,10 @@
+duckdb_utils/__init__.py,sha256=chS3ql6Pxt2o4ClboFIv2wghMzW6Xkp5RVNV760Q2Hk,49
+duckdb_utils/__main__.py,sha256=8hDtWlaFZK24KhfNq_ZKgtXqYHsDQDetukOCMlsbW0Q,59
+duckdb_utils/cli.py,sha256=KCl_Ov77O4_Y_JjnVr87dxMaFqzxXa0PYzLJUtbFopk,25387
+duckdb_utils/db.py,sha256=gSuzx1OaGZPK4BQqXU-aa5S8PHQxUvTMuqa5QWqRVLw,138361
+duckdb_utils-0.1.0a4.dist-info/LICENSE,sha256=u01MsjL2hSO4i1905XVjth-3k_17wlg3gyscwiTUBoU,1529
+duckdb_utils-0.1.0a4.dist-info/METADATA,sha256=cz4Y6rUxXml6GoUld3Ah-kwL51rDZDqFO_fmJv4iXHM,6573
+duckdb_utils-0.1.0a4.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+duckdb_utils-0.1.0a4.dist-info/entry_points.txt,sha256=m1-OoGJoitks1BaFVN12aTN5izqFiMHYuoctv9KVzn8,54
+duckdb_utils-0.1.0a4.dist-info/top_level.txt,sha256=SWnEFJuovES4tTtYKnLIB-aiFxBzOk_8YyiUvwPpvtQ,13
+duckdb_utils-0.1.0a4.dist-info/RECORD,,
