@@ -1,0 +1,22 @@
+# proto-file: src/protos/constants/countries/countries.proto
+# proto-message: Countries
+
+country_to_country_details {
+    key: "IN"
+    value {
+        country: INDIA
+        short_code: IN
+        phone_code_prefix: 91
+        zipcode_regex: "^[1-9][0-9]{5}$"
+    }
+}
+
+country_to_country_details {
+    key: "US"
+    value {
+        country: UNITED_STATES_OF_AMERICA
+        short_code: US
+        phone_code_prefix: 1
+        zipcode_regex: "^[0-9]{5}(?:-[0-9]{4})?$"
+    }
+}
