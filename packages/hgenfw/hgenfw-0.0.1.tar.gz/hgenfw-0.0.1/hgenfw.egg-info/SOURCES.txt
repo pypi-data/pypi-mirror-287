@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+hgenfw/__init__.py
+hgenfw/hfilegen.py
+hgenfw/myhd4pyd.py
+hgenfw.egg-info/PKG-INFO
+hgenfw.egg-info/SOURCES.txt
+hgenfw.egg-info/dependency_links.txt
+hgenfw.egg-info/not-zip-safe
+hgenfw.egg-info/requires.txt
+hgenfw.egg-info/top_level.txt

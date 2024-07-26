@@ -1,0 +1,3 @@
+mypkggener
+setuptools
+cython
