@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=70.1.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdk-deb"
+version = "0.0.0"
+requires-python = ">=3.1.0"
+authors = [
+    { email = "49397056@qq.com" },
+    { name = "Pemrilect" }
+]
+dependencies = [
+    "devkit-list>=2024.2"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["deb"]
