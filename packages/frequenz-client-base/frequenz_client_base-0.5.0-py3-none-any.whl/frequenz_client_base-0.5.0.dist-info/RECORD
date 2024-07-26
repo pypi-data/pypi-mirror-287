@@ -1,0 +1,15 @@
+frequenz/client/base/__init__.py,sha256=3QsJtivRSntP6GvuMCLQF5YFd-Fgtf8Z8RQMYF8w1LE,120
+frequenz/client/base/_grpchacks.py,sha256=FO1K57Twy2jvNPeV1B5LcHhXnexVGWEah_LMt6Cq4no,4583
+frequenz/client/base/channel.py,sha256=PqbU15Hm0vj_mPdEIFXSvKl1nIddRiJcCaaVy8vHBnk,2955
+frequenz/client/base/client.py,sha256=dUYXUggzorOe3SbbWot4xHb3v14EESPKn3LVvqMViig,11678
+frequenz/client/base/conftest.py,sha256=NB21GYKVnjam9lHyFyBEYxR8qYjDkvV70f4kuYLzAUY,409
+frequenz/client/base/conversion.py,sha256=IKgv5Wy02B7qzJwMaMZs_HyL6oK1oh22NGBFYaTyouY,1521
+frequenz/client/base/exception.py,sha256=5rN_Sb21xBy-1reo9Tx4fHzQNNd5Zhh4d1-OjhwhGLE,27039
+frequenz/client/base/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+frequenz/client/base/retry.py,sha256=11G928p-twG0ioqdbUn0iQcwBq9HfS6lXwixx-81Kwc,5059
+frequenz/client/base/streaming.py,sha256=QY4_F9UaBsiaAiaIlJP0-3wvnx1O9u4TxPt36--vJaU,3763
+frequenz_client_base-0.5.0.dist-info/LICENSE,sha256=C3svrUte2N2h2JaK1qfbYQNp5MTaqdaJkFLe-kgUxbU,1089
+frequenz_client_base-0.5.0.dist-info/METADATA,sha256=uxErwJUeiKbPc2GABdKcsDGYVbFXraKk-P7pOOCqmh8,4862
+frequenz_client_base-0.5.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+frequenz_client_base-0.5.0.dist-info/top_level.txt,sha256=x08GRcWytsyKXa2Ayme9e5pg3L5Kcq6lw_BaQmToMO4,9
+frequenz_client_base-0.5.0.dist-info/RECORD,,
