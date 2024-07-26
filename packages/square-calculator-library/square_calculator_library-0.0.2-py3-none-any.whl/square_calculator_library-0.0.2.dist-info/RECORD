@@ -1,0 +1,11 @@
+square_calculator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+square_calculator/constants.py,sha256=HqQAQFjIjqtCCKvL7VSqdjITGVaW_JLlUqw85mRDcQQ,198
+square_calculator/exception_messages.py,sha256=fA_4fwzlS4qZ8KfAsuYXShxvHZZUFx-EmSeWYUFRcpM,739
+square_calculator/square.py,sha256=LGGb-1eY5IZKFtFwPJ-FDuUd7iPtbuWGSdwTnS4BS_8,5082
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/tests.py,sha256=LJFWCSt2L_cnRGxGiGMuAr3jfu4nJfwTUXBVtI0ghWY,7920
+square_calculator_library-0.0.2.dist-info/LICENSE,sha256=jyuQBnx62DSFspk10S6yV82PhAZ2B7yof0aKJ3AV_7o,1080
+square_calculator_library-0.0.2.dist-info/METADATA,sha256=Q8Ccrigjl6dtBi-2_bPi_VyXRHopVAGHGs-M6ZEse00,7555
+square_calculator_library-0.0.2.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+square_calculator_library-0.0.2.dist-info/top_level.txt,sha256=fm7zOEoJTc_R_ecPZIESYU-cdOnI2gwTrSa54aR7A2Y,24
+square_calculator_library-0.0.2.dist-info/RECORD,,
