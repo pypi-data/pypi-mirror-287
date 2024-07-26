@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: sqlite3i
+Version: 0.0.1
+Summary: An opinionated sqlite3 wrapper.
+Author-email: nggit <contact@anggit.com>
+License: MIT License
+Project-URL: Homepage, https://github.com/nggit/sqlite3i
+Project-URL: Source, https://github.com/nggit/sqlite3i
+Project-URL: Funding, https://github.com/sponsors/nggit
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# sqlite3i
+An opinionated sqlite3 wrapper.
+
+## Install
+```
+python3 -m pip install --upgrade sqlite3i
+```
+
+## License
+MIT
