@@ -1,0 +1,13 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.py
+src/savis/__init__.py
+src/savis/attention.py
+src/savis/generator.py
+src/savis/visualization.py
+src/savis.egg-info/PKG-INFO
+src/savis.egg-info/SOURCES.txt
+src/savis.egg-info/dependency_links.txt
+src/savis.egg-info/requires.txt
+src/savis.egg-info/top_level.txt
