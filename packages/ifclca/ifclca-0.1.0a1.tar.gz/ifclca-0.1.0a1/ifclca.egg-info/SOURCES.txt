@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+IfcLCA/__init__.py
+IfcLCA/analysis.py
+IfcLCA/db_reader.py
+IfcLCA/lca.py
+IfcLCA/optioneering.py
+IfcLCA/reporter.py
+IfcLCA/utils/__init__.py
+IfcLCA/utils/selector.py
+ifclca.egg-info/PKG-INFO
+ifclca.egg-info/SOURCES.txt
+ifclca.egg-info/dependency_links.txt
+ifclca.egg-info/requires.txt
+ifclca.egg-info/top_level.txt
