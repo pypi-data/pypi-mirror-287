@@ -1,0 +1,7 @@
+setup.py
+sarvesh_app_package/__init__.py
+sarvesh_app_package/main.py
+sarvesh_app_package.egg-info/PKG-INFO
+sarvesh_app_package.egg-info/SOURCES.txt
+sarvesh_app_package.egg-info/dependency_links.txt
+sarvesh_app_package.egg-info/top_level.txt
