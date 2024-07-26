@@ -1,0 +1,6 @@
+
+[ltx]
+msgpack<=1.0.5
+
+[ssh]
+asyncssh<=2.13.2

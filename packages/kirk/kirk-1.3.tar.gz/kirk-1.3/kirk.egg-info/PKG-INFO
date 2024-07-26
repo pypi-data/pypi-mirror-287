@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: kirk
+Version: 1.3
+Summary: All-in-one Linux Testing Framework
+Home-page: https://github.com/acerv/kirk
+Author: Andrea Cervesato
+Author-email: andrea.cervesato@mailbox.org
+License: GPLv2
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Testing
+Provides-Extra: ltx
+Provides-Extra: ssh
+License-File: LICENSE
