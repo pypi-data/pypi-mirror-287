@@ -1,0 +1,30 @@
+NEWTONIA FREEWARE LICENSE
+'pcds' (python common data structures) is a python package or library that contains 
+the data structures like queue, stack, linked list, binary tree etc. It supports 
+data saving in the disk as binary files with extension '.pcds' (python common data 
+structure).
+
+Hereby, software, package or library means this package 'pcds' written on python 
+language by A K M Aminul Islam (author), the founder of Newtonia. A K M Aminul 
+Islam is also the maintainer of this software and the sole proprietor or owner 
+of this software.
+
+The author means the writer of this software, A K M Aminul Islam.
+
+A user of this software is a person, an organization, a device, an instrument or another
+software that uses or distributes it to other persons, entities or machines.
+
+This software is written in the Python programming language. Python is a permissive free open 
+source software (FOSS). Hereby, it is declared that the license type of this software 
+is FREEWARE under the following permissions and restrictions:
+  1) This software can be used free for non-commercial learning, educational and research 
+     purpose only;
+  2) Source code is not open to distribute; source code cannot be modified, edited and 
+     distributed without the legal permission from the author;
+  3) The user cannot issue sublicense any part of this software;
+  4) If a software application, made for non-commercial educational and research purposes, 
+     can use this software by mentioning the identity of the author and his company.
+
+It is not guaranteed that this software will produce all the time the expected result.
+
+You are cordially welcome for using this software.

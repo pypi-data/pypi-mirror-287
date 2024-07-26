@@ -1,0 +1,714 @@
+Metadata-Version: 2.1
+Name: pcds
+Version: 1.0.2
+Summary: This python package creates and manages the common data structures like queue, stack, linkedlist, binary tree etc. Supported data types are int, float, str, bool, NoneType, list, tuple, and dictionary.
+Home-page: 
+Author: A K M Aminul Islam
+Author-email: aminul71bd@gmail.com
+License: NEWTONIA FREEWARE LICENSE
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: upmath >=2.0.0
+
+## pcds-1.0.2 (Python Common Data Structures)
+**Description:** This python package contains some basic and common data structures like **stack**, **queue**, **singly linkedlist**, **doubly linkedlist**, and **binary search tree**. Other structures will be added in the later versions of **pcds**. Now **pcds** can store data of the following  types: **integer**, **float**, **string**, **boolean**, **nonetype**, **list**, **tuple**, and **dictionary**. The data structure classes can save the data in the hard disk both in **encrypted** and in **plain text** form. Encrypted data serves the purpose of data security. To maintain data integrity, data are saved with the **md5 hash code** and data are ckecked with the hash code while reading from the disk. If data is corrupt, data file will not be opened. Thus **data security** and **integrity** both are maintained by **pcds**.
+
+Default data file directory: home + "\\\\pcds_data"
+
+Default data file extension: .pcds (python common data structure)
+
+Operations on data structures are very fast, reliable and  user friendly. So, using this package will be a great experience to the python programmers.
+
+## Quick Tutorial
+
+### Stack Data Structure
+**Stack** is basically a LIFO (Last In First Out) type data structure. Data are entered by push() method and the top most data is accessed by pop() method.
+
+Default data file address: home+"\\\\pcds_data\\\\stack.pcds"
+
+#### Example Code
+```python
+>>> 
+>>> from pcds import stack as stk
+>>> stk1=stk.Stack()
+>>> stk1.push(10)
+>>> stk1.push(20)
+>>> stk1.push(14.78)
+>>> stk1.push(True)
+>>> stk1.push(False)
+>>> stk1.push(None)
+>>> stk1.push('hello')
+>>> stk1.push(['abc',2,4,5,8.9])
+>>> stk1.push(('world',2,[4,5,8],9))
+>>> stk1.push({'name':'audry','age':20,'marks':[14,15,18]})
+>>> stk1.push(77)
+>>>
+>>> stk1
+<Stack[size=11] Bottom:(10, 20, 14.78, True, False, None, 'hello', ['abc', 2, 4, 5, 8.9], ('world', 2, [4, 5, 8], 9), {'name': 'audry', 'age': 20, 'marks': [14, 15, 18]}, 77):Top>
+>>>
+>>> stk1.save()
+Encrypted Data Saved Successfully into 'C:\Users\admin\pcds_data\stack.pcds'
+True
+>>>
+>>> stk1.pop()
+77
+>>> stk1.pop()
+{'name': 'audry', 'age': 20, 'marks': [14, 15, 18]}
+>>> stk1.pop()
+('world', 2, [4, 5, 8], 9)
+>>> stk1.pop()
+['abc', 2, 4, 5, 8.9]
+>>> stk1.pop()
+'hello'
+>>>
+>>> stk1
+<Stack[size=6] Bottom:(10, 20, 14.78, True, False, None):Top>
+>>>
+>>> stk1.clear()
+>>>
+>>> stk1
+<Stack[size=0] Bottom:():Top>
+>>>
+>>> stk1.loadDataFromFile()
+Data Loaded Successfully from the file: 'C:\Users\admin\pcds_data\stack.pcds'
+True
+>>>
+>>> stk1
+<Stack[size=11] Bottom:(10, 20, 14.78, True, False, None, 'hello', ['abc', 2, 4, 5, 8.9], ('world', 2, [4, 5, 8], 9), {'name': 'audry', 'age': 20, 'marks': [14, 15, 18]}, 77):Top>
+>>>
+```
+
+### Queue Data Structure
+**Queue** is a **FIFO** (First In First Out) type data structure. The data which gets in the queue first, will be get out first. Data is entered by **enQueue()** method and is accessed by **deQueue()** method. The oldest data in the queue is called the **head**. When the data are accessed, the head will be dequeued first. Queue has a **finite length**. Default size is 100. 
+
+The size of the queue is to be set when the queue instance is created. When the data are entered in the queue, if queue is full, the head will be dequed automatically.
+
+Queue data can be saved by **save()** method at any time either in encrypted or in plain text form.
+
+Default data file address: home+"\\\\pcds_data\\\\queue.pcds"
+
+#### Example Code
+```python
+>>> 
+>>> from pcds import queue as q
+>>> q1=q.Queue()
+>>> q1.enQueue(10)
+>>> q1.enQueue(30)
+>>> q1.enQueue(40.87)
+>>> q1.enQueue('hello')
+>>> q1.enQueue(True)
+>>> q1.enQueue(False)
+>>> q1.enQueue(None)
+>>> q1.enQueue(0)
+>>> q1.enQueue([1,3,5,'a','b','c',47])
+>>> q1.enQueue((1,5,8,'world',[4,7,8,{'name':'ali'}]))
+>>> q1.enQueue('world')
+>>>
+>>> q1
+<Queue [11/100], Head:(10, 30, 40.87, 'hello', True, False, None, 0, [1, 3, 5, 'a', 'b', 'c', 47], (1, 5, 8, 'world', [4, 7, 8, {'name': 'ali'}]), 'world'):Tail>
+>>>
+>>> q1.save()
+Encrypted Data Saved Successfully into 'C:\Users\admin\pcds_data\queue.pcds'
+True
+>>>
+>>> q1.clear()
+>>>
+>>> q1
+<Queue [0/100], Head:():Tail>
+>>>
+>>> q1.loadDataFromFile()
+Data Loaded Successfully from the file: 'C:\Users\admin\pcds_data\queue.pcds'
+True
+>>>
+>>> q1
+<Queue [11/100], Head:(10, 30, 40.87, 'hello', True, False, None, 0, [1, 3, 5, 'a', 'b', 'c', 47], (1, 5, 8, 'world', [4, 7, 8, {'name': 'ali'}]), 'world'):Tail>
+>>>
+```
+#### Creating a queue of length 5
+Queue will be full if there are five data in the queue. Next adding action will dequeue the head.
+
+The length of the queue can be changed at any time by **changeMaxSize()** method. But the new maxsize cannot be less than the current size of the queue.
+
+#### Example Code
+```python
+>>>
+>>> from pcds import queue as q
+>>> q1=q.Queue(5)
+>>> q1.getMaxSize()
+5
+>>> q1
+<Queue [0/5], Head:():Tail>
+>>>
+>>> q1.enQueue(15)
+>>> q1.enQueue(1.85)
+>>> q1.enQueue('hello')
+>>> q1.enQueue(True)
+>>> q1.enQueue(False)
+>>> q1.enQueue(None)
+Queue is already full. So, head is dequeued.
+15
+>>> q1.enQueue([1,2,'a','b'])
+Queue is already full. So, head is dequeued.
+1.85
+>>> q1
+<Queue [5/5], Head:('hello', True, False, None, [1, 2, 'a', 'b']):Tail>
+>>>
+>>> q1.enQueue({'name':'ali','age':22})
+Queue is already full. So, head is dequeued.
+'hello'
+>>>
+>>> q1
+<Queue [5/5], Head:(True, False, None, [1, 2, 'a', 'b'], {'name': 'ali', 'age': 22}):Tail>
+>>>
+>>> q1.deQueue()
+True
+>>> q1.deQueue()
+False
+>>> q1.deQueue()
+>>> q1.deQueue()
+[1, 2, 'a', 'b']
+>>> q1.deQueue()
+{'name': 'ali', 'age': 22}
+>>> q1.deQueue()
+Queue is empty.
+>>> q1
+<Queue [0/5], Head:():Tail>
+>>>
+```
+Now, if data is loaded from the data file, the maxsize of the queue will be updated if the current maxsize is less than the loaded data size.
+
+#### Example Code
+```python
+>>>
+>>> q1.clear()
+>>> q1
+<Queue [0/5], Head:():Tail>
+>>> q1.getMaxSize()
+5
+>>>
+>>> q1.loadDataFromFile()
+Data Loaded Successfully from the file: 'C:\Users\admin\pcds_data\queue.pcds'
+True
+>>> q1.getMaxSize()
+20
+>>> q1
+<Queue [11/20], Head:(10, 30, 40.87, 'hello', True, False, None, 0, [1, 3, 5, 'a', 'b', 'c', 47], (1, 5, 8, 'world', [4, 7, 8, {'name': 'ali'}]), 'world'):Tail>
+>>>
+>>> q1.changeMaxSize(10)
+Warning! The length of the queue cannot be less than the current size.
+>>> q1.getMaxSize()
+20
+>>>
+```
+
+
+### LinkedList Data Structure
+**Singly linked list** is made of nodes having next pointer only. So, list cursor can travel in forward direction only. Singly linked list has a name and its instance has to be created by giving a name. The default name is **LNKList**. Nodes have index values starting from zero. **seek()** and **tell()** methods are used to move the cursor along the list to any node.  
+
+Supported Data Types: int, float, string, bool, NoneType, list, tuple, dictionary 
+
+#### Example Code
+```python
+>>>
+>>> from ntnds import linkedlist as lnkl
+>>> ll=lnkl.LinkedList()
+>>> ll.append(10)
+>>> ll.append(20)
+>>> ll.append(30.48)
+>>> ll.append('hello')
+>>> ll.append(True)
+>>> ll.append([1,2,'hello',True,None,False])
+>>> ll.append((78,45.12,{'a':45,'b':17},'abc'))
+>>> ll.append(False)
+>>> ll.append(None)
+Warning! None type data is entered.
+>>>
+>>> ll
+<LNKList[LinkedList]: size=9, Data=(10, 20, 30.48, 'hello', True, [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), False, None)>
+>>>
+>>> ll.convert2dict()
+{'name': 'LNKList', 'class': 'LinkedList', 'size': 9, 0: 10, 1: 20, 2: 30.48, 3: 'hello', 4: True, 5: [1, 2, 'hello', True, None, False], 6: (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 7: False, 8: None}
+>>>
+```
+#### Adding data from a list or tuple
+```python
+>>>
+>>> ll.clear()
+>>> ll
+<LNKList[LinkedList]: size=0, Data=()>
+>>> datalist=[10,20,45.12,True,False,'hello',{1:50,2:100,'a':'abc'}]
+>>> ll.addDataFromList(datalist)
+>>> ll
+<LNKList[LinkedList]: size=7, Data=(10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'})>
+>>>
+>>> datatuple=(8,1,7.8,['ab','bc','cd'],{'name':'ali','age':12})
+>>> ll.addDataFromTuple(datatuple)
+>>> ll
+<LNKList[LinkedList]: size=12, Data=(10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12})>
+>>>
+```
+
+#### Moving in the list using moveFirst(), moveNext(), moveLast(), getNodeAt() methods
+```python
+>>>
+>>> ll.getCurrentNode()
+<Node: {'name': 'ali', 'age': 12} at index 11>
+>>> ll.moveFirst()
+>>> ll.getCurrentNode()
+<Node: 10 at index 0>
+>>> ll.getNodeAt(7)
+<Node: 8 at index 7>
+>>> ll.getCurrentNode()
+<Node: 8 at index 7>
+>>> ll.moveNext()
+>>> ll.getCurrentNode()
+<Node: 1 at index 8>
+>>> ll.moveNext()
+>>> ll.getCurrentNode()
+<Node: 7.8 at index 9>
+>>> ll.moveLast()
+>>> ll.getCurrentNode()
+<Node: {'name': 'ali', 'age': 12} at index 11>
+>>> ll.getNodeAt(4)
+<Node: False at index 4>
+>>> ll.getCurrentNode()
+<Node: False at index 4>
+>>>
+```
+
+#### Moving in the list using tell() and seek() methods
+```python
+>>>
+>>> ll.convert2dict()
+{'name': 'LNKList', 'class': 'LinkedList', 'size': 12, 0: 10, 1: 20, 2: 45.12, 3: True, 4: False, 5: 'hello', 6: {1: 50, 2: 100, 'a': 'abc'}, 7: 8, 8: 1, 9: 7.8, 10: ['ab', 'bc', 'cd'], 11: {'name': 'ali', 'age': 12}}
+>>>
+>>> ll.tell()
+4
+>>> ll.getCurrentNode()
+<Node: False at index 4>
+>>>
+>>> ll.seek(0,0)
+>>> ll.getCurrentNode()
+<Node: 10 at index 0>
+>>> ll.seek(1,0)
+>>> ll.getCurrentNode()
+<Node: 20 at index 1>
+>>> ll.seek(10,0)
+>>> ll.getCurrentNode()
+<Node: ['ab', 'bc', 'cd'] at index 10>
+>>> ll.seek(5,0)
+>>> ll.getCurrentNode()
+<Node: hello at index 5>
+>>>
+>>> ll.seek(0,1)
+>>> ll.getCurrentNode()
+<Node: hello at index 5>
+>>>
+>>> ll.seek(-1,1)
+>>> ll.getCurrentNode()
+<Node: False at index 4>
+>>> ll.seek(1,1)
+>>> ll.getCurrentNode()
+<Node: hello at index 5>
+>>> ll.seek(1,1)
+>>> ll.getCurrentNode()
+<Node: {1: 50, 2: 100, 'a': 'abc'} at index 6>
+>>>
+>>> ll.seek(0,2)
+>>> ll.getCurrentNode()
+<Node: {'name': 'ali', 'age': 12} at index 11>
+>>> ll.seek(-1,2)
+>>> ll.getCurrentNode()
+<Node: ['ab', 'bc', 'cd'] at index 10>
+>>>
+>>> ll.seek(2,2)
+Index out of range.
+>>> ll.getCurrentNode()
+<Node: ['ab', 'bc', 'cd'] at index 10>
+>>>
+>>> ll.seek(-2,0)
+Index out of range.
+>>> ll.getCurrentNode()
+<Node: ['ab', 'bc', 'cd'] at index 10>
+>>>
+>>> ll.seek(-1,0)
+Index out of range.
+>>> ll.getCurrentNode()
+<Node: ['ab', 'bc', 'cd'] at index 10>
+>>>
+
+```
+
+#### saving data into the disk and loading from the disk
+List data can be saved by **save(directory, filename, preserve, enc)** method. Directory and filename (without extension) describes the data file; preserve is a boolean parameter which states whether a datafile can be deleted or not; and enc is another boolean parameter which states whether encrypted or plain data are to be saved. Data can be loaded from the data file by **loadDataFromFile(fileaddress)** method.
+
+Default directory = home + "\\\\pcds_data"<br>
+Default filename = "linkedlist.pcds"<br>
+Default preserve value = True<br>
+Default enc value = True
+```python
+>>>
+>>> ll
+<LNKList[LinkedList]: size=15, Data=('First', 'second', 20, 45.12, True, False, 'Bangladesh', 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'xyz')>
+>>>
+>>> ll.save()
+Encrypted Data Saved Successfully into 'C:\Users\admin\pcds_data\linkedlist.pcds'
+True
+>>>
+>>> ll.clear()
+>>> ll
+<LNKList[LinkedList]: size=0, Data=()>
+>>> ll.loadDataFromFile()
+Data Loaded Successfully from the file: 'C:\Users\admin\pcds_data\linkedlist.pcds'
+True
+>>> ll
+<LNKList[LinkedList]: size=15, Data=('First', 'second', 20, 45.12, True, False, 'Bangladesh', 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'xyz')>
+>>>
+```
+
+#### insert, edit and delete data
+New data can be inserted at an index position by **insertDataAt(data, index)** method. A data of a certain index can be deleted by **deleteDataAt(index)** method, and a data can be edited by **editDataAt(data, index)** method.
+```python
+>>>
+>>> ll
+<LNKList[LinkedList]: size=12, Data=(10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12})>
+>>>
+>>> ll.insertDataAt('First')
+>>> ll
+<LNKList[LinkedList]: size=13, Data=('First', 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12})>
+>>>
+>>> ll.insertDataAt('abc',-1)
+Index out of the range.
+>>> ll.insertDataAt('abc',14)
+Index out of the range.
+>>> ll.insertDataAt('abc',13)
+>>> ll
+<LNKList[LinkedList]: size=14, Data=('First', 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'abc')>
+>>>
+>>> ll.insertDataAt('Bangladesh',6)
+>>> ll
+<LNKList[LinkedList]: size=15, Data=('First', 10, 20, 45.12, True, False, 'Bangladesh', 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'abc')>
+>>>
+>>>
+>>> ll.editDataAt('xyz',14)
+>>> ll
+<LNKList[LinkedList]: size=15, Data=('First', 10, 20, 45.12, True, False, 'Bangladesh', 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'xyz')>
+>>>
+>>> ll.insertDataAt('second',1)
+>>> ll
+<LNKList[LinkedList]: size=16, Data=('First', 'second', 10, 20, 45.12, True, False, 'Bangladesh', 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'xyz')>
+>>>
+>>> ll.deleteDataAt(1)
+>>> ll
+<LNKList[LinkedList]: size=15, Data=('First', 10, 20, 45.12, True, False, 'Bangladesh', 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'xyz')>
+>>>
+>>> ll.editDataAt('second',1)
+>>> ll
+<LNKList[LinkedList]: size=15, Data=('First', 'second', 20, 45.12, True, False, 'Bangladesh', 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'xyz')>
+>>>
+
+```
+
+
+### DLinkedList Data Structure
+**DLinkedList** (doubly linked list) has the same operations, the singly linked list has, but it is more efficient in moving around in the list since it has **next** and **prev** pointers by which the cursor can move both in forward and backard directions.
+
+DLinkedList instance has to be created using a name. Data can be added, inserted, edited and deleted. Data can be saved into the hard disk.
+
+Supported Data Types: int, float, string, bool, NoneType, list, tuple, dictionary
+
+#### Example Code
+```python
+>>>
+>>> from ntnds import dlinkedlist as dlnkl
+>>> dll=dlnkl.DLinkedList()
+>>> dll.append(10)
+>>> dll.append(20)
+>>> dll.append(30.48)
+>>> dll.append([1,2,'hello',True,None,False])
+>>> dll.append((78,45.12,{'a':45,'b':17},'abc'))
+>>> dll.append('yes')
+>>> dll.append(True)
+>>> dll.append(False)
+>>> dll.append(None)
+Warning! None type data is entered.
+>>>
+>>> dll
+<DLNKList[DLinkedList]: size=9, Data=(10, 20, 30.48, [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 'yes', True, False, None)>
+>>>
+>>> dll.convert2dict()
+{'name': 'DLNKList', 'class': 'DLinkedList', 'size': 9, 0: 10, 1: 20, 2: 30.48, 3: [1, 2, 'hello', True, None, False], 4: (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 5: 'yes', 6: True, 7: False, 8: None}
+>>>
+```
+#### Adding data from a list or tuple
+```python
+>>>
+>>> datalist=[10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}]
+>>> dll.addDataFromList(datalist)
+>>> dll
+<DLNKList[DLinkedList]: size=16, Data=(10, 20, 30.48, [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 'yes', True, False, None, 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'})>
+>>>
+>>> datatuple=(8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12})
+>>>
+>>> dll.addDataFromTuple(datatuple)
+>>> dll
+<DLNKList[DLinkedList]: size=21, Data=(10, 20, 30.48, [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 'yes', True, False, None, 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12})>
+>>>
+```
+#### saving data into the disk and loading data from the disk
+List data can be saved by **save(directory, filename, preserve, enc)** method. Directory and filename (without extension) describes the data file; preserve is a boolean parameter which describes whether a datafile can be deleted; and enc is another boolean parameter which states whether encrypted or plain data are to be saved. Data can be loaded from the data file by **loadDataFromFile(fileaddress)** method.
+
+Default directory: home + "\\\\pcds_data"<br>
+Default filename = "dlinkedlist"<br>
+Default preserve value = True<br>
+Default enc value = True
+
+```python
+>>>
+>>> dll.save()
+Encrypted Data Saved Successfully into 'C:\Users\admin\pcds_data\dlinkedlist.pcds'
+True
+>>>
+>>> dll.clear()
+>>> dll
+<DLNKList[DLinkedList]: size=0, Data=()>
+>>> dll.loadDataFromFile()
+Warning! None type data is entered.
+Data Loaded Successfully from the file: 'C:\Users\admin\pcds_data\dlinkedlist.pcds'
+True
+>>>
+>>> dll
+<DLNKList[DLinkedList]: size=21, Data=(10, 20, 30.48, [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 'yes', True, False, None, 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12})>
+>>>
+```
+
+#### Moving in the list using moveFirst(), moveNext(), moveLast(), getNodeAt() methods
+```python
+>>>
+>>> dll.getCurrentNode()
+<Head Node at index -1>
+>>> dll.moveNext()
+>>> dll.getCurrentNode()
+<Node: 10 at index 0>
+>>> dll.moveNext()
+>>> dll.getCurrentNode()
+<Node: 20 at index 1>
+>>> dll.moveLast()
+>>> dll.getCurrentNode()
+<Node: {'name': 'ali', 'age': 12} at index 20>
+>>> dll.moveNext()
+>>> dll.getCurrentNode()
+<Node: {'name': 'ali', 'age': 12} at index 20>
+>>> dll.movePrev()
+>>> dll.getCurrentNode()
+<Node: ['ab', 'bc', 'cd'] at index 19>
+>>> dll.movePrev()
+>>> dll.getCurrentNode()
+<Node: 7.8 at index 18>
+>>> dll.moveFirst()
+>>> dll.getCurrentNode()
+<Node: 10 at index 0>
+>>> dll.movePrev()
+>>> dll.getCurrentNode()
+<Node: 10 at index 0>
+>>> dll.getNodeAt(10)
+<Node: 20 at index 10>
+>>> dll.movePrev()
+>>> dll.getCurrentNode()
+<Node: 10 at index 9>
+>>> dll.getNodeAt(10)
+<Node: 20 at index 10>
+>>> dll.moveNext()
+>>> dll.getCurrentNode()
+<Node: 45.12 at index 11>
+>>>
+```
+
+#### Moving to head by moveToHead() method
+```python
+>>>
+>>> dll.getCurrentNode()
+<Node: 45.12 at index 11>
+>>>
+>>> dll.moveToHead()
+>>> dll.getCurrentNode()
+<Head Node at index -1>
+>>>
+```
+#### Moving in the list using tell() and seek() methods
+```python
+>>>
+>>> dll.tell()
+-1
+>>> dll.seek(0,0)
+>>> dll.getCurrentNode()
+<Node: 10 at index 0>
+>>> dll.tell()
+0
+>>> dll.seek(10,0)
+>>> dll.getCurrentNode()
+<Node: 20 at index 10>
+>>>
+>>> dll.seek(0,2)
+>>> dll.getCurrentNode()
+<Node: {'name': 'ali', 'age': 12} at index 20>
+>>> dll.seek(2,2)
+>>> dll.getCurrentNode()
+<Node: {'name': 'ali', 'age': 12} at index 20>
+>>> dll.seek(-2,2)
+>>> dll.getCurrentNode()
+<Node: 7.8 at index 18>
+>>>
+>>> dll.seek(-10,2)
+>>> dll.tell()
+10
+>>> dll.seek(2,1)
+>>> dll.getCurrentNode()
+<Node: True at index 12>
+>>> dll.seek(-3,1)
+>>> dll.getCurrentNode()
+<Node: 10 at index 9>
+>>>
+```
+
+#### insert, edit and delete data
+New data can be inserted at an index position by **insertDataAt(data, index)** method. A data of a certain index can be deleted by **deleteDataAt(index)** method, and a data can be edited by **editDataAt(data, index)** method.
+```python
+>>>
+>>>
+>>> dll
+<DLNKList[DLinkedList]: size=21, Data=(10, 20, 30.48, [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 'yes', True, False, None, 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12})>
+>>>
+>>> dll.insertDataAt('world',3)
+>>>
+>>> dll
+<DLNKList[DLinkedList]: size=22, Data=(10, 20, 30.48, 'world', [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 'yes', True, False, None, 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12})>
+>>>
+>>> dll.insertDataAt('END',22)
+>>> dll
+<DLNKList[DLinkedList]: size=23, Data=(10, 20, 30.48, 'world', [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 'yes', True, False, None, 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'END')>
+>>>
+>>> dll.editDataAt(10.2,0)
+>>> dll
+<DLNKList[DLinkedList]: size=23, Data=(10.2, 20, 30.48, 'world', [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 'yes', True, False, None, 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'END')>
+>>>
+>>> dll.deleteDataAt(0)
+>>> dll
+<DLNKList[DLinkedList]: size=22, Data=(20, 30.48, 'world', [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), 'yes', True, False, None, 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'END')>
+>>>
+>>> dll.deleteDataAt(5)
+>>> dll
+<DLNKList[DLinkedList]: size=21, Data=(20, 30.48, 'world', [1, 2, 'hello', True, None, False], (78, 45.12, {'a': 45, 'b': 17}, 'abc'), True, False, None, 10, 20, 45.12, True, False, 'hello', {1: 50, 2: 100, 'a': 'abc'}, 8, 1, 7.8, ['ab', 'bc', 'cd'], {'name': 'ali', 'age': 12}, 'END')>
+>>>
+```
+
+### BSTree (Binary Search Tree) Data Structure
+**BSTree** is a binary tree made of nodes which carry data and which links with other nodes forming a tree structure. Each node has **three links**: **parent**, **left** and **right**. The left, right links are used to join the left and right child nodes respectively and the parent link to the parent node. 
+
+Order of the data values of the nodes: parent node > right node > node > left node.
+
+BSTree is very efficient in sorting and searching operations. Currently, only the string and numeric data types are supported. Tree data can be saved in the disk and data can also be loaded from the disk.
+
+#### Example Code
+```python
+>>>
+>>> from ntnds import bstree as bst
+>>> t1=bst.BinarySearchTree()
+>>> t1
+()
+>>> t1.append(10)
+>>> t1.append(20)
+>>> t1.append('hi')
+>>> t1.loadDataFromList([2,7,4,8,0,5.6,9.8,4.7,8.1])
+>>> t1
+(10, 20, 'hi', 2, 7, 4, 8, 0, 5.6, 9.8, 4.7, 8.1)
+>>> str(t1)
+"<Binary Search Tree(not sorted): no. of nodes=12, data=(10, 20, 'hi', 2, 7, 4, 8, 0, 5.6, 9.8, 4.7, 8.1)>"
+>>>
+>>> t1.loadDataFromTuple(('m','x','a','y','f','b','t','p','a','b'))
+>>> t1.loadDataFromList([1,2,3,4,5,6,7,8,9])
+>>>
+>>> t1
+(10, 20, 'hi', 2, 7, 4, 8, 0, 5.6, 9.8, 4.7, 8.1, 'm', 'x', 'a', 'y', 'f', 'b', 't', 'p', 'a', 'b', 1, 2, 3, 4, 5, 6, 7, 8, 9)
+>>>
+>>> len(t1)
+31
+>>>
+>>> t1.buildTree()
+>>> t1.sortTree()
+>>>
+>>> t1
+(0, 1, 2, 3, 4, 4.7, 5, 5.6, 6, 7, 8, 8.1, 9, 9.8, 10, 20, 'a', 'b', 'f', 'm', 'p', 't', 'x', 'y', 'hi')
+>>>
+>>> len(t1)
+25
+>>>
+>>> t1.sortTree(asc=False)
+>>> t1
+('hi', 'y', 'x', 't', 'p', 'm', 'f', 'b', 'a', 20, 10, 9.8, 9, 8.1, 8, 7, 6, 5.6, 5, 4.7, 4, 3, 2, 1, 0)
+>>>
+>>>
+>>> t1.save()
+Encrypted Data Saved Successfully into 'C:\Users\admin\pcds_data\bstree.pcds'
+True
+>>>
+>>> t1.clear()
+>>> t1
+()
+>>> t1.loadDataFromFile()
+Data Loaded Successfully.
+True
+>>>
+>>> t1
+(0, 1, 2, 3, 4, 4.7, 5, 5.6, 6, 7, 8, 8.1, 9, 9.8, 10, 20, 'a', 'b', 'f', 'm', 'p', 't', 'x', 'y', 'hi')
+>>>
+```
+#### Finding the minimum and maximum data by min() and max() functions
+**BSTree** module has **min()** and **max()** functions which can find the minimum and maximum data of a data list. Only numeric and string data are supported. String data are converted to integer first before calculation.
+```python
+>>>
+>>> from ntnds import bstree as bst
+>>> datalist=[4.89,4.05,45,12,74,85.26,95.21,77,1.24,0.85,'a','m','x',80,'ab','xy',245,614]
+>>> bst.min(datalist)
+0.85
+>>> bst.max(datalist)
+'xy'
+>>>
+```
+
+#### Sorting data by sort() function
+**BSTree** module has **sort()** function which can sort data in a list efficiently either in ascending or in descending order. If asc=True data are sorted in ascending order, and if asc=False, data are sorted in descending order.
+```python
+>>>
+>>> from ntnds import bstree as bst
+>>> datalist=[4.89,4.05,45,12,74,85.26,95.21,77,1.24,0.85,'a','m','x',80,'ab','xy',245,614]
+>>>
+>>> bst.sort(datalist)
+(0.85, 1.24, 4.05, 4.89, 12, 45, 'a', 74, 77, 80, 85.26, 'x', 95.21, 245, 614, 'ab', 'xy')
+>>>
+>>> bst.sort(datalist,asc=False)
+('xy', 'ab', 614, 245, 95.21, 'x', 85.26, 80, 77, 74, 'a', 45, 12, 4.89, 4.05, 1.24, 0.85)
+>>>
+>>> bst.sort(datalist,asc=True)
+(0.85, 1.24, 4.05, 4.89, 12, 45, 'a', 74, 77, 80, 85.26, 'x', 95.21, 245, 614, 'ab', 'xy')
+>>>
+```
+
+#### Searching data by search() function
+**BSTree** module has **search()** function that returns the matching index of the sorted data list. If data is not found, **None** is returned.
+```python
+>>>
+>>> from ntnds import bstree as bst
+>>> datalist=[4.89,4.05,45,12,74,85.26,95.21,77,1.24,0.85,'a','m','x',80,'ab','xy',245,614]
+>>>
+>>> bst.search(50,datalist)
+>>> bst.search(45,datalist)
+5
+>>> bst.search('ab',datalist)
+15
+>>> bst.search(4,datalist)
+>>> bst.search(4.05,datalist)
+2
+>>>
+```
+
