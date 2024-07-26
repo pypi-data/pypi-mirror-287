@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+mypkggener/__init__.py
+mypkggener/core.py
+mypkggener.egg-info/PKG-INFO
+mypkggener.egg-info/SOURCES.txt
+mypkggener.egg-info/dependency_links.txt
+mypkggener.egg-info/not-zip-safe
+mypkggener.egg-info/requires.txt
+mypkggener.egg-info/top_level.txt
