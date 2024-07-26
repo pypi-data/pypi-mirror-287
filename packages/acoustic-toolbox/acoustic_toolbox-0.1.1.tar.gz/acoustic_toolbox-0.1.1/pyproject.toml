@@ -1,0 +1,29 @@
+[build-system]
+requires = ["flit_core>=3.2"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "acoustic-toolbox"
+version = "0.1.1"
+authors = [
+    { name = "Valentin LE BESCOND", email = "valentin.lebescond@univ-eiffel.fr" }
+]
+description = "Acoustic Toolbox module for Python."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+]
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+"Homepage" = "https://github.com/Universite-Gustave-Eiffel/acoustic-toolbox"
+"Bug Tracker" = "https://github.com/Universite-Gustave-Eiffel/acoustic-toolbox/issues"
+
+[tool.flit.sdist]
+include = ["tests/"]
