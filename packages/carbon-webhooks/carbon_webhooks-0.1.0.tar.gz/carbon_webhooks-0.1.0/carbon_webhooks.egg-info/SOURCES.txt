@@ -1,0 +1,8 @@
+README.md
+setup.py
+carbon_webhooks.egg-info/PKG-INFO
+carbon_webhooks.egg-info/SOURCES.txt
+carbon_webhooks.egg-info/dependency_links.txt
+carbon_webhooks.egg-info/requires.txt
+carbon_webhooks.egg-info/top_level.txt
+tests/test_verifier.py
