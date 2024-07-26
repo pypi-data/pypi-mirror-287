@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: archbyte
+Version: 0.1.0
+Summary: Telegram  , discord and Ai focused library 
+Home-page: https://github.com/yourusername/archbyte
+Author: Arch Byte
+Author-email: cophtew@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: flask
+Requires-Dist: telethon
+Requires-Dist: python-dotenv
+
+# archbtyeprimal
+Arch Byte libraries 
+
+### 1. Telecemper Library
+
+## Configuration
+
+The `archbyte` library requires certain environment variables to be set for the `Telecemper` class to function properly. You can set these variables in a `.env` file or directly in your environment.
+
+### Required Environment Variables
+
+- `TELEGRAM_API_ID`: Your Telegram API ID.
+- `TELEGRAM_API_HASH`: Your Telegram API hash.
+- `TELEGRAM_PHONE_NUMBER`: Your phone number associated with Telegram.
+
+### Example `.env` File
+
+Create a file named `.env` in the root of your project directory with the following content:
+
+```dotenv
+TELEGRAM_API_ID=your_telegram_api_id
+TELEGRAM_API_HASH=your_telegram_api_hash
+TELEGRAM_PHONE_NUMBER=your_telegram_phone_number
