@@ -1,0 +1,13 @@
+Metadata-Version: 2.3
+Name: llm_ensemble
+Version: 0.0.1
+Summary: Create ensembles of Large Language Models to query them all at the same time.
+Project-URL: Homepage, https://github.com/johasam/llm_ensemble
+Project-URL: Issues, https://github.com/johasam/llm_ensemble/issues
+Author-email: Johannes Samelin <johannessamelin@gmail.com>
+License-File: LICENSE
+Keywords: Anthropic,ChatGPT,Claude,Large Language Model,OpenAI
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8

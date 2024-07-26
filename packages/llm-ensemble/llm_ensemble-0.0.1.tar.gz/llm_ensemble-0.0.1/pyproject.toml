@@ -1,0 +1,29 @@
+[project]
+name = "llm_ensemble"
+version = "0.0.1"
+authors = [
+  { name="Johannes Samelin", email="johannessamelin@gmail.com" },
+]
+description = "Create ensembles of Large Language Models to query them all at the same time."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = [
+	"ChatGPT",
+	"Large Language Model",
+	"OpenAI",
+	"Anthropic",
+	"Claude"
+]
+
+[project.urls]
+Homepage = "https://github.com/johasam/llm_ensemble"
+Issues = "https://github.com/johasam/llm_ensemble/issues"
+
+[build-system]
+requires = ["hatchling", "anthropic==0.31.2", "openai==1.37.0"]
+build-backend = "hatchling.build"
