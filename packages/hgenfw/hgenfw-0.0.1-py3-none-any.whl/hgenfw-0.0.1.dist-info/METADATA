@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: hgenfw
+Version: 0.0.1
+Summary: Header File Gen FW
+Home-page: https://github.com/FarAway6834/Hgen
+Author: FarAway6834
+Author-email: faway6834@gmail.com
+Keywords: FarAway,FarAway6834,HeaderFileGen,Hgen,my personal hfilegen libs,C/C++,hfilegen,HgenFW,
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: mypkggener
+Requires-Dist: setuptools
+Requires-Dist: cython
+
