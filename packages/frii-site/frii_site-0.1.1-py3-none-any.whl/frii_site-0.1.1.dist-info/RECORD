@@ -1,0 +1,7 @@
+frii_site/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+frii_site/api.py,sha256=wsS4OQBrE45-6YoM5YhGz9m1z9kLGPR2MxYKdwDzp4s,2858
+frii_site/exceptions.py,sha256=5HwwDaovkaluOLHVoUavo-XjwBFKR80aewouUN0XYDs,220
+frii_site/perms.py,sha256=5gOpoYxKIwd_oUX5oveVQfYzPOmcPisVKDh4mRJfcXQ,161
+frii_site-0.1.1.dist-info/METADATA,sha256=m5gah5XWRDcVj3ZyXLfQwkch7Wv9_ywImlDKJfQOavg,1264
+frii_site-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+frii_site-0.1.1.dist-info/RECORD,,
