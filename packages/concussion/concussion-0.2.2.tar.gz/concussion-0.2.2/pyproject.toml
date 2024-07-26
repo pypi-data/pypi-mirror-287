@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "concussion"
+version = "0.2.2"
+description = "It's kinda like Bash except it causes severe brain damage because it's actually a Python REPL."
+authors = ["Maddy Guthridge <hello@maddyguthridge.com>"]
+license = "MIT"
+readme = "README.md"
+
+repository = "https://github.com/MaddyGuthridge/concussion"
+
+include = ["py.typed"]
+packages = [
+    { include = "concussion" }
+]
+
+[tool.poetry.urls]
+"Online Documentation" = "https://github.com/MaddyGuthridge/concussion"
+"Bug Tracker" = "https://github.com/MaddyGuthridge/concussion/issues"
+
+[tool.poetry.scripts]
+concussion = "concussion.__main__:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
