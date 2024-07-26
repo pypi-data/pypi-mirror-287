@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "frii-site"
+version = "0.1.1"
+description = "Library for contacting the frii.site API"
+authors = ["ctih <nevalaonni@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.2"
+requests-mock = "^1.12.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
