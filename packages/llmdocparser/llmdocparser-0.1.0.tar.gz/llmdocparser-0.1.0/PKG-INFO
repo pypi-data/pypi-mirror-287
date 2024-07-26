@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: llmdocparser
+Version: 0.1.0
+Summary: Using LLM to parse PDF and get better chunk for retrieval
+Author: FreddieChan
+Author-email: FreddieChan992@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: GeneralAgent (>=0.3.21,<0.4.0)
+Requires-Dist: langchain (==0.2.11)
+Requires-Dist: langchain_openai (==0.1.17)
+Requires-Dist: numpy (==1.26.4)
+Requires-Dist: openpyxl (==3.1.5)
+Requires-Dist: paddleocr (==2.8.1)
+Requires-Dist: paddlepaddle (==2.6.1)
+Requires-Dist: premailer (==3.10.0)
+Requires-Dist: pymupdf (>=1.24.7,<2.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: setuptools (==71.1.0)
+Requires-Dist: shapely (>=2.0.1,<3.0.0)
+Description-Content-Type: text/markdown
+
+# LLMDocParser
+
+A package for parsing PDFs and analyzing their content using LLMs.
+
+## Installation
+
+```commandline
+pip install llmdocparser
+```
+
+## Usage
+
+```python
+from llmdocparser import get_image_content
+
+content = get_image_content(
+    llm_type="azure",
+    pdf_path="path/to/your/pdf",
+    output_dir="path/to/output/directory",
+    max_concurrency=5,
+    azure_deployment="azure-gpt-4o",
+    azure_endpoint="your_azure_endpoint",
+    api_key="your_api_key"
+)
+print(content)
