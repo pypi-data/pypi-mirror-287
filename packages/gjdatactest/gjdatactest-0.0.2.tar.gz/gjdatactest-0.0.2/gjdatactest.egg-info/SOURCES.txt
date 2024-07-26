@@ -1,0 +1,6 @@
+setup.py
+gjdatactest.egg-info/PKG-INFO
+gjdatactest.egg-info/SOURCES.txt
+gjdatactest.egg-info/dependency_links.txt
+gjdatactest.egg-info/requires.txt
+gjdatactest.egg-info/top_level.txt
