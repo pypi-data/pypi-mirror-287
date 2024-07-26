@@ -1,0 +1,16 @@
+pysfcgal/sfcgal.py,sha256=6XrC-s7JZgFbNNWW2esSlQP3HzXQYfTWdbytEpJCF2E,50622
+pysfcgal/sfcgal_build.py,sha256=YoskqHJ6Mmwpsc0wDnDnl4vtbTxf9Ftmf1xMRbr93_8,954
+pysfcgal/_sfcgal.pyd,sha256=ENLe23Tg7EtMUfhBzzafL4NaeBl-IVWGmmbbu1yENLM,82944
+pysfcgal/__init__.py,sha256=NHj621AhLKIBWNkTIprWtRoXKR3TfnjvsNcX7OIR5r0,338
+PySFCGAL-1.5.2.dist-info/DELVEWHEEL,sha256=neXzTEuUu_lKM5X1OsAVQS8GB-fJHGScFvRjjkSs6-g,219
+PySFCGAL-1.5.2.dist-info/LICENSE.md,sha256=idHHct050J8PAd7ER8AqVWJA8Fj8WxkM-1l616mQALY,35499
+PySFCGAL-1.5.2.dist-info/METADATA,sha256=7z7npGS0BMeIDvjrpBC7BHzGrGZ4-fF2zwgV82hIhQ0,797
+PySFCGAL-1.5.2.dist-info/RECORD,,
+PySFCGAL-1.5.2.dist-info/top_level.txt,sha256=yiRaVtuv5P7kVaOmXAIVj2g1B6ZnEs7-KpNK95_LJ44,9
+PySFCGAL-1.5.2.dist-info/WHEEL,sha256=a7uKbwsC-jaWILXrHBfbCoELaoc3NJo_uE06BJFfWa4,101
+PySFCGAL.libs/boost_serialization-vc143-mt-x64-1_84-519dab484fba9412ba097270ea86e035.dll,sha256=uuO8GbaLU5dY7_2oDAY7pUu7gOw3FsgkHwUKWY2llZY,221184
+PySFCGAL.libs/gmp-10-a28e9d39eda840abf61d2114c15a76ac.dll,sha256=k3_Zqh9ehfv-xEhLsvp-YgsX5i0Q0bFlZBQ1_Rq2Mlo,426496
+PySFCGAL.libs/gmpxx-4-c04d94b94e4d923b1e36f56aa6f26385.dll,sha256=uvpN5osEtV-_XwHn05HVqfEKhxbs1L4_DWlxKmFUrmg,26624
+PySFCGAL.libs/mpfr-6-c367b6a84357eb6024c57b8c86c4c46c.dll,sha256=xeVphEQGKfmuD--m7OSqnWM1Kjr-l1b9sDQXscT19dg,415232
+PySFCGAL.libs/msvcp140-0adc1efb950de27421d92a89bae17d15.dll,sha256=Hlem3543QuMaHG2b_4Hr7q6KfeO0WiblB51eHM5UzZg,573008
+PySFCGAL.libs/SFCGAL-dd216236eaf4fd08a35d72070a51a58f.dll,sha256=mCaiV85Pa6YbVpVHBSdaOmeKjc5vadF9WxwGWB9dITs,5451264
