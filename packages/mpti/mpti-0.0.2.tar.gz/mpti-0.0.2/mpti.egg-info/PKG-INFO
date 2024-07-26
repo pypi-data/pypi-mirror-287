@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: mpti
+Version: 0.0.2
+Summary: MyPathTemperImporter
+Home-page: https://github.com/FarAway6834/MyPathTemperImporter
+Author: FarAway6834
+Author-email: faway6834@gmail.com
+Keywords: FarAway,FarAway6834,MyPathTempImporter,MPTI,imports more perfact,imports
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: mypkggener
+Requires-Dist: hgen
