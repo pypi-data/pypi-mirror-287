@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+VERSION.txt
+setup.py
+idr_bench/__init__.py
+idr_bench/__main__.py
+idr_bench/grid_space.py
+idr_bench/launcher.py
+idr_bench/result.py
+idr_bench/slurm_job.py
+idr_bench/utils.py
+idr_bench.egg-info/PKG-INFO
+idr_bench.egg-info/SOURCES.txt
+idr_bench.egg-info/dependency_links.txt
+idr_bench.egg-info/entry_points.txt
+idr_bench.egg-info/top_level.txt
