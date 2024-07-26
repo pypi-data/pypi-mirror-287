@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: esg_lib
+Version: 0.1
+Summary: ESG Global Library
+Home-page: UNKNOWN
+Author: Myrza Nurmanbetov
+Author-email: hakedhacked0@gmail.com
+License: UNKNOWN
+Description: # ESG Global Library
+        1. audit_logger_module
+        2. decorators
+        3. Paginator
+        4. reqparse
+        5. Document
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
