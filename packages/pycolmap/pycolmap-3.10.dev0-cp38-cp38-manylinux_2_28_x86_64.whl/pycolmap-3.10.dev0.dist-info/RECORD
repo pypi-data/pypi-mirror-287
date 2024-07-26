@@ -1,0 +1,7 @@
+pycolmap.cpython-38-x86_64-linux-gnu.so,sha256=Q7e0H83TwqQDr9gqiz8GW-dspJohXs8t0p4hY9VdKp4,28447577
+pycolmap-3.10.dev0.dist-info/WHEEL,sha256=EBXK40LMJTIjh61IX9xA7E9JO48mkTPbNq2n72JVmNI,115
+pycolmap-3.10.dev0.dist-info/RECORD,,
+pycolmap-3.10.dev0.dist-info/METADATA,sha256=1XlwMBCEmDAf6sTt-LgM-5CG-Y_MCqSfZswficB3Ius,10745
+pycolmap.libs/libgomp-24e2ab19.so.1.0.0,sha256=7DVDy2-hHzQlj-PVkILkvZdAoYNJ4Jf8Qqe8aSohvyw,253289
+pycolmap.libs/libgfortran-93980b03.so.5.0.0,sha256=VRPmUjgQd_BY9MZtJxiNd9ToNjdBD8kmV1-G0G2SSKU,2714697
+pycolmap.libs/libquadmath-776d53b6.so.0.0.0,sha256=3FY9LfNiF_4qtQ_ZZncl3g5v7__d2mmyG-o2kSRS-8Q,272193
