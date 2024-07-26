@@ -1,0 +1,12 @@
+myopic_mces/MCES_ILP.py,sha256=Wl22bAdLgcukKy0M4eu0bfN1jnT-djdeI3vUIj2kiGM,6021
+myopic_mces/__init__.py,sha256=NIKZKRcbo2eH7IlP5JXIcrHSCz5Oqml4ZNVZZyZpHfY,241
+myopic_mces/filter_MCES.py,sha256=OJeb4N1DmJjIGnt_5oL5kHQZpDUGhjAl58Ijkv32fgg,8705
+myopic_mces/filter_dataset.py,sha256=hFpLrdBItWBRB-gHVrgzRdcLVhpPc7yh2WEYtjJt3jg,4556
+myopic_mces/graph.py,sha256=07F37ZHcM2vAy77T4d1ub4tX0gXAL8g1zgMUrPYawwU,936
+myopic_mces/myopic_mces.py,sha256=-R6i5HYd5OHHmx5RnXqthDg-CgAyrVyCBeZxARzqxNQ,8639
+myopic_mces/prepare_input.py,sha256=HUgetyFsDHb-aipVL2kbi8wQ5d3hrArfRwJo-awnXis,3581
+myopic_mces-1.0.1.dist-info/METADATA,sha256=oIxTiMTNRuARjYwZRb6OoKtMKTjJ-bFyy15bEp9RFmg,8558
+myopic_mces-1.0.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+myopic_mces-1.0.1.dist-info/entry_points.txt,sha256=uaYSQWPsSa9yAEDZaSVC07RAIKoQhDlAuxz2Iy_otNc,61
+myopic_mces-1.0.1.dist-info/licenses/LICENSE,sha256=d5nM9Wx0q_0JLZ6SKGjPpDYVRFv-QwYe6_tZpiAFnfk,1065
+myopic_mces-1.0.1.dist-info/RECORD,,
