@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: spider-cloud-cos
+Version: 5.1.9.32
+Summary: 文件云存储连接
+Home-page: https://gitlab.zhuanspirit.com/xiefengcheng/spider_cloud_cos
+Author: xfc
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# 文件存储云服务
+
+### 文件字节流式上传
+
+引用对象CosClientWrapper的指定上传方式put_object接受两个参数：
+
+| 入参      | 数据类型 | 说明     |
+| --------- | -------- | -------- |
+| response  | byte     | 字节流   |
+| file_path | string   | 文件路径 |
+|           |          |          |
+
+使用案例：
+
+```python
+from spider_cloud_cos.scos_client import CosClientWrapper
+
+response = requests.get(url, headers=headers, timeout=50)
+res = response.content
+#路径：平台/业务/日期/关键标识.jpg。eg：kuaishou/qianshuju/20240725/xxxxww.jpg
+tel = CosClientWrapper().put_object(res, 'kfyq_spider/plat_315/123123321.jpg')
+```
+
+返回值展示：
+
+```json
+{
+    "url": "https://sv6086.zhuanstatic.com/2a16Kte43GK/kfyq_spider/plat_315/kkkk999.jpg",
+    "Content-Length": "0",
+    "Connection": "keep-alive",
+    "Date": "Thu, 25 Jul 2024 09:30:55 GMT",
+    "ETag": "\"9e604ca6ffb0528395aa8c63dbb047c7\"",
+    "Server": "tencent-cos",
+    "Vary": "Origin, Access-Control-Request-Headers, Access-Control-Request-Method",
+    "x-cos-hash-crc64ecma": "17372824613781591196",
+    "x-cos-request-id": "NjZhMjFiNGZfZDNiOTViNjRfMTM1OWVfMWU2ZjU5MA==",
+    "x-cos-storage-class": "STANDARD"
+}
+```
+
+### 校验成功
+
+返回值ETag是否有值，成功状态response_json.get("ETag") == True
