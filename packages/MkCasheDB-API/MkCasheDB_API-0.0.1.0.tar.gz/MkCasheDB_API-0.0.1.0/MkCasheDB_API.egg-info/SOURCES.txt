@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+MkCasheDB_API/Config.txt
+MkCasheDB_API/MemoryCasheDataBase_Client.dll
+MkCasheDB_API/MemoryCasheDataBase_Client.py
+MkCasheDB_API/StaticSystemNumeral.py
+MkCasheDB_API/__init__.py
+MkCasheDB_API.egg-info/PKG-INFO
+MkCasheDB_API.egg-info/SOURCES.txt
+MkCasheDB_API.egg-info/dependency_links.txt
+MkCasheDB_API.egg-info/top_level.txt
