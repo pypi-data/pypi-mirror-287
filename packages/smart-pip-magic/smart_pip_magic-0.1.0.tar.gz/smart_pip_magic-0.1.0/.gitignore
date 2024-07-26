@@ -1,0 +1,6 @@
+dist/*
+src/*.egg-info
+.venv
+env
+__pycache__/
+.python-version
