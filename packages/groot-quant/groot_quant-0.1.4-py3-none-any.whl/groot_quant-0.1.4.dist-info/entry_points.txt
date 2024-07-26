@@ -1,0 +1,2 @@
+[console_scripts]
+imgroot = main:Go
