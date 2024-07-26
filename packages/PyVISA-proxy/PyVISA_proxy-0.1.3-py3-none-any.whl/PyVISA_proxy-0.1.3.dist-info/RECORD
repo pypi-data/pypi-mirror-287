@@ -1,0 +1,15 @@
+pyvisa_proxy/__init__.py,sha256=lNNQHvx66lctiaCFdxv0XGupG7W_ED3riUFEjU3AUFk,467
+pyvisa_proxy/__main__.py,sha256=ESbs9Uihc4iDQvDOfeGMOj5PP1yTuysT72NML77sw5c,455
+pyvisa_proxy/_main.py,sha256=0jmwtFZFAK7HA0GNowKLNGNz9aJ0eLGYlqiP9KVuuR0,1373
+pyvisa_proxy/_version_handling.py,sha256=lMop2vSGPAN7pmUCGXTw5JCzU5ReYzMecQTPmFynq-c,415
+pyvisa_proxy/highlevel.py,sha256=F3VMDwFIZjqOUjJc2FggkZOSWF74_2v0PfH5AcG7IX0,11968
+pyvisa_proxy/proxy_resource.py,sha256=HqR2ciHf59arAzixCdHEcP8Is6hXMwC4Masdiit_ZsQ,2947
+pyvisa_proxy/proxy_server.py,sha256=edDluv3357PKloCqEaqJkm4NrgxnXY7q_7kAIPSPgMA,12994
+pyvisa_proxy/rpc_client.py,sha256=kWa3qbI6OExvU75Fbfopbf8vlsRw-zQhuIJWARW6rVA,2300
+pyvisa_proxy/data/job.schema.json,sha256=1oG5Wv1xQv5lZ4BZeaZvwN-NmLGjMj9mGOUy12MSF4w,4667
+PyVISA_proxy-0.1.3.dist-info/AUTHORS,sha256=NYtpAj8shuxcvs8-c0iPfbtfNAWfvTBdjKDITGcZics,90
+PyVISA_proxy-0.1.3.dist-info/LICENSE,sha256=rcOWrtYDbz9lopTSdHLOj9AshrmSImWtlOiNbQMTu0E,1074
+PyVISA_proxy-0.1.3.dist-info/METADATA,sha256=KyvTOIXjgRY9y5cx2ET7WTp0xj278DHShjW8QSgvWqw,4304
+PyVISA_proxy-0.1.3.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+PyVISA_proxy-0.1.3.dist-info/top_level.txt,sha256=2JKZhhL5-LcJmzkblhj_pqcuE8kOCNOzRLq6TE_p4zA,13
+PyVISA_proxy-0.1.3.dist-info/RECORD,,
