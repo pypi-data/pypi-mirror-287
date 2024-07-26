@@ -1,0 +1,8 @@
+moneyunify/__init__.py,sha256=lDu2R8TBM_PlFvbdHY9fnnikx9bgSxzznMwgFcqWelg,121
+moneyunify/client.py,sha256=3wQlJOqa1pUTgsnJliUcvwNbJ_yYILH9BWhtKnBusYA,2495
+tests/__init__.py,sha256=UD24tD8Fznb9MTNbXI6FvP1q6mzId6fXJVJobIf9lko,181
+tests/test_client.py,sha256=SRsKyCzoA-E91nNXDyRTiHVPkSO1NKpRQ1TfvJloU_Q,709
+moneyunify-0.1.dist-info/METADATA,sha256=t2TichGqi_jpePr309Xqub1QV0dr8MyTUZ4XcdvZl2Y,1365
+moneyunify-0.1.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+moneyunify-0.1.dist-info/top_level.txt,sha256=CrKBJvrUE4mQs-Pz3-QRHuSdC-UQg6X9x37uc-xYfb8,17
+moneyunify-0.1.dist-info/RECORD,,
