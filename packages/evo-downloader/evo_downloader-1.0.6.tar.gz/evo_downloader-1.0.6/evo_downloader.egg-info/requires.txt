@@ -1,0 +1,17 @@
+requests
+rich
+click
+humanize
+types-requests
+
+[test]
+pytest
+coverage
+flake8
+black
+isort
+pytest-cov
+codecov
+mypy
+gitchangelog
+mkdocs
