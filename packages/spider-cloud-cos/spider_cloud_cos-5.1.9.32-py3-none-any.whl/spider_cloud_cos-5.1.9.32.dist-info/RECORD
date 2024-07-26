@@ -1,0 +1,14 @@
+spider_cloud_cos/__init__.py,sha256=3KpUtMrcxWnf2Ov5vgGcQYDBJ0iVhAd4GYsA6VVoinI,523
+spider_cloud_cos/scos_auth.py,sha256=8ow37bQbWVudQHog80yMSY9Z_Y7QVAWI1pOIChAvWdI,7741
+spider_cloud_cos/scos_client.py,sha256=TvTFAtmSzm7QnfIH_UI0Wbpp0levyl1Lj0K2w2XsKCQ,7361
+spider_cloud_cos/scos_comm.py,sha256=CeKImI8ANUue9rgq2GMalepJGOHQUZRVlGVGE893L6I,22353
+spider_cloud_cos/scos_config.py,sha256=Aw3TFUMiCKeyYZkFF3ia1PdMDG557LTcI4Ncj7MKgvA,10058
+spider_cloud_cos/scos_exception.py,sha256=PHp1gtwhJQgmqiuILqISqEgZBVB8Hgim8cJzoVqPSgU,3048
+spider_cloud_cos/select_event_stream.py,sha256=KhT1ZI3rXXz1F2W1IQLSG3kPijY90X2VHYZb7mtF-JA,4393
+spider_cloud_cos/streambody.py,sha256=rJL0LH0llIZCfCRnVnxv_Ka3Vp5F7wGKUrlUfjwnJeI,3094
+spider_cloud_cos/version.py,sha256=DQa-7XAvDa-anLZ3epeO-bNLo_23z7-rRkzi88cxq4E,26
+spider_cloud_cos/xml2dict.py,sha256=c6DBy9e1yYQNN29nvHd7AB9GKB6Dsx1nuVL13ZxPjcU,1783
+spider_cloud_cos-5.1.9.32.dist-info/METADATA,sha256=9QMyTIXHsj-h-H8vhWxzX6UfhNrYMu7QTV9cMnwXLyU,1965
+spider_cloud_cos-5.1.9.32.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+spider_cloud_cos-5.1.9.32.dist-info/top_level.txt,sha256=SqaVLtSbEg0e8xu4eagPMFGB9S_25jFY8uzfDHfM2q8,17
+spider_cloud_cos-5.1.9.32.dist-info/RECORD,,
