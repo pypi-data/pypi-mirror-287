@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: pike-meta
+Version: 0.1.7
+Summary: A tool for Oxford Nanopore amplicon metagenomics
+Home-page: https://github.com/DanilKrivonos/Pike
+Author: D.V. Krivonos
+Author-email: danil01060106@gmail.com
+Project-URL: Bug Tracker, https://github.com/DanilKrivonos/Pike
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scikit-bio
+Requires-Dist: biopython
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: hdbscan
+Requires-Dist: umap-learn
+Requires-Dist: medaka
+
+Pike

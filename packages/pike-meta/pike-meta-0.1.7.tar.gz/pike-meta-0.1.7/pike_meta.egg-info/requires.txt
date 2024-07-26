@@ -1,0 +1,9 @@
+numpy
+scikit-bio
+biopython
+pandas
+scipy
+scikit-learn
+hdbscan
+umap-learn
+medaka
