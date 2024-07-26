@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+varstrat.egg-info/PKG-INFO
+varstrat.egg-info/SOURCES.txt
+varstrat.egg-info/dependency_links.txt
+varstrat.egg-info/entry_points.txt
+varstrat.egg-info/top_level.txt
