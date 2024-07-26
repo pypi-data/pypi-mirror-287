@@ -1,0 +1,2 @@
+[console_scripts]
+keith3390-ioc = keith3390.main:main
