@@ -1,0 +1,2 @@
+[segno.plugin.converter]
+other_pattern = segno_plugin:write_other_pattern

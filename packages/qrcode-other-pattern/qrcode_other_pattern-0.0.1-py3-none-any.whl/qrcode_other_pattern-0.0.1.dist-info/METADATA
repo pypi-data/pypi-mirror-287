@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: qrcode-other-pattern
+Version: 0.0.1
+Author-email: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
+Project-URL: Home, https://github.com/six519/qrcode-other-pattern
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+Requires-Dist: segno >=1.6.1
+Requires-Dist: Pillow >=10.4.0
+
+qrcode-other-pattern
+====================
+
+.. image:: example.png
+
+This `Segno <https://github.com/heuer/segno>`_ plugin can change the QR code's black modules into your own shapes instead of squares.
+
+Installing Through PyPi
+=======================
+::
+
+    pip3 install qrcode-other-pattern
+
+Using the library
+=================
+::
+
+    import segno
+
+    qr_code = segno.make('https://ferdinandsilva.com')
+    new_pattern = qr_code.to_other_pattern(scale=10, border=2, file_pattern='pattern.png', dark='orange', light='blue')
+    new_pattern.save('example.png')
