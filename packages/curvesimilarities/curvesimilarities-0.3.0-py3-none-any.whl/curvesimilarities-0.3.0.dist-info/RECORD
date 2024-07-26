@@ -1,0 +1,15 @@
+curvesimilarities/__init__.py,sha256=YYdX6CUy--YTiRFWQ5OnGqy17dxeC0glBbOccI0Pl84,274
+curvesimilarities/dtw.py,sha256=4Szq7w0A6nYBC6pCVHqKCV_P8A7m_FP6vozKnTkhlKw,4403
+curvesimilarities/frechet.py,sha256=wpHQ0dZ_R_iyPx4tAZAL2d0uWdB2chFhcZspT4XUx2E,7353
+curvesimilarities/integfrechet.py,sha256=C_5XnT193NTFkkvY7ckm7d0NJ8sPEhzLZAT_97ZWRc8,4770
+curvesimilarities/util.py,sha256=Zg6NjlQ4DQIkPFp3gAPVuBfnHKaYdp6T8Nmlu1I6xZE,6511
+curvesimilarities/_algorithms/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+curvesimilarities/_algorithms/dfd.py,sha256=Anz6liWbwVgvN8lELz0ZpPibB7eV9r4tQoBgj2J2gKQ,2574
+curvesimilarities/_algorithms/dtw.py,sha256=8MJC4E2smP11GHRtboGAMUHyqcWmB5QdI6_CdVf5iF8,2958
+curvesimilarities/_algorithms/fd.py,sha256=5EYfIezLPYh08htI9kkHL7L8mdNul8ikb8COr-DmklU,12621
+curvesimilarities/_algorithms/ifd.py,sha256=U-g_2rv_8wnxYqmLNGwRwqaybF7s32w6LYOgCZJnzrw,17317
+curvesimilarities-0.3.0.dist-info/LICENSE,sha256=a5iMWQQxKfZhIUo-SVBH3D88M5MUrs4CDE0rwE61f6M,1459
+curvesimilarities-0.3.0.dist-info/METADATA,sha256=YIPT9b73fp9f3LNQoU8uhCE1VUmPfqCrS2ZuLJafySs,5188
+curvesimilarities-0.3.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+curvesimilarities-0.3.0.dist-info/top_level.txt,sha256=px5qA2ZgVvKld_2IExFK20KREO5XhDSAIcu-orGYmf0,18
+curvesimilarities-0.3.0.dist-info/RECORD,,
