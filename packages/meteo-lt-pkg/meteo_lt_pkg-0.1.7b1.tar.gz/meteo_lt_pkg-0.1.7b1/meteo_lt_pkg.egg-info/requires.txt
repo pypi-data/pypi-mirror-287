@@ -1,0 +1,14 @@
+aiohttp>=3.9.5
+scipy>=1.14.0
+numpy>=2.0.1
+
+[dev]
+pytest>=6.2.4
+pytest-cov>=2.12
+pytest-asyncio
+twine>=5.1.1
+black
+coverage
+flake8
+pyflakes
+pylint
