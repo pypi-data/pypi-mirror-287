@@ -1,0 +1,12 @@
+domainiac/__init__.py,sha256=7-KoUot9OZgzMoOLhuHInlvyt9EfL5QjuZagTbAJksU,82
+domainiac/managers/__init__.py,sha256=QzkZNv8_3G0TPcfQia45RWBnASYR6WIuY6jlFBeley0,220
+domainiac/managers/masterdata_manager.py,sha256=tl37saXdH1aeek3Oo58nTxl-eL2txKnmpwVHkyij7n0,2099
+domainiac/managers/metering_manager.py,sha256=NXGHuNjWiAUE08fGIPAfvwbzlKESbKaO5uyxLNyZKC0,995
+domainiac/managers/plant_manager.py,sha256=sEVc3_RaJaG-beT7kv3rgvCtaWLCuXuhxy21mk360Og,1944
+domainiac/managers/resource_manager.py,sha256=XrljefTUFqSBayLATtWERpeIVXNEHVX4NUkgX77p_RI,3858
+domainiac/managers/unit_manager.py,sha256=8B0hRu_tlZfaZYKDnM0NAQoJ6a1s_8DicBM9v6GEkYE,1174
+domainiac/wrappers/__init__.py,sha256=vZOw9maXgVoAvudZqioD-GTPkgPI6fm7_CUELQcR_-g,43
+domainiac/wrappers/cache_wrapper.py,sha256=jDg-Lt_y-YzItyP-74tGULOxb07s_CcutmOHP1Ie00Q,355
+domainiac-0.2.0.dist-info/METADATA,sha256=pzMfJlQ7E8NRfe-veyDqrZ-KLL0-enj6V5AxaQO_Am4,465
+domainiac-0.2.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+domainiac-0.2.0.dist-info/RECORD,,
