@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: moneyunify
+Version: 0.1
+Summary: A Python client for the MoneyUnify API to simplify mobile money payments
+Home-page: https://github.com/lembani/moneyunify_py
+Author: Lembani Sakala
+Author-email: lembanisakala@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.1
+
+# MoneyUnify Python Client
+
+The MoneyUnify Python Client is a package designed to simplify mobile money (MTN, Airtel, Zamtel) payments for businesses. It allows you to request payments, verify transaction statuses, and disburse funds using the MoneyUnify API.
+
+## Installation
+
+Install the package using pip:
+
+```bash
+pip install moneyunify
+```
+
+## Usage
+
+### Initialize the Client
+
+```python
+from moneyunify import MoneyUnifyClient
+
+client = MoneyUnifyClient(muid='your_moneyunify_id')
+```
+
+### Request Payment
+
+```python
+response = client.request_payment('0765655244', 5)
+print(response)
+```
+
+### Verify Transaction
+
+```python
+response = client.verify_transaction('transaction_reference')
+print(response)
+```
+
+### Send Money
+
+```python
+response = client.send_money('yourname@email.com', 'Iza', 'Sakir', '096xxxxxxx', 'Settle All funds from MoneyUnify')
+print(response)
+```
