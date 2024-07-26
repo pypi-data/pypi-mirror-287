@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+easy_async_tg_notify/__init__.py
+easy_async_tg_notify/notifier.py
+easy_async_tg_notify.egg-info/PKG-INFO
+easy_async_tg_notify.egg-info/SOURCES.txt
+easy_async_tg_notify.egg-info/dependency_links.txt
+easy_async_tg_notify.egg-info/requires.txt
+easy_async_tg_notify.egg-info/top_level.txt
