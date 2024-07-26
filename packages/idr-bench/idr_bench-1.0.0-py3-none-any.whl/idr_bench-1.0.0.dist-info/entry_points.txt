@@ -1,0 +1,3 @@
+[console_scripts]
+idr_bench = idr_bench.launcher:run
+idr_bench_results = idr_bench.result:gather_results
