@@ -1,0 +1,14 @@
+aiohttp
+scipy
+numpy
+
+[dev]
+pytest
+pytest-cov
+pytest-asyncio
+black
+coverage
+flake8
+pyflakes
+pylint
+build
