@@ -1,0 +1,11 @@
+emmi[scpi,softioc]>=0.6.0
+emmi-escpi
+opentelemetry-api
+opentelemetry-exporter-otlp
+numpy
+scipy
+
+[test]
+pytest
+pytest-cov
+pytest-asyncio

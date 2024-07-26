@@ -1,0 +1,237 @@
+access_class: "keith3390.siggen:SignalGenerator"
+
+access:
+  # This assumes that you have a host 'keith3390-siggen' somewhere
+  # that is resolving to the correct IP address of your device.
+  device: "TCPIP::siggen-keith3390::INSTR"
+
+  # This is the size of the user-defined VOLATILE function that
+  # the Python object will accept. This is what we'll send to the
+  # device. If the input data (via EPICS) is different, we'll
+  # rescale it to this value.
+  # The amplitude should be +/- 8192 (or so).
+  # Note that the 'ufunc' field below is related to this.
+  # the 'length' number there should be the same as here
+  # (that's what the EPICS interface will accept _and_ require).
+  # If it's not, it will work, but you will lose resolution and/or
+  # precision through (Fourier) rescaling.
+  ufunc_size: 65536
+
+  # This is an example of how to pass initialization dialogue
+  # to the device.
+  startup: |
+    VOLT:UNIT VPP
+    BURS:TRIG:SOUR EXT
+
+
+epics:
+  prefix: "KEITH3390:"
+
+fields:
+
+  # The built-in keith3390.siggen.SignalGenerator class has an
+  # emmi.scpi.MagicScpi device available as .scpi, so we can
+  # directly access any fields / properties from there.
+  #
+  # More sophisticated fields (e.g. setting the user-defined function),
+  # which require a multi-step approach, are defined explicitly
+  # in keith3390.siggen.SignalGenerator.
+  #
+  # Keep in mind that this file has direct effect on the functionaliy
+  # of the signal generator. You can change it, but it will come
+  # to bite you in the ass if you don't understand what you're doing.
+  
+  - recordType: "property"
+    property:
+      name: "func"
+      access: "func"
+      kind: "text"
+      actor:
+        suffix: "func"
+      signal:
+        suffix: "func_RBV"
+
+  - recordType: "actor"
+    actor:
+      name: "ufunc"
+      access: "ufunc"
+      kind: "waveform"
+      create:
+        length: 65536
+        FTVL: "ULONG"
+
+
+  # select user function
+  #- recordType: "property"
+  #  property:
+  #    name: "scpi.FUNC.USER"
+  #    kind: "text"
+      #kind: "string"
+      #values:
+      #  - EXP_RISE
+      #  - EXP_FALL
+      #  - NEG_RAMP
+      #  - SINC
+      #  - CARDIAC
+      #  - ASYMPULS1075
+      #  - PUND40
+      #  - AYMPULSE080
+      #  - AYMPULSE105
+      #  - VOLATILE
+
+  # frequency
+  - recordType: "property"
+    property:
+      name: "freq"
+      access: "scpi.FREQ"
+      kind: "analog"
+      signal:
+        suffix: "freq_RBV"
+      actor:
+        suffix: "freq"
+
+  # amplitude
+  - recordType: "property"
+    property:
+      name: "ampl"
+      access: "scpi.VOLT"
+      kind: "analog"
+      signal:
+        suffix: "ampl_RBV"
+      actor:
+        suffix: "ampl"
+
+  # amplitude offset
+  - recordType: "property"
+    property:
+      name: "offs"
+      access: "scpi.VOLT.OFFS"
+      kind: "analog"
+      signal:
+        suffix: "offs_RBV"
+      actor:
+        suffix: "offs"
+
+  # unit of amplitude: "Vpp"/"Vrms"/"dBm"
+  #- type: "property"
+  #  name: "VOLT:UNIT"
+  #  kind: "strings"
+  #  values:
+  #    - VPP
+  #    - VRMS
+  #    - DBM
+
+  # get list of all stored waveforms
+  #- type: "property"
+  #  kind: "text"
+  #  name: "DATA:CAT"
+
+  # duty cycle of SQU function in %
+  #- type: "property"
+  #  name: "FUNC:SQU:DCYC"
+  #  kind: "analog"
+  #    limits:
+  #      min:
+  #        value: 0.0
+  #        inclusive: true
+  #      max:
+  #        value: 100.0
+  #        inclusive: true
+
+  # symmetry of RAMP function in %
+  #- type: "property"
+  #  name: "FUNC:RAMP:SYMM"
+  #  kind: "analog"
+  #    limits:
+  #      min:
+  #        value: 0.0
+  #        inclusive: true
+  #      max:
+  #        value: 100.0
+  #        inclusive: true    
+  #    
+
+  # burst mode: "TRIG" or "GATED"
+  # - type: "property"
+  #    name: "BURS:MODE"
+  #    kind: "strings"
+  #    values:
+  #      - TRIG
+  #      - GATED
+
+  # burst mode: number of cycles sent upon trigger
+  - recordType: "property"
+    property:
+      name: "bcycles"
+      access: "scpi.BURS.NCYC"
+      kind: "analog"
+      actor:
+        suffix: "bcycles"
+      signal:
+        suffix: "bcycles_RBV"
+
+  ## burst mode trigger source "IMM", "EXT", "BUS" 
+  ## FIXME: this should be reduced to a more "general" trigger source naming
+  #- propertyType: "property"
+  #  property:
+  #    name: "tsrc"
+  #    access: "TRIG:SOURCE"
+  #    kind: "strings"
+  #    values:
+  #      - IMM
+  #      - EXT
+  #      - BUS
+  #    actor:
+  #      suffix: "tsrc"
+  #    signal:
+  #      suffix: "tsrc_RBV"
+  #
+  ## burst mode trigger edge "POS", "NEG",
+  #- recordType: "property"
+  #  property:
+  #    name: "tedge"
+  #    access: "TRIG:SLOP"
+  #    kind: "strings"
+  #    values:
+  #      - POS
+  #      - NEG
+  #    actor:
+  #      suffix: "tedge"
+  #    signal:
+  #      suffix: "tedge_RBV"
+
+  # set burst mode to "ON"/"OFF"
+  - recordType: "property"
+    property:
+      name: "burst"
+      access: "scpi.BURS.STAT"
+      kind: "switch"
+      actor:
+        suffix: "burst"
+      signal:
+        suffix: "burst_RBV"
+
+  # turn FG output "ON"/"OFF"
+  - recordType: "actor"
+    actor:
+      name: "onoff"
+      access: "scpi.OUTP"
+      kind: "switch"
+
+  # polarity of output "NORM"/"INV"
+#  - type: "property"
+#    name: "OUTP:POL"
+#    kind: "strings"
+#    values:
+#      - NORM
+#      - INV
+
+  # output termination: <ohms>
+#  - type: "property"
+#    name: "OUTP:LOAD"
+#    kind: "analog"
+
+  # output sync signal: "ON"/"OFF"
+#  - type: "property"
+#    name: "OUTP:SYNC"
+#    kind: "switch"

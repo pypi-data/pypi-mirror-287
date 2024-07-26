@@ -1,0 +1,70 @@
+[build-system]
+requires = [
+    "setuptools>=64.0",
+    "setuptools_scm[toml]>=6.2"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keith3390-ioc"
+authors = [
+  { name="Florin Boariu", email="florin.pt@rootshell.ro" },
+  { name = "Matthias Rössle", email = "matthias.roessle@helmholtz-berlin.de" },  
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering"
+]
+dependencies = [
+    "emmi[softioc,scpi]>=0.6.0",
+    "emmi-escpi",
+    "opentelemetry-api",
+    "opentelemetry-exporter-otlp",
+    "numpy",
+    "scipy"
+]
+dynamic = [
+    "version"
+]
+description = "EMMI-based IOC for the Keithley 3390 signal generator"
+readme = "README.md"
+requires-python = ">= 3.8"
+keywords = []
+
+
+[project.urls]
+"Source Code" = "https://gitlab.com/kmc3-xpp/keith3390-ioc/"
+"Bug Tracker" = "https://gitlab.com/kmc3-xpp/keith3390-ioc/-/issues"
+
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-asyncio",
+]
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -s"
+log_cli = true
+testpaths = [ "test" ]
+
+[tool.coverage.run]
+branch = true
+command_line = "pytest"
+include = [ "src/keith3390/" ]
+source_pkgs = [ "keith3390" ]
+omit = [ "./test/*" ]
+
+[tool.setuptools_scm]
+write_to = "src/keith3390/_version.py"
+
+[project.scripts]
+keith3390-ioc = "keith3390.main:main"
