@@ -1,0 +1,11 @@
+README.rst
+example.png
+pattern.png
+pyproject.toml
+segno_plugin.py
+qrcode_other_pattern.egg-info/PKG-INFO
+qrcode_other_pattern.egg-info/SOURCES.txt
+qrcode_other_pattern.egg-info/dependency_links.txt
+qrcode_other_pattern.egg-info/entry_points.txt
+qrcode_other_pattern.egg-info/requires.txt
+qrcode_other_pattern.egg-info/top_level.txt
