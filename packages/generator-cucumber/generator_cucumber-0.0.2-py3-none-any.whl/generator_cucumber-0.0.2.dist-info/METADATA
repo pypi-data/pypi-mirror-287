@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: generator-cucumber
+Version: 0.0.2
+Summary: Generation .feature file
+Home-page: https://github.com/DemonDis/bdd_generator
+Author: Dmitry Shibikin
+Author-email: dmitry.shibikin@yandex.ru
+License: UNKNOWN
+Project-URL: Documentation, https://github.com/DemonDis/bdd_generator
+Keywords: python cucmber generator
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: python-gitlab ==4.8.0
+
+# Cucmber generator
+
+РџСЂРѕРµРєС‚ РЅР°С…РѕРґРёС‚СЊСЃСЏ РЅР° СЃС‚Р°РґРёРё СЂР°Р·СЂР°Р±РѕС‚РєРё
+
+### Structure
+```
+# РџСЂРѕРµРєС‚ РїРѕ РіРµРЅРµСЂР°С†РёРё .feature
+в”њв”Ђв”Ђ рџ“Ѓ generator_cucumber/
+|   в”њв”Ђв”Ђ вљ™пёЏ pytest.ini
+|   в”њв”Ђв”Ђ рџ’ѕ requirements.txt
+|   в”њв”Ђв”Ђ рџҐ’ test_app.feature
+|   в”њв”Ђв”Ђ рџђЌ test_app.py
+|   в”њв”Ђв”Ђ рџђЌ test_generator.py
+|   в””в”Ђв”Ђ ... 
+```
+

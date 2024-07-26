@@ -1,0 +1,16 @@
+example/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+example/test_app.py,sha256=9mfU5ovyHVpvq60XNNrFKf7NUCXPa8APFic_iK_5Bug,598
+example/test_generator.py,sha256=zhPc2kxNhVQB8UWOPOcaRfJJecXOCqUzaS8MWnpikYg,633
+generator_cucumber/__init__.py,sha256=Lnkik0AF3laQEo1bJOLCCYhhYD6FyAh9Ud8tYCfOrXw,292
+generator_cucumber/api_github.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+generator_cucumber/api_gitlab.py,sha256=wbghZOdtTv3bYd8_iWaPyepphh4RgoqJ7LoH4u0XxHg,2817
+generator_cucumber/bdd_generator.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+generator_cucumber/cache_file.py,sha256=2rLC5M89ovqqu16QH6ePUPKQCyLJP_hmGmHAtUXw1Qw,759
+generator_cucumber/create_file.py,sha256=JMRAc_CsgMmrOAhlV_iQj6kf2W---86O0ujYaOxJpg4,4481
+generator_cucumber/cucumber_text.py,sha256=b_gzFvxWfJQnXxJmgRwTlvWGBz58EJoMG2bMX9dFhfI,5267
+generator_cucumber/generator.py,sha256=Fo8GO0Ox5M14rZisUoTtjIMZXEnlEzAQWDt7S6gvcYM,2631
+generator_cucumber-0.0.2.dist-info/LICENSE,sha256=jYfgwjIySgwb89YAYGZQqrLnE0s5xkf5hAgh0ycGofY,1103
+generator_cucumber-0.0.2.dist-info/METADATA,sha256=yospupxGcw5umurPbxFiq9PNboJGBXOGifYMrLTPnwo,1275
+generator_cucumber-0.0.2.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+generator_cucumber-0.0.2.dist-info/top_level.txt,sha256=G-448GF0b_SP0g7o96-eTVXN59fdk6hIrYb_ogbvKxY,27
+generator_cucumber-0.0.2.dist-info/RECORD,,
