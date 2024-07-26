@@ -1,0 +1,7 @@
+setup.py
+app/__init__.py
+app/main.py
+srisarveshPackage.egg-info/PKG-INFO
+srisarveshPackage.egg-info/SOURCES.txt
+srisarveshPackage.egg-info/dependency_links.txt
+srisarveshPackage.egg-info/top_level.txt
