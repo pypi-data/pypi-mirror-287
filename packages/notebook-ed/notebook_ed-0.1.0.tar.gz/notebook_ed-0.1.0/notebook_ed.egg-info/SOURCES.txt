@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+notebook_ed.egg-info/PKG-INFO
+notebook_ed.egg-info/SOURCES.txt
+notebook_ed.egg-info/dependency_links.txt
+notebook_ed.egg-info/entry_points.txt
+notebook_ed.egg-info/requires.txt
+notebook_ed.egg-info/top_level.txt
+py2nb/__init__.py
+py2nb/argumentParser.py
+py2nb/converter.py
+py2nb/ignoreFIles.py
+py2nb/test/__init__.py
+py2nb/test/test_converter.py
