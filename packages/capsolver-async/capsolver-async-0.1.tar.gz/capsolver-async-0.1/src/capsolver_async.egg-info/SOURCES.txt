@@ -1,0 +1,12 @@
+README.md
+setup.py
+src/capsolver_async/__init__.py
+src/capsolver_async/api_helper.py
+src/capsolver_async/check.py
+src/capsolver_async/exceptions.py
+src/capsolver_async/pycapsolver.py
+src/capsolver_async.egg-info/PKG-INFO
+src/capsolver_async.egg-info/SOURCES.txt
+src/capsolver_async.egg-info/dependency_links.txt
+src/capsolver_async.egg-info/requires.txt
+src/capsolver_async.egg-info/top_level.txt
