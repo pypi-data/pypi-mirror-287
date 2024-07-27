@@ -1,0 +1,6 @@
+global-exclude *.pyc
+global-exclude __pycache__
+include LICENSE.txt
+prune build-requirements.txt
+prune requirements.txt
+recursive-include arcgis/ *.py
