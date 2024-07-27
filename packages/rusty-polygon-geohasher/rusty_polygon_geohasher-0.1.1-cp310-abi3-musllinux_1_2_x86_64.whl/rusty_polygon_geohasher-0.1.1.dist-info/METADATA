@@ -1,0 +1,9 @@
+Metadata-Version: 2.3
+Name: rusty-polygon-geohasher
+Version: 0.1.1
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# rusty-polygon-geohasher
+
+A Rust implementation of the polygon-geohasher library
+
