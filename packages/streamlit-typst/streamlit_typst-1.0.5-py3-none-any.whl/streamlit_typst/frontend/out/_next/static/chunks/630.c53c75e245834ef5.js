@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[630],{3630:function(e,t,l){let n,a;l.d(t,{createGlobalCompiler:function(){return createGlobalCompiler}});let c=!1;function createGlobalCompiler(e,t){const l=n||e();return void 0!==a?a:a=(async()=>(c=!0,await l.init(t),n=l))()}}}]);
