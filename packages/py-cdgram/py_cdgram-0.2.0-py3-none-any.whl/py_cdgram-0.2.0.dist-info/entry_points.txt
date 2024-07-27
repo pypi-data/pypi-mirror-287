@@ -1,0 +1,2 @@
+[console_scripts]
+pymedia = pymedia.cli:main
