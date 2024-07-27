@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: house-prices-prediction-pipeline
+Version: 0.2
+Summary: A package for house price prediction pipeline.
+Home-page: https://github.com/saadkhalid-git/house_price_prediction_pipeline
+Author: Saad Khalid
+Author-email: tosaadkhalid@gmail.com
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: joblib
+Requires-Dist: scikit-learn
+
+# House Price Package
+
+This package provides tools for predicting house prices. It includes modules for data preprocessing, model training, and making predictions.
+
+## Features
+
+- **Data Preprocessing**: Clean and prepare your data for modeling.
+- **Model Training**: Train machine learning models for house price prediction.
+- **Prediction**: Make predictions on new data using the trained models.
+
+## Installation
+
+You can install the package using pip. Make sure you have `pip` installed and updated:
+
+```bash
+pip install house-prices-prediction-pipeline
+
+
