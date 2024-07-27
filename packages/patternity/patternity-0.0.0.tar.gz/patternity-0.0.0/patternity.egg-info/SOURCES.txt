@@ -1,0 +1,5 @@
+setup.py
+patternity.egg-info/PKG-INFO
+patternity.egg-info/SOURCES.txt
+patternity.egg-info/dependency_links.txt
+patternity.egg-info/top_level.txt
