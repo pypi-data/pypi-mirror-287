@@ -1,0 +1,10 @@
+duck_chat/__init__.py,sha256=TZQ3rA_Tz6M_I2T_Xt-pvkyfl3DLycFc2xGVW956o2k,95
+duck_chat/__main__.py,sha256=XXlC4Ol0wZRbV30BZAqpmLpbrNR1T_sVmoghdQeDEl0,102
+duck_chat/api.py,sha256=IORydfJ4Bu9QSFogHR9KRrNmOc52FE6p45u0D7st4I0,3461
+duck_chat/cli.py,sha256=jUy7VQ_9m0r7xABED2jXXzUnmZOyQLpZ78nxU9Tb3jo,4913
+duck_chat/models.py,sha256=KjtSz4vRdJuY4opWxD0opqRtGKPAdejQxj42m_A1r2A,663
+duck_chat-1.1.1.dist-info/METADATA,sha256=gdCIS3JXZCMXud91g-p8LwQ1lrapMAKim2e63DVWFag,4084
+duck_chat-1.1.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+duck_chat-1.1.1.dist-info/entry_points.txt,sha256=RRcC4Nn4g9ILf4Ai3XIleY0_HbqmVvTCz3gR6OoJVTU,61
+duck_chat-1.1.1.dist-info/licenses/LICENSE,sha256=nEXJ6-WTclemGPj0kRYunIFsmEVbmHz2JcpNLzxlXvo,1070
+duck_chat-1.1.1.dist-info/RECORD,,
