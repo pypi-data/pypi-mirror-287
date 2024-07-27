@@ -1,0 +1,10 @@
+basket/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+basket/cli.py,sha256=iNahlF_0A2EM9N9KAfALyxGm4Wf63_LEfX6oX6PGOe8,8120
+basket/openai_util/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+basket/openai_util/openai_util.py,sha256=rD6-_1Ph5eQNnS3jCg7KxLDtfquEClJpm1Q1KUeDauQ,1264
+orchard_basket-0.1.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+orchard_basket-0.1.0.dist-info/METADATA,sha256=T3NabCNdgstFFkbdpbPTSFS6bZx2KQpebrpGqq_4SXY,2032
+orchard_basket-0.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+orchard_basket-0.1.0.dist-info/entry_points.txt,sha256=W3RnHMsRq7wtu_ieu54FHGKow_XF-6WEiCYismdUEEM,43
+orchard_basket-0.1.0.dist-info/top_level.txt,sha256=N6OR27VJGXU4_E7drAsYmBcdvvpipMXXCdkhVSAYxCE,7
+orchard_basket-0.1.0.dist-info/RECORD,,
