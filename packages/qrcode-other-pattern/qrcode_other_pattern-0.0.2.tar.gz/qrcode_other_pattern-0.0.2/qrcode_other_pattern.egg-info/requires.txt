@@ -1,0 +1,5 @@
+segno>=1.6.1
+Pillow>=10.4.0
+
+[test]
+unittest
