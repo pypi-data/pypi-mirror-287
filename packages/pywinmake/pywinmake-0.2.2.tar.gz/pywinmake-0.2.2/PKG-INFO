@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: pywinmake
+Version: 0.2.2
+Summary: A python tool to build Windows packages
+Requires-Python: >=3.6
+Requires-Dist: coloredlogs
+
+This tool is designed to provide a way to build Windows packages in a similar way to the VLC contrib system. By providing a package.json file, you can define the package's version, dependencies, and build rules.
