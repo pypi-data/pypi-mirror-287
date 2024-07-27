@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+simple_rocket_chat_sender/__init__.py
+simple_rocket_chat_sender/notification_service.py
+simple_rocket_chat_sender.egg-info/PKG-INFO
+simple_rocket_chat_sender.egg-info/SOURCES.txt
+simple_rocket_chat_sender.egg-info/dependency_links.txt
+simple_rocket_chat_sender.egg-info/requires.txt
+simple_rocket_chat_sender.egg-info/top_level.txt

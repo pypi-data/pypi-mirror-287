@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: simple_rocket_chat_sender
+Version: 0.2
+Summary: Send Rocket Chat messages to your server
+Home-page: https://github.com/hybridgeeducation/simple-rocket-chat-sender
+Author: Gerardo Mathus
+Author-email: gerardo@hybridge.education
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: python-dotenv
