@@ -1,0 +1,14 @@
+LICENSE
+README.rst
+pyproject.toml
+src/jugmt/__init__.py
+src/jugmt/cli.py
+src/jugmt.egg-info/PKG-INFO
+src/jugmt.egg-info/SOURCES.txt
+src/jugmt.egg-info/dependency_links.txt
+src/jugmt.egg-info/entry_points.txt
+src/jugmt.egg-info/requires.txt
+src/jugmt.egg-info/top_level.txt
+tests/test_cli.py
+tests/test_module.py
+tests/test_sloc.py
