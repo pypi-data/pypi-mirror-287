@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+localstack_obfuscator/__init__.py
+localstack_obfuscator/cli.py
+localstack_obfuscator/custom_patches.py
+localstack_obfuscator.egg-info/PKG-INFO
+localstack_obfuscator.egg-info/SOURCES.txt
+localstack_obfuscator.egg-info/dependency_links.txt
+localstack_obfuscator.egg-info/entry_points.txt
+localstack_obfuscator.egg-info/requires.txt
+localstack_obfuscator.egg-info/top_level.txt
