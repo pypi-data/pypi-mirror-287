@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: qdatac
+Version: 0.1.0
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Summary: 股票个人量化交易数据中心模块
+Keywords: quantitative trading,stock,rust,automatic trading
+Author-email: buf1024 <buf1024@gmail.com>
+Maintainer-email: buf1024 <buf1024@gmail.com>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+股票个人量化交易数据中心模块 -- 暂时为空，先占位
+

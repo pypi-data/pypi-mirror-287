@@ -1,0 +1,10 @@
+qdatac-0.1.0.dist-info/METADATA,sha256=Z9aykcs_PNCqDh0LhqgAcxt9BsVhaTbA8yDzuKiOzWg,596
+qdatac-0.1.0.dist-info/WHEEL,sha256=b1dgqR9GJBT8bsiih-7Y55_-sPGc5MG-sUXj3y2MXf0,104
+qdatac/sync.py,sha256=Im4xC9SsuH22NAJdtw8HpMEWleg2AaJ7t3SHGT4ITnw,1812
+qdatac/mongo.py,sha256=HH25ocvlKaIc8o-oRlN2yYUxsf996Qi1DoP1707-8qg,18534
+qdatac/__init__.py,sha256=JXZ_bHiA_R3B9t74-R7cXUc4RGjR9srTGYsavp3sMU4,507
+qdatac/qdatac.pyi,sha256=FoJibiTa7boQ1EgCP7A4aSHnJLVQgJgeDgzA3WiVOVI,6707
+qdatac/loader.py,sha256=4KgeoTO3bbOZRFNRjXp7Vdjmrd5I-74WUDdGKj_a05M,8916
+qdatac/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qdatac/qdatac.cpython-312-darwin.so,sha256=h9Ce8GFuHMvVig1NrDxUN50S9cNrE1AAfH49TcbbpuI,34802608
+qdatac-0.1.0.dist-info/RECORD,,
