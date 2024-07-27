@@ -1,0 +1,17 @@
+esiaccel/ESICppRuntime.dll,sha256=gAkk6Q2RcUnjfDaU1Y9LDWTJUfhhxv8K13PqrFsw9-U,2768384
+esiaccel/ESICppRuntime.lib,sha256=VzVCmfqQCmWmLqvZKElcmVpFdlDLmAftEkfeRFvivSA,11128932
+esiaccel/__init__.py,sha256=C0GLqCQuF5g5qTzmAkf_YAHmBV2XAyiJad3Qz7h8u1g,562
+esiaccel/accelerator.py,sha256=c5vN4Cf31lTWcDOqPfFXy-onFtWTLbXymyyNpcVKcOs,2948
+esiaccel/esiCppAccel.cp310-win_amd64.pyd,sha256=wj7VchptSdOMnkj0_l-VTxrrK9er9cGji5t3DMFXyfM,366592
+esiaccel/types.py,sha256=oMFyj8-5ou78Z4Qk8WXfGq_eP20fT6xitWx9_wzhSWI,13842
+esiaccel/utils.py,sha256=RtHesibZwZg-7sIawbmJnVgig74Y7VktNNM69CQ_QWQ,935
+esiaccel/zlib1.dll,sha256=e4q1S4JiXI0UF1G_G6JWotli8-8J0saZQsWBG14IChA,90624
+esiaccel/bin/ESICppRuntime.dll,sha256=gAkk6Q2RcUnjfDaU1Y9LDWTJUfhhxv8K13PqrFsw9-U,2768384
+esiaccel/bin/esiquery.exe,sha256=oQtIypaK2BepsSG3ObAro_2b7rME-bzHMu09QrED-ps,38912
+esiaccel/bin/zlib1.dll,sha256=e4q1S4JiXI0UF1G_G6JWotli8-8J0saZQsWBG14IChA,90624
+esiaccel-0.0.8.dist-info/LICENSE,sha256=vtnVnB8_lN1yPYcA5MeT56R8UsQtBhyzZLBvu_KMf7I,13468
+esiaccel-0.0.8.dist-info/METADATA,sha256=LFV-p3M9n5Q07eOZVMOk0-eKXCiEoUPUOx5WYhIEPA8,16120
+esiaccel-0.0.8.dist-info/WHEEL,sha256=yrvteVAZzxQvtDnzdCRh4dP01sPIxYhLXIXplC7o50E,102
+esiaccel-0.0.8.dist-info/entry_points.txt,sha256=p20aCI8eqjwhh_qxZYLrusAdk9wkv3yG180jtQhOVEw,98
+esiaccel-0.0.8.dist-info/top_level.txt,sha256=fYWTWMDK4PDu4ePQ9NtcFHas2k8-d1kWhTs2avPpgB4,9
+esiaccel-0.0.8.dist-info/RECORD,,
