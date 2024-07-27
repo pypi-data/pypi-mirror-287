@@ -1,0 +1,94 @@
+Metadata-Version: 2.1
+Name: pygenia
+Version: 0.1.0
+Summary: Emotional agents in AgentSpeak
+Home-page: https://github.com/gti-ia/pygenia
+Author: Joaquin Taverner
+Author-email: joataap@dsic.upv.es
+License: MIT license
+Keywords: pygenia
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: agentspeak ==0.2.2
+Requires-Dist: colorama ==0.4.6
+Requires-Dist: numpy ==1.26.3
+Requires-Dist: pandas ==2.2.1
+Requires-Dist: scipy ==1.12.0
+
+=======
+pyGenIA
+=======
+
+.. image:: https://img.shields.io/pypi/v/pygenia.svg
+    :target: https://pypi.python.org/pypi/pygenia
+
+.. image:: https://img.shields.io/pypi/pyversions/pygenia.svg
+    :target: https://pypi.python.org/pypi/pygenia
+
+.. image:: https://img.shields.io/tokei/lines/github/gti-ia/pygenia?label=lines
+    :alt: Total Lines
+    :target: https://pepy.tech/project/pygenia
+
+.. image:: https://img.shields.io/github/languages/count/gti-ia/pygenia?label=languages
+    :alt: Languages
+    :target: https://pepy.tech/project/pygenia
+
+.. image:: https://img.shields.io/github/languages/code-size/gti-ia/pygenia
+    :alt: Code Size
+    :target: https://pepy.tech/project/pygenia
+
+.. image:: https://img.shields.io/pypi/l/spade
+    :target: https://opensource.org/licenses/MIT
+    :alt: MIT License
+
+.. image:: https://pepy.tech/badge/pygenia
+    :target: https://pepy.tech/project/pygenia
+    :alt: Downloads
+
+.. image:: https://readthedocs.org/projects/pygenia/badge/?version=latest
+    :target: https://pygenia.readthedocs.io?badge=latest
+    :alt: Documentation Status
+
+.. image:: https://img.shields.io/pypi/format/spade.svg
+    :target: https://pypi.python.org/pypi/pygenia
+
+
+
+Emotional agents in AgentSpeak
+
+
+* Free software: MIT license
+* Documentation: https://pygenia.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.0 (2024-07-26)
+------------------
+
+* First release on PyPI.
