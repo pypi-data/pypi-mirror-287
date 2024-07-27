@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: tree-sitter-python
+Version: 0.1.0
+Summary: Tree-sitter grammar for Python
+Author-email: Your Name <you@example.com>
+Requires-Python: >=3.8
