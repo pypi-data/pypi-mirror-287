@@ -1,0 +1,6 @@
+Sphinx
+ansi2html
+jinja2
+prompt_toolkit
+pyyaml
+termcolor
