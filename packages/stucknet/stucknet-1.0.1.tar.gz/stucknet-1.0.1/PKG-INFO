@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: stucknet
+Version: 1.0.1
+Summary: A flawlessly secured vault!
+Author-email: Yehuda Elyasaf <30yehuda26@gmail.com>
+Maintainer-email: Yehuda Elyasaf <30yehuda26@gmail.com>
+Project-URL: Homepage, https://www.youtube.com/watch?v=dQw4w9WgXcQ
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-C06524)](https://github.com/YehudaElyasaf/stucknet/blob/master/LICENSE)
+[![PyPI - Version](https://img.shields.io/pypi/v/stucknet.svg)](https://pypi.org/project/stucknet/)
+
+# Stucknet
+
+Stucknet is a flawlessly secured Python package designed to secure Israel's flag.
+
+## Installation
+
+You can install Stucknet from PyPI using pip. Open your terminal and run:
+```bash
+pip install stucknet
