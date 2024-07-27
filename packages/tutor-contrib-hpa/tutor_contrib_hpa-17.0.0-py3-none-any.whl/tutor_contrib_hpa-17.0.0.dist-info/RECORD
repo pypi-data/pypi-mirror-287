@@ -1,0 +1,12 @@
+tutorhpa/__about__.py,sha256=Io36cFJmBpxUEj7OqGpHfVmGAoE5TYqFPOsit9JXkSM,48
+tutorhpa/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tutorhpa/plugin.py,sha256=U0j2ZRprgCJV1WUXcjJClZygWvkbM2MWVFQDEag5sn8,2898
+tutorhpa/patches/.gitignore,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tutorhpa/patches/k8s-override,sha256=0KehM7e0-jekmPGQwYak9P0m-zzTRu14fcmYkQ0y3PA,2244
+tutorhpa/patches/kustomization-resources,sha256=N5p3L4hdinWgA_g_bYDfkYSX8aDgJBAH2Q5Ipimkn0I,25
+tutorhpa/templates/hpa/k8s/hpa.yml,sha256=pBWPq0p7J__4yk-jocPbldcxybw0-QYCt0a5hXHhuCg,3087
+tutor_contrib_hpa-17.0.0.dist-info/METADATA,sha256=bw0VlC6O9cccr_cu2LR1ScNr1e9xq6u5FKv-GvQ_1-g,1590
+tutor_contrib_hpa-17.0.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+tutor_contrib_hpa-17.0.0.dist-info/entry_points.txt,sha256=euy-V9JGVRay-3Gp2alLGYAs9sKzu0zEMUpQrrY03N0,40
+tutor_contrib_hpa-17.0.0.dist-info/top_level.txt,sha256=HrXG_lGvLyQAHCkoEUiDMpYTISrm8qEfrM3wlI6RAGA,9
+tutor_contrib_hpa-17.0.0.dist-info/RECORD,,
