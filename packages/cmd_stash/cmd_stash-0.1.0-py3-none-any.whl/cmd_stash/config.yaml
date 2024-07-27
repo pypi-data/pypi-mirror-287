@@ -1,0 +1,14 @@
+backup_provider: local  # or aws
+
+backup_providers:
+  aws:
+    region: us-east-1
+    bucket_name: cmd-stash-bucket
+    bucket_acl: private
+
+  local:
+    directory: /tmp/cmd_stash/
+    directory_name: backups
+
+commands_file: /tmp/commands.yaml
+object_name: commands.json

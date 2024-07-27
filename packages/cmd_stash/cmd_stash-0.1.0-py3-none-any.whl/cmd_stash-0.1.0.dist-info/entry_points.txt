@@ -1,0 +1,3 @@
+[console_scripts]
+cmd_stash=cmd_stash.cli_manager:cli
+
