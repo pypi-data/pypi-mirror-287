@@ -1,0 +1,2 @@
+# Cowgirl AI
+Web interface

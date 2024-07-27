@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/app/__init__.py
+src/app/config.py
+src/app/data_generation.py
+src/cli/__init__.py
+src/cli/main.py
+src/cowgirl_ai.egg-info/PKG-INFO
+src/cowgirl_ai.egg-info/SOURCES.txt
+src/cowgirl_ai.egg-info/dependency_links.txt
+src/cowgirl_ai.egg-info/entry_points.txt
+src/cowgirl_ai.egg-info/not-zip-safe
+src/cowgirl_ai.egg-info/requires.txt
+src/cowgirl_ai.egg-info/top_level.txt
+tests/test_sample_initialization.py
