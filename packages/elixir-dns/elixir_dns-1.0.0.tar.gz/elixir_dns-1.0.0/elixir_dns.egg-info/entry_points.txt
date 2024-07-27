@@ -1,0 +1,2 @@
+[console_scripts]
+elixir-dns = src.entry:main
