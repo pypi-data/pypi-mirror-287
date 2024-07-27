@@ -1,0 +1,8 @@
+include *.md
+include LICENSE
+include *.txt
+include *.py
+recursive-exclude test *
+recursive-include src/utils/silero-vad/files *.json
+recursive-include src/utils/silero-vad/files *.jit
+recursive-include src/utils/silero-vad/files *.onnx
