@@ -1,0 +1,7 @@
+include pyproject.toml
+include setup.py
+include setup.cfg
+include LICENSE
+include README.md
+recursive-include src *
+global-exclude *.py[cod] __pycache__ *.so *.dylib
