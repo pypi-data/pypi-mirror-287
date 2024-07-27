@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: izaber_wamp_zerp
+Version: 2.7.20201015
+Summary: Base load point for iZaber WAMP ZERP code
+Home-page: https://github.com/zabertech/python-izaber-wamp-zerp
+Download-URL: https://github.com/zabertech/python-izaber-wamp-zerp/archive/2.7.20200424.tar.gz
+Author: Aki Mimoto
+Author-email: aki+izaber@zaber.com
+License: MIT
+License-File: LICENCE.txt
+Requires-Dist: pytz
+Requires-Dist: izaber-wamp
+Requires-Dist: docopt
+Requires-Dist: swampyer >=1.20190905
+Requires-Dist: tqdm
+
