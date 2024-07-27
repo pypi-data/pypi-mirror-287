@@ -1,0 +1,13 @@
+oteltest/__init__.py,sha256=N6yOkIQmpUCtoTo7x6yi-lFLrTWiouHIvUoyiT4Wlhg,2597
+oteltest/main.py,sha256=YAKs-TMRt2sapeHW0Dj2WqNu1wowvAU-Xu04s38wZNA,598
+oteltest/private.py,sha256=uBLimqPmN_nIos-Zjv9Tvd34IGTovhe1Yrr-U2ayGzA,8120
+oteltest/telemetry.py,sha256=T0HIvv-3-XzZ2vk5r7sTgyFv1wuvAU46M0uU2942FY8,4898
+oteltest/version.py,sha256=IPTpw_ZRkJdPKjp9ROF6sfDyeEv2IvChuvliVauZWvE,23
+oteltest/sink/__init__.py,sha256=_KGElAdz5PLjzQd_fcA9_24ehnGvwDVkhhSleVhLpro,5771
+oteltest/sink/main.py,sha256=roPGM_KvXeflO1cH8RWCaguYWk5kYdAqPPDJVkzG8JE,381
+oteltest/sink/private.py,sha256=x7aELpp45Uv3Uflio4MRGX4NJ1356qybjAVZ9bXzZcU,1501
+oteltest-0.19.0.dist-info/METADATA,sha256=xwtkbEksiy73Y8B2R7G8HB8C5LqKCKvl8j_2QuFBJ-4,6825
+oteltest-0.19.0.dist-info/WHEEL,sha256=zEMcRr9Kr03x1ozGwg5v9NQBKn3kndp6LSoSlVg-jhU,87
+oteltest-0.19.0.dist-info/entry_points.txt,sha256=FW9GBf27jLt7Z5_mlKUYVvB-3d1H4cMkuDoIkof_IgY,83
+oteltest-0.19.0.dist-info/licenses/LICENSE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
+oteltest-0.19.0.dist-info/RECORD,,
