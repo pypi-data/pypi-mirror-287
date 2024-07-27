@@ -1,0 +1,2 @@
+[console_scripts]
+cryptonit-bot = cryptonit_bot.bot:run_bot
