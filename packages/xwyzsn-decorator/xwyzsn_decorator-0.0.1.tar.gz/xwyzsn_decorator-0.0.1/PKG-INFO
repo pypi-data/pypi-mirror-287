@@ -1,0 +1,14 @@
+Metadata-Version: 2.3
+Name: xwyzsn_decorator
+Version: 0.0.1
+Summary: personal decorator wrapper
+Author-email: JanChi <xwyzsn@gmail.com>
+Requires-Dist: cloudpickle>=2.2.1
+Requires-Dist: gradio>=4.39.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: tornado>=6.3.2
+Description-Content-Type: text/markdown
+
+# Decorator 
+
+personal usage
