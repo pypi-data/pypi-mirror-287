@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: DigitalWallet
+Version: 0.0.2
+Summary: DigitalWallet is an async service that counts your currencies.
+Author: heliosgrounder
+Requires-Python: >=3.8,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: fastapi (==0.111.1)
+Requires-Dist: https (==0.27.0)
+Requires-Dist: pydantic (==2.8.2)
+Description-Content-Type: text/markdown
+
+## Digital Wallet
+
+### Setup
+
+```
+git clone https://github.com/heliosgrounder/DigitalWallet.git
+cd DigitalWallet
+python -m venv venv
+```
+
+* Windows (PowerShell):
+```
+.\venv\Scripts\Activate.ps1
+```
+
+* Unix:
+```
+./venv/bin/activate
+```
+
+```
+pip install -r requirements.txt
+```
+
+### Run
+
+You can choose all available currencies in [this](https://www.cbr-xml-daily.ru/daily_json.js).
+
+```
+cd digitalwallet
+```
+
+```
+python -m main --period 10 --rub 10 --debug y
+```
+
+```
+python -m main --rub 100 --eur 300 --usd 200
+```
+
+```
+python -m main --aud 200 --rub 0
+```
+
+### Using
+
+You can go to `localhost:8000/docs` and use FastApi interface.
