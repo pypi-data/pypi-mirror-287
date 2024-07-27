@@ -1,0 +1,3 @@
+[console_scripts]
+unicorn=django_unicorn_playground.cli:cli
+
