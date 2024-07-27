@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+src/qrdata.egg-info/PKG-INFO
+src/qrdata.egg-info/SOURCES.txt
+src/qrdata.egg-info/dependency_links.txt
+src/qrdata.egg-info/requires.txt
+src/qrdata.egg-info/top_level.txt
