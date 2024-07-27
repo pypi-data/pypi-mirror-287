@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/artemis/__init__.py
+src/artemis/main.py
+src/artemis_lab.egg-info/PKG-INFO
+src/artemis_lab.egg-info/SOURCES.txt
+src/artemis_lab.egg-info/dependency_links.txt
+src/artemis_lab.egg-info/top_level.txt

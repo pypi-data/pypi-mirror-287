@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: artemis_lab
+Version: 0.0.0
+Summary: Artemis core can be defined as framework to create and play modular pipelines. Coming soon...
+Author-email: artemis-cnes <artemis-cnes@cnes.fr>
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# Artemis-lab (aka Artemis)
+
+## Description
+Artemis is the french acronym standing for "Atelier Reutilisable de Traitements d'Expertise Multi Images Satellitaires".
+Its core can be defined as a python framework to play user's defined pipelines.
+More coming soon... 
+
+## License
+Artemis will be distritued under an open source licence. It is not yet defined (probably Apache V2 licence).
+
+## Project status
+The project is currently in development.

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=40.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "artemis_lab"
+version = "0.0.0"
+description = "Artemis core can be defined as framework to create and play modular pipelines. Coming soon..."
+authors = [ {name="artemis-cnes", email="artemis-cnes@cnes.fr"} ]
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["artemis"]  
+
+
