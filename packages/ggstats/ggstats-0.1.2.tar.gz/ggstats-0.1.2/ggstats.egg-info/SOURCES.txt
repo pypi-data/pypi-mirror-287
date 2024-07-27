@@ -1,0 +1,10 @@
+LICENCE
+README.md
+setup.py
+ggstats/__init__.py
+ggstats/ggstats.py
+ggstats.egg-info/PKG-INFO
+ggstats.egg-info/SOURCES.txt
+ggstats.egg-info/dependency_links.txt
+ggstats.egg-info/requires.txt
+ggstats.egg-info/top_level.txt
