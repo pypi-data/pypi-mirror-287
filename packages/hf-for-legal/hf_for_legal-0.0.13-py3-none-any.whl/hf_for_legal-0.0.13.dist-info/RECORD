@@ -1,0 +1,9 @@
+hf_for_legal/__init__.py,sha256=52ODLJPsYC1R85KzGjJYf6pN9rbcRqS4Ikrx8MVv3NE,226
+hf_for_legal/_decorators.py,sha256=glCCGlvsNHPwUi-Ofw5aJ7XN5v02axfGWX-WB1b1RHw,4804
+hf_for_legal/_logger.py,sha256=_kDgujeR-cvudZrLlOf_ibqLjK7IM0Pl-zlZPzurUPE,3184
+hf_for_legal/datasets.py,sha256=1tH6GPGxc5iq20YotfKRkIekgTAhhg0D2qv3CappaMg,13688
+hf_for_legal-0.0.13.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+hf_for_legal-0.0.13.dist-info/METADATA,sha256=b4m5PXRD6jJjxFG6cISMpCCk0sDAuuVNo67jSlmWG04,9672
+hf_for_legal-0.0.13.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+hf_for_legal-0.0.13.dist-info/top_level.txt,sha256=Tzcb7B-6_-GF7GKTGdLd4yg3q4N6lGzaOJgjbi-kTBY,13
+hf_for_legal-0.0.13.dist-info/RECORD,,
