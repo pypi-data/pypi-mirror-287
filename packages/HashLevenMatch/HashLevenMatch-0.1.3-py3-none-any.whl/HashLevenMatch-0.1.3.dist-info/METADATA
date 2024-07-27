@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: HashLevenMatch
+Version: 0.1.3
+Summary: Library to utilize inexact matching.
+Author-email: davislspradling@gmail.com
+License-File: LICENSE.txt
+Requires-Dist: python-Levenshtein
+Requires-Dist: matplotlib
+Requires-Dist: pandas
+Requires-Dist: numpy
+
