@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+py2plpy/__init__.py
+py2plpy/command_line.py
+py2plpy/plpy.py
+py2plpy/py2plpy.py
+py2plpy/types.py
+py2plpy.egg-info/PKG-INFO
+py2plpy.egg-info/SOURCES.txt
+py2plpy.egg-info/dependency_links.txt
+py2plpy.egg-info/entry_points.txt
+py2plpy.egg-info/requires.txt
+py2plpy.egg-info/top_level.txt
+py2plpy/tests/__init__.py
+py2plpy/tests/fixture.py
+py2plpy/tests/test.py
