@@ -1,0 +1,7 @@
+primalbedtools/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+primalbedtools/bedfiles.py,sha256=yMgRvOg5yIrAmF74egblXjDP9k_zrU77uDGOwVaivsQ,5627
+primalbedtools/main.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+primalbedtools-0.2.0.dist-info/LICENSE,sha256=H13kfKP7uTtqo5naODgy8kQxq6aWQTYLSdp1MMSjZ-Y,20131
+primalbedtools-0.2.0.dist-info/METADATA,sha256=KcoCUey1E5SfbqdZJaSgNNtq3Ka91DE70xHLiWH7xew,753
+primalbedtools-0.2.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+primalbedtools-0.2.0.dist-info/RECORD,,
