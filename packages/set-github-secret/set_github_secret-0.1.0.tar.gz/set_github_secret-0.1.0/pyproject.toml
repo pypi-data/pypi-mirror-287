@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "set-github-secret"
+version = "0.1.0"
+description = "set github secret"
+authors = ["liuyuqi-dellpc <liuyuqi.gov@msn.cn>"]
+readme = "README.md"
+license = "Apache-2.0"
+exclude = [
+    "tests",
+    "docs",
+]
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.22.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+sgs = "set_github_secret.set_github_secret.GithubApi:set_update_github_secret"
