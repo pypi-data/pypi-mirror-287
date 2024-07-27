@@ -1,0 +1,2 @@
+[nbdev]
+boguan_yuequ = boguan_yuequ._modidx:d
