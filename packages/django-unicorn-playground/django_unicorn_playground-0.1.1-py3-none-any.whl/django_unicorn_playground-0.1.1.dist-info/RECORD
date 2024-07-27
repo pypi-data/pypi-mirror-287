@@ -1,0 +1,16 @@
+django_unicorn_playground/__init__.py,sha256=5_mJ8AB1rUcQijgB35ZkC8ZXxieffJzNEXg8_VFg46Q,101
+django_unicorn_playground/cli.py,sha256=uOq1I6CFWvfof9t_nD-ycav2N8LCBBPH1ocypyJy1yc,619
+django_unicorn_playground/components.py,sha256=nxd2vT3c_x4yPB6OFon6oqksDytByeqnfRCcRaYRjJ0,1127
+django_unicorn_playground/html/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_unicorn_playground/html/django.py,sha256=XyQiZ7axKCWOSlMAh8hzio7pfr9bkqI5R8T9kvnMSIY,200
+django_unicorn_playground/html/unicorn.py,sha256=yauBAL2PPNzacY--thSv-h6EN46Q3ugiwSZ3cWRoGmg,2083
+django_unicorn_playground/main.py,sha256=1iOKjJtHb6tQ4G-9_kJkrfJiTDC-pSk95J2zXwr3BNA,1537
+django_unicorn_playground/settings.py,sha256=VBFn7rS78seChGd9PahUaSYeqTVZs_ACFLFsI9YHbTs,1903
+django_unicorn_playground/templates/base.html,sha256=yrG2HLSupv8ST-JSScAYcV6rvou4H9_5H8GuwRQYSmE,99
+django_unicorn_playground/urls.py,sha256=jyTcFV-ARRzMVD5x9TjdyOLDtVC380soQrY2TBX5ps8,183
+django_unicorn_playground/views.py,sha256=Lg0L-sOY45v161wBM9BhV4fSVhVPqMR2kGL5B6FpeRk,1399
+django_unicorn_playground-0.1.1.dist-info/LICENSE,sha256=ykPu6hI0CBXHQhhT7ab6FjMSVT6DtLUQ-d51rtVQ4Wk,1097
+django_unicorn_playground-0.1.1.dist-info/METADATA,sha256=TRLclFF_1kEqPK9HE-UIYS0dPAQ0bfZ0RmmWnaI8yQs,9882
+django_unicorn_playground-0.1.1.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+django_unicorn_playground-0.1.1.dist-info/entry_points.txt,sha256=vNy-7pG9gAjMSaTpmwl77W9lrtXesBqvBRwYN1I9Fwg,61
+django_unicorn_playground-0.1.1.dist-info/RECORD,,
