@@ -1,0 +1,10 @@
+tcia_utils/__init__.py,sha256=bOCBuqk5a_OGvDi0kONIuha2kV_0s0tA2T33rXdnLrs,107
+tcia_utils/datacite.py,sha256=DOYmslMUEblr5jjYiWhNh3GU9_93bsVuPoRzZgP8zu4,9247
+tcia_utils/nbia.py,sha256=Wi9JJWKj4-RuGMV7OxhmlFOkCd9--ZxcOvuWTeIPHHc,95365
+tcia_utils/pathdb.py,sha256=R1U2bndcCKINfTTh1hYzVxh4aXcdVpmr1KSIkwtQCK0,10768
+tcia_utils/utils.py,sha256=Lb4U_RprepLbhrVWHAGJLZHCKbLhLa3OWXN5-1iVXuw,6134
+tcia_utils/wordpress.py,sha256=x1sYPlgPdWD_RXkL72dgbaaALQSeuFK4KaZLFg7XMqY,14764
+tcia_utils-2.1.14.dist-info/METADATA,sha256=sLutzYBEvyrF0GNw-ZyX96Mg1a5ycE81beWXcsmCBAY,2240
+tcia_utils-2.1.14.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+tcia_utils-2.1.14.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+tcia_utils-2.1.14.dist-info/RECORD,,
