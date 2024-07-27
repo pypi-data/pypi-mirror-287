@@ -1,0 +1,7 @@
+jax
+jaxlib
+oryx
+optax
+formulaic
+numpy<2.0.0
+pandas
