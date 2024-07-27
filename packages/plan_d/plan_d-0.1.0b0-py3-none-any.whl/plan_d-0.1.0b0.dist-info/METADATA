@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: plan_d
+Version: 0.1.0b0
+Summary: Python Language's Another Nonpareil remote Debugger
+Author: ZhengYu, Xu
+Author-email: zen-xu@outlook.com
+Requires-Python: >=3.8,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
+
+# plan-d
+Python Language's Another Nonpareil remote Debugger
+
