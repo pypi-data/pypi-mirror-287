@@ -1,0 +1,91 @@
+Metadata-Version: 2.1
+Name: p2p_exnode_sdk
+Version: 0.0.2
+Summary: A P2P exnode SDK
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests >=2.20.0
+Requires-Dist: pydantic >=1.8.0
+
+```python
+from p2p_exnode_sdk import *
+
+if __name__ == "__main__":
+    request = GetActiveOffersParams(
+        fiat="RUB",  # RUB or KZT or UZS or TJS
+        crypto="USDTTRC",
+        amount="",
+        banks="SBERRUB,TCSBRUB,RFBRUB,SBPRUB,INTERBRUB,VTBRUB,OPNBRUB,MTSBRUB,ACRUB,RSHBRUB,GPBRUB,POSTBRUB,SOVKRUB,MKBRUB,YMRUB,PHONERUB,CASHRUB",
+        type="buy",
+        page=1,
+        limit=100,
+        sort="rate_asc"
+    )
+
+    response = get_active_offers(request)
+
+    interesting_user = None
+    interesting_offer = None
+
+    for info in response.info:
+        offer = info.offer
+        user = info.user
+
+        if user.nickname == "some_nickname":
+            interesting_offer = offer
+            interesting_user = user
+            print(f"interesting offer found: {offer}")
+            print(f"interesting user found: {user}")
+            break
+
+    if interesting_offer is None:
+        print("interesting offer not found")
+        exit(0)
+
+    request = PostSignInRequest(
+        email="your_email",
+        password="your_password"
+    )
+
+    response = post_sign_in(request)
+
+    access = response.data.access
+    refresh = response.data.refresh
+
+    response = get_via_offer(interesting_offer.internal_id, access, refresh)
+
+    interesting_data = None
+
+    for data in response.data:
+        # if data.tech == "SBERRUB":
+        #     interesting_data = data
+        #     print(f"interesting data found: {data}")
+        #     break
+
+        interesting_data = data
+        print(f"interesting data found: {data}")
+        break
+
+    if interesting_data is None:
+        print("interesting data not found")
+        exit(0)
+
+    request = PostOrdersInitRequest(
+        internal_id=interesting_offer.internal_id,
+        taker="your_nickname",
+        maker=interesting_user.nickname,
+        amount_from=120,
+        amount_to=1,
+        crypto="USDTTRC",
+        fiat="SBERRUB",
+        req_id=interesting_data.id,
+        address=""
+    )
+
+    response = post_orders_init(request, access, refresh)
+
+    print(f"awaiting payment")
+```
