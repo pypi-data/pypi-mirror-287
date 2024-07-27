@@ -1,0 +1,14 @@
+gpt_readme/__init__.py,sha256=w2XkOMZEcECMeAue2t-jnuQ9F5ibAglBR3sFNRPxCpc,125
+gpt_readme/__main__.py,sha256=qs6kN4rXgXytzVlo9nDeC8tm5daCP8xPL2lhUABzuiM,63
+gpt_readme/constants.py,sha256=0zVny1R_njfuLHzObX8rg50zHWFCHrYunJV0AZnAEiM,1493
+gpt_readme/dir_summary.py,sha256=C6N_85hkIuX68QhI3IL-V97mVrWZ92uTyvhCJ2SHE1E,4492
+gpt_readme/file_summary.py,sha256=Kfx2nwv-s_pWlNPmy9QGhz0dYVl0XDUmmjoPS85_GhU,1790
+gpt_readme/llm.py,sha256=Bcd7KASZl6seoFLRSxetPl3K-lFukWT1eT9RaN8a5zk,766
+gpt_readme/main.py,sha256=LSlAChfQiL9vt2xrHZXzHFqWeuF2Mr0c_aPYHgeHtY8,3302
+gpt_readme/prompts.py,sha256=3QUHPHT9pRg9NDUA-R273IOehiFcnRKyUmsM_JBkIl8,5951
+gpt_readme/utils.py,sha256=RaxUvZbMTWx6nlFNackGtUCCyNy6OEjbdTnrx9QXDEo,5307
+gpt_readme-0.1.2.dist-info/METADATA,sha256=b4DxmczRcIhKUnGAplWlHM5f8RbWlhiaM2LCYQGOKOs,4906
+gpt_readme-0.1.2.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+gpt_readme-0.1.2.dist-info/entry_points.txt,sha256=4kXJ4iwNnU0I6E4tiMJp3wVVbsGZ9M5-o0sU7oxbyhM,47
+gpt_readme-0.1.2.dist-info/top_level.txt,sha256=ytmnQai4pXy0bLMlHmciyAu1iqn_56z7CaPgajsyxcY,11
+gpt_readme-0.1.2.dist-info/RECORD,,
