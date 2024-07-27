@@ -1,0 +1,13 @@
+numpy
+grpcio==1.60.1
+python-pptx
+matplotlib
+google-generativeai
+PyMuPDF
+PyYAML
+
+[all]
+convert2ppt[extra]
+
+[extra]
+pandas
