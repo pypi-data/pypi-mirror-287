@@ -1,0 +1,9 @@
+grscheller/fp/__init__.py,sha256=9b42mG4ehgiFuXvDe_AV04vJIW3bA-229u4sF1o4byI,813
+grscheller/fp/iterators.py,sha256=E5237BC8kmUNJ8okVzJ7HuFOHsqh61iC5-0LtrQU-2c,4232
+grscheller/fp/nothing.py,sha256=iCCmlDS2MwoR34i0VYlOz6NOZpZBlAieXTl4-XPHiCs,3204
+grscheller/fp/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+grscheller/fp/woException.py,sha256=TA3Ym-Wz2vamQkDW7jQbNM9KDPwvSn7eJ2UY2hUFptY,8355
+grscheller_fp-0.2.0.dist-info/LICENSE,sha256=psuoW8kuDP96RQsdhzwOqi6fyWv0ct8CR6Jr7He_P_k,10173
+grscheller_fp-0.2.0.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+grscheller_fp-0.2.0.dist-info/METADATA,sha256=bEfqWkdDP3LIgECXzlRlLBV3Dfrfbcpua-9nopx_rQI,3052
+grscheller_fp-0.2.0.dist-info/RECORD,,
