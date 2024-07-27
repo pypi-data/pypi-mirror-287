@@ -1,0 +1,191 @@
+# LCon Python Library for the LangConnector Minecraft Plugin.
+## Implementation
+### Installing with PIP
+```sh
+pip install lconn
+```
+### Declaring in script
+```js
+from lconn import Hoster, LCon, SetupError, HostingError, InvalidArg
+```
+## LCon Usage
+### LCon Subfunctions:
+- <LCon()>["setup"](self, host: str, port: int, protocol: str, location: str)
+- <LCon()>["get"](self, data_name: str)
+- <LCon()>["reset"](self)
+Example:
+```py
+import asyncio
+from lconn import LCon
+
+async def main():
+    # Getting LCon()
+    conn = await LCon()
+
+    # Declaring Servers
+    first_server = {
+        "host": "127.0.0.1",
+        "port": 4001,
+        "protocol": "http",
+        "location": "data"
+    }
+
+    second_server = {
+        "host": "127.0.0.1",
+        "port": 4002,
+        "protocol": "https",
+        "location": "dataserver"
+    }
+
+    # Connecting to server Nr.1
+    await conn["setup"](first_server)
+    # Retrieving data from server Nr.1
+    data = await conn["get"]()
+    # Displaying the data
+    on = "Online" if data["status"] else "Offline"
+    print(f"Server Status: {on}\nOnline Players: {data['onlinePlayers']}\nOnline Staff Players: {data['onlineStaff']}\nOnline Premium Ranked Player: {data['onlinePremium']}")
+    # Disconnecting from server Nr.1
+    await conn["reset"]()
+    # Connecting to server Nr.2
+    await conn["setup"](second_server)
+    # Setting timeout so every update will be sent
+    while True:
+        await asyncio.sleep(5)
+        # Retrieving data from server Nr.2
+        data = await conn["get"]()
+        # Displaying the new data
+        on = "Online" if data["status"] else "Offline"
+        print(f"Server Status: {on}\nOnline Players: {data['onlinePlayers']}\nOnline Staff Players: {data['onlineStaff']}\nOnline Premium Ranked Player: {data['onlinePremium']}")
+
+asyncio.run(main())
+```
+### Basic Script:
+```py
+from lconn import LCon
+
+async def main():
+    conn = await LCon()
+
+    try:
+        await conn["setup"]()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+    status = await conn["get"]("status")
+
+    if status["status"]:
+        data = await conn["get"]()
+        on = "Online" if data["status"] else "Offline"
+        print(f"Server Status: {on}\nOnline Players: {data['onlinePlayers']}\nOnline Staff Players: {data['onlineStaff']}\nOnline Premium Ranked Player: {data['onlinePremium']}")
+    else:
+        print("Server is offline.")
+
+asyncio.run(main())
+```
+### Error Handling:
+```py
+from lconn import LCon, SetupError, InvalidArg
+
+async def main():
+    conn = await LCon()
+
+    try:
+        await conn["setup"]()
+    except SetupError as e:
+        print(f"Error occurred because of Setup Error. Error: {e}")
+    except Exception as e:
+        print(f"Error: {e}")
+
+    status = await conn["get"]("status")
+
+    if status["status"]:
+        try:
+            data = await conn["get"]()
+        except InvalidArg as e:
+            print(f"Error occurred because of Invalid Argument. Error: {e}")
+        except Exception as e:
+            print(f"Error: {e}")
+
+        if not data:
+            return
+
+        on = "Online" if data["status"] else "Offline"
+        print(f"Server Status: {on}\nOnline Players: {data['onlinePlayers']}\nOnline Staff Players: {data['onlineStaff']}\nOnline Premium Ranked Player: {data['onlinePremium']}")
+    else:
+        print("Server is offline.")
+
+asyncio.run(main())
+```
+## Hoster Usage
+### Hoster Subfunctions:
+- stop(self)
+### Basic Script:
+```py
+from lconn import LCon, Hoster
+import asyncio
+
+async def main():
+    conn = await LCon()
+
+    port = 4001
+    location = "data"
+
+    host = await Hoster(port=port, location=location)
+
+    data = await conn["get"]()
+
+    on = "Online" if data["status"] else "Offline"
+    print(f"Server Status: {on}\nOnline Players: {data['onlinePlayers']}\nOnline Staff Players: {data['onlineStaff']}\nOnline Premium Ranked Player: {data['onlinePremium']}")
+
+    await host()
+
+asyncio.run(main())
+```
+### Error Handling:
+```py
+from lconn import LCon, Hoster, HostingError
+import asyncio
+
+async def main():
+    conn = await LCon()
+
+    port = 4001
+    location = "data"
+    host = None
+
+    try:
+        host = await Hoster(port=port, location=location)
+    except HostingError as e:
+        print(f"Error occurred because of Hosting Error. Error: {e}")
+    except Exception as e:
+        print(f"Error: {e}")
+
+    if not host:
+        return
+
+    data = await conn["get"]()
+
+    on = "Online" if data["status"] else "Offline"
+    print(f"Server Status: {on}\nOnline Players: {data['onlinePlayers']}\nOnline Staff Players: {data['onlineStaff']}\nOnline Premium Ranked Player: {data['onlinePremium']}")
+
+    await host()
+
+asyncio.run(main())
+```
+## Other specifications
+This library is for the Minecraft plugin named LangConnector, which connects your Minecraft server with your website, Discord bot, application, etc. It is provided under a Free to Use License. Please read the license before modifying. All rights are reserved by Platyna Developments, specifically Alko.Richy
+# License
+***Free to Use License. Free to Modify License. Permission Only for Commercialize License. Copyright License.***
+
+1. This script is *free to use* for everyone. 
+2. You *can make changes or optimize* the script without permission. 
+3. This library was created for those who aren't familliar with express or axios and *can be used* for any type of minecraft server *without any permission*.
+4. This *can be used* for communities, public use or private use. 
+5. You *cannot repost* the unmodified version under your name *without permission*.
+6. The modified version *does not need to contain* the main author's name, *only the platyna prefix*. ( Example: platyna.alko.richy)
+7. The main and the modified version *cannot be sold without permission*.
+8. This *can be modifed* for the minecraft plugin or for private use.
+9. Any type of *modification* inside this License *cannot be done without permission*.
+10. Copyrights *can only be applied* if you didn't contributed to this project.
+
+***For permission/s please contact Alko.Richy!***
