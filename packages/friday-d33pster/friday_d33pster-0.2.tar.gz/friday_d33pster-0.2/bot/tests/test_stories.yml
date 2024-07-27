@@ -1,0 +1,21 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: github and linkedin
+  steps:
+  - user: |
+      open get up
+    intent: github
+  - action: utter_github
+  - user: |
+      open link den
+    intent: linkedin
+  - action: utter_linkedin
+
+- story: Sir
+  steps:
+  - user: |
+      kal me sar
+    intent: sir
+  - action: utter_sir

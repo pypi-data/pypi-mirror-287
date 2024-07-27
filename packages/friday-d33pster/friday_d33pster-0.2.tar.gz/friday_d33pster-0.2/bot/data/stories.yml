@@ -1,0 +1,28 @@
+version: "3.1"
+
+stories:
+
+- story: github's path
+  steps:
+  - intent: github
+  - action: utter_github
+
+- story: linkedin's path
+  steps:
+  - intent: linkedin
+  - action: utter_linkedin
+
+- story: selfcall's path
+  steps:
+  - intent: selfcall
+  - action: utter_self
+
+- story: sir's path
+  steps:
+  - intent: sir
+  - action: utter_sir
+
+- story: madam's path
+  steps:
+  - intent: madam
+  - action: utter_madam

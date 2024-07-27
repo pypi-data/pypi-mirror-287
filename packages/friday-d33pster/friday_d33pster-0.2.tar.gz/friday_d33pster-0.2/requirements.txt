@@ -1,0 +1,13 @@
+gitpython
+openai-whisper
+speechrecognition
+sounddevice
+numpy
+pydub
+pyaudio
+soundfile
+requests
+tqdm
+wrapper-bar
+colorama
+wikipedia

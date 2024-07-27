@@ -1,0 +1,24 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "friday-d33pster"
+version = "0.2"
+description = "Hey Siri and Ok Google type Voice Assistant implemented in python+rust, Iron Man style!"
+dependencies = [
+    "gitpython", "speechrecognition", 
+    "sounddevice", "numpy", "pydub", "pyaudio", "soundfile", 
+    "requests", "tqdm", "wrapper-bar", "colorama",
+    "argpi"
+]
+
+[tool.maturin]
+python-source = "pysrc"
+module-name = "Friday.rust"
+
+[project.urls]
+GitHub = "https://github.com/d33pster/Quinn"
+
+[project.scripts]
+friday = "Friday:friday.main"

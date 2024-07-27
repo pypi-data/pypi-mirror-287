@@ -1,0 +1,9 @@
+bot_for_friday/
+target/
+*.lock
+test.*
+bins/
+bot/models/
+bot/.rasa/
+.vscode/
+.DS_Store

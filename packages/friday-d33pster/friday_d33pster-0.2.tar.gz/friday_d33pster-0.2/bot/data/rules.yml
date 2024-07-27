@@ -1,0 +1,28 @@
+version: "3.1"
+
+rules:
+
+- rule: Say github if intent is github
+  steps:
+  - intent: github
+  - action: utter_github
+
+- rule: Say linkedin if intent is linkedin
+  steps:
+  - intent: linkedin
+  - action: utter_linkedin
+
+- rule: Say friday if intent is selfcall
+  steps:
+  - intent: selfcall
+  - action: utter_self
+
+- rule: Say sir if any word is like that
+  steps:
+  - intent: sir
+  - action: utter_sir
+
+- rule: Say madam if any word is like that
+  steps:
+  - intent: madam
+  - action: utter_madam

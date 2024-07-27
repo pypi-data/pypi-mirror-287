@@ -1,0 +1,28 @@
+version: "3.1"
+
+intents:
+  - github
+  - selfcall
+  - sir
+  - madam
+  - linkedin
+
+responses:
+  utter_github:
+  - text: "open github"
+
+  utter_self:
+  - text: "friday"
+
+  utter_sir:
+  - text: "sir"
+
+  utter_madam:
+  - text: "madam"
+
+  utter_linkedin:
+  - text: "open linkedin"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
