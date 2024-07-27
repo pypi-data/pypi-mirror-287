@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+ArtexPing/__init__.py
+ArtexPing/internet.py
+ArtexPing.egg-info/PKG-INFO
+ArtexPing.egg-info/SOURCES.txt
+ArtexPing.egg-info/dependency_links.txt
+ArtexPing.egg-info/requires.txt
+ArtexPing.egg-info/top_level.txt

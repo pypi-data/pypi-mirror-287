@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: ArtexPing
+Version: 0.0.1
+Summary: A python internet status checking library
+Home-page: https://github.com/JunaidParkar/Python-Check_internet_status/
+Author: Artex AI
+Project-URL: Documentation, https://github.com/JunaidParkar/Python-Check_internet_status/
+Project-URL: Source, https://github.com/JunaidParkar/Python-Check_internet_status/
+Project-URL: Tracker, https://github.com/JunaidParkar/Python-Check_internet_status/
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Boost Software License 1.0 (BSL-1.0)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests==2.32.3
+
+# Internet active checkking Project
+
+This project leverages `requests` module to check internet connectivity. It's designed for simplicity and ease of use, allowing you to check internet connection active status.
+
+## Features
+
+- **Check internet**: Check if your device have a proper working internet connection or not.
+
+## Prerequisites
+
+- `requests`
+
+## Setup
+
+1. **Install dependencies**:
+    ```sh
+    pip install requests
+    ```
+
+## Usage
+
+To use the functionality, import the `checkConnection` function from `ArtexPing`.
+
+```python
+
+from ArtexPing import InternetStatus
+
+a = InternetStatus(output_file_path="output.txt")
+a.checkConnection()
+
+```
+
+## Continuous Usage
+
+If you want to check internet connection active status continuously, it is recommended to use threading. This will prevent the function from blocking the execution of further code until it is stopped.
+
+Example with Threading
+```python
+import threading
+import time
+from ArtexPing import InternetStatus
+
+a = InternetStatus(output_file_path="output.txt", continous=True)
+ping_thread = threading.thread(target=a.checkStatus())
+
+ping_thread.start()
+time.sleep(10)
+a.quit()
+thread.join()
+```
+
+**This project is managed by Artex AI. Soon an improved and stable version will roll out**
