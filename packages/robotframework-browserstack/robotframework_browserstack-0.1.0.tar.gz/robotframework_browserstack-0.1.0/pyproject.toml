@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "robotframework-browserstack"
+version = "0.1.0"
+description = "BrowserstackLibrary is a keyword library for integration with Browserstack for mobile testing"
+license = "License :: OSI Approved :: Apache Software License"
+authors = ["Robot Courses <git@robotcourses.com.br>"]
+# readme = "README.rst"
+packages = [
+    {include = "BrowserstackLibrary"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Operating System :: OS Independent",
+    'Topic :: Software Development :: Quality Assurance',
+    "Topic :: Software Development :: Testing",
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3.8',
+    'Framework :: Robot Framework',
+    'Framework :: Robot Framework :: Library',
+]
+
+[tool.poetry.urls]
+"Documentation" = "https://robotcourses.github.io/robotframework-browserstack/BrowserstackLibrary.html"
+"Github" = "https://github.com/robotcourses/robotframework-browserstack"
+"Bugs Tracker" = "https://github.com/robotcourses/robotframework-browserstack/issues"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.32.3"
+robotframework = "^7.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
