@@ -1,0 +1,3 @@
+[console_scripts]
+frd2vtu=frd2vtu.frd2vtu:main
+
