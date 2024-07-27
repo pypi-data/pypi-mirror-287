@@ -1,0 +1,10 @@
+git_inquisitor/__init__.py,sha256=epsgzfO_INa4cvbG3NuVz5MsWdAEBf2AmlqbOatRcy8,26
+git_inquisitor/__main__.py,sha256=1EO-91ODgGwQIYm0f9nQvMwl26-_Yh6-K7IoA-cm794,1219
+git_inquisitor/chart.py,sha256=AwtuGmbRYeGtmxBl3_6BoSK_zxJ2D_lU5LIhCYSi8m0,3848
+git_inquisitor/collector.py,sha256=KdKFUDZLW6-_lvaTQjGh8rN7joAyIbFbRVIYhFz90e0,7506
+git_inquisitor/report.py,sha256=VZ1eq7E_EblNdVX9tSJv9NFhy5pj3CGS41CDfNBl0hE,2208
+git_inquisitor/templates/html.template,sha256=Vt0AxI4aKXTtfMRg4jlgNtMV8qfjV3sgNY5N4IPTZeU,16957
+git_inquisitor-2024.7.26.dist-info/METADATA,sha256=AFXE9P-cjRgVCiBhA1Ldl5qFomKmv8wpS4mP6TtPzns,2467
+git_inquisitor-2024.7.26.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+git_inquisitor-2024.7.26.dist-info/entry_points.txt,sha256=gWh_W4KEAbNsGjOM9nszCYucOV5rXojskBxXD1TCgbw,69
+git_inquisitor-2024.7.26.dist-info/RECORD,,

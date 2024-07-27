@@ -1,0 +1,3 @@
+[console_scripts]
+git-inquisitor=git_inquisitor.__main__:inquisitor
+
