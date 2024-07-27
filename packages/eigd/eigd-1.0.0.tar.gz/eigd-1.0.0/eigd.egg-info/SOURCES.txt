@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+eigd/__init__.py
+eigd/arpack.py
+eigd/eigenvector_derivatives.py
+eigd.egg-info/PKG-INFO
+eigd.egg-info/SOURCES.txt
+eigd.egg-info/dependency_links.txt
+eigd.egg-info/requires.txt
+eigd.egg-info/top_level.txt
