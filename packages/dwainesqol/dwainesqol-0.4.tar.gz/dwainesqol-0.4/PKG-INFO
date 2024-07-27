@@ -1,0 +1,271 @@
+Metadata-Version: 2.1
+Name: dwainesqol
+Version: 0.4
+Description-Content-Type: text/markdown
+
+
+
+
+
+# Qol tools by Dwaine Glover
+
+### Email me at `GloverDwaine@Gmail.com` for suggestions
+
+Ever found yourself screaming at your computer because doing simple tasks feels like trying to explain quantum physics to a toddler? Yeah, we have all been there. That is why this module exists. I created this shitshow of a module to take the everyday pain-in-the-ass tasks and make them a little less soul-crushing. 
+
+
+<br>
+
+# `msgbox()` 
+
+
+### What the Fuck is This?
+
+The `msgbox()`  is your fucking way to show a goddamn message box in Windows using Python. If you want to waste time annoying people with pop-up boxes, this is your shit.
+
+### How the Hell Do You Use It?
+
+Instantiate the `msgbox()`  with the title, message, and the type of box you want to display.
+
+### Usage Examples
+
+
+
+#### Basic OK Box
+
+```python
+msgbox("Title", "This is a fucking OK message box", "MB_OK")
+```
+
+#### OK/Cancel Box
+
+```python
+msgbox("Title", "This is an OK/Cancel box, deal with it", "MB_OKCXL")
+```
+
+#### Yes/No/Cancel Box
+
+```python
+msgbox("Title", "Make up your fucking mind! Yes, No, or Cancel?", "MB_YESNOCXL")
+```
+
+#### Yes/No Box
+
+```python
+msgbox("Title", "Just a simple Yes or No, how hard can it be?", "MB_YESNO")
+```
+
+### Icons? Fuck Yeah!
+
+#### Exclamation Icon
+
+```python
+msgbox("Warning", "Something might be fucked up!", "ICON_EXCLAIM")
+```
+
+#### Information Icon
+
+```python
+msgbox("Info", "Here's some useless info for you.", "ICON_INFO")
+```
+
+#### Stop Icon
+
+```python
+msgbox("Error", "You really fucked up now!", "ICON_STOP")
+```
+
+### Note
+
+The function runs on Windows because it uses `ctypes` to access the Windows API. If you are not on Windows, fuck off and find another solution.
+
+
+<br>
+
+# `bsod()`
+
+
+
+### What the Fuck is This?
+
+`bsod()` is your quick and dirty way to induce a Blue Screen of Death (BSOD) on a Windows machine. Yep, you heard that right. This is the ultimate "nuke it from orbit" tool for when you just want to watch the world burn or maybe you are just a sadistic coder who gets their kicks from watching systems crash and burn. Whatever your twisted reason, the `bsod()`  is here for you. Use it responsibly, or not, I am not your fucking mom.
+
+
+
+> Disclaimer: I am not responsible for any damage, data loss, or general chaos that ensues from using this.
+
+
+
+## How the Hell Do You Use It?
+
+
+Simply use `bsod()` to trigger a BSOD:
+
+```python
+bsod()
+```
+
+That's it. No fancy parameters, no bullshit. Just instant system meltdown.
+
+### Note
+
+The function runs on Windows because it uses `ctypes` to access the Windows API. If you are not on Windows, fuck off and find another solution.
+
+<br>
+
+# `createMenu()` 
+
+## What the Fuck is This?
+
+`createMenu()` is your no-nonsense solution for creating simple text-based menus in Python. Tired of the same old boring command-line interactions? Want to spice things up with some straight-to-the-point menu options? This is your goddamn answer.
+
+## How the Hell Do You Use It?
+
+### Creating a Menu
+
+Here's how you set up and use `createMenu()`:
+
+```python
+def option_one():
+    print("You chose option one. Good for you.")
+
+def option_two():
+    print("Option two, eh? Bold choice.")
+
+def option_three():
+    print("Three it is. Nice.")
+
+menu_title = "Choose Your Destiny"
+menu_options = ["Option 1", "Option 2", "Option 3"]
+menu_functions = [option_one, option_two, option_three]
+
+menu = createMenu(menu_title, menu_options, menu_functions)
+```
+
+### Making a Choice
+
+When you run the code above, you'll get a menu like this:
+
+```
+Choose Your Destiny
+1. Option 1
+2. Option 2
+3. Option 3
+
+Enter your choice: 
+```
+
+Enter the number corresponding to your choice and the associated function will execute. Simple, right?
+
+## Note
+
+ **Match Your Damn Lists**: Make sure the number of options and functions are the same, or you'll get an earful from a `ValueError`.
+
+<br>
+
+# `dictForm()`
+
+## What the Fuck is This?
+
+`dictForm()` is your brutally simple way to print out key-value pairs from a dictionary in a neat and readable format.
+
+## How the Hell Do You Use It?
+
+### Printing a Dictionary
+
+Here's how you use `dictForm()`:
+
+```python
+data = {
+    "name": "Alice",
+    "age": 30,
+    "occupation": "Engineer",
+    "hobbies": ["reading", "hiking", "coding"]
+}
+
+dictForm(data)
+```
+
+### Example Output
+
+When you run the code above, you'll get a nicely formatted output like this:
+
+```
+name: Alice
+age: 30
+occupation: Engineer
+hobbies: ['reading', 'hiking', 'coding']
+```
+
+## Notes
+
+- **Keep It Simple**: This assumes you have a basic dictionary with key-value pairs. Don't try to feed it nested dictionaries or other complex structures unless you want it to print as-is.
+- **Readability First**: The primary goal is to make the output human-readable. If you're looking for something more complex or customizable, write your own damn function.
+
+<br>
+
+# `scroll()` 
+
+## What the Fuck is This?
+
+`scroll()` is your go-to tool for creating a typing effect in the console, where text appears character by character like in those old-school hacker movies. 
+
+## How the Hell Do You Use It?
+
+### Creating a Typing Effect
+
+Here's how you use `scroll()` :
+
+```python
+message = "Hello, world! This is a typing effect."
+scroll(message)
+```
+
+
+### Adjusting the Speed
+
+The `speed` parameter controls how fast the text appears. A higher number means slower output (more dramatic), while a lower number means faster output (less dramatic). The default speed is 1.
+
+```python
+scroll("Fast typing effect", 0.5)  # Faster output
+scroll("Slow typing effect", 3)  # Slower output
+```
+
+## Notes
+
+- **Speed Settings**: Setting the speed too high might make the text crawl, which could be annoying as hell. Use with caution.
+- **Real-Time Output**: This function uses `sys.stdout.flush()` to ensure real-time output. If your console or terminal behaves weirdly, don't blame me.
+
+
+<br>
+
+# `clipbored()`
+
+## What the Fuck is This?
+
+`clipbored()`  is your ultimate tool for copying text directly to the Windows clipboard without any bullshit. If youâ€™re tired of manually copying and pasting, or youâ€™re building a script that needs to shove data into the clipboard without user intervention.
+
+
+## How the Hell Do You Use It?
+
+### Copying Text to the Clipboard
+
+Here's how you use `clipbored()`  to copy text to the clipboard:
+
+```python
+text_to_copy = "This text will be copied to the clipboard!"
+clipbored(text_to_copy)
+```
+
+## Notes
+
+The function runs on Windows relies on the `clip` command which is only available on Windows. If you are not on Windows, fuck off and find another solution.
+<br>
+<br>
+
+# Work in progress
+### `keybord()`
+
+### and more... 
+#
+
