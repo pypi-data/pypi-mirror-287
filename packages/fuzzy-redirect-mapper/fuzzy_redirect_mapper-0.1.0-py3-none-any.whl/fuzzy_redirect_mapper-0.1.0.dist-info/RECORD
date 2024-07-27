@@ -1,0 +1,9 @@
+fuzzy_redirect_mapper/__init__.py,sha256=LO1mxwekGTPXIC7Fty6wHj39n85GLOqpIc6wF5HGq4s,123
+fuzzy_redirect_mapper/redirect_mapper.py,sha256=9gdvZbJknOk_zCJYq6b8Pnwh5O6S8TIpl72a1tWZylI,1582
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_redirect_mapper.py,sha256=YgtmKseJ2WbVnnKlWfQXkV9RSxDZtp_cOcMDu1ufy0Q,412
+fuzzy_redirect_mapper-0.1.0.dist-info/METADATA,sha256=FrSl_lqXt8szsMqSOuhKKPCZk7YMnAJStcWPVv6dj84,1313
+fuzzy_redirect_mapper-0.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+fuzzy_redirect_mapper-0.1.0.dist-info/entry_points.txt,sha256=dnSbfwMA8z6rWVHeXXQQPe4JRcR68xonqYULPFfm-tg,85
+fuzzy_redirect_mapper-0.1.0.dist-info/top_level.txt,sha256=tcfSfSeacbiqb3ig8WWoNvDLBMR65NaetATZ_ddGggM,28
+fuzzy_redirect_mapper-0.1.0.dist-info/RECORD,,
