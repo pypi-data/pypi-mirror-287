@@ -1,0 +1,5 @@
+qfetch
+qdatac
+qstrategy
+pyecharts
+TA-Lib

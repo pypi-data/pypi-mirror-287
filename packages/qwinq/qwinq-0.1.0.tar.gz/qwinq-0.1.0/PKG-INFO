@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: qwinq
+Version: 0.1.0
+Summary: 股票个人量化交易系统
+Author: buf1024
+Author-email: buf1024@gmail.com
+Maintainer: buf1024
+Maintainer-email: buf1024@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: qfetch
+Requires-Dist: qdatac
+Requires-Dist: qstrategy
+Requires-Dist: pyecharts
+Requires-Dist: TA-Lib
+
+股票个人量化交易系统

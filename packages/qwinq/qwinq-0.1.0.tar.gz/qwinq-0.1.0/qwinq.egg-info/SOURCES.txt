@@ -1,0 +1,10 @@
+README.md
+setup.py
+qwinq/__init__.py
+qwinq/common.py
+qwinq.egg-info/PKG-INFO
+qwinq.egg-info/SOURCES.txt
+qwinq.egg-info/dependency_links.txt
+qwinq.egg-info/not-zip-safe
+qwinq.egg-info/requires.txt
+qwinq.egg-info/top_level.txt
