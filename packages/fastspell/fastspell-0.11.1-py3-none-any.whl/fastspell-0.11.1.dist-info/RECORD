@@ -1,0 +1,12 @@
+fastspell/__init__.py,sha256=lYdKFPoJIqEEHdgKuMjaByb4rUI_rkptGvgNRXUUZAU,141
+fastspell/fastspell.py,sha256=t8vT4N5L-3ACqLyNf8pus1GcBuRZCWsfjjVXuvt2Jv8,14363
+fastspell/fastspell_download.py,sha256=pvkwxhI97f861DmjRpZJGZk9Zx2IPsBVAPsiGphtxg4,4250
+fastspell/util.py,sha256=qERlwb5Y0Pi5WeQnNnjlib_vSpr3anKRRdYU4pRD2Fc,4728
+fastspell/config/hunspell.yaml,sha256=w-qJerTsPEu0MWrB9MKDPj568LyBg-DOj4DnsyP687g,1216
+fastspell/config/similar.yaml,sha256=TcVtqLc2u7voSxHsX4FHtMRy4T6Q_1fHBKLXmWOJXpo,1216
+fastspell-0.11.1.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+fastspell-0.11.1.dist-info/METADATA,sha256=yHJTBtiZFb_4RTUYKRI12Gm5b43QJV2k2x8GkGEKbOc,53630
+fastspell-0.11.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+fastspell-0.11.1.dist-info/entry_points.txt,sha256=wm69i_MAuNbs_x1M8PZ3eNmVYeJzCohHco532JPkqVY,110
+fastspell-0.11.1.dist-info/top_level.txt,sha256=Gvco90Y4Dlh1V7IiyCYWtgQy4ki5V7tF_v3-Q06pgxE,10
+fastspell-0.11.1.dist-info/RECORD,,
