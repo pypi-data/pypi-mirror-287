@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+libdb/__init__.py
+libdb/db_manager.py
+libdb.egg-info/PKG-INFO
+libdb.egg-info/SOURCES.txt
+libdb.egg-info/dependency_links.txt
+libdb.egg-info/top_level.txt
+tests/__init__.py
+tests/test_db_manager.py
