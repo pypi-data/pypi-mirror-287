@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: fastphrase
+Version: 0.0.14
+Summary: Fastphrase - passphrase generator by worldlists.
+Author-Email: Alexander Lavrov <admin@egnod.dev>
+License: MIT
+Requires-Python: <=3.13,>=3.9
+Description-Content-Type: text/markdown
+
+# fastphrase
+
+Fastphrase - passphrase generator by worldlists.
