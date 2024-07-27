@@ -1,0 +1,10 @@
+snoscience/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+snoscience/_activation.py,sha256=mH6tJFzd0Cra8AQMKtLS2HaL1OVSApK6MdSDbS31dzE,801
+snoscience/_layers.py,sha256=RLAzjUUwuzEctue-xeFWVJaTsqw4OT4cvXoUSs9SjfE,5627
+snoscience/_loss.py,sha256=HugTUfHjXolyhyAW3hgIr9vK5aGCeWXHpBQ1gwQlM98,1136
+snoscience/_neurons.py,sha256=tXF256H0ydD6GcWaQ-mKW9r3uzrAEOxas8RrSUXM5Cs,2676
+snoscience/metrics.py,sha256=qnaQ2IVIzd_cfOiwP0Q43XUOaY2B6YK11zHNaJB1jSw,1316
+snoscience/networks.py,sha256=-0w2oR5hzGbGspy__ALHVcRVltbqVHMZkpASuJDZVdQ,6652
+snoscience-2.0.0.dist-info/METADATA,sha256=0gAbSNmcG6B2bK6eWcOHL_eEffY0avn83v_KHl_tu5Y,1609
+snoscience-2.0.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+snoscience-2.0.0.dist-info/RECORD,,
