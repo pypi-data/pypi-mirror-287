@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: ai-review-assistant
+Version: 0.4.0
+Summary: An AI-powered code review assistant
+Home-page: https://github.com/yourusername/ai_review_assistant
+License: MIT
+Keywords: ai,code review,assistant
+Author: Viktor Andriichuk
+Author-email: v.andriichuk@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: anthropic (>=0.31.2,<0.32.0)
+Requires-Dist: build (>=1.2.1,<2.0.0)
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: gitpython (>=3.1.43,<4.0.0)
+Requires-Dist: langchain (>=0.2.11,<0.3.0)
+Requires-Dist: langchain-anthropic (>=0.1.20,<0.2.0)
+Requires-Dist: langchain-core (>=0.2.23,<0.3.0)
+Requires-Dist: langchain-openai (>=0.1.17,<0.2.0)
+Requires-Dist: openai (>=1.37.0,<2.0.0)
+Requires-Dist: pre-commit (>=3.7.1,<4.0.0)
+Requires-Dist: twine (>=5.1.1,<6.0.0)
+Requires-Dist: types-setuptools (>=71.1.0.20240724,<72.0.0.0)
+Project-URL: Repository, https://github.com/yourusername/ai_review_assistant
+Description-Content-Type: text/markdown
+
+# Installation
+
+You can install the latest version of AI Review Assistant from [GitHub](https://github.com/vandriichuk/ai_review_assistant):
+
+```bash
+pip install git+https://github.com/vandriichuk/ai_review_assistant.git
+```
+
+# Help:
+ai_review_assistant --help
+
+# Example of usage:
+ai_review_assistant --vendor openai --model gpt-4o --api-key your_api_key --program-language "Python,JavaScript,TypeScript" --result-output-language English review
+
