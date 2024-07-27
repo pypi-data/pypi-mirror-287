@@ -1,0 +1,13 @@
+lib/cmake/napf/napfTargets.cmake,sha256=d6hP026Jcv2mCaYTjxSf-rIV8bpRAAx_8Nx30MIx7fA,4169
+lib/cmake/napf/napfConfigVersion.cmake,sha256=REDN-rfH5OT__PDYHWmPzYApDE8qjTLE-CQpk7CvlR0,2762
+lib/cmake/napf/napfConfig.cmake,sha256=N6kcvoLv0iqlchur6xyr3O11zsL-L0mJzE2b2U4-6LY,963
+include/nanoflann.hpp,sha256=hmV8mZ9q3q4-3LrwDNDUaqIJkt7enFL3259ddjnd8vQ,88826
+include/napf.hpp,sha256=BjbOKfXQrT3a5JO0yDbpKbIm7f74c-JrJrP9xKBR1p8,1648
+napf/_version.py,sha256=aOHawL1zuHMfBWKXqwUkXcW96oXLNCY-CXdHDqkz4g4,18
+napf/_napf.so,sha256=Whk06yt1yoY6pQAAqzEkr4hUPOQdarmDnwD3kP0PTWo,2103640
+napf/base.py,sha256=9fIBuJQeOUwmLc8tMV9FsEFmcfJmkMMjFbOzjUvWAEE,12515
+napf/__init__.py,sha256=1er8UPiqlDlBCOUFqDe3xyg9b7JFrUbtMHwj8v0k48Y,400
+napf-0.1.0.dist-info/WHEEL,sha256=ObAKoRgDLGN7PHruDb-XPIuukWllG4Cl3z3gUD9H4Nc,155
+napf-0.1.0.dist-info/RECORD,,
+napf-0.1.0.dist-info/METADATA,sha256=jdF0HSMwuUM35t1-aYm7EDzCXlOCOR-DdHgDFibS9A4,3969
+napf-0.1.0.dist-info/licenses/LICENSE,sha256=RQpxfZtmIABHeQ62S0CQ74mI2Ddoay4UcJiw87LGnUs,1068
