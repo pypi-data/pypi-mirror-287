@@ -1,0 +1,11 @@
+loss_watch/__init__.py,sha256=5dCSEl7eYNeCX52eXnr2fIr0RVqWhU96JvRLYSCh8lo,96
+loss_watch/color.py,sha256=_CWMSOjKO6FFSDpulaez7xlAklwkLvqdHTKgtGDCMV8,5418
+loss_watch/display_components.py,sha256=apDsKCZQ4JMRptLaqBfJbeWmnQifE9X7l68QFlqoAGY,733
+loss_watch/loss_progress_bar.py,sha256=850eJg7LITWReqrkmlZ3bsmw8AeR4gIsC4mA1io7ggo,15459
+loss_watch/style.py,sha256=sibYXwHmfTpye-1j8kcwHvn85FRJxSV3Q9b83AQDYPI,2470
+loss_watch/util.py,sha256=EWVD4vxbSYZLQB_l2iJi_d3yH9HT2uOqBY3PtSvKmXU,5282
+loss_watch-0.1.dist-info/LICENSE,sha256=wdQmZJROp7dSFu8Pp_-AcLQDtPHZVzFzlttV7OzmNTs,1071
+loss_watch-0.1.dist-info/METADATA,sha256=F9wT6YAYbYtvdByjgB4rFHgCWoBCLOin6n2_fXDORE0,4224
+loss_watch-0.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+loss_watch-0.1.dist-info/top_level.txt,sha256=rSs1wJTdl31kW4NpRl8o-p5lAtJaUf0phn9jlrIvQ74,11
+loss_watch-0.1.dist-info/RECORD,,
