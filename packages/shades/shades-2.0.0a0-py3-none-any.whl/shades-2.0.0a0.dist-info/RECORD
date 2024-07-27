@@ -1,0 +1,9 @@
+shades/__init__.py,sha256=AtzmPVxUvVsSPQoVX_r8DmihdJujmnjckiSYxoF05W0,371
+shades/_wrappers.py,sha256=zatqQUcdpNVM6kOhG-cDztCQ18xDd70NKe8Raif3TQA,900
+shades/canvas.py,sha256=KBMgtvuYKu15lw95zI5Dz9LJOu44dAAF95gNPQjE8Yw,16669
+shades/noise.py,sha256=UxDne_3ln_1RZjwv8UXOXleTYpAqDI3krvypfYUyPdE,10324
+shades/shades.py,sha256=jR3TwarC4TPYU1HI2ZVv7fp13FztqrMcwsiBhTfoYjg,2578
+shades/utils.py,sha256=hz_XmOcSLviMAY2Z-PmOOGzfnjTRzrRxQRHwBWmvito,1186
+shades-2.0.0a0.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+shades-2.0.0a0.dist-info/METADATA,sha256=GHno3223bPPcsdHXd1Xvd4oUkUFl2GoaFX1PRoqZRfI,643
+shades-2.0.0a0.dist-info/RECORD,,
