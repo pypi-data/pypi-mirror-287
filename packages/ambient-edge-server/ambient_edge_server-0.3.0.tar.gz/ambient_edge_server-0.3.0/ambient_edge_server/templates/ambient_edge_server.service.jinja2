@@ -1,0 +1,19 @@
+[Unit]
+Description={{ service.description }}
+After=network.target
+
+[Service]
+Type=simple
+User={{ service.user }}
+Group={{ service.group }}
+ExecStart={{ service.exec_start }}
+Restart=on-failure
+{% if service.environment %}
+Environment={{ service.environment }}
+{% endif %}
+# WorkingDirectory={{ service.working_directory }}
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
