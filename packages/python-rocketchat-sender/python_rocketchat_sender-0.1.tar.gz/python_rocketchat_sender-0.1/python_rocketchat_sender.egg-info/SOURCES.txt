@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+python_rocketchat_sender/__init__.py
+python_rocketchat_sender/sender.py
+python_rocketchat_sender.egg-info/PKG-INFO
+python_rocketchat_sender.egg-info/SOURCES.txt
+python_rocketchat_sender.egg-info/dependency_links.txt
+python_rocketchat_sender.egg-info/requires.txt
+python_rocketchat_sender.egg-info/top_level.txt
