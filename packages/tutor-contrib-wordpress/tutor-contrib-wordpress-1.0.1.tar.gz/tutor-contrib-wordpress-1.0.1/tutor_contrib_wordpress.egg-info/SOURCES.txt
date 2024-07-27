@@ -1,0 +1,15 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.py
+tutor_contrib_wordpress.egg-info/PKG-INFO
+tutor_contrib_wordpress.egg-info/SOURCES.txt
+tutor_contrib_wordpress.egg-info/dependency_links.txt
+tutor_contrib_wordpress.egg-info/entry_points.txt
+tutor_contrib_wordpress.egg-info/requires.txt
+tutor_contrib_wordpress.egg-info/top_level.txt
+tutorwordpress/__about__.py
+tutorwordpress/__init__.py
+tutorwordpress/plugin.py
+tutorwordpress/templates/wordpress/tasks/lms/init.sh
