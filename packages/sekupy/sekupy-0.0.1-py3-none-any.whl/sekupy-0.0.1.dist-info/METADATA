@@ -1,0 +1,197 @@
+Metadata-Version: 2.3
+Name: sekupy
+Version: 0.0.1
+Summary: Detergent for your dirty neuroimaging pipelines
+Project-URL: Homepage, https://github.com/robbisg/sekupy
+Project-URL: Bug Tracker, https://github.com/robbisg/sekupy/issues/
+Project-URL: Documentation, https://sekupy.readthedocs.io/
+Project-URL: Source Code, https://github.com/robbisg/sekupy
+Author-email: Roberto Guidotti <roberto.guidotti@unich.it>
+License: License for sekupy
+        ==================
+        
+        New BSD License
+        
+        Copyright (c) The sekupy developers.
+        All rights reserved.
+        
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+          a. Redistributions of source code must retain the above copyright notice,
+             this list of conditions and the following disclaimer.
+          b. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          c. Neither the name of the sekupy developers nor the names of
+             its contributors may be used to endorse or promote products
+             derived from this software without specific prior written
+             permission.
+        
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+        ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR
+        ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+        OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+        DAMAGE.
+License-File: LICENSE
+Keywords: EEG,MEG,MVPA,brain,fMRI,machine learning,neuroimaging,neuroscience
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development
+Requires-Python: >=3.9
+Requires-Dist: h5py
+Requires-Dist: imbalanced-learn
+Requires-Dist: lazy-loader
+Requires-Dist: matplotlib
+Requires-Dist: mne
+Requires-Dist: nibabel
+Requires-Dist: nilearn
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pybids
+Requires-Dist: pymatreader
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: seaborn
+Requires-Dist: statsmodels
+Requires-Dist: tqdm
+Provides-Extra: data
+Provides-Extra: doc
+Requires-Dist: graphviz; extra == 'doc'
+Requires-Dist: ipython!=8.7.0; extra == 'doc'
+Requires-Dist: memory-profiler; extra == 'doc'
+Requires-Dist: mne-bids; extra == 'doc'
+Requires-Dist: mne-connectivity; extra == 'doc'
+Requires-Dist: mne-gui-addons; extra == 'doc'
+Requires-Dist: neo; extra == 'doc'
+Requires-Dist: numpydoc; extra == 'doc'
+Requires-Dist: pydata-sphinx-theme==0.13.3; extra == 'doc'
+Requires-Dist: pygments>=2.13; extra == 'doc'
+Requires-Dist: pytest; extra == 'doc'
+Requires-Dist: pyxdf; extra == 'doc'
+Requires-Dist: pyzmq!=24.0.0; extra == 'doc'
+Requires-Dist: seaborn!=0.11.2; extra == 'doc'
+Requires-Dist: selenium; extra == 'doc'
+Requires-Dist: sphinx-copybutton; extra == 'doc'
+Requires-Dist: sphinx-design; extra == 'doc'
+Requires-Dist: sphinx-gallery; extra == 'doc'
+Requires-Dist: sphinx>=6; extra == 'doc'
+Requires-Dist: sphinxcontrib-bibtex>=2.5; extra == 'doc'
+Requires-Dist: sphinxcontrib-towncrier; extra == 'doc'
+Requires-Dist: sphinxcontrib-youtube; extra == 'doc'
+Provides-Extra: test
+Requires-Dist: codespell; extra == 'test'
+Requires-Dist: mypy; extra == 'test'
+Requires-Dist: numpydoc; extra == 'test'
+Requires-Dist: pre-commit; extra == 'test'
+Requires-Dist: pytest-cov; extra == 'test'
+Requires-Dist: pytest-harvest; extra == 'test'
+Requires-Dist: pytest-qt; extra == 'test'
+Requires-Dist: pytest-timeout; extra == 'test'
+Requires-Dist: pytest>=8.0.0rc2; extra == 'test'
+Requires-Dist: ruff; extra == 'test'
+Requires-Dist: tomli; (python_version < '3.11') and extra == 'test'
+Requires-Dist: twine; extra == 'test'
+Requires-Dist: wheel; extra == 'test'
+Description-Content-Type: text/markdown
+
+# sekupy
+
+![example workflow](https://github.com/robbisg/sekupy/actions/workflows/test.yaml/badge.svg)
+[![codecov](https://codecov.io/gh/robbisg/sekupy/branch/master/graph/badge.svg)](https://codecov.io/gh/robbisg/sekupy)
+[![Documentation Status](https://readthedocs.org/projects/sekupy/badge/?version=latest)](https://sekupy.readthedocs.io/en/latest/?badge=latest)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![CodeFactor](https://www.codefactor.io/repository/github/robbisg/sekupy/badge)](https://www.codefactor.io/repository/github/robbisg/sekupy)
+
+`sekupy` is a python-package created for deterging your (dirty) (and) (multivariate) neuroimaging analyses. The package has been thought for
+decoding analyses but it includes also basic univariate analyses.
+
+It has some utilities to vary sets of parameters of the analyses without struggling with `for` and `if` statements.
+
+It deterges your results, by saving them in a safe manner, by also keeping in mind BIDS.
+
+`sekupy` is the deterged version of `pyitab`.
+
+# Documentation
+
+The documention can be found [here](https://sekupy.readthedocs.io/).
+
+# Install
+The package isn't yet on `pip`.
+You can install it by using:
+```
+python setup.py install
+```
+
+# Example
+The main idea is to use a dictionary to configure all parameters of your analysis, feed the configuration into an ```AnalysisPipeline``` object, call ```fit``` to obtain results, then ```save``` to store in a ```BIDS```-ish way.
+
+For example if we want to perform a ```RoiDecoding``` analysis using some preprocessing steps we will have a script like this (this is not a complete example):
+```python
+from sekupy.analysis.configurator import AnalysisConfigurator
+from sekupy.analysis.pipeline import AnalysisPipeline
+from sekupy.analysis.decoding.roi_decoding import RoiDecoding
+
+_default_config = {
+                    # Here we specifiy that we have to transform the dataset labels
+                    # then select samples and then balance data
+                    'prepro': ['target_transformer', 'sample_slicer', 'balancer'],
+                    
+                    # Here we set which attribute to choose (dataset is a pymvpa dataset)
+                    'target_transformer__attr': "image_type",
+                    # Here we select samples with a image_type equal to I or O and evidence equal to 1
+                    'sample_slicer__attr': {'image_type':["I", "O"], 'evidence':[1]},
+                    # Then we say that we want to balance image_type at subject-level
+                    "balancer__attr": 'subject',
+
+                    # We setup the estimator in a sklearn way
+                    'estimator': [
+                        ('fsel', SelectKBest(k=50)),
+                        ('clf', SVC(C=1, kernel='linear'))],
+                    'estimator__clf__C': 1,
+                    'estimator__clf__kernel': 'linear',
+                    
+                    # Then the cross-validation object (also sklearn)
+                    'cv': LeaveOneGroupOut,
+                    
+                    'scores': ['accuracy'],
+                    
+                    # Then the analysis
+                    'analysis': RoiDecoding,
+                    'analysis__n_jobs': -1,
+                    
+                    'analysis__permutation': 0,
+                    
+                    'analysis__verbose': 0,
+                    
+                    # Here we say that we want use the region with value 1 in image+type mask
+                    'kwargs__roi_values': [('image+type', [1]), ('image+type', [2]), ('image+type', [3]),
+                                            ('image+type', [4]), ('image+type', [5])],
+                    
+                    # We want to use subject for our cross-validation
+                    'kwargs__cv_attr': 'subject'
+                    }
+
+configuration = AnalysisConfigurator(**_default_config), 
+                                     kind='configuration') 
+kwargs = configuration._get_kwargs() 
+a = AnalysisPipeline(conf, name="roi_decoding_across_full").fit(ds, **kwargs) 
+a.save() 
+```
+Surf the code, starting from classes used here!!
