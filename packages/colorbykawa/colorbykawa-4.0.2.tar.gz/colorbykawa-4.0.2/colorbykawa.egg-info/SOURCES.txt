@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+colorbykawa/__init__.py
+colorbykawa.egg-info/PKG-INFO
+colorbykawa.egg-info/SOURCES.txt
+colorbykawa.egg-info/dependency_links.txt
+colorbykawa.egg-info/top_level.txt
