@@ -1,0 +1,4 @@
+python-Levenshtein
+matplotlib
+pandas
+numpy
