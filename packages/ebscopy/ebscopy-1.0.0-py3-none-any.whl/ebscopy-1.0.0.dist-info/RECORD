@@ -1,0 +1,13 @@
+ebscopy/__init__.py,sha256=lU-YU7-EvELqKHChymoDFlRUkk0KZPUPA3SJTK-rAko,789
+ebscopy/edsapi.py,sha256=9M1NJrcGNdmqG86laggkx-bLoDnz--KTozC8ECNcRyE,60563
+ebscopy/tests/__init__.py,sha256=t4RI1hojlMe6lsYAyJNbCvp23fTU3aXoJ4IsZ_Fkc-U,46
+ebscopy/tests/edsapi_test.py.old,sha256=Fb5G0yH7QmrxBcZ-xZWj2seqUY_4vDoD3lfeyQ_fPEE,16858
+ebscopy/tests/test_edsapi.py,sha256=GZAJT3hvEtgdhqiHXAQFmyvt5LM76j_yBAiC9KdIntg,4021
+ebscopy-1.0.0.data/data/ebscopy/docs/INSTALL.md,sha256=_ugXO50-vVNmVZ-AwBOQdwAqNWmUQ8A3_TnVjy8kv9o,4321
+ebscopy-1.0.0.data/data/ebscopy/docs/USAGE.md,sha256=6lfp5ELTmFa7DHu8sEI1JwFmbOR0NCwLcoLvVVgFG0w,1703
+ebscopy-1.0.0.data/data/ebscopy/samples/plain_old_test.py,sha256=B9dTdc8kWsMn8TVdu7QSaLcehexQaC_f_SMImVcxcQc,884
+ebscopy-1.0.0.data/data/ebscopy/samples/sample.ebscopy_env,sha256=XV9TKtUJkY_dZUdN6qF7ADVBA5aGp2NARBoRelRoKC0,959
+ebscopy-1.0.0.dist-info/METADATA,sha256=fLxOO3hdSVgIozqsERmDIFJv4t9H-D1Mb-bJ3a2dDrU,42670
+ebscopy-1.0.0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+ebscopy-1.0.0.dist-info/licenses/LICENSE.txt,sha256=z-8QJDUWxMYIouttchXrPfuCAd5Kzimwg7sYhQhZoRQ,35143
+ebscopy-1.0.0.dist-info/RECORD,,
