@@ -1,0 +1,14 @@
+magictables/__init__.py,sha256=i6jFELZkGF0QdW9cK_QlRKhri39stILvdmzz1igy2rk,125
+magictables/docs/api_reference.md,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+magictables/docs/quickstart.md,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+magictables/magictable.py,sha256=XlcdvK83T9rWIbWyvjI_d1PTouPA-DOrGRHNjWzAk5o,12669
+magictables/magictablechain.py,sha256=4MOe2Xl6cEOkBCE_9F0nT1gZuyN4Lin3NT-KgLldvhY,1902
+magictables/notsomagictable.py,sha256=H_JshPYU1Fi-070vVsGe4VT4NTtOR2a8-q2IlOcV8cY,2190
+magictables/prompts.py,sha256=s33B95ahc48EKYaEsbVPmE0uYdc2TbQJpVoD2DLtADw,6109
+magictables/sources.py,sha256=bSEYD20ioSAgmbmLBtZA1ryZiN68lR8E_9WLALx6Y9o,5260
+magictables/tablegraph.py,sha256=ZeBVzQ6k-frh_k9kdW-wrL8PmR86AivQiLN5ULtloIo,4591
+magictables/utils.py,sha256=Ak8otDzEssg-Kieg_5AnGXc4agCoecVR8Oz6kRvyhAY,9280
+magictables-1.1.dist-info/LICENSE,sha256=gcuuhKKc5-dwvyvHsXjlC9oM6N5gZ6umYbC8ewW1Yvg,35821
+magictables-1.1.dist-info/METADATA,sha256=counVveOHdcr3y-p-3P85fu3aQKl4nAwgpTeEpPp_NQ,22812
+magictables-1.1.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+magictables-1.1.dist-info/RECORD,,
