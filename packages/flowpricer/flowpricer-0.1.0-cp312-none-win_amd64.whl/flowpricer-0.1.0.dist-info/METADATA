@@ -1,0 +1,19 @@
+Metadata-Version: 2.3
+Name: flowpricer
+Version: 0.1.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Rust
+License-File: LICENSE
+Summary: Analytics library for pricing financial derivatives
+Author-email: flowpricer <flowpricer@gmail.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# Flow Pricer
+
+Analytics library for pricing financial derivatives.
+
