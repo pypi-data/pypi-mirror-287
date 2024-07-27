@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: wmh_seg
+Version: 0.1.1
+Summary: WMH segmentation for FLAIR images
+Home-page: https://github.com/jinghangli98/wmh_seg
+Author: Jinghang Li
+Author-email: jinghang.li@pitt.edu
+Requires-Dist: tqdm
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: nibabel
+Requires-Dist: einops
+Requires-Dist: torchio
+Requires-Dist: numpy
+Requires-Dist: segmentation-models-pytorch==0.3.2
+Requires-Dist: requests
