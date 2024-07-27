@@ -1,0 +1,9 @@
+README.md
+dialektik.py
+setup.py
+dialektik.egg-info/PKG-INFO
+dialektik.egg-info/SOURCES.txt
+dialektik.egg-info/dependency_links.txt
+dialektik.egg-info/entry_points.txt
+dialektik.egg-info/requires.txt
+dialektik.egg-info/top_level.txt
