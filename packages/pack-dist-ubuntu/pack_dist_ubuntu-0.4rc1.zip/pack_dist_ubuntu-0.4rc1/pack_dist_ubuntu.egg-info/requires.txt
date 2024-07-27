@@ -1,0 +1,5 @@
+disttools==0.1.8
+pip2deb==2.0.6
+setuptools==71.1.0
+twine==5.1.1
+wheel==0.43.0

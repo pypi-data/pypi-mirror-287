@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+pack_dist_ubuntu.egg-info/PKG-INFO
+pack_dist_ubuntu.egg-info/SOURCES.txt
+pack_dist_ubuntu.egg-info/dependency_links.txt
+pack_dist_ubuntu.egg-info/requires.txt
+pack_dist_ubuntu.egg-info/top_level.txt
