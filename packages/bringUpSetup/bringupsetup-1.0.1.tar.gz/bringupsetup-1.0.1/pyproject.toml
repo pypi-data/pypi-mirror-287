@@ -1,0 +1,21 @@
+[project]
+name = "bringUpSetup"
+version = "1.0.1"
+authors = [
+    { name="Shree Kumar", email="shree_kumar@apple.com" },
+]
+description = "This Package installs all the required packages for BringUp Automation Tool"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+]
+
+[project.urls]
+Homepage = "https://github.pie.apple.com/shree-kumar/BringUpAutomation/tree/SetUp"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
