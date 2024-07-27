@@ -1,0 +1,17 @@
+convert2ppt/__init__.py,sha256=BQVvxbtIqASQyqSehUE7PaPgcB0Sp84z1Zr3sLhCSzw,918
+convert2ppt/common.py,sha256=jL1r4NnuLysM4rFeVQ_WPbg3s-mo7l8F7njmuKdoPZU,192
+convert2ppt/config.yaml,sha256=x6LZv0T9wdxEq4PDcKTROd_m-o1fZ49Y5m6_pglpHcE,3283
+convert2ppt/configure_llm.py,sha256=OK9JsmRIP52a8LObnGRDy2Pjt9MwXf0xYW5mzc8fW18,829
+convert2ppt/convert2ppt.py,sha256=h0hwdogXGFqerm-5ZPeT-irPn91pCcQRjiHThXsRzEk,19
+convert2ppt/extractor.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+convert2ppt/generate_json Error.py,sha256=jUsvPevJZ-rl0tTzB-BrTn82aIrTASowuM1lYeAquiY,3148
+convert2ppt/generate_json.py,sha256=TlWEnOotfWEeEjVPvq7Bk3mZQ1QbLM4Aco23PrySUWc,1916
+convert2ppt/generate_ppt.py,sha256=SKgzJ08_8z8ndaf1vgO4Gu9oQL1jyi1VJtCiKqDyGI8,6433
+convert2ppt/load_pdfs.py,sha256=Q6PeVlfV4mvwaVHZtzJA1QfQUUvNc1pybgf6tXtrcSU,4042
+convert2ppt/prompt.txt,sha256=tvwsZLJToOEHwrx2ofPVaImXvcmh65nwJFASF8USzlk,8686
+convert2ppt-0.0.22.dist-info/LICENSE,sha256=i_T0dR8lrD6GDV1MDbgBHnBbyjFi-UvEbAibTqLCDrk,1073
+convert2ppt-0.0.22.dist-info/METADATA,sha256=nNuUNj4rv3a3RFS_Se6MNFstQ2UM2bYIo7pBYXw-BrQ,1455
+convert2ppt-0.0.22.dist-info/WHEEL,sha256=ANi2y8tYx-p70pj7MSdqQMJNFJEUgAOyfPpHzqz0w84,109
+convert2ppt-0.0.22.dist-info/entry_points.txt,sha256=ACYdGdvDNtbg4K5xzyzVg1c2bUi1KVxeshEsxf7Vzd0,53
+convert2ppt-0.0.22.dist-info/top_level.txt,sha256=4MW2-HTPJLpdhgk2ISKE2g5qClPYtB-1Zm2xu4_ZbIQ,12
+convert2ppt-0.0.22.dist-info/RECORD,,
