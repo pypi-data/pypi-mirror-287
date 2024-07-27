@@ -1,0 +1,14 @@
+ondewo/__init__.py,sha256=bpT73UG7mZL_JjEqMwbYx6q69jA8J5Jcoul1LcDokhA,81
+ondewo/version.py,sha256=hwOJuFUEKtsgiOt4l6op9s-hviovM6TK1uCdtRNWY4E,22
+ondewo/utils/__init__.py,sha256=MeAY0NMOA01DmL1TrbwmbO0_i2aC41JyuSuWv_0WTB4,580
+ondewo/utils/base_client.py,sha256=DZhdE9b8lE2QOtz_T5iQyzNtVN3Pi5ytPlWs_qC4pm8,3631
+ondewo/utils/base_client_config.py,sha256=Siwbz8lT7VVZjb-E9QRRLgHxyiGOeN6wILJPymc6CMg,1736
+ondewo/utils/base_service_container.py,sha256=hQqNHZhPc9T5rUd32EbA5dAC-wGQQU93O4LHGzL6t3U,736
+ondewo/utils/base_services_interface.py,sha256=JoxrXfdmeEAbh_KGwcAbv4fhkgbz0cpa72CwQrpjFw8,4637
+ondewo/utils/helpers.py,sha256=hGGfKsJ7MBwtrAdH23o7wGhk1E0KGt2IcRYWQazfc7U,1730
+ondewo/utils/text.py,sha256=wK52Gm-Hrqe-fWDKjGXDGhEeWWIzlVbEGITwbWJq0LY,925
+ondewo_client_utils-2.0.0.dist-info/LICENSE,sha256=b64U8Nlwl-DmaozBK6sSUjWnhkGg9syz9EueNgfDLtg,10257
+ondewo_client_utils-2.0.0.dist-info/METADATA,sha256=bVwLH2fuNvJOGM85ED_H2_0zyaHJSfhMi6HXqzJtI78,1677
+ondewo_client_utils-2.0.0.dist-info/WHEEL,sha256=DZajD4pwLWue70CAfc7YaxT1wLUciNBvN_TTcvXpltE,110
+ondewo_client_utils-2.0.0.dist-info/top_level.txt,sha256=k6xvj-4simLbghb9G4LX5lD3UvNgTBdB-WT8oPDlqqE,7
+ondewo_client_utils-2.0.0.dist-info/RECORD,,
