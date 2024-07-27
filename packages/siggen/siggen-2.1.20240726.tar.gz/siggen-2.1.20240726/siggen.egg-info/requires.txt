@@ -1,0 +1,18 @@
+glom
+
+[:python_version < "3.9"]
+importlib_resources
+
+[cli]
+requests<3
+
+[dev]
+build
+check-manifest
+pytest
+requests<3
+ruff
+tox
+tox-gh-actions
+twine
+wheel
