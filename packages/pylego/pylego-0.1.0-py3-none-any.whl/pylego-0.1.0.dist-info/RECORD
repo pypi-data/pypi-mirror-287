@@ -1,0 +1,11 @@
+lepy/__init__.py,sha256=lNrZ_WOjt5h5FHjjAP7o33gWjB4Es6vy14HumYw8Zwc,55
+lepy/lego.so,sha256=az4OrMPJwDr7QQm7CiF-wBCcL1db9yl5y_nV_HuxjCg,107322610
+lepy/lepy.py,sha256=bHsVzqMM2DZmhCAn-yqlxKQ4Pr5QRyOpBjP2dJSBKMU,1976
+pylego/__init__.py,sha256=sYJobFIJ2iCzyicqTfQmqggMC-6-t9eO8fCtxG_6Q60,57
+pylego/lego.so,sha256=37boO1hPIh_1L0Rx0i1OEttzpx-1OH7NiYCVvl8vFD4,107322610
+pylego/pylego.py,sha256=bHsVzqMM2DZmhCAn-yqlxKQ4Pr5QRyOpBjP2dJSBKMU,1976
+pylego-0.1.0.dist-info/LICENSE,sha256=aklz9Y8CIpFsN61U4jHlJYp4W_8HoDpY-tINlDcdSZY,10934
+pylego-0.1.0.dist-info/METADATA,sha256=SjLSJJtwNCOpQfJMBO-bSyqnVUOHxFjFlIpn6HAMMME,5681
+pylego-0.1.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+pylego-0.1.0.dist-info/top_level.txt,sha256=pSOYv55_w90qy3xOvqz_ysSz-X-XRTb-jMpiOyLNnNs,7
+pylego-0.1.0.dist-info/RECORD,,
