@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/anydbconnect.egg-info/PKG-INFO
+src/anydbconnect.egg-info/SOURCES.txt
+src/anydbconnect.egg-info/dependency_links.txt
+src/anydbconnect.egg-info/requires.txt
+src/anydbconnect.egg-info/top_level.txt
+src/dbautomation/__init__.py
+src/dbautomation/mongo_crud.py
