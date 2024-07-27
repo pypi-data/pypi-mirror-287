@@ -1,0 +1,4 @@
+[console_scripts]
+hostile=hostile_eit.cli:main
+hostile-eit=hostile_eit.cli:main
+
