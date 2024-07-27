@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+matrixkit/__init__.py
+matrixkit/block.py
+matrixkit/core.py
+matrixkit/generate.py
+matrixkit/io.py
+matrixkit/metadata.py
+matrixkit/plot.py
+matrixkit/preconditioning.py
+matrixkit/util.py
+matrixkit.egg-info/PKG-INFO
+matrixkit.egg-info/SOURCES.txt
+matrixkit.egg-info/dependency_links.txt
+matrixkit.egg-info/requires.txt
+matrixkit.egg-info/top_level.txt

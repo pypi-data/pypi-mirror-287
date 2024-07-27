@@ -1,0 +1,5 @@
+numpy~=1.26.4
+scipy~=1.13.1
+pillow~=10.3.0
+matplotlib~=3.5.2
+seaborn~=0.13.2
