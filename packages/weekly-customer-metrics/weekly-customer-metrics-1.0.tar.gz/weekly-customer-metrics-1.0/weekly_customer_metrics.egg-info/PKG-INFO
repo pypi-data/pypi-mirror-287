@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: weekly-customer-metrics
+Version: 1.0
+Summary: This project contains code related to weekly-customer-metrics.
+Home-page: https://gitlab.com/landsend/dpe/analytics/weekly_customer_metrics
+Author: LEINTERNAL
+mdeshi
+Author-email: neeraj.deshingkar@landsend.com
+Requires-Python: ~=3.10
