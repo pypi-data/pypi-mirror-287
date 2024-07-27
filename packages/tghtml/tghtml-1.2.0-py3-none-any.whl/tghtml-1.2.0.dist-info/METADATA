@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: tghtml
+Version: 1.2.0
+Summary: Simple tool for parse common HTML to Telegram HTML
+License: MIT
+Author: Daniel Zakharov
+Author-email: gzdan734@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: markdown (>=3.6,<4.0)
+Requires-Dist: markdownify (>=0.13.1,<0.14.0)
+Requires-Dist: pydantic (>=2.8.2,<3.0.0)
+Requires-Dist: pyquery (>=2.0.0,<3.0.0)
