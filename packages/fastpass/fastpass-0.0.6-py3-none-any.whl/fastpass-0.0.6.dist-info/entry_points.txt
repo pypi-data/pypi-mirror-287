@@ -1,0 +1,3 @@
+[console_scripts]
+fastpass = fastpass.__main__:start
+
