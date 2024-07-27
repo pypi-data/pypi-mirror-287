@@ -1,0 +1,8 @@
+dev
+commit 3736564
+Merge: 3f5874f ce5f2bc
+Author: i-robot <huawei_ci_bot@163.com>
+Date:   Tue Jul 16 01:45:50 2024 +0000
+
+    !3548 修改yaml中开启pp/mp时vocab_emv_dp=True以及schedule拼写错误
+    Merge pull request !3548 from niujunhao/code_docs_fix_pp
