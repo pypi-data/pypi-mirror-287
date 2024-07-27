@@ -1,0 +1,14 @@
+libpyvinyl/AbstractBaseClass.py,sha256=bJiQRmIE81Unrl7z-Nl6meLr-RviMTR_xkKm3Myeptk,2032
+libpyvinyl/BaseCalculator.py,sha256=xZLdMMdLBwb_xCRc04AqmPVE1VVnWXB_FdL0RPnjwII,16671
+libpyvinyl/BaseData.py,sha256=H3xrJ7lpH2de_2PV3pc5G9SkfCML4p0DMVAPovPjhFw,19206
+libpyvinyl/BaseFormat.py,sha256=grorJrjarym1zVQ8vLPwec37uAsIcL4ofQZ3So72pbA,4004
+libpyvinyl/Instrument.py,sha256=n_9M1aJDt1wf9jWeM6YJflKQ6w7sPYvoGxPtbBwsKQk,6013
+libpyvinyl/__init__.py,sha256=bBdyiqC6geXfZ-2u3Qd9wkE7HUWv3K9gGS7vR2R4qLM,585
+libpyvinyl/Parameters/Collections.py,sha256=x-DLNBCapIPjU8tA_c4zwL_dXk2Rok6DpNpNlvAOKL0,12661
+libpyvinyl/Parameters/Parameter.py,sha256=fPnF519MHCcfmk-vGnN2jF6YGskyNyQMwxZcL4o8hYA,17662
+libpyvinyl/Parameters/__init__.py,sha256=3PrpyPbSNtduC6NlUTrTuZfrJc8KyvQqoPRlxDRAQx0,118
+libpyvinyl-1.3.0.dist-info/LICENSE,sha256=mNGKsJSd4hdS6Jd6CJpQhbB915Nx1xc3jnRWqKfdaUs,7440
+libpyvinyl-1.3.0.dist-info/METADATA,sha256=edr0o9DWhw0qsjvTcT4nTTKYYZ8BDuzq2sKe2vS4dKs,5276
+libpyvinyl-1.3.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+libpyvinyl-1.3.0.dist-info/top_level.txt,sha256=PheSXfKY9PnxKoSPebi8-4IQotucdUuR5Md3eQ5zi7g,11
+libpyvinyl-1.3.0.dist-info/RECORD,,
