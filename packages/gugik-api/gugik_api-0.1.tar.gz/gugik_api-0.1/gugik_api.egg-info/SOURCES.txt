@@ -1,0 +1,13 @@
+README.md
+setup.py
+gugik_api/__init__.py
+gugik_api/gugik_api.py
+gugik_api/ll_convert.py
+gugik_api.egg-info/PKG-INFO
+gugik_api.egg-info/SOURCES.txt
+gugik_api.egg-info/dependency_links.txt
+gugik_api.egg-info/requires.txt
+gugik_api.egg-info/top_level.txt
+notebooks/__init__.py
+tests/__init__.py
+tests/test_gugik_api.py
