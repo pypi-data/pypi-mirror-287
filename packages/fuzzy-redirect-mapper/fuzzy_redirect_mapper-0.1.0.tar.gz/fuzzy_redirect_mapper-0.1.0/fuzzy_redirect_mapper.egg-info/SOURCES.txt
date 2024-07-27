@@ -1,0 +1,12 @@
+README.md
+setup.py
+fuzzy_redirect_mapper/__init__.py
+fuzzy_redirect_mapper/redirect_mapper.py
+fuzzy_redirect_mapper.egg-info/PKG-INFO
+fuzzy_redirect_mapper.egg-info/SOURCES.txt
+fuzzy_redirect_mapper.egg-info/dependency_links.txt
+fuzzy_redirect_mapper.egg-info/entry_points.txt
+fuzzy_redirect_mapper.egg-info/requires.txt
+fuzzy_redirect_mapper.egg-info/top_level.txt
+tests/__init__.py
+tests/test_redirect_mapper.py

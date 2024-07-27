@@ -1,0 +1,2 @@
+[console_scripts]
+fuzzy_redirect_mapper = fuzzy_redirect_mapper.redirect_mapper:main
