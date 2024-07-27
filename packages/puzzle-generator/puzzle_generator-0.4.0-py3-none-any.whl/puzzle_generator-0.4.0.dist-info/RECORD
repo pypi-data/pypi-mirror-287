@@ -1,0 +1,12 @@
+puzzle_generator/README.md,sha256=wUJ28GcZ1dUzGMdqBgLYqS7oMP05nMieI2BshbD5zuI,1198
+puzzle_generator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+puzzle_generator/bytestr_utils.py,sha256=gVG-_pnf0Eo5wTfjuZzsQ5kcglpb9TY2mapSGy_0C-U,198
+puzzle_generator/create_puzzle.py,sha256=HO3qCHfQCWw1KW8_xEGzp0_KA7XcMKjO11-P5-InVE8,5162
+puzzle_generator/puzzle_data_encryption.py,sha256=FGMqkPKEZhTHDfaCEyehfZ6w9uKVIga52VDkgpzRKNw,498
+puzzle_generator/simple_encryption.py,sha256=1j7U0vE-zg6xScbNmz6tqf2yoFWMWP80XUnloP23K4I,1440
+puzzle_generator/simple_encryption_utils.py,sha256=eQTUpDz2C9Pf163oQT4pzqVpwxsrhTh88T72mREjPww,1003
+puzzle_generator/spiced_simple_encryption.py,sha256=5hjeVzR7lzu07Vb42TVilIT0we8QcM5TAWlhv6lJsP8,2040
+puzzle_generator-0.4.0.dist-info/LICENSE,sha256=RYgXjVt16Yb78Qn6q_a2jq-wt8Y6WGMTqPp7Atm3l5c,1068
+puzzle_generator-0.4.0.dist-info/METADATA,sha256=M55vsv2zC2roiE6XKkFOStGM4Qnw6coDpldOvLjWgLY,1842
+puzzle_generator-0.4.0.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+puzzle_generator-0.4.0.dist-info/RECORD,,
