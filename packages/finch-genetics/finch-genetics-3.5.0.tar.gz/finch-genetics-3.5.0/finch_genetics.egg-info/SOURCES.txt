@@ -1,0 +1,12 @@
+setup.py
+Finch/__init__.py
+Finch/generic.py
+Finch/prompt_maker.py
+Finch/rates.py
+Finch/selectors.py
+Finch/universal.py
+finch_genetics.egg-info/PKG-INFO
+finch_genetics.egg-info/SOURCES.txt
+finch_genetics.egg-info/dependency_links.txt
+finch_genetics.egg-info/requires.txt
+finch_genetics.egg-info/top_level.txt
