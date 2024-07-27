@@ -1,0 +1,9 @@
+pyproject.toml
+setup.cfg
+setup.py
+allworkpys/__init__.py
+allworkpys/allwork.py
+allworkpys.egg-info/PKG-INFO
+allworkpys.egg-info/SOURCES.txt
+allworkpys.egg-info/dependency_links.txt
+allworkpys.egg-info/top_level.txt
