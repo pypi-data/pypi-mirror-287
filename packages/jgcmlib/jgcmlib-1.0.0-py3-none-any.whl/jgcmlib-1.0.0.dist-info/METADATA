@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: jgcmlib
+Version: 1.0.0
+Summary: A Python module jgcmlib
+Author: J.Guillaume D-Isabelle
+Requires-Dist: tlid
+Requires-Dist: requests
+
