@@ -1,0 +1,6 @@
+typing-extensions
+
+[dev]
+mypy
+rich
+ruff
