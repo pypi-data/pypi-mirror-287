@@ -1,0 +1,3 @@
+[console_scripts]
+git-list-authors=git_list_authors.main:main
+
