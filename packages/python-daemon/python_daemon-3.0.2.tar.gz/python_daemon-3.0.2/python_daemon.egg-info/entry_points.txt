@@ -1,0 +1,4 @@
+[setuptools.finalize_distribution_options]
+description_fields = util.packaging:derive_dist_description
+maintainer = util.packaging:derive_maintainer
+version = util.packaging:derive_version
