@@ -1,0 +1,3 @@
+[console_scripts]
+sgs=set_github_secret.set_github_secret.GithubApi:set_update_github_secret
+
