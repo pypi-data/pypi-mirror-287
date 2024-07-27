@@ -1,0 +1,6 @@
+[console_scripts]
+srai_build=srai_core.script.srai_build:main
+srai_deploy=srai_core.script.srai_deploy:main
+srai_help=srai_core.script.srai_help:main
+srai_release=srai_core.script.srai_release:main
+
