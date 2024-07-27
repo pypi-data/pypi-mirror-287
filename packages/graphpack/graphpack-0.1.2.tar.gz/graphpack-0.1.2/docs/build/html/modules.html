@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graph Compression Modules &mdash; graphpack  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to see the algorithm pseudocode, parameters and hints';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Graph Compression module" href="src.html" />
+    <link rel="prev" title="Demo Pipeline" href="tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            graphpack
+          </a>
+              <div class="version">
+                0.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#quick-start">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#on-ramp">On Ramp</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview and Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#compression-pipeline">Compression Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Demo Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Graph Compression Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.html">Graph Compression module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#module-utils">Utilities module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#demo-modules">Demo Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demo.html">Demo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#module-sankey">Sankey module</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Glossaries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="graph-compression-glossary.html">Graph Compression Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compression-algorithm-glossary.html">Compression Algorithm Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">graphpack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Graph Compression Modules</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="graph-compression-modules">
+<h1>Graph Compression Modules<a class="headerlink" href="#graph-compression-modules" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="src.html">Graph Compression module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.calculate_compression_efficacy"><code class="docutils literal notranslate"><span class="pre">calculate_compression_efficacy()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.compress_graph"><code class="docutils literal notranslate"><span class="pre">compress_graph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.compress_graph_partition_based"><code class="docutils literal notranslate"><span class="pre">compress_graph_partition_based()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.compute_adjacency_matrix"><code class="docutils literal notranslate"><span class="pre">compute_adjacency_matrix()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.compute_and_save_edges_to_remove"><code class="docutils literal notranslate"><span class="pre">compute_and_save_edges_to_remove()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.detect_communities"><code class="docutils literal notranslate"><span class="pre">detect_communities()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.perform_compression"><code class="docutils literal notranslate"><span class="pre">perform_compression()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.reconstruct_original_network"><code class="docutils literal notranslate"><span class="pre">reconstruct_original_network()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.remove_unnecessary_files"><code class="docutils literal notranslate"><span class="pre">remove_unnecessary_files()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#compression.save_network_files"><code class="docutils literal notranslate"><span class="pre">save_network_files()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.html#module-utils">Utilities module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.CustomArgumentParser"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.assign_community_colors"><code class="docutils literal notranslate"><span class="pre">assign_community_colors()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.cluster_graph_embeddings"><code class="docutils literal notranslate"><span class="pre">cluster_graph_embeddings()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.deepwalk_embedding"><code class="docutils literal notranslate"><span class="pre">deepwalk_embedding()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.draw_graph"><code class="docutils literal notranslate"><span class="pre">draw_graph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.draw_interactive_graph_pyvis"><code class="docutils literal notranslate"><span class="pre">draw_interactive_graph_pyvis()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.generate_figure_filepath"><code class="docutils literal notranslate"><span class="pre">generate_figure_filepath()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.generate_random_walks"><code class="docutils literal notranslate"><span class="pre">generate_random_walks()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.perform_gsea"><code class="docutils literal notranslate"><span class="pre">perform_gsea()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.random_walk"><code class="docutils literal notranslate"><span class="pre">random_walk()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.read_graph"><code class="docutils literal notranslate"><span class="pre">read_graph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.read_graph_from_edge_list"><code class="docutils literal notranslate"><span class="pre">read_graph_from_edge_list()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.read_graph_from_json"><code class="docutils literal notranslate"><span class="pre">read_graph_from_json()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html#utils.save_graph"><code class="docutils literal notranslate"><span class="pre">save_graph()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="demo-modules">
+<h1>Demo Modules<a class="headerlink" href="#demo-modules" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#demo.fetch_api_data"><code class="docutils literal notranslate"><span class="pre">fetch_api_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#demo.get_api_params"><code class="docutils literal notranslate"><span class="pre">get_api_params()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#demo.get_example_graph"><code class="docutils literal notranslate"><span class="pre">get_example_graph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#demo.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#demo.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#demo.parse_graph_data"><code class="docutils literal notranslate"><span class="pre">parse_graph_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#demo.run_demo"><code class="docutils literal notranslate"><span class="pre">run_demo()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html#module-sankey">Sankey module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#sankey.create_sankey_plot"><code class="docutils literal notranslate"><span class="pre">create_sankey_plot()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#sankey.lighten_color"><code class="docutils literal notranslate"><span class="pre">lighten_color()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#sankey.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#sankey.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#sankey.map_transitions"><code class="docutils literal notranslate"><span class="pre">map_transitions()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#sankey.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="demo.html#sankey.produce_sankey"><code class="docutils literal notranslate"><span class="pre">produce_sankey()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial.html" class="btn btn-neutral float-left" title="Demo Pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="src.html" class="btn btn-neutral float-right" title="Graph Compression module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Daniele.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

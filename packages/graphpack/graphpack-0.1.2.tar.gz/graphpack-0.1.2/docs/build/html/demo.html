@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo module &mdash; graphpack  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to see the algorithm pseudocode, parameters and hints';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Graph Compression Glossary" href="graph-compression-glossary.html" />
+    <link rel="prev" title="Graph Compression module" href="src.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            graphpack
+          </a>
+              <div class="version">
+                0.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#quick-start">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#on-ramp">On Ramp</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview and Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#compression-pipeline">Compression Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Demo Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Graph Compression Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html#demo-modules">Demo Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Demo module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#demo.fetch_api_data"><code class="docutils literal notranslate"><span class="pre">fetch_api_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo.get_api_params"><code class="docutils literal notranslate"><span class="pre">get_api_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo.get_example_graph"><code class="docutils literal notranslate"><span class="pre">get_example_graph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo.parse_graph_data"><code class="docutils literal notranslate"><span class="pre">parse_graph_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo.run_demo"><code class="docutils literal notranslate"><span class="pre">run_demo()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sankey">Sankey module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sankey.create_sankey_plot"><code class="docutils literal notranslate"><span class="pre">create_sankey_plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sankey.lighten_color"><code class="docutils literal notranslate"><span class="pre">lighten_color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sankey.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sankey.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sankey.map_transitions"><code class="docutils literal notranslate"><span class="pre">map_transitions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sankey.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sankey.produce_sankey"><code class="docutils literal notranslate"><span class="pre">produce_sankey()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Glossaries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="graph-compression-glossary.html">Graph Compression Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compression-algorithm-glossary.html">Compression Algorithm Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">graphpack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Graph Compression Modules</a></li>
+      <li class="breadcrumb-item active">Demo module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/demo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-demo">
+<span id="demo-module"></span><h1>Demo module<a class="headerlink" href="#module-demo" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="demo.fetch_api_data">
+<span class="sig-prename descclassname"><span class="pre">demo.</span></span><span class="sig-name descname"><span class="pre">fetch_api_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/demo.html#fetch_api_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#demo.fetch_api_data" title="Link to this definition"></a></dt>
+<dd><p>Fetches data from an API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request_url</strong> (<em>str</em>) – The URL of the API endpoint.</p></li>
+<li><p><strong>params</strong> (<em>dict</em><em>, </em><em>optional</em>) – Parameters to be sent with the request. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON response from the API.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If there’s an issue with the request or parsing the response.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="demo.get_api_params">
+<span class="sig-prename descclassname"><span class="pre">demo.</span></span><span class="sig-name descname"><span class="pre">get_api_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">demo_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gene_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gene_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/demo.html#get_api_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#demo.get_api_params" title="Link to this definition"></a></dt>
+<dd><p>Generates API request parameters and URL based on the specified demo number, gene list usage,
+and custom parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>demo_number</strong> (<em>int</em>) – The demo number specifying which example query to use.</p></li>
+<li><p><strong>use_gene_list</strong> (<em>bool</em>) – Whether to use a predefined gene list for the query.</p></li>
+<li><p><strong>gene_list</strong> (<em>list</em><em>, </em><em>optional</em>) – List of genes to use for the query. Defaults to None.</p></li>
+<li><p><strong>custom_params</strong> (<em>dict</em><em>, </em><em>optional</em>) – Custom API parameters to override or supplement defaults. Defaults to None.</p></li>
+<li><p><strong>api_url</strong> (<em>str</em><em>, </em><em>optional</em>) – Custom API URL to fetch the data from. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the API parameters and request URL.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="demo.get_example_graph">
+<span class="sig-prename descclassname"><span class="pre">demo.</span></span><span class="sig-name descname"><span class="pre">get_example_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">demo_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gene_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gene_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/demo.html#get_example_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#demo.get_example_graph" title="Link to this definition"></a></dt>
+<dd><p>Retrieves and parses an example graph from the STRING database based on the specified demo number,
+gene list usage, and additional API parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>demo_number</strong> (<em>int</em>) – The demo number specifying which example query to use.</p></li>
+<li><p><strong>use_gene_list</strong> (<em>bool</em>) – Whether to use a predefined gene list for the query.</p></li>
+<li><p><strong>gene_list</strong> (<em>list</em><em>, </em><em>optional</em>) – List of genes to use for the query. Defaults to None.</p></li>
+<li><p><strong>custom_params</strong> (<em>dict</em><em>, </em><em>optional</em>) – Custom API parameters to override or supplement defaults. Defaults to None.</p></li>
+<li><p><strong>api_url</strong> (<em>str</em><em>, </em><em>optional</em>) – Custom API URL to fetch the data from. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A NetworkX graph representing the retrieved data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nx.Graph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="demo.main">
+<span class="sig-prename descclassname"><span class="pre">demo.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/demo.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#demo.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="demo.parse_args">
+<span class="sig-prename descclassname"><span class="pre">demo.</span></span><span class="sig-name descname"><span class="pre">parse_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/demo.html#parse_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#demo.parse_args" title="Link to this definition"></a></dt>
+<dd><p>Parse command-line arguments for graph compression demo script.</p>
+<p>Command-line arguments:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>--demo</strong> (<em>int</em>) – Demo number to run (0-6). Specifies which example query to use for fetching data from the STRING database.</p></li>
+<li><p><strong>--use-gene-list</strong> (<em>bool</em>) – Flag to use a predefined gene list for the query.</p></li>
+<li><p><strong>--gene-list</strong> (<em>list</em><em> of </em><em>str</em>) – List of genes to use for the query. Ignored if –use-gene-list is specified.</p></li>
+<li><p><strong>--custom-params</strong> (<em>list</em><em> of </em><em>str</em>) – Custom parameters to be sent with the API request. Only applicable when –use-gene-list is set. Should be in the format ‘key1=value1 key2=value2’.</p></li>
+<li><p><strong>--api-url</strong> (<em>str</em>) – Custom API URL to fetch the data from. If not specified, the default STRING API URL is used.</p></li>
+<li><p><strong>--input</strong> (<em>str</em>) – Path to the input file. Default is “data/input/simple_graph.txt”.</p></li>
+<li><p><strong>--output</strong> (<em>str</em>) – Path to the output folder. Default is “data/output”.</p></li>
+<li><p><strong>--output-format</strong> (<em>str</em>) – Output file format. Options: ‘.edgelist’, ‘.txt’, ‘.csv’, ‘.tsv’, ‘.json’, ‘.gpickle’, ‘.gml’, ‘.graphml’, ‘.net’, ‘.pajek’, ‘.gexf’, ‘.yaml’, ‘.yml’. Default is ‘txt’.</p></li>
+<li><p><strong>--resolution</strong> (<em>float</em>) – Resolution parameter for Louvain and greedy methods.</p></li>
+<li><p><strong>--k</strong> (<em>int</em>) – Number of clusters for clustering methods. Only applicable for methods requiring a cluster count (e.g., ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘nmf’).</p></li>
+<li><p><strong>--is-weighted</strong> (<em>bool</em>) – Flag to indicate the use of a weighted graph.</p></li>
+<li><p><strong>--is-gene-network</strong> (<em>bool</em>) – Flag to indicate the use of a gene network.</p></li>
+<li><p><strong>--is-lossless</strong> (<em>bool</em>) – Flag to indicate the use of lossless compression.</p></li>
+<li><p><strong>--no-plot</strong> (<em>bool</em>) – Flag to disable plotting the original and compressed graphs. Default is False.</p></li>
+<li><p><strong>--no-interactive-plot</strong> (<em>bool</em>) – Flag to disable plotting the graph in interactive mode.</p></li>
+<li><p><strong>--plot-disconnected</strong> (<em>bool</em>) – Flag to plot all nodes in a disconnected graph, not just the largest connected component.</p></li>
+<li><p><strong>--method</strong> (<em>list</em><em> of </em><em>str</em>) – List of compression methods to run. Options: ‘louvain’, ‘greedy’ (default), ‘label_propagation’, ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘cpm’, ‘nmf’. If ‘all’, all the implemented compression methods will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed command-line arguments.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>args (argparse.Namespace)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="demo.parse_graph_data">
+<span class="sig-prename descclassname"><span class="pre">demo.</span></span><span class="sig-name descname"><span class="pre">parse_graph_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/demo.html#parse_graph_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#demo.parse_graph_data" title="Link to this definition"></a></dt>
+<dd><p>Parses data from the STRING API response into a NetworkX graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>json_data</strong> (<em>list</em>) – List of dictionaries containing data from the API response.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A NetworkX graph representing the parsed data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nx.Graph</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the JSON data is invalid or missing required fields.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="demo.run_demo">
+<span class="sig-prename descclassname"><span class="pre">demo.</span></span><span class="sig-name descname"><span class="pre">run_demo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">demo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gene_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gene_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data/input/simple_graph.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data/output'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_gene_network</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_lossless</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_interactive_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_disconnected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate_communities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['greedy']</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/demo.html#run_demo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#demo.run_demo" title="Link to this definition"></a></dt>
+<dd><p>Main function for the GraphPack tool demo script.</p>
+<p>This script demonstrates the usage of the GraphPack tool by fetching data from the STRING database,
+parsing it into a NetworkX graph, and performing various compression methods on the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>demo</strong> (<em>int</em><em>, </em><em>optional</em>) – Demo number to run (0-6). Specifies which example query to use for fetching data from the STRING database.</p></li>
+<li><p><strong>use_gene_list</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to use a predefined gene list for the query.</p></li>
+<li><p><strong>gene_list</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – List of genes to use for the query.</p></li>
+<li><p><strong>custom_params</strong> (<em>dict</em><em>, </em><em>optional</em>) – Custom parameters to be sent with the API request. Should be in the format ‘{“key1”: “value1”, “key2”: “value2”}’.</p></li>
+<li><p><strong>api_url</strong> (<em>str</em><em>, </em><em>optional</em>) – Custom API URL to fetch the data from.</p></li>
+<li><p><strong>input</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the input file. Default is “data/input/simple_graph.txt”.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the output folder. Default is “data/output”.</p></li>
+<li><p><strong>output_format</strong> (<em>str</em>) – File format to save the network files. Options: ‘.edgelist’, ‘.txt’ (default), ‘.csv’, ‘.tsv’, ‘.json’, ‘.gpickle’, ‘.gml’, ‘.graphml’, ‘.net’, ‘.pajek’, ‘.gexf’, ‘.yaml’, ‘.yml’.</p></li>
+<li><p><strong>resolution</strong> (<em>float</em><em>, </em><em>optional</em>) – Resolution parameter for Louvain and greedy methods.</p></li>
+<li><p><strong>k</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of clusters for clustering methods. Only applicable for methods requiring a cluster count (e.g., ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘nmf’).</p></li>
+<li><p><strong>is_weighted</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to indicate the use of a weighted graph.</p></li>
+<li><p><strong>is_gene_network</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to indicate the use of a gene network.</p></li>
+<li><p><strong>is_lossless</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to indicate the use of lossless compression.</p></li>
+<li><p><strong>no_plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to disable plotting the original and compressed graphs. Default is False.</p></li>
+<li><p><strong>no_interactive_plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to disable plotting the graph in interactive mode.</p></li>
+<li><p><strong>plot_disconnected</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to plot all nodes in a disconnected graph, not just the largest connected component.</p></li>
+<li><p><strong>separate_communities</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to enforce separation of identified communities in the plots.</p></li>
+<li><p><strong>method</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – List of compression methods to run. Options: ‘louvain’, ‘greedy’ (default), ‘label_propagation’, ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘cpm’, ‘nmf’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.demo.demo</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Run a default demo, greedy method</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">run_demo</span><span class="p">(</span><span class="n">demo</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;results&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Run a demo with predefined gene list, weighted, non default method and parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">run_demo</span><span class="p">(</span><span class="n">demo</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">use_gene_list</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;hclust&#39;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">is_gene_network</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;results&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Run demo pipeline with custom gene list, multiple methods</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">run_demo</span><span class="p">(</span><span class="n">use_gene_list</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gene_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TP53&#39;</span><span class="p">,</span> <span class="s1">&#39;BRCA1&#39;</span><span class="p">,</span> <span class="s1">&#39;EGFR&#39;</span><span class="p">,</span> <span class="s1">&#39;MYC&#39;</span><span class="p">,</span> <span class="s1">&#39;AKT1&#39;</span><span class="p">,</span> <span class="s1">&#39;PIK3CA&#39;</span><span class="p">,</span> <span class="s1">&#39;PTEN&#39;</span><span class="p">,</span> <span class="s1">&#39;RB1&#39;</span><span class="p">,</span> <span class="s1">&#39;KRAS&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPK1&#39;</span><span class="p">],</span> <span class="n">is_gene_network</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="s1">&#39;greedy&#39;</span><span class="p">,</span> <span class="s1">&#39;hclust&#39;</span><span class="p">],</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;results&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Run demo pipeline with custom gene network, suppress plots</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">run_demo</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="s2">&quot;path/to/edgelist.txt&quot;</span><span class="p">,</span> <span class="n">is_gene_network</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">no_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;results&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Run demo pipeline with custom API URL and non defgault output format</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">run_demo</span><span class="p">(</span><span class="n">api_url</span><span class="o">=</span><span class="s2">&quot;https://string-db.org/api/json/interaction_partners?identifiers=TP53</span><span class="si">%0d</span><span class="s2">BRCA1</span><span class="si">%0d</span><span class="s2">EGFR</span><span class="si">%0d</span><span class="s2">MYC&amp;required_score=990&quot;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;results&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Run demo pipeline with predefined gene list, custom parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">run_demo</span><span class="p">(</span><span class="n">demo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">use_gene_list</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">custom_params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;required_score&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span> <span class="nb">input</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;results&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Run demo pipeline with custom gene list, custom parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">run_demo</span><span class="p">(</span><span class="n">demo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">use_gene_list</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">custom_params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;required_score&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span> <span class="nb">input</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;results&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-sankey">
+<span id="sankey-module"></span><h1>Sankey module<a class="headerlink" href="#module-sankey" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="sankey.create_sankey_plot">
+<span class="sig-prename descclassname"><span class="pre">sankey.</span></span><span class="sig-name descname"><span class="pre">create_sankey_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transitions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_folder</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sankey.html#create_sankey_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sankey.create_sankey_plot" title="Link to this definition"></a></dt>
+<dd><p>Create and save the Sankey plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transitions</strong> (<em>list</em>) – List of transitions between clusters.</p></li>
+<li><p><strong>min_size</strong> (<em>int</em>) – Minimum cluster size to be considered significant.</p></li>
+<li><p><strong>parameter</strong> (<em>str</em>) – Clustering parameter name.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – Clustering method used.</p></li>
+<li><p><strong>input_graph</strong> (<em>str</em>) – Knowledge graph identifier.</p></li>
+<li><p><strong>output_folder</strong> (<em>str</em>) – Path to the output folder.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sankey.lighten_color">
+<span class="sig-prename descclassname"><span class="pre">sankey.</span></span><span class="sig-name descname"><span class="pre">lighten_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sankey.html#lighten_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sankey.lighten_color" title="Link to this definition"></a></dt>
+<dd><p>Lighten the given color by the specified amount.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<em>str</em>) – A color name or RGBA string.</p></li>
+<li><p><strong>amount</strong> (<em>float</em><em>, </em><em>optional</em>) – The amount to lighten the color (0.0 to 1.0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The lightened color as an RGBA string.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sankey.load_data">
+<span class="sig-prename descclassname"><span class="pre">sankey.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sankey.html#load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sankey.load_data" title="Link to this definition"></a></dt>
+<dd><p>Load compression mappings and group labels for each parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_path</strong> (<em>str</em>) – Path to the input files.</p></li>
+<li><p><strong>graph</strong> (<em>str</em>) – Input graph identifier.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – Clustering method used.</p></li>
+<li><p><strong>parameter</strong> (<em>str</em>) – Clustering parameter name.</p></li>
+<li><p><strong>parameters</strong> (<em>list</em>) – List of parameters to be analyzed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Two dictionaries, one for compression mappings and one for group labels, and the (eventually updated) list of parameter’s values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sankey.main">
+<span class="sig-prename descclassname"><span class="pre">sankey.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sankey.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sankey.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sankey.map_transitions">
+<span class="sig-prename descclassname"><span class="pre">sankey.</span></span><span class="sig-name descname"><span class="pre">map_transitions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compression_mappings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sankey.html#map_transitions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sankey.map_transitions" title="Link to this definition"></a></dt>
+<dd><p>Map transitions between consecutive parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>compression_mappings</strong> (<em>dict</em>) – Compression mappings for each parameter.</p></li>
+<li><p><strong>groups</strong> (<em>dict</em>) – Group labels for each parameter.</p></li>
+<li><p><strong>parameters</strong> (<em>list</em>) – List of parameters to be analyzed.</p></li>
+<li><p><strong>min_size</strong> (<em>int</em>) – Minimum cluster size to be considered significant.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of transitions between clusters.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sankey.parse_args">
+<span class="sig-prename descclassname"><span class="pre">sankey.</span></span><span class="sig-name descname"><span class="pre">parse_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sankey.html#parse_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sankey.parse_args" title="Link to this definition"></a></dt>
+<dd><p>Parse command-line arguments for Sankey plot script.</p>
+<p>Command-line arguments:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>--graph</strong> (<em>str</em>) – Input graph identifier. Required argument.</p></li>
+<li><p><strong>--input-path</strong> (<em>str</em>) – Path to the input files. Default is “data/output”.</p></li>
+<li><p><strong>--output-folder</strong> (<em>str</em>) – Path to the output folder. Default is “sankey”.</p></li>
+<li><p><strong>--min-size</strong> (<em>int</em>) – Minimum cluster size to be considered significant. Default is 100.</p></li>
+<li><p><strong>--method</strong> (<em>str</em>) – Clustering method used. Default is “louvain”.</p></li>
+<li><p><strong>--parameter</strong> (<em>str</em>) – Clustering parameter name. Default is “r”.</p></li>
+<li><p><strong>--parameters</strong> (<em>list</em><em> of </em><em>float</em>) – List of parameters to be analyzed. Default is [1.25, 3.0, 5.0, 10.0, 20.0, 30.0].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed command-line arguments.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>args (argparse.Namespace)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sankey.produce_sankey">
+<span class="sig-prename descclassname"><span class="pre">sankey.</span></span><span class="sig-name descname"><span class="pre">produce_sankey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data/output'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sankey'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'louvain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1.25,</span> <span class="pre">3.0,</span> <span class="pre">5.0,</span> <span class="pre">10.0,</span> <span class="pre">20.0,</span> <span class="pre">30.0]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sankey.html#produce_sankey"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sankey.produce_sankey" title="Link to this definition"></a></dt>
+<dd><p>Main function for the GraphPack tool Sankey plot script.</p>
+<p>This script generates a Sankey plot to visualize gene community membership transitions across
+different clustering resolutions for a given network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>str</em>) – Input graph identifier. Required parameter.</p></li>
+<li><p><strong>input_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the input files. Default is “data/output”.</p></li>
+<li><p><strong>output_folder</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the output folder. Default is “sankey”.</p></li>
+<li><p><strong>min_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum cluster size to be considered significant. Default is 100.</p></li>
+<li><p><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – Clustering method used. Default is “louvain”.</p></li>
+<li><p><strong>parameter</strong> (<em>str</em><em>, </em><em>optional</em>) – Clustering parameter name, as it appears in the subfolders’ names. Default is “r”.</p></li>
+<li><p><strong>values</strong> (<em>list</em><em> of </em><em>float</em><em>, </em><em>optional</em>) – List of parameters to be analyzed. Default is [1.25, 3.0, 5.0, 10.0, 20.0, 30.0].</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.demo.sankey</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">produce_sankey</span><span class="p">(</span><span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;./&quot;</span><span class="p">,</span> <span class="n">output_folder</span><span class="o">=</span><span class="s2">&quot;results&quot;</span><span class="p">,</span> <span class="n">min_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">graph</span><span class="o">=</span><span class="s1">&#39;simple_graph&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;hclust&#39;</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="src.html" class="btn btn-neutral float-left" title="Graph Compression module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="graph-compression-glossary.html" class="btn btn-neutral float-right" title="Graph Compression Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Daniele.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compression Algorithm Glossary &mdash; graphpack  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to see the algorithm pseudocode, parameters and hints';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Graph Compression Glossary" href="graph-compression-glossary.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            graphpack
+          </a>
+              <div class="version">
+                0.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#quick-start">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#on-ramp">On Ramp</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview and Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#compression-pipeline">Compression Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Demo Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Graph Compression Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#demo-modules">Demo Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Glossaries</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="graph-compression-glossary.html">Graph Compression Glossary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Compression Algorithm Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">graphpack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Compression Algorithm Glossary</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/compression-algorithm-glossary.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="compression-algorithm-glossary">
+<h1>Compression Algorithm Glossary<a class="headerlink" href="#compression-algorithm-glossary" title="Link to this heading"></a></h1>
+<dl class="glossary">
+<dt id="term-Louvain-Clustering">Louvain Clustering<a class="headerlink" href="#term-Louvain-Clustering" title="Link to this term"></a></dt><dd><p>Louvain Community Detection algorithm (<span id="id1">Blondel <em>et al.</em> [<a class="reference internal" href="bibliography.html#id5" title="Vincent D. Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre. Fast unfolding of communities in large networks. 2008. URL: https://arxiv.org/abs/0803.0476, doi:10.48550/ARXIV.0803.0476.">1</a>]</span>) is used in compressing large-scale gene networks by
+identifying densely connected subgroups of nodes. This is a heuristic method based on modularity optimization.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/1.png"><img alt="Louvain Clustering" src="_images/1.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-parameters-and-hints admonition">
+<p class="admonition-title">Parameters and Hints</p>
+<p><code class="docutils literal notranslate"><span class="pre">resolution</span></code>: Controls the size of the communities. Higher values lead to smaller communities.</p>
+<p>✅ Efficient for large networks.</p>
+<p>✅ Provides high modularity scores.</p>
+<p>⚠️ May result in overly large communities if the resolution parameter is not well-tuned.</p>
+</div>
+</div>
+</dd>
+<dt id="term-Greedy-Algorithm">Greedy Algorithm<a class="headerlink" href="#term-Greedy-Algorithm" title="Link to this term"></a></dt><dd><p>This method uses Clauset-Newman-Moore greedy modularity maximization (<span id="id2">Clauset <em>et al.</em> [<a class="reference internal" href="bibliography.html#id6" title="Aaron Clauset, M. E. J. Newman, and Cristopher Moore. Finding community structure in very large networks. Physical Review E, December 2004. URL: http://dx.doi.org/10.1103/PhysRevE.70.066111, doi:10.1103/physreve.70.066111.">2</a>]</span>) to find the community
+partition with the largest modularity. It iteratively merges nodes to minimize the graph size while preserving
+its structure.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/2.png"><img alt="Greedy Algorithm" src="_images/2.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-parameters-and-hints admonition">
+<p class="admonition-title">Parameters and Hints</p>
+<p><code class="docutils literal notranslate"><span class="pre">resolution</span></code>: Controls the size of the communities. Higher values lead to smaller communities.</p>
+<p>✅ Simple and fast implementation.</p>
+<p>✅ Can be applied to weighted and unweighted graphs.</p>
+<p>⚠️ May not provide the optimal solution compared to more sophisticated methods.</p>
+</div>
+</div>
+</dd>
+<dt id="term-Label-Propagation">Label Propagation<a class="headerlink" href="#term-Label-Propagation" title="Link to this term"></a></dt><dd><p>Label Propagation (<span id="id3">Traag and Šubelj [<a class="reference internal" href="bibliography.html#id7" title="Vincent A. Traag and Lovro Šubelj. Large network community detection by fast label propagation. Scientific Reports, February 2023. URL: http://dx.doi.org/10.1038/s41598-023-29610-z, doi:10.1038/s41598-023-29610-z.">10</a>]</span>) can compress networks by propagating labels across the network
+to identify and merge similar node communities. The algorithm is probabilistic and the found communities may
+vary in different executions.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/3.png"><img alt="Label Propagation" src="_images/3.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-hints admonition">
+<p class="admonition-title">Hints</p>
+<p>✅ Fast and scalable.</p>
+<p>⚠️ Can produce different results on different runs due to its stochastic nature.</p>
+</div>
+</div>
+</dd>
+<dt id="term-Asynchronous-Fluid-Communities">Asynchronous Fluid Communities<a class="headerlink" href="#term-Asynchronous-Fluid-Communities" title="Link to this term"></a></dt><dd><p>The asynchronous fluid communities algorithm (<span id="id4">Parés <em>et al.</em> [<a class="reference internal" href="bibliography.html#id8" title="Ferran Parés, Dario Garcia-Gasulla, Armand Vilalta, Jonatan Moreno, Eduard Ayguadé, Jesús Labarta, Ulises Cortés, and Toyotaro Suzumura. Fluid communities: a competitive, scalable and diverse community detection algorithm. 2017. URL: https://arxiv.org/abs/1703.09307, doi:10.48550/ARXIV.1703.09307.">8</a>]</span>) is based on the simple idea of fluids
+interacting in an environment, expanding and pushing each other. Its initialization is random, so found
+communities may vary on different executions.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/4.png"><img alt="Asynchronous Fluid Communities" src="_images/4.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-parameters-and-hints admonition">
+<p class="admonition-title">Parameters and Hints</p>
+<p><code class="docutils literal notranslate"><span class="pre">k</span></code>: Number of clusters to form.</p>
+<p>✅ Suitable for dynamic and evolving networks.</p>
+<p>✅ Captures fluid and overlapping communities.</p>
+<p>⚠️ Requires the graph to be connected.</p>
+<p>⚠️ May produce different results on different runs due to random initialization.</p>
+</div>
+</div>
+</dd>
+<dt id="term-Spectral-Clustering">Spectral Clustering<a class="headerlink" href="#term-Spectral-Clustering" title="Link to this term"></a></dt><dd><p>Spectral clustering (<span id="id5">von Luxburg [<a class="reference internal" href="bibliography.html#id9" title="Ulrike von Luxburg. A tutorial on spectral clustering. Statistics and Computing, 17(4):395–416, August 2007. URL: http://dx.doi.org/10.1007/s11222-007-9033-z, doi:10.1007/s11222-007-9033-z.">11</a>]</span>), applied to community detection task by using the adjacency matrix as
+affinity, utilizes graph Laplacian eigenstructure to partition the graph into clusters. This method is effective
+for identifying complex, non-convex cluster shapes like nested circles on a 2D plane. By specifying
+<code class="docutils literal notranslate"><span class="pre">affinity='precomputed'</span></code>, and providing the adjacency matrix as input, it is possible to accurately identify
+densely connected subgraphs (communities) within the network.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/5.png"><img alt="Spectral Clustering" src="_images/5.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-parameters-and-hints admonition">
+<p class="admonition-title">Parameters and Hints</p>
+<p><code class="docutils literal notranslate"><span class="pre">k</span></code>: Number of clusters to form.</p>
+<p>✅ Effective for small to medium-sized networks.</p>
+<p>✅ Captures non-linear structures in the data.</p>
+<p>⚠️ Computationally expensive for large networks.</p>
+</div>
+</div>
+</dd>
+<dt id="term-Hierarchical-Clustering">Hierarchical Clustering<a class="headerlink" href="#term-Hierarchical-Clustering" title="Link to this term"></a></dt><dd><p>Agglomerative clustering, applied to community detection tasks by utilizing the adjacency
+matrix as the metric, merges the most similar communities iteratively. This method is effective for identifying
+hierarchical structures within networks, where nodes are progressively merged based on their pairwise distances.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/6.png"><img alt="Hierarchical Clustering" src="_images/6.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-parameters-and-hints admonition">
+<p class="admonition-title">Parameters and Hints</p>
+<p><code class="docutils literal notranslate"><span class="pre">k</span></code>: Number of clusters to form.</p>
+<p>✅ Provides a multi-level representation of the network.</p>
+<p>✅ Useful for visualizing the hierarchical structure.</p>
+<p>⚠️ May be computationally intensive for large datasets.</p>
+</div>
+</div>
+</dd>
+<dt id="term-Node2Vec">Node2Vec<a class="headerlink" href="#term-Node2Vec" title="Link to this term"></a></dt><dd><p>Node2Vec (<span id="id6">Grover and Leskovec [<a class="reference internal" href="bibliography.html#id10" title="Aditya Grover and Jure Leskovec. Node2vec: scalable feature learning for networks. 2016. URL: https://arxiv.org/abs/1607.00653, doi:10.48550/ARXIV.1607.00653.">5</a>]</span>), applied to community detection tasks, embeds nodes through biased random walks to
+capture complex relationships within the network. These embeddings can then be clustered to identify communities.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/7.png"><img alt="Node2Vec" src="_images/7.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-parameters-and-hints admonition">
+<p class="admonition-title">Parameters and Hints</p>
+<p><code class="docutils literal notranslate"><span class="pre">k</span></code>: Number of clusters to form.</p>
+<p>✅ Captures complex relationships within the network.</p>
+<p>✅️ Generates high-quality embeddings through random walks.</p>
+<p>⚠️ Requires careful tuning of hyperparameters for optimal performance.</p>
+</div>
+</div>
+</dd>
+<dt id="term-DeepWalk">DeepWalk<a class="headerlink" href="#term-DeepWalk" title="Link to this term"></a></dt><dd><p>DeepWalk (<span id="id7">Perozzi <em>et al.</em> [<a class="reference internal" href="bibliography.html#id11" title="Bryan Perozzi, Rami Al-Rfou, and Steven Skiena. Deepwalk: online learning of social representations. In Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining, KDD ’14. ACM, August 2014. URL: http://dx.doi.org/10.1145/2623330.2623732, doi:10.1145/2623330.2623732.">9</a>]</span>), applied to community detection tasks, learns node representations via truncated
+random walks. These representations are effective for large networks, preserving both local and global network
+structures.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/8.png"><img alt="DeepWalk" src="_images/8.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-parameters-and-hints admonition">
+<p class="admonition-title">Parameters and Hints</p>
+<p><code class="docutils literal notranslate"><span class="pre">k</span></code>: Number of clusters to form.</p>
+<p>✅ Effective for large networks.</p>
+<p>✅ Preserves local and global network structures.</p>
+<p>⚠️ May require significant computational resources for large-scale applications.</p>
+</div>
+</div>
+</dd>
+<dt id="term-Clique-Percolation-Method-CPM">Clique Percolation Method (CPM)<a class="headerlink" href="#term-Clique-Percolation-Method-CPM" title="Link to this term"></a></dt><dd><p>Clique Percolation Method (CPM) (<span id="id8">Palla <em>et al.</em> [<a class="reference internal" href="bibliography.html#id12" title="Gergely Palla, Imre Derényi, Illés Farkas, and Tamás Vicsek. Uncovering the overlapping community structure of complex networks in nature and society. Nature, 435(7043):814–818, June 2005. URL: http://dx.doi.org/10.1038/nature03607, doi:10.1038/nature03607.">7</a>]</span>) is a community detection algorithm designed to identify
+overlapping communities by finding k-cliques that share (k-1) nodes. This method is particularly useful for
+detecting functionally significant modules within networks.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/9.png"><img alt="Clique Percolation Method (CPM)" src="_images/9.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-parameters-and-hints admonition">
+<p class="admonition-title">Parameters and Hints</p>
+<p><code class="docutils literal notranslate"><span class="pre">k</span></code>: Size of the smallest clique.</p>
+<p>✅ Captures overlapping community structures.</p>
+<p>✅ Useful for detecting functionally significant modules.</p>
+<p>⚠️ May not scale well with very large networks.</p>
+</div>
+</div>
+</dd>
+<dt id="term-Non-negative-Matrix-Factorization-NMF">Non-negative Matrix Factorization (NMF)<a class="headerlink" href="#term-Non-negative-Matrix-Factorization-NMF" title="Link to this term"></a></dt><dd><p>Non-negative Matrix Factorization (NMF) (<span id="id9">Lin [<a class="reference internal" href="bibliography.html#id13" title="Chih-Jen Lin. Projected gradient methods for nonnegative matrix factorization. Neural Computation, 19(10):2756–2779, October 2007. URL: http://dx.doi.org/10.1162/neco.2007.19.10.2756, doi:10.1162/neco.2007.19.10.2756.">6</a>]</span>) is a dimensionality reduction technique that factorizes
+the adjacency matrix of a graph to detect communities. This method effectively preserves community structure in
+a reduced space, making it useful for identifying clusters within networks.</p>
+<div class="toggle docutils container">
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/10.png"><img alt="Non-negative Matrix Factorization (NMF)" src="_images/10.png" style="width: 800px;" />
+</a>
+</figure>
+<div class="admonition-parameters-and-hints admonition">
+<p class="admonition-title">Parameters and Hints</p>
+<p><code class="docutils literal notranslate"><span class="pre">k</span></code>: Number of components to factorize. If <code class="docutils literal notranslate"><span class="pre">'auto'</span></code>, the algorithm will determine the optimal number.</p>
+<p>✅ Effective for dimensionality reduction.</p>
+<p>✅ Preserves community structure in the reduced space.</p>
+<p>⚠️ May require multiple runs to achieve stable results.</p>
+</div>
+</div>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="graph-compression-glossary.html" class="btn btn-neutral float-left" title="Graph Compression Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Daniele.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

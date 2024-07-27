@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graph Compression module &mdash; graphpack  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to see the algorithm pseudocode, parameters and hints';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Demo module" href="demo.html" />
+    <link rel="prev" title="Graph Compression Modules" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            graphpack
+          </a>
+              <div class="version">
+                0.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#quick-start">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#on-ramp">On Ramp</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview and Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#compression-pipeline">Compression Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Demo Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Graph Compression Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Graph Compression module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compression.calculate_compression_efficacy"><code class="docutils literal notranslate"><span class="pre">calculate_compression_efficacy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.compress_graph"><code class="docutils literal notranslate"><span class="pre">compress_graph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.compress_graph_partition_based"><code class="docutils literal notranslate"><span class="pre">compress_graph_partition_based()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.compute_adjacency_matrix"><code class="docutils literal notranslate"><span class="pre">compute_adjacency_matrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.compute_and_save_edges_to_remove"><code class="docutils literal notranslate"><span class="pre">compute_and_save_edges_to_remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.detect_communities"><code class="docutils literal notranslate"><span class="pre">detect_communities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.perform_compression"><code class="docutils literal notranslate"><span class="pre">perform_compression()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.reconstruct_original_network"><code class="docutils literal notranslate"><span class="pre">reconstruct_original_network()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.remove_unnecessary_files"><code class="docutils literal notranslate"><span class="pre">remove_unnecessary_files()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compression.save_network_files"><code class="docutils literal notranslate"><span class="pre">save_network_files()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-utils">Utilities module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#utils.CustomArgumentParser"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.__init__"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._add_action"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._add_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._add_container_actions"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._add_container_actions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._check_conflict"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._check_conflict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._check_value"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._check_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_args"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_formatter"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_formatter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_handler"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_handler()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_kwargs"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_kwargs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_nargs_pattern"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_nargs_pattern()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_option_tuples"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_option_tuples()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_optional_actions"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_optional_actions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_optional_kwargs"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_optional_kwargs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_positional_actions"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_positional_actions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_positional_kwargs"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_positional_kwargs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_value"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._get_values"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._get_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._handle_conflict_error"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._handle_conflict_error()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._handle_conflict_resolve"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._handle_conflict_resolve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._match_argument"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._match_argument()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._match_arguments_partial"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._match_arguments_partial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._parse_known_args"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._parse_known_args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._parse_optional"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._parse_optional()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._pop_action_class"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._pop_action_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._print_message"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._print_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._read_args_from_files"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._read_args_from_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._registry_get"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._registry_get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser._remove_action"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser._remove_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.add_argument"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.add_argument()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.add_argument_group"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.add_argument_group()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.add_mutually_exclusive_group"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.add_mutually_exclusive_group()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.add_subparsers"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.add_subparsers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.convert_arg_line_to_args"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.convert_arg_line_to_args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.error"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.error()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.exit"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.exit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.format_help"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.format_help()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.format_usage"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.format_usage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.get_default"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.get_default()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.parse_args"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.parse_args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.parse_intermixed_args"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.parse_intermixed_args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.parse_known_args"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.parse_known_args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.parse_known_intermixed_args"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.parse_known_intermixed_args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.print_help"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.print_help()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.print_usage"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.print_usage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.register"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utils.CustomArgumentParser.set_defaults"><code class="docutils literal notranslate"><span class="pre">CustomArgumentParser.set_defaults()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.assign_community_colors"><code class="docutils literal notranslate"><span class="pre">assign_community_colors()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.cluster_graph_embeddings"><code class="docutils literal notranslate"><span class="pre">cluster_graph_embeddings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.deepwalk_embedding"><code class="docutils literal notranslate"><span class="pre">deepwalk_embedding()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.draw_graph"><code class="docutils literal notranslate"><span class="pre">draw_graph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.draw_interactive_graph_pyvis"><code class="docutils literal notranslate"><span class="pre">draw_interactive_graph_pyvis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.generate_figure_filepath"><code class="docutils literal notranslate"><span class="pre">generate_figure_filepath()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.generate_random_walks"><code class="docutils literal notranslate"><span class="pre">generate_random_walks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.perform_gsea"><code class="docutils literal notranslate"><span class="pre">perform_gsea()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.random_walk"><code class="docutils literal notranslate"><span class="pre">random_walk()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.read_graph"><code class="docutils literal notranslate"><span class="pre">read_graph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.read_graph_from_edge_list"><code class="docutils literal notranslate"><span class="pre">read_graph_from_edge_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.read_graph_from_json"><code class="docutils literal notranslate"><span class="pre">read_graph_from_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils.save_graph"><code class="docutils literal notranslate"><span class="pre">save_graph()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#demo-modules">Demo Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Glossaries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="graph-compression-glossary.html">Graph Compression Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compression-algorithm-glossary.html">Compression Algorithm Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">graphpack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Graph Compression Modules</a></li>
+      <li class="breadcrumb-item active">Graph Compression module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/src.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-compression">
+<span id="graph-compression-module"></span><h1>Graph Compression module<a class="headerlink" href="#module-compression" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.calculate_compression_efficacy">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">calculate_compression_efficacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_lossless</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_network_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'original_network.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compressed_network_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'compressed_network.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression_mapping_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'compression_mapping.msgpack'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decompression_mapping_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'decompression_mapping.msgpack'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_to_remove_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'edges_to_remove.txt'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#calculate_compression_efficacy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.calculate_compression_efficacy" title="Link to this definition"></a></dt>
+<dd><p>Calculates and prints the efficacy of the network compression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_folder</strong> (<em>str</em>) – The folder path containing the network files.</p></li>
+<li><p><strong>is_lossless</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag indicating whether the compression is lossless (default: True).</p></li>
+<li><p><strong>original_network_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The file name of the original network (default: ‘original_network.txt’).</p></li>
+<li><p><strong>compressed_network_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The file name of the compressed network (default: ‘compressed_network.txt’).</p></li>
+<li><p><strong>compression_mapping_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The file name of the compression mapping (default: ‘compression_mapping.msgpack’).</p></li>
+<li><p><strong>decompression_mapping_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The file name of the decompression mapping (default: ‘decompression_mapping.msgpack’).</p></li>
+<li><p><strong>edges_to_remove_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The file name containing the edges to remove (default: ‘edges_to_remove.txt’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If any required file is missing or cannot be read.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.compress_graph">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">compress_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'louvain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">123</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_gene_network</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#compress_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.compress_graph" title="Link to this definition"></a></dt>
+<dd><p>Compresses a graph using the specified method and generates a new graph where nodes represent communities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The original network graph.</p></li>
+<li><p><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – The compression method to use. Options: ‘louvain’ (default), ‘greedy’, ‘label_propagation’, ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘cpm’, ‘nmf’.</p></li>
+<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – Random seed for reproducibility. Defaults to 123.</p></li>
+<li><p><strong>resolution</strong> (<em>float</em><em>, </em><em>optional</em>) – Resolution parameter for Louvain and greedy methods. Defaults to 1.25.</p></li>
+<li><p><strong>k</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of communities/clusters/components for ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’ methods. For ‘cpm’ is the size of the smallest clique. Defaults to 3.</p></li>
+<li><p><strong>is_weighted</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to consider edge weights. Defaults to True.</p></li>
+<li><p><strong>is_gene_network</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the network is a gene network to perform GSEA. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A tuple containing:</dt><dd><ul class="simple">
+<li><p>compressed_graph (nx.Graph): The compressed network graph where nodes represent communities.</p></li>
+<li><p>compression_mapping (dict): A mapping of original nodes to their corresponding community nodes.</p></li>
+<li><p>decompression_mapping (dict): A mapping of community nodes to the original nodes they represent.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the specified method is not supported or if the graph is not connected and connectivity is required.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.compression</span> <span class="kn">import</span> <span class="n">compress_graph</span><span class="p">,</span> <span class="n">detect_communities</span><span class="p">,</span> <span class="n">compress_graph_partition_based</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example: Compress a weighted graph (gene network) using the Louvain method</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;HIF1A&quot;</span><span class="p">,</span> <span class="s2">&quot;EGFR&quot;</span><span class="p">,</span> <span class="mf">0.934</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;HIF1A&quot;</span><span class="p">,</span> <span class="s2">&quot;JAK2&quot;</span><span class="p">,</span> <span class="mf">0.784</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;HIF1A&quot;</span><span class="p">,</span> <span class="s2">&quot;IGF1R&quot;</span><span class="p">,</span> <span class="mf">0.752</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;EGFR&quot;</span><span class="p">,</span> <span class="s2">&quot;IGF1R&quot;</span><span class="p">,</span> <span class="mf">0.989</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;JAK2&quot;</span><span class="p">,</span> <span class="s2">&quot;IGF1R&quot;</span><span class="p">,</span> <span class="mf">0.981</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compressed_graph</span><span class="p">,</span> <span class="n">compression_mapping</span><span class="p">,</span> <span class="n">decompression_mapping</span> <span class="o">=</span> <span class="n">compress_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="n">is_weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_gene_network</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">compressed_graph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">[(1, 0, {&#39;weight&#39;: 2.525})]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">compression_mapping</span><span class="p">)</span>
+<span class="go">{1: [&#39;HIF1A&#39;, &#39;EGFR&#39;], 0: [&#39;JAK2&#39;, &#39;IGF1R&#39;]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">decompression_mapping</span><span class="p">)</span>
+<span class="go">{&#39;HIF1A&#39;: 1, &#39;EGFR&#39;: 1, &#39;JAK2&#39;: 0, &#39;IGF1R&#39;: 0}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.compress_graph_partition_based">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">compress_graph_partition_based</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_gene_network</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#compress_graph_partition_based"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.compress_graph_partition_based" title="Link to this definition"></a></dt>
+<dd><p>Compresses a network based on detected communities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The original network graph.</p></li>
+<li><p><strong>partition</strong> (<em>dict</em>) – A dictionary mapping nodes to community IDs.</p></li>
+<li><p><strong>is_weighted</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to consider edge weights. Defaults to True.</p></li>
+<li><p><strong>is_gene_network</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the network is a gene network to perform GSEA. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A tuple containing:</dt><dd><ul class="simple">
+<li><p>community_graph (nx.Graph): The compressed network graph where nodes represent communities.</p></li>
+<li><p>compression_mapping (dict): A mapping of original nodes to their corresponding community nodes.</p></li>
+<li><p>decompression_mapping (dict): A mapping of community nodes to the original nodes they represent.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the partition is invalid or missing nodes.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">networkx.algorithms.community</span> <span class="kn">import</span> <span class="n">louvain_communities</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.compression</span> <span class="kn">import</span> <span class="n">compress_graph_partition_based</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 1: Compress an unweighted graph based on detected communities</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">communities</span> <span class="o">=</span> <span class="n">louvain_communities</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">cid</span> <span class="k">for</span> <span class="n">cid</span><span class="p">,</span> <span class="n">community</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">community</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compressed_graph</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">compress_graph_partition_based</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">,</span> <span class="n">is_weighted</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">compressed_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">[(1, {&#39;nodes&#39;: [1, 2, 3], &#39;label&#39;: [[1, 2, 3]], &#39;size&#39;: 3}), (0, {&#39;nodes&#39;: [4, 5], &#39;label&#39;: [[4, 5]], &#39;size&#39;: 2}), (2, {&#39;nodes&#39;: [6, 7, 8], &#39;label&#39;: [[6, 7, 8]], &#39;size&#39;: 3})]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">compressed_graph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">[(0, 2, {&#39;weight&#39;: 1})]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 2: Compress a weighted gene network based on detected communities</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">weights</span> <span class="o">=</span> <span class="p">{</span><span class="n">edge</span><span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">set_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compressed_graph</span><span class="p">,</span> <span class="n">compression_mapping</span><span class="p">,</span> <span class="n">decompression_mapping</span> <span class="o">=</span> <span class="n">compress_graph_partition_based</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">compressed_graph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">[(0, 2, {&#39;weight&#39;: 0.9011988779516946})]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">compression_mapping</span><span class="p">)</span>
+<span class="go">{1: [1, 2, 3], 0: [4, 5], 2: [6, 7, 8]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">decompression_mapping</span><span class="p">)</span>
+<span class="go">{1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 2, 7: 2, 8: 2}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.compute_adjacency_matrix">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">compute_adjacency_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#compute_adjacency_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.compute_adjacency_matrix" title="Link to this definition"></a></dt>
+<dd><p>Computes the adjacency matrix of a graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>graph</strong> – The input graph.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The adjacency matrix of the input graph.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.compute_and_save_edges_to_remove">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">compute_and_save_edges_to_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">community_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_to_remove_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'edges_to_remove.txt'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#compute_and_save_edges_to_remove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.compute_and_save_edges_to_remove" title="Link to this definition"></a></dt>
+<dd><p>Computes and saves edges to remove from the original network based on the compressed network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The original network graph.</p></li>
+<li><p><strong>community_graph</strong> (<em>nx.Graph</em>) – The compressed network graph where nodes represent communities.</p></li>
+<li><p><strong>output_folder</strong> (<em>str</em>) – The folder path to save the output file.</p></li>
+<li><p><strong>edges_to_remove_file</strong> (<em>str</em>) – The name of the file to save the edges to remove (default is ‘edges_to_remove.txt’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the output folder does not exist or is not a directory.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.detect_communities">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">detect_communities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'louvain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">123</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#detect_communities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.detect_communities" title="Link to this definition"></a></dt>
+<dd><p>Detects communities in a graph using various partitioning methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The graph to detect communities in.</p></li>
+<li><p><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – The partitioning method to use. Options: ‘louvain’ (default), ‘greedy’, ‘label_propagation’, ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘cpm’, ‘nmf’.</p></li>
+<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – Random seed for reproducibility. Defaults to 123.</p></li>
+<li><p><strong>resolution</strong> (<em>float</em><em>, </em><em>optional</em>) – Resolution parameter for Louvain and greedy methods. Defaults to 1.25.</p></li>
+<li><p><strong>k</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of communities/clusters/components for ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘nmf’ methods. For ‘cpm’ is the size of the smallest clique. Defaults to 3.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary mapping nodes to community IDs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the specified method is not supported or if the graph is not connected.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.compression</span> <span class="kn">import</span> <span class="n">detect_communities</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example: Louvain method</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">partition</span> <span class="o">=</span> <span class="n">detect_communities</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;louvain&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">partition</span><span class="p">)</span>
+<span class="go">{1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 2, 7: 2, 8: 2}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.main">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.parse_args">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">parse_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#parse_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.parse_args" title="Link to this definition"></a></dt>
+<dd><p>Parse command-line arguments for graph compression.</p>
+<p>Command-line arguments:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>--input</strong> (<em>str</em>) – Path to the input graph file. This is a required argument.</p></li>
+<li><p><strong>--output</strong> (<em>str</em>) – Path to the output folder where results will be saved. Default is ‘data/output’.</p></li>
+<li><p><strong>--output-format</strong> (<em>str</em>) – Output file format. Options: ‘.edgelist’, ‘.txt’, ‘.csv’, ‘.tsv’, ‘.json’, ‘.gpickle’, ‘.gml’, ‘.graphml’, ‘.net’, ‘.pajek’, ‘.gexf’, ‘.yaml’, ‘.yml’. Default is ‘txt’.</p></li>
+<li><p><strong>--method</strong> (<em>str</em>) – Community detection method to use for graph compression. Options: ‘louvain’, ‘greedy’ (default), ‘label_propagation’, ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘cpm’, ‘nmf’.</p></li>
+<li><p><strong>--resolution</strong> (<em>float</em>) – Resolution parameter for Louvain and greedy methods. Default is 1.25.</p></li>
+<li><p><strong>--k</strong> (<em>int</em>) – Number of clusters for clustering methods. Only applicable for methods requiring a cluster count (e.g., ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘nmf’). Default is 3.</p></li>
+<li><p><strong>--seed</strong> (<em>int</em>) – Random seed for reproducibility. Default is 123.</p></li>
+<li><p><strong>--is-weighted</strong> (<em>bool</em>) – Flag to indicate if the graph should consider edge weights. Use this flag if the graph is weighted.</p></li>
+<li><p><strong>--is-gene-network</strong> (<em>bool</em>) – Flag to assign biologically meaningful labels to communities. Use this flag for gene networks.</p></li>
+<li><p><strong>--is-lossless</strong> (<em>bool</em>) – Flag to perform lossless compression. Use this flag if lossless compression is required.</p></li>
+<li><p><strong>--plot</strong> (<em>bool</em>) – Flag to plot the original and compressed graphs. Default is False.</p></li>
+<li><p><strong>--is-interactive</strong> (<em>bool</em>) – Flag to produce interactive plots in HTML format. Use this flag to enable interactive plots.</p></li>
+<li><p><strong>--plot-disconnected</strong> (<em>bool</em>) – Flag to plot all nodes in a disconnected graph, not just the largest connected component.</p></li>
+<li><p><strong>--title</strong> (<em>str</em>) – Title for the graph plot. Default is ‘’.</p></li>
+<li><p><strong>--verbosity</strong> (<em>int</em>) – Verbosity level for logging information (0: minimal, 1: moderate, 2: detailed). Default is 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed command-line arguments.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>args (argparse.Namespace)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.perform_compression">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">perform_compression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data/output'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'louvain'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">123</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_gene_network</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_lossless</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_interactive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_disconnected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate_communities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbosity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#perform_compression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.perform_compression" title="Link to this definition"></a></dt>
+<dd><p>Suggested pipeline for the GraphPack tool.</p>
+<p>This function performs graph compression using various community detection methods. It reads an input graph file,
+compresses the graph, and saves the compressed version along with optional visualizations and statistical summaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>str</em>) – Path to the input graph file. This is a required argument.</p></li>
+<li><p><strong>output</strong> (<em>str</em>) – Path to the output folder where results will be saved. Default is ‘data/output’.</p></li>
+<li><p><strong>output_format</strong> (<em>str</em>) – File format to save the network files. Options: ‘edgelist’, ‘txt’ (default), ‘csv’, ‘tsv’, ‘json’, ‘gpickle’, ‘gml’, ‘graphml’, ‘net’, ‘pajek’, ‘gexf’, ‘yaml’, ‘yml’.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – Community detection method to use for graph compression. Options: ‘louvain’ (default), ‘greedy’, ‘label_propagation’, ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘cpm’, ‘nmf’.</p></li>
+<li><p><strong>resolution</strong> (<em>float</em>) – Resolution parameter for Louvain and greedy methods. Default is 1.25.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – Number of clusters for clustering methods. Only applicable for methods requiring a cluster count (e.g., ‘asyn_fluidc’, ‘spectral’, ‘hclust’, ‘node2vec’, ‘deepwalk’, ‘nmf’). Default is 3.</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Random seed for reproducibility. Default is 123.</p></li>
+<li><p><strong>is_weighted</strong> (<em>bool</em>) – Flag to indicate if the graph should consider edge weights. Use this flag if the graph is weighted. Default is False.</p></li>
+<li><p><strong>is_gene_network</strong> (<em>bool</em>) – Flag to assign biologically meaningful labels to communities. Use this flag for gene networks. Default is False.</p></li>
+<li><p><strong>is_lossless</strong> (<em>bool</em>) – Flag to perform lossless compression. Use this flag if lossless compression is required. Default is False.</p></li>
+<li><p><strong>plot</strong> (<em>bool</em>) – Flag to plot the original and compressed graphs. Default is False.</p></li>
+<li><p><strong>is_interactive</strong> (<em>bool</em>) – Flag to produce interactive plots in HTML format. Use this flag to enable interactive plots. Default is False.</p></li>
+<li><p><strong>plot_disconnected</strong> (<em>bool</em>) – Flag to plot all nodes in a disconnected graph, not just the largest connected component. Default is False.</p></li>
+<li><p><strong>separate_communities</strong> (<em>bool</em>) – Flag to separate communities in the graph plot. Default is False.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title for the graph plot. Default is ‘’.</p></li>
+<li><p><strong>verbosity</strong> (<em>int</em>) – Verbosity level for logging information (0: minimal, 1: moderate, 2: detailed). Default is 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.compression</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">input_graph</span> <span class="o">=</span> <span class="s1">&#39;simple_graph.txt&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">save_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">input_graph</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perform_compression</span><span class="p">(</span><span class="n">input_graph</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;results&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;greedy&#39;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot_disconnected</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">separate_communities</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Greedy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.reconstruct_original_network">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">reconstruct_original_network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compressed_network_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'compressed_network.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression_mapping_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'compression_mapping.msgpack'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_to_remove_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'edges_to_remove.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'reconstructed_network.txt'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#reconstruct_original_network"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.reconstruct_original_network" title="Link to this definition"></a></dt>
+<dd><p>Reconstructs the original network from compressed data and removes specified edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_folder</strong> (<em>str</em>) – The folder path to read input files from and save the output file.</p></li>
+<li><p><strong>compressed_network_file</strong> (<em>str</em>) – The file name of the compressed network (default is ‘compressed_network.txt’).</p></li>
+<li><p><strong>compression_mapping_file</strong> (<em>str</em>) – The file name of the compression mapping (default is ‘compression_mapping.msgpack’).</p></li>
+<li><p><strong>edges_to_remove_file</strong> (<em>str</em>) – The file name of the edges to remove (default is ‘edges_to_remove.txt’).</p></li>
+<li><p><strong>output_file</strong> (<em>str</em>) – The name of the file to save the reconstructed network (default is ‘reconstructed_network.txt’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If any of the required files are missing in the specified folder.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.remove_unnecessary_files">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">remove_unnecessary_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_folder_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#remove_unnecessary_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.remove_unnecessary_files" title="Link to this definition"></a></dt>
+<dd><p>Removes unnecessary files from the output folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>output_folder_method</strong> (<em>str</em>) – The folder path containing the output files.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compression.save_network_files">
+<span class="sig-prename descclassname"><span class="pre">compression.</span></span><span class="sig-name descname"><span class="pre">save_network_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">community_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression_mapping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decompression_mapping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression_mapping_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'compression_mapping'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decompression_mapping_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'decompression_mapping'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'txt'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/compression.html#save_network_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#compression.save_network_files" title="Link to this definition"></a></dt>
+<dd><p>Saves network files and mappings to the specified output folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The original network graph.</p></li>
+<li><p><strong>community_graph</strong> (<em>nx.Graph</em>) – The compressed network graph where nodes represent communities.</p></li>
+<li><p><strong>compression_mapping</strong> (<em>dict</em>) – A mapping of original nodes to their corresponding community nodes.</p></li>
+<li><p><strong>decompression_mapping</strong> (<em>dict</em>) – A mapping of community nodes to the original nodes they represent.</p></li>
+<li><p><strong>output_folder</strong> (<em>str</em>) – The folder path to save the output files.</p></li>
+<li><p><strong>compression_mapping_filename</strong> (<em>str</em>) – The base name for the compression mapping files (default is ‘compression_mapping’).</p></li>
+<li><p><strong>decompression_mapping_filename</strong> (<em>str</em>) – The base name for the decompression mapping files (default is ‘decompression_mapping’).</p></li>
+<li><p><strong>labels_mapping</strong> (<em>dict</em><em>, </em><em>optional</em>) – A mapping of node labels (default is None).</p></li>
+<li><p><strong>save_data</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to save edge data (default is False).</p></li>
+<li><p><strong>file_format</strong> (<em>str</em><em>, </em><em>optional</em>) – The file format to save the network files (default is ‘txt’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the output folder does not exist or cannot be created.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-utils">
+<span id="utilities-module"></span><h1>Utilities module<a class="headerlink" href="#module-utils" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">CustomArgumentParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prog=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">usage=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epilog=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parents=[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter_class=&lt;class</span> <span class="pre">'argparse.HelpFormatter'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix_chars='-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fromfile_prefix_chars=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_default=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conflict_handler='error'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_help=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_abbrev=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_on_error=True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#CustomArgumentParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.CustomArgumentParser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ArgumentParser</span></code></p>
+<p>Custom ArgumentParser class to modify the help message and usage format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>argparse.ArgumentParser</strong> – The ArgumentParser class to inherit from.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A custom ArgumentParser class with modified help message and usage format.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#utils.CustomArgumentParser" title="utils.CustomArgumentParser">CustomArgumentParser</a></p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prog=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">usage=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epilog=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parents=[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter_class=&lt;class</span> <span class="pre">'argparse.HelpFormatter'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix_chars='-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fromfile_prefix_chars=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_default=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conflict_handler='error'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_help=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_abbrev=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_on_error=True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._add_action">
+<span class="sig-name descname"><span class="pre">_add_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._add_action" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._add_container_actions">
+<span class="sig-name descname"><span class="pre">_add_container_actions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">container</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._add_container_actions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._check_conflict">
+<span class="sig-name descname"><span class="pre">_check_conflict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._check_conflict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._check_value">
+<span class="sig-name descname"><span class="pre">_check_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._check_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_args">
+<span class="sig-name descname"><span class="pre">_get_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_formatter">
+<span class="sig-name descname"><span class="pre">_get_formatter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_formatter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_handler">
+<span class="sig-name descname"><span class="pre">_get_handler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_handler" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_kwargs">
+<span class="sig-name descname"><span class="pre">_get_kwargs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_kwargs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_nargs_pattern">
+<span class="sig-name descname"><span class="pre">_get_nargs_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_nargs_pattern" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_option_tuples">
+<span class="sig-name descname"><span class="pre">_get_option_tuples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">option_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_option_tuples" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_optional_actions">
+<span class="sig-name descname"><span class="pre">_get_optional_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_optional_actions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_optional_kwargs">
+<span class="sig-name descname"><span class="pre">_get_optional_kwargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_optional_kwargs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_positional_actions">
+<span class="sig-name descname"><span class="pre">_get_positional_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_positional_actions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_positional_kwargs">
+<span class="sig-name descname"><span class="pre">_get_positional_kwargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_positional_kwargs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_value">
+<span class="sig-name descname"><span class="pre">_get_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._get_values">
+<span class="sig-name descname"><span class="pre">_get_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_strings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._get_values" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._handle_conflict_error">
+<span class="sig-name descname"><span class="pre">_handle_conflict_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conflicting_actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._handle_conflict_error" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._handle_conflict_resolve">
+<span class="sig-name descname"><span class="pre">_handle_conflict_resolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conflicting_actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._handle_conflict_resolve" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._match_argument">
+<span class="sig-name descname"><span class="pre">_match_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_strings_pattern</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._match_argument" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._match_arguments_partial">
+<span class="sig-name descname"><span class="pre">_match_arguments_partial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_strings_pattern</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._match_arguments_partial" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._parse_known_args">
+<span class="sig-name descname"><span class="pre">_parse_known_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_strings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._parse_known_args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._parse_optional">
+<span class="sig-name descname"><span class="pre">_parse_optional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._parse_optional" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._pop_action_class">
+<span class="sig-name descname"><span class="pre">_pop_action_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._pop_action_class" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._print_message">
+<span class="sig-name descname"><span class="pre">_print_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._print_message" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._read_args_from_files">
+<span class="sig-name descname"><span class="pre">_read_args_from_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_strings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._read_args_from_files" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._registry_get">
+<span class="sig-name descname"><span class="pre">_registry_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._registry_get" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser._remove_action">
+<span class="sig-name descname"><span class="pre">_remove_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser._remove_action" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.add_argument">
+<span class="sig-name descname"><span class="pre">add_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name=value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.add_argument" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">add_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">option_string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option_string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name=value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.add_argument_group">
+<span class="sig-name descname"><span class="pre">add_argument_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.add_argument_group" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.add_mutually_exclusive_group">
+<span class="sig-name descname"><span class="pre">add_mutually_exclusive_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.add_mutually_exclusive_group" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.add_subparsers">
+<span class="sig-name descname"><span class="pre">add_subparsers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.add_subparsers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.convert_arg_line_to_args">
+<span class="sig-name descname"><span class="pre">convert_arg_line_to_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.convert_arg_line_to_args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.error">
+<span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.error" title="Link to this definition"></a></dt>
+<dd><p>Prints a usage message incorporating the message to stderr and
+exits.</p>
+<p>If you override this in a subclass, it should not return – it
+should either exit or raise an exception.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.exit">
+<span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.exit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.format_help">
+<span class="sig-name descname"><span class="pre">format_help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#CustomArgumentParser.format_help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.CustomArgumentParser.format_help" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.format_usage">
+<span class="sig-name descname"><span class="pre">format_usage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.format_usage" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.get_default">
+<span class="sig-name descname"><span class="pre">get_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.get_default" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.parse_args">
+<span class="sig-name descname"><span class="pre">parse_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.parse_args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.parse_intermixed_args">
+<span class="sig-name descname"><span class="pre">parse_intermixed_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.parse_intermixed_args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.parse_known_args">
+<span class="sig-name descname"><span class="pre">parse_known_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.parse_known_args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.parse_known_intermixed_args">
+<span class="sig-name descname"><span class="pre">parse_known_intermixed_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.parse_known_intermixed_args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.print_help">
+<span class="sig-name descname"><span class="pre">print_help</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.print_help" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.print_usage">
+<span class="sig-name descname"><span class="pre">print_usage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.print_usage" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registry_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.register" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.CustomArgumentParser.set_defaults">
+<span class="sig-name descname"><span class="pre">set_defaults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CustomArgumentParser.set_defaults" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.assign_community_colors">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">assign_community_colors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compressed_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decompression_mapping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#assign_community_colors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.assign_community_colors" title="Link to this definition"></a></dt>
+<dd><p>Assigns colors to nodes in the original graph based on community labels of the compressed graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The original graph.</p></li>
+<li><p><strong>compressed_graph</strong> (<em>nx.Graph</em>) – The compressed graph.</p></li>
+<li><p><strong>decompression_mapping</strong> (<em>dict</em>) – Mapping from nodes in compressed graph to nodes in original graph.</p></li>
+<li><p><strong>labels</strong> (<em>dict</em>) – Community labels for nodes in the compressed graph. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of colors assigned to communities in the compressed graph.
+node_colors (list): List of colors assigned to nodes in the original graph.
+color_map (dict): Mapping from community labels to colors.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>partition_colors (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.cluster_graph_embeddings">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">cluster_graph_embeddings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">123</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#cluster_graph_embeddings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.cluster_graph_embeddings" title="Link to this definition"></a></dt>
+<dd><p>Generate embeddings for the graph nodes and perform spectral clustering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The input graph.</p></li>
+<li><p><strong>model</strong> (<em>gensim.models.Word2Vec</em>) – The trained embedding model.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – The number of clusters.</p></li>
+<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – The random seed for reproducibility. Default to 123.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary where keys are node IDs and values are cluster labels.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">Word2Vec</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">SpectralClustering</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="n">cluster_graph_embeddings</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 1: Simple graph clustering</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span><span class="n">sentences</span><span class="o">=</span><span class="p">[[</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()],</span> <span class="n">vector_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">min_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sg</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">partition</span> <span class="o">=</span> <span class="n">cluster_graph_embeddings</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">partition</span><span class="p">)</span>
+<span class="go">{0: 1, 1: 0, 2: 1, 3: 0, 4: 1, 5: 1, 6: 1, 7: 0, 8: 0, 9: 0, 10: 1, 11: 0, 12: 1, 13: 1, 14: 0, 15: 0, 16: 0, 17: 0, 18: 1, 19: 0, 20: 0, 21: 0, 22: 0, 23: 0, 24: 0, 25: 1, 26: 1, 27: 0, 28: 1, 29: 1, 30: 1, 31: 0, 32: 1, 33: 0}</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 2: Clustering with different number of clusters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">partition</span> <span class="o">=</span> <span class="n">cluster_graph_embeddings</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">partition</span><span class="p">)</span>
+<span class="go">{0: 0, 1: 1, 2: 0, 3: 1, 4: 2, 5: 0, 6: 2, 7: 3, 8: 2, 9: 2, 10: 0, 11: 1, 12: 0, 13: 0, 14: 3, 15: 3, 16: 1, 17: 1, 18: 0, 19: 3, 20: 3, 21: 1, 22: 3, 23: 1, 24: 2, 25: 2, 26: 3, 27: 3, 28: 2, 29: 0, 30: 0, 31: 3, 32: 2, 33: 1}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.deepwalk_embedding">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">deepwalk_embedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_walks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walk_length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#deepwalk_embedding"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.deepwalk_embedding" title="Link to this definition"></a></dt>
+<dd><p>Generates node embeddings using the DeepWalk algorithm.</p>
+<p>This function performs random walks on the input graph and learns node embeddings using the Word2Vec algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The input graph.</p></li>
+<li><p><strong>num_walks</strong> (<em>int</em>) – Number of random walks to perform per node.</p></li>
+<li><p><strong>walk_length</strong> (<em>int</em>) – Length of each random walk.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Word2Vec model trained on the generated random walks.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>gensim.models.word2vec.Word2Vec</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.draw_graph">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">draw_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_thickness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_interactive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_disconnected_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate_communities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#draw_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.draw_graph" title="Link to this definition"></a></dt>
+<dd><p>Draws a graph using NetworkX and Matplotlib and saves it to an image file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The graph to be drawn.</p></li>
+<li><p><strong>labels</strong> (<em>dict</em><em>, </em><em>optional</em>) – Node labels. Defaults to None.</p></li>
+<li><p><strong>edge_thickness</strong> (<em>list</em><em>, </em><em>optional</em>) – List of edge thicknesses. Defaults to None.</p></li>
+<li><p><strong>node_color</strong> (<em>list</em><em>, </em><em>optional</em>) – Node colors. Defaults to None.</p></li>
+<li><p><strong>color_map</strong> (<em>dict</em><em>, </em><em>optional</em>) – Color mapping for legend. Defaults to None.</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – Title of the graph plot. Defaults to None.</p></li>
+<li><p><strong>file_path</strong> (<em>str</em><em>, </em><em>optional</em>) – File path to save the plot as an image. Defaults to None.</p></li>
+<li><p><strong>is_interactive</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to draw an interactive plot using config. Defaults to False.</p></li>
+<li><p><strong>plot_disconnected_components</strong> (<em>bool</em><em>, </em><em>optional</em>) – How to handle disconnected graphs.
+- True: Draw the entire graph including disconnected nodes.
+- False: Draw only the largest connected component.</p></li>
+<li><p><strong>separate_communities</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to separate communities in the layout. Defaults to False.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments to be passed to <cite>plt.figure</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="n">draw_graph</span><span class="p">,</span> <span class="n">draw_interactive_graph_pyvis</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 1: Simple graph with default settings</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Simple Graph&quot;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;simple_graph&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 2: Graph with specified node colors and edge thickness</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">node_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edge_thickness</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">edge_thickness</span><span class="o">=</span><span class="n">edge_thickness</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Graph with Custom Colors and Thickness&quot;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;simple_graph&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 3: Interactive graph using config</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">is_interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Interactive Graph&quot;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;simple_graph&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 4: Graph with communities and color mapping</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">communities</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="p">[</span><span class="n">communities</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()],</span> <span class="n">color_map</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Blue Nodes&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Red Nodes&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">},</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Graph with Communities&quot;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;simple_graph&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 5: Handling disconnected components</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">plot_disconnected_components</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Graph with Disconnected Components&quot;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;simple_graph&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Final example</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">communities</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edge_thickness</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">color_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Blue Nodes&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Red Nodes&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;Green Nodes&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;Yellow Nodes&#39;</span><span class="p">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edge_thickness</span><span class="o">=</span><span class="n">edge_thickness</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="p">[</span><span class="n">communities</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()],</span> <span class="n">color_map</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Example Graph with All Options Set&quot;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;simple_graph&quot;</span><span class="p">,</span> <span class="n">is_interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot_disconnected_components</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">separate_communities</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.draw_interactive_graph_pyvis">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">draw_interactive_graph_pyvis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_sizes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#draw_interactive_graph_pyvis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.draw_interactive_graph_pyvis" title="Link to this definition"></a></dt>
+<dd><p>Draws an interactive graph using config and saves it to an HTML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The graph to be drawn.</p></li>
+<li><p><strong>labels</strong> (<em>dict</em><em>, </em><em>optional</em>) – Node labels. Defaults to None.</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – Title of the graph plot. Defaults to None.</p></li>
+<li><p><strong>file_path</strong> (<em>str</em><em>, </em><em>optional</em>) – File path to save the plot as an HTML file. If None, the plot is saved in the current directory with a default name. Defaults to None.</p></li>
+<li><p><strong>node_color</strong> (<em>list</em><em>, </em><em>optional</em>) – Node colors. Defaults to None.</p></li>
+<li><p><strong>node_sizes</strong> (<em>list</em><em>, </em><em>optional</em>) – Node sizes. Defaults to None.</p></li>
+<li><p><strong>color_map</strong> (<em>dict</em><em>, </em><em>optional</em>) – Color mapping for legend. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="n">draw_interactive_graph_pyvis</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 1: Draw a basic graph</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_interactive_graph_pyvis</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Basic Graph&#39;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;simple_graph&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 2: Draw a graph with custom node labels</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="s1">&#39;Node A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s1">&#39;Node B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;Node C&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_interactive_graph_pyvis</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Graph with Labels&#39;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;simple_graph&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 3: Draw a graph with custom node colors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">node_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_interactive_graph_pyvis</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Graph with Colors&#39;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;simple_graph&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 4: Draw a graph with custom node sizes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">node_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_interactive_graph_pyvis</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_sizes</span><span class="o">=</span><span class="n">node_sizes</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Graph with Sizes&#39;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;simple_graph&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.generate_figure_filepath">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">generate_figure_filepath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'png'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#generate_figure_filepath"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.generate_figure_filepath" title="Link to this definition"></a></dt>
+<dd><p>Generate a file path for a figure based on title and file_path parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> (<em>str</em><em> or </em><em>None</em>) – Title of the figure. If None, a default name ‘fig’ will be used.</p></li>
+<li><p><strong>file_path</strong> (<em>str</em><em> or </em><em>None</em>) – Base directory where the figure file should be saved. If None, current directory will be used.</p></li>
+<li><p><strong>fig_ext</strong> (<em>str</em>) – Extension of the figure file (e.g., ‘png’, ‘jpg’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Generated file path including the extension.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>file_path_ext (str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.generate_random_walks">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">generate_random_walks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_walks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walk_length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#generate_random_walks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.generate_random_walks" title="Link to this definition"></a></dt>
+<dd><p>Generates random walks from each node in the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The input graph.</p></li>
+<li><p><strong>num_walks</strong> (<em>int</em>) – Number of random walks to perform per node.</p></li>
+<li><p><strong>walk_length</strong> (<em>int</em>) – Length of each random walk.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of random walks.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.perform_gsea">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">perform_gsea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gene_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">organism</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'human'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gene_sets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'KEGG_2019_Human'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#perform_gsea"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.perform_gsea" title="Link to this definition"></a></dt>
+<dd><p>Performs Gene Set Enrichment Analysis (GSEA) on a list of nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gene_list</strong> (<em>list</em>) – A list of genes to perform GSEA on.</p></li>
+<li><p><strong>gene_sets</strong> (<em>str</em>) – Name of the gene sets to use for enrichment analysis. Default is ‘KEGG_2019_Human’.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – Number of top enriched terms to return. Default is 5.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of labels representing the top k enriched gene sets.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the gene list is empty.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="n">perform_gsea</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 1: Basic GSEA with default settings</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gene_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TP53&#39;</span><span class="p">,</span> <span class="s1">&#39;BRCA1&#39;</span><span class="p">,</span> <span class="s1">&#39;EGFR&#39;</span><span class="p">,</span> <span class="s1">&#39;MYC&#39;</span><span class="p">,</span> <span class="s1">&#39;MTOR&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perform_gsea</span><span class="p">(</span><span class="n">gene_list</span><span class="p">)</span>
+<span class="go">[&#39;Breast cancer&#39;, &#39;Central carbon metabolism in cancer&#39;, &#39;MicroRNAs in cancer&#39;, &#39;Colorectal cancer&#39;, &#39;PI3K-Akt signaling pathway&#39;]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 2: GSEA with a different organism and gene set</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perform_gsea</span><span class="p">(</span><span class="n">gene_list</span><span class="p">,</span> <span class="n">organism</span><span class="o">=</span><span class="s1">&#39;mouse&#39;</span><span class="p">,</span> <span class="n">gene_sets</span><span class="o">=</span><span class="s1">&#39;KEGG_2019_Mouse&#39;</span><span class="p">)</span>
+<span class="go">[&#39;Breast cancer&#39;, &#39;MicroRNAs in cancer&#39;, &#39;Central carbon metabolism in cancer&#39;, &#39;PI3K-Akt signaling pathway&#39;, &#39;ErbB signaling pathway&#39;]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 3: GSEA with a custom number of top enriched terms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perform_gsea</span><span class="p">(</span><span class="n">gene_list</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">[&#39;Breast cancer&#39;, &#39;Central carbon metabolism in cancer&#39;, &#39;MicroRNAs in cancer&#39;]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 4: Handling gene list with fewer than 4 genes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perform_gsea</span><span class="p">([</span><span class="s1">&#39;TP53&#39;</span><span class="p">])</span>
+<span class="go">[&#39;TP53&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perform_gsea</span><span class="p">([</span><span class="s1">&#39;TP53&#39;</span><span class="p">,</span> <span class="s1">&#39;BRCA1&#39;</span><span class="p">])</span>
+<span class="go">[[&#39;TP53&#39;, &#39;BRCA1&#39;]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.random_walk">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">random_walk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walk_length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#random_walk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.random_walk" title="Link to this definition"></a></dt>
+<dd><p>Performs a random walk starting from the given node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The input graph.</p></li>
+<li><p><strong>start_node</strong> (<em>str</em><em> or </em><em>int</em>) – The starting node for the random walk.</p></li>
+<li><p><strong>walk_length</strong> (<em>int</em>) – Length of the random walk.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A random walk.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of str or int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.read_graph">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">read_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#read_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.read_graph" title="Link to this definition"></a></dt>
+<dd><p>Reads a graph from a file. Supports edgelist, JSON, and various other formats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The path to the file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A NetworkX graph created from the file data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nx.Graph</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>IOError</strong> – If the file cannot be read.</p></li>
+<li><p><strong>ValueError</strong> – If the file extension is not supported.</p></li>
+<li><p><strong>json.JSONDecodeError</strong> – If the JSON file is not valid.</p></li>
+<li><p><strong>KeyError</strong> – If the JSON data does not contain the expected ‘edges’ key.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="n">read_graph</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 1: Reading an edgelist file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">read_graph</span><span class="p">(</span><span class="s1">&#39;path/to/edgelist.txt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="c1"># Ensure the graph has nodes</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 2: Reading a JSON file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">read_graph</span><span class="p">(</span><span class="s1">&#39;path/to/graph.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="c1"># Ensure the graph has edges</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 3: Reading a GML file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">read_graph</span><span class="p">(</span><span class="s1">&#39;path/to/graph.gml&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="c1"># Ensure the graph has nodes</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.read_graph_from_edge_list">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">read_graph_from_edge_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_extension</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#read_graph_from_edge_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.read_graph_from_edge_list" title="Link to this definition"></a></dt>
+<dd><p>Reads a graph from an edgelist, CSV, or TSV file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – The path to the file.</p></li>
+<li><p><strong>file_extension</strong> (<em>str</em>) – The extension of the file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A NetworkX graph created from the file data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nx.Graph</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>IOError</strong> – If the file cannot be read.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="n">read_graph_from_edge_list</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 1: Reading an edgelist file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Contents of &#39;graph.edgelist&#39;:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># A B</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># B C</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">read_graph_from_edge_list</span><span class="p">(</span><span class="s1">&#39;path/to/graph.edgelist&#39;</span><span class="p">,</span> <span class="s1">&#39;.edgelist&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>  <span class="c1"># Ensure the graph has 3 nodes</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 2: Reading a CSV file, unweighted graph</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Contents of &#39;graph.csv&#39;:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># source,target</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># A,B</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># B,C</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">read_graph_from_edge_list</span><span class="p">(</span><span class="s1">&#39;path/to/graph.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>  <span class="c1"># Ensure the graph has 2 edges</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 3: Reading a TSV file, weighted graph</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Contents of &#39;graph.tsv&#39;:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># source    target  weight</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># A B       1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># B C       2.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">read_graph_from_edge_list</span><span class="p">(</span><span class="s1">&#39;path/to/graph.tsv&#39;</span><span class="p">,</span> <span class="s1">&#39;.tsv&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>  <span class="c1"># Ensure the graph has 2 edges</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">][</span><span class="s1">&#39;B&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">1.0</span>  <span class="c1"># Ensure the graph has edge weights</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.read_graph_from_json">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">read_graph_from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#read_graph_from_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.read_graph_from_json" title="Link to this definition"></a></dt>
+<dd><p>Reads a graph from a JSON file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The path to the JSON file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A NetworkX graph created from the JSON data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nx.Graph</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>IOError</strong> – If the file cannot be read.</p></li>
+<li><p><strong>json.JSONDecodeError</strong> – If the file is not valid JSON.</p></li>
+<li><p><strong>KeyError</strong> – If the JSON data does not contain the expected ‘edges’ key.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="n">read_graph_from_json</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 1: Reading a JSON file with weighted edges</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Contents of &#39;graph.json&#39;:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># {</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#     &quot;nodes&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#     &quot;edges&quot;: [</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#         {&quot;source&quot;: &quot;A&quot;, &quot;target&quot;: &quot;B&quot;, &quot;weight&quot;: 1.0},</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#         {&quot;source&quot;: &quot;B&quot;, &quot;target&quot;: &quot;C&quot;, &quot;weight&quot;: 2.0}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#     ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># }</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">read_graph_from_json</span><span class="p">(</span><span class="s1">&#39;path/to/graph.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>  <span class="c1"># Ensure the graph has nodes</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>  <span class="c1"># Ensure the graph has edges</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">][</span><span class="s1">&#39;B&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">1.0</span>  <span class="c1"># Ensure the graph has weights</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.save_graph">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">save_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils.html#save_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.save_graph" title="Link to this definition"></a></dt>
+<dd><p>Saves a NetworkX graph to a file in the format specified by the file extension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>graph</strong> (<em>nx.Graph</em>) – The NetworkX graph to save.</p></li>
+<li><p><strong>file_path</strong> (<em>str</em>) – The path to the file to save the graph to.</p></li>
+<li><p><strong>save_data</strong> (<em>bool</em>) – Whether to save edge data (e.g., weights) to the file. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the file extension is not supported.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="n">save_graph</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 1: Save a graph to a JSON file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">save_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;path/to/graph.json&#39;</span><span class="p">,</span> <span class="n">save_data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 2: Save a graph to an edgelist file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">save_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;path/to/graph.edgelist&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example 3: Save a graph to a CSV file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">save_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;path/to/graph.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Graph Compression Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="demo.html" class="btn btn-neutral float-right" title="Demo module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Daniele.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>utils &mdash; graphpack  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to see the algorithm pseudocode, parameters and hints';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            graphpack
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#quick-start">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#on-ramp">On Ramp</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview and Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html#compression-pipeline">Compression Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Demo Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Graph Compression Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html#demo-modules">Demo Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Glossaries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../graph-compression-glossary.html">Graph Compression Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compression-algorithm-glossary.html">Compression Algorithm Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">graphpack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">utils</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">gseapy</span> <span class="k">as</span> <span class="nn">gp</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>  <span class="c1"># Use a non-interactive matplotlib backend</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcolors</span>
+<span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">Word2Vec</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">SpectralClustering</span>
+
+
+<span class="n">TITLE</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">  ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗    ██████╗  █████╗  ██████╗██╗  ██╗</span>
+<span class="s2"> ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║    ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝</span>
+<span class="s2"> ██║  ███╗██████╔╝███████║██████╔╝███████║    ██████╔╝███████║██║     █████╔╝ </span>
+<span class="s2"> ██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║    ██╔═══╝ ██╔══██║██║     ██╔═██╗ </span>
+<span class="s2"> ╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║    ██║     ██║  ██║╚██████╗██║  ██╗</span>
+<span class="s2">  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="n">VIZ</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    ┌───┐          ┌───┐                                              </span>
+<span class="s2">    │███├──────────┤███│                                    ╔═══╗          </span>
+<span class="s2">    └─┬─┘          └┬──┘                       .            ║███║  </span>
+<span class="s2">      ╰──────╮╭─────╯           .. ............;;.          ╚═┃═╝              </span>
+<span class="s2">            ┌┴┴─┐               ..::::::::::::;;;;.         ┌─┸─┐          </span>
+<span class="s2">       ╭────┤   ├──╮          . . ::::::::::::;;:&#39;          │   ├──╮       </span>
+<span class="s2">       │    └┬──┘  │  ┌───┐                   :&#39;            └╥──┘  │  ┌───┐</span>
+<span class="s2">     ┌─┴─┐   │     ╰──┤░░░│                          ┌───┐   ║     ╰──┤░░░│</span>
+<span class="s2">     │▚▚▚├───╯        └───┘                          │▚▚▚╞═══╝        └───┘</span>
+<span class="s2">     └───┘                                           └───┘                 </span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">DESCR</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">GraphPack is a Python tool engineered to facilitate the compression and visualization</span>
+<span class="s2">of large-scale networks, such as protein-protein interaction networks or metabolic</span>
+<span class="s2">pathways. It offers a user-friendly interface that enables the application of diverse</span>
+<span class="s2">graph compression algorithms and the visualization of the compressed networks.&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">LONG_DESCR</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">GraphPack includes a variety of graph compression algorithms:</span>
+<span class="s2">- Louvain Clustering algorithm optimizes modularity to uncover community structures,</span>
+<span class="s2">- Greedy algorithm iteratively merges nodes to minimize graph size while preserving</span>
+<span class="s2">  structural integrity,</span>
+<span class="s2">- Label Propagation detects communities using labels distributed across the network,</span>
+<span class="s2">- Asynchronous Fluid Communities algorithm identifies fluid communities in the network.</span>
+<span class="s2">- Spectral Clustering utilizes eigenvalues of the graph Laplacian for clustering,</span>
+<span class="s2">- Hierarchical Clustering builds a hierarchy of clusters,</span>
+<span class="s2">- Node2Vec embeds nodes through random walks for clustering purposes,</span>
+<span class="s2">- DeepWalk learns node representations via truncated random walks,</span>
+<span class="s2">- Clique Percolation Method (CPM) detects overlapping communities,</span>
+<span class="s2">- Non-negative Matrix Factorization (NMF) factorizes the adjacency matrix for</span>
+<span class="s2">  community detection.</span>
+
+<span class="s2">To ensure continuity, GraphPack maps the nodes of the compressed graph to information</span>
+<span class="s2">regarding the original nodes they represent. This mapping is maintained in an additional</span>
+<span class="s2">annotation file, preserving the relationship between the new and old nodes.</span>
+
+<span class="s2">The tool comes with example input data, including a small network, and comprehensive</span>
+<span class="s2">documentation to guide users on how to utilize the tool effectively. GraphPack also</span>
+<span class="s2">supports Gene Set Enrichment Analysis (GSEA) to identify enriched biological pathways</span>
+<span class="s2">within the compressed networks, offering deeper biological insights into the network</span>
+<span class="s2">structure.</span>
+
+<span class="s2">GraphPack provides robust visualization options for both the original and compressed</span>
+<span class="s2">networks, facilitating easy comparison and in-depth analysis.</span>
+
+<span class="s2">Networks can be input in various formats, such as adjacency lists, edge lists, or</span>
+<span class="s2">networkx graphs. Users can select a compression algorithm and specify any necessary</span>
+<span class="s2">parameters, such as compression strength. The tool then outputs a compressed graph</span>
+<span class="s2">along with a mapping file that details the relationship between the new and original</span>
+<span class="s2">nodes. </span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1"># ANSI escape codes for red and bold text</span>
+<span class="n">RED_BOLD</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1;31m&quot;</span>
+<span class="n">ORANGE_BOLD</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1;33m&quot;</span>
+<span class="n">GREEN_BOLD</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1;32m&quot;</span>
+<span class="n">BOLD</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m&quot;</span>
+<span class="n">RESET</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[0m&quot;</span>
+
+<span class="n">FIG_NUM</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">FIG_EXT</span> <span class="o">=</span> <span class="s2">&quot;pdf&quot;</span>
+<span class="n">SEED</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="n">MAX_K</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Maximum number of clusters for community detection, to guarantee a nice visualization</span>
+<span class="n">MAX_N_NODES_INTERACTIVE</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># Maximum number of nodes to enable interactive visualization</span>
+<span class="n">MAX_N_NODES</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># 10000 # Maximum number of nodes to enable graph visualization</span>
+<span class="n">MAX_N_NODES_NMF</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Maximum number of nodes for NMF n_components = &#39;auto&#39; community detection</span>
+
+<span class="n">METHODS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="s1">&#39;greedy&#39;</span><span class="p">,</span> <span class="s1">&#39;label_propagation&#39;</span><span class="p">,</span> <span class="s1">&#39;asyn_fluidc&#39;</span><span class="p">,</span> <span class="s1">&#39;spectral&#39;</span><span class="p">,</span> <span class="s1">&#39;hclust&#39;</span><span class="p">,</span> <span class="s1">&#39;node2vec&#39;</span><span class="p">,</span> <span class="s1">&#39;deepwalk&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;cpm&#39;</span><span class="p">,</span> <span class="s1">&#39;nmf&#39;</span><span class="p">]</span>
+
+<span class="n">EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;edgelist&#39;</span><span class="p">,</span> <span class="s1">&#39;txt&#39;</span><span class="p">,</span> <span class="s1">&#39;csv&#39;</span><span class="p">,</span> <span class="s1">&#39;tsv&#39;</span><span class="p">,</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="s1">&#39;gpickle&#39;</span><span class="p">,</span> <span class="s1">&#39;gml&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;graphml&#39;</span><span class="p">,</span> <span class="s1">&#39;net&#39;</span><span class="p">,</span> <span class="s1">&#39;pajek&#39;</span><span class="p">,</span> <span class="s1">&#39;gexf&#39;</span><span class="p">,</span> <span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;yml&#39;</span><span class="p">]</span>
+
+<span class="n">COLORS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumseagreen&#39;</span><span class="p">,</span> <span class="s1">&#39;deepskyblue&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;darkmagenta&#39;</span><span class="p">,</span> <span class="s1">&#39;sandybrown&#39;</span><span class="p">,</span> <span class="s1">&#39;yellowgreen&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;turquoise&#39;</span><span class="p">,</span> <span class="s1">&#39;dodgerblue&#39;</span><span class="p">,</span> <span class="s1">&#39;blueviolet&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumvioletred&#39;</span><span class="p">,</span> <span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="s1">&#39;olivedrab&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumspringgreen&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumslateblue&#39;</span><span class="p">,</span> <span class="s1">&#39;orchid&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="s1">&#39;forestgreen&#39;</span><span class="p">,</span> <span class="s1">&#39;teal&#39;</span><span class="p">,</span> <span class="s1">&#39;lightsteelblue&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;mediumorchid&#39;</span><span class="p">,</span> <span class="s1">&#39;maroon&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;seagreen&#39;</span><span class="p">,</span> <span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="s1">&#39;royalblue&#39;</span><span class="p">,</span> <span class="s1">&#39;violet&#39;</span><span class="p">]</span>
+
+<span class="c1"># Extended color palette</span>
+<span class="n">COLORS_EXT</span> <span class="o">=</span> <span class="n">COLORS</span> <span class="o">+</span> <span class="p">[</span>
+    <span class="s1">&#39;crimson&#39;</span><span class="p">,</span> <span class="s1">&#39;darkgoldenrod&#39;</span><span class="p">,</span> <span class="s1">&#39;lightcoral&#39;</span><span class="p">,</span> <span class="s1">&#39;springgreen&#39;</span><span class="p">,</span> <span class="s1">&#39;midnightblue&#39;</span><span class="p">,</span> <span class="s1">&#39;limegreen&#39;</span><span class="p">,</span> <span class="s1">&#39;peru&#39;</span><span class="p">,</span> <span class="s1">&#39;greenyellow&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cadetblue&#39;</span><span class="p">,</span> <span class="s1">&#39;slateblue&#39;</span><span class="p">,</span> <span class="s1">&#39;indigo&#39;</span><span class="p">,</span> <span class="s1">&#39;hotpink&#39;</span><span class="p">,</span> <span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="s1">&#39;darkolivegreen&#39;</span><span class="p">,</span> <span class="s1">&#39;aquamarine&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="s1">&#39;darkseagreen&#39;</span><span class="p">,</span> <span class="s1">&#39;darkorchid&#39;</span><span class="p">,</span> <span class="s1">&#39;chocolate&#39;</span><span class="p">,</span> <span class="s1">&#39;orangered&#39;</span><span class="p">,</span> <span class="s1">&#39;darkgreen&#39;</span><span class="p">,</span> <span class="s1">&#39;darkcyan&#39;</span><span class="p">,</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;plum&#39;</span><span class="p">,</span> <span class="s1">&#39;darkred&#39;</span><span class="p">,</span> <span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="s1">&#39;lime&#39;</span><span class="p">,</span> <span class="s1">&#39;darkturquoise&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumblue&#39;</span><span class="p">,</span> <span class="s1">&#39;lavender&#39;</span>
+<span class="p">]</span>
+
+<span class="n">CONFIG_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;config&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="CustomArgumentParser">
+<a class="viewcode-back" href="../src.html#utils.CustomArgumentParser">[docs]</a>
+<span class="k">class</span> <span class="nc">CustomArgumentParser</span><span class="p">(</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Custom ArgumentParser class to modify the help message and usage format.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        argparse.ArgumentParser: The ArgumentParser class to inherit from.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        CustomArgumentParser: A custom ArgumentParser class with modified help message and usage format.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CustomArgumentParser.format_help">
+<a class="viewcode-back" href="../src.html#utils.CustomArgumentParser.format_help">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_help</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">formatter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_formatter</span><span class="p">()</span>
+
+        <span class="c1"># Customize the usage message</span>
+        <span class="n">formatter</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_usage</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;usage:&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Usage:</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+
+        <span class="c1"># Add description</span>
+        <span class="n">formatter</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+
+        <span class="c1"># Customize the options message</span>
+        <span class="k">for</span> <span class="n">action_group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_action_groups</span><span class="p">:</span>
+            <span class="n">formatter</span><span class="o">.</span><span class="n">start_section</span><span class="p">(</span><span class="n">action_group</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+            <span class="n">formatter</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="n">action_group</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+            <span class="n">formatter</span><span class="o">.</span><span class="n">add_arguments</span><span class="p">(</span><span class="n">action_group</span><span class="o">.</span><span class="n">_group_actions</span><span class="p">)</span>
+            <span class="n">formatter</span><span class="o">.</span><span class="n">end_section</span><span class="p">()</span>
+
+        <span class="c1"># Add epilog</span>
+        <span class="n">formatter</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">epilog</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">formatter</span><span class="o">.</span><span class="n">format_help</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="read_graph">
+<a class="viewcode-back" href="../src.html#utils.read_graph">[docs]</a>
+<span class="k">def</span> <span class="nf">read_graph</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads a graph from a file. Supports edgelist, JSON, and various other formats.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        file_path (str): The path to the file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        nx.Graph: A NetworkX graph created from the file data.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        IOError: If the file cannot be read.</span>
+<span class="sd">        ValueError: If the file extension is not supported.</span>
+<span class="sd">        json.JSONDecodeError: If the JSON file is not valid.</span>
+<span class="sd">        KeyError: If the JSON data does not contain the expected &#39;edges&#39; key.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.utils import read_graph</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 1: Reading an edgelist file</span>
+<span class="sd">        &gt;&gt;&gt; G = read_graph(&#39;path/to/edgelist.txt&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; isinstance(G, nx.Graph)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; len(G.nodes) &gt; 0  # Ensure the graph has nodes</span>
+<span class="sd">        True</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 2: Reading a JSON file</span>
+<span class="sd">        &gt;&gt;&gt; G = read_graph(&#39;path/to/graph.json&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; isinstance(G, nx.Graph)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; len(G.edges) &gt; 0  # Ensure the graph has edges</span>
+<span class="sd">        True</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 3: Reading a GML file</span>
+<span class="sd">        &gt;&gt;&gt; G = read_graph(&#39;path/to/graph.gml&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; isinstance(G, nx.Graph)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; len(G.nodes) &gt; 0  # Ensure the graph has nodes</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">file_extension</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;.json&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">read_graph_from_json</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.edgelist&#39;</span><span class="p">,</span> <span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;.tsv&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">read_graph_from_edge_list</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">file_extension</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;gpickle&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_gpickle</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;gml&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_gml</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;graphml&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_graphml</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;net&#39;</span><span class="p">,</span> <span class="s1">&#39;pajek&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_pajek</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;gexf&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_gexf</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;yml&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_yaml</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported file extension: </span><span class="si">{</span><span class="n">file_extension</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="read_graph_from_edge_list">
+<a class="viewcode-back" href="../src.html#utils.read_graph_from_edge_list">[docs]</a>
+<span class="k">def</span> <span class="nf">read_graph_from_edge_list</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">file_extension</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads a graph from an edgelist, CSV, or TSV file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        file_path (str): The path to the file.</span>
+<span class="sd">        file_extension (str): The extension of the file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        nx.Graph: A NetworkX graph created from the file data.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        IOError: If the file cannot be read.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.utils import read_graph_from_edge_list</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 1: Reading an edgelist file</span>
+<span class="sd">        &gt;&gt;&gt; # Contents of &#39;graph.edgelist&#39;:</span>
+<span class="sd">        &gt;&gt;&gt; # A B</span>
+<span class="sd">        &gt;&gt;&gt; # B C</span>
+<span class="sd">        &gt;&gt;&gt; G = read_graph_from_edge_list(&#39;path/to/graph.edgelist&#39;, &#39;.edgelist&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; isinstance(G, nx.Graph)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; len(G.nodes) == 3  # Ensure the graph has 3 nodes</span>
+<span class="sd">        True</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 2: Reading a CSV file, unweighted graph</span>
+<span class="sd">        &gt;&gt;&gt; # Contents of &#39;graph.csv&#39;:</span>
+<span class="sd">        &gt;&gt;&gt; # source,target</span>
+<span class="sd">        &gt;&gt;&gt; # A,B</span>
+<span class="sd">        &gt;&gt;&gt; # B,C</span>
+<span class="sd">        &gt;&gt;&gt; G = read_graph_from_edge_list(&#39;path/to/graph.csv&#39;, &#39;.csv&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; isinstance(G, nx.Graph)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; len(G.edges) == 2  # Ensure the graph has 2 edges</span>
+<span class="sd">        True</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 3: Reading a TSV file, weighted graph</span>
+<span class="sd">        &gt;&gt;&gt; # Contents of &#39;graph.tsv&#39;:</span>
+<span class="sd">        &gt;&gt;&gt; # source\ttarget\tweight</span>
+<span class="sd">        &gt;&gt;&gt; # A\tB\t1.0</span>
+<span class="sd">        &gt;&gt;&gt; # B\tC\t2.0</span>
+<span class="sd">        &gt;&gt;&gt; G = read_graph_from_edge_list(&#39;path/to/graph.tsv&#39;, &#39;.tsv&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; isinstance(G, nx.Graph)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; len(G.edges) == 2  # Ensure the graph has 2 edges</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; G[&#39;A&#39;][&#39;B&#39;][&#39;weight&#39;] == 1.0  # Ensure the graph has edge weights</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">file_extension</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.edgelist&#39;</span><span class="p">,</span> <span class="s1">&#39;.txt&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_edgelist</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;.tsv&#39;</span><span class="p">]:</span>
+        <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span> <span class="k">if</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;.csv&#39;</span> <span class="k">else</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s1">&#39;weight&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">edges</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_records</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">edges</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_records</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+        <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">edge</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">graph</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported file extension: </span><span class="si">{</span><span class="n">file_extension</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="read_graph_from_json">
+<a class="viewcode-back" href="../src.html#utils.read_graph_from_json">[docs]</a>
+<span class="k">def</span> <span class="nf">read_graph_from_json</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads a graph from a JSON file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        file_path (str): The path to the JSON file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        nx.Graph: A NetworkX graph created from the JSON data.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        IOError: If the file cannot be read.</span>
+<span class="sd">        json.JSONDecodeError: If the file is not valid JSON.</span>
+<span class="sd">        KeyError: If the JSON data does not contain the expected &#39;edges&#39; key.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.utils import read_graph_from_json</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 1: Reading a JSON file with weighted edges</span>
+<span class="sd">        &gt;&gt;&gt; # Contents of &#39;graph.json&#39;:</span>
+<span class="sd">        &gt;&gt;&gt; # {</span>
+<span class="sd">        &gt;&gt;&gt; #     &quot;nodes&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;],</span>
+<span class="sd">        &gt;&gt;&gt; #     &quot;edges&quot;: [</span>
+<span class="sd">        &gt;&gt;&gt; #         {&quot;source&quot;: &quot;A&quot;, &quot;target&quot;: &quot;B&quot;, &quot;weight&quot;: 1.0},</span>
+<span class="sd">        &gt;&gt;&gt; #         {&quot;source&quot;: &quot;B&quot;, &quot;target&quot;: &quot;C&quot;, &quot;weight&quot;: 2.0}</span>
+<span class="sd">        &gt;&gt;&gt; #     ]</span>
+<span class="sd">        &gt;&gt;&gt; # }</span>
+<span class="sd">        &gt;&gt;&gt; G = read_graph_from_json(&#39;path/to/graph.json&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; isinstance(G, nx.Graph)</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; len(G.nodes) == 3  # Ensure the graph has nodes</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; len(G.edges) == 2  # Ensure the graph has edges</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; G[&#39;A&#39;][&#39;B&#39;][&#39;weight&#39;] == 1.0  # Ensure the graph has weights</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;nodes&quot;</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;edges&#39;</span><span class="p">]:</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">],</span> <span class="n">edge</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">edge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">graph</span></div>
+
+
+
+<div class="viewcode-block" id="save_graph">
+<a class="viewcode-back" href="../src.html#utils.save_graph">[docs]</a>
+<span class="k">def</span> <span class="nf">save_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">save_data</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Saves a NetworkX graph to a file in the format specified by the file extension.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The NetworkX graph to save.</span>
+<span class="sd">        file_path (str): The path to the file to save the graph to.</span>
+<span class="sd">        save_data (bool): Whether to save edge data (e.g., weights) to the file. Defaults to False.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the file extension is not supported.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.utils import save_graph</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 1: Save a graph to a JSON file</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.Graph()</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edge(&#39;A&#39;, &#39;B&#39;, weight=1.0)</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edge(&#39;B&#39;, &#39;C&#39;, weight=2.0)</span>
+<span class="sd">        &gt;&gt;&gt; save_graph(G, &#39;path/to/graph.json&#39;, save_data=True)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 2: Save a graph to an edgelist file</span>
+<span class="sd">        &gt;&gt;&gt; save_graph(G, &#39;path/to/graph.edgelist&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 3: Save a graph to a CSV file</span>
+<span class="sd">        &gt;&gt;&gt; save_graph(G, &#39;path/to/graph.csv&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">file_extension</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;.json&#39;</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;nodes&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">()),</span>
+            <span class="s1">&#39;edges&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">u</span><span class="p">,</span>
+                    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">v</span><span class="p">,</span>
+                    <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.edgelist&#39;</span><span class="p">,</span> <span class="s1">&#39;.txt&#39;</span><span class="p">]:</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">write_edgelist</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">save_data</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;.tsv&#39;</span><span class="p">]:</span>
+        <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span> <span class="k">if</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;.csv&#39;</span> <span class="k">else</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span>
+        <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">save_data</span><span class="p">)]</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># If there are no edges with data, save only source and target nodes</span>
+            <span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">()]</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">])</span>
+
+        <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;gpickle&#39;</span><span class="p">:</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">write_gpickle</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;gml&#39;</span><span class="p">:</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">write_gml</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;graphml&#39;</span><span class="p">:</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">write_graphml</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;net&#39;</span><span class="p">,</span> <span class="s1">&#39;pajek&#39;</span><span class="p">]:</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">write_pajek</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="o">==</span> <span class="s1">&#39;gexf&#39;</span><span class="p">:</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">write_gexf</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">file_extension</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;yml&#39;</span><span class="p">]:</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">write_yaml</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported file extension: </span><span class="si">{</span><span class="n">file_extension</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_figure_filepath">
+<a class="viewcode-back" href="../src.html#utils.generate_figure_filepath">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_figure_filepath</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fig_ext</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a file path for a figure based on title and file_path parameters.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        title (str or None): Title of the figure. If None, a default name &#39;fig&#39; will be used.</span>
+<span class="sd">        file_path (str or None): Base directory where the figure file should be saved. If None, current directory will be used.</span>
+<span class="sd">        fig_ext (str): Extension of the figure file (e.g., &#39;png&#39;, &#39;jpg&#39;).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        file_path_ext (str): Generated file path including the extension.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;- &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fig&quot;</span>
+
+    <span class="k">if</span> <span class="n">file_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Ensure the directory exists</span>
+
+    <span class="n">file_path_ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">fig_ext</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">file_path_ext</span></div>
+
+
+
+<div class="viewcode-block" id="assign_community_colors">
+<a class="viewcode-back" href="../src.html#utils.assign_community_colors">[docs]</a>
+<span class="k">def</span> <span class="nf">assign_community_colors</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">compressed_graph</span><span class="p">,</span> <span class="n">decompression_mapping</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Assigns colors to nodes in the original graph based on community labels of the compressed graph.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The original graph.</span>
+<span class="sd">        compressed_graph (nx.Graph): The compressed graph.</span>
+<span class="sd">        decompression_mapping (dict): Mapping from nodes in compressed graph to nodes in original graph.</span>
+<span class="sd">        labels (dict): Community labels for nodes in the compressed graph. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        partition_colors (list): List of colors assigned to communities in the compressed graph.</span>
+<span class="sd">        node_colors (list): List of colors assigned to nodes in the original graph.</span>
+<span class="sd">        color_map (dict): Mapping from community labels to colors.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Extract unique communities from the compressed graph</span>
+    <span class="n">communities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">if</span> <span class="n">labels</span> <span class="k">else</span> <span class="p">[</span><span class="n">community_id</span> <span class="k">for</span> <span class="n">community_id</span> <span class="ow">in</span> <span class="n">compressed_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">]</span>
+
+    <span class="c1"># Create a color map from community IDs/labels to colors</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">mcolors</span><span class="o">.</span><span class="n">CSS4_COLORS</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">COLORS_EXT</span><span class="p">]</span>
+    <span class="n">color_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">community</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">community</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">communities</span><span class="p">)}</span>
+
+    <span class="c1"># Assign colors to nodes in the original graph based on the decompression mapping and labels</span>
+    <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">node_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">color_map</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">decompression_mapping</span><span class="p">[</span><span class="n">node</span><span class="p">]]]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+        <span class="n">partition_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">color_map</span><span class="p">[</span><span class="n">community</span><span class="p">]</span> <span class="k">for</span> <span class="n">community</span> <span class="ow">in</span> <span class="n">communities</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">node_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">color_map</span><span class="p">[</span><span class="n">decompression_mapping</span><span class="p">[</span><span class="n">node</span><span class="p">]]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+        <span class="n">partition_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">color_map</span><span class="p">[</span><span class="n">community</span><span class="p">]</span> <span class="k">for</span> <span class="n">community</span> <span class="ow">in</span> <span class="n">communities</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">partition_colors</span><span class="p">,</span> <span class="n">node_colors</span><span class="p">,</span> <span class="n">color_map</span></div>
+
+
+
+<div class="viewcode-block" id="draw_interactive_graph_pyvis">
+<a class="viewcode-back" href="../src.html#utils.draw_interactive_graph_pyvis">[docs]</a>
+<span class="k">def</span> <span class="nf">draw_interactive_graph_pyvis</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_sizes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                 <span class="n">color_map</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Draws an interactive graph using config and saves it to an HTML file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The graph to be drawn.</span>
+<span class="sd">        labels (dict, optional): Node labels. Defaults to None.</span>
+<span class="sd">        title (str, optional): Title of the graph plot. Defaults to None.</span>
+<span class="sd">        file_path (str, optional): File path to save the plot as an HTML file. If None, the plot is saved in the current directory with a default name. Defaults to None.</span>
+<span class="sd">        node_color (list, optional): Node colors. Defaults to None.</span>
+<span class="sd">        node_sizes (list, optional): Node sizes. Defaults to None.</span>
+<span class="sd">        color_map (dict, optional): Color mapping for legend. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.utils import draw_interactive_graph_pyvis</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 1: Draw a basic graph</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.Graph()</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edge(&#39;A&#39;, &#39;B&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edge(&#39;B&#39;, &#39;C&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; draw_interactive_graph_pyvis(G, title=&#39;Basic Graph&#39;, file_path=&#39;simple_graph&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 2: Draw a graph with custom node labels</span>
+<span class="sd">        &gt;&gt;&gt; labels = {&#39;A&#39;: &#39;Node A&#39;, &#39;B&#39;: &#39;Node B&#39;, &#39;C&#39;: &#39;Node C&#39;}</span>
+<span class="sd">        &gt;&gt;&gt; draw_interactive_graph_pyvis(G, labels=labels, title=&#39;Graph with Labels&#39;, file_path=&#39;simple_graph&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 3: Draw a graph with custom node colors</span>
+<span class="sd">        &gt;&gt;&gt; node_colors = [&#39;red&#39;, &#39;green&#39;, &#39;blue&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; draw_interactive_graph_pyvis(G, node_color=node_colors, title=&#39;Graph with Colors&#39;, file_path=&#39;simple_graph&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 4: Draw a graph with custom node sizes</span>
+<span class="sd">        &gt;&gt;&gt; node_sizes = [10, 20, 30]</span>
+<span class="sd">        &gt;&gt;&gt; draw_interactive_graph_pyvis(G, node_sizes=node_sizes, title=&#39;Graph with Sizes&#39;, file_path=&#39;simple_graph&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create a config Network</span>
+    <span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="s2">&quot;800px&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">filter_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">select_menu</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">cdn_resources</span><span class="o">=</span><span class="s1">&#39;remote&#39;</span><span class="p">)</span>
+    <span class="n">node_color</span> <span class="o">=</span> <span class="n">node_color</span> <span class="k">if</span> <span class="n">node_color</span> <span class="k">else</span> <span class="p">[</span><span class="s1">&#39;dodgerblue&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+    <span class="n">color_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">color_map</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span> <span class="k">if</span> <span class="n">color_map</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="c1"># Normalize node sizes to range from 0 to 1</span>
+    <span class="k">if</span> <span class="n">node_sizes</span><span class="p">:</span>
+        <span class="n">min_node_size</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">max_node_size</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="n">min_size</span><span class="p">,</span> <span class="n">max_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">node_sizes</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">node_sizes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">min_size</span> <span class="o">!=</span> <span class="n">max_size</span><span class="p">:</span>
+            <span class="n">node_sizes</span> <span class="o">=</span> <span class="p">[((</span><span class="n">size</span> <span class="o">-</span> <span class="n">min_size</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">max_size</span> <span class="o">-</span> <span class="n">min_size</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_node_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">min_node_size</span><span class="p">)</span> <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span>
+                          <span class="n">node_sizes</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">node_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">node_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+
+    <span class="c1"># Add nodes and edges from the NetworkX graph</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">()):</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">node_color</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="k">if</span> <span class="n">labels</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">node_sizes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">title_attr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">color_map</span><span class="p">[</span><span class="n">color</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">color_map</span> <span class="ow">and</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">color_map</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span>
+            <span class="n">node</span><span class="p">)</span>  <span class="c1"># f&quot;{node} - {color_map[color]}&quot; if color_map and color in color_map else str(node)</span>
+
+        <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title_attr</span><span class="p">)</span>
+
+    <span class="c1"># Extract the edges and add them to the config Network</span>
+    <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Default to 1 if weight is None or not present</span>
+        <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightgray&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Set buttons (uncomment ONLY to modify the options in GUI mode)</span>
+    <span class="c1"># net.show_buttons()</span>
+
+    <span class="c1"># Define the common part of the options, as specified in config/const_options file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CONFIG_PATH</span><span class="si">}</span><span class="s2">/const_options&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">common_options</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="c1"># Define the conditional part of the physics options</span>
+    <span class="n">physics_option_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CONFIG_PATH</span><span class="si">}</span><span class="s2">/physics_options_small&quot;</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span>
+        <span class="n">net</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CONFIG_PATH</span><span class="si">}</span><span class="s2">/physics_options_big&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">physics_option_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">physics_options</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="c1"># Concatenate the common options with the conditional physics options</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">common_options</span> <span class="o">+</span> <span class="n">physics_options</span>
+
+    <span class="c1"># Set the options (comment if using GUI mode for options setup)</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+    <span class="c1"># Save the plot to an image file if file_path is specified</span>
+    <span class="n">file_path_ext</span> <span class="o">=</span> <span class="n">generate_figure_filepath</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;html&#39;</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">generate_html</span><span class="p">(</span><span class="n">file_path_ext</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_ext</span><span class="p">,</span> <span class="s2">&quot;w+&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_physics_switch</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="c1"># Define the pattern to match the existing &lt;style&gt; section</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&lt;style\s+type=&quot;text/css&quot;&gt;.*?&lt;/style&gt;&#39;</span>
+
+        <span class="c1"># Define the replacement content for the &lt;style&gt; section</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CONFIG_PATH</span><span class="si">}</span><span class="s2">/style_options&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">replacement</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="c1"># Perform the replacement in the content</span>
+        <span class="n">new_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+
+        <span class="c1"># Write the modified content back to the file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_content</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_physics_stop_to_html</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="c1"># Search for the stabilizationIterationsDone event and insert the network.setOptions line</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(network.once\(&quot;stabilizationIterationsDone&quot;, function\(\) {)&#39;</span>
+        <span class="n">replacement</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\1\n\t\t\t\t\t\t  // Disable the physics after stabilization is done.\n\t\t\t\t\t\t  network.setOptions({ physics: false });\n\t\t\t\t\t\t  updateCheckboxState();&#39;</span>
+
+        <span class="n">new_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+
+        <span class="c1"># Write the modified content back to the file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_content</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_unselected_nodes_hiding</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+            <span class="c1"># Function to add JavaScript code for handling node click and reset visibility</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CONFIG_PATH</span><span class="si">}</span><span class="s2">/additional_js&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">js_code</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+            <span class="c1"># Insert the JavaScript code before the closing &lt;/body&gt; tag</span>
+            <span class="n">new_content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&lt;/body&gt;&#39;</span><span class="p">,</span> <span class="n">js_code</span> <span class="o">+</span> <span class="s1">&#39;&lt;/body&gt;&#39;</span><span class="p">)</span>
+
+            <span class="c1"># Write the modified content back to the file</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_content</span><span class="p">)</span>
+
+    <span class="c1"># Set options such as layout, physics, etc. in the HTML file</span>
+    <span class="n">add_physics_switch</span><span class="p">(</span><span class="n">file_path_ext</span><span class="p">)</span>
+    <span class="n">add_physics_stop_to_html</span><span class="p">(</span><span class="n">file_path_ext</span><span class="p">)</span>
+    <span class="n">add_unselected_nodes_hiding</span><span class="p">(</span><span class="n">file_path_ext</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="draw_graph">
+<a class="viewcode-back" href="../src.html#utils.draw_graph">[docs]</a>
+<span class="k">def</span> <span class="nf">draw_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edge_thickness</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_map</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">is_interactive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot_disconnected_components</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">separate_communities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Draws a graph using NetworkX and Matplotlib and saves it to an image file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The graph to be drawn.</span>
+<span class="sd">        labels (dict, optional): Node labels. Defaults to None.</span>
+<span class="sd">        edge_thickness (list, optional): List of edge thicknesses. Defaults to None.</span>
+<span class="sd">        node_color (list, optional): Node colors. Defaults to None.</span>
+<span class="sd">        color_map (dict, optional): Color mapping for legend. Defaults to None.</span>
+<span class="sd">        title (str, optional): Title of the graph plot. Defaults to None.</span>
+<span class="sd">        file_path (str, optional): File path to save the plot as an image. Defaults to None.</span>
+<span class="sd">        is_interactive (bool, optional): Whether to draw an interactive plot using config. Defaults to False.</span>
+<span class="sd">        plot_disconnected_components (bool, optional): How to handle disconnected graphs.</span>
+<span class="sd">            - True: Draw the entire graph including disconnected nodes.</span>
+<span class="sd">            - False: Draw only the largest connected component.</span>
+<span class="sd">        separate_communities (bool, optional): Whether to separate communities in the layout. Defaults to False.</span>
+<span class="sd">        **kwargs: Additional keyword arguments to be passed to `plt.figure`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.utils import draw_graph, draw_interactive_graph_pyvis</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 1: Simple graph with default settings</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.Graph()</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edges_from([(1, 2), (2, 3), (3, 1)])</span>
+<span class="sd">        &gt;&gt;&gt; draw_graph(G, title=&quot;Simple Graph&quot;, file_path=&quot;simple_graph&quot;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 2: Graph with specified node colors and edge thickness</span>
+<span class="sd">        &gt;&gt;&gt; node_colors = [&#39;blue&#39;, &#39;green&#39;, &#39;red&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; edge_thickness = [2.0, 1.5, 2.5]</span>
+<span class="sd">        &gt;&gt;&gt; draw_graph(G, node_color=node_colors, edge_thickness=edge_thickness, title=&quot;Graph with Custom Colors and Thickness&quot;, file_path=&quot;simple_graph&quot;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 3: Interactive graph using config</span>
+<span class="sd">        &gt;&gt;&gt; draw_graph(G, is_interactive=True, title=&quot;Interactive Graph&quot;, file_path=&quot;simple_graph&quot;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 4: Graph with communities and color mapping</span>
+<span class="sd">        &gt;&gt;&gt; communities = {1: &#39;blue&#39;, 2: &#39;blue&#39;, 3: &#39;red&#39;}</span>
+<span class="sd">        &gt;&gt;&gt; draw_graph(G, node_color=[communities[node] for node in G.nodes()], color_map={&#39;Blue Nodes&#39;: &#39;blue&#39;, &#39;Red Nodes&#39;: &#39;red&#39;}, title=&quot;Graph with Communities&quot;, file_path=&quot;simple_graph&quot;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 5: Handling disconnected components</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edges_from([(4, 5), (5, 6)])</span>
+<span class="sd">        &gt;&gt;&gt; draw_graph(G, plot_disconnected_components=True, title=&quot;Graph with Disconnected Components&quot;, file_path=&quot;simple_graph&quot;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # Final example</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.Graph()</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edges_from([(1, 2), (2, 3), (3, 1), (4, 5), (5, 6), (6, 7), (7, 8), (8, 6)])</span>
+<span class="sd">        &gt;&gt;&gt; communities = {1: &#39;blue&#39;, 2: &#39;blue&#39;, 3: &#39;yellow&#39;, 4: &#39;green&#39;, 5: &#39;green&#39;, 6: &#39;red&#39;, 7: &#39;red&#39;, 8: &#39;red&#39;}</span>
+<span class="sd">        &gt;&gt;&gt; edge_thickness = [2.0, 1.5, 2.5, 1.0, 2.0, 1.5, 2.5, 5.0]</span>
+<span class="sd">        &gt;&gt;&gt; color_map = {&#39;Blue Nodes&#39;: &#39;blue&#39;, &#39;Red Nodes&#39;: &#39;red&#39;, &#39;Green Nodes&#39;: &#39;green&#39;, &#39;Yellow Nodes&#39;: &#39;yellow&#39;}</span>
+<span class="sd">        &gt;&gt;&gt; draw_graph(G, labels=None, edge_thickness=edge_thickness, node_color=[communities[node] for node in G.nodes()], color_map=color_map, title=&quot;Example Graph with All Options Set&quot;, file_path=&quot;simple_graph&quot;, is_interactive=True, plot_disconnected_components=True, separate_communities=True)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check if the graph is connected</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span> <span class="ow">and</span> <span class="n">plot_disconnected_components</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">The graph is not connected. Only the largest connected component will be displayed, thus some nodes will not be present in the graph.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">To display all nodes, consider disabling the connected_component flag.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Handle connected components</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">plot_disconnected_components</span><span class="p">:</span>
+        <span class="c1"># Use only the largest connected component</span>
+        <span class="n">largest_cc</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+        <span class="n">subgraph</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">largest_cc</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Use the entire graph including disconnected nodes</span>
+        <span class="n">subgraph</span> <span class="o">=</span> <span class="n">graph</span>
+
+    <span class="c1"># If number of nodes exceeds MAX_N_NODES_INTERACTIVE, remove all leaf nodes</span>
+    <span class="k">if</span> <span class="n">subgraph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">MAX_N_NODES_INTERACTIVE</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Leaf nodes and nodes with degree &lt;= 2 will be removed to enable visualization.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">To display all nodes, consider increasing the MAX_N_NODES_INTERACTIVE constant.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">leaves</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">degree</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">degree</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">subgraph</span><span class="o">.</span><span class="n">remove_nodes_from</span><span class="p">(</span><span class="n">leaves</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Removed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">leaves</span><span class="p">)</span><span class="si">}</span><span class="s2"> leaves or nodes with degree 2.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Update node_color list to match remaining nodes</span>
+    <span class="k">if</span> <span class="n">node_color</span><span class="p">:</span>
+        <span class="n">remaining_nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="n">node_color</span> <span class="o">=</span> <span class="p">[</span><span class="n">color</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">,</span> <span class="n">node_color</span><span class="p">)</span> <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">remaining_nodes</span><span class="p">]</span>
+
+    <span class="c1"># Get the edges with their data (attributes)</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">subgraph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">num_edges</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+    <span class="n">num_nodes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+
+    <span class="c1"># Define a base thickness scaling factor inversely related to the number of edges</span>
+    <span class="n">scaling_factor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">num_edges</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">))</span> <span class="k">if</span> <span class="n">num_edges</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="k">else</span> <span class="mi">5</span>
+
+    <span class="c1"># Check if edge_thickness is not provided</span>
+    <span class="k">if</span> <span class="n">edge_thickness</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Check if any edge has a &#39;weight&#39; attribute</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">):</span>
+            <span class="c1"># Extract all weights from the edges</span>
+            <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">]</span>
+            <span class="c1"># If there&#39;s variation in the weights, normalize the thickness</span>
+            <span class="k">if</span> <span class="nb">min</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">max</span><span class="p">(</span><span class="n">weights</span><span class="p">):</span>
+                <span class="c1"># Normalize weights to range [0.1, 1] for thickness and apply scaling factor</span>
+                <span class="n">edge_thickness</span> <span class="o">=</span> <span class="p">[</span><span class="n">scaling_factor</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="p">(</span><span class="n">weight</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">weights</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">weights</span><span class="p">)))</span> <span class="k">for</span>
+                                  <span class="n">weight</span> <span class="ow">in</span> <span class="n">weights</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># If all weights are the same, set a default thickness and apply scaling factor</span>
+                <span class="n">edge_thickness</span> <span class="o">=</span> <span class="p">[</span><span class="n">scaling_factor</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">weights</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># If no weights are specified, set all thicknesses to a default value and apply scaling factor</span>
+            <span class="n">edge_thickness</span> <span class="o">=</span> <span class="p">[</span><span class="n">scaling_factor</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">]</span>
+
+    <span class="c1"># Ensure edge_thickness is a list, even if a single value was given</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">edge_thickness</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+        <span class="n">edge_thickness</span> <span class="o">=</span> <span class="p">[</span><span class="n">edge_thickness</span> <span class="o">*</span> <span class="n">scaling_factor</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+
+    <span class="c1"># Assign as subgraph edges weights the edge thicknesses</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)):</span>
+        <span class="n">subgraph</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">edge_thickness</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="c1"># Initialize edge colors</span>
+    <span class="n">edge_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;darkgray&#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_edges</span><span class="p">)]</span>
+
+    <span class="c1"># Calculate node size</span>
+    <span class="n">base_size</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># base size for nodes</span>
+    <span class="n">min_node_size</span> <span class="o">=</span> <span class="mf">25.0</span> <span class="k">if</span> <span class="n">num_nodes</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="k">else</span> <span class="mf">60.0</span>
+    <span class="n">max_node_size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">min_node_size</span><span class="p">,</span> <span class="n">base_size</span> <span class="o">/</span> <span class="n">num_nodes</span><span class="p">)</span>
+
+    <span class="c1"># Calculate the label size</span>
+    <span class="n">label_size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">num_nodes</span> <span class="o">//</span> <span class="mi">100</span><span class="p">)</span>
+
+    <span class="c1"># Extract node sizes from the &#39;size&#39; attribute, with a default minimum size</span>
+    <span class="n">node_sizes_raw</span> <span class="o">=</span> <span class="p">[</span><span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+
+    <span class="c1"># Normalize node sizes to range from 1 to max_node_size</span>
+    <span class="n">min_size</span><span class="p">,</span> <span class="n">max_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">node_sizes_raw</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">node_sizes_raw</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">min_size</span> <span class="o">!=</span> <span class="n">max_size</span><span class="p">:</span>
+        <span class="n">node_sizes</span> <span class="o">=</span> <span class="p">[(((</span><span class="n">size</span> <span class="o">-</span> <span class="n">min_size</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">max_size</span> <span class="o">-</span> <span class="n">min_size</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_node_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">min_node_size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="k">for</span> <span class="n">size</span>
+                      <span class="ow">in</span> <span class="n">node_sizes_raw</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">node_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="n">max_node_size</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">node_sizes_raw</span><span class="p">]</span>
+
+    <span class="c1"># Assign as subgraph nodes weights the node sizes</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">()):</span>
+        <span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">node_sizes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="c1"># Layout the subgraph</span>
+    <span class="k">if</span> <span class="n">color_map</span> <span class="ow">and</span> <span class="n">separate_communities</span><span class="p">:</span>
+        <span class="c1"># Precompute clusters</span>
+        <span class="n">unique_colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">node_color</span><span class="p">))</span>
+        <span class="n">unique_clusters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">color_map</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_clusters</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">MAX_K</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: Number of unique clusters (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_clusters</span><span class="p">)</span><span class="si">}</span><span class="s2">) is greater than the  (</span><span class="si">{</span><span class="n">MAX_K</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Determine grid size</span>
+        <span class="n">num_clusters</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_colors</span><span class="p">)</span>
+        <span class="n">grid_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num_clusters</span><span class="p">)))</span>
+
+        <span class="c1"># Generate grid positions for clusters</span>
+        <span class="n">color_positions</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">unique_colors</span><span class="p">):</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="n">grid_size</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="n">i</span> <span class="o">%</span> <span class="n">grid_size</span>
+            <span class="n">color_positions</span><span class="p">[</span><span class="n">color</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">])</span>
+
+        <span class="c1"># Apply the custom layout</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">subgraph</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">(),</span> <span class="n">node_color</span><span class="p">):</span>
+            <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">+=</span> <span class="n">color_positions</span><span class="p">[</span><span class="n">color</span><span class="p">]</span>  <span class="c1"># Shift position based on color</span>
+
+        <span class="c1"># Adjust edge colors for inter-community edges</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">edges</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="n">node_color</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">u</span><span class="p">)]</span> <span class="o">!=</span> <span class="n">node_color</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">v</span><span class="p">)]:</span>
+                <span class="n">edge_colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#E4E4E4&#39;</span>  <span class="c1"># Lighter color for inter-community edges</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">subgraph</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="n">num_nodes</span><span class="p">)</span>
+
+    <span class="c1"># Filter labels for nodes present in the graph</span>
+    <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">()}</span>
+        <span class="c1"># Check node colors consistency</span>
+
+    <span class="k">if</span> <span class="n">node_color</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_color</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Number of node colors (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">node_color</span><span class="p">)</span><span class="si">}</span><span class="s2">) does not match number of nodes in the graph (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">subgraph</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+
+    <span class="c1"># If interactive, draw the graph using config</span>
+    <span class="k">if</span> <span class="n">is_interactive</span><span class="p">:</span>
+        <span class="n">draw_interactive_graph_pyvis</span><span class="p">(</span><span class="n">subgraph</span><span class="p">,</span>
+                                     <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+                                     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+                                     <span class="n">file_path</span><span class="o">=</span><span class="n">file_path</span><span class="p">,</span>
+                                     <span class="n">node_color</span><span class="o">=</span><span class="n">node_color</span><span class="p">,</span>
+                                     <span class="n">node_sizes</span><span class="o">=</span><span class="n">node_sizes</span><span class="p">,</span>
+                                     <span class="n">color_map</span><span class="o">=</span><span class="n">color_map</span><span class="p">)</span>
+
+    <span class="c1"># Create the figure</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="c1"># Set the title if provided</span>
+    <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">subgraph</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+            <span class="n">font_size</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">node_sizes</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">edge_thickness</span><span class="p">,</span>
+            <span class="n">edge_color</span><span class="o">=</span><span class="n">edge_colors</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_color</span><span class="p">)</span>
+
+    <span class="c1"># Add legend for color mapping if provided</span>
+    <span class="k">if</span> <span class="n">color_map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">color_handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
+                                <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+                         <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">color_map</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+
+        <span class="c1"># Disable the legend if there are too many communities</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">color_handles</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">MAX_K</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">color_handles</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Communities&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="c1"># Save the plot to an image file if file_path is specified</span>
+    <span class="n">file_path_ext</span> <span class="o">=</span> <span class="n">generate_figure_filepath</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">FIG_EXT</span><span class="p">)</span>
+
+    <span class="c1"># Set figure size and dpi (adjust as needed)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_dpi</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+
+    <span class="c1"># Save figure as PDF with adjusted bounding box</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">file_path_ext</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="generate_random_walks">
+<a class="viewcode-back" href="../src.html#utils.generate_random_walks">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_random_walks</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">num_walks</span><span class="p">,</span> <span class="n">walk_length</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates random walks from each node in the graph.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The input graph.</span>
+<span class="sd">        num_walks (int): Number of random walks to perform per node.</span>
+<span class="sd">        walk_length (int): Length of each random walk.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list of list of str: A list of random walks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">walks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_walks</span><span class="p">):</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">walks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random_walk</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">walk_length</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">walks</span></div>
+
+
+
+<div class="viewcode-block" id="random_walk">
+<a class="viewcode-back" href="../src.html#utils.random_walk">[docs]</a>
+<span class="k">def</span> <span class="nf">random_walk</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">,</span> <span class="n">walk_length</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Performs a random walk starting from the given node.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The input graph.</span>
+<span class="sd">        start_node (str or int): The starting node for the random walk.</span>
+<span class="sd">        walk_length (int): Length of the random walk.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list of str or int: A random walk.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">walk</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_node</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">walk_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">walk</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">cur</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">next_node</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span>
+            <span class="n">walk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_node</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">walk</span></div>
+
+
+
+<div class="viewcode-block" id="deepwalk_embedding">
+<a class="viewcode-back" href="../src.html#utils.deepwalk_embedding">[docs]</a>
+<span class="k">def</span> <span class="nf">deepwalk_embedding</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">num_walks</span><span class="p">,</span> <span class="n">walk_length</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates node embeddings using the DeepWalk algorithm.</span>
+
+<span class="sd">    This function performs random walks on the input graph and learns node embeddings using the Word2Vec algorithm.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The input graph.</span>
+<span class="sd">        num_walks (int): Number of random walks to perform per node.</span>
+<span class="sd">        walk_length (int): Length of each random walk.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        gensim.models.word2vec.Word2Vec: A Word2Vec model trained on the generated random walks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Step 1: Generate random walks</span>
+    <span class="n">walks</span> <span class="o">=</span> <span class="n">generate_random_walks</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">num_walks</span><span class="p">,</span> <span class="n">walk_length</span><span class="p">)</span>
+
+    <span class="c1"># Convert each walk to a list of strings (Word2Vec expects strings)</span>
+    <span class="n">walks</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">walk</span><span class="p">]</span> <span class="k">for</span> <span class="n">walk</span> <span class="ow">in</span> <span class="n">walks</span><span class="p">]</span>
+
+    <span class="c1"># Step 2: Train Word2Vec model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span><span class="n">walks</span><span class="p">,</span> <span class="n">vector_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_count</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">model</span></div>
+
+
+
+<div class="viewcode-block" id="cluster_graph_embeddings">
+<a class="viewcode-back" href="../src.html#utils.cluster_graph_embeddings">[docs]</a>
+<span class="k">def</span> <span class="nf">cluster_graph_embeddings</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate embeddings for the graph nodes and perform spectral clustering.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The input graph.</span>
+<span class="sd">        model (gensim.models.Word2Vec): The trained embedding model.</span>
+<span class="sd">        k (int): The number of clusters.</span>
+<span class="sd">        seed (int, optional): The random seed for reproducibility. Default to 123.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary where keys are node IDs and values are cluster labels.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from gensim.models import Word2Vec</span>
+<span class="sd">        &gt;&gt;&gt; from sklearn.cluster import SpectralClustering</span>
+<span class="sd">        &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.utils import cluster_graph_embeddings</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 1: Simple graph clustering</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.karate_club_graph()</span>
+<span class="sd">        &gt;&gt;&gt; model = Word2Vec(sentences=[[str(node) for node in G.neighbors(n)] for n in G.nodes()], vector_size=16, window=5, min_count=1, sg=1)</span>
+<span class="sd">        &gt;&gt;&gt; partition = cluster_graph_embeddings(G, model, k=2)</span>
+<span class="sd">        &gt;&gt;&gt; print(partition)</span>
+<span class="sd">        {0: 1, 1: 0, 2: 1, 3: 0, 4: 1, 5: 1, 6: 1, 7: 0, 8: 0, 9: 0, 10: 1, 11: 0, 12: 1, 13: 1, 14: 0, 15: 0, 16: 0, 17: 0, 18: 1, 19: 0, 20: 0, 21: 0, 22: 0, 23: 0, 24: 0, 25: 1, 26: 1, 27: 0, 28: 1, 29: 1, 30: 1, 31: 0, 32: 1, 33: 0}</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 2: Clustering with different number of clusters</span>
+<span class="sd">        &gt;&gt;&gt; partition = cluster_graph_embeddings(G, model, k=4)</span>
+<span class="sd">        &gt;&gt;&gt; print(partition)</span>
+<span class="sd">        {0: 0, 1: 1, 2: 0, 3: 1, 4: 2, 5: 0, 6: 2, 7: 3, 8: 2, 9: 2, 10: 0, 11: 1, 12: 0, 13: 0, 14: 3, 15: 3, 16: 1, 17: 1, 18: 0, 19: 3, 20: 3, 21: 1, 22: 3, 23: 1, 24: 2, 25: 2, 26: 3, 27: 3, 28: 2, 29: 0, 30: 0, 31: 3, 32: 2, 33: 1}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Generate embeddings for the graph nodes</span>
+    <span class="n">embeddings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">model</span><span class="o">.</span><span class="n">wv</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">)]</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">()])</span>
+
+    <span class="c1"># Perform spectral clustering on the embeddings</span>
+    <span class="n">sc</span> <span class="o">=</span> <span class="n">SpectralClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+
+    <span class="c1"># Create a partition dictionary with node IDs as keys and cluster labels as values</span>
+    <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())}</span>
+    <span class="k">return</span> <span class="n">partition</span></div>
+
+
+
+<div class="viewcode-block" id="perform_gsea">
+<a class="viewcode-back" href="../src.html#utils.perform_gsea">[docs]</a>
+<span class="k">def</span> <span class="nf">perform_gsea</span><span class="p">(</span><span class="n">gene_list</span><span class="p">,</span> <span class="n">organism</span><span class="o">=</span><span class="s1">&#39;human&#39;</span><span class="p">,</span> <span class="n">gene_sets</span><span class="o">=</span><span class="s1">&#39;KEGG_2019_Human&#39;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Performs Gene Set Enrichment Analysis (GSEA) on a list of nodes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        gene_list (list): A list of genes to perform GSEA on.</span>
+<span class="sd">        gene_sets (str): Name of the gene sets to use for enrichment analysis. Default is &#39;KEGG_2019_Human&#39;.</span>
+<span class="sd">        k (int): Number of top enriched terms to return. Default is 5.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: A list of labels representing the top k enriched gene sets.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the gene list is empty.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.utils import perform_gsea</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 1: Basic GSEA with default settings</span>
+<span class="sd">        &gt;&gt;&gt; gene_list = [&#39;TP53&#39;, &#39;BRCA1&#39;, &#39;EGFR&#39;, &#39;MYC&#39;, &#39;MTOR&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; perform_gsea(gene_list)</span>
+<span class="sd">        [&#39;Breast cancer&#39;, &#39;Central carbon metabolism in cancer&#39;, &#39;MicroRNAs in cancer&#39;, &#39;Colorectal cancer&#39;, &#39;PI3K-Akt signaling pathway&#39;]</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 2: GSEA with a different organism and gene set</span>
+<span class="sd">        &gt;&gt;&gt; perform_gsea(gene_list, organism=&#39;mouse&#39;, gene_sets=&#39;KEGG_2019_Mouse&#39;)</span>
+<span class="sd">        [&#39;Breast cancer&#39;, &#39;MicroRNAs in cancer&#39;, &#39;Central carbon metabolism in cancer&#39;, &#39;PI3K-Akt signaling pathway&#39;, &#39;ErbB signaling pathway&#39;]</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 3: GSEA with a custom number of top enriched terms</span>
+<span class="sd">        &gt;&gt;&gt; perform_gsea(gene_list, k=3)</span>
+<span class="sd">        [&#39;Breast cancer&#39;, &#39;Central carbon metabolism in cancer&#39;, &#39;MicroRNAs in cancer&#39;]</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 4: Handling gene list with fewer than 4 genes</span>
+<span class="sd">        &gt;&gt;&gt; perform_gsea([&#39;TP53&#39;])</span>
+<span class="sd">        [&#39;TP53&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; perform_gsea([&#39;TP53&#39;, &#39;BRCA1&#39;])</span>
+<span class="sd">        [[&#39;TP53&#39;, &#39;BRCA1&#39;]]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check if the gene list is empty</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">gene_list</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The gene list is empty. Please provide a list of genes for analysis.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Handle gene lists with fewer than 4 genes</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">gene_list</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">gene_list</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">gene_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">gene_list</span>
+
+    <span class="c1"># Perform GSEA</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">enrichr</span><span class="p">(</span><span class="n">gene_list</span><span class="o">=</span><span class="n">gene_list</span><span class="p">,</span> <span class="n">organism</span><span class="o">=</span><span class="n">organism</span><span class="p">,</span> <span class="n">gene_sets</span><span class="o">=</span><span class="n">gene_sets</span><span class="p">)</span>
+
+    <span class="c1"># Get the top k enriched terms</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">results</span><span class="o">.</span><span class="n">res2d</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="n">top_enriched_terms</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">res2d</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;Term&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">top_enriched_terms</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;No Enriched Gene Set&quot;</span><span class="p">]</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Daniele.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

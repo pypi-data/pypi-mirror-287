@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visualization &mdash; graphpack  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to see the algorithm pseudocode, parameters and hints';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Demo Pipeline" href="tutorial.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            graphpack
+          </a>
+              <div class="version">
+                0.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#quick-start">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#on-ramp">On Ramp</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview and Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html#compression-pipeline">Compression Pipeline</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#static-visualization-example">Static visualization Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-visualization-example">Interactive visualization Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sankey-diagram-example">Sankey Diagram Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Demo Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Graph Compression Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#demo-modules">Demo Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Glossaries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="graph-compression-glossary.html">Graph Compression Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compression-algorithm-glossary.html">Compression Algorithm Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">graphpack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Visualization</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/visualization.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Link to this heading"></a></h1>
+<p>GraphPack provides robust visualization options for both the original and compressed networks. This facilitates easy
+comparison and in-depth analysis, helping users gain deeper insights into network structures.</p>
+<p>The compression pipeline includes visualization of the original and compressed networks, as well as the original
+graph colored by the communities found by the compression method. The visualization can be static or interactive,
+depending on the user’s preference and on the graph size.</p>
+<p>Interactive visualizations are generated in HTML format, which can be opened in any web browser. The static
+plots are saved as PDF images.</p>
+<div class="note admonition">
+<p class="admonition-title">Visualization Options</p>
+<ul class="simple">
+<li><p>To generate plots, use the <code class="docutils literal notranslate"><span class="pre">--plot</span></code>/<code class="docutils literal notranslate"><span class="pre">plot</span></code> flag.</p></li>
+<li><p>To enable the interactive visualization, use the <code class="docutils literal notranslate"><span class="pre">--is-interactive</span></code>/<code class="docutils literal notranslate"><span class="pre">is_interactive</span></code> flag.</p></li>
+<li><p>The user can also specify a title for the plots using the <code class="docutils literal notranslate"><span class="pre">--title</span> <span class="pre">&lt;str&gt;</span></code> command line argument (or
+<code class="docutils literal notranslate"><span class="pre">title='My</span> <span class="pre">Graph'</span></code> in the API).</p></li>
+</ul>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Disconnect Graphs</p>
+<p>In case of a disconnected graph, the default choice is to plot only the largest connected component, but it is
+possible to plot all nodes using the <code class="docutils literal notranslate"><span class="pre">--plot-disconnected</span></code>/<code class="docutils literal notranslate"><span class="pre">plot_disconnected</span></code> flag.</p>
+</div>
+<section id="static-visualization-example">
+<h2>Static visualization Example<a class="headerlink" href="#static-visualization-example" title="Link to this heading"></a></h2>
+<p>This is an example of a static visualization of a compressed biological network, with GSEA labels as node names.</p>
+<a class="reference internal image-reference" href="_images/static_graph.png"><img alt="_images/static_graph.png" src="_images/static_graph.png" style="width: 800px;" />
+</a>
+<p>It is possible to open the <a class="reference external" href="compressed_graph_gsea_labels.pdf">compressed_graph with GSEA labels</a> as a pdf file.</p>
+<p>Please note that if the <a class="reference external" href="original_graph.pdf">original graph</a>  was not considered as a gene network, the
+<a class="reference external" href="compressed_graph.pdf">compressed graph</a> with the Greedy method, resolution 1.25 would have been the same, but
+with only node IDs.</p>
+<p>It is also possible to plot the
+<a class="reference external" href="original_graph_with_partition_colors.pdf">original graph, with the nodes colored by their communities</a>,
+as found by the compression method.</p>
+</section>
+<section id="interactive-visualization-example">
+<h2>Interactive visualization Example<a class="headerlink" href="#interactive-visualization-example" title="Link to this heading"></a></h2>
+<p>The same network can be visualized interactively, allowing users to explore the network structure and relationships.</p>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/css/tom-select.min.css" integrity="sha512-43fHB3GLgZfz8QXl1RPQ8O66oIgv3po9cJ5erMt1c4QISq9dYb195T3vr5ImnJPXuVroKcGBPXBFKETW8jrPNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/js/tom-select.complete.js" integrity="sha512-jeF9CfnvzDiw9G9xiksVjxR2lib44Gnovvkv+3CgCG6NXCD4gqlA5nDAVW5WjpA+i+/zKsUWV5xNEbW1X/HH0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        
+        <style type="text/css">
+
+            #mynetwork {
+                width: 100%;
+                height: 800px;
+                background-color: #ffffff;
+                border: 1px solid lightgray;
+                position: relative;
+                float: left;
+            }
+
+            div.outerBorder {
+                position:relative;
+                top:400px;
+                width:600px;
+                height:44px;
+                margin:auto auto auto auto;
+                border:8px solid rgba(0,0,0,0.1);
+                background: rgb(252,252,252); /* Old browsers */
+                background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                border-radius:72px;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="0">0</option>
+                                
+                                    <option value="1">1</option>
+                                
+                                    <option value="2">2</option>
+                                
+                                    <option value="3">3</option>
+                                
+                                    <option value="4">4</option>
+                                
+                                    <option value="5">5</option>
+                                
+                                    <option value="6">6</option>
+                                
+                                    <option value="7">7</option>
+                                
+                                    <option value="8">8</option>
+                                
+                                    <option value="9">9</option>
+                                
+                                    <option value="10">10</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+              <div id="filter-menu" class="card-header">
+                <div class="row no-gutters">
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'item')"
+                            id="select-item"
+                        >
+                        <option value="">Network item</option>
+                        <option value="edge">edge</option>
+                        <option value="node">node</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'property')"
+                            id="select-property"
+                        >
+                        <option value="">Property...</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="select-value"
+                        >
+                        <option value="">Value(s)...</option>
+                    </select>
+                  </div>
+                  <div class="col-1 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="highlightFilter(filter);">Filter</button>
+                  </div>
+                  <div class="col-2 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="clearFilter(true)">Reset</button>
+                  </div>
+                </div>
+              </div>
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+                  // explicitly using onItemAdd and this function as we need to save multiple values
+                  let updateValueFilter = function() {
+                      return function () {
+                      filter['value'].push(arguments[0])
+                      }
+                  }
+
+                  let valueControl = new TomSelect("#select-value",{
+                      maxItems: null,
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: updateValueFilter()
+                  });
+
+                  let addValues = function() {
+                      return function () {
+                          // clear the current value options and add the selected attribute values
+                          // tom-select handles duplicates
+                          let selectedProperty = arguments[0];
+                          valueControl.clear();
+                          valueControl.clearOptions();
+                          filter['value'] = []
+                          if (filter['item'] === 'node') {
+                              for (let each in allNodes) {
+                                  valueControl.addOption({
+                                      id:allNodes[each][selectedProperty],
+                                      title:allNodes[each][selectedProperty]
+                                  })
+                              }
+                          }
+                          else if (filter['item'] === 'edge') {
+                              for (let each in allEdges) {
+                                  valueControl.addOption({
+                                      id:allEdges[each][selectedProperty],
+                                      title:allEdges[each][selectedProperty]
+                                  })
+                              }
+                          }
+                      }
+                  };
+
+                  let propControl = new TomSelect("#select-property",{
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addValues()
+                  });
+
+                  let addProperties = function() {
+                      return function () {
+                          // loops through the selected network item and adds the attributes to dropdown
+                          // tom-select handles duplicates
+                          clearFilter(false)
+                          if (arguments[0] === 'edge') {
+                              for (let each in allEdges) {
+                                  if (allEdges.hasOwnProperty(each)) {
+                                      for (let eachProp in allEdges[each]) {
+                                          if (allEdges[each].hasOwnProperty(eachProp)) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                          else if (arguments[0] === 'node') {
+                              for (let each in allNodes) {
+                                  if (allNodes.hasOwnProperty(each)) {
+                                      for (let eachProp in allNodes[each]) {
+                                          if (allNodes[each].hasOwnProperty(eachProp)
+                                              && (eachProp !== 'hidden' && eachProp !== 'savedLabel'
+                                                  && eachProp !== 'hiddenLabel')) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  };
+
+                  let itemControl = new TomSelect("#select-item",{
+                      create: false,
+                      sortField:{
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addProperties()
+                  });
+
+                  function clearFilter(reset) {
+                      // utility function to clear all the selected filter options
+                      // if reset is set to true, the existing filter will be removed
+                      // else, only the dropdown options are cleared
+                      propControl.clear();
+                      propControl.clearOptions();
+                      valueControl.clear();
+                      valueControl.clearOptions();
+                      filter = {
+                          item : '',
+                          property : '',
+                          value : []
+                      }
+                      if (reset) {
+                          itemControl.clear();
+                          filterHighlight({nodes: []})
+                      }
+                  }
+
+                  function updateFilter(value, key) {
+                      // key could be 'item' or 'property' and value is as selected in dropdown
+                      filter[key] = value
+                  }
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#FF0000", "font": {"color": "gray"}, "id": 0, "label": "TGF-beta signaling pathway", "shape": "dot", "size": 29.0, "title": "0"}, {"color": "#FFD700", "font": {"color": "gray"}, "id": 1, "label": "Hippo signaling pathway", "shape": "dot", "size": 29.0, "title": "1"}, {"color": "#3CB371", "font": {"color": "gray"}, "id": 2, "label": "Glioma", "shape": "dot", "size": 25.200000000000003, "title": "2"}, {"color": "#00BFFF", "font": {"color": "gray"}, "id": 3, "label": "C-type lectin receptor signaling pathway", "shape": "dot", "size": 25.200000000000003, "title": "3"}, {"color": "#0000FF", "font": {"color": "gray"}, "id": 4, "label": "MAPK signaling pathway", "shape": "dot", "size": 21.4, "title": "4"}, {"color": "#8B008B", "font": {"color": "gray"}, "id": 5, "label": "Apoptosis", "shape": "dot", "size": 21.4, "title": "5"}, {"color": "#F4A460", "font": {"color": "gray"}, "id": 6, "label": "PI3K-Akt signaling pathway", "shape": "dot", "size": 21.4, "title": "6"}, {"color": "#9ACD32", "font": {"color": "gray"}, "id": 7, "label": "Notch signaling pathway", "shape": "dot", "size": 21.4, "title": "7"}, {"color": "#40E0D0", "font": {"color": "gray"}, "id": 8, "label": "Gastric cancer", "shape": "dot", "size": 17.6, "title": "8"}, {"color": "#1E90FF", "font": {"color": "gray"}, "id": 9, "label": "JAK-STAT signaling pathway", "shape": "dot", "size": 13.8, "title": "9"}, {"color": "#8A2BE2", "font": {"color": "gray"}, "id": 10, "label": "p53 signaling pathway", "shape": "dot", "size": 10.0, "title": "10"}]);
+                  edges = new vis.DataSet([{"color": "lightgray", "from": 0, "to": 1, "width": 0.25}, {"color": "lightgray", "from": 0, "to": 6, "width": 0.2558294470353098}, {"color": "lightgray", "from": 0, "to": 8, "width": 0.25832778147901403}, {"color": "lightgray", "from": 1, "to": 10, "width": 0.25832778147901403}, {"color": "lightgray", "from": 1, "to": 8, "width": 0.2566622251832112}, {"color": "lightgray", "from": 2, "to": 4, "width": 0.2549966688874084}, {"color": "lightgray", "from": 2, "to": 9, "width": 1.0886075949367089}, {"color": "lightgray", "from": 2, "to": 8, "width": 0.25832778147901403}, {"color": "lightgray", "from": 2, "to": 6, "width": 0.25749500333111264}, {"color": "lightgray", "from": 3, "to": 10, "width": 1.0902731512325115}, {"color": "lightgray", "from": 3, "to": 4, "width": 0.254163890739507}, {"color": "lightgray", "from": 3, "to": 9, "width": 0.25832778147901403}, {"color": "lightgray", "from": 3, "to": 8, "width": 0.25832778147901403}, {"color": "lightgray", "from": 3, "to": 6, "width": 0.25832778147901403}, {"color": "lightgray", "from": 4, "to": 10, "width": 0.25749500333111264}, {"color": "lightgray", "from": 4, "to": 9, "width": 1.9105596269153895}, {"color": "lightgray", "from": 5, "to": 10, "width": 2.75}, {"color": "lightgray", "from": 6, "to": 10, "width": 1.0902731512325115}, {"color": "lightgray", "from": 6, "to": 8, "width": 0.25832778147901403}, {"color": "lightgray", "from": 7, "to": 9, "width": 0.2533311125916056}, {"color": "lightgray", "from": 7, "to": 8, "width": 1.070286475682878}, {"color": "lightgray", "from": 9, "to": 10, "width": 1.0861092604930045}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"nodes": {"font": {"size": 18, "strokeWidth": 3}, "shadow": {"enabled": true}, "size": 0}, "edges": {"color": {"inherit": true}, "selfReference": {"angle": 0.7853981633974483}, "smooth": {"forceDirection": "none", "roundness": 0.4}}, "interaction": {"hover": true, "keyboard": {"enabled": true}, "multiselect": true, "navigationButtons": true}, "manipulation": {"enabled": true, "initiallyActive": true}, "physics": {"forceAtlas2Based": {"springLength": 100}, "minVelocity": 0.75, "solver": "forceAtlas2Based"}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+        <script type="text/javascript">
+
+                        // Function to reset visibility of all nodes
+                        function resetVisibility() {
+
+                            // Remove the neighbourhood highlighting
+                            neighbourhoodHighlight({nodes: []});
+                        }
+
+                        // Event listener to show button when a node is clicked
+                        network.on("click", function (params) {
+                            if (params.nodes.length === 0) {
+                                resetVisibility();
+                            }
+                        });
+            </script>
+    </body>
+</html><p>For an interactive visualization, with some additional features, open the html of this
+<a class="reference external" href="compressed_graph_gsea_labels.html">interactive compressed graph</a>. The interactive visualization of the
+<a class="reference external" href="original_graph_with_partition_colors.html">original network, with nodes color-coded by community</a> is also available.</p>
+<div class="error admonition">
+<p class="admonition-title">Large Networks</p>
+<p>The interactive visualization is recommended for small to medium-sized graphs, as it may be slow for large
+networks. In such cases, the static visualization is recommended. It is anyway possible to save the interactive
+visualization of the compressed graph, because with a suitable compression strength any large network can be
+compressed to a way smaller one.</p>
+<p>For large networks the plotting is time-consuming and mostly ineffective, also in the static case. In such
+cases, it is recommended to disable the plotting by setting <code class="docutils literal notranslate"><span class="pre">plot=False</span></code>.</p>
+</div>
+<p><strong>Interactive Visualization Features</strong></p>
+<p>In the interactive visualization, users can:</p>
+<ul>
+<li><p>Zoom in and out of the network (mouse wheel, keyboard shortcuts, or the zoom buttons <a class="reference internal" href="_images/zoom_out.png"><img alt="zoom_out" src="_images/zoom_out.png" style="height: 2ex;" /></a> <a class="reference internal" href="_images/zoom_in.png"><img alt="zoom_in" src="_images/zoom_in.png" style="height: 2ex;" /></a> in the
+bottom right).</p></li>
+<li><p>Reset the zoom level (using the reset button <a class="reference internal" href="_images/reset.png"><img alt="reset" src="_images/reset.png" style="height: 2ex;" /></a> in the bottom right).</p></li>
+<li><p>Pan the network (click in any background region and drag, keyboard arrows, or pan buttons <a class="reference internal" href="_images/left.png"><img alt="left" src="_images/left.png" style="height: 2ex;" /></a> <a class="reference internal" href="_images/right.png"><img alt="right" src="_images/right.png" style="height: 2ex;" /></a> <a class="reference internal" href="_images/up.png"><img alt="up" src="_images/up.png" style="height: 2ex;" /></a> <a class="reference internal" href="_images/down.png"><img alt="down" src="_images/down.png" style="height: 2ex;" /></a>
+in the bottom left).</p></li>
+<li><p>Drag nodes to reposition them (if physics is enabled, the simulated forces will try to find a new stable
+configuration).</p></li>
+<li><p>Hover over nodes to display their names/group labels.</p></li>
+<li><p>Click on nodes to highlight their neighbors (multiple selection is allowed). After selecting one or multiple nodes,
+a blue button will appear to allow the user to hide the unselected nodes/neighbours.</p></li>
+<li><p>Click on the background to deselect nodes/edges, or to restore the visualization with the full network after node
+hiding.</p></li>
+<li><p>Add or remove nodes/edges through the edit toolbar on the top (add node <a class="reference internal" href="_images/add_node.png"><img alt="add_node" src="_images/add_node.png" style="height: 2ex;" /></a>, add edge <a class="reference internal" href="_images/add_edge.png"><img alt="add_edge" src="_images/add_edge.png" style="height: 2ex;" /></a>, edit edge
+<a class="reference internal" href="_images/edit.png"><img alt="edit" src="_images/edit.png" style="height: 2ex;" /></a>, delete selected nodes/edges <a class="reference internal" href="_images/remove.png"><img alt="remove" src="_images/remove.png" style="height: 2ex;" /></a>).</p></li>
+<li><p>Select (multiple) node(s) by their IDs, or any network item (node/edge) that satisfy certain properties.</p>
+<div class="tip admonition">
+<p class="admonition-title">Select a Community of Nodes</p>
+<p>To select all the nodes belonging to the same community (e.g. p53 signaling pathway), e.g. in the interactive
+<a class="reference external" href="original_graph_with_partition_colors.html">original network, with nodes color-coded by community</a>, use the
+second filer and set respectively the drop-down menus to <code class="docutils literal notranslate"><span class="pre">node</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">p53</span> <span class="pre">signaling</span> <span class="pre">pathway</span></code>, then
+click on the blue <cite>Filter</cite> button.</p>
+</div>
+</li>
+<li><p>Enable or disable the physics via the switch button <a class="reference internal" href="_images/disable_physics.png"><img alt="disable_physics" src="_images/disable_physics.png" style="height: 2ex;" /></a> / <a class="reference internal" href="_images/enable_physics.png"><img alt="enable_physics" src="_images/enable_physics.png" style="height: 2ex;" /></a> in the top right.</p>
+<div class="warning admonition">
+<p class="admonition-title">Physics Options</p>
+<blockquote>
+<div><p>Please note that physics is automatically b disabled, once stabilisation is concluded, for large networks to
+prevent the nodes from wiggling. For smaller graphs, the <code class="docutils literal notranslate"><span class="pre">forceAtlas2Based</span></code> physics solver is kept active for
+a smoother interaction. If the user enable physics for a big network, the solver is instead <code class="docutils literal notranslate"><span class="pre">barnesHut</span></code>,
+customised with some constants that are more suitable for a fast stabilisation and responsive interaction.</p>
+</div></blockquote>
+</div>
+</li>
+</ul>
+</section>
+<section id="sankey-diagram-example">
+<h2>Sankey Diagram Example<a class="headerlink" href="#sankey-diagram-example" title="Link to this heading"></a></h2>
+<p>An useful visualization for comparing different compression results is the Sankey diagram (see
+<a class="reference internal" href="demo.html#sankey.produce_sankey" title="sankey.produce_sankey"><code class="xref py py-func docutils literal notranslate"><span class="pre">produce_sankey()</span></code></a> function for an example of usage). This kind of diagram shows the flow of genes in
+their respective supernodes across compressed networks, for different resolutions of the Louvain algorithm, or for
+different <code class="docutils literal notranslate"><span class="pre">k</span></code> values in the Hierarchical Clustering algorithm.</p>
+<p>This advanced plotting functionality is available through the command line interface using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gp-sankey<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>This command will display the help message for the Sankey diagram functionality, providing information on how to run
+the demo and specify the input graph, output directory, compression method and parameters, and visualization options.</p>
+<p><strong>Example Usage</strong></p>
+<div class="note admonition">
+<p class="admonition-title">Required Directories’ Structure</p>
+<p>The Sankey diagram functionality requires a specific directory structure to work properly. The output directory
+should contain the compressed networks generated by the compression methods, with the following structure:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>data
+├──<span class="w"> </span>output
+<span class="w">    </span>├──<span class="w"> </span><span class="o">{</span>graph_name<span class="o">}</span>
+<span class="w">        </span>├──<span class="w"> </span><span class="o">{</span>method<span class="o">}</span>_<span class="o">{</span>param_name<span class="o">}</span>_<span class="o">{</span>param_value_1<span class="o">}</span>
+<span class="w">            </span>├──<span class="w"> </span>compressed_graph.txt
+<span class="w">            </span>├──<span class="w"> </span>compression_mapping.json
+<span class="w">            </span>├──<span class="w"> </span>decompression_mapping.json
+<span class="w">        </span>├──<span class="w"> </span><span class="o">{</span>method<span class="o">}</span>_<span class="o">{</span>param_name<span class="o">}</span>_<span class="o">{</span>param_value_2<span class="o">}</span>
+<span class="w">            </span>├──<span class="w"> </span>compressed_graph.txt
+<span class="w">            </span>├──<span class="w"> </span>compression_mapping.json
+<span class="w">            </span>├──<span class="w"> </span>decompression_mapping.json
+<span class="w">        </span>├──<span class="w"> </span><span class="o">{</span>method<span class="o">}</span>_<span class="o">{</span>param_name<span class="o">}</span>_<span class="o">{</span>param_value_3<span class="o">}</span>
+<span class="w">            </span>├──<span class="w"> </span>compressed_graph.txt
+<span class="w">            </span>├──<span class="w"> </span>compression_mapping.json
+<span class="w">            </span>├──<span class="w"> </span>decompression_mapping.json
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">{method}_{param_name}_{param_value_X}</span></code> can be for example, <code class="docutils literal notranslate"><span class="pre">louvain_r_1.25</span></code> or <code class="docutils literal notranslate"><span class="pre">louvain_r_3.0</span></code>.</p>
+<p>Please note that, after running the same compression method on the same input graph, with different parameters,
+all the necessary files are saved under <code class="docutils literal notranslate"><span class="pre">data/output/{graph_name}/{method}_{param_name}_{param_value}</span></code>, so
+there is no need to move or copy the files around. The Sankey diagram functionality will automatically find the
+files and generate the interactive diagram.</p>
+<p>Of course, the user can specify a different input directory, using the <code class="docutils literal notranslate"><span class="pre">--input-path</span></code>/<code class="docutils literal notranslate"><span class="pre">input_path</span></code>
+parameter, and change the output directory, using the <code class="docutils literal notranslate"><span class="pre">--output-folder</span></code>/<code class="docutils literal notranslate"><span class="pre">output_folder</span></code> parameter.</p>
+</div>
+<p>For example, one might run the Node2Vec algorithm with different values of the number of dimensions (<code class="docutils literal notranslate"><span class="pre">k</span></code>), and then
+run the Sankey plotting functionality with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gp-sankey<span class="w"> </span>--graph<span class="w"> </span>graph_name<span class="w"> </span>--method<span class="w"> </span>node2vec<span class="w"> </span>--parameter<span class="w"> </span>k<span class="w"> </span>--values<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="m">3000</span>
+</pre></div>
+</div>
+<p><strong>Example Output</strong></p>
+<p>This is an example of Sankey diagram, showing the flow of nodes between compressed networks, for different values of
+the number of dimensions in the Node2Vec algorithm. It is also possible to</p>
+<a class="reference internal image-reference" href="_images/sankey_diagram.png"><img alt="_images/sankey_diagram.png" src="_images/sankey_diagram.png" style="width: 800px;" />
+</a>
+<p>For the interactive visualization, open the <a class="reference external" href="sankey_diagram.html">interactive diagram</a>.  The interactive Sankey
+diagram allows users to explore the flow of nodes between compressed networks, by hovering over the nodes.</p>
+<div class="hint admonition">
+<p class="admonition-title">How to deal with Small Clusters?</p>
+<p>Sometimes, the Sankey diagram may show small clusters that are not very informative. In such cases, it is
+possible to filter out small clusters by setting a minimum size for the clusters. This can be done using the
+<code class="docutils literal notranslate"><span class="pre">--min-size</span></code>/<code class="docutils literal notranslate"><span class="pre">min_size</span></code> parameter, that by default is set to 100 original nodes.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Interactive Sankey Diagram</p>
+<p>If the original graph contains a large number of nodes, the interactive Sankey diagram may be slow to load, and
+the responsiveness of the hover effect may be affected.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Demo Pipeline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Daniele.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

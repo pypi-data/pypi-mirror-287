@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>compression &mdash; graphpack  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to see the algorithm pseudocode, parameters and hints';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            graphpack
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#quick-start">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#on-ramp">On Ramp</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview and Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html#compression-pipeline">Compression Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Demo Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Graph Compression Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html#demo-modules">Demo Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Glossaries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../graph-compression-glossary.html">Graph Compression Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compression-algorithm-glossary.html">Compression Algorithm Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">graphpack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">compression</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for compression</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="kn">import</span> <span class="nn">msgpack</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">networkx.algorithms.community</span> <span class="kn">import</span> <span class="n">greedy_modularity_communities</span><span class="p">,</span> <span class="n">label_propagation_communities</span><span class="p">,</span> <span class="n">asyn_fluidc</span><span class="p">,</span> \
+    <span class="n">k_clique_communities</span><span class="p">,</span> <span class="n">louvain_communities</span>
+<span class="kn">from</span> <span class="nn">node2vec</span> <span class="kn">import</span> <span class="n">Node2Vec</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">NMF</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="compute_adjacency_matrix">
+<a class="viewcode-back" href="../src.html#compression.compute_adjacency_matrix">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_adjacency_matrix</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the adjacency matrix of a graph.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph: The input graph.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: The adjacency matrix of the input graph.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="c1"># Impute missing values</span>
+        <span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>  <span class="c1"># You can also use &#39;median&#39;, &#39;most_frequent&#39;, or &#39;constant&#39;</span>
+        <span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">adj_matrix</span></div>
+
+
+
+<div class="viewcode-block" id="detect_communities">
+<a class="viewcode-back" href="../src.html#compression.detect_communities">[docs]</a>
+<span class="k">def</span> <span class="nf">detect_communities</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">1.25</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Detects communities in a graph using various partitioning methods.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The graph to detect communities in.</span>
+<span class="sd">        method (str, optional): The partitioning method to use. Options: &#39;louvain&#39; (default), &#39;greedy&#39;, &#39;label_propagation&#39;, &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;cpm&#39;, &#39;nmf&#39;.</span>
+<span class="sd">        seed (int, optional): Random seed for reproducibility. Defaults to 123.</span>
+<span class="sd">        resolution (float, optional): Resolution parameter for Louvain and greedy methods. Defaults to 1.25.</span>
+<span class="sd">        k (int, optional): Number of communities/clusters/components for &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;nmf&#39; methods. For &#39;cpm&#39; is the size of the smallest clique. Defaults to 3.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary mapping nodes to community IDs.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the specified method is not supported or if the graph is not connected.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.compression import detect_communities</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example: Louvain method</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.Graph()</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edges_from([(1, 2), (2, 3), (3, 1), (4, 5), (5, 6), (6, 7), (7, 8), (8, 6)])</span>
+<span class="sd">        &gt;&gt;&gt; partition = detect_communities(G, method=&#39;louvain&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; print(partition)</span>
+<span class="sd">        {1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 2, 7: 2, 8: 2}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">partition</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;louvain&#39;</span><span class="p">:</span>
+        <span class="n">communities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">louvain_communities</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">))</span>
+        <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">cid</span> <span class="k">for</span> <span class="n">cid</span><span class="p">,</span> <span class="n">community</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">community</span><span class="p">}</span>
+
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;greedy&#39;</span><span class="p">:</span>
+        <span class="n">communities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">greedy_modularity_communities</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                                                         <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span>
+                                                         <span class="n">cutoff</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()),</span>
+                                                         <span class="n">best_n</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">MAX_K</span><span class="p">,</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">())))</span>
+        <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">cid</span> <span class="k">for</span> <span class="n">cid</span><span class="p">,</span> <span class="n">community</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">community</span><span class="p">}</span>
+
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;label_propagation&#39;</span><span class="p">:</span>
+        <span class="n">communities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">label_propagation_communities</span><span class="p">(</span><span class="n">graph</span><span class="p">))</span>
+        <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">cid</span> <span class="k">for</span> <span class="n">cid</span><span class="p">,</span> <span class="n">community</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">community</span><span class="p">}</span>
+
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;asyn_fluidc&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Graph must be connected for community detection.&quot;</span><span class="p">)</span>
+
+        <span class="n">communities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">asyn_fluidc</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">))</span>
+        <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">cid</span> <span class="k">for</span> <span class="n">cid</span><span class="p">,</span> <span class="n">community</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">community</span><span class="p">}</span>
+
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;spectral&#39;</span><span class="p">:</span>
+        <span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">compute_adjacency_matrix</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="n">sc</span> <span class="o">=</span> <span class="n">SpectralClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">affinity</span><span class="o">=</span><span class="s1">&#39;precomputed&#39;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">)</span>
+        <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())}</span>
+
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;hclust&#39;</span><span class="p">:</span>
+        <span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">compute_adjacency_matrix</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="n">hc</span> <span class="o">=</span> <span class="n">AgglomerativeClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;precomputed&#39;</span><span class="p">,</span> <span class="n">linkage</span><span class="o">=</span><span class="s1">&#39;average&#39;</span><span class="p">)</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">hc</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">)</span>
+        <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())}</span>
+
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;node2vec&#39;</span><span class="p">:</span>
+        <span class="n">node2vec</span> <span class="o">=</span> <span class="n">Node2Vec</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">walk_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">num_walks</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">node2vec</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">batch_words</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">partition</span> <span class="o">=</span> <span class="n">cluster_graph_embeddings</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;deepwalk&#39;</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">deepwalk_embedding</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">walk_length</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">num_walks</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">partition</span> <span class="o">=</span> <span class="n">cluster_graph_embeddings</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;cpm&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">communities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">k_clique_communities</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">))</span>
+            <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">cid</span> <span class="k">for</span> <span class="n">cid</span><span class="p">,</span> <span class="n">community</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">community</span><span class="p">}</span>
+
+            <span class="c1"># Include nodes not in any k-clique community</span>
+            <span class="n">unassigned_nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">unassigned_nodes</span><span class="p">:</span>
+                <span class="n">partition</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">communities</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;nmf&#39;</span><span class="p">:</span>
+        <span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">compute_adjacency_matrix</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">NMF</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">components_</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">())}</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported detection method: </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">partition</span></div>
+
+
+
+<div class="viewcode-block" id="compress_graph_partition_based">
+<a class="viewcode-back" href="../src.html#compression.compress_graph_partition_based">[docs]</a>
+<span class="k">def</span> <span class="nf">compress_graph_partition_based</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">partition</span><span class="p">,</span> <span class="n">is_weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_gene_network</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compresses a network based on detected communities.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The original network graph.</span>
+<span class="sd">        partition (dict): A dictionary mapping nodes to community IDs.</span>
+<span class="sd">        is_weighted (bool, optional): Whether to consider edge weights. Defaults to True.</span>
+<span class="sd">        is_gene_network (bool, optional): Whether the network is a gene network to perform GSEA. Defaults to True.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing:</span>
+<span class="sd">            - community_graph (nx.Graph): The compressed network graph where nodes represent communities.</span>
+<span class="sd">            - compression_mapping (dict): A mapping of original nodes to their corresponding community nodes.</span>
+<span class="sd">            - decompression_mapping (dict): A mapping of community nodes to the original nodes they represent.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the partition is invalid or missing nodes.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; import random</span>
+<span class="sd">        &gt;&gt;&gt; random.seed(123)</span>
+<span class="sd">        &gt;&gt;&gt; from networkx.algorithms.community import louvain_communities</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.compression import compress_graph_partition_based</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 1: Compress an unweighted graph based on detected communities</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.Graph()</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edges_from([(1, 2), (2, 3), (3, 1), (4, 5), (5, 6), (6, 7), (7, 8), (8, 6)])</span>
+<span class="sd">        &gt;&gt;&gt; communities = louvain_communities(graph)</span>
+<span class="sd">        &gt;&gt;&gt; partition = {node: cid for cid, community in enumerate(communities) for node in community}</span>
+<span class="sd">        &gt;&gt;&gt; compressed_graph, _, _ = compress_graph_partition_based(G, partition, is_weighted=False)</span>
+<span class="sd">        &gt;&gt;&gt; print(compressed_graph.nodes(data=True))</span>
+<span class="sd">        [(1, {&#39;nodes&#39;: [1, 2, 3], &#39;label&#39;: [[1, 2, 3]], &#39;size&#39;: 3}), (0, {&#39;nodes&#39;: [4, 5], &#39;label&#39;: [[4, 5]], &#39;size&#39;: 2}), (2, {&#39;nodes&#39;: [6, 7, 8], &#39;label&#39;: [[6, 7, 8]], &#39;size&#39;: 3})]</span>
+<span class="sd">        &gt;&gt;&gt; print(compressed_graph.edges(data=True))</span>
+<span class="sd">        [(0, 2, {&#39;weight&#39;: 1})]</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example 2: Compress a weighted gene network based on detected communities</span>
+<span class="sd">        &gt;&gt;&gt; weights = {edge: random.random() for edge in G.edges()}</span>
+<span class="sd">        &gt;&gt;&gt; nx.set_edge_attributes(G, weights, &#39;weight&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; compressed_graph, compression_mapping, decompression_mapping = compress_graph_partition_based(G, partition)</span>
+<span class="sd">        &gt;&gt;&gt; print(compressed_graph.edges(data=True))</span>
+<span class="sd">        [(0, 2, {&#39;weight&#39;: 0.9011988779516946})]</span>
+<span class="sd">        &gt;&gt;&gt; print(compression_mapping)</span>
+<span class="sd">        {1: [1, 2, 3], 0: [4, 5], 2: [6, 7, 8]}</span>
+<span class="sd">        &gt;&gt;&gt; print(decompression_mapping)</span>
+<span class="sd">        {1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 2, 7: 2, 8: 2}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Total number of iterations for progress bar</span>
+    <span class="n">n_iterations</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">is_gene_network</span> <span class="k">else</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">partition</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+
+    <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s2">&quot;📉 Compressing network (adding nodes)&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">n_iterations</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Create a dictionary to hold the list of nodes for each community</span>
+        <span class="n">community_nodes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">community_labels</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">community_id</span> <span class="ow">in</span> <span class="n">partition</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">community_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">community_nodes</span><span class="p">:</span>
+                <span class="n">community_nodes</span><span class="p">[</span><span class="n">community_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">community_nodes</span><span class="p">[</span><span class="n">community_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+        <span class="c1"># Perform GSEA on the communities to assign biologically meaningful labels</span>
+        <span class="k">if</span> <span class="n">is_gene_network</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">community_id</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">community_nodes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">community_labels</span><span class="p">[</span><span class="n">community_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">perform_gsea</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error performing GSEA: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">community_labels</span><span class="p">[</span><span class="n">community_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodes</span>
+
+                <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Update progress bar for each community</span>
+
+        <span class="c1"># Create a new graph where nodes are communities represented by their node lists</span>
+        <span class="n">community_graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+        <span class="c1"># Add community nodes (each community as a list of nodes)</span>
+        <span class="k">for</span> <span class="n">community_id</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">community_nodes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>  <span class="c1"># Calculate the size based on the number of original nodes</span>
+            <span class="n">community_graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">community_id</span><span class="p">,</span>
+                                     <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span>
+                                     <span class="n">label</span><span class="o">=</span><span class="n">community_labels</span><span class="p">[</span><span class="n">community_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">is_gene_network</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                                     <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># Assign size to each community node</span>
+
+            <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Update progress bar for each community</span>
+
+        <span class="n">pbar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="n">n_iterations</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span>
+        <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s2">&quot;📉 Compressing network (computing new edge weights)&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">n_iterations</span><span class="p">)</span>
+
+        <span class="c1"># Add edges between communities with appropriate weights</span>
+        <span class="n">edge_weights</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">community1</span> <span class="o">=</span> <span class="n">partition</span><span class="p">[</span><span class="n">node1</span><span class="p">]</span>
+            <span class="n">community2</span> <span class="o">=</span> <span class="n">partition</span><span class="p">[</span><span class="n">node2</span><span class="p">]</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">is_weighted</span> <span class="k">else</span> <span class="mi">1</span>  <span class="c1"># Weight from the original graph, or 1 if not weighted</span>
+
+            <span class="k">if</span> <span class="n">community1</span> <span class="o">!=</span> <span class="n">community2</span><span class="p">:</span>
+                <span class="c1"># Use a tuple (min, max) to ensure each edge is uniquely identified</span>
+                <span class="n">edge</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">community1</span><span class="p">,</span> <span class="n">community2</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">community1</span><span class="p">,</span> <span class="n">community2</span><span class="p">))</span>
+                <span class="n">edge_weights</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span> <span class="o">+=</span> <span class="n">weight</span>
+
+            <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Update progress bar for each graph edge</span>
+
+        <span class="n">pbar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="n">n_iterations</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">edge_weights</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s2">&quot;📉 Compressing network (adding edges)&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">n_iterations</span><span class="p">)</span>
+
+        <span class="c1"># Add the edges to the community graph</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">community1</span><span class="p">,</span> <span class="n">community2</span><span class="p">),</span> <span class="n">weight</span> <span class="ow">in</span> <span class="n">edge_weights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">community_graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">community1</span><span class="p">,</span> <span class="n">community2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+            <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Update progress bar for each edge weight</span>
+
+        <span class="c1"># Create compression mapping: {community_id: [nodes]}</span>
+        <span class="n">compression_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">community_id</span><span class="p">:</span> <span class="n">nodes</span> <span class="k">for</span> <span class="n">community_id</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">community_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;nodes&#39;</span><span class="p">)}</span>
+
+        <span class="c1"># Create decompression mapping: {old_node: new_node}</span>
+        <span class="n">decompression_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">old_node</span><span class="p">:</span> <span class="n">new_node</span> <span class="k">for</span> <span class="n">new_node</span><span class="p">,</span> <span class="n">old_nodes</span> <span class="ow">in</span> <span class="n">compression_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">for</span> <span class="n">old_node</span>
+                                 <span class="ow">in</span> <span class="n">old_nodes</span><span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">community_graph</span><span class="p">,</span> <span class="n">compression_mapping</span><span class="p">,</span> <span class="n">decompression_mapping</span>
+
+    <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid partition or missing nodes: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">pbar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="compress_graph">
+<a class="viewcode-back" href="../src.html#compression.compress_graph">[docs]</a>
+<span class="k">def</span> <span class="nf">compress_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">1.25</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">is_weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_gene_network</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compresses a graph using the specified method and generates a new graph where nodes represent communities.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The original network graph.</span>
+<span class="sd">        method (str, optional): The compression method to use. Options: &#39;louvain&#39; (default), &#39;greedy&#39;, &#39;label_propagation&#39;, &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;cpm&#39;, &#39;nmf&#39;.</span>
+<span class="sd">        seed (int, optional): Random seed for reproducibility. Defaults to 123.</span>
+<span class="sd">        resolution (float, optional): Resolution parameter for Louvain and greedy methods. Defaults to 1.25.</span>
+<span class="sd">        k (int, optional): Number of communities/clusters/components for &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39; methods. For &#39;cpm&#39; is the size of the smallest clique. Defaults to 3.</span>
+<span class="sd">        is_weighted (bool, optional): Whether to consider edge weights. Defaults to True.</span>
+<span class="sd">        is_gene_network (bool, optional): Whether the network is a gene network to perform GSEA. Defaults to True.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing:</span>
+<span class="sd">            - compressed_graph (nx.Graph): The compressed network graph where nodes represent communities.</span>
+<span class="sd">            - compression_mapping (dict): A mapping of original nodes to their corresponding community nodes.</span>
+<span class="sd">            - decompression_mapping (dict): A mapping of community nodes to the original nodes they represent.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the specified method is not supported or if the graph is not connected and connectivity is required.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.compression import compress_graph, detect_communities, compress_graph_partition_based</span>
+
+<span class="sd">        &gt;&gt;&gt; # Example: Compress a weighted graph (gene network) using the Louvain method</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.Graph()</span>
+<span class="sd">        &gt;&gt;&gt; edges = [(&quot;HIF1A&quot;, &quot;EGFR&quot;, 0.934), (&quot;HIF1A&quot;, &quot;JAK2&quot;, 0.784), (&quot;HIF1A&quot;, &quot;IGF1R&quot;, 0.752), (&quot;EGFR&quot;, &quot;IGF1R&quot;, 0.989), (&quot;JAK2&quot;, &quot;IGF1R&quot;, 0.981)]</span>
+<span class="sd">        &gt;&gt;&gt; G.add_weighted_edges_from(edges)</span>
+<span class="sd">        &gt;&gt;&gt; compressed_graph, compression_mapping, decompression_mapping = compress_graph(G, method=&#39;louvain&#39;, is_weighted=True, is_gene_network=True)</span>
+<span class="sd">        &gt;&gt;&gt; print(compressed_graph.edges(data=True))</span>
+<span class="sd">        [(1, 0, {&#39;weight&#39;: 2.525})]</span>
+<span class="sd">        &gt;&gt;&gt; print(compression_mapping)</span>
+<span class="sd">        {1: [&#39;HIF1A&#39;, &#39;EGFR&#39;], 0: [&#39;JAK2&#39;, &#39;IGF1R&#39;]}</span>
+<span class="sd">        &gt;&gt;&gt; print(decompression_mapping)</span>
+<span class="sd">        {&#39;HIF1A&#39;: 1, &#39;EGFR&#39;: 1, &#39;JAK2&#39;: 0, &#39;IGF1R&#39;: 0}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="s1">&#39;greedy&#39;</span><span class="p">,</span> <span class="s1">&#39;label_propagation&#39;</span><span class="p">,</span> <span class="s1">&#39;asyn_fluidc&#39;</span><span class="p">,</span> <span class="s1">&#39;spectral&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;hclust&#39;</span><span class="p">,</span> <span class="s1">&#39;node2vec&#39;</span><span class="p">,</span> <span class="s1">&#39;deepwalk&#39;</span><span class="p">,</span> <span class="s1">&#39;cpm&#39;</span><span class="p">,</span> <span class="s1">&#39;nmf&#39;</span><span class="p">]:</span>
+        <span class="c1"># Detect communities</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">desc</span><span class="o">=</span><span class="s2">&quot;🕵️Community detection&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
+                <span class="n">partition</span> <span class="o">=</span> <span class="n">detect_communities</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+                <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error detecting communities: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Compress network based on communities</span>
+        <span class="k">return</span> <span class="n">compress_graph_partition_based</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                                              <span class="n">partition</span><span class="p">,</span>
+                                              <span class="n">is_weighted</span><span class="o">=</span><span class="n">is_weighted</span><span class="p">,</span>
+                                              <span class="n">is_gene_network</span><span class="o">=</span><span class="n">is_gene_network</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported compression method: </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="compute_and_save_edges_to_remove">
+<a class="viewcode-back" href="../src.html#compression.compute_and_save_edges_to_remove">[docs]</a>
+<span class="k">def</span> <span class="nf">compute_and_save_edges_to_remove</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">community_graph</span><span class="p">,</span> <span class="n">output_folder</span><span class="p">,</span> <span class="n">edges_to_remove_file</span><span class="o">=</span><span class="s1">&#39;edges_to_remove.txt&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes and saves edges to remove from the original network based on the compressed network.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The original network graph.</span>
+<span class="sd">        community_graph (nx.Graph): The compressed network graph where nodes represent communities.</span>
+<span class="sd">        output_folder (str): The folder path to save the output file.</span>
+<span class="sd">        edges_to_remove_file (str): The name of the file to save the edges to remove (default is &#39;edges_to_remove.txt&#39;).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the output folder does not exist or is not a directory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">FIG_NUM</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Ensure that the output folder exists</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">output_folder</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Output folder does not exist or is not a directory.&quot;</span><span class="p">)</span>
+
+        <span class="n">edges_to_remove</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Reconstruct original network</span>
+        <span class="n">reconstructed_network</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+        <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_step_0&quot;)</span>
+        <span class="n">FIG_NUM</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Add nodes and edges from compressed network</span>
+        <span class="k">for</span> <span class="n">community_id</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">community_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;nodes&#39;</span><span class="p">):</span>
+            <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+            <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_adding_nodes_from_community_{community_id}&quot;)</span>
+            <span class="n">FIG_NUM</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># Add edges among all the nodes in the same supernode of the compressed network</span>
+            <span class="k">for</span> <span class="n">node1</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">node1</span> <span class="o">!=</span> <span class="n">node2</span><span class="p">:</span>
+                        <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">)</span>
+
+            <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_adding_edges_within_community_{community_id}&quot;)</span>
+            <span class="n">FIG_NUM</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Add edges between all the nodes in a supernode and all the nodes in a connected supernode</span>
+        <span class="k">for</span> <span class="n">community_id</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">community_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;nodes&#39;</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">neighbor_id</span> <span class="ow">in</span> <span class="n">community_graph</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">community_id</span><span class="p">):</span>
+                <span class="c1"># print(f&quot;Community {community_id} has neighbor {neighbor_id}&quot;)</span>
+                <span class="n">neighbor_nodes</span> <span class="o">=</span> <span class="n">community_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">neighbor_id</span><span class="p">][</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span>
+
+                <span class="k">for</span> <span class="n">node1</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">neighbor_nodes</span><span class="p">:</span>
+                        <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">)</span>
+
+                <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_adding_edges_between_community_{community_id}_and_{neighbor_id}&quot;)</span>
+                <span class="n">FIG_NUM</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Iterate through original network to identify edges to remove and add</span>
+        <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="c1"># If edge exists in reconstructed network, remove it</span>
+            <span class="k">if</span> <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+                <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+
+        <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_step_1&quot;)</span>
+        <span class="n">FIG_NUM</span> <span class="o">=</span> <span class="mi">100</span>
+
+        <span class="c1"># Add remaining edges in the reconstructed network to the list of edges to remove</span>
+        <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">edges_to_remove</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+        <span class="c1"># Save edge information to a file in edge list format</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">edges_to_remove_file</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">edge_list_file</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edges_to_remove</span><span class="p">:</span>
+                <span class="n">edge_list_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error computing and saving edges to remove: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="save_network_files">
+<a class="viewcode-back" href="../src.html#compression.save_network_files">[docs]</a>
+<span class="k">def</span> <span class="nf">save_network_files</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                       <span class="n">community_graph</span><span class="p">,</span>
+                       <span class="n">compression_mapping</span><span class="p">,</span>
+                       <span class="n">decompression_mapping</span><span class="p">,</span>
+                       <span class="n">output_folder</span><span class="p">,</span>
+                       <span class="n">compression_mapping_filename</span><span class="o">=</span><span class="s1">&#39;compression_mapping&#39;</span><span class="p">,</span>
+                       <span class="n">decompression_mapping_filename</span><span class="o">=</span><span class="s1">&#39;decompression_mapping&#39;</span><span class="p">,</span>
+                       <span class="n">labels_mapping</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">save_data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                       <span class="n">file_format</span><span class="o">=</span><span class="s1">&#39;txt&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Saves network files and mappings to the specified output folder.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph (nx.Graph): The original network graph.</span>
+<span class="sd">        community_graph (nx.Graph): The compressed network graph where nodes represent communities.</span>
+<span class="sd">        compression_mapping (dict): A mapping of original nodes to their corresponding community nodes.</span>
+<span class="sd">        decompression_mapping (dict): A mapping of community nodes to the original nodes they represent.</span>
+<span class="sd">        output_folder (str): The folder path to save the output files.</span>
+<span class="sd">        compression_mapping_filename (str): The base name for the compression mapping files (default is &#39;compression_mapping&#39;).</span>
+<span class="sd">        decompression_mapping_filename (str): The base name for the decompression mapping files (default is &#39;decompression_mapping&#39;).</span>
+<span class="sd">        labels_mapping (dict, optional): A mapping of node labels (default is None).</span>
+<span class="sd">        save_data (bool, optional): Whether to save edge data (default is False).</span>
+<span class="sd">        file_format (str, optional): The file format to save the network files (default is &#39;txt&#39;).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the output folder does not exist or cannot be created.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Ensure that the output folder exists</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_folder</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span>
+
+        <span class="c1"># Save original and compressed networks as edge lists</span>
+        <span class="n">save_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                   <span class="n">file_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;original_network.txt&#39;</span><span class="p">),</span>
+                   <span class="n">save_data</span><span class="o">=</span><span class="n">save_data</span><span class="p">)</span>
+        <span class="n">save_graph</span><span class="p">(</span><span class="n">community_graph</span><span class="p">,</span>
+                   <span class="n">file_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;compressed_network.</span><span class="si">{</span><span class="n">file_format</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">),</span>
+                   <span class="n">save_data</span><span class="o">=</span><span class="n">save_data</span><span class="p">)</span>
+
+        <span class="c1"># Save compression and decompression mappings as MessagePack files</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">compression_mapping_filename</span><span class="si">}</span><span class="s2">.msgpack&quot;</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">msgpack</span><span class="o">.</span><span class="n">packb</span><span class="p">(</span><span class="n">compression_mapping</span><span class="p">))</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">decompression_mapping_filename</span><span class="si">}</span><span class="s2">.msgpack&quot;</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">msgpack</span><span class="o">.</span><span class="n">packb</span><span class="p">(</span><span class="n">decompression_mapping</span><span class="p">))</span>
+
+        <span class="c1"># Save the compression_mapping dictionary to a JSON file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">compression_mapping_filename</span><span class="si">}</span><span class="s2">.json&quot;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">compression_mapping</span><span class="p">,</span> <span class="n">json_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="c1"># Save the decompression_mapping to a JSON file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">decompression_mapping_filename</span><span class="si">}</span><span class="s2">.json&quot;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">decompression_mapping</span><span class="p">,</span> <span class="n">json_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="c1"># Save the labels_mapping to a JSON file, if given</span>
+        <span class="k">if</span> <span class="n">labels_mapping</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;labels_mapping.json&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">labels_mapping</span><span class="p">,</span> <span class="n">json_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error saving network files: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="reconstruct_original_network">
+<a class="viewcode-back" href="../src.html#compression.reconstruct_original_network">[docs]</a>
+<span class="k">def</span> <span class="nf">reconstruct_original_network</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span>
+                                 <span class="n">compressed_network_file</span><span class="o">=</span><span class="s1">&#39;compressed_network.txt&#39;</span><span class="p">,</span>
+                                 <span class="n">compression_mapping_file</span><span class="o">=</span><span class="s1">&#39;compression_mapping.msgpack&#39;</span><span class="p">,</span>
+                                 <span class="n">edges_to_remove_file</span><span class="o">=</span><span class="s1">&#39;edges_to_remove.txt&#39;</span><span class="p">,</span>
+                                 <span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;reconstructed_network.txt&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reconstructs the original network from compressed data and removes specified edges.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        output_folder (str): The folder path to read input files from and save the output file.</span>
+<span class="sd">        compressed_network_file (str): The file name of the compressed network (default is &#39;compressed_network.txt&#39;).</span>
+<span class="sd">        compression_mapping_file (str): The file name of the compression mapping (default is &#39;compression_mapping.msgpack&#39;).</span>
+<span class="sd">        edges_to_remove_file (str): The file name of the edges to remove (default is &#39;edges_to_remove.txt&#39;).</span>
+<span class="sd">        output_file (str): The name of the file to save the reconstructed network (default is &#39;reconstructed_network.txt&#39;).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If any of the required files are missing in the specified folder.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">FIG_NUM</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Ensure that all required files exist</span>
+        <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="p">[</span><span class="n">compressed_network_file</span><span class="p">,</span> <span class="n">compression_mapping_file</span><span class="p">,</span> <span class="n">edges_to_remove_file</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File &#39;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&#39; not found in the output folder.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Load compressed network from edge list file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">compressed_network_file</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">community_graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_edgelist</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Load compression mapping from MessagePack file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">compression_mapping_file</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">compression_mapping</span> <span class="o">=</span> <span class="n">msgpack</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strict_map_key</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+            <span class="c1"># Convert all keys in compression_mapping to strings for consistency</span>
+            <span class="n">compression_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">):</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">compression_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+        <span class="c1"># Load edges to remove from the edge list file</span>
+        <span class="n">edges_to_remove</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">edges_to_remove_file</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">edge_list_file</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">edge_list_file</span><span class="p">:</span>
+                <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="n">edges_to_remove</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">))</span>
+
+        <span class="c1"># Reconstruct original network</span>
+        <span class="n">reconstructed_network</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+        <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_reconstruction_step_0&quot;)</span>
+        <span class="n">FIG_NUM</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Add nodes and edges from compressed network</span>
+        <span class="k">for</span> <span class="n">community_id</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">compression_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># print(f&quot;Nodes in community {community_id}: {nodes}&quot;)</span>
+            <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+            <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_reconstruction_adding_nodes_from_community_{community_id}&quot;)</span>
+            <span class="n">FIG_NUM</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># Add edges among all the nodes in the same supernode of the compressed network</span>
+            <span class="k">for</span> <span class="n">node1</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">node1</span> <span class="o">!=</span> <span class="n">node2</span><span class="p">:</span>
+                        <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">)</span>
+
+            <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_reconstruction_adding_edges_within_community_{community_id}&quot;)</span>
+            <span class="n">FIG_NUM</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Add edges between all the nodes in a supernode and all the nodes in a connected supernode</span>
+        <span class="k">for</span> <span class="n">community_id</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">compression_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">community_id</span> <span class="ow">in</span> <span class="n">community_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">neighbor_id</span> <span class="ow">in</span> <span class="n">community_graph</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">community_id</span><span class="p">):</span>
+                    <span class="n">neighbor_nodes</span> <span class="o">=</span> <span class="n">compression_mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">neighbor_id</span><span class="p">)]</span>
+
+                    <span class="k">for</span> <span class="n">node1</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+                        <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">neighbor_nodes</span><span class="p">:</span>
+                            <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">)</span>
+
+                    <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_adding_edges_between_community_{community_id}_and_{neighbor_id}&quot;)</span>
+                    <span class="n">FIG_NUM</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: Community </span><span class="si">{</span><span class="n">community_id</span><span class="si">}</span><span class="s2"> not found in the compressed network.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Remove edges specified in edges_to_remove</span>
+        <span class="k">for</span> <span class="n">edge_data</span> <span class="ow">in</span> <span class="n">edges_to_remove</span><span class="p">:</span>
+            <span class="c1"># Check if the edge exists before attempting to remove it</span>
+            <span class="k">if</span> <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">edge_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">edge_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">edge_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">edge_data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># If the edge doesn&#39;t exist, raise a warning</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: Edge </span><span class="si">{</span><span class="n">edge_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">edge_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> does not exist in the graph.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># draw_graph(reconstructed_network, title=f&quot;{FIG_NUM}_reconstruction_step_1&quot;)</span>
+        <span class="n">FIG_NUM</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Save the reconstructed original network</span>
+        <span class="n">nx</span><span class="o">.</span><span class="n">write_edgelist</span><span class="p">(</span><span class="n">reconstructed_network</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">output_file</span><span class="p">),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">reconstructed_network</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error reconstructing original network: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="calculate_compression_efficacy">
+<a class="viewcode-back" href="../src.html#compression.calculate_compression_efficacy">[docs]</a>
+<span class="k">def</span> <span class="nf">calculate_compression_efficacy</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span>
+                                   <span class="n">is_lossless</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                   <span class="n">original_network_file</span><span class="o">=</span><span class="s1">&#39;original_network.txt&#39;</span><span class="p">,</span>
+                                   <span class="n">compressed_network_file</span><span class="o">=</span><span class="s1">&#39;compressed_network.txt&#39;</span><span class="p">,</span>
+                                   <span class="n">compression_mapping_file</span><span class="o">=</span><span class="s1">&#39;compression_mapping.msgpack&#39;</span><span class="p">,</span>
+                                   <span class="n">decompression_mapping_file</span><span class="o">=</span><span class="s1">&#39;decompression_mapping.msgpack&#39;</span><span class="p">,</span>
+                                   <span class="n">edges_to_remove_file</span><span class="o">=</span><span class="s1">&#39;edges_to_remove.txt&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates and prints the efficacy of the network compression.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        output_folder (str): The folder path containing the network files.</span>
+<span class="sd">        is_lossless (bool, optional): Flag indicating whether the compression is lossless (default: True).</span>
+<span class="sd">        original_network_file (str, optional): The file name of the original network (default: &#39;original_network.txt&#39;).</span>
+<span class="sd">        compressed_network_file (str, optional): The file name of the compressed network (default: &#39;compressed_network.txt&#39;).</span>
+<span class="sd">        compression_mapping_file (str, optional): The file name of the compression mapping (default: &#39;compression_mapping.msgpack&#39;).</span>
+<span class="sd">        decompression_mapping_file (str, optional): The file name of the decompression mapping (default: &#39;decompression_mapping.msgpack&#39;).</span>
+<span class="sd">        edges_to_remove_file (str, optional): The file name containing the edges to remove (default: &#39;edges_to_remove.txt&#39;).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If any required file is missing or cannot be read.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">input_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">original_network_file</span><span class="p">)</span>
+        <span class="n">compressed_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">compressed_network_file</span><span class="p">)</span>
+        <span class="n">edges_to_remove_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">edges_to_remove_file</span><span class="p">)</span>
+        <span class="n">compression_mapping_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">compression_mapping_file</span><span class="p">)</span>
+        <span class="n">decompression_mapping_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">decompression_mapping_file</span><span class="p">)</span>
+
+        <span class="c1"># Calculate sizes of files</span>
+        <span class="n">original_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">input_file_path</span><span class="p">)</span>
+        <span class="n">compressed_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">compressed_file_path</span><span class="p">)</span>
+        <span class="n">compression_mapping_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">compression_mapping_file_path</span><span class="p">)</span>
+        <span class="n">decompression_mapping_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">decompression_mapping_file_path</span><span class="p">)</span>
+
+        <span class="c1"># Calculate the lossy compression size</span>
+        <span class="n">lossy_compression_size</span> <span class="o">=</span> <span class="n">compressed_size</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">compression_mapping_size</span><span class="p">,</span> <span class="n">decompression_mapping_size</span><span class="p">)</span>
+
+        <span class="c1"># Calculate compression percentages</span>
+        <span class="n">percentage_compression</span> <span class="o">=</span> <span class="p">((</span><span class="n">original_size</span> <span class="o">-</span> <span class="n">compressed_size</span><span class="p">)</span> <span class="o">/</span> <span class="n">original_size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="n">percentage_lossy_compression</span> <span class="o">=</span> <span class="p">((</span><span class="n">original_size</span> <span class="o">-</span> <span class="n">lossy_compression_size</span><span class="p">)</span> <span class="o">/</span> <span class="n">original_size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+        <span class="c1"># Print results</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Original size: </span><span class="si">{</span><span class="n">original_size</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Compressed size: </span><span class="si">{</span><span class="n">compressed_size</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Percentage compression: </span><span class="si">{</span><span class="n">percentage_compression</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Lossy compression size: </span><span class="si">{</span><span class="n">lossy_compression_size</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Percentage lossy compression: </span><span class="si">{</span><span class="n">percentage_lossy_compression</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Calculate lossless compression size and percentage</span>
+        <span class="k">if</span> <span class="n">is_lossless</span><span class="p">:</span>
+            <span class="n">edges_to_remove_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">edges_to_remove_file_path</span><span class="p">)</span>
+            <span class="n">lossless_compression_size</span> <span class="o">=</span> <span class="n">compressed_size</span> <span class="o">+</span> <span class="n">edges_to_remove_size</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">compression_mapping_size</span><span class="p">,</span>
+                                                                                     <span class="n">decompression_mapping_size</span><span class="p">)</span>
+            <span class="n">percentage_lossless_compression</span> <span class="o">=</span> <span class="p">((</span><span class="n">original_size</span> <span class="o">-</span> <span class="n">lossless_compression_size</span><span class="p">)</span> <span class="o">/</span> <span class="n">original_size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Lossless compression size: </span><span class="si">{</span><span class="n">lossless_compression_size</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Percentage lossless compression: </span><span class="si">{</span><span class="n">percentage_lossless_compression</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error calculating compression efficacy: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="remove_unnecessary_files">
+<a class="viewcode-back" href="../src.html#compression.remove_unnecessary_files">[docs]</a>
+<span class="k">def</span> <span class="nf">remove_unnecessary_files</span><span class="p">(</span><span class="n">output_folder_method</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Removes unnecessary files from the output folder.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        output_folder_method (str): The folder path containing the output files.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Remove unnecessary files</span>
+        <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;original_network.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;compression_mapping.msgpack&#39;</span><span class="p">,</span> <span class="s1">&#39;decompression_mapping.msgpack&#39;</span><span class="p">,</span> <span class="p">]:</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder_method</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error removing unnecessary files: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="perform_compression">
+<a class="viewcode-back" href="../src.html#compression.perform_compression">[docs]</a>
+<span class="k">def</span> <span class="nf">perform_compression</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;data/output&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;txt&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mf">1.25</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                        <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                        <span class="n">is_weighted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_gene_network</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_lossless</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_interactive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">plot_disconnected</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">separate_communities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Suggested pipeline for the GraphPack tool.</span>
+
+<span class="sd">    This function performs graph compression using various community detection methods. It reads an input graph file,</span>
+<span class="sd">    compresses the graph, and saves the compressed version along with optional visualizations and statistical summaries.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input (str): Path to the input graph file. This is a required argument.</span>
+<span class="sd">        output (str): Path to the output folder where results will be saved. Default is &#39;data/output&#39;.</span>
+<span class="sd">        output_format (str): File format to save the network files. Options: &#39;edgelist&#39;, &#39;txt&#39; (default), &#39;csv&#39;, &#39;tsv&#39;, &#39;json&#39;, &#39;gpickle&#39;, &#39;gml&#39;, &#39;graphml&#39;, &#39;net&#39;, &#39;pajek&#39;, &#39;gexf&#39;, &#39;yaml&#39;, &#39;yml&#39;.</span>
+<span class="sd">        method (str): Community detection method to use for graph compression. Options: &#39;louvain&#39; (default), &#39;greedy&#39;, &#39;label_propagation&#39;, &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;cpm&#39;, &#39;nmf&#39;.</span>
+<span class="sd">        resolution (float): Resolution parameter for Louvain and greedy methods. Default is 1.25.</span>
+<span class="sd">        k (int): Number of clusters for clustering methods. Only applicable for methods requiring a cluster count (e.g., &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;nmf&#39;). Default is 3.</span>
+<span class="sd">        seed (int): Random seed for reproducibility. Default is 123.</span>
+<span class="sd">        is_weighted (bool): Flag to indicate if the graph should consider edge weights. Use this flag if the graph is weighted. Default is False.</span>
+<span class="sd">        is_gene_network (bool): Flag to assign biologically meaningful labels to communities. Use this flag for gene networks. Default is False.</span>
+<span class="sd">        is_lossless (bool): Flag to perform lossless compression. Use this flag if lossless compression is required. Default is False.</span>
+<span class="sd">        plot (bool): Flag to plot the original and compressed graphs. Default is False.</span>
+<span class="sd">        is_interactive (bool): Flag to produce interactive plots in HTML format. Use this flag to enable interactive plots. Default is False.</span>
+<span class="sd">        plot_disconnected (bool): Flag to plot all nodes in a disconnected graph, not just the largest connected component. Default is False.</span>
+<span class="sd">        separate_communities (bool): Flag to separate communities in the graph plot. Default is False.</span>
+<span class="sd">        title (str): Title for the graph plot. Default is &#39;&#39;.</span>
+<span class="sd">        verbosity (int): Verbosity level for logging information (0: minimal, 1: moderate, 2: detailed). Default is 2.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.compression import *</span>
+<span class="sd">        &gt;&gt;&gt; import networkx as nx</span>
+<span class="sd">        &gt;&gt;&gt; G = nx.Graph()</span>
+<span class="sd">        &gt;&gt;&gt; G.add_edges_from([(1, 2), (2, 3), (3, 1), (4, 5), (5, 6), (6, 7), (5, 8), (4, 8)])</span>
+<span class="sd">        &gt;&gt;&gt; input_graph = &#39;simple_graph.txt&#39;</span>
+<span class="sd">        &gt;&gt;&gt; save_graph(G, input_graph)</span>
+<span class="sd">        &gt;&gt;&gt; perform_compression(input_graph, output=&#39;results&#39;, method=&#39;greedy&#39;, plot=True, is_interactive=True, plot_disconnected=True, separate_communities=True, title=&#39;Greedy&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="nb">input</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">output_folder</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">input_name</span><span class="p">))</span>
+    <span class="n">output_folder_method</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">input_name</span><span class="p">,</span> <span class="n">method</span><span class="p">))</span>
+
+    <span class="c1"># Print according to verbosity level</span>
+    <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="s1">&#39;=&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">80</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}{</span><span class="n">TITLE</span><span class="si">:</span><span class="s2">^80</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">▶ Input graph file:</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">   </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="se">\t</span><span class="s2">(</span><span class="si">{</span><span class="n">input_name</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">▶ Output folder:</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">      </span><span class="si">{</span><span class="n">output_folder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">▶ Compression method:</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;▶ ⚖️ The graph provided will be treated as a weighted graph&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_weighted</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;▶ 🧬 The graph provided will be treated as a gene network&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_gene_network</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;▶ 🔝 The compression method will be lossless&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_lossless</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;▶ ➗  The plotting function is separating nodes belonging to different communities&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">separate_communities</span> <span class="ow">and</span> <span class="n">plot</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;▶ 🔢 Running </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> with resolution </span><span class="si">{</span><span class="n">resolution</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="s1">&#39;greedy&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;▶ 📏 Running </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> with k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> minimum clique size&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;cpm&#39;</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;asyn_fluidc&#39;</span><span class="p">,</span> <span class="s1">&#39;spectral&#39;</span><span class="p">,</span> <span class="s1">&#39;hclust&#39;</span><span class="p">,</span> <span class="s1">&#39;node2vec&#39;</span><span class="p">,</span> <span class="s1">&#39;deepwalk&#39;</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;▶ ℹ️ Running </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> with k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> clusters&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Read graph from input file</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📑 Reading input graph...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">read_graph</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+
+    <span class="c1"># Disable interactive mode if the graph is too large</span>
+    <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">MAX_N_NODES_INTERACTIVE</span> <span class="ow">and</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: The graph is too large to be interactive. Interactive mode is disabled.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">You can enable interactive mode for bigger graphs by changing the MAX_N_NODES_INTERACTIVE constant in the script.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">The original graph will not be plotted.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">is_interactive_</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">is_interactive_</span> <span class="o">=</span> <span class="n">is_interactive</span>
+
+    <span class="c1"># Draw original graph</span>
+    <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">MAX_N_NODES_INTERACTIVE</span> <span class="ow">and</span> <span class="n">plot</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🖌️Drawing original graph...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">draw_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Original graph&#39;</span><span class="p">,</span>
+                   <span class="n">file_path</span><span class="o">=</span><span class="n">output_folder</span><span class="p">,</span>
+                   <span class="n">is_interactive</span><span class="o">=</span><span class="n">is_interactive_</span><span class="p">,</span>  <span class="c1"># Draw the interactive plot, if requested and not overridden</span>
+                   <span class="n">plot_disconnected_components</span><span class="o">=</span><span class="n">plot_disconnected</span><span class="p">)</span>
+
+    <span class="c1"># Compute k for community detection methods</span>
+    <span class="n">k_arg</span> <span class="o">=</span> <span class="n">k</span>
+    <span class="c1"># For visualization purposes, no more than 30 supernodes are allowed</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;asyn_fluidc&#39;</span><span class="p">,</span> <span class="s1">&#39;spectral&#39;</span><span class="p">,</span> <span class="s1">&#39;hclust&#39;</span><span class="p">,</span> <span class="s1">&#39;node2vec&#39;</span><span class="p">,</span> <span class="s1">&#39;deepwalk&#39;</span><span class="p">]:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">(),</span> <span class="n">k_arg</span><span class="p">,</span> <span class="n">MAX_K</span><span class="p">)</span> <span class="k">if</span> <span class="n">plot</span> <span class="k">else</span> <span class="nb">min</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">(),</span> <span class="n">k_arg</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">k_arg</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: k cannot be higher than the number of nodes.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: for visualization purposes, the maximum number of cluster k is </span><span class="si">{</span><span class="n">MAX_K</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">k_arg</span> <span class="o">&gt;</span> <span class="n">MAX_K</span> <span class="ow">and</span> <span class="n">plot</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">You can increase the maximum number of clusters by changing the MAX_K constant in the script.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">k_arg</span> <span class="o">&gt;</span> <span class="n">MAX_K</span> <span class="ow">and</span> <span class="n">plot</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Running </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> with k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> clusters.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k_arg</span>
+
+    <span class="c1"># Set the number of components to the MAX_K constant, or provided k, if the graph is too large</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;nmf&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">MAX_N_NODES_NMF</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">MAX_K</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <span class="n">output_folder_method</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;_max_k_</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: The graph is too large for automatic inference of the number of components for NMF.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Running </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> with n_components = </span><span class="si">{</span><span class="n">k</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: Automatic inference of the number of components for NMF.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Add the parameter to the output folder name</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;asyn_fluidc&#39;</span><span class="p">,</span> <span class="s1">&#39;spectral&#39;</span><span class="p">,</span> <span class="s1">&#39;hclust&#39;</span><span class="p">,</span> <span class="s1">&#39;node2vec&#39;</span><span class="p">,</span> <span class="s1">&#39;deepwalk&#39;</span><span class="p">,</span> <span class="s1">&#39;cpm&#39;</span><span class="p">]:</span>
+        <span class="n">output_folder_method</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;_k_</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="s1">&#39;greedy&#39;</span><span class="p">]:</span>
+        <span class="n">output_folder_method</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;_r_</span><span class="si">{</span><span class="n">resolution</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Compress network</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Start the timeout countdown</span>
+        <span class="n">compressed_graph</span><span class="p">,</span> <span class="n">compression_mapping</span><span class="p">,</span> <span class="n">decompression_mapping</span> <span class="o">=</span> <span class="n">compress_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                                                                                      <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+                                                                                      <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+                                                                                      <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span>
+                                                                                      <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span>
+                                                                                      <span class="n">is_weighted</span><span class="o">=</span><span class="n">is_weighted</span><span class="p">,</span>
+                                                                                      <span class="n">is_gene_network</span><span class="o">=</span><span class="n">is_gene_network</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">is_gene_network</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span><span class="n">community_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">label</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">community_id</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">compressed_graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+            <span class="c1"># Draw compressed graph</span>
+            <span class="n">partition_colors</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">node_colors</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">color_map</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">if</span> <span class="n">is_gene_network</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🧬 Drawing compressed graph with GSEA labels...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+                <span class="n">partition_colors</span><span class="p">,</span> <span class="n">node_colors</span><span class="p">,</span> <span class="n">color_map</span> <span class="o">=</span> <span class="n">assign_community_colors</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                                                                                   <span class="n">compressed_graph</span><span class="p">,</span>
+                                                                                   <span class="n">decompression_mapping</span><span class="p">,</span>
+                                                                                   <span class="n">labels</span><span class="p">)</span>
+
+                <span class="n">draw_graph</span><span class="p">(</span><span class="n">compressed_graph</span><span class="p">,</span>
+                           <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+                           <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Compressed graph (GSEA labels) </span><span class="si">{</span><span class="n">input_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                           <span class="n">file_path</span><span class="o">=</span><span class="n">output_folder_method</span><span class="p">,</span>
+                           <span class="n">is_interactive</span><span class="o">=</span><span class="n">is_interactive</span><span class="p">,</span>  <span class="c1"># Draw the interactive plot, if requested</span>
+                           <span class="n">plot_disconnected_components</span><span class="o">=</span><span class="n">plot_disconnected</span><span class="p">,</span>
+                           <span class="n">node_color</span><span class="o">=</span><span class="n">partition_colors</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">MAX_N_NODES</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🧬 Drawing original graph with partition colors (GSEA labels)...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+                    <span class="n">draw_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                               <span class="n">title</span><span class="o">=</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original graph with partition colors (GSEA labels) </span><span class="si">{</span><span class="n">input_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span>
+                                      <span class="p">(</span><span class="s2">&quot; - communities layout&quot;</span> <span class="k">if</span> <span class="n">separate_communities</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)),</span>
+                               <span class="n">file_path</span><span class="o">=</span><span class="n">output_folder_method</span><span class="p">,</span>
+                               <span class="n">is_interactive</span><span class="o">=</span><span class="n">is_interactive_</span><span class="p">,</span>
+                               <span class="c1"># Draw the interactive plot, if requested and not overridden</span>
+                               <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span>
+                               <span class="n">color_map</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span>
+                               <span class="n">plot_disconnected_components</span><span class="o">=</span><span class="n">plot_disconnected</span><span class="p">,</span>
+                               <span class="n">separate_communities</span><span class="o">=</span><span class="n">separate_communities</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: The graph is too large to be plotted.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">You can enable plotting for bigger graphs by changing the MAX_N_NODES constant in the script.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🖌️Drawing compressed graph...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">node_colors</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">color_map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">partition_colors</span><span class="p">,</span> <span class="n">node_colors</span><span class="p">,</span> <span class="n">color_map</span> <span class="o">=</span> <span class="n">assign_community_colors</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                                                                                   <span class="n">compressed_graph</span><span class="p">,</span>
+                                                                                   <span class="n">decompression_mapping</span><span class="p">)</span>
+
+            <span class="n">draw_graph</span><span class="p">(</span><span class="n">compressed_graph</span><span class="p">,</span>
+                       <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Compressed graph </span><span class="si">{</span><span class="n">input_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                       <span class="n">file_path</span><span class="o">=</span><span class="n">output_folder_method</span><span class="p">,</span>
+                       <span class="n">is_interactive</span><span class="o">=</span><span class="n">is_interactive</span><span class="p">,</span>  <span class="c1"># Draw the interactive plot, if requested</span>
+                       <span class="n">plot_disconnected_components</span><span class="o">=</span><span class="n">plot_disconnected</span><span class="p">,</span>
+                       <span class="n">node_color</span><span class="o">=</span><span class="n">partition_colors</span><span class="p">,</span>
+                       <span class="n">color_map</span><span class="o">=</span><span class="n">color_map</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">MAX_N_NODES_INTERACTIVE</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_gene_network</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🖌️Drawing original graph with partition colors...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+                <span class="n">draw_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                           <span class="n">title</span><span class="o">=</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original graph with partition colors </span><span class="si">{</span><span class="n">input_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span>
+                                  <span class="p">(</span><span class="s2">&quot; - communities layout&quot;</span> <span class="k">if</span> <span class="n">separate_communities</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)),</span>
+                           <span class="n">file_path</span><span class="o">=</span><span class="n">output_folder_method</span><span class="p">,</span>
+                           <span class="n">is_interactive</span><span class="o">=</span><span class="n">is_interactive</span><span class="p">,</span>  <span class="c1"># Draw the interactive plot, if requested</span>
+                           <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span>
+                           <span class="n">color_map</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span>
+                           <span class="n">plot_disconnected_components</span><span class="o">=</span><span class="n">plot_disconnected</span><span class="p">,</span>
+                           <span class="n">separate_communities</span><span class="o">=</span><span class="n">separate_communities</span><span class="p">)</span>
+
+        <span class="c1"># Save network files</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">💾 Saving network files...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="c1"># Saving edge weights only if the original graph is weighted and the compression is not lossless</span>
+        <span class="n">save_network_files</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span>
+                           <span class="n">compressed_graph</span><span class="p">,</span>
+                           <span class="n">compression_mapping</span><span class="p">,</span>
+                           <span class="n">decompression_mapping</span><span class="p">,</span>
+                           <span class="n">output_folder_method</span><span class="p">,</span>
+                           <span class="n">labels_mapping</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+                           <span class="n">save_data</span><span class="o">=</span><span class="n">is_weighted</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_lossless</span><span class="p">,</span>
+                           <span class="n">file_format</span><span class="o">=</span><span class="n">output_format</span><span class="p">)</span>
+
+        <span class="c1"># Compute and save edges to remove</span>
+        <span class="k">if</span> <span class="n">is_lossless</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🗑️ Computing and saving edges to remove...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">compute_and_save_edges_to_remove</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">compressed_graph</span><span class="p">,</span> <span class="n">output_folder_method</span><span class="p">)</span>
+
+            <span class="c1"># Reconstruct the original network</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🛠️ Reconstructing the original network...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">reconstructed_network</span> <span class="o">=</span> <span class="n">reconstruct_original_network</span><span class="p">(</span>
+                <span class="n">output_folder_method</span><span class="p">,</span>
+                <span class="n">compressed_network_file</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;compressed_network.</span><span class="si">{</span><span class="n">output_format</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Draw reconstructed graph</span>
+            <span class="n">num_nodes</span> <span class="o">=</span> <span class="n">reconstructed_network</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">num_nodes</span> <span class="o">&lt;=</span> <span class="n">MAX_N_NODES_INTERACTIVE</span> <span class="ow">and</span> <span class="n">plot</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🖌️ Drawing reconstructed graph...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+                <span class="n">draw_graph</span><span class="p">(</span><span class="n">reconstructed_network</span><span class="p">,</span>
+                           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Reconstructed graph&quot;</span><span class="p">,</span>
+                           <span class="n">file_path</span><span class="o">=</span><span class="n">output_folder_method</span><span class="p">,</span>
+                           <span class="n">is_interactive</span><span class="o">=</span><span class="n">is_interactive_</span><span class="p">,</span>  <span class="c1"># Draw the interactive plot, if requested and not overridden</span>
+                           <span class="n">plot_disconnected_components</span><span class="o">=</span><span class="n">plot_disconnected</span><span class="p">)</span>
+
+        <span class="c1"># Print compression efficacy and remove unnecessary files</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">⚙️ Calculating compression efficacy...&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">calculate_compression_efficacy</span><span class="p">(</span><span class="n">output_folder_method</span><span class="p">,</span>
+                                       <span class="n">is_lossless</span><span class="o">=</span><span class="n">is_lossless</span><span class="p">,</span>
+                                       <span class="n">compressed_network_file</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;compressed_network.</span><span class="si">{</span><span class="n">output_format</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="n">remove_unnecessary_files</span><span class="p">(</span><span class="n">output_folder_method</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">GREEN_BOLD</span><span class="si">}</span><span class="s2">✅  Graph compression completed successfully!</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">❌  Graph compression failed!</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">TimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TimeoutError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">❌  Graph compression timed out!</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exception: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">❌  Graph compression failed!</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">▶ Finished processing </span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="parse_args">
+<a class="viewcode-back" href="../src.html#compression.parse_args">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse command-line arguments for graph compression.</span>
+
+<span class="sd">    Command-line arguments:</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        --input (str): Path to the input graph file. This is a required argument.\n</span>
+<span class="sd">        --output (str): Path to the output folder where results will be saved. Default is &#39;data/output&#39;.\n</span>
+<span class="sd">        --output-format (str): Output file format. Options: &#39;.edgelist&#39;, &#39;.txt&#39;, &#39;.csv&#39;, &#39;.tsv&#39;, &#39;.json&#39;, &#39;.gpickle&#39;, &#39;.gml&#39;, &#39;.graphml&#39;, &#39;.net&#39;, &#39;.pajek&#39;, &#39;.gexf&#39;, &#39;.yaml&#39;, &#39;.yml&#39;. Default is &#39;txt&#39;.\n</span>
+<span class="sd">        --method (str): Community detection method to use for graph compression. Options: &#39;louvain&#39;, &#39;greedy&#39; (default), &#39;label_propagation&#39;, &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;cpm&#39;, &#39;nmf&#39;.\n</span>
+<span class="sd">        --resolution (float): Resolution parameter for Louvain and greedy methods. Default is 1.25.\n</span>
+<span class="sd">        --k (int): Number of clusters for clustering methods. Only applicable for methods requiring a cluster count (e.g., &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;nmf&#39;). Default is 3.\n</span>
+<span class="sd">        --seed (int): Random seed for reproducibility. Default is 123.\n</span>
+<span class="sd">        --is-weighted (bool): Flag to indicate if the graph should consider edge weights. Use this flag if the graph is weighted.\n</span>
+<span class="sd">        --is-gene-network (bool): Flag to assign biologically meaningful labels to communities. Use this flag for gene networks.\n</span>
+<span class="sd">        --is-lossless (bool): Flag to perform lossless compression. Use this flag if lossless compression is required.\n</span>
+<span class="sd">        --plot (bool): Flag to plot the original and compressed graphs. Default is False.\n</span>
+<span class="sd">        --is-interactive (bool): Flag to produce interactive plots in HTML format. Use this flag to enable interactive plots.\n</span>
+<span class="sd">        --plot-disconnected (bool): Flag to plot all nodes in a disconnected graph, not just the largest connected component.\n</span>
+<span class="sd">        --title (str): Title for the graph plot. Default is &#39;&#39;.\n</span>
+<span class="sd">        --verbosity (int): Verbosity level for logging information (0: minimal, 1: moderate, 2: detailed). Default is 2.\n</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        args (argparse.Namespace): Parsed command-line arguments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">graphpack</span> <span class="kn">import</span> <span class="n">__version__</span>
+
+    <span class="c1"># Create the custom parser</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">CustomArgumentParser</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Compress graphs using different community detection algorithms.&quot;</span><span class="p">,</span>
+        <span class="n">epilog</span><span class="o">=</span><span class="s2">&quot;For more information, please refer to the documentation.&quot;</span><span class="p">,</span>
+        <span class="n">add_help</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Create groups for different sets of options</span>
+    <span class="n">help_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">input_output_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Input/Output Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">method_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Method Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">graph_options_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Graph and Compression Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plotting_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Plotting Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">misc_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Miscellaneous Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Add arguments to the parser</span>
+    <span class="n">help_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-h&#39;</span><span class="p">,</span> <span class="s1">&#39;--help&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;help&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">SUPPRESS</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Show this help message and exit.&#39;</span><span class="p">)</span>
+    <span class="n">help_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--version&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;%(prog)s </span><span class="si">{</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Show the version number and exit.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Input/Output options</span>
+    <span class="n">input_output_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-i&#39;</span><span class="p">,</span> <span class="s1">&#39;--input&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Input graph file path&#39;</span><span class="p">)</span>
+    <span class="n">input_output_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;--output&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;data/output&#39;</span><span class="p">,</span>
+                                    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Output folder path. Default is &quot;data/output&quot;&#39;</span><span class="p">)</span>
+    <span class="n">input_output_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="s1">&#39;--output-format&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;txt&#39;</span><span class="p">,</span>
+                                    <span class="n">help</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Output file format. Options: </span><span class="si">{</span><span class="n">EXTENSIONS</span><span class="si">}</span><span class="s1"> Default is &quot;txt&quot;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Method options</span>
+    <span class="n">method_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;--method&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;greedy&#39;</span><span class="p">,</span>
+                              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Community detection method. Default is &quot;greedy&quot;&#39;</span><span class="p">)</span>
+    <span class="n">method_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;--resolution&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1.25</span><span class="p">,</span>
+                              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Resolution parameter for Louvain and greedy methods. Higher values lead to more communities. Default is 1.25&#39;</span><span class="p">)</span>
+    <span class="n">method_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="s1">&#39;--k&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                              <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Number of clusters for clustering methods. Relevant for methods requiring a predefined number of clusters. For &#39;cpm&#39; is the size of the smallest clique. Default is 3.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Graph options</span>
+    <span class="n">graph_options_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-w&#39;</span><span class="p">,</span> <span class="s1">&#39;--is-weighted&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                                     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Indicates that the graph is weighted. If not specified, the graph is considered unweighted.&quot;</span><span class="p">)</span>
+    <span class="n">graph_options_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-g&#39;</span><span class="p">,</span> <span class="s1">&#39;--is-gene-network&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                                     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Indicates that the input graph is a gene network. If not specified, the graph is considered a general network.&quot;</span><span class="p">)</span>
+    <span class="n">graph_options_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-l&#39;</span><span class="p">,</span> <span class="s1">&#39;--is-lossless&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                                     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use lossless compression for the graph data. If not specified, lossy compression is used.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Plotting options</span>
+    <span class="n">plotting_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-p&#39;</span><span class="p">,</span> <span class="s1">&#39;--plot&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                                <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Plot the original and compressed graphs. Default is False.&#39;</span><span class="p">)</span>
+    <span class="n">plotting_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="s1">&#39;--is-interactive&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                                <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Produce and save the plots also as interactive html files. The static plots will still be saved as images.&quot;</span><span class="p">)</span>
+    <span class="n">plotting_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot-disconnected&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                                <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Plot all the nodes in a disconnected graph, not only the largest connected component.&quot;</span><span class="p">)</span>
+    <span class="n">plotting_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--separate-communities&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                                <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Enforces separation of the identified communities in the plots.&quot;</span><span class="p">)</span>
+    <span class="n">plotting_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--title&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;Original graph&#39;</span><span class="p">,</span>
+                                <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Title of the graph plots. Default is &quot;Original graph&quot;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Miscellaneous options</span>
+    <span class="n">misc_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;--seed&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Random seed for reproducibility&#39;</span><span class="p">)</span>
+    <span class="n">misc_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--verbosity&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Verbosity level (0: minimal, 1: moderate, 2: detailed)&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../src.html#compression.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">perform_compression</span><span class="p">(</span><span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="n">args</span><span class="p">))</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Daniele.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

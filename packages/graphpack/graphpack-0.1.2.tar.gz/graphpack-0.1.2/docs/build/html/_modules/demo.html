@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>demo &mdash; graphpack  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to see the algorithm pseudocode, parameters and hints';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            graphpack
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#quick-start">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html#on-ramp">On Ramp</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview and Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html#compression-pipeline">Compression Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Demo Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Graph Compression Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html#demo-modules">Demo Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Glossaries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../graph-compression-glossary.html">Graph Compression Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compression-algorithm-glossary.html">Compression Algorithm Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">graphpack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">demo</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for demo</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">from</span> <span class="nn">graphpack.utils</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="fetch_api_data">
+<a class="viewcode-back" href="../demo.html#demo.fetch_api_data">[docs]</a>
+<span class="k">def</span> <span class="nf">fetch_api_data</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fetches data from an API.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        request_url (str): The URL of the API endpoint.</span>
+<span class="sd">        params (dict, optional): Parameters to be sent with the request. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: JSON response from the API.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        Exception: If there&#39;s an issue with the request or parsing the response.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">request_url</span><span class="p">)</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Raise an exception for 4xx and 5xx status codes</span>
+        <span class="n">json_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">json_data</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching API data: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_graph_data">
+<a class="viewcode-back" href="../demo.html#demo.parse_graph_data">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_graph_data</span><span class="p">(</span><span class="n">json_data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parses data from the STRING API response into a NetworkX graph.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        json_data (list): List of dictionaries containing data from the API response.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        nx.Graph: A NetworkX graph representing the parsed data.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the JSON data is invalid or missing required fields.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;preferredName_A&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;preferredName_B&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">json_data</span><span class="p">]</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">graph</span>
+
+    <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid JSON data: missing key </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error parsing JSON data: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_example_graph">
+<a class="viewcode-back" href="../demo.html#demo.get_example_graph">[docs]</a>
+<span class="k">def</span> <span class="nf">get_example_graph</span><span class="p">(</span><span class="n">demo_number</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">use_gene_list</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gene_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">api_url</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieves and parses an example graph from the STRING database based on the specified demo number,</span>
+<span class="sd">    gene list usage, and additional API parameters.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        demo_number (int): The demo number specifying which example query to use.</span>
+<span class="sd">        use_gene_list (bool): Whether to use a predefined gene list for the query.</span>
+<span class="sd">        gene_list (list, optional): List of genes to use for the query. Defaults to None.</span>
+<span class="sd">        custom_params (dict, optional): Custom API parameters to override or supplement defaults. Defaults to None.</span>
+<span class="sd">        api_url (str, optional): Custom API URL to fetch the data from. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        nx.Graph: A NetworkX graph representing the retrieved data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get API parameters and request URL</span>
+    <span class="n">params</span><span class="p">,</span> <span class="n">request_url</span> <span class="o">=</span> <span class="n">get_api_params</span><span class="p">(</span><span class="n">demo_number</span><span class="p">,</span> <span class="n">use_gene_list</span><span class="p">,</span> <span class="n">gene_list</span><span class="p">,</span> <span class="n">custom_params</span><span class="p">,</span> <span class="n">api_url</span><span class="p">)</span>
+
+    <span class="c1"># Fetch STRING data</span>
+    <span class="n">json_data</span> <span class="o">=</span> <span class="n">fetch_api_data</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+    <span class="c1"># Parse data into NetworkX graph and return it</span>
+    <span class="k">return</span> <span class="n">parse_graph_data</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_api_params">
+<a class="viewcode-back" href="../demo.html#demo.get_api_params">[docs]</a>
+<span class="k">def</span> <span class="nf">get_api_params</span><span class="p">(</span><span class="n">demo_number</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">use_gene_list</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gene_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">api_url</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates API request parameters and URL based on the specified demo number, gene list usage,</span>
+<span class="sd">    and custom parameters.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        demo_number (int): The demo number specifying which example query to use.</span>
+<span class="sd">        use_gene_list (bool): Whether to use a predefined gene list for the query.</span>
+<span class="sd">        gene_list (list, optional): List of genes to use for the query. Defaults to None.</span>
+<span class="sd">        custom_params (dict, optional): Custom API parameters to override or supplement defaults. Defaults to None.</span>
+<span class="sd">        api_url (str, optional): Custom API URL to fetch the data from. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing the API parameters and request URL.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">custom_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">custom_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">use_gene_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">gene_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Select gene list based on the demo number</span>
+            <span class="k">if</span> <span class="n">demo_number</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">gene_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ATP1A1&#39;</span><span class="p">,</span> <span class="s1">&#39;BRCA1&#39;</span><span class="p">,</span> <span class="s1">&#39;CDK2&#39;</span><span class="p">,</span> <span class="s1">&#39;DNMT1&#39;</span><span class="p">,</span> <span class="s1">&#39;EGFR&#39;</span><span class="p">,</span> <span class="s1">&#39;FGFR2&#39;</span><span class="p">,</span> <span class="s1">&#39;GATA1&#39;</span><span class="p">,</span> <span class="s1">&#39;HIF1A&#39;</span><span class="p">,</span> <span class="s1">&#39;IGF1R&#39;</span><span class="p">,</span> <span class="s1">&#39;JAK2&#39;</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">demo_number</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">gene_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TP53&#39;</span><span class="p">,</span> <span class="s1">&#39;EGFR&#39;</span><span class="p">,</span> <span class="s1">&#39;CDK2&#39;</span><span class="p">,</span> <span class="s1">&#39;BRCA1&#39;</span><span class="p">,</span> <span class="s1">&#39;PTEN&#39;</span><span class="p">,</span> <span class="s1">&#39;PIK3CA&#39;</span><span class="p">,</span> <span class="s1">&#39;RB1&#39;</span><span class="p">,</span> <span class="s1">&#39;ATM&#39;</span><span class="p">,</span> <span class="s1">&#39;MDM2&#39;</span><span class="p">,</span> <span class="s1">&#39;CTNNB1&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;AKT1&#39;</span><span class="p">,</span> <span class="s1">&#39;BRAF&#39;</span><span class="p">,</span> <span class="s1">&#39;KRAS&#39;</span><span class="p">,</span> <span class="s1">&#39;SMAD4&#39;</span><span class="p">,</span> <span class="s1">&#39;NOTCH1&#39;</span><span class="p">,</span> <span class="s1">&#39;MYC&#39;</span><span class="p">,</span> <span class="s1">&#39;CCND1&#39;</span><span class="p">,</span> <span class="s1">&#39;NRAS&#39;</span><span class="p">,</span> <span class="s1">&#39;SRC&#39;</span><span class="p">,</span> <span class="s1">&#39;ERBB2&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;APC&#39;</span><span class="p">,</span> <span class="s1">&#39;FBXW7&#39;</span><span class="p">,</span> <span class="s1">&#39;GATA3&#39;</span><span class="p">,</span> <span class="s1">&#39;MTOR&#39;</span><span class="p">,</span> <span class="s1">&#39;JAK2&#39;</span><span class="p">,</span> <span class="s1">&#39;PIK3R1&#39;</span><span class="p">,</span> <span class="s1">&#39;FGFR1&#39;</span><span class="p">,</span> <span class="s1">&#39;VHL&#39;</span><span class="p">,</span> <span class="s1">&#39;AR&#39;</span><span class="p">,</span> <span class="s1">&#39;ABL1&#39;</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">demo_number</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">gene_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ATP1A1&#39;</span><span class="p">,</span> <span class="s1">&#39;BRCA1&#39;</span><span class="p">,</span> <span class="s1">&#39;CDK2&#39;</span><span class="p">,</span> <span class="s1">&#39;DNMT1&#39;</span><span class="p">,</span> <span class="s1">&#39;EGFR&#39;</span><span class="p">,</span> <span class="s1">&#39;FGFR2&#39;</span><span class="p">,</span> <span class="s1">&#39;GATA1&#39;</span><span class="p">,</span> <span class="s1">&#39;HIF1A&#39;</span><span class="p">,</span> <span class="s1">&#39;IGF1R&#39;</span><span class="p">,</span> <span class="s1">&#39;JAK2&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;KCNQ1&#39;</span><span class="p">,</span> <span class="s1">&#39;LMO2&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPK1&#39;</span><span class="p">,</span> <span class="s1">&#39;NFKB1&#39;</span><span class="p">,</span> <span class="s1">&#39;ODC1&#39;</span><span class="p">,</span> <span class="s1">&#39;PDGFRA&#39;</span><span class="p">,</span> <span class="s1">&#39;PTEN&#39;</span><span class="p">,</span> <span class="s1">&#39;RARA&#39;</span><span class="p">,</span> <span class="s1">&#39;SMAD4&#39;</span><span class="p">,</span> <span class="s1">&#39;TGFB1&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;UBE2C&#39;</span><span class="p">,</span> <span class="s1">&#39;VHL&#39;</span><span class="p">,</span> <span class="s1">&#39;WNT1&#39;</span><span class="p">,</span> <span class="s1">&#39;XBP1&#39;</span><span class="p">,</span> <span class="s1">&#39;YAP1&#39;</span><span class="p">,</span> <span class="s1">&#39;ZEB1&#39;</span><span class="p">,</span> <span class="s1">&#39;ACTB&#39;</span><span class="p">,</span> <span class="s1">&#39;BRAF&#39;</span><span class="p">,</span> <span class="s1">&#39;CBL&#39;</span><span class="p">,</span> <span class="s1">&#39;DDR2&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;EZH2&#39;</span><span class="p">,</span> <span class="s1">&#39;FGF23&#39;</span><span class="p">,</span> <span class="s1">&#39;GNAQ&#39;</span><span class="p">,</span> <span class="s1">&#39;HDAC2&#39;</span><span class="p">,</span> <span class="s1">&#39;IDH1&#39;</span><span class="p">,</span> <span class="s1">&#39;JUN&#39;</span><span class="p">,</span> <span class="s1">&#39;KDM5A&#39;</span><span class="p">,</span> <span class="s1">&#39;LATS1&#39;</span><span class="p">,</span> <span class="s1">&#39;MMP9&#39;</span><span class="p">,</span> <span class="s1">&#39;NFATC1&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;PAX5&#39;</span><span class="p">,</span> <span class="s1">&#39;PRDM1&#39;</span><span class="p">,</span> <span class="s1">&#39;RAD51&#39;</span><span class="p">,</span> <span class="s1">&#39;SRC&#39;</span><span class="p">,</span> <span class="s1">&#39;TERT&#39;</span><span class="p">,</span> <span class="s1">&#39;TGFBR2&#39;</span><span class="p">,</span> <span class="s1">&#39;USP9X&#39;</span><span class="p">,</span> <span class="s1">&#39;VEGFA&#39;</span><span class="p">,</span> <span class="s1">&#39;YY1&#39;</span><span class="p">,</span> <span class="s1">&#39;ZNF217&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">gene_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;TP53&#39;</span><span class="p">,</span> <span class="s1">&#39;BRCA1&#39;</span><span class="p">,</span> <span class="s1">&#39;EGFR&#39;</span><span class="p">,</span> <span class="s1">&#39;MYC&#39;</span><span class="p">,</span> <span class="s1">&#39;AKT1&#39;</span><span class="p">,</span> <span class="s1">&#39;PIK3CA&#39;</span><span class="p">,</span> <span class="s1">&#39;PTEN&#39;</span><span class="p">,</span> <span class="s1">&#39;RB1&#39;</span><span class="p">,</span> <span class="s1">&#39;KRAS&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPK1&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;CDKN1A&#39;</span><span class="p">,</span> <span class="s1">&#39;MDM2&#39;</span><span class="p">,</span> <span class="s1">&#39;CTNNB1&#39;</span><span class="p">,</span> <span class="s1">&#39;APC&#39;</span><span class="p">,</span> <span class="s1">&#39;GAPDH&#39;</span><span class="p">,</span> <span class="s1">&#39;CDK2&#39;</span><span class="p">,</span> <span class="s1">&#39;FOXP3&#39;</span><span class="p">,</span> <span class="s1">&#39;STAT3&#39;</span><span class="p">,</span> <span class="s1">&#39;SMAD4&#39;</span><span class="p">,</span> <span class="s1">&#39;VEGFA&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;HIF1A&#39;</span><span class="p">,</span> <span class="s1">&#39;CCND1&#39;</span><span class="p">,</span> <span class="s1">&#39;ERBB2&#39;</span><span class="p">,</span> <span class="s1">&#39;BCL2&#39;</span><span class="p">,</span> <span class="s1">&#39;JAK2&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Set API parameters</span>
+        <span class="n">species</span> <span class="o">=</span> <span class="mi">9606</span>
+        <span class="n">required_score</span> <span class="o">=</span> <span class="mi">700</span>
+        <span class="n">string_api_url</span> <span class="o">=</span> <span class="s2">&quot;https://string-db.org/api&quot;</span>
+        <span class="n">output_format</span> <span class="o">=</span> <span class="s2">&quot;json&quot;</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;network&quot;</span>
+        <span class="n">network_flavour</span> <span class="o">=</span> <span class="s1">&#39;confidence&#39;</span>
+        <span class="n">network_type</span> <span class="o">=</span> <span class="s1">&#39;functional&#39;</span>
+        <span class="n">request_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">string_api_url</span><span class="p">,</span> <span class="n">output_format</span><span class="p">,</span> <span class="n">method</span><span class="p">])</span>
+
+        <span class="c1"># Update params with custom_params</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;identifiers&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">%0d</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gene_list</span><span class="p">),</span>
+            <span class="s2">&quot;species&quot;</span><span class="p">:</span> <span class="n">species</span><span class="p">,</span>
+            <span class="s1">&#39;caller_identity&#39;</span><span class="p">:</span> <span class="s1">&#39;my_app&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;required_score&#39;</span><span class="p">:</span> <span class="n">required_score</span><span class="p">,</span>
+            <span class="s1">&#39;network_flavor&#39;</span><span class="p">:</span> <span class="n">network_flavour</span><span class="p">,</span>
+            <span class="s1">&#39;network_type&#39;</span><span class="p">:</span> <span class="n">network_type</span>
+        <span class="p">}</span>
+        <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">custom_params</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">api_url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">request_url</span> <span class="o">=</span> <span class="n">api_url</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Example queries based on demo_number</span>
+        <span class="k">if</span> <span class="n">demo_number</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">request_url</span> <span class="o">=</span> <span class="s2">&quot;https://string-db.org/api/json/interaction_partners?identifiers=TP53</span><span class="si">%0d</span><span class="s2">CDK2&amp;limit=20&quot;</span>
+        <span class="k">elif</span> <span class="n">demo_number</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">request_url</span> <span class="o">=</span> <span class="s2">&quot;https://string-db.org/api/json/interaction_partners?identifiers=P53_HUMAN</span><span class="si">%0d</span><span class="s2">MDM2_HUMAN</span><span class="si">%0d</span><span class="s2">ATM_HUMAN&amp;species=9606&amp;required_score=900&quot;</span>
+        <span class="k">elif</span> <span class="n">demo_number</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">request_url</span> <span class="o">=</span> <span class="s2">&quot;https://string-db.org/api/json/interaction_partners?identifiers=TP53</span><span class="si">%0d</span><span class="s2">BRCA1</span><span class="si">%0d</span><span class="s2">EGFR</span><span class="si">%0d</span><span class="s2">MYC</span><span class="si">%0d</span><span class="s2">AKT1</span><span class="si">%0d</span><span class="s2">PIK3CA</span><span class="si">%0d</span><span class="s2">PTEN</span><span class="si">%0d</span><span class="s2">RB1</span><span class="si">%0d</span><span class="s2">KRAS</span><span class="si">%0d</span><span class="s2">MAPK1&amp;species=9606&amp;required_score=950&quot;</span>
+        <span class="k">elif</span> <span class="n">demo_number</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">request_url</span> <span class="o">=</span> <span class="s2">&quot;https://string-db.org/api/json/interaction_partners?identifiers=AKT1</span><span class="si">%0d</span><span class="s2">MAPK1</span><span class="si">%0d</span><span class="s2">CTNNB1</span><span class="si">%0d</span><span class="s2">TGFB1</span><span class="si">%0d</span><span class="s2">NFKB1</span><span class="si">%0d</span><span class="s2">BAX</span><span class="si">%0d</span><span class="s2">TP53</span><span class="si">%0d</span><span class="s2">NOTCH1</span><span class="si">%0d</span><span class="s2">STAT3</span><span class="si">%0d</span><span class="s2">KRAS</span><span class="si">%0d</span><span class="s2">YAP1&amp;species=9606&amp;required_score=990&quot;</span>
+        <span class="k">elif</span> <span class="n">demo_number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">request_url</span> <span class="o">=</span> <span class="s2">&quot;https://string-db.org/api/json/interaction_partners?identifiers=AKT1</span><span class="si">%0d</span><span class="s2">MAPK1</span><span class="si">%0d</span><span class="s2">CTNNB1</span><span class="si">%0d</span><span class="s2">TGFB1</span><span class="si">%0d</span><span class="s2">NFKB1</span><span class="si">%0d</span><span class="s2">BAX</span><span class="si">%0d</span><span class="s2">TP53</span><span class="si">%0d</span><span class="s2">NOTCH1</span><span class="si">%0d</span><span class="s2">STAT3</span><span class="si">%0d</span><span class="s2">KRAS</span><span class="si">%0d</span><span class="s2">YAP1&amp;species=9606&amp;limit=20&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">request_url</span> <span class="o">=</span> <span class="s2">&quot;https://string-db.org/api/json/network?identifiers=all&quot;</span>
+
+    <span class="k">return</span> <span class="n">params</span><span class="p">,</span> <span class="n">request_url</span></div>
+
+
+
+<div class="viewcode-block" id="run_demo">
+<a class="viewcode-back" href="../demo.html#demo.run_demo">[docs]</a>
+<span class="k">def</span> <span class="nf">run_demo</span><span class="p">(</span><span class="n">demo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_gene_list</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gene_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">api_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+             <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;data/input/simple_graph.txt&quot;</span><span class="p">,</span>
+             <span class="n">output</span><span class="o">=</span><span class="s2">&quot;data/output&quot;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;txt&quot;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_weighted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+             <span class="n">is_gene_network</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_lossless</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_interactive_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+             <span class="n">plot_disconnected</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">separate_communities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;greedy&quot;</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Main function for the GraphPack tool demo script.</span>
+
+<span class="sd">    This script demonstrates the usage of the GraphPack tool by fetching data from the STRING database,</span>
+<span class="sd">    parsing it into a NetworkX graph, and performing various compression methods on the graph.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        demo (int, optional): Demo number to run (0-6). Specifies which example query to use for fetching data from the STRING database.</span>
+<span class="sd">        use_gene_list (bool, optional): Flag to use a predefined gene list for the query.</span>
+<span class="sd">        gene_list (list of str, optional): List of genes to use for the query.</span>
+<span class="sd">        custom_params (dict, optional): Custom parameters to be sent with the API request. Should be in the format &#39;{&quot;key1&quot;: &quot;value1&quot;, &quot;key2&quot;: &quot;value2&quot;}&#39;.</span>
+<span class="sd">        api_url (str, optional): Custom API URL to fetch the data from.</span>
+<span class="sd">        input (str, optional): Path to the input file. Default is &quot;data/input/simple_graph.txt&quot;.</span>
+<span class="sd">        output (str, optional): Path to the output folder. Default is &quot;data/output&quot;.</span>
+<span class="sd">        output_format (str): File format to save the network files. Options: &#39;.edgelist&#39;, &#39;.txt&#39; (default), &#39;.csv&#39;, &#39;.tsv&#39;, &#39;.json&#39;, &#39;.gpickle&#39;, &#39;.gml&#39;, &#39;.graphml&#39;, &#39;.net&#39;, &#39;.pajek&#39;, &#39;.gexf&#39;, &#39;.yaml&#39;, &#39;.yml&#39;.</span>
+<span class="sd">        resolution (float, optional): Resolution parameter for Louvain and greedy methods.</span>
+<span class="sd">        k (int, optional): Number of clusters for clustering methods. Only applicable for methods requiring a cluster count (e.g., &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;nmf&#39;).</span>
+<span class="sd">        is_weighted (bool, optional): Flag to indicate the use of a weighted graph.</span>
+<span class="sd">        is_gene_network (bool, optional): Flag to indicate the use of a gene network.</span>
+<span class="sd">        is_lossless (bool, optional): Flag to indicate the use of lossless compression.</span>
+<span class="sd">        no_plot (bool, optional): Flag to disable plotting the original and compressed graphs. Default is False.</span>
+<span class="sd">        no_interactive_plot (bool, optional): Flag to disable plotting the graph in interactive mode.</span>
+<span class="sd">        plot_disconnected (bool, optional): Flag to plot all nodes in a disconnected graph, not just the largest connected component.</span>
+<span class="sd">        separate_communities (bool, optional): Flag to enforce separation of identified communities in the plots.</span>
+<span class="sd">        method (list of str, optional): List of compression methods to run. Options: &#39;louvain&#39;, &#39;greedy&#39; (default), &#39;label_propagation&#39;, &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;cpm&#39;, &#39;nmf&#39;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; from graphpack.demo.demo import *</span>
+
+<span class="sd">        &gt;&gt;&gt; # Run a default demo, greedy method</span>
+<span class="sd">        &gt;&gt;&gt; run_demo(demo=5, input=&#39;./&#39;, output=&#39;results&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; # Run a demo with predefined gene list, weighted, non default method and parameters</span>
+<span class="sd">        &gt;&gt;&gt; run_demo(demo=3, use_gene_list=True, method=[&#39;hclust&#39;], k=11, is_gene_network=True, is_weighted=True, input=&#39;./&#39;, output=&#39;results&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; # Run demo pipeline with custom gene list, multiple methods</span>
+<span class="sd">        &gt;&gt;&gt; run_demo(use_gene_list=True, gene_list=[&#39;TP53&#39;, &#39;BRCA1&#39;, &#39;EGFR&#39;, &#39;MYC&#39;, &#39;AKT1&#39;, &#39;PIK3CA&#39;, &#39;PTEN&#39;, &#39;RB1&#39;, &#39;KRAS&#39;, &#39;MAPK1&#39;], is_gene_network=True, method=[&#39;louvain&#39;, &#39;greedy&#39;, &#39;hclust&#39;], resolution=1.0, k=4, input=&#39;./&#39;, output=&#39;results&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; # Run demo pipeline with custom gene network, suppress plots</span>
+<span class="sd">        &gt;&gt;&gt; run_demo(input=&quot;path/to/edgelist.txt&quot;, is_gene_network=True, is_weighted=True, no_plot=True, output=&#39;results&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; # Run demo pipeline with custom API URL and non defgault output format</span>
+<span class="sd">        &gt;&gt;&gt; run_demo(api_url=&quot;https://string-db.org/api/json/interaction_partners?identifiers=TP53%0dBRCA1%0dEGFR%0dMYC&amp;required_score=990&quot;, output_format=&quot;json&quot;, input=&#39;./&#39;, output=&#39;results&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; # Run demo pipeline with predefined gene list, custom parameters</span>
+<span class="sd">        &gt;&gt;&gt; run_demo(demo=1, use_gene_list=True, custom_params={&quot;required_score&quot;: 100}, input=&#39;./&#39;, output=&#39;results&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; # Run demo pipeline with custom gene list, custom parameters</span>
+<span class="sd">        &gt;&gt;&gt; run_demo(demo=1, use_gene_list=True, custom_params={&quot;required_score&quot;: 100}, input=&#39;./&#39;, output=&#39;results&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get the input graph from STRING DB via API</span>
+    <span class="k">if</span> <span class="n">demo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">use_gene_list</span> <span class="ow">or</span> <span class="n">gene_list</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">api_url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="n">graph</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">custom_params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Using custom parameters: </span><span class="si">{</span><span class="n">custom_params</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Get and save the example graph</span>
+        <span class="k">if</span> <span class="n">demo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">use_gene_list</span><span class="p">:</span>
+                <span class="nb">input</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/demo_gene_list_</span><span class="si">{</span><span class="n">demo</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span> <span class="o">+</span> <span class="s2">&quot;_custom_params.txt&quot;</span> <span class="k">if</span> <span class="n">custom_params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">input</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">input</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/demo_</span><span class="si">{</span><span class="n">demo</span><span class="si">}</span><span class="s2">.txt&quot;</span>
+
+            <span class="n">graph</span> <span class="o">=</span> <span class="n">get_example_graph</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span> <span class="n">use_gene_list</span><span class="p">,</span> <span class="n">custom_params</span><span class="o">=</span><span class="n">custom_params</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">gene_list</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Using custom gene list: </span><span class="si">{</span><span class="n">gene_list</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">input</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/custom_gene_list&quot;</span>
+            <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span> <span class="o">+</span> <span class="s2">&quot;_custom_params.txt&quot;</span> <span class="k">if</span> <span class="n">custom_params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">input</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+
+            <span class="n">graph</span> <span class="o">=</span> <span class="n">get_example_graph</span><span class="p">(</span><span class="n">use_gene_list</span><span class="o">=</span><span class="n">use_gene_list</span><span class="p">,</span> <span class="n">gene_list</span><span class="o">=</span><span class="n">gene_list</span><span class="p">,</span> <span class="n">custom_params</span><span class="o">=</span><span class="n">custom_params</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">api_url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Using custom API URL: </span><span class="si">{</span><span class="n">api_url</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">input</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/custom_api_data.txt&quot;</span>
+            <span class="n">graph</span> <span class="o">=</span> <span class="n">get_example_graph</span><span class="p">(</span><span class="n">api_url</span><span class="o">=</span><span class="n">api_url</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">Error: No data found for the provided custom parameters/API url/gene list.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Save the graph</span>
+        <span class="k">def</span> <span class="nf">is_weighted</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+                <span class="k">if</span> <span class="s1">&#39;weight&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="n">save_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">save_data</span><span class="o">=</span><span class="nb">any</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Graph saved in </span><span class="si">{</span><span class="nb">input</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Run the main compression script</span>
+    <span class="n">compression_methods</span> <span class="o">=</span> <span class="n">method</span>
+
+    <span class="k">for</span> <span class="n">compression_method</span> <span class="ow">in</span> <span class="n">compression_methods</span><span class="p">:</span>
+
+        <span class="n">call_args</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;graphpack&#39;</span><span class="p">,</span> <span class="c1">#&#39;python3&#39;, &#39;../compression.py&#39;,</span>
+            <span class="s1">&#39;--input&#39;</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span>
+            <span class="s1">&#39;--output&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span>
+            <span class="s1">&#39;--output-format&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="p">,</span>
+            <span class="s1">&#39;--method&#39;</span><span class="p">,</span> <span class="n">compression_method</span><span class="p">,</span>
+            <span class="s1">&#39;--seed&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">SEED</span><span class="p">),</span>
+            <span class="s1">&#39;--title&#39;</span><span class="p">,</span> <span class="n">compression_method</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">is_weighted</span><span class="p">:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;--is-weighted&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">is_gene_network</span><span class="p">:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;--is-gene-network&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">is_lossless</span><span class="p">:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;--is-lossless&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">no_plot</span><span class="p">:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;--plot&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">no_interactive_plot</span><span class="p">:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;--is-interactive&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">compression_method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;louvain&#39;</span><span class="p">,</span> <span class="s1">&#39;greedy&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">resolution</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;--resolution&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">resolution</span><span class="p">)])</span>
+
+        <span class="k">if</span> <span class="n">compression_method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;asyn_fluidc&#39;</span><span class="p">,</span> <span class="s1">&#39;spectral&#39;</span><span class="p">,</span> <span class="s1">&#39;hclust&#39;</span><span class="p">,</span> <span class="s1">&#39;node2vec&#39;</span><span class="p">,</span> <span class="s1">&#39;deepwalk&#39;</span><span class="p">,</span> <span class="s1">&#39;nmf&#39;</span><span class="p">]:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;--k&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">&#39;30&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">compression_method</span> <span class="o">==</span> <span class="s1">&#39;cpm&#39;</span><span class="p">:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;--k&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">&#39;3&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">plot_disconnected</span><span class="p">:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;--plot-disconnected&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">separate_communities</span><span class="p">:</span>
+            <span class="n">call_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;--separate-communities&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Run the compression method and measure runtime</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">call_args</span><span class="p">)</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+        <span class="n">runtime</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🕑 Runtime for </span><span class="si">{</span><span class="n">compression_method</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">runtime</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="parse_args">
+<a class="viewcode-back" href="../demo.html#demo.parse_args">[docs]</a>
+<span class="k">def</span> <span class="nf">parse_args</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse command-line arguments for graph compression demo script.</span>
+
+<span class="sd">    Command-line arguments:</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        --demo (int): Demo number to run (0-6). Specifies which example query to use for fetching data from the STRING database.\n</span>
+<span class="sd">        --use-gene-list (bool): Flag to use a predefined gene list for the query.\n</span>
+<span class="sd">        --gene-list (list of str): List of genes to use for the query. Ignored if --use-gene-list is specified.\n</span>
+<span class="sd">        --custom-params (list of str): Custom parameters to be sent with the API request. Only applicable when --use-gene-list is set. Should be in the format &#39;key1=value1 key2=value2&#39;.\n</span>
+<span class="sd">        --api-url (str): Custom API URL to fetch the data from. If not specified, the default STRING API URL is used.\n</span>
+<span class="sd">        --input (str): Path to the input file. Default is &quot;data/input/simple_graph.txt&quot;.\n</span>
+<span class="sd">        --output (str): Path to the output folder. Default is &quot;data/output&quot;.\n</span>
+<span class="sd">        --output-format (str): Output file format. Options: &#39;.edgelist&#39;, &#39;.txt&#39;, &#39;.csv&#39;, &#39;.tsv&#39;, &#39;.json&#39;, &#39;.gpickle&#39;, &#39;.gml&#39;, &#39;.graphml&#39;, &#39;.net&#39;, &#39;.pajek&#39;, &#39;.gexf&#39;, &#39;.yaml&#39;, &#39;.yml&#39;. Default is &#39;txt&#39;.\n</span>
+<span class="sd">        --resolution (float): Resolution parameter for Louvain and greedy methods.\n</span>
+<span class="sd">        --k (int): Number of clusters for clustering methods. Only applicable for methods requiring a cluster count (e.g., &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;nmf&#39;).\n</span>
+<span class="sd">        --is-weighted (bool): Flag to indicate the use of a weighted graph.\n</span>
+<span class="sd">        --is-gene-network (bool): Flag to indicate the use of a gene network.\n</span>
+<span class="sd">        --is-lossless (bool): Flag to indicate the use of lossless compression.\n</span>
+<span class="sd">        --no-plot (bool): Flag to disable plotting the original and compressed graphs. Default is False.\n</span>
+<span class="sd">        --no-interactive-plot (bool): Flag to disable plotting the graph in interactive mode.\n</span>
+<span class="sd">        --plot-disconnected (bool): Flag to plot all nodes in a disconnected graph, not just the largest connected component.\n</span>
+<span class="sd">        --method (list of str): List of compression methods to run. Options: &#39;louvain&#39;, &#39;greedy&#39; (default), &#39;label_propagation&#39;, &#39;asyn_fluidc&#39;, &#39;spectral&#39;, &#39;hclust&#39;, &#39;node2vec&#39;, &#39;deepwalk&#39;, &#39;cpm&#39;, &#39;nmf&#39;. If &#39;all&#39;, all the implemented compression methods will be used.\n</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        args (argparse.Namespace): Parsed command-line arguments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">graphpack</span> <span class="kn">import</span> <span class="n">__version__</span>
+
+    <span class="c1"># Print the title and visualization of GraphPack tool</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}{</span><span class="n">TITLE</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}{</span><span class="n">VIZ</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Create the custom parser</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">CustomArgumentParser</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DESCR</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">epilog</span><span class="o">=</span><span class="s2">&quot;For more information, please refer to the documentation.&quot;</span><span class="p">,</span>
+        <span class="n">add_help</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Create groups for different sets of options</span>
+    <span class="n">help_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">demo_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Demo Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">input_output_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Input/Output Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">method_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Method Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">graph_options_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Graph and Compression Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plotting_group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s1">Plotting Options</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Add arguments to the parser</span>
+    <span class="n">help_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-h&#39;</span><span class="p">,</span> <span class="s1">&#39;--help&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;help&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">SUPPRESS</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Show this help message and exit.&#39;</span><span class="p">)</span>
+    <span class="n">help_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--version&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;version&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;%(prog)s </span><span class="si">{</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Show the version of the program.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Demo options</span>
+    <span class="n">demo_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--demo&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Demo number to run. Accepts values from 0 to 6.&quot;</span><span class="p">)</span>
+    <span class="n">demo_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-D&#39;</span><span class="p">,</span> <span class="s1">&#39;--use-gene-list&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use a predefined gene list corresponding to the demo number (0-3). Overrides --gene-list if both are provided.&quot;</span><span class="p">)</span>
+    <span class="n">demo_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-L&#39;</span><span class="p">,</span> <span class="s1">&#39;--gene-list&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;List of genes to use for the query. Ignored if --use-gene-list and --demo are specified.&quot;</span><span class="p">)</span>
+    <span class="n">demo_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;--custom-params&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Custom parameters to be sent with the API request. Should be in the format &#39;key1=value1 key2=value2&#39;.&quot;</span><span class="p">)</span>
+    <span class="n">demo_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-a&#39;</span><span class="p">,</span> <span class="s1">&#39;--api-url&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Custom API URL to fetch the data from. If not specified, the default STRING API URL is used. It overrides --demo and --use-gene-list.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Input/Output options</span>
+    <span class="n">input_output_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-i&#39;</span><span class="p">,</span> <span class="s1">&#39;--input&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;data/input/simple_graph.txt&quot;</span><span class="p">,</span>
+                                    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the input file containing the graph data. Default is &#39;data/input/simple_graph.txt&#39;. If --demo is specified, this argument is ignored.&quot;</span><span class="p">)</span>
+    <span class="n">input_output_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;--output&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;data/output&quot;</span><span class="p">,</span>
+                                    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the output folder where results will be saved. Default is &#39;data/output&#39;.&quot;</span><span class="p">)</span>
+    <span class="n">input_output_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="s1">&#39;--output-format&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;txt&#39;</span><span class="p">,</span>
+                                    <span class="n">help</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Output file format. Options: </span><span class="si">{</span><span class="n">EXTENSIONS</span><span class="si">}</span><span class="s1"> Default is &quot;txt&quot;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Method options</span>
+    <span class="n">method_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;--method&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;greedy&quot;</span><span class="p">],</span>
+                              <span class="n">help</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;List of compression methods to run. If &#39;all&#39;, all the implemented compression methods will be used. Default is [&#39;greedy&#39;]. Accepts multiple methods, among </span><span class="si">{</span><span class="n">METHODS</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="n">method_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;--resolution&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+                              <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Resolution parameter for Louvain and greedy methods. Higher values lead to more communities. If not specified, the default value (1.25) is used.&quot;</span><span class="p">)</span>
+    <span class="n">method_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="s1">&#39;--k&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                              <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Number of clusters for clustering methods. Relevant for methods requiring a predefined number of clusters. Default is 30. For &#39;cpm&#39; is the size of the smallest clique. Default is 3.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Graph options</span>
+    <span class="n">graph_options_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-w&#39;</span><span class="p">,</span> <span class="s1">&#39;--is-weighted&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                                     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Indicates that the graph is weighted. If not specified, the graph is considered unweighted.&quot;</span><span class="p">)</span>
+    <span class="n">graph_options_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-g&#39;</span><span class="p">,</span> <span class="s1">&#39;--is-gene-network&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                                     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Indicates that the input graph is a gene network. If not specified, the graph is considered a general network.&quot;</span><span class="p">)</span>
+    <span class="n">graph_options_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-l&#39;</span><span class="p">,</span> <span class="s1">&#39;--is-lossless&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                                     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use lossless compression for the graph data. If not specified, lossy compression is used.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Plotting options</span>
+    <span class="n">plotting_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--no-plot&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                                <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Disable plotting the original and compressed graphs.&quot;</span><span class="p">)</span>
+    <span class="n">plotting_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--no-interactive-plot&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+                                <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Disable saving the plots also as interactive html files. The static plots will still be saved as images.&quot;</span><span class="p">)</span>
+    <span class="n">plotting_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--plot-disconnected&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                                <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Plot all the nodes in a disconnected graph, not only the largest connected component.&quot;</span><span class="p">)</span>
+    <span class="n">plotting_group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--separate-communities&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                                <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Enforces separation of the identified communities in the plots.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Parse arguments</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">LONG_DESCR</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: no parameters provided. To display the help, run the script with --help</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="se">\n</span><span class="s2">Running the default demo?</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">ans</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Enter &#39;y&#39; to continue or &#39;n&#39; to exit: &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ans</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># Running the default demo</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">GREEN_BOLD</span><span class="si">}</span><span class="s2">Running the default demo (0) with the greedy method.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">demo</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Validate arguments</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">demo</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">args</span><span class="o">.</span><span class="n">use_gene_list</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">args</span><span class="o">.</span><span class="n">gene_list</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">args</span><span class="o">.</span><span class="n">api_url</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">args</span><span class="o">.</span><span class="n">input</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">Error: At least one of --input, --demo, --gene-list, or --api-url must be provided.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">--demo can be used alone, followed by the demo number, or with --use-gene-list.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">--gene-list must be used with --use-gene-list.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">--api-url can be used alone, with a custom STRING DB API URL.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Vallidate api_url argument</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">api_url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">demo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">args</span><span class="o">.</span><span class="n">use_gene_list</span> <span class="ow">or</span> <span class="n">args</span><span class="o">.</span><span class="n">gene_list</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: --api-url is only applicable when --demo is not set and --use-gene-list and --gene-list are not provided.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Ignoring the custom API URL anyway.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Validate demo argument</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">demo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">use_gene_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">args</span><span class="o">.</span><span class="n">demo</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: when --use-gene-list is set, --demo must be an integer between 0 and 3.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Running the demo with default gene list (0).</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">args</span><span class="o">.</span><span class="n">demo</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">custom_params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: --custom-params is only applicable when --use-gene-list is set.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Ignoring the custom parameters.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">custom_params</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">args</span><span class="o">.</span><span class="n">demo</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: --demo must be an integer between 0 and 6.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Running the default demo (0).</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">args</span><span class="o">.</span><span class="n">demo</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Validate gene list argument</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">gene_list</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">use_gene_list</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: --gene-list is only applicable when --use-gene-list is set.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Attempting to use the provided gene list anyway.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">use_gene_list</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># Validate custom parameters argument</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">custom_params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">custom_params</span> <span class="o">=</span> <span class="p">{</span><span class="n">param</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">param</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">custom_params</span><span class="p">}</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">Error: --custom-params must be in the format &#39;key1=value1 key2=value2&#39;.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Validate input file path</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">input</span><span class="p">)</span> <span class="ow">and</span> <span class="n">args</span><span class="o">.</span><span class="n">demo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">Error: Input file &#39;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">input</span><span class="si">}</span><span class="s2">&#39; does not exist.&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Validate input folder path</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">input</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: Input folder &#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">input</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; does not exist.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Creating it now.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">input</span><span class="p">))</span>
+
+    <span class="c1"># Validate output folder path</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: Output folder &#39;</span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&#39; does not exist.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Creating it now.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">Error: Failed to create output folder &#39;</span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&#39;. </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Validate output format</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">output_format</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXTENSIONS</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">Error: Unsupported output format &#39;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">output_format</span><span class="si">}</span><span class="s2">&#39;.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Supported formats are: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">EXTENSIONS</span><span class="p">)</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ORANGE_BOLD</span><span class="si">}</span><span class="s2">Warning: Running the compression with the default output format (&#39;txt&#39;).</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Validate resolution parameter</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">resolution</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">resolution</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">Error: --resolution must be a positive float.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Validate number of clusters (k)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">k</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">Error: --k must be a positive integer.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Validate compression methods</span>
+    <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">method</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">METHODS</span>
+            <span class="k">break</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">METHODS</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RED_BOLD</span><span class="si">}</span><span class="s2">Error: Unsupported compression method &#39;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">&#39;.</span><span class="si">{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BOLD</span><span class="si">}</span><span class="s2">Supported methods are: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">METHODS</span><span class="p">)</span><span class="si">}{</span><span class="n">RESET</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">args</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../demo.html#demo.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">run_demo</span><span class="p">(</span><span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="n">args</span><span class="p">))</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Daniele.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

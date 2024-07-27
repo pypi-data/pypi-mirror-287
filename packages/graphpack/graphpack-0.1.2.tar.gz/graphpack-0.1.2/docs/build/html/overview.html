@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview &mdash; graphpack  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = 'Click to see the algorithm pseudocode, parameters and hints';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visualization" href="visualization.html" />
+    <link rel="prev" title="Introduction" href="getting-started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            graphpack
+          </a>
+              <div class="version">
+                0.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#quick-start">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html#on-ramp">On Ramp</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Overview and Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#input-and-output">Input and Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compression-algorithms">Compression Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapping-and-annotation">Mapping and Annotation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#compression-pipeline">Compression Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Demo Pipeline</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Graph Compression Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#demo-modules">Demo Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Glossaries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="graph-compression-glossary.html">Graph Compression Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compression-algorithm-glossary.html">Compression Algorithm Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">graphpack</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h1>
+<p>GraphPack provides flexibility in how you interact with it, supporting both command-line interface (CLI) usage with
+arguments and integration into Python applications via an API.</p>
+<p>To have a better understanding of the compression pipeline, please refer to the <a class="reference internal" href="#compression-pipeline"><span class="std std-ref">Compression Pipeline</span></a>. Here
+the focus is on the main features of the tool, and how to use them.</p>
+<section id="input-and-output">
+<h2>Input and Output<a class="headerlink" href="#input-and-output" title="Link to this heading"></a></h2>
+<p>GraphPack requires as input a file containing a network, which can be specified as an edge list in various formats.
+The tool then compresses the network and saves the compressed network, in the chosen format, as well as additional
+files (see <a class="reference internal" href="#mapping-and-annotation"><span class="std std-ref">Mapping and Annotation</span></a>) and plots (see <a class="reference internal" href="visualization.html#visualization"><span class="std std-ref">Visualization</span></a>), in the specified output directory.</p>
+<div class="note admonition">
+<p class="admonition-title">Input File, Output Directory and Output Format</p>
+<p>The input file can be specified using the command line argument <code class="docutils literal notranslate"><span class="pre">--input</span> <span class="pre">&lt;str&gt;</span></code> or, if you are using the
+Python API, as the first parameter (<code class="docutils literal notranslate"><span class="pre">input='path/to/graph.edgelist'</span></code>) of the
+main <a class="reference internal" href="src.html#compression.perform_compression" title="compression.perform_compression"><code class="xref py py-func docutils literal notranslate"><span class="pre">perform_compression()</span></code></a> function.</p>
+<p>The output directory can be specified using the command line argument <code class="docutils literal notranslate"><span class="pre">--output</span> <span class="pre">&lt;str&gt;</span></code> or by setting the
+parameter <code class="docutils literal notranslate"><span class="pre">optput='path/to/output_folder'</span></code>, if using the API. The output file format can be specified as well,
+via the command line argument <code class="docutils literal notranslate"><span class="pre">--output-format</span> <span class="pre">&lt;str&gt;</span></code> (or <code class="docutils literal notranslate"><span class="pre">output_format='txt'</span></code>).</p>
+</div>
+<p>The input file should contain the network data. The nodes can be specified as strings or integers, and the edges can
+be weighted or unweighted. For example, the following files represent the same toy network, in different formats (some
+of which are weighted).</p>
+<div class="hint admonition">
+<p class="admonition-title">Input/Output File Formats</p>
+<p>The input network can be provided as an edge list, in various formats (<code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">edgelist</span></code>, <code class="docutils literal notranslate"><span class="pre">txt</span></code>, <code class="docutils literal notranslate"><span class="pre">csv</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tsv</span></code>, <code class="docutils literal notranslate"><span class="pre">gpickle</span></code>, <code class="docutils literal notranslate"><span class="pre">gml</span></code>, <code class="docutils literal notranslate"><span class="pre">graphml</span></code>, <code class="docutils literal notranslate"><span class="pre">net</span></code>, <code class="docutils literal notranslate"><span class="pre">pajek</span></code>, <code class="docutils literal notranslate"><span class="pre">gexf</span></code>, <code class="docutils literal notranslate"><span class="pre">gml</span></code>, <code class="docutils literal notranslate"><span class="pre">yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">yml</span></code>).</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Example of different input file formats</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="c1"># Contents of &#39;graph.edgelist&#39;:</span>
+<span class="w">    </span>A<span class="w"> </span>B
+<span class="w">    </span>B<span class="w"> </span>C
+
+<span class="w">    </span><span class="c1"># Contents of &#39;graph.txt&#39;:</span>
+<span class="w">    </span>A<span class="w"> </span>B<span class="w"> </span><span class="o">{</span><span class="s1">&#39;weight&#39;</span>:<span class="w"> </span><span class="m">0</span>.50<span class="o">}</span>
+<span class="w">    </span>B<span class="w"> </span>C<span class="w"> </span><span class="o">{</span><span class="s1">&#39;weight&#39;</span>:<span class="w"> </span><span class="m">0</span>.99<span class="o">}</span>
+
+<span class="w">    </span><span class="c1"># Contents of &#39;graph.csv&#39;:</span>
+<span class="w">    </span>source,target
+<span class="w">    </span>A,B
+<span class="w">    </span>B,C
+
+<span class="w">    </span><span class="c1"># Contents of &#39;graph.tsv&#39;:</span>
+<span class="w">    </span>source<span class="se">\t</span>target<span class="se">\t</span>weight
+<span class="w">    </span>A<span class="se">\t</span>B<span class="se">\t</span><span class="m">0</span>.50
+<span class="w">    </span>B<span class="se">\t</span>C<span class="se">\t</span><span class="m">0</span>.99
+
+<span class="w">    </span><span class="c1"># Contents of &#39;graph.json&#39;:</span>
+<span class="w">    </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;nodes&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;A&quot;</span>,<span class="w"> </span><span class="s2">&quot;B&quot;</span>,<span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="o">]</span>,
+<span class="w">        </span><span class="s2">&quot;edges&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">            </span><span class="o">{</span><span class="s2">&quot;source&quot;</span>:<span class="w"> </span><span class="s2">&quot;A&quot;</span>,<span class="w"> </span><span class="s2">&quot;target&quot;</span>:<span class="w"> </span><span class="s2">&quot;B&quot;</span>,<span class="w"> </span><span class="s2">&quot;weight&quot;</span>:<span class="w"> </span><span class="m">0</span>.50<span class="o">}</span>,
+<span class="w">            </span><span class="o">{</span><span class="s2">&quot;source&quot;</span>:<span class="w"> </span><span class="s2">&quot;B&quot;</span>,<span class="w"> </span><span class="s2">&quot;target&quot;</span>:<span class="w"> </span><span class="s2">&quot;C&quot;</span>,<span class="w"> </span><span class="s2">&quot;weight&quot;</span>:<span class="w"> </span><span class="m">0</span>.99<span class="o">}</span>
+<span class="w">        </span><span class="o">]</span>
+<span class="w">    </span><span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The tool supports both weighted and unweighted graphs, allowing users to analyze a wide range of network types.</p>
+<p>It is specifically designed to handle large-scale, biological networks  such as protein-protein interaction (PPI)
+networks, gene regulatory networks,and metabolic pathways, but can be applied to any network data. In case of a gene
+network, GraphPack also generates a labels mapping file that maintains the relationship between the compressed node
+IDs (numeric) and their associated labels (GSEA top-k most enriched terms), which is also saved in the output directory.</p>
+<p>The compression can be lossy or lossless. In case of lossless compression, the tool ensures that the compressed
+network can be decompressed to the original network without any loss of information. To achieve this, in accordance
+to the <a class="reference internal" href="graph-compression-glossary.html#term-Minimum-Description-Length"><span class="xref std std-term">Minimum Description Length</span></a> (MDL) principle, the tool generates a supplementary file that contains the
+edges to be removed from the reconstructed network from the compressed one, in order to obtain the original network.
+This file s saved in the output directory.</p>
+<div class="note admonition">
+<p class="admonition-title">Graph and Compression option flags</p>
+<p>To specify that the graph is weighted, use the <code class="docutils literal notranslate"><span class="pre">--is-weighted</span></code> flag (or <code class="docutils literal notranslate"><span class="pre">is_weighted=True</span></code> in the API).
+To specify that the graph is a gene network, use the <code class="docutils literal notranslate"><span class="pre">--is-gene-network</span></code> flag (or <code class="docutils literal notranslate"><span class="pre">is_gene_network=True</span></code> in
+the API). To use lossless compression, use the <code class="docutils literal notranslate"><span class="pre">--is-lossless</span></code> flag (or <code class="docutils literal notranslate"><span class="pre">is_lossless=True</span></code> in the API).</p>
+</div>
+</section>
+<section id="compression-algorithms">
+<h2>Compression Algorithms<a class="headerlink" href="#compression-algorithms" title="Link to this heading"></a></h2>
+<p>GraphPack includes a variety of graph compression algorithms to choose from:</p>
+<ul class="simple">
+<li><p><strong>Louvain Clustering</strong></p></li>
+<li><p><strong>Greedy Algorithm</strong></p></li>
+<li><p><strong>Label Propagation</strong></p></li>
+<li><p><strong>Asynchronous Fluid Communities</strong></p></li>
+<li><p><strong>Spectral Clustering</strong></p></li>
+<li><p><strong>Hierarchical Clustering</strong></p></li>
+<li><p><strong>Node2Vec</strong></p></li>
+<li><p><strong>DeepWalk</strong></p></li>
+<li><p><strong>Clique Percolation Method (CPM)</strong></p></li>
+<li><p><strong>Non-negative Matrix Factorization (NMF)</strong></p></li>
+</ul>
+<p>It is possible to specify the number of clusters to form, the minimum size of the cliques, or the number of dimensions
+for the embedding methods (parameter <code class="docutils literal notranslate"><span class="pre">k</span></code>). For Louvain and Greedy algorithms, the resolution parameter can be also
+changed. Higher values lead to more communities. The tool supports the specification of the seed for reproducibility.</p>
+<div class="note admonition">
+<p class="admonition-title">Method Options</p>
+<p>The method can be specified using the command line argument <code class="docutils literal notranslate"><span class="pre">--method</span> <span class="pre">&lt;str&gt;</span></code> (or <code class="docutils literal notranslate"><span class="pre">method='greedy'</span></code> in
+the API). To change the default parameters of the compression methods, use <code class="docutils literal notranslate"><span class="pre">--resolution</span> <span class="pre">&lt;float&gt;</span></code>
+(<code class="docutils literal notranslate"><span class="pre">resolution=1.25</span></code> in the API) and <code class="docutils literal notranslate"><span class="pre">--k</span> <span class="pre">&lt;int&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">k=3</span></code> in the API). To set a different seed for
+reproducibility, <code class="docutils literal notranslate"><span class="pre">--seed</span> <span class="pre">&lt;int&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">seed=123</span></code>).</p>
+</div>
+<p>For further details on each compression method, refer to the <a class="reference internal" href="compression-algorithm-glossary.html#compression-algorithm-glossary"><span class="std std-ref">Compression Algorithm Glossary</span></a>.</p>
+</section>
+<section id="mapping-and-annotation">
+<h2>Mapping and Annotation<a class="headerlink" href="#mapping-and-annotation" title="Link to this heading"></a></h2>
+<p>GraphPack generates mapping files that maintain the relationship between the original and compressed nodes. This
+ensures that the compressed network can be decompressed to the original network without any loss of information, in case
+of lossless compression, or in any case that information about the relationship between the new nodes and the old nodes
+is available. For example, it is possible to know that the compressed node <code class="docutils literal notranslate"><span class="pre">2</span></code> represents the original nodes
+<code class="docutils literal notranslate"><span class="pre">&quot;MAPK1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;MAP2K1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;RPS6KA1&quot;</span></code>, etc. The mapping files are saved in the output directory.</p>
+<style>
+.json-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.json-table th, .json-table td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: top; /* Ensure vertical alignment at the top */
+}
+pre {
+    background-color: #f0f0f0; /* Gray background for JSON blocks */
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto; /* Enable horizontal scroll if needed */
+    margin: 0; /* Remove default margin */
+}
+.key {
+    color: green; /* Green color for keys */
+    font-weight: bold; /* Bold font for keys */
+}
+.value {
+    color: #B22222; /* Lighter bordeaux red color for values */
+}
+</style>
+
+<table class="json-table">
+<tr>
+<th>compression_mapping.json</th>
+<th>decompression_mapping.json</th>
+</tr>
+<tr>
+<td><pre>
+{
+    <span class="key">"2"</span>: [
+        <span class="value">"MAPK1"</span>,
+        <span class="value">"MAP2K1"</span>,
+        <span class="value">"RPS6KA1"</span>,
+        ...
+    ],
+    <span class="key">"1"</span>: [
+        <span class="value">"TP53"</span>,
+        <span class="value">"SFN"</span>,
+        <span class="value">"HIF1A"</span>,
+        ...
+    ],
+    ...
+}
+</pre></td>
+<td><pre>
+{
+    <span class="key">"MAPK1"</span>: <span class="value">2</span>,
+    <span class="key">"MAP2K1"</span>: <span class="value">2</span>,
+    <span class="key">"RPS6KA1"</span>: <span class="value">2</span>,
+    ...,
+    <span class="key">"TP53"</span>: <span class="value">1</span>,
+    <span class="key">"SFN"</span>: <span class="value">1</span>,
+    <span class="key">"HIF1A"</span>: <span class="value">1</span>,
+    ...,
+    <span class="key">"STAT3"</span>: <span class="value">4</span>,
+    <span class="key">"JAK1"</span>: <span class="value">4</span>,
+    <span class="key">"JAK2"</span>: <span class="value">4</span>,
+    ...
+}
+
+</pre></td>
+</tr>
+</table><p>If the graph is a gene network, the tool also generates a labels mapping file, that maintains the relationship between
+the compressed nodes and associated labels (GSEA top-k most enriched terms), which is saved in the output directory.
+This file is useful for interpreting the compressed network, as it provides information about the biological functions
+associated with the supernodes (cluster of genes/nodes of the original network), for example that cluster <code class="docutils literal notranslate"><span class="pre">2</span></code> is
+likely to represent the <code class="docutils literal notranslate"><span class="pre">&quot;MAPK</span> <span class="pre">signaling</span> <span class="pre">pathway&quot;</span></code> (i.e. the genes in compressed node <code class="docutils literal notranslate"><span class="pre">2</span></code> have that term enriched).</p>
+<p><strong>labels_mapping.json</strong></p>
+
+<pre>
+{
+    <span class="key">"2"</span>: <span class="value">"MAPK signaling pathway"</span>,
+    <span class="key">"1"</span>: <span class="value">"p53 signaling pathway"</span>,
+    <span class="key">"4"</span>: <span class="value">"JAK-STAT signaling pathway"</span>,
+    <span class="key">"8"</span>: <span class="value">"Glioma"</span>,
+    <span class="key">"6"</span>: <span class="value">"Wnt signaling pathway"</span>,
+    <span class="key">"7"</span>: <span class="value">"C-type lectin receptor signaling pathway"</span>,
+    <span class="key">"3"</span>: <span class="value">"PI3K-Akt signaling pathway"</span>,
+    <span class="key">"9"</span>: <span class="value">"Hippo signaling pathway"</span>,
+    <span class="key">"10"</span>: <span class="value">"Apoptosis"</span>,
+    <span class="key">"0"</span>: <span class="value">"TGF-beta signaling pathway"</span>,
+    <span class="key">"5"</span>: <span class="value">"Notch signaling pathway"</span>
+}
+</pre></section>
+</section>
+<section id="compression-pipeline">
+<h1>Compression Pipeline<a class="headerlink" href="#compression-pipeline" title="Link to this heading"></a></h1>
+<p>Here you can see the steps involved in the (standard) compression pipeline, as implemented in the
+<a class="reference internal" href="src.html#compression.perform_compression" title="compression.perform_compression"><code class="xref py py-func docutils literal notranslate"><span class="pre">perform_compression()</span></code></a> function:</p>
+<figure class="align-center">
+<img alt="Compression Pipeline" src="_images/PerformCompression.png" />
+</figure>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting-started.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="visualization.html" class="btn btn-neutral float-right" title="Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Daniele.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
