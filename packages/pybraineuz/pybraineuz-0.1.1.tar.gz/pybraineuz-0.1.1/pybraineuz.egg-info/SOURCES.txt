@@ -1,0 +1,7 @@
+README.md
+setup.py
+pybraineuz.egg-info/PKG-INFO
+pybraineuz.egg-info/SOURCES.txt
+pybraineuz.egg-info/dependency_links.txt
+pybraineuz.egg-info/requires.txt
+pybraineuz.egg-info/top_level.txt
