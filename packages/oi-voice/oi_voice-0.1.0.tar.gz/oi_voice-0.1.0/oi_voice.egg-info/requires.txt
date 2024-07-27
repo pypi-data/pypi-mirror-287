@@ -1,0 +1,6 @@
+faster-whisper
+open-interpreter
+click
+requests
+pyaudio
+pydub

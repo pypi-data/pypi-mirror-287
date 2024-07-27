@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: oi-voice
+Version: 0.1.0
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: faster-whisper
+Requires-Dist: open-interpreter
+Requires-Dist: click
+Requires-Dist: requests
+Requires-Dist: pyaudio
+Requires-Dist: pydub
+
+# oi-voice
+
+Add voice capability to Open Interpreter.
+
+## Installation
+
+```bash
+pip install oi-voice
+```
+
+## Usage
+
+```bash
+oi-voice path/to/audio/file.wav
+```
+
+This will transcribe the audio file, send the transcription to Open Interpreter, and save the response as an audio file.

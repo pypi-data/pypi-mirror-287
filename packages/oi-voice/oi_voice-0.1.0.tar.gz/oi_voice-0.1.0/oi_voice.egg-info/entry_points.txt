@@ -1,0 +1,2 @@
+[console_scripts]
+oi-voice = oi_voice.cli:main
