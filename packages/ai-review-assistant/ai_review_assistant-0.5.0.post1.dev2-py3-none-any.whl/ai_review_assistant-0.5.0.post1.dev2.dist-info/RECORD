@@ -1,0 +1,10 @@
+ai_review_assistant/__init__.py,sha256=c4FLOg0rTq0KWwAusBhk-63XwoP_Rgncl1hXlSlbLDo,173
+ai_review_assistant/main.py,sha256=GVt9u1H_UMKUUYfeMIDmVfeMBo8T89CEUaMwaGNWnyY,6421
+ai_review_assistant/review.py,sha256=zetOsa3xObfsCwmHD3v-wDYMctneqa4S_4vGKYrvpMw,9414
+ai_review_assistant/hooks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ai_review_assistant/hooks/pre_commit.py,sha256=JTy0tfBS4N2q2dp3XFkMZoSQPVPfMwQf8YIWn9M1yHk,890
+ai_review_assistant-0.5.0.post1.dev2.dist-info/METADATA,sha256=XgsvKZrsawJGcndLsOtP-O6GX1KL8ujkIBU36dzxfj8,2203
+ai_review_assistant-0.5.0.post1.dev2.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+ai_review_assistant-0.5.0.post1.dev2.dist-info/entry_points.txt,sha256=szNRLgwrSgQ_EDSwCRORvyTsZDaNfh4omwqTZU8BNdM,155
+ai_review_assistant-0.5.0.post1.dev2.dist-info/top_level.txt,sha256=4FVQ1_nMWSo55zAlTBlTBFTAQzGIFiM5oo8dr2QVWJU,20
+ai_review_assistant-0.5.0.post1.dev2.dist-info/RECORD,,
