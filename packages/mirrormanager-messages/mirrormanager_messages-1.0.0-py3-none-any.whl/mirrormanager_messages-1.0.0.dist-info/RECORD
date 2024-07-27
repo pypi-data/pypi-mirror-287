@@ -1,0 +1,9 @@
+mirrormanager_messages/__init__.py,sha256=QTVDATMY8a10fsJypmI5ulwVI6kHiGak7u4Hrg364sY,113
+mirrormanager_messages/base.py,sha256=oD-8MnhbvVlOjuTPo8bxYDby0xyp1PA9VestRCSryCA,1140
+mirrormanager_messages/host.py,sha256=hlW77F8e1q7mIKliL3KRXk7siU7CggEwc75Y_f2zsXg,5856
+mirrormanager_messages/site.py,sha256=eJ4PMhvkyynuPI3ft_FCbZrduF35AiT9XuKfO7sdib8,2424
+mirrormanager_messages-1.0.0.dist-info/LICENSES/LGPL-3.0-or-later.txt,sha256=mWrwUT3yH3SWKIlRxBQooDwXTp5KnWNmXFfWcPhFzLE,42098
+mirrormanager_messages-1.0.0.dist-info/METADATA,sha256=_LVoUX32TeJlb9BcT5LT4OgJJxhXnCigKruJDJexxBs,1728
+mirrormanager_messages-1.0.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+mirrormanager_messages-1.0.0.dist-info/entry_points.txt,sha256=ysY-A0BWS7ea-J9Oa-FTlL1noB2MuN69vnblLhZQR1o,587
+mirrormanager_messages-1.0.0.dist-info/RECORD,,
