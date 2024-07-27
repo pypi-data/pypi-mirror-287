@@ -1,0 +1,3 @@
+groupdocs-comparison-net==24.7
+groupdocs-viewer-net==24.7
+groupdocs-watermark-net==24.5
