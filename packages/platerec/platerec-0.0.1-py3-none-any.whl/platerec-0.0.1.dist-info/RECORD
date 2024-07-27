@@ -1,0 +1,14 @@
+platerec/__init__.py,sha256=EbEonDDaYt3OQ8ZyFLmcQBW2pt96s4vPTeKmYRJFXxM,171
+platerec/cli.py,sha256=LxZqWl-8p-LbZ_f7KxUA5IQBmDZd5XX_e5dwG0l4hRw,1841
+platerec/config.py,sha256=4SOwvQiSeF5qf2REXOp6gyYpJMk-65DkHRVTVtTgAlc,341
+platerec/platerec.py,sha256=8Q8oDhDLaKZhX_N5NG4rDvC4ptnkibmFUEY8jZdYnI0,4217
+platerec/sample.py,sha256=cN78dk13TaSHdwKWgbwKzJk_rAdB2ihHXYxYPhe6r2c,1510
+platerec/sample_image.py,sha256=cN78dk13TaSHdwKWgbwKzJk_rAdB2ihHXYxYPhe6r2c,1510
+platerec/sample_video.py,sha256=mI_cP7qFKLf1QwazuBuvbc-ZgulBmJbeyzDZQLSrNpY,2198
+platerec/artifacts/decoder.onnx,sha256=PWxOX2hoBWUVbIFLF2B6oo4DeLEHM-ml6zO23DJZKI4,4628757
+platerec/artifacts/encoder.onnx,sha256=L-2rxIrNgADMqX7Q34qPNbJ_R94oPgxY3hUSTwthVoY,4477633
+platerec-0.0.1.dist-info/METADATA,sha256=PM9QIImBn8JtKTIOfhfnaxA1Y1f5kakZLlIS8FUvF40,3565
+platerec-0.0.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+platerec-0.0.1.dist-info/entry_points.txt,sha256=LRmsUnIvTXWJr5-WhzFE4AensLodOqvxE5qR4OrZ8YQ,47
+platerec-0.0.1.dist-info/top_level.txt,sha256=CGdja9UsEZRdxebIbc1Sa7FaQhL4GPtg5-hF7mVQG_0,9
+platerec-0.0.1.dist-info/RECORD,,
