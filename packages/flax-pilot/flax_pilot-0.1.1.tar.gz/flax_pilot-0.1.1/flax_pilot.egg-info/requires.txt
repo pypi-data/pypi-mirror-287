@@ -1,0 +1,7 @@
+flax
+jax
+optax
+numpy
+tqdm
+mergedeep
+typingorbax-checkpoint
