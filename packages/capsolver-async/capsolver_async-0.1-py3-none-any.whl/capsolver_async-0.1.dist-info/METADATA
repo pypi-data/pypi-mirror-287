@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: capsolver-async
+Version: 0.1
+Summary: async capsolver python libary
+Home-page: https://github.com/Qunik/capsolver_async
+Author: Qunik
+Author-email: 12.1pro2.04@gmail.com
+Project-URL: Bug Tracker, https://github.com/Qunik/capsolver_async/issues
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: httpx >=0.27.0
+
+### capsolver-async
+
+- Async library for interacting with capsolver api
