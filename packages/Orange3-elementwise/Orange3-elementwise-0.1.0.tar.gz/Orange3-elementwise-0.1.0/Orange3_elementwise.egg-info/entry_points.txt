@@ -1,0 +1,11 @@
+[orange.canvas.help]
+html-index = orangecontrib.elementwise.widgets:WIDGET_HELP_PATH
+
+[orange.widgets]
+Elementwise = orangecontrib.elementwise.widgets
+
+[orange.widgets.tutorials]
+elementwise_tutorials = orangecontrib.elementwise.tutorials
+
+[orange3.addon]
+elementwise = orangecontrib.elementwise

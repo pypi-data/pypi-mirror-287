@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: Orange3-elementwise
+Version: 0.1.0
+Summary: A collection of elementwise widgets
+License: GPLv3+
+Keywords: orange3 add-on,elementwise
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Orange3 Elementwise
+===================
+
+A collection of elementwise widgets.
+
+Features
+--------
+#### List of key features
