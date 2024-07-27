@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tree-sitter-python"
+version = "0.1.0"
+description = "Tree-sitter grammar for Python"
+authors = [
+  {name = "Max Brunsfeld"},
+  {name = "Amaan Qureshi"}
+]
+requires-python = ">=3.8"
+
+[tool.setuptools]
+packages = ["tree_sitter_python"]
+package-dir = {"" = "bindings/python"}
+
+[tool.setuptools.package-data]
+"tree_sitter_python" = ["*.pyi", "py.typed"]
+"tree_sitter_python.queries" = ["*.scm"]
