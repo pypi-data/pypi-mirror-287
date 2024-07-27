@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+setup.py
+examples/PyKinectBodyGame.py
+examples/PyKinectInfraRed.py
+examples/__init__.py
+pykinect2024/PyKinect2024.py
+pykinect2024/PyKinectRuntime.py
+pykinect2024/__init__.py
+pykinect2024.egg-info/PKG-INFO
+pykinect2024.egg-info/SOURCES.txt
+pykinect2024.egg-info/dependency_links.txt
+pykinect2024.egg-info/requires.txt
+pykinect2024.egg-info/top_level.txt

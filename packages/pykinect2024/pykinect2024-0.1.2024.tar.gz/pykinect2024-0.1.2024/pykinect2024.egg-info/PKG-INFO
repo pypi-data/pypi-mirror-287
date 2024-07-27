@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pykinect2024
+Version: 0.1.2024
+Summary: Wrapper to expose Kinect for Windows v2 API in Python - 2024 update
+Home-page: https://github.com/Kinect/PyKinect2/
+Author: Ian End
+Author-email: endian675@gmail.com
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: License :: OSI Approved :: MIT License
+License-File: LICENSE.txt
+Requires-Dist: numpy>=1.9.2
+Requires-Dist: comtypes>=1.1.1
