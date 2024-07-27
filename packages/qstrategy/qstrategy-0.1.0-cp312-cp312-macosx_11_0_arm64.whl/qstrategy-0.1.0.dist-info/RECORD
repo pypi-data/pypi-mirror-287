@@ -1,0 +1,10 @@
+qstrategy-0.1.0.dist-info/METADATA,sha256=ADC9pC0etwjHze4JzrL6yyDC2bjlbazbJBEMvyfpyzo,599
+qstrategy-0.1.0.dist-info/WHEEL,sha256=b1dgqR9GJBT8bsiih-7Y55_-sPGc5MG-sUXj3y2MXf0,104
+qstrategy/runner.py,sha256=XKDB17lFFXm7-Xwg_nuM2wgtvGQ7fy7_TI3jrP4z8Gs,2026
+qstrategy/test_strategy.py,sha256=tTC3cOu9DxqPqDPAT18BaTbUs6xrNd_0ZUYxezaWFoU,1595
+qstrategy/__init__.py,sha256=nF8yB6PQYVBVeR_GtI-yfIN6tJiQj2bss13E9oaI56s,158
+qstrategy/strategy.py,sha256=TKzqVYrbhWG7OH6yX3LBjh2rTPlTg38HPdzvdsh-8t0,5665
+qstrategy/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qstrategy/qstrategy.pyi,sha256=jP_Mu76NCa71XiwHKnWky4PNIHsyiFa5iusuLvctGTk,687
+qstrategy/qstrategy.cpython-312-darwin.so,sha256=c5rIeAceAr_AIUSn0crtdMMsEQmv2HwUWvjEi5qeVFM,287584
+qstrategy-0.1.0.dist-info/RECORD,,
