@@ -1,0 +1,2 @@
+[console_scripts]
+jupyterlab-gallery = jupyterlab_gallery:GalleryApp.launch_instance
