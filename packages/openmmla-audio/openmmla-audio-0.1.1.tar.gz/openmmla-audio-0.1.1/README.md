@@ -1,0 +1,175 @@
+# mbox-audio
+Audio module of the mBox multimodal learning analytic system. For more details, please refer to [mBox System Design](https://github.com/lizaibeim/mbox-uber/blob/main/docs/mbox_system.md).
+
+## Uber Server Setup
+Before setting up the audio base, you need to set up a server hosting the InfluxDB, Redis, and Mosquitto services.
+Please refer to [mbox-uber](https://github.com/lizaibeim/mbox-uber/blob/main/README.md) module.
+
+## Audio Base & Server Setup
+
+Downloading and Setting up the mbox-audio module is accomplished in three steps:  
+(1) Clone the repository from GitHub to your local home directory.  
+(2) Install required dependencies.  
+(3) Create the required subdirectories for running.
+
+1. Clone the repository from GitHub
+    ```
+    git clone https://github.com/ucph-ccs/mbox-audio.git
+    ```
+
+2. Install the required dependencies with [conda environment](https://docs.anaconda.com/free/miniconda/index.html)
+   - <details>
+     <summary> Conda </summary>
+     
+       ```sh
+       # For Raspberry Pi
+       wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+       bash Miniforge3-$(uname)-$(uname -m).sh
+       
+       # For Mac and Linux
+       wget "https://repo.anaconda.com/miniconda/Miniconda3-latest-$(uname)-$(uname -m).sh"
+       bash Miniconda3-latest-$(uname)-$(uname -m).sh
+       ```
+     </details>
+
+   - <details>
+     <summary> Mac </summary>
+     
+        ```sh
+        # Install ffmpeg, portaudio-19.7.0, mecab-0.996(required for sacrebleu for NLP collection), llvm-16.0.6
+        brew install ffmpeg
+        brew install portaudio
+        brew install mecab
+        brew install llvm
+        
+        # Export llvm to your PATH, run:
+        echo 'export PATH="/opt/homebrew/opt/llvm/bin:$PATH"' >> ~/.zshrc
+        echo 'export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"' >> ~/.zshrc
+        echo 'export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"' >> ~/.zshrc
+        source ~/.zshrc
+
+        cd mbox-audio
+     
+        # For audio base
+        conda create -c conda-forge -n audio-base python==3.10.12 -y
+        conda activate audio-base   
+        pip install -r requirements.txt
+
+        # For audio server & local base
+        conda create -c conda-forge -n audio-server python==3.10.12 -y
+        conda activate audio-server
+        pip install -r requirements_server.txt
+        ```
+     </details>
+   
+   - <details>
+     <summary> Ubuntu 24.04 </summary>
+    
+        ```sh
+        sudo apt update && sudo apt upgrade
+        sudo apt install build-essential
+        sudo apt install git
+        sudo apt install ffmpeg
+        sudo apt install python3-pyaudio
+        sudo apt update && sudo apt install -y libsndfile1
+
+        # Install portaudio
+        sudo apt install libasound-dev
+        # Download the portaudio archive from: http://files.portaudio.com/download.html
+        wget https://files.portaudio.com/archives/pa_stable_v190700_20210406.tgz
+        # Unzip the archive
+        tar -zxvf pa_stable_v190700_20210406.tgz
+        # Enter the directory and compile
+        cd portaudio
+        ./configure && make
+        sudo make install
+  
+        cd ../mbox-audio
+     
+        # For audio base
+        conda create -c conda-forge -n audio-base python==3.10.12 -y
+        conda activate audio-base   
+        pip install -r rquirements.txt
+
+        # For audio server & local base
+        conda create -c conda-forge -n audio-server python==3.10.12 -y
+        conda activate audio-server
+        pip install -r requirements_server.txt
+        ```
+     </details>
+   
+   - <details>
+     <summary> Raspberry Pi Bullseye or later </summary>
+    
+        ```sh
+        # Install pyaudio
+        sudo apt-get install portaudio19-dev 
+        
+        cd mbox-audio
+     
+        # For audio base
+        conda create -c conda-forge -n audio-base python==3.10.12 -y
+        conda activate audio-base
+        pip install -r requirements.txt
+
+        # For audio server & local base
+        conda create -c conda-forge -n audio-server python==3.10.12 -y
+        conda activate audio-server
+        pip install -r requirements_server.txt
+        ```
+     </details>
+
+3. Setup directories
+    ```sh
+    ./reset.sh
+    ```
+
+## Usage
+
+After successfully installing all required libraries, you can run the audio module on terminal.
+
+1. Run real-time audio analysis system
+    + Run audio server and audio bases in distributed mode
+    ```sh
+    # Run server scripts on your application servers supporting audio bases, specify your audio server cluster on 
+    # your uber server by configuring the mbox-uber/conf/nginx.sh file and specify your extra audio upstream services in 
+    # mbox-uber/conf/nginx.conf file.
+   
+    # e.g. our default setting runs audio services on 3 servers, which are server-01.local, server-02.local and 
+    # server-03.local. Inside the nginx.conf, we specify 5 audio services related to those three server, which are
+    # transcribe, separate, infer, enhance and vad services.
+    sudo apt install tmux -y
+    ./server.sh
+    
+    # Run audio bases 
+    # :param -b the number of audio base needed to run, default to 3. 
+    # :param -s the number of audio base synchronizer need to run, default to 1.
+    # :param -l whether to run the audio bases standalone or with application servers, default to false. 
+    # :param -p whether to do the speech separation when recognizing, default to false. 
+    ./run.sh
+    
+    # control script to start/stop the session playing
+    ./control.sh
+    ```
+
+2. Run the post-time audio analyzer
+   1. Create a speaker corpus folder under ***/audio_db/post-time/*** folder, the folder name should be aligned with the
+      name of the audio file to be processed **[audio_file_name.wav]** without the extension, 
+      e.g. ***/audio_db/post-time/[audio_file_name]/***.
+   2. Copy the speaker audio files to the speaker corpus folder, the audio files should be named as **[speaker_name].wav**.
+   3. Run **audio_post_analyzer.py**
+      ```sh
+      cd examples/
+         
+      # process a single audio file, supported audio file format: wav, m4a, mp3
+      python3 run_audio_post_analyzer.py -f [audio_file_name.wav]
+         
+      # process all audio files under the ***/audio/post-time/origin/*** folder
+      python3 run_audio_post_analyzer.py
+      ```
+
+## Visualization
+
+After running, the logs and visualizations are stored in the ***/logs/*** and ***/visualizations/*** folders.
+
+## [FAQ](https://github.com/lizaibeim/mbox-uber/blob/main/docs/FAQ.md)

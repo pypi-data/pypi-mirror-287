@@ -1,0 +1,5 @@
+src
+src/server
+src/utils
+src/utils/silero-vad
+src/utils/silero-vad/files
