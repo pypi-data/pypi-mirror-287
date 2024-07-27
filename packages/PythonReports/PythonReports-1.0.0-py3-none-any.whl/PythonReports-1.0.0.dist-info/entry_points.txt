@@ -1,0 +1,2 @@
+[gui_scripts]
+prd = PythonReports.design:run
