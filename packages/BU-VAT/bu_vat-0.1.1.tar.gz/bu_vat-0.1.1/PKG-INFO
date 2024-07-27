@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: BU-VAT
+Version: 0.1.1
+Summary: Python utils for adding logs to our Visual Analytics Tool
+Author: NaoTH Berlin United
+Author-email: nao-team@informatik.hu-berlin.de
+License: Apache License 2.0
+Requires-Python: >=3.6.9
+Description-Content-Type: text/markdown
+Requires-Dist: protobuf==3.20.3
+Requires-Dist: numpy
+
+# Berlin United - Visual Analytics Tool

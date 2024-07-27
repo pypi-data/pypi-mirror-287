@@ -1,0 +1,11 @@
+README.md
+setup.py
+BU_VAT.egg-info/PKG-INFO
+BU_VAT.egg-info/SOURCES.txt
+BU_VAT.egg-info/dependency_links.txt
+BU_VAT.egg-info/not-zip-safe
+BU_VAT.egg-info/requires.txt
+BU_VAT.egg-info/top_level.txt
+tests/test.py
+vaapi/__init__.py
+vaapi/vaapi.py
