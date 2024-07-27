@@ -1,0 +1,2 @@
+[console_scripts]
+kn_tts = KN_TTS.__init__:listen
