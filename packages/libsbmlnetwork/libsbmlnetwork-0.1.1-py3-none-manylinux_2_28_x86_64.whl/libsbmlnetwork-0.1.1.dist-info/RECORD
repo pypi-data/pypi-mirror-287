@@ -1,0 +1,9 @@
+libsbmlnetwork/__init__.py,sha256=DLGz4gUZzGd5ZucAt6Rd2-7Qr6vh68Ows5hJB4thEJk,30
+libsbmlnetwork/libsbmlnetwork.py,sha256=x1eDUACDCJfEPoIAzj3IWGCxvDCsFIwXFWye8GBo_fY,524387
+libsbmlnetwork/libs/libsbmlnetwork.so,sha256=AgNm3E-9vXxr06EBHAqhaCNi1seODQBNW1zvQpf4vKg,15069280
+libsbmlnetwork/libs/libsbmlnetwork.so.0,sha256=AgNm3E-9vXxr06EBHAqhaCNi1seODQBNW1zvQpf4vKg,15069280
+libsbmlnetwork/libs/libsbmlnetwork.so.0.1.1,sha256=AgNm3E-9vXxr06EBHAqhaCNi1seODQBNW1zvQpf4vKg,15069280
+libsbmlnetwork-0.1.1.dist-info/METADATA,sha256=k8qZz57fxJ8eLHcuH_admSnh4_H-dqOuaw40AY749HQ,952
+libsbmlnetwork-0.1.1.dist-info/WHEEL,sha256=3SJ5hwtd3dDeAUJc-v_NxSq8AePoMyEzGVr3-_xCw5c,104
+libsbmlnetwork-0.1.1.dist-info/top_level.txt,sha256=Ae2KQlVigBQnnt7oXZHvOTaXbwCAi028hOrASIKqtBs,15
+libsbmlnetwork-0.1.1.dist-info/RECORD,,
