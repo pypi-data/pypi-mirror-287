@@ -1,0 +1,3 @@
+[console_scripts]
+model_db = your_app.management.commands.model_db:Command
+
