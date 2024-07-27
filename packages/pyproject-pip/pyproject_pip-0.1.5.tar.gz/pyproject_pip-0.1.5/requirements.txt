@@ -1,0 +1,6 @@
+click
+packaging
+requests
+toml
+tomlkit
+markdown2
