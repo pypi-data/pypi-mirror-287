@@ -1,0 +1,9 @@
+platedet/__init__.py,sha256=bl83QBiqRpbMIGe_D4Ednyz8d3zdPye7JAsHZK1LEro,54
+platedet/cli.py,sha256=6YvDIrNZfl3GQYY5KGm53gVwFbcoR-X-zPz_Kv5uD3A,2844
+platedet/platedet.py,sha256=2oQdbMTTOEbJaDywPg5vA_jHAKFlMgNV9u31xT0NhWQ,6680
+platedet/artifacts/platedet.onnx,sha256=ru7m6Of3VtPpqUy0Cfx2eCVnGrK4G4vzbAPrIo2EipM,23681259
+platedet-0.0.2.dist-info/METADATA,sha256=VhiLCSFjaK2nsWJ4OrAJrLdUqi0MG8lt4eQaZevASng,2794
+platedet-0.0.2.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+platedet-0.0.2.dist-info/entry_points.txt,sha256=UnihpupRl0RSdd6VazVUpbRlHlEYr9CfazFJK1s24L4,47
+platedet-0.0.2.dist-info/top_level.txt,sha256=9D_diMHo_9HDwUor7l74VsfYHi-OsefY31rIbnWlPmU,9
+platedet-0.0.2.dist-info/RECORD,,
