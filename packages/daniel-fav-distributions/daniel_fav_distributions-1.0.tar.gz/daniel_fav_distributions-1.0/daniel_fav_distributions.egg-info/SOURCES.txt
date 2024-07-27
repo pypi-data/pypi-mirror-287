@@ -1,0 +1,11 @@
+setup.py
+daniel_fav_distributions/__init__.py
+daniel_fav_distributions/binomialdistribution.py
+daniel_fav_distributions/example.py
+daniel_fav_distributions/gaussiandistribution.py
+daniel_fav_distributions/generaldistribution.py
+daniel_fav_distributions.egg-info/PKG-INFO
+daniel_fav_distributions.egg-info/SOURCES.txt
+daniel_fav_distributions.egg-info/dependency_links.txt
+daniel_fav_distributions.egg-info/not-zip-safe
+daniel_fav_distributions.egg-info/top_level.txt
