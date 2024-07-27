@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: hpc_plotter
+Version: 0.1.1
+Summary: HPC Plotter for benchmarking data
+Author: Wassim Kabalan
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
