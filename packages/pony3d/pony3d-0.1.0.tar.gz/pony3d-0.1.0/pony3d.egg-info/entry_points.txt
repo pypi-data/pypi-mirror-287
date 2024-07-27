@@ -1,0 +1,3 @@
+[console_scripts]
+pony3d = pony3d.main:main
+

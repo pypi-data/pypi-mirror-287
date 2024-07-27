@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pony3d
+Version: 0.1.0
+Summary: Parallelised 3D mask making for spectral line deconvolution
+Home-page: https://github.com/IanHeywood/pony3d
+Author: Ian Heywood
+Author-email: ian.heywood@physics.ox.ac.uk
+License: GPLv3
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pony3d
+
