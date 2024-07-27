@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+custom_components/reflex_lottiefiles/__init__.py
+custom_components/reflex_lottiefiles/lottiefiles.py
+custom_components/reflex_lottiefiles.egg-info/PKG-INFO
+custom_components/reflex_lottiefiles.egg-info/SOURCES.txt
+custom_components/reflex_lottiefiles.egg-info/dependency_links.txt
+custom_components/reflex_lottiefiles.egg-info/requires.txt
+custom_components/reflex_lottiefiles.egg-info/top_level.txt
