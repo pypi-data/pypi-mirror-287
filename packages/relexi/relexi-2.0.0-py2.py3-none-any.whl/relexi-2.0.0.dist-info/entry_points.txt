@@ -1,0 +1,3 @@
+[console_scripts]
+relexi=relexi.scripts.relexi_cli:main
+
