@@ -1,0 +1,11 @@
+examples/PyKinectBodyGame.py,sha256=ImvJBBAQGDY9towNVcpgxQKzdEurq2eyk5QeNPiA7es,9249
+examples/PyKinectInfraRed.py,sha256=sT1vbqwNEiHsk-hvEL56QGE5XUvqD0m3Z3TZj-1tkGQ,3955
+examples/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pykinect2024/PyKinect2024.py,sha256=i11mv6KSr6JNNMPvCciRCikEc8pebduET-cagycsRM0,110802
+pykinect2024/PyKinectRuntime.py,sha256=Ds5j4lctx_55fyI-GkLcULenxrAstSP5v4QoGIjWagg,22295
+pykinect2024/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pykinect2024-0.1.2024.dist-info/LICENSE.txt,sha256=l0JYbRz92KZuOt4eB8AaNbPnEd1ippZmXgIeiQWFGRo,1090
+pykinect2024-0.1.2024.dist-info/METADATA,sha256=ybiDMB_PaFiS7hNYCii_EF5QQKx3TTEKTIynlU8FYh4,589
+pykinect2024-0.1.2024.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+pykinect2024-0.1.2024.dist-info/top_level.txt,sha256=s_162FrgbT4EhFanBw6VmNsEJ0tpQS2c_bcoMLkcrNw,22
+pykinect2024-0.1.2024.dist-info/RECORD,,
