@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+DEBtoolPyIF/DEBtoolPyIF.egg-info/PKG-INFO
+DEBtoolPyIF/DEBtoolPyIF.egg-info/SOURCES.txt
+DEBtoolPyIF/DEBtoolPyIF.egg-info/dependency_links.txt
+DEBtoolPyIF/DEBtoolPyIF.egg-info/requires.txt
+DEBtoolPyIF/DEBtoolPyIF.egg-info/top_level.txt
