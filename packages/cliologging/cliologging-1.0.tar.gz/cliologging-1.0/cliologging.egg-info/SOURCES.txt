@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+cliologging/__init__.py
+cliologging/logger.py
+cliologging.egg-info/PKG-INFO
+cliologging.egg-info/SOURCES.txt
+cliologging.egg-info/dependency_links.txt
+cliologging.egg-info/top_level.txt
