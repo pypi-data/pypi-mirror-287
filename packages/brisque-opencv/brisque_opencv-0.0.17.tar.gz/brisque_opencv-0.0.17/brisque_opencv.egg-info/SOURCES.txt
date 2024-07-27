@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+brisque/__init__.py
+brisque/brisque.py
+brisque/models/__init__.py
+brisque/models/normalize.pickle
+brisque/models/svm.txt
+brisque/tests/__init__.py
+brisque/tests/test_brisque.py
+brisque_opencv.egg-info/PKG-INFO
+brisque_opencv.egg-info/SOURCES.txt
+brisque_opencv.egg-info/dependency_links.txt
+brisque_opencv.egg-info/requires.txt
+brisque_opencv.egg-info/top_level.txt
