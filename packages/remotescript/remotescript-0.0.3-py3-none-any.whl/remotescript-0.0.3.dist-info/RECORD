@@ -1,0 +1,11 @@
+remotescript/__init__.py,sha256=-3kqf7FoDzA_BTUYYDiPd5b4TX615vqq27C9vpsQ14E,2522
+remotescript/__main__.py,sha256=0qjW9TYEz0P2_kJ4NftpfYtt1ASeeVDghXeAkjeQsh0,3155
+remotescript/_core.py,sha256=_S0Ar4gqJhOtS9DsilGrrKppAttrKLPn84FXYtksVhs,20691
+remotescript/_imports.py,sha256=iUPPSyHrrh0G_S687itigl4T2Tk6-X8imZMT5klv-DA,2975
+remotescript/_utils.py,sha256=RIPNHJdNBS0cOLR2eqQKkwI99GF-3Cs1_GsVwK276-s,9172
+remotescript/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+remotescript-0.0.3.dist-info/LICENSE,sha256=zbPm0XjdiZ_a3dQ6Kser3DsNbeQ_lsLe1q29d8B7GYA,1068
+remotescript-0.0.3.dist-info/METADATA,sha256=_l44Oj4aWH63Ox-tMRbv92mhrz4Dk2wr4SUaj--UZ30,3036
+remotescript-0.0.3.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+remotescript-0.0.3.dist-info/top_level.txt,sha256=xoQZlTbFRe6hWqovPtF6vC8pWNmVSsbSJ5AMb3qDNZc,13
+remotescript-0.0.3.dist-info/RECORD,,
