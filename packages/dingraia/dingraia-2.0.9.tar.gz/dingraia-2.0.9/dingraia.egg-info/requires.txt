@@ -1,0 +1,7 @@
+loguru
+requests
+aiohttp
+pycryptodome
+websockets
+rich
+deprecation
