@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: cowgirl-ai
+Version: 0.0.2
+Summary: Cowgirl AI - Core Assistant
+Home-page: https://github.com/Cowgirl-AI/core
+Author: Tera Earlywine
+Author-email: dev@teraearlywine.com
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Cowgirl AI
+Web interface
