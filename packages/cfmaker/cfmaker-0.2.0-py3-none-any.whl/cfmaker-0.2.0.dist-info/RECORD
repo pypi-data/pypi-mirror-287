@@ -1,0 +1,9 @@
+cfmaker/__init__.py,sha256=5BGA8L3NOAqSsYIp6GFR815ttWD2YOwylrbP3OZST-U,107
+cfmaker/fconfig.py,sha256=TpJdMxHgdPFGdzhP0AUKxJIB47Tjw7XhkruB8Z2s6mc,13061
+cfmaker/file_manager.py,sha256=SuIZmM7KRY8zFq_JX12w4XRccfywnVUE6_QmZLmN6Xs,6265
+cfmaker/icompiler.py,sha256=enBnY76ykeI_lyQXhcvXDfwrb97ClLCvixOJGePlPKk,16740
+cfmaker/tools.py,sha256=idWf56eN8JxFMoVEsKQPEDn3oy9DRhmSJ_Wyuh5isDY,6201
+cfmaker-0.2.0.dist-info/METADATA,sha256=xGiuG6Hm7ZnrpQ8rTVZxa2UNSM3upVSw5sfogR5zfVM,2122
+cfmaker-0.2.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+cfmaker-0.2.0.dist-info/top_level.txt,sha256=OJIUSfN1ni3WbQ8Oe2qP4SqjUYNr4uujtDUaULHnKCE,8
+cfmaker-0.2.0.dist-info/RECORD,,
