@@ -1,0 +1,10 @@
+[project]
+name = "mohsinlib"
+version = "0.0.2"
+dependencies = [
+    'importlib-metadata; python_version<"3.10"',
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
