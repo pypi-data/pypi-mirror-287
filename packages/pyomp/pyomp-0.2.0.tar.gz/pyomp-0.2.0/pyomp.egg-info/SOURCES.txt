@@ -1,0 +1,5 @@
+setup.py
+pyomp.egg-info/PKG-INFO
+pyomp.egg-info/SOURCES.txt
+pyomp.egg-info/dependency_links.txt
+pyomp.egg-info/top_level.txt

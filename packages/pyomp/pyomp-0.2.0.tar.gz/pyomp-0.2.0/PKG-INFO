@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: pyomp
+Version: 0.2.0
+Summary: A placeholder and redirector to the conda install for pyomp.
+Author: Todd A. Anderson
+Author-email: todd.a.anderson@intel.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
