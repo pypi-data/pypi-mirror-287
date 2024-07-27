@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2024 Michael Pöhn <michael@poehn.at>
+# SPDX-License-Identifier: CC0-1.0
+
+[tool.poetry]
+name = "git-list-authors"
+version = "0.1"
+description = "Git plugin for listing authors of all commits by file."
+authors = ["Michael Pöhn <michael@poehn.at>"]
+readme = "README.md"
+packages = [{include = "git_list_authors"}]
+
+[tool.poetry.scripts]
+git-list-authors = 'git_list_authors.main:main'
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
