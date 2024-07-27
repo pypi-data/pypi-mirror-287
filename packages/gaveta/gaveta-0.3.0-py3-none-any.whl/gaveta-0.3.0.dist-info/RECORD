@@ -1,0 +1,10 @@
+gaveta/__init__.py,sha256=VrXpHDu3erkzwl_WXrqINBm9xWkcyUy53IQOj042dOs,22
+gaveta/files.py,sha256=Y_jyyLTvl53yOW_tI3qbpf0mb0VBthUhwmT9i1aTAXg,114
+gaveta/json.py,sha256=JCVdpEbER0IMNn06zjiT1_vLm0j2-JbMQ67AJ9KzE50,1095
+gaveta/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gaveta/time.py,sha256=TZbMkE_zdIe4LTVBllP5yw4SYJIVHDmzhJUh_tGtUqA,556
+gaveta/utils.py,sha256=qK3aKXrIfZnjlb-k0rlIc1lTQ2CiOrB3YD5J1lx9gZw,172
+gaveta-0.3.0.dist-info/METADATA,sha256=56Jv5xdO8l7Y3dTR_tAHDxjxuc7NmZX1d8yYUqgShls,2494
+gaveta-0.3.0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+gaveta-0.3.0.dist-info/licenses/LICENSE,sha256=gUKHL6N9ZC2dRviC3D9lEzouJChQkKUP2qsRjm8DSaI,1071
+gaveta-0.3.0.dist-info/RECORD,,
