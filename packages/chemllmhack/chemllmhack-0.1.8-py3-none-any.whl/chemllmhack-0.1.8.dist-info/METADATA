@@ -1,0 +1,285 @@
+Metadata-Version: 2.1
+Name: chemllmhack
+Version: 0.1.8
+Summary: A SDK for computational chemistry LLM hackthon
+Author: bowen zhang
+Author-email: bowen.zhang@qdx.co
+Requires-Python: >=3.11,<3.13
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: biopython (>=1.84,<2.0)
+Requires-Dist: google-cloud-storage (>=2.17.0,<3.0.0)
+Requires-Dist: langchain (>=0.2.8,<0.3.0)
+Requires-Dist: langchain-chroma (>=0.1.2,<0.2.0)
+Requires-Dist: langchain-community (>=0.2.7,<0.3.0)
+Requires-Dist: langchain-mongodb (>=0.1.6,<0.2.0)
+Requires-Dist: langchain-openai (>=0.1.16,<0.2.0)
+Requires-Dist: langchainhub (>=0.1.20,<0.2.0)
+Requires-Dist: langgraph (>=0.1.9,<0.2.0)
+Requires-Dist: openpyxl (>=3.1.5,<4.0.0)
+Requires-Dist: pandas (>=2.2.2,<3.0.0)
+Requires-Dist: pymongo[srv] (>=4.8.0,<5.0.0)
+Requires-Dist: pymupdf (>=1.24.7,<2.0.0)
+Requires-Dist: pypdf (>=4.3.0,<5.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: scipy (>=1.14.0,<2.0.0)
+Description-Content-Type: text/markdown
+
+# QDX ChemLLMHack SDK
+
+Welcome to the QDX Computational Chemistry and Large Language Model (LLM) Hackathon! This SDK is tailored specifically for the hackathon and is designed to seamlessly integrate with the most advanced [RUSH](https://rush-qdx-2--pr81-feat-layout-fix-2-chcrshw0.web.app)'s computational cloud platform. It enables the community to effortlessly develop and apply cutting-edge LLM and Artificial Intelligence (AI) technologies in computational chemistry.
+
+## Installation
+
+To install the QDX ChemLLMHack SDK, simply run the following command:
+
+```bash
+pip install chemllmhack
+```
+
+## Features
+
+- Get help information about the Rex language.
+Retrieve specific expressions used in RUSH modules from Rex Database.
+
+
+- Download the paper dataset and Chroma vector database. The Paper Dataset comprises a comprehensive collection of scientific papers sourced from open-access databases including arXiv, bioRxiv, chemRxiv, and medRxiv. Below are the statistics for the dataset:
+
+    | Tool      | Number of Papers |
+    |-----------|:----------------:|
+    | MMseqs2   |       1048       |
+    | PLIP      |       2199       |
+    | Gina      |       1055       |
+    | RDock     |       1772       |
+    | Auto3d    |       371        |
+    | BTK       |       1187       |
+    | ColabFold |       2138       |
+    | P2Rank    |       1369       |
+
+
+- Submit your Rex expression to the RUSH platform.
+
+
+- Retrieve the results and stats against benchmark of your submitted Rex expression.
+
+## QDX Hackathon Use Guide
+
+### Prerequisites
+Before you begin, make sure you have a Google account. You'll need this to register for the QDX Hackathon. You also need a OPENAI_API_KEY set up in your environment. You will be granted a RUSH token, make sure you set it up in your environment.
+```bash
+TENGU_TOKEN=<your-rush-token>
+```
+
+### Registration
+Register for the QDX Hackathon [here](https://qdx-hackathon-registration-link.com).
+
+### Getting Help Information for Rex Language
+To get help information about the Rex language, use the following command:
+```bash
+chemllmhack --rex-help language
+```
+
+### Retrieving Specific Rex Expressions and other information
+To retrieve a specific Rex expression associated with a module, use the command below:
+```bash
+chemllmhack --rex-help expression -rex <module_name>
+```
+
+Replace <module_name> with the actual name of the module you're interested in.
+or you could use python language to query the rex expression:
+```python
+from chemllmhack import get_rex_expression
+get_rex_expression('module_name')
+```
+
+Following keywords are supported:
+- 'help_info'
+- Module Name: 'prepare_protein', 'auto3d', 'gnina', 'gmx'
+- Module Parameters: 'auto3d_parameter', 'gnina_parameter'
+- 'hackthon_task'
+- 'comprehensive_example'
+
+### Querying with natural language
+The SDK allows a LLM friendly way to query, to query with natural language, use the following command:
+```python
+from chemllmhack import query
+query('your-natural-language-query')
+```
+
+### Downloading Datasets
+you can download the necessary datasets:
+- Paper Dataset
+- Chroma Vector Database
+
+The Vector Database collections are separated by the following modules:
+- mmseqs2
+- PLIP
+- gina
+- RDock
+- auto3d
+- BTK
+- ColabFold
+- P2Rank
+
+
+#### Configuring Google Cloud CLI
+To interact with Cloud Storage using the Google Cloud CLI, follow these steps:
+
+1. Run the following command to authenticate:
+   ```bash
+   sudo gcloud auth login
+   ```
+   or
+   ```bash
+   sudo gcloud auth application-default login
+   ```
+2. Provide the path to your credentials file. Typically, it is located at:
+   ```
+   /Users/<your_user_name>/.config/gcloud/application_default_credentials.json
+   ```
+
+Replace `<your_user_name>` with your actual username on your system. Make sure you grant appropriate permissions to the json file.
+For more information, refer to the [Google Cloud CLI documentation](https://cloud.google.com/storage/docs/authentication?hl=en).
+
+#### Downloading Datasets
+```python
+from chemllmhack import download_vector_db
+download_vector_db(credential_path='your-credential-path', destination_file_name='your-destination-file-name')
+```
+
+### Submitting Rex Expressions to RUSH
+To submit a Rex expression to the RUSH platform, use the following command:
+```python
+from chemllmhack import submit_rex_expression
+submit_rex_expression('your-rex-expression')
+```
+This function will automatically create a new project id and save it for future use. You could view your submitted run in the [RUSH Website](https://rush-qdx-2--pr81-feat-layout-fix-2-chcrshw0.web.app/).
+This function will return the run id and status of the submitted run.
+
+### Querying run status
+You could query the run status with the following command:
+```python
+from chemllmhack import query_run_status
+query_run_status('your-run-id')
+```
+this function will return the status of the submitted run and the result path id list.
+
+### Download run result
+You could download the run result with the following command:
+```python
+from chemllmhack import get_rex_result
+get_rex_result(['path-id'], 'your-destination-file-name')
+```
+
+### Compare result with benchmark
+You could compare the result with benchmark with the following command:
+#### Compare with affinity value benchmark
+This function will calculate the pearson/spearman/kendall correlation coefficient between the predicted affinity value and the benchmark affinity value.
+```python
+from chemllmhack import affinity_benchmark
+affinity_benchmark('your-result-file', benchmark_name='BTK')
+```
+benchmark_name could be changed to the following:
+- BTK
+- BTK_mutant
+
+The result file must be in the following format:
+```
+{
+    "<SMILEs_1>": <affinity_value_1>
+    "<SMILEs_2>": <affinity_value_2>
+}
+```
+for example:
+```
+{
+    "CC1=CC(=O)C(=C(C1=O)C)C": 0.1
+    "CC1=CC(=O)C(=C(C1=O)C)": 0.2
+}
+```
+
+#### Compare with RMSD value benchmark
+This function will calculate the RMSD value between the predicted protein structure and the benchmark protein structure.
+```python
+from chemllmhack import rmsd_benchmark
+rmsd_benchmark('your-simulated_protein-file')
+```
+
+### RAG Toolkit
+The SDK also provides a RAG toolkit to help you build your AI experiment system. You could use the following command to get the RAG toolkit:
+
+#### Multiple Query with RAG
+
+This function, `multi_query_rag`, facilitates querying a Retrieval-Augmented Generation (RAG) model with a given question. It dynamically generates multiple versions of the input question to probe different perspectives and improve the breadth of the search in the vector database. This method is designed to address the inherent limitations of distance-based similarity searches by diversifying the questions.
+
+##### Usage
+
+To use the function, import it and provide the necessary arguments:
+```python
+from chemllmhack import multi_query_rag
+
+# Example usage:
+answers = multi_query_rag(
+    question="How to set auto3d parameters?",
+    module_name="auto3d",
+    vectordb_path="/path/to/vector/database"
+)
+```
+
+#### Query Decomposition with RAG
+
+The `decompose_query_rag` function is designed to enhance the querying process by decomposing a complex question into multiple simpler sub-questions. This approach allows for a more targeted retrieval of documents and information, facilitating a thorough understanding and response to the main query.
+
+##### Usage
+
+Import the function and specify the necessary parameters to begin decomposing and answering complex questions:
+```python
+from chemllmhack import decompose_query_rag
+
+# Example usage:
+answer = decompose_query_rag(
+    question="How to set auto3d parameters?",
+    module_name="auto3d",
+    vectordb_path="/path/to/vector/database"
+)
+```
+
+#### Step Back Query with RAG
+
+The `step_back_query_rag` function is specifically designed to reframe complex questions into simpler, more general inquiries. This approach allows for broader retrieval of relevant documents, potentially capturing a wider range of information that may be pertinent to the original question.
+
+##### Usage
+
+To utilize this function, import it from your package and provide the necessary arguments as follows:
+```python
+from chemllmhack import step_back_query_rag
+
+# Example usage:
+answer = step_back_query_rag(
+    question="How to set auto3d parameters?",
+    module_name="auto3d",
+    vectordb_path="/path/to/vector/database"
+)
+```
+
+## Your Task
+Task 1: Correlation Coefficient Calculation
+
+In the dataset we provide, a specific BTK protein along with its Mutant and corresponding ligands (provided in SMILES format) are given. Your task is to run the insilico experimental protocols on the RUSH platform, obtaining and recording the final simulated affinity values or other potential reference values. Use the provided benchmark functionality to calculate the correlation coefficient between the simulated affinity values and the experimental affinity values in the dataset, to assess the accuracy of the simulation.
+
+Task 2: RMSD Calculation
+
+We will provide a set of protein structures (without ligands) and a series of ligands (provided in SMILES format). Participants are required to predict the protein-ligand complex structures, run in vitro experimental protocols on the RUSH platform, and generate simulated PDB files. Use the benchmark functionality; our provided benchmark function will automatically align the generated protein structures and compare them with the actual crystal structures to calculate the RMSD value, to assess the consistency of the structure prediction.
+
+## Demo
+You can find a hackthon demo in the [demo](./chemllmhack/demo/langchain_research_agent.py) folder.
+
+## Contributing
+We welcome contributions from the community. If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+
+## Contact Information
+For any questions or comments, please email bowen.zhang@qdx.co. Alternatively, you can open an issue in this repository's issue tracker.
+
+## Acknowledgments
+Thanks to everyone participating in the development and use of this SDK. We hope it serves you well in the QDX Hackathon.
