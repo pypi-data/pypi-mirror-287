@@ -1,0 +1,11 @@
+numpy
+scipy
+matplotlib
+geopy
+sphinx
+sphinx-copybutton
+sphinx-autoapi
+sphinx-design
+pydata-sphinx-theme
+myst-nb
+linkify-it-py
