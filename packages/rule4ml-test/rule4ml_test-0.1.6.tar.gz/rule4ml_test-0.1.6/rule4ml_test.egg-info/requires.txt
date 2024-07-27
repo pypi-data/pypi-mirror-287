@@ -1,0 +1,11 @@
+pandas
+scikit-learn
+tensorflow
+keras
+keras_tuner
+
+[dev]
+pre-commit
+pytest
+torch
+onnx
