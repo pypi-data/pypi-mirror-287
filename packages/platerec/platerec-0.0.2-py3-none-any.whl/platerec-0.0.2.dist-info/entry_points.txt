@@ -1,0 +1,2 @@
+[console_scripts]
+platerec = platerec.cli:main
