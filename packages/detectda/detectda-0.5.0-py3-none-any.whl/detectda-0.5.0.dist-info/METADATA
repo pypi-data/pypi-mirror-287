@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: detectda
+Version: 0.5.0
+Summary: detectda - detecting features in videos using TDA
+Author: Andrew M. Thomas
+Author-email: <me@andrewmthomas.com>
+Keywords: tda,cubical,image processing
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+License-File: LICENSE
+Requires-Dist: gudhi (>=3.6.0)
+Requires-Dist: shapely (>=2.0.1)
+Requires-Dist: joblib
+Requires-Dist: scikit-image (>=0.21.0)
+Requires-Dist: scikit-learn (>=0.23.1)
+Requires-Dist: numpy (>=1.24)
+Requires-Dist: tqdm
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: opencv-python
+Requires-Dist: scipy
+Requires-Dist: imagecodecs
+
+detectda - a cubical persistent homology package for the detection and hypothesis testing of features in greyscale videos
