@@ -1,0 +1,8 @@
+prymes/__init__.py,sha256=XRwWnwMGrhM0AGmXNzV8FKC9DfXW54cxhOUWdV_Aczg,99449
+prymes/_bases_32,sha256=KgL791ah6UKgBNC3Pje7PgRmUybOHTfx5R9BhLUKr7s,512
+prymes/_bases_64,sha256=i4HL1FjLgtyoa7mYasB3cLrYjSl0hYqjxob5S72-Cnc,32768
+prymes/_utils.py,sha256=p06GIzBJsUhscKdP_WLpMJCW5m3qJHqPu5M8Ebyn1qw,68
+prymes-0.0.1a0.dist-info/METADATA,sha256=Xg_lPaGz0_sjz01LhHejdtIX8zWzZYBpkdaogKepg3o,1445
+prymes-0.0.1a0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+prymes-0.0.1a0.dist-info/licenses/LICENSE,sha256=eeuQoiuspHr1CkikD4gCQGkeahmqEm8c6_5uAGTtB10,1089
+prymes-0.0.1a0.dist-info/RECORD,,
