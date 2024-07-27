@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: ai_review_assistant
+Version: 0.5.0.post1.dev2
+Summary: An AI-powered code review assistant
+Home-page: https://github.com/vandriichuk/ai_review_assistant
+Author: Viktor Andriichuk
+Author-email: v.andriichuk@gmail.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: gitpython>=3.1.43
+Requires-Dist: langchain>=0.2.11
+Requires-Dist: langchain-core>=0.2.23
+Requires-Dist: langchain-openai>=0.1.17
+Requires-Dist: langchain-anthropic>=0.1.20
+Requires-Dist: click>=8.1.7
+Requires-Dist: openai>=1.37.0
+Requires-Dist: anthropic>=0.31.2
+Requires-Dist: importlib-metadata; python_version < "3.8"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pylint>=2.15.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+
+# Installation
+
+You can install the latest version of AI Review Assistant from [GitHub](https://github.com/vvandriichuk/ai-review-assistant):
+
+```bash
+pip install git+https://github.com/vvandriichuk/ai-review-assistant.git
+```
+
+# Help:
+ai_review_assistant --help
+
+# Example of usage:
+ai_review_assistant --vendor openai --model gpt-4o --api-key your_api_key --program-language "Python,JavaScript,TypeScript" --result-output-language English review
+
+
+# Changelog
+
+## [0.5.0] - 2024-07-26
+### Added
+- You can check version of AI Review Assistant
+
+## [0.4.0] - 2024-07-26
+### Added
+- Added splitting long context by batch size
+- Added support for multiple languages
+- Added support for multiple models
+- You can run AI Review Assistant in any directory
+
+### Changed
+- Updated version of main dependencies libs
+
+## [0.1.0] - 2024-07-25
+### Added
+- Init library
+
+[Unreleased]: https://github.com/vvandriichuk/ai-review-assistant/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/vvandriichuk/ai-review-assistant/compare/v0.4.0...v0.5.0
+[0.4.0]: https://github.com/vvandriichuk/ai-review-assistant/compare/v0.1.0...v0.4.0
+[0.1.0]: https://github.com/vvandriichuk/ai-review-assistant/releases/tag/v0.1.0
