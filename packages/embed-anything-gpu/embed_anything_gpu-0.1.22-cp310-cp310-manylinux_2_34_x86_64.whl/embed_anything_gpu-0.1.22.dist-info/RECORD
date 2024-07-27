@@ -1,0 +1,12 @@
+embed_anything_gpu-0.1.22.dist-info/METADATA,sha256=GKV0Czy6xF95SycKDtu38Q8SLpSBi_55SASUm1-Mkbo,9306
+embed_anything_gpu-0.1.22.dist-info/WHEEL,sha256=0CcHee4CufHNqskoVqu9XUT7WPeWhoGKAe2CwPZ8qoc,108
+embed_anything_gpu-0.1.22.dist-info/license_files/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+embed_anything.libs/libcrypto-801de193.so.3,sha256=c_2ejgsLf5WzlWv8vWfMso4lg2qo6mIja8M1IcO9Nso,4611145
+embed_anything.libs/libssl-091d763c.so.3,sha256=no7PFDl4cVc-A46pzxY0ANadaidrEdUG4y9vm1YQ104,721753
+embed_anything/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+embed_anything/embed_anything.pyi,sha256=pO2G02f56z4kzE9o2vUpOHbl83rXAHl3QgupaYglXIw,6266
+embed_anything/__init__.py,sha256=htxRbBW27HwHwxy0miQXA2tBmVXi4jB2szejgujcYu0,2013
+embed_anything/vectorDB.py,sha256=V76DG4_ZghthOZNC39VmRmn9poAWmA1JvXajJdubHGQ,1421
+embed_anything/libiomp5md.dll,sha256=CtcfRm0RXTU9zpS6MrY-KI9IGY6J9VHUbczkYf7b0ZU,2047000
+embed_anything/embed_anything.cpython-310-x86_64-linux-gnu.so,sha256=UBrPJvWNdH2wSR8aqwAjiVxECAMTLvBeXGcvAyrpD3w,36631969
+embed_anything_gpu-0.1.22.dist-info/RECORD,,
