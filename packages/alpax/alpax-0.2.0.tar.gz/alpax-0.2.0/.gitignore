@@ -1,0 +1,9 @@
+__pycache__/
+/.mypy_cache/
+/.ruff_cache/
+
+# Code coverage reports.
+/.coverage*
+/coverage.xml
+
+/dist/
