@@ -1,0 +1,22 @@
+Metadata-Version: 2.3
+Name: cellsim
+Version: 1.0.1
+Summary: With this new releace I have updates the LICENCE and the README file.
+Project-URL: Homepage, https://github.com/pypa/sampleproject
+Project-URL: Issues, https://github.com/pypa/sampleproject/issues
+Author-email: Sam Fertig <sfertig007@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+Welcome, this is a overveiw of the holhe system with each update marked:
+
+System overveiw:
+
+sellsim.CellOut()
+    ---this function will take you to the main class of the hold module. You will then need to run the 'init', and 'run' functions and the simulation will start.
+
+
