@@ -1,0 +1,10 @@
+setup.py
+ArviPackage.egg-info/PKG-INFO
+ArviPackage.egg-info/SOURCES.txt
+ArviPackage.egg-info/dependency_links.txt
+ArviPackage.egg-info/top_level.txt
+arvi1/__init__.py
+arvi1/arviprogram1.py
+arvi2/__init__.py
+arvi2/arviprogram2.py
+arvi2/arviprogram22.py
