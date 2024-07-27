@@ -1,0 +1,14 @@
+py2plpy/__init__.py,sha256=0AcwEDXJKq74kZEcS8DIvBJAh1jP5DSRXVBDHy_WyEw,151
+py2plpy/command_line.py,sha256=ryQ-zk0y9WDlnOyuGTxjQE3hxISHn7-eVX2JbjLf1xw,244
+py2plpy/plpy.py,sha256=rTBpoifJRf_IN2c5hGg_LKNlfxBPgn4Vh_KGHEI9Ido,4620
+py2plpy/py2plpy.py,sha256=3VHBpAzxGrHdCTS3XeaT-Ro0elqvvtHG1-TCcJ_A0UE,4447
+py2plpy/types.py,sha256=aHyp_Goh5j-UG7dTx1xEPLVjATOL2BtU0KI_WidV1uA,611
+py2plpy/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+py2plpy/tests/fixture.py,sha256=W1fKtTcS88UHOTtiPqQNvbP6h1gczlpgJYNp41CEQNI,3214
+py2plpy/tests/test.py,sha256=f2zoatcH_gdfd3Ih0PXLTLxUfIZH3DhyOg17pxB8mtg,293
+py2plpy-0.4.0.dist-info/LICENSE,sha256=wSRiNp4fegPktAy372wSsoO6rdGRmrBGqVO2ZxssgEw,1060
+py2plpy-0.4.0.dist-info/METADATA,sha256=Q1gkHCrhg9FEyUh94TbMBhduyxR6wHwCX7h_mHeHIZw,2854
+py2plpy-0.4.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+py2plpy-0.4.0.dist-info/entry_points.txt,sha256=6n4joqccHr4lH_fj45O4BqBbPtY_FuGr_DsICa0HgIs,54
+py2plpy-0.4.0.dist-info/top_level.txt,sha256=iA8cW2PXRc_u7m7R_rxmIWlGldL2NfhlLsZc8FphWLI,8
+py2plpy-0.4.0.dist-info/RECORD,,
