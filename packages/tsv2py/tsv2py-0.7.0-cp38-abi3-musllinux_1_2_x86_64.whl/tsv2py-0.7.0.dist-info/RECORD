@@ -1,0 +1,14 @@
+tsv2py-0.7.0.dist-info/LICENSE,sha256=85pV3xAbg8UyVlqMCim436QD865qa_i7z3MZdhsAlTk,1077
+tsv2py-0.7.0.dist-info/top_level.txt,sha256=ogcA1yYMsxYhH3oqCRdzI_keAp_2PT7I5b0FOjVLHYQ,4
+tsv2py-0.7.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+tsv2py-0.7.0.dist-info/RECORD,,
+tsv2py-0.7.0.dist-info/WHEEL,sha256=TzuTicZ2F_rxYOxZcRVFTLzV_yjzgVLJWTVdspvAs7M,111
+tsv2py-0.7.0.dist-info/METADATA,sha256=b9aDoUxme9uZJ6_LA6N5JySVt43C1nD3aH-3YknMje8,8087
+tsv/parser_avx2.abi3.so,sha256=jBq9B3Rosl4_klVIU10fYXqKjtoj4Z3St_TAZVuhwaA,87312
+tsv/__init__.py,sha256=fP4CGiFO0dRpgO26zDTPgccArNqrWzBFTHK5oZJ8QPU,506
+tsv/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tsv/cpu_features.pyi,sha256=dLg0j48ci4iWI-n6gyCvl06aOPdxm7M3oT5qbtGDMt0,165
+tsv/parser.py,sha256=6sXrndwETGDhadBORDZb2Nh_PXZbpFIxGH1KgfaC5Ew,2536
+tsv/parser_plain.abi3.so,sha256=bfLwDaOkybQKiC0Q7fspmf8eqI4fjg4DH4I1ZgvqeF0,63168
+tsv/cpu_features.abi3.so,sha256=lqpcfTYTF3YOhNIremls8JOvsV3u1_6MOQ38MupZu40,24464
+tsv/helper.py,sha256=qptwR9lfvJPraSvBFo8LvSKEyY2NnQ1mozU8fNkwheE,7110
