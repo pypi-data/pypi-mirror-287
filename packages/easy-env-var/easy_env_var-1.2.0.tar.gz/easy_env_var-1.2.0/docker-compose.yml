@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  python-311-coverage: &coverage
+    image: python:3.11-alpine
+    command: "sh -c 'cd /app && pip install coverage[toml] && coverage run && coverage report'"
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+
+  python-310-coverage:
+    <<: *coverage
+    image: python:3.10-alpine
+
+  python-39-coverage:
+    <<: *coverage
+    image: python:3.9-alpine
+
+  python-38-coverage:
+    <<: *coverage
+    image: python:3.8-alpine
+
+  python-37-coverage:
+    <<: *coverage
+    image: python:3.7-alpine
+    command: "sh -c 'apk add gcc musl-dev && cd /app && pip install coverage[toml] && coverage run && coverage report'"
+
+  python-312-coverage:
+    <<: *coverage
+    image: python:3.12-rc-alpine
+
+  python-313-coverage:
+    <<: *coverage
+    image: python:3.13-rc-alpine
+
+  lint:
+    <<: *coverage
+    command: "sh -c 'cd /app && pip install black isort && black . && isort . && chown -R 1000:1000 .'"
+
+  typing:
+    <<: *coverage
+    command: "sh -c 'cd /app && pip install mypy && mypy .'"

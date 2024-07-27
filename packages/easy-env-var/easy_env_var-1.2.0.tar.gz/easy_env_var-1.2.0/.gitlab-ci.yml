@@ -1,0 +1,73 @@
+image: python:3.12-alpine
+
+stages:
+- test
+- release
+
+.python_coverage:
+  stage: test
+  before_script:
+    - pip install coverage[toml]
+  script:
+    - coverage run
+    - coverage report
+    - coverage xml
+  coverage: '/TOTAL.*?(\d+(?:\.\d+)\%)$/'
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+
+python37:
+  extends: .python_coverage
+  image: python:3.7-alpine
+  before_script:
+    - apk add gcc musl-dev
+    - pip install coverage[toml]
+
+python38:
+  extends: .python_coverage
+  image: python:3.8-alpine
+
+python39:
+  extends: .python_coverage
+  image: python:3.9-alpine
+
+python310:
+  extends: .python_coverage
+  image: python:3.10-alpine
+
+python311:
+  extends: .python_coverage
+  image: python:3.11-alpine
+
+python312:
+  extends: .python_coverage
+  image: python:3.12-alpine
+
+python313:
+  extends: .python_coverage
+  image: python:3.13-rc-alpine
+
+lint:
+  stage: test
+  before_script:
+    - pip install black isort
+  script: black . --check && isort . --check-only
+
+typing:
+  stage: test
+  before_script:
+    - pip install mypy
+  script: mypy .
+
+pypi:
+    stage: release
+    cache: {}
+    script:
+        - pip install twine build
+        - python -m build
+        - twine upload dist/*
+    only:
+        - tags

@@ -1,0 +1,60 @@
+[tool.black]
+line-length=88
+fast=true
+target-version=["py37", "py38", "py39", "py310", "py311", "py312", "py313"]
+
+[tool.isort]
+multi_line_output=3
+include_trailing_comma=true
+force_grid_wrap=0
+use_parentheses=true
+combine_as_imports=true
+line_length=88
+ensure_newline_before_comments=true
+
+[tool.coverage.run]
+branch=true
+source=["easy_env_var"]
+command_line="-m unittest"
+[tool.coverage.report]
+precision=3
+fail_under=90.00
+show_missing=true
+exclude_lines=["@overload"]
+
+[build-system]
+requires=["hatchling"]
+build-backend="hatchling.build"
+
+[project]
+name="easy_env_var"
+version="1.2.0"
+authors=[
+    {name="Geekeno", email="dev@geekeno.com"},
+]
+description="Simple util to get environment variables in the right data type."
+readme="README.md"
+classifiers=[
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Development Status :: 5 - Production/Stable",
+        "Natural Language :: English",
+        "Topic :: Utilities",
+        "Typing :: Typed",
+        "Intended Audience :: Developers",
+]
+requires-python=">=3.7"
+[project.license]
+file="LICENSE"
+[project.urls]
+"Homepage"="https://github.com/Geekeno/easy-env-var"
+"Documentation"="https://github.com/Geekeno/easy-env-var"
+"Source"="https://github.com/Geekeno/easy-env-var"
+"Tracker"="https://github.com/Geekeno/easy-env-var/issues"
