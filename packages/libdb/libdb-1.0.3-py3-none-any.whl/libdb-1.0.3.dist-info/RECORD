@@ -1,0 +1,9 @@
+libdb/__init__.py,sha256=jZ1bG4PelFnyZyvUYoKpaUft0Ng8dWPJbELSsmIoFXw,180
+libdb/db_manager.py,sha256=qb07WdccTuoms0frQTKHp_kghozBvc6KH1UqEZ3TTMM,1603
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_db_manager.py,sha256=fZoDIz9clR-740UWnKSB35AlM5soO0M1XPcxrgEfuYE,2692
+libdb-1.0.3.dist-info/LICENSE,sha256=NiKFgqx4WhAZbOBBi1dfIX4oXOWTRO5pPYAGoYU3RfE,1090
+libdb-1.0.3.dist-info/METADATA,sha256=-HKSrlR-d4Nzwhv695UAJjatqIkYOYqTjXwOCsnpkYU,1350
+libdb-1.0.3.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+libdb-1.0.3.dist-info/top_level.txt,sha256=bSTS8olu4t_-JFAlj1ZaX6uihisdErSADqb7zHZeAOc,12
+libdb-1.0.3.dist-info/RECORD,,
