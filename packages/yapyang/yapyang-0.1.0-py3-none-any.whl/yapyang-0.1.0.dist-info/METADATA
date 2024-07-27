@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: yapyang
+Version: 0.1.0
+Summary: An open source Python package that helps developers to translate YANG (RFC6020/RFC7950) data models to Python.
+License: Apache-2.0
+Author: a.faria
+Author-email: antonio.faria@nomios.co.uk
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: ordered-set (>=4.1.0,<5.0.0)
+Description-Content-Type: text/markdown
+
+# Yet Another PYANG
+An open source Python package that helps developers to translate YANG (RFC6020/RFC7950) data models to Python. YAPYANG mimics the functionality of YANG data structures, enforces types through annotations, and supports JSON/XML ser/des. YAPYANG is authored by [Antonio Faria](https://github.com/movedempackets), governed as a [benevolent dictatorship](CODE_OF_CONDUCT.md), and distributed under [license](LICENSE)
+
+
+> [!WARNING]
+> YAPYANG is in construction, during this time no effort shall be afforded to migrations and backwards compatibility. See [versioning](#versioning).
+
+## Versioning
+Releases will follow semantic versioning (major.minor.patch). Before 1.0.0 breaking changes can be included in a minor release, therefore we highly recommend pinning this package.
+
+## Contributing
+Suggest a [feature]() or report a [bug](). Read our developer [guide](CONTRIBUTING.md).
+
+## License
+YAPYANG is distributed under the Apache 2.0 [license](LICENSE).
