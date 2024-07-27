@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+gists_gone/__init__.py
+gists_gone/gists_gone.py
+gists_gone.egg-info/PKG-INFO
+gists_gone.egg-info/SOURCES.txt
+gists_gone.egg-info/dependency_links.txt
+gists_gone.egg-info/entry_points.txt
+gists_gone.egg-info/requires.txt
+gists_gone.egg-info/top_level.txt
+tests/test_gists_gone.py
