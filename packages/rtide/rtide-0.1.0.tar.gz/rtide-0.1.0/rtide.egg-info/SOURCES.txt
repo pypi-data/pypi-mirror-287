@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+rtide/__init__.py
+rtide/rtide.py
+rtide.egg-info/PKG-INFO
+rtide.egg-info/SOURCES.txt
+rtide.egg-info/dependency_links.txt
+rtide.egg-info/requires.txt
+rtide.egg-info/top_level.txt
+rtide/utils/__init__.py
+rtide/utils/utils.py
+test/__init__.py
+test/test_rtide.py
+test/utils/__init__.py
+test/utils/test_utils.py
