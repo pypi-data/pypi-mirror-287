@@ -1,0 +1,11 @@
+socialdataanalysis/__init__.py,sha256=Q-yao-ZFpVaLZmCuMt6-UzyFzAd2EoQhuXQq3PNBg2I,1682
+socialdataanalysis/association.py,sha256=Fa82oj57rA81u-fAaukYuff7bZAG13qj6FSUwbn8-Kw,95098
+socialdataanalysis/dataacquisition.py,sha256=gstAuhRtYGeGjSCKeLPW9DTFmcJwaQtAU-BVKmecYfk,1543
+socialdataanalysis/datapreprocessing.py,sha256=lm2eoiAffVT8AEJCy50zJd1H0MyXeenZWdFssAzZUfo,4342
+socialdataanalysis/exploratorydataanalysis.py,sha256=cM1WCk4tLES17uGmmSKwF5gwiKk2QsAKArPvynG_Is4,15947
+socialdataanalysis/exploratoryfactoranalysis.py,sha256=FMZfN8IvglNCekSJziNoY__BK8l3AL8IWgYMfw2ABX8,45163
+socialdataanalysis-0.0.71.dist-info/LICENSE,sha256=l0qcdwjb7qjXYCtnSlYuOm0nroMvatAvJg1nvueCCP8,1068
+socialdataanalysis-0.0.71.dist-info/METADATA,sha256=Rs34WdGOU-VWyuuMUowMUzyD8hJLmZZSTvcFB0e1jic,2786
+socialdataanalysis-0.0.71.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+socialdataanalysis-0.0.71.dist-info/top_level.txt,sha256=Co65wajMms5bNOL20qk_U7JH2fvuAwR0-tBWdjKCjzw,19
+socialdataanalysis-0.0.71.dist-info/RECORD,,
