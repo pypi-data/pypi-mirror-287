@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: fastpass
+Version: 0.0.6
+Summary: Fastpass - random password-sting generator utility.
+Author-Email: Alexander Lavrov <admin@egnod.dev>
+License: MIT
+Requires-Python: <=3.13,>=3.9
+Description-Content-Type: text/markdown
+
+# fastpass
+
+Fastpass - password-string generator utility.
