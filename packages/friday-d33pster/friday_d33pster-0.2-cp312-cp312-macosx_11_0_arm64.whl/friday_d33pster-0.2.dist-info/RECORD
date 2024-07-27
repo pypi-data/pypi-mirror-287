@@ -1,0 +1,15 @@
+friday_d33pster-0.2.dist-info/METADATA,sha256=raaCRuwNQQmckRpm6Bu2KeRRs_yBQckdwmbySiHM51o,3452
+friday_d33pster-0.2.dist-info/WHEEL,sha256=b1dgqR9GJBT8bsiih-7Y55_-sPGc5MG-sUXj3y2MXf0,104
+friday_d33pster-0.2.dist-info/entry_points.txt,sha256=x2WI9R2wiiMimYFNRiVFWZMyLYXzdS91s1Y7YTP8dTk,44
+friday_d33pster-0.2.dist-info/license_files/LICENSE,sha256=S4rDwZvYPJR0ElFfB7WJFdYclKHHcWjEnl8rmul28FE,1074
+Friday/core/lib.py,sha256=VXLRm8gdgTBBEUQSwk1BM9SYG3wpBoJuY39ZhBJy5uE,23416
+Friday/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+Friday/core/exceptions/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+Friday/core/stt_lib.py,sha256=Zwn3Wx7Yhd9AqdMRzPDlYL4CB5jyew1VPaIOxTFnbiQ,4828
+Friday/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+Friday/utils/terminal.py,sha256=GBoOSR2pCUhvAFGyF3ASWxVSZzKXj0PrOmvHQz6iA8Q,899
+Friday/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+Friday/utils/types.py,sha256=bHafAerdNJ8M79RYWUyvgXvDz8badyc0AGI2TGhizy4,366
+Friday/friday.py,sha256=YCqIdLeSdqmKl8f4KBYJOkgLPKZKXOqqXS69GiI-G0Y,5119
+Friday/rust.cpython-312-darwin.so,sha256=Rd1Ygx7Zs8wFXzhJUQGU73amhwPHcJfursZW4QSMRIg,2239304
+friday_d33pster-0.2.dist-info/RECORD,,
