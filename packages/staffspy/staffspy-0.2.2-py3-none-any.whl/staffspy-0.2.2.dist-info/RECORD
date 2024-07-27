@@ -1,0 +1,16 @@
+staffspy/__init__.py,sha256=c21M9dN7kegVwtK2ojizdvVMVs6nAcNJ8nkqKREfxSg,1295
+staffspy/capsolver.py,sha256=8eNTAUPRhBUUmbu-KPxo4Gq9gcD4s4zebPcD1m0HY2E,1480
+staffspy/exceptions.py,sha256=dH3isEbfFxtpf7R5y9XjAa7QVw4m35RaR3gnAVhPcpc,324
+staffspy/linkedin/certifications.py,sha256=zRqi1hhzY1LUlEz_eb6S_jxppliPtSJ0KKmsHUWg6uI,2812
+staffspy/linkedin/employee.py,sha256=NGdbyO34_YjRCFANlj1A_Ic_VnEdf-XpDOkM7bafGiU,3474
+staffspy/linkedin/employee_bio.py,sha256=rtyA23koI8pRzm8A8lTjnR9QO-ldG8Zm7L0RcC1MEzM,1803
+staffspy/linkedin/experiences.py,sha256=vZlhRH2Ca05XmG9dE35ZNO7WTouIET9jQEC8lTjNVwY,4660
+staffspy/linkedin/linkedin.py,sha256=ZrBU16Ii5XacA7gogCQZWCtLHuDe57RWdjI9g0FWurk,10255
+staffspy/linkedin/schools.py,sha256=TFA_IVFe3IMOfYyetjM4jOVT51SswPvLMFLwfrS6aws,2202
+staffspy/linkedin/skills.py,sha256=ljs1hGYd2ob-iO0czDHNjrSlkO1-0ZiieHlnP_9zef8,2291
+staffspy/models.py,sha256=EVFgL4L966jAf0FohkPWBrfqjO2PySPXt15vPk4K1Ts,6595
+staffspy/utils.py,sha256=S5fQ-6cP5iv-wFySkZzrZrHVkYb-KQRYjgep2m--lI8,11303
+staffspy-0.2.2.dist-info/LICENSE,sha256=QWBeJZY3wgRZ6oms25vJY4HstmCiB5uU4t3Su9C-3E8,1069
+staffspy-0.2.2.dist-info/METADATA,sha256=BatUvd99QWDjek1bGgeD7UGwIpYu0NPBz_fk0QDNWPg,7110
+staffspy-0.2.2.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+staffspy-0.2.2.dist-info/RECORD,,
