@@ -1,0 +1,17 @@
+graphpack/__init__.py,sha256=ygd0KgD_hgsO0tOQ0aPYs0d0EzEjx0HzbMMTMQE1nyA,54
+graphpack/compression.py,sha256=9zTfe6m2J9rUWsfMg1B9wCMzUKh7AZ9IvkkThczklqw,54562
+graphpack/utils.py,sha256=pZMSJLSUGWlJuRAn4FbnmmbN4O7EvP-udwjFsMoIm3Y,45357
+graphpack/config/additional_js,sha256=okq28vLUM0Rfw44jBcMdSqFPxTisTOLzzCuVolgq0Cs,6757
+graphpack/config/additional_js_old,sha256=M1vabziF5ziE0YywU3TECPwr4pMTj2k9DrPS1-GLHhE,7958
+graphpack/config/const_options,sha256=nbJ_SRSEJ8VXMdJ3PW1ILj5ssPej_cRF96NhMY9V_MI,787
+graphpack/config/physics_options_big,sha256=QK1yH3ZEXuWGHmQIKtvD2EXB4l_Jhmi0doK8BuNrvA8,709
+graphpack/config/physics_options_small,sha256=W-505UnaBNsY0o7RWKHsFIDEN1JTO-b-IDf_oRhsJAQ,240
+graphpack/config/style_options,sha256=YiYtY4bBTkmNIgS9C17LrwQbCFiyOlmJt9-9zOOYPBU,5009
+graphpack/demo/demo.py,sha256=RUIxi8suu1G7ObwLStJSerjYHfkORjIgOxlB4TWApJ0,28897
+graphpack/demo/sankey.py,sha256=flL31Oy97MiCXaABZgA0OS8CnIKMIYz525m-9QCLfvk,21229
+graphpack-0.1.2.dist-info/LICENSE,sha256=WBLwW4LPnXt3jrI2Zduxivo7_MwSWsT58feH6l6WPzQ,1089
+graphpack-0.1.2.dist-info/METADATA,sha256=v3RYzO15b4DNTkoV7_yozwzZlVq_mE_ckMqfmjf7Vug,2975
+graphpack-0.1.2.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+graphpack-0.1.2.dist-info/entry_points.txt,sha256=o5bnKJNNZvQc_L1XEB_6e_LAx6jXDuzKud9UE3JRt3o,131
+graphpack-0.1.2.dist-info/top_level.txt,sha256=CDFtF3W0VWhX7QpP5hobVGg5vvmnM1RgUjFJOGLhSgE,10
+graphpack-0.1.2.dist-info/RECORD,,

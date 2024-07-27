@@ -1,0 +1,4 @@
+[console_scripts]
+gp-demo = graphpack.demo.demo:main
+gp-sankey = graphpack.demo.sankey:main
+graphpack = graphpack.compression:main
