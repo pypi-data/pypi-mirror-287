@@ -1,0 +1,2 @@
+[console_scripts]
+serpapi-client = serpapi_client.scripts:serpapi_client
