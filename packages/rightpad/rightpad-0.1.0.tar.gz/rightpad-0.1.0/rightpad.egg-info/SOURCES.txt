@@ -1,0 +1,8 @@
+LICENSE
+README.md
+rightpad.py
+setup.py
+rightpad.egg-info/PKG-INFO
+rightpad.egg-info/SOURCES.txt
+rightpad.egg-info/dependency_links.txt
+rightpad.egg-info/top_level.txt
