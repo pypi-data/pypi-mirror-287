@@ -1,0 +1,202 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sekupy"
+description = "Detergent for your dirty neuroimaging pipelines"
+version = "0.0.1"
+authors = [
+    { name = "Roberto Guidotti", email = "roberto.guidotti@unich.it" },
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = [
+    "neuroscience",
+    "neuroimaging",
+    "MEG",
+    "EEG",
+    "MVPA",
+    "fMRI",
+    "brain",
+    "machine learning"
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved",
+    "Programming Language :: Python",
+    "Topic :: Software Development",
+    "Topic :: Scientific/Engineering",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "tqdm",
+    "scikit-learn",
+    "nibabel",
+    "pandas",
+    "seaborn",
+    "imbalanced-learn",
+    "mne",
+    "lazy_loader",
+    "statsmodels",
+    "pybids",
+    "nilearn",
+    "pymatreader",
+    "h5py"
+]
+
+[project.optional-dependencies]
+# Variants with dependencies that will get installed on top of those listed unter
+# project.dependencies
+
+# Leave this one here for backward-compat
+data = []
+
+# Dependencies for running the test infrastructure
+test = [
+    "pytest>=8.0.0rc2",
+    "pytest-cov",
+    "pytest-timeout",
+    "pytest-harvest",
+    "pytest-qt",
+    "ruff",
+    "numpydoc",
+    "codespell",
+    "tomli; python_version<'3.11'",
+    "twine",
+    "wheel",
+    "pre-commit",
+    "mypy",
+]
+
+# Dependencies for building the documentation
+doc = [
+    "sphinx>=6",
+    "numpydoc",
+    "pydata_sphinx_theme==0.13.3",
+    "sphinx-gallery",
+    "sphinxcontrib-bibtex>=2.5",
+    "sphinxcontrib-towncrier",
+    "memory_profiler",
+    "neo",
+    "seaborn!=0.11.2",
+    "sphinx_copybutton",
+    "sphinx-design",
+    "sphinxcontrib-youtube",
+    "mne-bids",
+    "pyxdf",
+    "mne-connectivity",
+    "mne-gui-addons",
+    "pygments>=2.13",
+    "pytest",
+    "graphviz",
+    "pyzmq!=24.0.0",
+    "ipython!=8.7.0",
+    "selenium",
+]
+
+[project.urls]
+Homepage = "https://github.com/robbisg/sekupy"
+"Bug Tracker" = "https://github.com/robbisg/sekupy/issues/"
+Documentation = "https://sekupy.readthedocs.io/"
+"Source Code" = "https://github.com/robbisg/sekupy"
+
+[tool.hatch.build]
+exclude = [
+    "/.*",
+    "/*.yml",
+    "/*.yaml",
+    "/*.toml",
+    "/*.txt",
+    "/sekupy/**/tests",
+    "/dist",
+    "/doc",
+    "/sekupy/io/data/*",
+    "/joss",
+    "/examples",
+    "/Dockerfile"
+] # tracked by git, but we don't want to ship those files
+
+[tool.hatch.version]
+source = "vcs"
+raw-options = { version_scheme = "release-branch-semver" }
+
+[tool.codespell]
+ignore-words = "ignore_words.txt"
+builtin = "clear,rare,informal,names,usage"
+skip = "doc/references.bib"
+
+[tool.ruff]
+select = ["A", "B006", "D", "E", "F", "I", "W", "UP"]
+exclude = ["__init__.py", "constants.py", "resources.py"]
+ignore = [
+    "D100", # Missing docstring in public module
+    "D104", # Missing docstring in public package
+    "D413", # Missing blank line after last section
+    "UP031", # Use format specifiers instead of percent format
+]
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
+
+
+
+[tool.bandit.assert_used]
+skips = ["*/test_*.py"] # assert statements are good practice with pytest
+
+[tool.rstcheck]
+report_level = "WARNING"
+ignore_roles = [
+    "attr",
+    "class",
+    "doc",
+    "eq",
+    "exc",
+    "file",
+    "footcite",
+    "footcite:t",
+    "func",
+    "gh",
+    "kbd",
+    "meth",
+    "mod",
+    "newcontrib",
+    "py:mod",
+    "ref",
+    "samp",
+    "term",
+]
+
+ignore_directives = [
+    "autoclass",
+    "autofunction",
+    "automodule",
+    "autosummary",
+    "bibliography",
+    "cssclass",
+    "currentmodule",
+    "dropdown",
+    "footbibliography",
+    "glossary",
+    "graphviz",
+    "grid",
+    "highlight",
+    "minigallery",
+    "tabularcolumns",
+    "toctree",
+    "rst-class",
+    "tab-set",
+    "towncrier-draft-entries",
+]
+
+ignore_messages = "^.*(Unknown target name|Undefined substitution referenced)[^`]*$"
