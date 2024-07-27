@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: house_prices_prediction_pipeline
+Version: 0.1
+Summary: A package for house price prediction pipeline.
+Home-page: https://github.com/saadkhalid-git/house_price
+Author: Saad Khalid
+Author-email: tosaadkhalid@gmail.com
+License: MIT
+Description: # House Price Package
+        
+        This package contains tools for house price prediction, including data preprocessing, training models, and making predictions.
+        
+        ## Installation
+        
+        You can install this package using pip:
+        
+        ```bash
+        pip install house_price
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
