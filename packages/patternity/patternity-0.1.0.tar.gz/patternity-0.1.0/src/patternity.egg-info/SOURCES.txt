@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/patternity/__init__.py
+src/patternity/collector.py
+src/patternity/pattern.py
+src/patternity.egg-info/PKG-INFO
+src/patternity.egg-info/SOURCES.txt
+src/patternity.egg-info/dependency_links.txt
+src/patternity.egg-info/not-zip-safe
+src/patternity.egg-info/requires.txt
+src/patternity.egg-info/top_level.txt
