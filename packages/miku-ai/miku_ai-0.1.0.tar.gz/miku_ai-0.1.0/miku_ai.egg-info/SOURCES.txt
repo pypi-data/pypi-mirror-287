@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+miku_ai/__init__.py
+miku_ai/spider.py
+miku_ai.egg-info/PKG-INFO
+miku_ai.egg-info/SOURCES.txt
+miku_ai.egg-info/dependency_links.txt
+miku_ai.egg-info/requires.txt
+miku_ai.egg-info/top_level.txt
