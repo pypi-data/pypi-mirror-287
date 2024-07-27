@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "tghtml"
+version = "1.2.0"
+description = "Simple tool for parse common HTML to Telegram HTML"
+authors = ["Daniel Zakharov <gzdan734@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+markdownify = "^0.13.1"
+pyquery = "^2.0.0"
+markdown = "^3.6"
+pydantic = "^2.8.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.1"
+
+[tool.ruff]
+line-length = 70
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
