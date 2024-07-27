@@ -1,0 +1,13 @@
+include/nanoflann.hpp,sha256=RsGLPEjqdjs7V3-uoCRmNP-iHKmfS7vbRDevyiDR-Xk,91412
+include/napf.hpp,sha256=QvDsATijdQKelPzgi_DSnusShQ43mUbgFzDHpqhhOAQ,1710
+lib/cmake/napf/napfConfig.cmake,sha256=NSPipIGGtPNUW0YUshdn9EXaaYQhw1zqN28i39vrrsk,991
+lib/cmake/napf/napfConfigVersion.cmake,sha256=M13t05ufSKc9sQe9BxJcWAHfwsb1nD5PHNEDwlKI3wY,2827
+lib/cmake/napf/napfTargets.cmake,sha256=l-SMYViL0kjDsER0eQHQEb9bBbISaJJ1Srfzh9yjE7I,4276
+napf/__init__.py,sha256=x-0npUqNk9u6EJLzWWnC51ZobV-cBRV2GLZn6K9ip3w,421
+napf/_napf.pyd,sha256=B5o0y2kct-TbQ51niAzTw4ZJQP1QbQyKh_5d7zREd-g,702976
+napf/_version.py,sha256=ZwnKKsXvMjXcGiq1ZLxYK5dqEeQLvaFuB_XDxPxP0MM,19
+napf/base.py,sha256=7SbUeTXFNIoALOqDwOvS-jEUmbGs7p3EwlwyEneurfA,12995
+napf-0.1.0.dist-info/METADATA,sha256=jdF0HSMwuUM35t1-aYm7EDzCXlOCOR-DdHgDFibS9A4,3969
+napf-0.1.0.dist-info/WHEEL,sha256=3WBVKXj3e7CRGmVIhHVlAvbOznKVAhoiPQZZDVwujYk,101
+napf-0.1.0.dist-info/licenses/LICENSE,sha256=h4hpi1RQLoxMqnbmIKXoaPdsYi1aiahAI0I5OsEg1UI,1089
+napf-0.1.0.dist-info/RECORD,,
