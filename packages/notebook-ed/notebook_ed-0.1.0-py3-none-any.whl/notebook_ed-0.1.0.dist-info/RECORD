@@ -1,0 +1,12 @@
+py2nb/__init__.py,sha256=NtCcUPWv0-q430M1R5Cp2KHffitV3grR0LQtcRWBjzs,97
+py2nb/argumentParser.py,sha256=GKrUnSCHbqlDkbmzhrGo6OGT7eO9MPJK54DlgzloYbc,539
+py2nb/converter.py,sha256=G0e-44E_HsFqwAmRN1CY9b7-ks-YTHlW5-yS-Sn05OQ,4211
+py2nb/ignoreFIles.py,sha256=emi6wpJ9UcyW0bEkWD7MlclsmHhyU-3hZGJs-6F4IQU,163
+py2nb/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+py2nb/test/test_converter.py,sha256=pKpoaJ3beX-uIQNy7R1V2D_qVza_kgZ9DEyr5wKjwO4,1736
+notebook_ed-0.1.0.dist-info/LICENSE,sha256=trpLrJMO7mt802zu--vzcGJamBMa3xjlRokBS_Bghis,852
+notebook_ed-0.1.0.dist-info/METADATA,sha256=8PqREYNDyam5AV16IUg-xWcZSvIt_RlZ7z6Z3lXvM2o,3468
+notebook_ed-0.1.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+notebook_ed-0.1.0.dist-info/entry_points.txt,sha256=LnffW_JdbHIYyrWZvWxhktf4m6c_2tVf3XJZdh9aqfI,42
+notebook_ed-0.1.0.dist-info/top_level.txt,sha256=bM6vJfgOf4lW_1_JnHHuImILDakoElYA4GByG4-JuHQ,6
+notebook_ed-0.1.0.dist-info/RECORD,,
