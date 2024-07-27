@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/waterq.py
+src/waterq.egg-info/PKG-INFO
+src/waterq.egg-info/SOURCES.txt
+src/waterq.egg-info/dependency_links.txt
+src/waterq.egg-info/entry_points.txt
+src/waterq.egg-info/top_level.txt
