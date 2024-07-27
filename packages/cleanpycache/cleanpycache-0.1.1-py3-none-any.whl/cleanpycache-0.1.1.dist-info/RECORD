@@ -1,0 +1,10 @@
+__init__.py,sha256=cW9_ZK5Ecw-AEzwLzPPxfg2bRzQHDXVn4C8d2jOWn_g,59
+cleanpycache/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cleanpycache/cleanpycache.py,sha256=X6vj_WisW4M-Uf1_tXnJCQYt-AHijSAI-Vh5aqOIyw4,3931
+cleanpycache/cli.py,sha256=nSRzqVHBAGn9i5b_Mbtqc60nlf6JSxoERwMIyBe8NKM,2211
+cleanpycache-0.1.1.dist-info/LICENSE,sha256=CvU0N-48sD8IqaKmoIaueaII5ZV3xgMoYyf-yp1gshw,1067
+cleanpycache-0.1.1.dist-info/METADATA,sha256=6i2xEaYPxNy9Ag5PeTHs3Ikehdis95ADygk4WZSS0bg,1943
+cleanpycache-0.1.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+cleanpycache-0.1.1.dist-info/entry_points.txt,sha256=9f4SaYS8REn7dqUpRSANkWEQMOVocqmcB1ZpUP5HDhk,55
+cleanpycache-0.1.1.dist-info/top_level.txt,sha256=_LOVFyq1sOlucg2Aven6GD15tBNZ8qwKR9cFHEOgbMU,22
+cleanpycache-0.1.1.dist-info/RECORD,,
