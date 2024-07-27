@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: mpide
+Version: 0.0.1
+Summary: ESP32 MicroPython Development Toolbox
+Home-page: https://projects.om-office.de/frans/mpide.git
+Author: Frans Fürst
+Author-email: frans.fuerst@protonmail.com
+Requires-Python: >=3.10.4,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: Werkzeug (>=2.2.2,<3.0.0)
+Requires-Dist: asyncinotify (>=4.0,<5.0)
+Requires-Dist: esptool (>=4.7.0,<5.0.0)
+Requires-Dist: mpremote (>=1.23.0,<2.0.0)
+Requires-Dist: quart (>=0.18.4,<0.19.0)
+Requires-Dist: textual (>=0.73.0,<0.74.0)
+Requires-Dist: trickkiste (>=0.1.4,<0.2.0)
+Project-URL: Repository, https://projects.om-office.de/frans/mpide.git
+Description-Content-Type: text/markdown
+
+# ESP32 MicroPython TUI IDE
+
+Initial commit - more is comming
+
