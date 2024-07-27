@@ -1,0 +1,8 @@
+LICENSE.txt
+setup.py
+MPYdata/MPYdata.py
+MPYdata/__init__.py
+MPYdata.egg-info/PKG-INFO
+MPYdata.egg-info/SOURCES.txt
+MPYdata.egg-info/dependency_links.txt
+MPYdata.egg-info/top_level.txt
