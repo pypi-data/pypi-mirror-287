@@ -1,0 +1,2 @@
+[console_scripts]
+memize = memizer.__init__:display_meme

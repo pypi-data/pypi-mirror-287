@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/memizer/__init__.py
+src/memizer.egg-info/PKG-INFO
+src/memizer.egg-info/SOURCES.txt
+src/memizer.egg-info/dependency_links.txt
+src/memizer.egg-info/entry_points.txt
+src/memizer.egg-info/top_level.txt
