@@ -1,0 +1,26 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "rqwest"
+version = "0.1.0"
+description = "An intuitive and robust Python HTTP/WebSocket Client featuring TLS/JA3/JA4/HTTP2 fingerprint impersonate"
+readme = "README.md"
+license = "MIT"
+authors = ["0x676e67 <gngppz@gmail.com>"]
+homepage = "https://github.com/0x676e67/rqwest"
+repository = "https://github.com/0x676e67/rqwest"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+# List your package dependencies here
+# Example:
+# requests = "^2.25.1"
+
+[tool.poetry.dev-dependencies]
+# List your development dependencies here
+# Example:
+# pytest = "^6.2.2"
+
+
