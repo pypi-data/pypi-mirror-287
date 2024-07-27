@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: imBroker
+Version: 0.0.1
+Summary: A Tensorflow Lite Image Classification Model Integration Library
+Author: dakshoza (Daksh Oza)
+Author-email: <ozadaksh31@gmail.com>
+Project-URL: Bug Tracker, https://github.com/yourusername/disPred/issues
+Project-URL: Source Code, https://github.com/yourusername/disPred
+Keywords: broker,tensorflow lite,image classification,flexible,real time
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# TFLite Image Classification Broker
+
+This library provides a simple interface for image classification using TensorFlow Lite models. It's designed to work with pre-trained models and can process both single images and directories of images.
+
+## Installation
+
+```bash
+pip install imBroker
+```
+
+## Features
+
+- Single image classification
+- Batch classification for directories
+- Support for custom TFLite models
+- Handles any type of image shapes
+
+## Usage
+
+### Initializing the Broker
+
+```python
+from imBroker import tflBroker
+
+# Define your TFlite model's path
+model_path = "path/to/your/model.tflite"
+
+# Define your output labels
+output_labels = {
+    0: 'Label 1',
+    1: 'Label 2',
+    ... 
+}
+
+# Initialize the broker
+broker = tflBroker(model_path, output_labels)
+```
+
+### Classifying a Single Image
+
+```python
+result = broker.predict_single_image("path/to/image.jpg")
+print(result)
+```
+
+### Classifying a Directory of Images
+
+```python
+results = broker.predict_image_directory("path/to/image/directory")
+print(results)
+```
