@@ -1,0 +1,17 @@
+fastphrase-0.0.14.dist-info/METADATA,sha256=GCNFCXvBx37krHYqjWxV1VY7nzBu6HnKU0bA2uTsdE0,309
+fastphrase-0.0.14.dist-info/WHEEL,sha256=rSwsxJWe3vzyR5HCwjWXQruDgschpei4h_giTm0dJVE,90
+fastphrase-0.0.14.dist-info/entry_points.txt,sha256=xjKuNzGqcMGShG-ecjUiisS2uwr1FWYejXDJFSCpK9M,58
+fastphrase/__about__.py,sha256=cOedqJBzdL0Skt6mGUvStXDQVyVq4AhHBF8efpmaWPM,50
+fastphrase/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastphrase/__main__.py,sha256=bbGPJeAPJ9kDDr9c1YCero_PG94XqqRMcwulNn8StcY,138
+fastphrase/cli/__init__.py,sha256=MNlqa-CH9OFQe4yEdJ-W6MbVsBroJky0Ej-7i0IEW2Y,35
+fastphrase/cli/app.py,sha256=sl2JyW0xT2DPy0d3mjT6xP87xCByV4PGYGzLyNNyp3w,3021
+fastphrase/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastphrase/core/passphraser.py,sha256=EloEeli51suMuu6zPmMUBHK0KQ5XLYFrFjRJECZ6fho,2131
+fastphrase/core/pathkeeper.py,sha256=Xyr2mEZ_NUTmvXuoVCYE1VyHgT7z6MmtxFFdaxA8bzw,1130
+fastphrase/core/wordlist.py,sha256=sksezRsN7Tq42r9O9smjii9wJSyGxz07UNrq7O1CMQU,1485
+fastphrase/data/dict/bip0039.txt,sha256=L17tU6Rye0v4iA2PPxme_JDlhQNkbZ_47_Oi7Tsk29o,13116
+fastphrase/data/dict/eff_long.txt,sha256=bVV_BpOVj7XmULaLW-5YXrgs9NoyllUFx4npJHQ7xSI,62144
+fastphrase/data/dict/eff_short1.txt,sha256=j1yoMLi_-2_jnJc2wCSgCmpkEa2z-Dqb6L_utuBnrmk,13660
+fastphrase/data/dict/eff_short2.txt,sha256=IrRcUuC9C78DqlIiQLER60x8DB2GxOUY4b4qfrKmJeQ,17258
+fastphrase-0.0.14.dist-info/RECORD,,
