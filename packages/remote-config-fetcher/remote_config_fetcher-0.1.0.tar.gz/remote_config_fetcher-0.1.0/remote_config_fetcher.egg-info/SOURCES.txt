@@ -1,0 +1,11 @@
+LICENSE.md
+README.md
+setup.cfg
+setup.py
+remote_config_fetcher/__init__.py
+remote_config_fetcher/fetcher.py
+remote_config_fetcher.egg-info/PKG-INFO
+remote_config_fetcher.egg-info/SOURCES.txt
+remote_config_fetcher.egg-info/dependency_links.txt
+remote_config_fetcher.egg-info/requires.txt
+remote_config_fetcher.egg-info/top_level.txt
