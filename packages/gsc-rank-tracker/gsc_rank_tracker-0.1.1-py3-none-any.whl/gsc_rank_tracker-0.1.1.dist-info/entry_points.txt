@@ -1,0 +1,2 @@
+[console_scripts]
+rank_tracker = rank_tracker.tracker:main

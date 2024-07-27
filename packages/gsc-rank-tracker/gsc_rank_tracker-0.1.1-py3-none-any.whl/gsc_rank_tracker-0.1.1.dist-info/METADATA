@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: gsc_rank_tracker
+Version: 0.1.1
+Summary: A basic rank tracker using Plotly and Google Search Console API.
+Home-page: https://github.com/yourusername/rank_tracker
+Author: Chris Lever SEO
+Author-email: hello@chrisleverseo.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: plotly
+Requires-Dist: google-auth-oauthlib
+Requires-Dist: google-api-python-client
+Requires-Dist: statsmodels
+
+# Rank Tracker
+
+A basic rank tracker using Plotly connected to Google Search Console API.
+
+## Installation
+
+```sh
+pip install rank_tracker
+```
+
+## Usage
+
+```sh
+rank_tracker
+```
+
+## Configuration
+
+- Place your Google Search Console credentials JSON file in a folder named `secret` in the same directory as your script.
+- Edit the `SITE_URL` variable in the script to match the URL of the site you're analyzing.
+- Modify the `QUERIES` list with the search queries you're interested in.
+
+## License
+
+MIT License. See the LICENSE file for details.
