@@ -1,0 +1,10 @@
+pydantic_asyncapi/__about__.py,sha256=HfjVOrpTnmZ-xVFCYSVmX50EXaBQeJteUHG-PD6iQs8,22
+pydantic_asyncapi/__init__.py,sha256=g2G2dIsuwS9LFx0gvN9s56o4FzeTGScgTgbJeR-0xMg,321
+pydantic_asyncapi/common.py,sha256=sd6cUmmoMqIIvkBkHnWHbl5wMDE_V5Z8KIFRQbxWQpw,7680
+pydantic_asyncapi/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pydantic_asyncapi/v2.py,sha256=PFBXqSim_bc6X7ukk2-pLpiDeUFpWcup2S9LNeveDek,3175
+pydantic_asyncapi/v3.py,sha256=RA9zkXKn7tTCvB_OeJyRLSK11AusJfimix_l7gxadZs,4093
+pydantic_asyncapi-0.2.1.dist-info/METADATA,sha256=XUA5NeMX_VtAESNskOLJEZSMusPesGOjzkOQgFiToGo,2754
+pydantic_asyncapi-0.2.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+pydantic_asyncapi-0.2.1.dist-info/licenses/LICENSE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
+pydantic_asyncapi-0.2.1.dist-info/RECORD,,
