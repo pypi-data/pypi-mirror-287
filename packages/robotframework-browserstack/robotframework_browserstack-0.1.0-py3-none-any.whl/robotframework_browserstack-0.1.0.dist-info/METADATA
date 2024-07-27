@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: robotframework-browserstack
+Version: 0.1.0
+Summary: BrowserstackLibrary is a keyword library for integration with Browserstack for mobile testing
+License: License :: OSI Approved :: Apache Software License
+Author: Robot Courses
+Author-email: git@robotcourses.com.br
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: Robot Framework
+Classifier: Framework :: Robot Framework :: Library
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: robotframework (>=7.0.1,<8.0.0)
+Project-URL: Bugs Tracker, https://github.com/robotcourses/robotframework-browserstack/issues
+Project-URL: Documentation, https://robotcourses.github.io/robotframework-browserstack/BrowserstackLibrary.html
+Project-URL: Github, https://github.com/robotcourses/robotframework-browserstack
