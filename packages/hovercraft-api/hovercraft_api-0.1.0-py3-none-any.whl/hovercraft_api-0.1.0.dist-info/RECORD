@@ -1,0 +1,14 @@
+hovercraft_api/HovercraftAPI.py,sha256=coVQCOtUjX4GdjbvetO-YGUxVQL-iF8EzeQXcW0CjTw,4378
+hovercraft_api/__init__.py,sha256=ddtjHiVo6jcjeBAPYtYKr28-gTN4uGwjsnfEmzo02jY,290
+hovercraft_api/code_block_alchemist.py,sha256=bnbq4XJwEYmWxlzhY2KOz8KAxpQ8mmoSKMiUiy1g1g0,4418
+hovercraft_api/hovercraft_converter.py,sha256=SXyhnpLMtCPdPi709pfpU_HNiOejMiSBCs4duUtXsQA,2086
+hovercraft_api/markdown_to_rst_converter.py,sha256=nFP2-9UOjC-wdly5aP7qPJlmK7keFsbCvna0O6ZhxOI,1501
+hovercraft_api/markdown_to_slides_converter.py,sha256=Km9NY4f77SJYy4dHIzv3oK81ua7c2TMfPMwV8LDfIio,3938
+hovercraft_api/mermaid_alchemist.py,sha256=CBUJXM0MiL8cqF8ictBKslBlHPGeaEXzw7H0saO_VEk,4296
+hovercraft_api/rst_adjuster.py,sha256=Y_OwaVgUBZWFEHZmphgQjJxSD5KDbapvzfU7g_f40EM,2791
+hovercraft_api/slide_capturer.py,sha256=D8F_QvZxs8_lg48UGLAssWMpyOXsw-UNL2mu_wFgB-o,3964
+hovercraft_api/utils.py,sha256=SPegmYJJ_DvXMkJAYafgo90JKUFd0rPMFBW1DZ7r57E,1231
+hovercraft_api-0.1.0.dist-info/METADATA,sha256=gurijRK_w8eRo7am5OdVAybvxTuF0_O4aL2OJPkQ_DI,6106
+hovercraft_api-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+hovercraft_api-0.1.0.dist-info/entry_points.txt,sha256=ZYj6NoEfCXl22fawDOZ7hE-YHs_4VbQzUEGzt2pjKEc,53
+hovercraft_api-0.1.0.dist-info/RECORD,,
