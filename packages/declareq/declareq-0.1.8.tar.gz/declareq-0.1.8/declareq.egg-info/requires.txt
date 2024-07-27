@@ -1,0 +1,7 @@
+requests
+retrying
+uritemplate
+toolz
+
+[tests]
+pytest
