@@ -1,0 +1,2 @@
+[console_scripts]
+gists-gone = gists_gone.gists_gone:cli
