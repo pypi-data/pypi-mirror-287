@@ -1,0 +1,9 @@
+setup.py
+KN_TTS/__init__.py
+KN_TTS.egg-info/PKG-INFO
+KN_TTS.egg-info/SOURCES.txt
+KN_TTS.egg-info/dependency_links.txt
+KN_TTS.egg-info/entry_points.txt
+KN_TTS.egg-info/requires.txt
+KN_TTS.egg-info/top_level.txt
+KN_TTS/static/script.js

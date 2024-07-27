@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: KN_TTS
+Version: 0.1.0
+Summary: This is a Speech to Text package Created by Koushik Nath
+Author: Koushik Nath
+Author-email: koushiknath003@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11.4
+Requires-Dist: selenium
+Requires-Dist: webdriver-manager
