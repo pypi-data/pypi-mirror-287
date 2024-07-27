@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+src/AutomationSetup/__init__.py
+src/AutomationSetup/bringUpSetup.py
+src/bringUpSetup.egg-info/PKG-INFO
+src/bringUpSetup.egg-info/SOURCES.txt
+src/bringUpSetup.egg-info/dependency_links.txt
+src/bringUpSetup.egg-info/top_level.txt
