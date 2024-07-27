@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+py_cdgram.egg-info/PKG-INFO
+py_cdgram.egg-info/SOURCES.txt
+py_cdgram.egg-info/dependency_links.txt
+py_cdgram.egg-info/entry_points.txt
+py_cdgram.egg-info/requires.txt
+py_cdgram.egg-info/top_level.txt
+pymedia/__init__.py
+pymedia/ai.py
+pymedia/cli.py
+pymedia/pinterest.py
+pymedia/shortcut.py

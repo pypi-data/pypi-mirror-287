@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: py-cdgram
+Version: 0.2.0
+Summary: This Python package helps you download images from Pinterest URLs.
+Home-page: https://amalnath.vercel.app
+Author: Amal Nath H
+Author-email: amalnath0600@gmail.com
+License: GNU GENERAL PUBLIC LICENSE
+Project-URL: Documentation, https://github.com/MrTG-CodeBot/pymedia/blob/main/README.md
+Project-URL: source, https://github.com/MrTG-CodeBot/pymedia
+Requires-Python: >=3.9.0, <3.11.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: bs4
+Requires-Dist: google-generativeai
+
+## Pinterest Image Downloader Package
+
+This Python package helps you download images from Pinterest URLs.
+
+**Installation:**
+
+1. Make sure you have Python 3 installed.
+2. Install the package using pip:
+
+```bash
+pip install py-media-tool
+
+
+``` python
+from pymedia.pinterest import download_pin
+
+url = "https://pin.it/2BojCfoIP"
+
+download_pin(url)
+```
