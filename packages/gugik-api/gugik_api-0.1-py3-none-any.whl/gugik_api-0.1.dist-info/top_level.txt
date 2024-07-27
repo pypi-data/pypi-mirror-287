@@ -1,0 +1,3 @@
+gugik_api
+notebooks
+tests

@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: gugik_api
+Version: 0.1
+Summary: A Python client for the GUGiK API
+Home-page: https://github.com/lechplace/gugik_api
+Author: Lech Hubicki
+Author-email: lech.hubicki@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: requests >=2.0
+Requires-Dist: pytest >=6.0
+Requires-Dist: pyproj
+Provides-Extra: dev
+Requires-Dist: flake8 >=3.8 ; extra == 'dev'
+
+# GUGiK API
+
+A Python client for the GUGiK API [link](https://uldk.gugik.gov.pl/opis.html#)
+
+## Installation
+
+```sh
+pip install gugik_api
+```
+
+
+# Usage
+
+```python
+from gugik_api.gugik_api import GUGiKAPI
+
+api = GUGiKAPI()
+
+# Pobierz działkę przez identyfikator
+parcel_info = api.get_object_by_id(request_type='GetParcelById', identifier='141201_1.0001.6509')
+print(parcel_info)
+
+# Pobierz budynek przez identyfikator
+building_info = api.get_object_by_id(request_type='GetBuildingById', identifier='141301_1.0010.713/2.5_BUD')
+print(building_info)
+```
+
+# Local install 
+```sh
+pip install -e .
+```
+
+# Package
+## Install dependencies
+```sh
+pip install twine setuptools wheel
+```
+
+## Build package
+```sh
+python setup.py sdist bdist_wheel
+```
+
+# Tests
+```sh
+tox
+```

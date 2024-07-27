@@ -1,0 +1,10 @@
+gugik_api/__init__.py,sha256=e7eylLGZO11oZdOSPLnTcODtHSJXk-IIUKrAnQfQ2wE,24
+gugik_api/gugik_api.py,sha256=KXzq_2zi2vqLgfeKcI0sz-WE7UiuONNSCVvrb4YrgKY,7453
+gugik_api/ll_convert.py,sha256=wKOKYlHJtrIjcFC10kIdQ_I9Phe_xbjc-IXYDc3aeao,843
+notebooks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_gugik_api.py,sha256=p5pybKy7dm2ULKQRWjV3IV_MAYLuzez1VZlgGj_rOpI,3737
+gugik_api-0.1.dist-info/METADATA,sha256=zr9IrGNxYzo1U-dNL9PEVW6d02iIyf_li22abzpGAVI,1320
+gugik_api-0.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+gugik_api-0.1.dist-info/top_level.txt,sha256=L7hRTwWDfP_lA3lL4fTlFFt-TsBuZbNW-ykYftmIPRc,26
+gugik_api-0.1.dist-info/RECORD,,
