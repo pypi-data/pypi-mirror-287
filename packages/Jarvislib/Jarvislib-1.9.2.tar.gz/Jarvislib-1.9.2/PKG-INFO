@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: Jarvislib
+Version: 1.9.2
+Summary: Импорт функции: from Jarvislib import start. Запуск главного цикла: start()
+Author-email: babadey.pl@gmail.com
+License-File: LICENSE
