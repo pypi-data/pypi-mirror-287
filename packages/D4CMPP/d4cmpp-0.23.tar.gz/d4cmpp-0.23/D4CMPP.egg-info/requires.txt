@@ -1,0 +1,10 @@
+torch>=1.11
+dgl>=0.8.1
+tqdm
+pandas
+numpy
+matplotlib
+pyyaml
+rdkit
+scikit_learn
+prettytable
