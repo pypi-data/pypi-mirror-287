@@ -1,0 +1,3 @@
+[console_scripts]
+poetry-incr-version=poetry_incr_version.__main__:main
+
