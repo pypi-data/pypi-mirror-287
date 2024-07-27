@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: defectdojo_cli2
+Version: 0.0.3
+Summary: CLI Wrapper for DefectDojo using APIv2
+Author: Mikke Schirén
+Author-email: mikke.schiren@digitalist.com
+License: MIT
+Project-URL: Source Code, https://github.com/Digitalist-Open-Cloud/defectdojo-cli
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown; charset=UTF-8
+License-File: LICENSE
+License-File: AUTHORS
+Requires-Dist: requests
+Requires-Dist: tabulate
+Requires-Dist: rich-argparse
+
+CLI Wrapper for DefectDojo using APIv2
