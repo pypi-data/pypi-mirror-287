@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "simple-item-plugin"
+version = "0.8.0"
+description = ""
+authors = ["edayot <pro.e.dayot@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+bolt = ">=0.48.0"
+model-resolver = ">=0.10.0"
+beet = ">=0.108.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pyright]
+typeCheckingMode = "basic"
