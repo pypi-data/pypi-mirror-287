@@ -1,0 +1,9 @@
+bottles/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bottles/ai.py,sha256=yhA3YckMoVXY2xaZ-QBFdYXNU259Vpj6iTZDKpO8484,363
+bottles/cli.py,sha256=PWe3m_UByZ7urS2P3lNjeXQzXh279fn9x1FVxz0-tFA,18400
+bottles/editor.py,sha256=BBI_00Fb7J3kRTN5BgzQKwioEpey8lS1UvbWPDlLWMk,3506
+bottles_cli-0.2.0.dist-info/METADATA,sha256=hWzcBvs3SHJ9BtvGewz299UWLig3ZQ_4dyyu0OnDZMQ,102
+bottles_cli-0.2.0.dist-info/WHEEL,sha256=-oYQCr74JF3a37z2nRlQays_SX2MqOANoqVjBBAP2yE,91
+bottles_cli-0.2.0.dist-info/entry_points.txt,sha256=jDRmhSKTCBCYtA4So73NyfhrVvSDydJR7hE-vsInVk8,44
+bottles_cli-0.2.0.dist-info/top_level.txt,sha256=72H3p_oC4UTzsp_Kw0XapRL8q7EGFl_DmKy2ToQfoeE,8
+bottles_cli-0.2.0.dist-info/RECORD,,
