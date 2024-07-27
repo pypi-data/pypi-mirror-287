@@ -1,0 +1,21 @@
+[project]
+name = 'environparse'
+description = 'Environment variable parsing library.'
+dynamic = ['dependencies', 'readme', 'version']
+license = { file = 'LICENSE' }
+keywords = ['env', 'environ', 'environment', 'parse', 'parser', 'argparse', 'optparse', 'envparse']
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+requires-python = '>= 3.10'
+
+[tool.setuptools.dynamic]
+dependencies = { file = ['requirements.txt'] }
+readme = { file = ['README.md', 'CHANGELOG.md'], content-type = 'text/markdown' }
+version = { attr = 'environparse.__version__' }
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ['src']

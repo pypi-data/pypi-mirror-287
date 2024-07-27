@@ -1,0 +1,2 @@
+recursive-include src/environparse/locale *.mo
+recursive-exclude src/environparse/locale *.po

@@ -1,0 +1,16 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+src/environparse/__init__.py
+src/environparse.egg-info/PKG-INFO
+src/environparse.egg-info/SOURCES.txt
+src/environparse.egg-info/dependency_links.txt
+src/environparse.egg-info/requires.txt
+src/environparse.egg-info/top_level.txt
+src/environparse/locale/zh_CN/LC_MESSAGES/environparse.mo
+src/environparse/locale/zh_HK/LC_MESSAGES/environparse.mo
+src/environparse/locale/zh_SG/LC_MESSAGES/environparse.mo
+src/environparse/locale/zh_TW/LC_MESSAGES/environparse.mo
