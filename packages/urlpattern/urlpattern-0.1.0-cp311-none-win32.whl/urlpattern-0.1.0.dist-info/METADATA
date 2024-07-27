@@ -1,0 +1,69 @@
+Metadata-Version: 2.3
+Name: urlpattern
+Version: 0.1.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Typing :: Typed
+License-File: LICENSE.txt
+Summary: An implementation of the URL Pattern Standard for Python written in Rust
+Keywords: urlpattern
+Author: 방성범 (Bang Seongbeom) <bangseongbeom@gmail.com>
+Author-email: "방성범 (Bang Seongbeom)" <bangseongbeom@gmail.com>
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Homepage, https://github.com/urlpattern/python-urlpattern
+Project-URL: Repository, https://github.com/urlpattern/python-urlpattern.git
+Project-URL: Issues, https://github.com/urlpattern/python-urlpattern/issues
+
+# URL Pattern
+
+An implementation of [the URL Pattern Standard](https://urlpattern.spec.whatwg.org/) for Python written in Rust
+
+This is a thin wrapper of [denoland/rust-urlpattern](https://github.com/denoland/rust-urlpattern) with [PyO3](https://github.com/PyO3/pyo3) + [Maturin](https://github.com/PyO3/maturin).
+
+## Installation
+
+On Linux/UNIX or macOS:
+
+```sh
+pip install urlpattern
+```
+
+On Windows:
+
+```sh
+py -m pip install urlpattern
+```
+
+## Example
+
+```py
+from urlpattern import URLPattern
+
+
+pattern = URLPattern("https://example.com/*")
+print(pattern.test("https://example.com/foo/bar"))  # output: True
+
+pattern = URLPattern({"pathname": "/:foo/:bar"})
+result = pattern.exec("/abc/def", "https://test.example")
+print(result["pathname"]["groups"]["foo"])  # output: abc
+print(result["pathname"]["groups"]["bar"])  # output: def
+```
+
+## License
+
+[MIT License](/LICENSE)
