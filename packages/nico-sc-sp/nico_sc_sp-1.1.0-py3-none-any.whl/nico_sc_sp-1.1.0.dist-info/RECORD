@@ -1,0 +1,12 @@
+nico/Annotations.py,sha256=G7_D6BJsJ-QzzwEKJoTtWJAZhWNMBo6MzHtqGyq-Wn0,58960
+nico/Covariations.py,sha256=eFqMHPYDcgvuqOLLf00J_7LtXM4e_xQ-9NNM2a8IlEE,140874
+nico/Interactions.py,sha256=P6WubKB5vkbEwjls4zFYGM76BS1N4URM790zR9Dp3zs,58755
+nico/__init__.py,sha256=mn6w873EMClBVMKjI1sxXxDgMLykA-VRUc0SDTcav_Y,5179
+nico/utils/SCTransform.py,sha256=6FUantPA73URrpR1n7-WwCDt3Z4DJEchjW5ckk1qa98,9494
+nico/utils/__init__.py,sha256=8ratv6pwkiHlcRas0I9fH5kA2Y9_dpOj8AaX95Rnds4,987
+nico/utils/pyliger_utilities.py,sha256=ypJCJaugCIA1jFE54YFWBB8Ql0tqPF7TVW8aXFgbC10,17782
+nico_sc_sp-1.1.0.dist-info/LICENSE,sha256=pWXfNzISFk7f6PbXxRpqTCg4PNGc4E9vhTiOd8O7kH8,1070
+nico_sc_sp-1.1.0.dist-info/METADATA,sha256=j1YHTRyDc5ETaXA9l8oU6YLc025Xgnxm0hZ7dZb3k6E,4483
+nico_sc_sp-1.1.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+nico_sc_sp-1.1.0.dist-info/top_level.txt,sha256=dM_GoN9gL8w8gsJAA7_JoHtEgUGghIZ6ubczEjL6718,5
+nico_sc_sp-1.1.0.dist-info/RECORD,,
