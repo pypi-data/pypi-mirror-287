@@ -1,0 +1,7 @@
+pddlgym
+fire
+lark
+openai
+ipdb
+networkx>=3.1
+numpy>=1.20.0
