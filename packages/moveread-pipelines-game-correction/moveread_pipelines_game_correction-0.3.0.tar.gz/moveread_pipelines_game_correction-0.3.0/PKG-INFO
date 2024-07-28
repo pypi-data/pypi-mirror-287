@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: moveread-pipelines-game-correction
+Version: 0.3.0
+Summary: Moveread game correction, revamped: single-player, with edits, locks and out-of-memory caches for multiple worker support
+Author-email: Marcel Claramunt <marcel@moveread.com>
+Project-URL: repo, https://github.com/moveread/pipelines.git
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: chess-notation
+Requires-Dist: game-prediction2
+Requires-Dist: sequence-edits
+Requires-Dist: haskellian
+Requires-Dist: python-kv
+Requires-Dist: pipeteer
+
+# Game Correction
+
+> Moveread game correction, revamped: single-player, with edits, locks and out-of-memory caches for multiple worker support

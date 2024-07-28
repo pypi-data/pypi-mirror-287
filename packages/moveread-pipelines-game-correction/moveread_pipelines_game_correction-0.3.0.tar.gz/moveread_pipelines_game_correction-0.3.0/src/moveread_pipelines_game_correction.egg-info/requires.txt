@@ -1,0 +1,6 @@
+chess-notation
+game-prediction2
+sequence-edits
+haskellian
+python-kv
+pipeteer

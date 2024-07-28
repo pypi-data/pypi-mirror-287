@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moveread-pipelines-game-correction"
+version = "0.3.0"
+authors = [
+  {name="Marcel Claramunt", email="marcel@moveread.com"}
+]
+description = "Moveread game correction, revamped: single-player, with edits, locks and out-of-memory caches for multiple worker support"
+dependencies = [
+  "chess-notation", "game-prediction2", "sequence-edits",
+  "haskellian", "python-kv", "pipeteer"
+]
+requires-python = ">=3.10"
+readme = {file="README.md", content-type="text/markdown"}
+
+[project.urls]
+repo = "https://github.com/moveread/pipelines.git"
+
+
+[project.scripts]
+gamecorr-clientgen = "moveread.pipelines.game_correction.api:clientgen"
+gamecorr = "moveread.pipelines.game_correction.cli:main"
