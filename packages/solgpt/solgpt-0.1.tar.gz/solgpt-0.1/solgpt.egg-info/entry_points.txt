@@ -1,0 +1,2 @@
+[console_scripts]
+download-and-run = solgpt.downloader:download_and_run
