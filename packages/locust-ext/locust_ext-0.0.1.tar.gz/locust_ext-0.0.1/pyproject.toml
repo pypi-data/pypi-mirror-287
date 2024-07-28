@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "locust-ext"
+version = "0.0.1"
+description = "Custom Locust extensions"
+authors = ["Hchanni"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "locust_ext" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.28.0"
+locust = "^2.29.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.0"
+pytest = "^7.3.0"
+isort = "^5.13.2"
+pyright = "^1.1.373"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+include = ["locust_ext"]
