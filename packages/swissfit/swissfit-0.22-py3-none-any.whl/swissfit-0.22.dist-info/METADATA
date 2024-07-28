@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: swissfit
+Version: 0.22
+Summary: SwissFit
+Home-page: UNKNOWN
+Author: Curtis Taylor Peterson
+Author-email: curtistaylorpetersonwork@gmail.com
+License: UNKNOWN
+Keywords: least squares
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.10
+License-File: LICENSE
+Requires-Dist: gvar
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: vegas
+
+SwissFit: a cheesy multitool for fitting models to data
+
