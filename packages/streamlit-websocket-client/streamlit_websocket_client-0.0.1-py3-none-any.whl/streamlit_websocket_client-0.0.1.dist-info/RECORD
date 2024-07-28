@@ -1,0 +1,11 @@
+websocket_client/__init__.py,sha256=Y0kYfrhKLr2hXvGugWiejqhKK-9SnPJp5RTLQ9V3vCs,686
+websocket_client/example.py,sha256=6MTASG8jYQOJ_TL_xBgqerOdGlHp-jxm86Z_WHejxDg,330
+websocket_client/frontend/build/asset-manifest.json,sha256=Su3_UPHROo11otzlROUvt4tjZ9AsbTKhOLmRSJCtqqY,221
+websocket_client/frontend/build/index.html,sha256=Zw9bSRwokJFWoK402-9ge6l-_uf27GUvItw6vRbfyAk,450
+websocket_client/frontend/build/static/js/main.59a02ee2.js,sha256=0m0ULzxHZr6NgBinzrAq6nHLOKUmzBROrRBYTYaUpJM,317202
+websocket_client/frontend/build/static/js/main.59a02ee2.js.LICENSE.txt,sha256=cmjEMovgjlkZ-Bs7b5rRQ8FsJtL1F77Y3YkM2E9yfUs,1293
+websocket_client/frontend/build/static/js/main.59a02ee2.js.map,sha256=O19LwD2dqE_IAsfFyuJCiR8McNcbZV0e9aXMmFRckb4,1246416
+streamlit_websocket_client-0.0.1.dist-info/METADATA,sha256=JKWjqCrUglC11pbv68ZSKFW579fBz9TCnMFEIjGMl9I,1074
+streamlit_websocket_client-0.0.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+streamlit_websocket_client-0.0.1.dist-info/top_level.txt,sha256=YHDwgiG3oAZWmHgw1e4cqI8ZqpXwWrsindfgWy735Fc,17
+streamlit_websocket_client-0.0.1.dist-info/RECORD,,

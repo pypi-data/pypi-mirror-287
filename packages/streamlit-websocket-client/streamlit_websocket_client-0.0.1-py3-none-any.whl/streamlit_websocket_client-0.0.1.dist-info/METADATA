@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: streamlit-websocket-client
+Version: 0.0.1
+Home-page: 
+Author: 
+Author-email: 
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: streamlit >=0.63
+Provides-Extra: devel
+Requires-Dist: wheel ; extra == 'devel'
+Requires-Dist: pytest ==7.4.0 ; extra == 'devel'
+Requires-Dist: playwright ==1.39.0 ; extra == 'devel'
+Requires-Dist: requests ==2.31.0 ; extra == 'devel'
+Requires-Dist: pytest-playwright-snapshot ==1.0 ; extra == 'devel'
+Requires-Dist: pytest-rerunfailures ==12.0 ; extra == 'devel'
+
+# streamlit-custom-component
+
+Streamlit component that allows you to subscribe WebSocket.
+
+## Installation instructions
+
+```sh
+pip install streamlit-ws-client
+```
+
+## Usage instructions
+
+```python
+import streamlit as st
+from ws_client import ws_client
+
+
+def get_ws_url():
+    return ""
+
+
+if "ws_url" not in st.session_state:
+    st.session_state.ws_url = get_ws_url()
+
+st.subheader("Component with WebSockets")
+
+message = ws_client(st.session_state.ws_url, key="ws_client_1")
+if message is not None:
+    st.write(message)
+```
