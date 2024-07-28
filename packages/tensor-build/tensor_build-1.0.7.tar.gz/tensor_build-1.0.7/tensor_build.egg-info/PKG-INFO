@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: tensor_build
+Version: 1.0.7
+Summary: A block-based framework for TensorFlow
+Home-page: https://github.com/stony-su/starterhacks
+Author: Darren, Eddie, Kahan, Richard
+Description-Content-Type: text/markdown
+Requires-Dist: tensorflow>=2.0
+
+# starterhacks
+Starterhacks project july 27th
+Created by Darren Su, Eddie Bian, Kahan Shah, and Richard Tuo. Please like and subscribe! Don't forget to comment and subscribe next time
+ 
+## Installation
+
+You can install the package using pip:
+
+```bash
+pip install tensorflow_builder
+```
+
+## Usage
+import tensorflow_builder
+tensorflow_builder.build()
