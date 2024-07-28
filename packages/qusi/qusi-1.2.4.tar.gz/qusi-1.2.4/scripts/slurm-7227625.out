@@ -1,0 +1,262 @@
+Job shell script started.
+wandb: Tracking run with wandb version 0.17.1
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+qusi [2024-07-24 11:14:30,251 INFO qusi.internal.train_session] Cycle 0
+qusi [2024-07-24 11:58:21,300 INFO qusi.internal.train_session] loss: 0.703898  [ 1000/100000]
+qusi [2024-07-24 11:58:51,630 INFO qusi.internal.train_session] loss: 0.651901  [11000/100000]
+qusi [2024-07-24 12:02:06,888 INFO qusi.internal.train_session] loss: 0.651549  [21000/100000]
+qusi [2024-07-24 12:07:26,146 INFO qusi.internal.train_session] loss: 0.649434  [31000/100000]
+qusi [2024-07-24 12:11:01,297 INFO qusi.internal.train_session] loss: 0.632758  [41000/100000]
+qusi [2024-07-24 12:14:11,196 INFO qusi.internal.train_session] loss: 0.630600  [51000/100000]
+qusi [2024-07-24 12:17:13,173 INFO qusi.internal.train_session] loss: 0.609015  [61000/100000]
+qusi [2024-07-24 12:20:42,476 INFO qusi.internal.train_session] loss: 0.595803  [71000/100000]
+qusi [2024-07-24 12:23:48,573 INFO qusi.internal.train_session] loss: 0.602697  [81000/100000]
+qusi [2024-07-24 12:26:51,398 INFO qusi.internal.train_session] loss: 0.586581  [91000/100000]
+qusi [2024-07-24 13:09:28,743 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.578937 
+
+qusi [2024-07-24 13:09:28,853 INFO qusi.internal.train_session] Cycle 1
+qusi [2024-07-24 14:11:12,255 INFO qusi.internal.train_session] loss: 0.587010  [ 1000/100000]
+qusi [2024-07-24 14:11:24,983 INFO qusi.internal.train_session] loss: 0.597584  [11000/100000]
+qusi [2024-07-24 14:11:37,603 INFO qusi.internal.train_session] loss: 0.593496  [21000/100000]
+qusi [2024-07-24 14:14:31,183 INFO qusi.internal.train_session] loss: 0.564519  [31000/100000]
+qusi [2024-07-24 14:17:41,257 INFO qusi.internal.train_session] loss: 0.565369  [41000/100000]
+qusi [2024-07-24 14:23:04,105 INFO qusi.internal.train_session] loss: 0.576011  [51000/100000]
+qusi [2024-07-24 14:31:32,516 INFO qusi.internal.train_session] loss: 0.548025  [61000/100000]
+qusi [2024-07-24 14:34:42,245 INFO qusi.internal.train_session] loss: 0.559996  [71000/100000]
+qusi [2024-07-24 14:37:51,840 INFO qusi.internal.train_session] loss: 0.557377  [81000/100000]
+qusi [2024-07-24 14:41:09,273 INFO qusi.internal.train_session] loss: 0.558901  [91000/100000]
+qusi [2024-07-24 15:13:42,492 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.560694 
+
+qusi [2024-07-24 15:13:42,779 INFO qusi.internal.train_session] Cycle 2
+qusi [2024-07-24 16:21:57,300 INFO qusi.internal.train_session] loss: 0.577085  [ 1000/100000]
+qusi [2024-07-24 16:25:16,846 INFO qusi.internal.train_session] loss: 0.564109  [11000/100000]
+qusi [2024-07-24 16:28:46,107 INFO qusi.internal.train_session] loss: 0.557618  [21000/100000]
+qusi [2024-07-24 16:32:22,933 INFO qusi.internal.train_session] loss: 0.555989  [31000/100000]
+qusi [2024-07-24 16:35:38,025 INFO qusi.internal.train_session] loss: 0.561577  [41000/100000]
+qusi [2024-07-24 16:38:58,898 INFO qusi.internal.train_session] loss: 0.569369  [51000/100000]
+qusi [2024-07-24 16:42:27,389 INFO qusi.internal.train_session] loss: 0.558748  [61000/100000]
+qusi [2024-07-24 16:45:54,651 INFO qusi.internal.train_session] loss: 0.551280  [71000/100000]
+qusi [2024-07-24 16:49:17,852 INFO qusi.internal.train_session] loss: 0.540891  [81000/100000]
+qusi [2024-07-24 16:52:33,401 INFO qusi.internal.train_session] loss: 0.581137  [91000/100000]
+qusi [2024-07-24 17:23:36,917 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.566783 
+
+qusi [2024-07-24 17:23:36,924 INFO qusi.internal.train_session] Cycle 3
+qusi [2024-07-24 18:30:42,648 INFO qusi.internal.train_session] loss: 0.564375  [ 1000/100000]
+qusi [2024-07-24 18:34:11,099 INFO qusi.internal.train_session] loss: 0.554871  [11000/100000]
+qusi [2024-07-24 18:37:25,777 INFO qusi.internal.train_session] loss: 0.581725  [21000/100000]
+qusi [2024-07-24 18:40:59,403 INFO qusi.internal.train_session] loss: 0.551041  [31000/100000]
+qusi [2024-07-24 18:44:16,114 INFO qusi.internal.train_session] loss: 0.555486  [41000/100000]
+qusi [2024-07-24 18:47:51,759 INFO qusi.internal.train_session] loss: 0.559112  [51000/100000]
+qusi [2024-07-24 18:51:05,518 INFO qusi.internal.train_session] loss: 0.543783  [61000/100000]
+qusi [2024-07-24 18:54:10,898 INFO qusi.internal.train_session] loss: 0.561687  [71000/100000]
+qusi [2024-07-24 18:57:21,860 INFO qusi.internal.train_session] loss: 0.552297  [81000/100000]
+qusi [2024-07-24 19:00:43,233 INFO qusi.internal.train_session] loss: 0.548335  [91000/100000]
+qusi [2024-07-24 19:31:28,259 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.547732 
+
+qusi [2024-07-24 19:31:28,261 INFO qusi.internal.train_session] Cycle 4
+qusi [2024-07-24 20:34:44,841 INFO qusi.internal.train_session] loss: 0.545307  [ 1000/100000]
+qusi [2024-07-24 20:37:55,119 INFO qusi.internal.train_session] loss: 0.550073  [11000/100000]
+qusi [2024-07-24 20:41:05,073 INFO qusi.internal.train_session] loss: 0.525436  [21000/100000]
+qusi [2024-07-24 20:44:31,778 INFO qusi.internal.train_session] loss: 0.554637  [31000/100000]
+qusi [2024-07-24 20:47:49,626 INFO qusi.internal.train_session] loss: 0.558188  [41000/100000]
+qusi [2024-07-24 20:51:06,139 INFO qusi.internal.train_session] loss: 0.550982  [51000/100000]
+qusi [2024-07-24 20:54:16,177 INFO qusi.internal.train_session] loss: 0.538556  [61000/100000]
+qusi [2024-07-24 20:57:35,776 INFO qusi.internal.train_session] loss: 0.546990  [71000/100000]
+qusi [2024-07-24 21:00:56,079 INFO qusi.internal.train_session] loss: 0.549771  [81000/100000]
+qusi [2024-07-24 21:04:09,077 INFO qusi.internal.train_session] loss: 0.560500  [91000/100000]
+qusi [2024-07-24 21:37:16,909 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.588319 
+
+qusi [2024-07-24 21:37:16,911 INFO qusi.internal.train_session] Cycle 5
+qusi [2024-07-24 22:33:07,092 INFO qusi.internal.train_session] loss: 0.529408  [ 1000/100000]
+qusi [2024-07-24 22:36:36,177 INFO qusi.internal.train_session] loss: 0.542422  [11000/100000]
+qusi [2024-07-24 22:39:41,278 INFO qusi.internal.train_session] loss: 0.534589  [21000/100000]
+qusi [2024-07-24 22:43:22,443 INFO qusi.internal.train_session] loss: 0.544951  [31000/100000]
+qusi [2024-07-24 22:46:40,485 INFO qusi.internal.train_session] loss: 0.549752  [41000/100000]
+qusi [2024-07-24 22:49:58,924 INFO qusi.internal.train_session] loss: 0.564612  [51000/100000]
+qusi [2024-07-24 22:53:27,930 INFO qusi.internal.train_session] loss: 0.554908  [61000/100000]
+qusi [2024-07-24 22:56:44,074 INFO qusi.internal.train_session] loss: 0.522898  [71000/100000]
+qusi [2024-07-24 23:00:10,380 INFO qusi.internal.train_session] loss: 0.552967  [81000/100000]
+qusi [2024-07-24 23:03:17,183 INFO qusi.internal.train_session] loss: 0.526811  [91000/100000]
+qusi [2024-07-24 23:37:35,484 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.534063 
+
+qusi [2024-07-24 23:37:35,487 INFO qusi.internal.train_session] Cycle 6
+qusi [2024-07-25 00:36:40,021 INFO qusi.internal.train_session] loss: 0.535822  [ 1000/100000]
+qusi [2024-07-25 00:36:52,348 INFO qusi.internal.train_session] loss: 0.528566  [11000/100000]
+qusi [2024-07-25 00:37:34,283 INFO qusi.internal.train_session] loss: 0.539529  [21000/100000]
+qusi [2024-07-25 00:38:08,496 INFO qusi.internal.train_session] loss: 0.541564  [31000/100000]
+qusi [2024-07-25 00:41:13,491 INFO qusi.internal.train_session] loss: 0.563110  [41000/100000]
+qusi [2024-07-25 00:44:48,760 INFO qusi.internal.train_session] loss: 0.538689  [51000/100000]
+qusi [2024-07-25 00:48:10,249 INFO qusi.internal.train_session] loss: 0.526432  [61000/100000]
+qusi [2024-07-25 00:51:30,764 INFO qusi.internal.train_session] loss: 0.516932  [71000/100000]
+qusi [2024-07-25 00:55:13,680 INFO qusi.internal.train_session] loss: 0.529589  [81000/100000]
+qusi [2024-07-25 00:58:40,330 INFO qusi.internal.train_session] loss: 0.527844  [91000/100000]
+qusi [2024-07-25 04:16:46,531 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.538627 
+
+qusi [2024-07-25 04:16:46,539 INFO qusi.internal.train_session] Cycle 7
+qusi [2024-07-25 05:02:42,306 INFO qusi.internal.train_session] loss: 0.544485  [ 1000/100000]
+qusi [2024-07-25 05:05:41,615 INFO qusi.internal.train_session] loss: 0.544226  [11000/100000]
+qusi [2024-07-25 05:08:54,881 INFO qusi.internal.train_session] loss: 0.508541  [21000/100000]
+qusi [2024-07-25 05:11:56,276 INFO qusi.internal.train_session] loss: 0.515398  [31000/100000]
+qusi [2024-07-25 05:14:51,293 INFO qusi.internal.train_session] loss: 0.513642  [41000/100000]
+qusi [2024-07-25 05:17:47,220 INFO qusi.internal.train_session] loss: 0.528623  [51000/100000]
+qusi [2024-07-25 05:20:39,523 INFO qusi.internal.train_session] loss: 0.519480  [61000/100000]
+qusi [2024-07-25 05:23:54,554 INFO qusi.internal.train_session] loss: 0.528685  [71000/100000]
+qusi [2024-07-25 05:27:02,687 INFO qusi.internal.train_session] loss: 0.533382  [81000/100000]
+qusi [2024-07-25 05:30:05,969 INFO qusi.internal.train_session] loss: 0.539387  [91000/100000]
+qusi [2024-07-25 05:59:58,819 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.543810 
+
+qusi [2024-07-25 05:59:58,843 INFO qusi.internal.train_session] Cycle 8
+qusi [2024-07-25 07:01:31,746 INFO qusi.internal.train_session] loss: 0.524191  [ 1000/100000]
+qusi [2024-07-25 07:04:22,308 INFO qusi.internal.train_session] loss: 0.532863  [11000/100000]
+qusi [2024-07-25 07:07:26,576 INFO qusi.internal.train_session] loss: 0.520621  [21000/100000]
+qusi [2024-07-25 07:10:10,178 INFO qusi.internal.train_session] loss: 0.566202  [31000/100000]
+qusi [2024-07-25 07:12:51,655 INFO qusi.internal.train_session] loss: 0.515926  [41000/100000]
+qusi [2024-07-25 07:15:54,638 INFO qusi.internal.train_session] loss: 0.509844  [51000/100000]
+qusi [2024-07-25 07:18:41,791 INFO qusi.internal.train_session] loss: 0.537505  [61000/100000]
+qusi [2024-07-25 07:21:26,941 INFO qusi.internal.train_session] loss: 0.502408  [71000/100000]
+qusi [2024-07-25 07:24:17,351 INFO qusi.internal.train_session] loss: 0.533556  [81000/100000]
+qusi [2024-07-25 07:27:27,678 INFO qusi.internal.train_session] loss: 0.531575  [91000/100000]
+qusi [2024-07-25 07:57:18,705 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.552757 
+
+qusi [2024-07-25 07:57:18,720 INFO qusi.internal.train_session] Cycle 9
+qusi [2024-07-25 08:56:40,555 INFO qusi.internal.train_session] loss: 0.518905  [ 1000/100000]
+qusi [2024-07-25 09:00:03,840 INFO qusi.internal.train_session] loss: 0.537357  [11000/100000]
+qusi [2024-07-25 09:02:51,576 INFO qusi.internal.train_session] loss: 0.521606  [21000/100000]
+qusi [2024-07-25 09:05:27,989 INFO qusi.internal.train_session] loss: 0.524263  [31000/100000]
+qusi [2024-07-25 09:08:15,023 INFO qusi.internal.train_session] loss: 0.519808  [41000/100000]
+qusi [2024-07-25 09:11:06,368 INFO qusi.internal.train_session] loss: 0.496527  [51000/100000]
+qusi [2024-07-25 09:14:36,645 INFO qusi.internal.train_session] loss: 0.517866  [61000/100000]
+qusi [2024-07-25 09:17:13,020 INFO qusi.internal.train_session] loss: 0.538982  [71000/100000]
+qusi [2024-07-25 09:20:13,901 INFO qusi.internal.train_session] loss: 0.513808  [81000/100000]
+qusi [2024-07-25 09:23:13,064 INFO qusi.internal.train_session] loss: 0.526505  [91000/100000]
+qusi [2024-07-25 09:56:56,592 INFO qusi.internal.train_session] Validation Error: 
+Avg loss: 0.512120 
+
+qusi [2024-07-25 09:56:56,594 INFO qusi.internal.train_session] Cycle 10
+qusi [2024-07-25 10:49:04,209 INFO qusi.internal.train_session] loss: 0.528909  [ 1000/100000]
+qusi [2024-07-25 10:51:55,070 INFO qusi.internal.train_session] loss: 0.533036  [11000/100000]
+qusi [2024-07-25 10:54:41,102 INFO qusi.internal.train_session] loss: 0.539363  [21000/100000]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/scratch/zt1/project/zorawar-prj/user/gkalapot/qusi_heart_beat/scripts/train.py", line 28, in <module>
+    main()
+  File "/scratch/zt1/project/zorawar-prj/user/gkalapot/qusi_heart_beat/scripts/train.py", line 23, in main
+    train_session(train_datasets=[train_light_curve_dataset], validation_datasets=[validation_light_curve_dataset],
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/train_session.py", line 107, in train_session
+    train_phase(
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/train_session.py", line 141, in train_phase
+    for batch_index, (input_features, targets) in enumerate(dataloader):
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1346, in _next_data
+    return self._process_data(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1372, in _process_data
+    data.reraise()
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/_utils.py", line 705, in reraise
+    raise exception
+ValueError: Caught ValueError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 32, in fetch
+    data.append(next(self.dataset_iter))
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/light_curve_dataset.py", line 233, in interleave_infinite_iterators
+    yield next(iterator)
+          ^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/light_curve_dataset.py", line 137, in __iter__
+    injected_light_curve = inject_light_curve(
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/light_curve_dataset.py", line 203, in inject_light_curve
+    ) = inject_signal_into_light_curve_with_intermediates(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/light_curve_dataset.py", line 396, in inject_signal_into_light_curve_with_intermediates
+    minimum_light_curve_time = np.nanmin(light_curve_times)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/numpy/lib/nanfunctions.py", line 343, in nanmin
+    res = np.fmin.reduce(a, axis=axis, out=out, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation fmin which has no identity
+
+qusi [2024-07-25 10:55:04,845 CRITICAL qusi] Uncaught exception at 2024-07-25 10:55:04.845713-04:00:
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/scratch/zt1/project/zorawar-prj/user/gkalapot/qusi_heart_beat/scripts/train.py", line 28, in <module>
+    main()
+  File "/scratch/zt1/project/zorawar-prj/user/gkalapot/qusi_heart_beat/scripts/train.py", line 23, in main
+    train_session(train_datasets=[train_light_curve_dataset], validation_datasets=[validation_light_curve_dataset],
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/train_session.py", line 107, in train_session
+    train_phase(
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/train_session.py", line 141, in train_phase
+    for batch_index, (input_features, targets) in enumerate(dataloader):
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1346, in _next_data
+    return self._process_data(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1372, in _process_data
+    data.reraise()
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/_utils.py", line 705, in reraise
+    raise exception
+ValueError: Caught ValueError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 32, in fetch
+    data.append(next(self.dataset_iter))
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/light_curve_dataset.py", line 233, in interleave_infinite_iterators
+    yield next(iterator)
+          ^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/light_curve_dataset.py", line 137, in __iter__
+    injected_light_curve = inject_light_curve(
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/light_curve_dataset.py", line 203, in inject_light_curve
+    ) = inject_signal_into_light_curve_with_intermediates(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/qusi/internal/light_curve_dataset.py", line 396, in inject_signal_into_light_curve_with_intermediates
+    minimum_light_curve_time = np.nanmin(light_curve_times)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gkalapot/miniforge3/envs/remote_env/lib/python3.11/site-packages/numpy/lib/nanfunctions.py", line 343, in nanmin
+    res = np.fmin.reduce(a, axis=axis, out=out, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation fmin which has no identity
+
+wandb: 
+wandb: Run history:
+wandb:     binary_accuracy ▁▄▅▅▆▇████
+wandb:        binary_auroc ▁▆▆▇▇▇████
+wandb:                loss █▄▄▃▂▂▁▁▁▁
+wandb: val_binary_accuracy ▁▄▄▄▅▅▆▅▅█
+wandb:    val_binary_auroc ▁▃▃▅▅▆▆▆▄█
+wandb:            val_loss ▇▅▆▄█▃▃▄▅▁
+wandb: 
+wandb: Run summary:
+wandb:     binary_accuracy 0.73991
+wandb:        binary_auroc 0.78105
+wandb:                loss 0.52336
+wandb: val_binary_accuracy 0.7623
+wandb:    val_binary_auroc 0.80794
+wandb:            val_loss 0.51212
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync sessions/wandb/offline-run-20240724_111423-r1twormh
+wandb: Find logs at: sessions/wandb/offline-run-20240724_111423-r1twormh/logs
+srun: error: gpu-b11-6: task 0: Exited with exit code 1
