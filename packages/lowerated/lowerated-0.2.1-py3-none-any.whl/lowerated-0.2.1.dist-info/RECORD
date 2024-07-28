@@ -1,0 +1,10 @@
+lowerated/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lowerated/rate/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lowerated/rate/entity.py,sha256=Spcy2el2NnkxgOhrS2baHvNSLeBZ-tkZAchWnC_p0wU,1818
+lowerated/rate/reviews_extraction.py,sha256=1kH96Eg73Ie2JPxgT8EFIiybSzx-zZmEVNJEIqmCecI,4019
+lowerated/rate/utils.py,sha256=OncRqb3maiuOdVtvlXw1dXlHGryXjtl29SB6PYDsfMg,4240
+lowerated-0.2.1.dist-info/LICENSE,sha256=XP-YOn75yEDOkQWWF48ofyJBaIJtyfXdikGb47Ae7Kk,11360
+lowerated-0.2.1.dist-info/METADATA,sha256=SmnIBTFFsstdSNFOfGMfGIQQNkN6cqxDCRmNvbULnvc,4524
+lowerated-0.2.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+lowerated-0.2.1.dist-info/top_level.txt,sha256=WtG0YhNiUMS7iiz6tk6UBYSnZC1veJVakJUIzhnXntQ,10
+lowerated-0.2.1.dist-info/RECORD,,
