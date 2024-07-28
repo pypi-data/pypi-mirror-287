@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: pygamePro
+Version: 0.0.1
+Summary: first releace of a pygame class that aims to make your expieience with pygame eisier.
+Project-URL: Homepage, https://github.com/pypa/sampleproject
+Project-URL: Issues, https://github.com/pypa/sampleproject/issues
+Author-email: Sam Fertig <sfertig007@gmail.com>
+License-File: LICENCE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+First version, so please be patent. Thanks!
