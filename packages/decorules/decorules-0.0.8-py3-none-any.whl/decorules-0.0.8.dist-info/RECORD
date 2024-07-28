@@ -1,0 +1,12 @@
+__init__.py,sha256=7cxxOasVApBDAZFx5Pp_9kWQb1moJF7w-JfnpQeAmYo,24
+decorules/decorators.py,sha256=MaWEs33QtTKE5rmg-OPI6cgbdJSHwDngznHcglgshzQ,4590
+decorules/has_enforced_rules.py,sha256=GCsdDVxh-hvr_dBv4ogIFGFXPC0nIv25l7C5Caq-TYg,5501
+decorules/predicates.py,sha256=aiE_HuRYG74qbSuBUxxkjEllDwTEg7bRWvif76J5DoM,1691
+decorules/utils.py,sha256=uBVF4QlJMy8dembgHppgaDfe0aNGdQt4RIlS-jbRZ_0,3188
+example/client_class.py,sha256=4sGsxaevZX4U-JYeAb6oIkdPwL79KxKGFGpAbwS7avY,3263
+example/library_class.py,sha256=MrJn6G--_8-c9OA_5PCLyV8A_pDAWf00BOi2lOYOyCc,1705
+decorules-0.0.8.dist-info/LICENSE,sha256=sNBJni8XIQpEmWKzK5Wxm4HRlTPXCzKQaH0R4H5HM6I,1086
+decorules-0.0.8.dist-info/METADATA,sha256=iaSoMHQq_ULnoQujFbnBLUktFok8rFkgY1lRtsScCzk,10741
+decorules-0.0.8.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+decorules-0.0.8.dist-info/top_level.txt,sha256=kIjVJXpNBXMLI1HAI6wwyXWPXAbwqx60Qe-UCZtZfQk,27
+decorules-0.0.8.dist-info/RECORD,,
