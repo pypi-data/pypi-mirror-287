@@ -1,0 +1,1 @@
+VoiceCord is a simple yet powerful voice recording package for Discord
