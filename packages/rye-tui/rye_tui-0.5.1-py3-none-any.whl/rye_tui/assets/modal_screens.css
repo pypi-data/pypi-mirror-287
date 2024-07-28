@@ -1,0 +1,76 @@
+ModalScreen{
+    align: center middle;
+}
+
+/* Modal for New File Selection */
+ModalRyeInit > Vertical {
+    width: 40%;
+    height: 75%;
+}
+ModalRyeAdd > Vertical {
+    width: 40%;
+    height: 75%;
+}
+ModalRyeAdd  Input {
+    width: 3fr;
+    height: auto;
+}
+ModalRyeAdd  Button {
+    width: 1fr;
+    height: auto;
+}
+ModalRyeAdd  DataTable {
+    width: 1fr;
+    height: 1fr;
+}
+ModalRyePin > Vertical {
+    width: 40%;
+    height: 30%;
+    min-height: 20%;
+}
+ModalConfirm > Vertical {
+    width: 30%;
+    height: 20%;
+}
+ModalNewSource > Vertical {
+    width: 40%;
+    height: 50%;
+}
+ModalNewSource  Vertical  Static {
+    height: auto;
+    width: 1fr;
+    content-align: left middle;
+    margin: 1 0 0 0;
+}
+ModalNewSource  Vertical  Input {
+    height: auto;
+    width: 3fr;
+    margin: 0 0 0 0;
+}
+ModalDeleteSource > Vertical {
+    width: 30%;
+    height: 20%;
+}
+ModalEditToml > Vertical {
+    width: 60%;
+    height: 80%;
+}
+
+#btn_home{
+    width: 20%;
+}
+#input_path{
+    width: 1fr;
+}
+
+.horizontal-conf-cancel{
+    align: center bottom;
+}
+
+.btn-cancel {
+    width: 1fr;
+}
+
+.btn-continue {
+    width: 1fr;
+}
