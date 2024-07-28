@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-fumen"
+version = "0.1.6"
+authors = [
+  { name="hsohliyt105", email="hsohliyt105@naver.com" },
+]
+description = "A package that replicates js fumen in python. More description on 'https://github.com/hsohliyt105/py-fumen'"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["wheel"]
+
+[project.urls]
+Homepage = "https://github.com/hsohliyt105/py-fumen"
+Issues = "https://github.com/hsohliyt105/py-fumen/issues"
+
+[tool.setuptools.packages]
+find = {}
