@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+piptree2.egg-info/PKG-INFO
+piptree2.egg-info/SOURCES.txt
+piptree2.egg-info/dependency_links.txt
+piptree2.egg-info/entry_points.txt
+piptree2.egg-info/requires.txt
+piptree2.egg-info/top_level.txt
+src/__init__.py
+src/cli.py
+src/cli_test.py
+src/piptree.py
+src/util.py

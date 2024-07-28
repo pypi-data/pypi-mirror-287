@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: piptree2
+Version: 0.1.0
+Summary: pip libraries tree
+Home-page: 
+Author: liuhf
+Author-email: 
+License-File: LICENSE
+Requires-Dist: pip
