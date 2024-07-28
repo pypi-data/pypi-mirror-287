@@ -1,0 +1,3 @@
+fastcore
+markdown
+python-fasthtml>=0.1.10
