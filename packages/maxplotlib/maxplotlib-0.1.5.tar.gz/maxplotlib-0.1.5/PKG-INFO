@@ -1,0 +1,82 @@
+Metadata-Version: 2.1
+Name: maxplotlib
+Version: 0.1.5
+Summary: Autoviz API by Max Cembalest
+Home-page: http://github.com/mcembalest/maxplotlib
+Author: Max Cembalest
+Author-email: macembalest@gmail.com
+License: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: server
+Requires-Dist: matplotlib; extra == "server"
+Requires-Dist: mlx_lm; extra == "server"
+Requires-Dist: numpy; extra == "server"
+Requires-Dist: pillow; extra == "server"
+Requires-Dist: plotly; extra == "server"
+Requires-Dist: torch; extra == "server"
+
+# Maxplotlib
+
+## Autovisualization API
+
+Example:
+
+```bash
+maxplotlib "textbook-quality art with sine and cosine waves"
+```
+
+| ![Example Output Option 1](https://mcembalest.github.io/maxplotlib/examples/example_output/option0.png) | ![Example Output Option 2](https://mcembalest.github.io/maxplotlib/examples/example_output/option1.png) |
+|:------------------------------------------:|:------------------------------------------:|
+|               **Option 1**                  |               **Option 2**                  |
+| ![Example Output Option 3](https://mcembalest.github.io/maxplotlib/examples/example_output/option2.png) | ![Example Output Option 4](https://mcembalest.github.io/maxplotlib/examples/example_output/option3.png) |
+|               **Option 3**                  |               **Option 4**                  |
+
+
+General:
+
+```bash
+maxplotlib prompt --output=optional_output_folder
+```
+
+### Setup
+
+Make sure a **server** with a known IP address is on (see **Server** if you are doing this yourself).
+
+```bash
+pip install maxplotlib
+export SERVER_IP=192.168....
+```
+
+### How does it work?
+
+Llama 3.1 (implemented in [`mlx_lm`](https://github.com/ml-explore/mlx-examples/blob/main/llms/README.md)) generates [`matplotlib`](https://github.com/matplotlib/matplotlib) python scripts which are executed to produce images for the API response.
+
+### Server
+
+Turning on a **server** allows other people to use your machine as a compute engine for `maxplotlib` API calls.
+
+To turn on a **server**, install the requirements:
+
+```bash
+pip install 'maxplotlib[server]'
+```
+
+Then, navigate to the `server` directory and run the launch script:
+
+```bash
+cd src/server
+./run_server
+```
+Once the **server** is on, remote `maxplotlib` API calls to your IP address will run on your machine.
