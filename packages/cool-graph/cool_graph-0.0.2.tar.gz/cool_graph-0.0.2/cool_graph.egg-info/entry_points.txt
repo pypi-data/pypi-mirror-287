@@ -1,0 +1,3 @@
+[console_scripts]
+coolrun = cool_graph.cli.run:main
+get_config = cool_graph.cli.config:main
