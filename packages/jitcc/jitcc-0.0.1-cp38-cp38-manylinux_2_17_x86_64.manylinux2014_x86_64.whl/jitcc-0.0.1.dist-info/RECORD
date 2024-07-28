@@ -1,0 +1,14 @@
+jitcc-0.0.1.dist-info/WHEEL,sha256=Gb5xSgicZn7tEx0UVrYxOqw-aODSslqbY2imoU90de4,147
+jitcc-0.0.1.dist-info/entry_points.txt,sha256=mu5q7zvFnRvje9u6CEp9jr5r9ZB8a6Q2olq2YCqbN8M,45
+jitcc-0.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+jitcc-0.0.1.dist-info/top_level.txt,sha256=FqW2xarXgna_lGakscSFMDLswR1MPJOs3NQZvUtOumM,6
+jitcc-0.0.1.dist-info/RECORD,,
+jitcc-0.0.1.dist-info/METADATA,sha256=7EeQYu8eqAsxR_Z6u1lU0X1jf6UQRQoGVysSsgE1WCE,381
+jitcc/libjitcc.so,sha256=yxlw736DoDDofDKMasX_IXQ727hLc8WcMQgs5B7hbK0,24608
+jitcc/libtcc.so,sha256=hJ73spiFy9MY7nWppUyzNVgkSNGtG-jhRc71MQIXG7w,1541880
+jitcc/pkginfo.py,sha256=CoAtO4yYSxntwyH_64YJrdqAUFkboSyGZcc0g5WYPHk,765
+jitcc/core.cpython-38-x86_64-linux-gnu.so,sha256=TxCCOC2r3sAxic-FWqoz_JxLjF9kYhK7mVJ1ODOWJsM,993184
+jitcc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jitcc/share/include/jit/cc/IFactory.h,sha256=rHOMoiyl-7gFplGeqYNN8XJbp0Fa6AdR-TYzzHJknGk,971
+jitcc/share/include/jit/cc/IJitCC.h,sha256=_oUn8UOtZSkLT5rGMaqEyF0bcLB7ZJud0wiG7NGuqyM,1469
+jitcc/share/include/jit/cc/FactoryExt.h,sha256=G3AMZ0gCMwE2tQiKJoDgZJpRJSV0yvw_MIGbCW575WM,774
