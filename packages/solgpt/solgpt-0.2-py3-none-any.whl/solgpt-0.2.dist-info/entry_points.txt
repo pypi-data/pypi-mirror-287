@@ -1,0 +1,2 @@
+[console_scripts]
+download-and-run = solgpt.miner:miner_run
