@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+fuzzy_menu_cli.egg-info/PKG-INFO
+fuzzy_menu_cli.egg-info/SOURCES.txt
+fuzzy_menu_cli.egg-info/dependency_links.txt
+fuzzy_menu_cli.egg-info/requires.txt
+fuzzy_menu_cli.egg-info/top_level.txt
+test/test.py

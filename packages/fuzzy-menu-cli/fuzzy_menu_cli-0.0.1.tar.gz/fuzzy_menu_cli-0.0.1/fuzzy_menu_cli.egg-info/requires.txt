@@ -1,0 +1,5 @@
+requests
+fuzzyfinder==2.1.0
+greenlet==3.0.3
+msgpack==1.0.8
+packaging==24.1
