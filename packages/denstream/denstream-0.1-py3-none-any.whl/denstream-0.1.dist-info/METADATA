@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: denstream
+Version: 0.1
+Summary: Implementation of the DenStream algorithm
+Author: MrParosk
+Requires-Python: <3.13,>=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numba >=0.56.2
+Requires-Dist: numpy <3.0,>=1.23
+Requires-Dist: scikit-learn >=1.0
+Provides-Extra: dev
+Requires-Dist: black ==24.4.2 ; extra == 'dev'
+Requires-Dist: isort ==5.13.2 ; extra == 'dev'
+Requires-Dist: mypy ==1.10.0 ; extra == 'dev'
+Requires-Dist: pre-commit ==3.7.1 ; extra == 'dev'
+Requires-Dist: pytest ==8.2.2 ; extra == 'dev'
+Requires-Dist: pytest-cov ==5.0.0 ; extra == 'dev'
+Requires-Dist: ruff ==0.4.9 ; extra == 'dev'
+Requires-Dist: build ==1.2.1 ; extra == 'dev'
+Requires-Dist: twine ==5.1.1 ; extra == 'dev'
+
+# pyDenStream
+
+![master](https://github.com/MrParosk/pyDenStream/workflows/master/badge.svg?branch=master) [![codecov](https://codecov.io/gh/MrParosk/pyDenStream/branch/master/graph/badge.svg?token=HEKMVIH5WO)](https://codecov.io/gh/MrParosk/pyDenStream)
+
+Implementation of the algorithm [Density-Based Clustering over an Evolving Data Stream with Noise](https://archive.siam.org/meetings/sdm06/proceedings/030caof.pdf) in Python.
+
+## Installation
+
+```Shell
+pip install git+https://github.com/MrParosk/pyDenStream.git
+```
+
+## Example
+
+An example of how to use this package is included in *examples/user_guide.ipynb*.
