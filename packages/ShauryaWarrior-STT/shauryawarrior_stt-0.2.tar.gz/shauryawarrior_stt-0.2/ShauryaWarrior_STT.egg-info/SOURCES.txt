@@ -1,0 +1,6 @@
+setup.py
+ShauryaWarrior_STT/__init__.py
+ShauryaWarrior_STT.egg-info/PKG-INFO
+ShauryaWarrior_STT.egg-info/SOURCES.txt
+ShauryaWarrior_STT.egg-info/dependency_links.txt
+ShauryaWarrior_STT.egg-info/top_level.txt
