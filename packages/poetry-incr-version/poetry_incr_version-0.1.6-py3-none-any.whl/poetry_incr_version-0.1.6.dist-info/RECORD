@@ -1,0 +1,13 @@
+poetry_incr_version/__init__.py,sha256=_AIHa09dNPRguR0Lgfg3rYtdOBrKTEdvhDubb-Iwx08,827
+poetry_incr_version/__main__.py,sha256=nJSA96YREA7oph0xmaS2z7VTL2lW5Wjqz1DxQMDUDIM,2886
+poetry_incr_version/_errors.py,sha256=lzhQlJTRurbsAXHbMnEx638XlQijNBqhGKPW0HmSBFY,1515
+poetry_incr_version/_file.py,sha256=McQY7nzmYV0MNnL9BvOCBMs6UMxtwkEzmSFUyXVtc-0,4289
+poetry_incr_version/_pyproject.py,sha256=ia6BtZZDfIs-IHVn4Gyvc3Sgm29ud9RgXcFa2_M3BgY,2635
+poetry_incr_version/_version.py,sha256=lEhMomLZjYsNZCjq8qfWDAekMYVcGlVJvZRbB1ywIHo,1550
+poetry_incr_version/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+poetry_incr_version/util.py,sha256=U0yjfxYzdrko7Alha3v7v4_C0x32DEADEQg6U8pQq58,1543
+poetry_incr_version-0.1.6.dist-info/LICENSE,sha256=gFZjG3xE3FHs83EvIQWi0tahTR1Wz7j8m1oEZiXBUMk,1062
+poetry_incr_version-0.1.6.dist-info/METADATA,sha256=5V-9tKa0EKSw963Ft4Z3_OdIyZNUTAjPGN-JM4qyGJU,2044
+poetry_incr_version-0.1.6.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+poetry_incr_version-0.1.6.dist-info/entry_points.txt,sha256=21fDD1Oou8igl2si_h0DkwtJKpH2TBz-zdRHSh_yiVQ,73
+poetry_incr_version-0.1.6.dist-info/RECORD,,
