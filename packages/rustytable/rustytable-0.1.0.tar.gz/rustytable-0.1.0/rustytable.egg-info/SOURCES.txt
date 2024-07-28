@@ -1,0 +1,8 @@
+LICENSE
+setup.py
+rustytable/__init__.py
+rustytable.egg-info/PKG-INFO
+rustytable.egg-info/SOURCES.txt
+rustytable.egg-info/dependency_links.txt
+rustytable.egg-info/not-zip-safe
+rustytable.egg-info/top_level.txt

@@ -1,0 +1,348 @@
+Metadata-Version: 2.1
+Name: rustytable
+Version: 0.1.0
+Summary: A high-performance, feature-rich table formatting library
+Home-page: https://github.com/jhhemal/rustytable
+Author: Jahidul Hasan Hemal
+Author-email: jahidulhasanhemal@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Rust
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+# RustyTable
+
+**RustyTable** is a high-performance, feature-rich table formatting library for Python, built using Rust for maximum efficiency. It offers a variety of functionalities to create, format, and manipulate tables for different output formats, including plain text, CSV, HTML, and Markdown.
+
+## Features
+
+- Add and remove rows and columns
+- Sort and filter data
+- Apply themes for better readability
+- Export tables to CSV, HTML, and Markdown formats
+- Compute summary statistics (sum, average, min, max)
+- Conditional formatting
+- Paginate large tables
+
+## Installation
+
+You can install RustyTable from PyPI using pip:
+
+```sh
+pip install rustytable
+```
+
+## Usage
+
+Here are detailed usage examples for all the features provided by RustyTable.
+
+### 1. Creating a Table
+
+```python
+import rustytable
+
+headers = ["Name", "Age", "City"]
+table = rustytable.Table(headers, None, True)
+
+# Add some rows
+table.add_row([
+    rustytable.Cell("Alice", None, False, None, None),
+    rustytable.Cell("30", None, False, None, None),
+    rustytable.Cell("New York", None, False, None, None)
+])
+table.add_row([
+    rustytable.Cell("Bob", None, False, None, None),
+    rustytable.Cell("25", None, False, None, None),
+    rustytable.Cell("San Francisco", None, False, None, None)
+])
+
+# Set title and subtitle
+table.set_title("User Information")
+table.set_subtitle("A table displaying user data")
+```
+
+User Information
+A table displaying user data
+```
++---------------+---------------+---------------+
+| Name          | Age           | City          |
++---------------+---------------+---------------+
+| Alice         | 30            | New York      |
+| Bob           | 25            | San Francisco |
++---------------+---------------+---------------+
+```
+
+### 2. Adding and Removing Columns
+
+```python
+# Add a column
+table.add_column("Country", "USA")
+
+# Add a row with the new column
+table.add_row([
+    rustytable.Cell("Charlie", None, False, None, None),
+    rustytable.Cell("40", None, False, None, None),
+    rustytable.Cell("Los Angeles", None, False, None, None),
+    rustytable.Cell("USA", None, False, None, None)
+])
+
+# Remove a column
+table.remove_column(3)
+```
+
+User Information
+A table displaying user data
+```
++---------------+---------------+---------------+
+| Name          | Age           | City          |
++---------------+---------------+---------------+
+| Alice         | 30            | New York      |
+| Bob           | 25            | San Francisco |
+| Charlie       | 40            | Los Angeles   |
++---------------+---------------+---------------+
+```
+
+### 3. Sorting
+
+```python
+# Sort by Age
+table.sort_by("Age", True)
+```
+
+User Information
+A table displaying user data
+```
++---------------+---------------+---------------+
+| Name          | Age           | City          |
++---------------+---------------+---------------+
+| Bob           | 25            | San Francisco |
+| Alice         | 30            | New York      |
+| Charlie       | 40            | Los Angeles   |
++---------------+---------------+---------------+
+```
+
+### 4. Output Formats
+
+```python
+print("Table as string:")
+print(table.to_string())
+
+print("\nTable as CSV:")
+print(table.to_csv())
+
+print("\nTable as HTML:")
+print(table.to_html())
+
+print("\nTable as Markdown:")
+print(table.to_markdown())
+```
+
+Table as string:
+User Information
+A table displaying user data
+```
++---------------+---------------+---------------+
+| Name          | Age           | City          |
++---------------+---------------+---------------+
+| Bob           | 25            | San Francisco |
+| Alice         | 30            | New York      |
+| Charlie       | 40            | Los Angeles   |
++---------------+---------------+---------------+
+```
+
+```
+Table as CSV:
+Name,Age,City
+Bob,25,San Francisco
+Alice,30,New York
+Charlie,40,Los Angeles
+```
+
+Table as HTML:
+```
+<table>
+<caption>User Information</caption>
+<thead>
+<tr><th>Name</th><th>Age</th><th>City</th></tr>
+</thead>
+<tbody>
+<tr><td>Bob</td><td>25</td><td>San Francisco</td></tr>
+<tr><td>Alice</td><td>30</td><td>New York</td></tr>
+<tr><td>Charlie</td><td>40</td><td>Los Angeles</td></tr>
+</tbody>
+</table>
+```
+
+Table as Markdown:
+```
+| Name    | Age | City        |
+|---------|-----|-------------|
+| Bob     |  25 | San Francisco |
+| Alice   |  30 | New York    |
+| Charlie |  40 | Los Angeles |
+```
+
+
+### 5. Summary Statistics
+
+```python
+print(f"\nSum of Age: {table.sum('Age')}")
+print(f"Average Age: {table.average('Age')}")
+print(f"Min Age: {table.min('Age')}")
+print(f"Max Age: {table.max('Age')}")
+```
+
+```
+Sum of Age: 95.0
+Average Age: 31.666666666666668
+Min Age: 25.0
+Max Age: 40.0
+```
+
+### 6. Conditional Formatting
+
+```python
+table.conditional_format("City", "New York", "NYC")
+print("\nTable after conditional formatting (City = New York to NYC):")
+print(table.to_string())
+```
+
+Table after conditional formatting (City = New York to NYC):
+User Information
+A table displaying user data
+```
++---------------+---------------+---------------+
+| Name          | Age           | City          |
++---------------+---------------+---------------+
+| Bob           | 25            | San Francisco |
+| Alice         | 30            | NYC           |
+| Charlie       | 40            | Los Angeles   |
++---------------+---------------+---------------+
+```
+
+
+### 7. Filtering
+
+```python
+filtered_table = table.filter("City", "NYC")
+print("\nFiltered table (City = NYC):")
+print(filtered_table.to_string())
+```
+
+Filtered table (City = NYC):
+User Information
+A table displaying user data
+```
++---------------+---------------+---------------+
+| Name          | Age           | City          |
++---------------+---------------+---------------+
+| Alice         | 30            | NYC           |
++---------------+---------------+---------------+
+```
+
+### 8. Pagination
+
+```python
+pages = table.paginate(2)
+for i, page in enumerate(pages, start=1):
+    print(f"\nPage {i}:")
+    print(page.to_string())
+```
+
+
+Page 1:
+User Information
+A table displaying user data
+
+```
++---------------+---------------+---------------+
+| Name          | Age           | City          |
++---------------+---------------+---------------+
+| Bob           | 25            | San Francisco |
+| Alice         | 30            | NYC           |
++---------------+---------------+---------------+
+```
+
+Page 2:
+User Information
+A table displaying user data
+```
++---------------+---------------+---------------+
+| Name          | Age           | City          |
++---------------+---------------+---------------+
+| Charlie       | 40            | Los Angeles   |
++---------------+---------------+---------------+
+```
+
+### 9. Theming
+
+```python
+theme = rustytable.Theme(header_color="32", row_colors=["31", "34"])
+table.set_theme(theme)
+print("\nTable with theme applied:")
+print(table.to_string())
+```
+
+Table with theme applied:
+User Information
+A table displaying user data
+```
++---------------+---------------+---------------+
+| [32mName          | [32mAge           | [32mCity          |
++---------------+---------------+---------------+
+| [31mBob           | [31m25            | [31mSan Francisco |
+| [34mAlice         | [34m30            | [34mNYC           |
+| [31mCharlie       | [31m40            | [31mLos Angeles   |
++---------------+---------------+---------------+
+```
+### 10. Dynamic Data Loading
+
+```python
+data = [
+    {"Name": "Alice", "Age": "30", "City": "New York"},
+    {"Name": "Bob", "Age": "25", "City": "San Francisco"},
+    {"Name": "Charlie", "Age": "40", "City": "Los Angeles"}
+]
+table.load_data(data)
+print("\nTable after loading data dynamically:")
+print(table.to_string())
+```
+
+
+Table after loading data dynamically:
+User Information
+A table displaying user data
+```
++---------------+---------------+---------------+
+| Name          | Age           | City          |
++---------------+---------------+---------------+
+| Alice         | 30            | New York      |
+| Bob           | 25            | San Francisco |
+| Charlie       | 40            | Los Angeles   |
++---------------+---------------+---------------+
+```
+
+
+
+## Contributing
+
+We welcome contributions to RustyTable! If you'd like to contribute, please fork the repository and submit a pull request.
+
+## License
+
+RustyTable is licensed under the MIT License. See the LICENSE file for more information.
+
+## Contact
+
+For any questions or feedback, feel free to reach out to the maintainer at [jhhemalusa@gmail.com](mailto:jhhemalusa@gmail.com).
+
+---
+
+Enjoy using RustyTable for all your table formatting needs!
