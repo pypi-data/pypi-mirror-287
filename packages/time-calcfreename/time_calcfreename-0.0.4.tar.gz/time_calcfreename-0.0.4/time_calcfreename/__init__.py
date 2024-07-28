@@ -1,0 +1,1 @@
+from time_calcfreename.time_calculator import add_seconds
