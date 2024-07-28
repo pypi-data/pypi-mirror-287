@@ -1,0 +1,13 @@
+verbalizer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+verbalizer/nlp.py,sha256=hFIo7HD62kqlUjRKCdX38I5p7AWObPw6hVoepcFTuL4,5828
+verbalizer/patterns/__init__.py,sha256=l7osBIGd1EAWu53DGrDT-gt9YENydbBUhJvWvDlZRq8,1477
+verbalizer/patterns/owl_disjoint.py,sha256=BNJGwEe9n-GBvItwLvbh4tHx3XzGzjmTvPN2YY8fs_I,2814
+verbalizer/patterns/owl_first_rest.py,sha256=6DyesqrHrxcdLyTIfF4zE5J4EUBI-iAw0WnJv4k9Lro,1673
+verbalizer/patterns/owl_restriction.py,sha256=hUDPryTHCpxKA74mPUczjeypZotP7R4-5DhO9oiFn2Y,6266
+verbalizer/process.py,sha256=Wscj_s3Wry_TpfSKagRNclKqp3VX1eAPHyM89cWO9nA,7172
+verbalizer/sampler.py,sha256=v_9N4c3U8rqJKmb2bD68lm8RgxgH5Nm2xRczkgzYOZY,1625
+verbalizer/verbalizer.py,sha256=SKfKLbi1fAGst6xyp4qpWPvXFgsmO4N67MwDqptZgSM,14780
+verbalizer/vocabulary.py,sha256=MOfTZFZKQItM5uTUeTTUbClhBMuu3gsnhI7YJrCC01E,6603
+ontology_verbalizer-1.0.0.dist-info/METADATA,sha256=Br9y2LwjaqmTRMu-Szw33DCXC-6FmhtqUQH4rI8l10I,677
+ontology_verbalizer-1.0.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+ontology_verbalizer-1.0.0.dist-info/RECORD,,

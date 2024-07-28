@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: ontology-verbalizer
+Version: 1.0.0
+Summary: A Python package for ontology verbalization
+License: MIT
+Author: Antonio Zaitoun
+Author-email: tony.z.1711@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: openai (>=1.12.0,<1.13.0)
+Requires-Dist: pandas (>=2.2.0,<2.3.0)
+Requires-Dist: rdflib (>=7.0.0,<7.1.0)
+Requires-Dist: tqdm (>=4.66.2,<4.67.0)
