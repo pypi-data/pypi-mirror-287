@@ -1,0 +1,15 @@
+tensor_build/__init__.py,sha256=kE-Ew0VM5VoUIZlzbKUyA1cf-oSAfLtZUoGyyKd7YHQ,326
+tensor_build/backend.py,sha256=cqMHc5Rtqd3Ne60vVqMk2ALjrZZS6nO3kYDmbdRXODA,123
+tensor_build/codegen.py,sha256=WzN5ckvo1BTqBsvR02feEhTUX8lYFqychbVnY6IYJ2s,174
+tensor_build/blocks/__init__.py,sha256=3rkgCCBrrc_iGYix92C1CemRR9RPCz0MxgB3qMFyXeo,438
+tensor_build/blocks/activation_block.py,sha256=G527tJdssM_qvoSOrm6a8xABbACHg3kzjMHnVFy211k,342
+tensor_build/blocks/blocks.py,sha256=4SwSb-VxLGiTzv6372NG_SFQ0SpSks75pTWcYhat9l8,224
+tensor_build/blocks/compile_block.py,sha256=2tPoj59vKPRAQxk6KBdD-A3Xi-zRMWusI6BtVV-F62M,668
+tensor_build/blocks/conv_2d_block.py,sha256=4mFAiDWYteuqZ2h-GOjJFhm8BoZOTyjRHK0-lTcw1u4,1188
+tensor_build/blocks/dense_block.py,sha256=JnFvG3t_CI0usfzDenumZECa-ZSe7R7Iq5fBiUpQLTA,420
+tensor_build/blocks/dropout_block.py,sha256=Uq3mXWqTJdzBG5UfX8Gzz8J28t2iP0voOu0MXFVF6ZQ,508
+tensor_build/blocks/pooling_block.py,sha256=dyjiK_YVjgjVPpSlknFcCvJpPXB0As-KDDi37ZszSVU,1167
+tensor_build-1.1.1.dist-info/METADATA,sha256=k9QmB2bzSTZZ9S2i5h5GuZjQKeMHOljvCdhQHgIVoGI,616
+tensor_build-1.1.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+tensor_build-1.1.1.dist-info/top_level.txt,sha256=U4AQDt0xPO9ZPoe7yYrxcFzaLi-qburTMFNaVxExLCQ,13
+tensor_build-1.1.1.dist-info/RECORD,,
