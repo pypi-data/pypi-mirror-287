@@ -1,0 +1,10 @@
+tensor_build/__init__.py,sha256=KCMmbNKdMaXsbPNeiCjeFSOkvgYBt-tBK_UXVZydSVM,184
+tensor_build/backend.py,sha256=cqMHc5Rtqd3Ne60vVqMk2ALjrZZS6nO3kYDmbdRXODA,123
+tensor_build/codegen.py,sha256=WzN5ckvo1BTqBsvR02feEhTUX8lYFqychbVnY6IYJ2s,174
+tensor_builder/__init__.py,sha256=KCMmbNKdMaXsbPNeiCjeFSOkvgYBt-tBK_UXVZydSVM,184
+tensor_builder/backend.py,sha256=cqMHc5Rtqd3Ne60vVqMk2ALjrZZS6nO3kYDmbdRXODA,123
+tensor_builder/codegen.py,sha256=WzN5ckvo1BTqBsvR02feEhTUX8lYFqychbVnY6IYJ2s,174
+tensor_build-0.3.dist-info/METADATA,sha256=u8XDLTyysLKqRzT864lNwH22HqJmw9p3rKT-6k-8Nis,404
+tensor_build-0.3.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+tensor_build-0.3.dist-info/top_level.txt,sha256=U4AQDt0xPO9ZPoe7yYrxcFzaLi-qburTMFNaVxExLCQ,13
+tensor_build-0.3.dist-info/RECORD,,
