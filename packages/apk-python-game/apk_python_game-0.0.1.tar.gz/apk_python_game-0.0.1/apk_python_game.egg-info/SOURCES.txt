@@ -1,0 +1,10 @@
+LICENSE.in
+README.md
+setup.py
+apk_python_game.egg-info/PKG-INFO
+apk_python_game.egg-info/SOURCES.txt
+apk_python_game.egg-info/dependency_links.txt
+apk_python_game.egg-info/top_level.txt
+src/__init__.py
+src/game.py
+src/main.py

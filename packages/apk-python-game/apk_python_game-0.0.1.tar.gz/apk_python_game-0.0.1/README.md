@@ -1,0 +1,1 @@
+This is a simple Game package. You can use to write your content.
