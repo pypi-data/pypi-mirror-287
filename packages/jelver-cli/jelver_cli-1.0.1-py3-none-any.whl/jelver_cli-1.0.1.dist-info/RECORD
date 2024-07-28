@@ -1,0 +1,14 @@
+__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cases_management.py,sha256=EYsNUm48fvQV12rCFO5uiRktNPNB6Z7ZAenL8nY3z1U,2650
+jelver.py,sha256=n7yKrzZk56vqDiSQZRki9ZNb3WhQzhDcvoS_E81TO5w,2640
+remote_tests.py,sha256=NIwcs5Peztb03fYAu74VggQ3fQLbgCRW61P3-JKPWWs,4219
+utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+utils/api.py,sha256=sHSVYnt6GQ6Zt30Xb2H5svC1cvUsLN9sNR3c_LPjcYY,2967
+utils/jelver_exceptions.py,sha256=YyTE-XYLnGXe4J38ibFzcDNwZ15Jqa4sk07wcH80d-E,2838
+utils/render.py,sha256=AMyCV59xnGkttjgMqKDSklRLYpNC3Fa_NkHfgGqZVYc,2417
+jelver_cli-1.0.1.dist-info/LICENCE,sha256=QjZFdrTitR_Jbw5KWvJ8M698jAW0x9vjF3F79JJWmx8,1055
+jelver_cli-1.0.1.dist-info/METADATA,sha256=tqINX2HeHRHLzL-I0ptfUEdmIM-_HETASxJEjUxKQEs,2624
+jelver_cli-1.0.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+jelver_cli-1.0.1.dist-info/entry_points.txt,sha256=ao05Rjq65bzZNg9OG6SBYKWiuRlq3p3jag4x95DkVNg,39
+jelver_cli-1.0.1.dist-info/top_level.txt,sha256=wJQo0NyKU8svrvD3lzIKbvWEh-KfEjD_l6F94KZgWr0,52
+jelver_cli-1.0.1.dist-info/RECORD,,
