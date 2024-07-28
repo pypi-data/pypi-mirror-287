@@ -1,0 +1,9 @@
+ephemeral/__init__.py,sha256=Nyg0pmk5ea9-SLCAFEIF96ByFx4-TJFtrqYPN-Zn6g4,22
+ephemeral/cli.py,sha256=0jz2HwdmO5FSmHsH2gV-fpcwRmdajhgNDlWrgrdV9GE,3005
+ephemeral/model.py,sha256=-fWJw8krtorkcj48QFVDoHaFqsKsxYyMp103DLvdUS8,2299
+ephemeral/view.py,sha256=0ipSbqBlGs7gnuS8QDx9tVLDZ3V-WMdr-8W7zMoj6CY,3587
+ephemeral_sh-0.4.3.dist-info/METADATA,sha256=726MAHfhRVQj_m3lHSCsWJiiS7D9qxTVZFy-I1jfqW0,1357
+ephemeral_sh-0.4.3.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+ephemeral_sh-0.4.3.dist-info/entry_points.txt,sha256=P4hGr_lJ0nkX_eXkB3cJN21sBEb4-IMIPXkamDd7sZI,72
+ephemeral_sh-0.4.3.dist-info/top_level.txt,sha256=co9Y91lorce33MgIVO2WjvIU2eehcnMreojOFFt4uM8,10
+ephemeral_sh-0.4.3.dist-info/RECORD,,
