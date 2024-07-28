@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: deepfolio
+Version: 1.0.3
+Summary: Portfolio Optimization Python Library Built on top of Keras and Tensorflow
+Home-page: https://github.com/jialuechen/deepfolio
+Author: Jialue Chen
+Author-email: jialuechen@outlook.com
+License: BSD-2
+License-File: LICENSE
