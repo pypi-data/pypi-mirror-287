@@ -1,0 +1,16 @@
+CHANGELOG.txt
+LICENCE.txt
+MANIFEST.in
+README.txt
+setup.py
+TeremokTSLib/__init__.py
+TeremokTSLib/TeremokTSLib.egg-info/PKG-INFO
+TeremokTSLib/TeremokTSLib.egg-info/SOURCES.txt
+TeremokTSLib/TeremokTSLib.egg-info/dependency_links.txt
+TeremokTSLib/TeremokTSLib.egg-info/requires.txt
+TeremokTSLib/TeremokTSLib.egg-info/top_level.txt
+TeremokTSLib/itertest/__init__.py
+TeremokTSLib/itertest/optimization.py
+TeremokTSLib/model/__init__.py
+TeremokTSLib/model/model.py
+TeremokTSLib/model/support.py

@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: TeremokTSLib
+Version: 0.0.1
+Summary: Easy-to-use box ML solution for forcasting consumption
+Home-page: https://teremok.ru/
+Author: Alexander Nikitin
+Author-email: sniknickitin@yandex.ru
+License: MIT
+Keywords: forcasting
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENCE.txt
+
+# What is this Library about?
+Easy-to-use (4 lines of code, actually) framework for training powerful predictive models!
+
+# Description
+We made a mother-model, which consists of multiple layers of predictive models: ewma is used as trend, Prophet is used for getting seasonality, CatBoost is used for predicting residuals.
+Why did we do that? Because we needed a out-of-the-box solution, which could be used by non-ML users. 
+
+# Maintained by
+Library is developed and being maintained by Teremok ML team
+
+# Contacts
+Our website: https://teremok.ru/
+ML team: you can contact us via telegram channel @pivo_txt
+
+Change Log
+==========
+
+0.0.1 (28.07.2024)
+------------------
+- First release
