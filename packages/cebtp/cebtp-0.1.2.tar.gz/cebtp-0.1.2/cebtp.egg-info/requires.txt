@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+mne
+PyWavelets
+nolds
+antropy
+tensorflow
+google-cloud-storage
+cryptography
+keras
