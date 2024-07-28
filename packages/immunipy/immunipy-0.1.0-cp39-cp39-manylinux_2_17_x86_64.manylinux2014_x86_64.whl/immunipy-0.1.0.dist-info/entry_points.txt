@@ -1,0 +1,2 @@
+[console_scripts]
+immunipy=immunipy.main:app
