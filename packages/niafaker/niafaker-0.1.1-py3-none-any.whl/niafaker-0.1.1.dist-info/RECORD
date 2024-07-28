@@ -1,0 +1,16 @@
+niafaker/__init__.py,sha256=I6F35tZXZKCtPrztWlrsRgfyflXW8s3N5Dxw2Jl_RBk,401
+niafaker/data/addresses.json,sha256=W0sAUlBts3ddp9XNSeLTK_pvhf5pp9FRu2lYvl2PdsY,24783
+niafaker/data/cities.json,sha256=htFqjP98z4pKrtFvgc7GLe-HXXGdSGDNMoeZ40Pjp7I,9221
+niafaker/data/countries.json,sha256=aopGfT1RdRXu4Uok-Ya6WKh4ACUTgobkrnM3FWipoIM,9239
+niafaker/data/names.json,sha256=C1wcaO08m15aI0iCPwS17z1jkvQ8h27aOL8AfEMPrEE,5060
+niafaker/generators/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+niafaker/generators/addresses.py,sha256=a__uxdGVKZ6BbyX56J1yMC5V2c1ys3RBibx3xZklaeQ,818
+niafaker/generators/cities.py,sha256=iK82GXWIPJGkufgb3Bj0uE_-BlE88fRxNAkDjkPNK_c,659
+niafaker/generators/countries.py,sha256=wcpYANFE0eassozSF0P5bfUrwA27yavAYeAfgfTUavQ,429
+niafaker/generators/names.py,sha256=Q1VNsE3itz7nXPclf7vI0RyVYRsbWft6Sat_r9OKIlM,1206
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_generators.py,sha256=MPbKm4ZWp_cucPEmLv7QTXMXsJaT2ivhsgp-wCSOwgs,1937
+niafaker-0.1.1.dist-info/METADATA,sha256=0D1IXPSYy-vizT7tRlrFUOSm9LxgpPZEe8mVf4xuJE4,2207
+niafaker-0.1.1.dist-info/WHEEL,sha256=EVRjI69F5qVjm_YgqcTXPnTAv3BfSUr0WVAHuSP3Xoo,92
+niafaker-0.1.1.dist-info/top_level.txt,sha256=Y1mjmxMGSdk_XcVOSLIp5g5NxaMpymiCHYSWcQ6q2gs,15
+niafaker-0.1.1.dist-info/RECORD,,
