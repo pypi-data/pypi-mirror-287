@@ -1,0 +1,2 @@
+[console_scripts]
+wpget = wpget.cli:main
