@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+viznu/__init__.py
+viznu/core.py
+viznu.egg-info/PKG-INFO
+viznu.egg-info/SOURCES.txt
+viznu.egg-info/dependency_links.txt
+viznu.egg-info/requires.txt
+viznu.egg-info/top_level.txt

@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: viznu
+Version: 0.1
+Summary: A simple and intuitive library for data visualization and preprocessing for ML and DL applications
+Home-page: https://github.com/yourusername/viznu
+Author: Apekshik Panigrahi
+Author-email: apekshik@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
