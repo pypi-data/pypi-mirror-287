@@ -1,0 +1,3 @@
+pip
+sphinx_pdj_theme
+swissfit
