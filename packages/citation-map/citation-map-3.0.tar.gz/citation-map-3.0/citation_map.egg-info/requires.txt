@@ -1,0 +1,5 @@
+scholarly
+geopy
+folium
+tqdm
+numpy
