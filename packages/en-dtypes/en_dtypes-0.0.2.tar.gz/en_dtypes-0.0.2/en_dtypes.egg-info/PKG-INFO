@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: en-dtypes
+Version: 0.0.2
+Summary: Experimental numpy dtypes
+Author: dengguojie
+Author-email: dengguojie <denggj7@163.com>
+License: Appache-2.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Science/Research
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+License-File: LICENSE.eigen
