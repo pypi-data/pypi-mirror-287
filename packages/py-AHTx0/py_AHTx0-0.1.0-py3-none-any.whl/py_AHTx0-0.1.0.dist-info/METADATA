@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: py-AHTx0
+Version: 0.1.0
+Summary: A library to drive a AHT10 or AHT20 temperature, humidity sensor over I2C
+Author: Kattni Rembor, Marcin Ryznar
+Author-email: poczta321123@onet.pl
+License: MIT
+Keywords: raspberry pi,orange pi,banana pi,rpi,AHT10,AHT20,i2c,temperature,humidity,smbus2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Education
+Classifier: Topic :: System :: Hardware
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.6, <4
+License-File: LICENSE
+Requires-Dist: smbus2
+Provides-Extra: docs
+Requires-Dist: sphinx >=1.5.1 ; extra == 'docs'
+Provides-Extra: qa
+Requires-Dist: rstcheck ; extra == 'qa'
+Requires-Dist: flake8 ; extra == 'qa'
+Provides-Extra: test
+Requires-Dist: pytest >=3.1 ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+
