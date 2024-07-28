@@ -1,0 +1,2 @@
+[console_scripts]
+img2social = img2social.file:main

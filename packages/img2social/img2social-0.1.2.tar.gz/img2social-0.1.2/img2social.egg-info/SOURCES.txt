@@ -1,0 +1,7 @@
+README.md
+setup.py
+img2social.egg-info/PKG-INFO
+img2social.egg-info/SOURCES.txt
+img2social.egg-info/dependency_links.txt
+img2social.egg-info/entry_points.txt
+img2social.egg-info/top_level.txt
