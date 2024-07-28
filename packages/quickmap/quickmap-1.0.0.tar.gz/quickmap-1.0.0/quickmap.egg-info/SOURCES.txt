@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+quickmap/__init__.py
+quickmap/quickmap.py
+quickmap.egg-info/PKG-INFO
+quickmap.egg-info/SOURCES.txt
+quickmap.egg-info/dependency_links.txt
+quickmap.egg-info/top_level.txt
