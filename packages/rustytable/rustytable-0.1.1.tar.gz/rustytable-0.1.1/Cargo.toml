@@ -1,0 +1,13 @@
+[package]
+name = "rustytable"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pyo3 = { version = "0.15", features = ["extension-module", "auto-initialize"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+csv = "1.1"
+
+[lib]
+crate-type = ["cdylib"]
