@@ -1,0 +1,11 @@
+djutils_rest/__init__.py,sha256=WKWfaHbfWCHebjPUzrnf8wzBI9HRdE02ZHykEK6kwAA,206
+djutils_rest/requirements.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+djutils_rest/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+djutils_rest/api/decorator.py,sha256=Wwe--HdmLweEtoq6tZeDIbIwO72FRIl_xMKf5FxLhH8,1379
+djutils_rest/api/default.py,sha256=R5a8yENxiZ8Dxdm4dMK1hlByEPT5O7q-DPRx66THGx4,203
+djutils_rest/api/response.py,sha256=oyNLgjbbL_ekHAb3-YFcO2VYcwpj1l0Wff57HBp0eOs,4730
+djutils_rest-0.1.0.dev0.dist-info/LICENSE,sha256=JI0I6nKxgUj92wG09WneKOLYs1-zaODEY9JluLv1IiE,1066
+djutils_rest-0.1.0.dev0.dist-info/METADATA,sha256=EKoy6K7JlY5aVx8SFgTCZoF-DeFU52ar3z4IBW-aWkU,538
+djutils_rest-0.1.0.dev0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+djutils_rest-0.1.0.dev0.dist-info/top_level.txt,sha256=6lpzw-K7QEu7FDCuOtA4jrHYLfnYumrTg-Fdbn_Z7mc,13
+djutils_rest-0.1.0.dev0.dist-info/RECORD,,
