@@ -1,0 +1,6 @@
+cupy
+xarray>=2024.02.0
+
+[test]
+dask
+pytest
