@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: voicecord
+Version: 2.0.0
+Summary: A simple yet powerful voice recording package for Discord
+Home-page: https://github.com/petertill/voicecord
+Author: Peter Till
+Author-email: ptertill@gmail.com
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+VoiceCord is a simple yet powerful voice recording package for Discord
