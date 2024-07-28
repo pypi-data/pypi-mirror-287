@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: generator_cucumber
+Version: 0.0.4
+Summary: Generation .feature file
+Home-page: https://gitlab.com/python_lib/generator_cucumber
+Author: Dmitry Shibikin
+Author-email: dmitry.shibikin@yandex.ru
+License: UNKNOWN
+Project-URL: Documentation, https://gitlab.com/python_lib/generator_cucumber
+Description: # Cucmber generator
+        
+        Проект находиться на стадии разработки
+        
+        ### Structure
+        ```
+        # Проект по генерации .feature
+        ├── 📁 generator_cucumber/
+        |   ├── ⚙️ pytest.ini
+        |   ├── 💾 requirements.txt
+        |   ├── 🥒 test_app.feature
+        |   ├── 🐍 test_app.py
+        |   ├── 🐍 test_generator.py
+        |   └── ... 
+        ```
+Keywords: python cucmber generator
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
