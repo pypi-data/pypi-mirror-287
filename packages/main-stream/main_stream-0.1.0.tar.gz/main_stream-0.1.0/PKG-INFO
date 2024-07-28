@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: main-stream
+Version: 0.1.0
+Summary: MainStream - best HTTP framework ever
+Author-email: Nikita Pastukhov <nikita@pastukhov-dev.ru>
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
