@@ -1,0 +1,9 @@
+README.md
+setup.py
+mongodb_client/__init__.py
+mongodb_client/mongodb.py
+mongodb_client.egg-info/PKG-INFO
+mongodb_client.egg-info/SOURCES.txt
+mongodb_client.egg-info/dependency_links.txt
+mongodb_client.egg-info/requires.txt
+mongodb_client.egg-info/top_level.txt
