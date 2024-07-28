@@ -1,0 +1,5 @@
+setup.py
+my12345_plugin.egg-info/PKG-INFO
+my12345_plugin.egg-info/SOURCES.txt
+my12345_plugin.egg-info/dependency_links.txt
+my12345_plugin.egg-info/top_level.txt
