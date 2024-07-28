@@ -1,0 +1,11 @@
+rstring/__init__.py,sha256=oKsCpoiQSSXx57DGs2VfYzeO1ukJQxdGnV-2hC3BI0M,42
+rstring/cli.py,sha256=yA_bplSZY71EQ_kpE4aOSQDNptJNWQb0Bpq1OpktctI,5067
+rstring/utils.py,sha256=aXugBmddZf66CR0U_sCxZs0978j7DJzWil3nI5j_FQs,8229
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_rstring.py,sha256=O7TZFafmAR1vcbzvF7p3e-s2tRu185pHxplTXFyBjb4,6701
+rstring-0.2.0.dist-info/LICENSE,sha256=OSEzhPfftQH980urs4YaYR5bbvVjWrLtBq5jtTrwp5Y,1070
+rstring-0.2.0.dist-info/METADATA,sha256=jkI6NZnHNy54tPnbcuNxvNj4zbXOIvYJnYbWjKPy2VE,2566
+rstring-0.2.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+rstring-0.2.0.dist-info/entry_points.txt,sha256=76_vBnlJxM-Xg9Eu8d-RyZmaBTcME2G0EBD7RI6k7VM,45
+rstring-0.2.0.dist-info/top_level.txt,sha256=BXY2bEdhbRY4j6sRO2j5Hij0TLvJkxy3mIdrYq0aDbc,14
+rstring-0.2.0.dist-info/RECORD,,
