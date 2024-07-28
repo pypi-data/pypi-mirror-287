@@ -1,0 +1,10 @@
+README.md
+setup.py
+vaapi/__init__.py
+vaapi/vaapi.py
+vaapi.egg-info/PKG-INFO
+vaapi.egg-info/SOURCES.txt
+vaapi.egg-info/dependency_links.txt
+vaapi.egg-info/not-zip-safe
+vaapi.egg-info/requires.txt
+vaapi.egg-info/top_level.txt
