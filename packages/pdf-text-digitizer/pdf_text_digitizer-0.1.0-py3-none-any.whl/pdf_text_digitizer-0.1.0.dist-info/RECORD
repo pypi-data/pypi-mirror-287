@@ -1,0 +1,15 @@
+pdf_text_digitizer/__init__.py,sha256=zSElrSAU-eulKlzJ3Weu7Qi5Ce8UvAFrxLChnNZYk70,202
+pdf_text_digitizer/config.py,sha256=X9UaWYXZw9BfBMIJ7Zr83uV8QI31ulyf0M1NUXeYXhU,107
+pdf_text_digitizer/digitize.py,sha256=bSYDLn-Sbmj82t2cuZS5sUpvFe2cVAdRJmCP-KJxYV0,1452
+pdf_text_digitizer/pdf_reader.py,sha256=OZPrBgM7SKVY7M5pAAe5u7nm-9okZR7ziFhS39Rs9NQ,1432
+pdf_text_digitizer/utils.py,sha256=S0BjTd3E8ch6JhM9AaI8YhqQ-oLKyYtM_Sz8aG3SNfQ,107
+tests/__init__.py,sha256=iViLDCvp2HIGDniqaMz5X5TKJ-pry3mkNQnWbClsc84,20
+tests/test_digitize.py,sha256=5gC4ejeqkTtjdLhB5D9rm_MRk0BlfDCfYx-1yyPFJaE,1867
+tests/test_pdf_reader.py,sha256=RBlFKpGoMCyovpubd_71m7_Mn2EqVgDmgShHpNNN0M0,1951
+tests/test_utils.py,sha256=Joi2eZi2VFVQiTplEH6NCofHJOsMh2bRMT3HAMhSbR0,431
+pdf_text_digitizer-0.1.0.dist-info/LICENSE,sha256=GEfg4GmBQu1DR8FEGp-oHI-93USx2LvNXjZH-ZF1nX8,1035
+pdf_text_digitizer-0.1.0.dist-info/METADATA,sha256=Sn7VvavZCZ2ArDVHsnrh25oK0hh4ZaHOKl4hLsoqkbo,1456
+pdf_text_digitizer-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+pdf_text_digitizer-0.1.0.dist-info/entry_points.txt,sha256=4UFEEpMbvqFW__etEB25EdqLPXUNAfl61FheJploa9s,73
+pdf_text_digitizer-0.1.0.dist-info/top_level.txt,sha256=OL-P_aVCeszzQlQNjdwmRhchIQlntINr1lS9z2RRJBc,25
+pdf_text_digitizer-0.1.0.dist-info/RECORD,,
