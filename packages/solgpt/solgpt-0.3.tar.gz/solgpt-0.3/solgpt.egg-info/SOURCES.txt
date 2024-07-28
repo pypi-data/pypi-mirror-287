@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+solgpt/__init__.py
+solgpt/downloader.py
+solgpt.egg-info/PKG-INFO
+solgpt.egg-info/SOURCES.txt
+solgpt.egg-info/dependency_links.txt
+solgpt.egg-info/entry_points.txt
+solgpt.egg-info/top_level.txt
