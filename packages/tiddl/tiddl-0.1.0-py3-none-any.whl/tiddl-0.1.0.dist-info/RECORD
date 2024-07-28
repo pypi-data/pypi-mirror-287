@@ -1,0 +1,11 @@
+tiddl/__init__.py,sha256=oCqhLijm1nqRJIXv-UePYLa5T6KiXcox9Cewu6wc4pQ,2908
+tiddl/api.py,sha256=6ZpCtOa3QnxEL4kPk35xaSY7z6cek0UaK8v8F1PuWHI,1126
+tiddl/auth.py,sha256=bP0va5r8QBhSd4Q4jUSvME2hfe6rGptpp8sC9X57_5w,1210
+tiddl/config.py,sha256=VE9krrTMNKHnAHzA9Y87BvzPDMAWsCbjUj24p0og9Nk,1612
+tiddl/download.py,sha256=rnWwKh5SwUt_BvEQTlbSBjRg9isl5aCoiu3T4ip3Sqg,2089
+tiddl/types.py,sha256=bTw3punEvYqsxfoCc-8Zob7XIbzHLBby7-rifwSSTWU,2785
+tiddl-0.1.0.dist-info/METADATA,sha256=XNU95wIKvPx-lpAL0IMn4QxJcsHsuboQCVE7syyO1NQ,1396
+tiddl-0.1.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+tiddl-0.1.0.dist-info/entry_points.txt,sha256=SjPviPW80ZMkgAnfzBIOWmOCZMI35FgA02VldZfSgL4,37
+tiddl-0.1.0.dist-info/top_level.txt,sha256=45g2HIPtH2EUhjZ25fXFaMY4iAiGxgc0h0_OEyjoeqQ,6
+tiddl-0.1.0.dist-info/RECORD,,
