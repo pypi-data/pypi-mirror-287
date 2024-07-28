@@ -1,0 +1,8 @@
+[babel.extractors]
+ckan = ckan.lib.extract:extract_ckan
+
+[ckan.plugins]
+federated_index = ckanext.federated_index.plugin:FederatedIndexPlugin
+
+[ckan.test_plugins]
+test_federated_index = ckanext.federated_index.tests.conftest:TestFederatedIndexPlugin
