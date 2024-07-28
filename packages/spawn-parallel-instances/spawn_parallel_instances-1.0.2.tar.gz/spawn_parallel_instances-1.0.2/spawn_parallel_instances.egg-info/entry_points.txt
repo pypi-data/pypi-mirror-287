@@ -1,0 +1,2 @@
+[console_scripts]
+spawn_parallel_instances = spawn_parallel_instances.__main__:main

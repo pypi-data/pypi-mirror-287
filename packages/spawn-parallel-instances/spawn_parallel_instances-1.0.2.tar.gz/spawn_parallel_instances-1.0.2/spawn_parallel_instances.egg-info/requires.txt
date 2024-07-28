@@ -1,0 +1,6 @@
+PyYAML==6.0.2rc1
+setuptools==71.1.0
+
+[test]
+unittest
+coverage
