@@ -1,0 +1,30 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block content %}
+
+<div id="content-mainh">
+    <h1>Импорт контрактов</h1>
+    <br>
+    <div>Нажимая на кнопку, вы удаляете импортированные ранее контракты <span style="font-weight: bolder">физически</span> и восстановить их нельзя.</div>
+    <div>Тип представления и формы при этом остаются в прежнем виде.</div>
+    {% if not link_to_doctype %}
+        <div>Тип представления будет создан автоматически, при первой загрузке контрактов</div>
+    {% endif %}
+
+    <br>
+    {% if link_to_doctype %}
+        <div>Если нужно отредактировать "тип представления", то можно перейти по ссылке <a href="{{ link_to_doctype }}">тип представления</a></div>
+    {% endif %}
+    <div>На текущий момент в системе имеется ( <span style="font-weight: bolder">{{ contracts_count }}</span> ) импортированных контрактов.</div>
+    <br>
+    <form method="post" action="{% url 'asu_ods_import_contracts_start' %}">
+        {% csrf_token %}
+        <input type="submit" value="Импортировать контракты">
+    </form>
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
