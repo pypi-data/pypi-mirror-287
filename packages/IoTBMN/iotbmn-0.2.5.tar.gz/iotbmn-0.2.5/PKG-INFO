@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: IoTBMN
+Version: 0.2.5
+Summary: A Python library for IoT communication with a serverlet
+Home-page: https://github.com/Bliped-Pixel/IoTBMN
+Author: Muntasir
+Author-email: muntasirthameem@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# IoTBMN
+
+IoTBMN is a Python library for IoT communication with a serverlet.
+
+## Installation
+
+```bash
+pip install IoTBMN
