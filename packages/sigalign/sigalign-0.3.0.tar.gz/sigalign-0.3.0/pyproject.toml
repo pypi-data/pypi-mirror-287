@@ -1,0 +1,30 @@
+[build-system]
+requires = ["maturin>=1,<2"]
+build-backend = "maturin"
+
+[project]
+name = "sigalign"
+version = "0.3.0"
+authors = [
+  { name="baku" },
+]
+description = "SigAlign's language binding for python"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Rust",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Operating System :: POSIX",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+]
+[project.urls]
+"Repository" = "https://github.com/baku4/sigalign"
+
+[tool]
+
+[tool.maturin]
+manifest-path = "sigalign-py/Cargo.toml"
