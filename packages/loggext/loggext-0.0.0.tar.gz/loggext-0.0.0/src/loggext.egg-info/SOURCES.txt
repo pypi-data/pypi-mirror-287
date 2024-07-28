@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/loggext/__init__.py
+src/loggext.egg-info/PKG-INFO
+src/loggext.egg-info/SOURCES.txt
+src/loggext.egg-info/dependency_links.txt
+src/loggext.egg-info/requires.txt
+src/loggext.egg-info/top_level.txt
