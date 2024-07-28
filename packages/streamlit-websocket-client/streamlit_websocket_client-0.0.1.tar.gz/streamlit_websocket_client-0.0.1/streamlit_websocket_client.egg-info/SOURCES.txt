@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.py
+streamlit_websocket_client.egg-info/PKG-INFO
+streamlit_websocket_client.egg-info/SOURCES.txt
+streamlit_websocket_client.egg-info/dependency_links.txt
+streamlit_websocket_client.egg-info/requires.txt
+streamlit_websocket_client.egg-info/top_level.txt
+websocket_client/__init__.py
+websocket_client/example.py
+websocket_client/frontend/build/asset-manifest.json
+websocket_client/frontend/build/index.html
+websocket_client/frontend/build/static/js/main.59a02ee2.js
+websocket_client/frontend/build/static/js/main.59a02ee2.js.LICENSE.txt
+websocket_client/frontend/build/static/js/main.59a02ee2.js.map
