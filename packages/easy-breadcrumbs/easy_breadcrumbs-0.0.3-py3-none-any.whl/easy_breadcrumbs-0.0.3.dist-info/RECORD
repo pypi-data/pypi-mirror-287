@@ -1,0 +1,15 @@
+breadcrumbs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+breadcrumbs/apps.py,sha256=LSlN0eynuDJIUQvGBDyu5aCoCgefl3wr9p9WvzuJusM,187
+breadcrumbs/context_processors.py,sha256=Jay_jegXq6tJauzHPJvdmSpaBFu--A2rJh0nKNHymhM,243
+breadcrumbs/mixins.py,sha256=UH7qHAOhlIHinsWQ-0p41Eiz8yRWVVIiwDBjvdt88DY,445
+breadcrumbs/service.py,sha256=3F-BU5wR-E67fsJzQiyGdmNJ-iTtIsMb3VAOj8COb_k,1712
+breadcrumbs/utils.py,sha256=7Dqldh5T1e4SoY6Trmv0jwanaK_nS5DhILv-kEi-fxM,351
+breadcrumbs/templates/breadcrumbs/breadcrumbs.html,sha256=TdppWKtLvbtVmfcenBmY4e0YB0Np188FQ1Xah3fkkLM,375
+breadcrumbs/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+breadcrumbs/templatetags/breadcrumbs.py,sha256=CobW36404-TAE6KF-b1r7M5tddQoQr5Ohyr25aqZ_Ds,301
+breadcrumbs/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+easy_breadcrumbs-0.0.3.dist-info/LICENSE,sha256=s5CPCL-jf-ocvl8-I5c-LxxOI6EZ4Kyx_jCmUq_BROw,1069
+easy_breadcrumbs-0.0.3.dist-info/METADATA,sha256=x6NmXUa-KipkEWvg1Bu5h4Zxl8iyw3WJXT4UQbQ7djU,972
+easy_breadcrumbs-0.0.3.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+easy_breadcrumbs-0.0.3.dist-info/top_level.txt,sha256=gmCL66e56MQq5rtjUr7h5ULg2RmTII0wh3ql9QzQKXo,12
+easy_breadcrumbs-0.0.3.dist-info/RECORD,,
