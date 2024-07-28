@@ -1,0 +1,2 @@
+[console_scripts]
+hatebpy = hatebpy._cli:main

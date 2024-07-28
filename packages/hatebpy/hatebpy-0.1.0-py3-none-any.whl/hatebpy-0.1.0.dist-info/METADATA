@@ -1,0 +1,119 @@
+Metadata-Version: 2.1
+Name: hatebpy
+Version: 0.1.0
+Summary: A Python package for easy interaction with the Hatena Bookmark API
+Author-email: K <kmyashi@rmc-8.com>
+License: MIT License
+        
+        Copyright (c) 2024 rmc8
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/rmc8/hatebpy
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests >=2.32.3
+Requires-Dist: requests-oauthlib >=2.0.0
+Requires-Dist: fire >=0.5.0
+Requires-Dist: feedparser >=6.0.11
+Requires-Dist: pydantic >=2.0.0
+
+# hatebpy
+
+hatebpyは、はてなブックマークAPIを簡単に利用するためのPythonライブラリです。
+
+## 特徴
+
+- はてなブックマークAPIの主要機能をサポート
+- 簡単な認証プロセス
+- タイプヒントによる型安全性
+- フィード検索機能
+
+## インストール
+
+pipを使用してインストールできます：
+
+```bash
+pip install hatebpy
+```
+
+## 使用方法
+
+### 認証
+
+はてなブックマークAPIを使用するには、OAuthによる認証が必要です。以下のコマンドを実行して認証を行います：
+
+```bash
+hatebpy <consumer_key> <consumer_secret>
+```
+
+### 基本的な使用例
+
+```python
+from hatebpy import HatenaBookmarkClient, OAuth1Auth
+
+# クライアントの初期化
+auth = OAuth1Auth(CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
+client = HatenaBookmarkClient(auth)
+
+# ブックマークの取得
+bookmark = client.get_bookmark("https://example.com")
+print(bookmark)
+
+# ブックマークの更新
+updated_bookmark = client.update_bookmark(
+    url="https://example.com",
+    comment="example.com test",
+    tags=["example", "test"]
+)
+print(updated_bookmark)
+```
+
+より詳細な使用方法については、[使用方法のドキュメント](docs/usage.md)を参照してください。
+
+## 開発
+
+### 依存関係のインストール
+
+```bash
+pip install -r requirements.txt
+```
+
+### テストの実行
+
+```bash
+pytest
+```
+
+## ライセンス
+
+このプロジェクトは[MITライセンス](LICENSE)の下で公開されています。
+
+## 貢献
+
+バグ報告、機能リクエスト、プルリクエストなど、あらゆる形での貢献を歓迎します。大きな変更を加える前に、まずissueを開いて議論してください。
+
+## 作者
+
+K(rmc-8.com)
+
+## 謝辞
+
+- はてなブックマークAPIを提供してくださっているはてな株式会社に感謝します。
