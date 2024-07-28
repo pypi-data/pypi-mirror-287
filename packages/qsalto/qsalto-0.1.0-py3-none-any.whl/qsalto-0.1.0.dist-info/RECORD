@@ -1,0 +1,10 @@
+qsalto/__init__.py,sha256=7FibgSLvB7yPr9UAJQ7YvaC6tYQtNKODhhgJchfFfZ4,108
+qsalto/matrices.py,sha256=LTGnWSRw1d08I5CrpHbQaZG_YzUv40hCFwqHGRsjgWk,6403
+qsalto/naive_matrices.py,sha256=agAERaM0-3ftw5FujD6hORBLS5Wq8PARUmXbGItvd2Q,1851
+qsalto/single_entry.py,sha256=D2CrkMf6ejbhgne1LnQrn60ee8OqkVS5G-J3xpNXAx8,1310
+qsalto/single_shot.py,sha256=aB30CvJbENXrF1JkVBHNK9rLv5VUmynIlU0qPeBUr4I,733
+qsalto-0.1.0.dist-info/LICENSE,sha256=xwXZ-fUD4Yz1fj4tnKh0LIUTrcstFUZwHe1ptCHDgrU,1063
+qsalto-0.1.0.dist-info/METADATA,sha256=qagwmKTv5lw44Lis9h2gxSYErTJH9K3KUwb9n-JE7xA,4151
+qsalto-0.1.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+qsalto-0.1.0.dist-info/top_level.txt,sha256=6R0M_znQdhdBa-3VmxxVyN5KloZ5FwmKqWRnRANKQ9A,7
+qsalto-0.1.0.dist-info/RECORD,,
