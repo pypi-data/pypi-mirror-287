@@ -1,0 +1,10 @@
+README.md
+setup.py
+hffs/__init__.py
+hffs/main.py
+hffs.egg-info/PKG-INFO
+hffs.egg-info/SOURCES.txt
+hffs.egg-info/dependency_links.txt
+hffs.egg-info/entry_points.txt
+hffs.egg-info/requires.txt
+hffs.egg-info/top_level.txt
