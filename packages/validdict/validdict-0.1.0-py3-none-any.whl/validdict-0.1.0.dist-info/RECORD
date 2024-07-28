@@ -1,0 +1,15 @@
+validdict/__init__.py,sha256=q4AZJi-tItw7_QMWp9HwUrAaeF11ykrwIY_2MkNPwHI,294
+validdict/contextual.py,sha256=RtXEtFIVOwW9OjwniLvWszqRfJ40GxNUSqk1nMPQvxw,4488
+validdict/helpers.py,sha256=4CID-k6Iag38N2gc_Om92L-DpHvr3U9lFXQ1XYFv89I,1725
+validdict/key.py,sha256=UNQdWlSXXY8sm89lj9jgrgp7hhvjIGeeSdADLKKHByE,6785
+validdict/locator.py,sha256=KGKJYNaNE8hC3-phUdrzXxvW5E-0VXXCOJoSOwp0Log,1650
+validdict/map.py,sha256=nXhBs1mrH5QrXethso5MGTgINlfkqV29lYoZwnDazm0,12078
+validdict/results.py,sha256=l6PmG8VIw-Y8vfeevef0pI2R6rM8hs-5AN11WW8KFVM,10815
+validdict/scalars.py,sha256=9Drm-8fVgC6d07cqXKwomk9lClKwu_l5DgTY08MNJDs,10051
+validdict/schema.py,sha256=WvLe4z2sqRgiKFPpmQdpYlV2Y6-f8c5ojzBoBN3i5oM,2799
+validdict/seq.py,sha256=WLPf1rJxhNe5XRcLt56H6OHu-i88eFJ9DgDtZcq-4Oc,2922
+validdict/validator.py,sha256=19QCl5gys5QJc8S3-hRhELxHRiBpSZLzkKbYJ0GSnLk,6106
+validdict-0.1.0.dist-info/LICENSE,sha256=0kpDvEII-zwts0dZjoBUPLlUz7Ydmzl2vMu1G8bh9GE,1068
+validdict-0.1.0.dist-info/METADATA,sha256=nki0LHC5Dc3T-lv7tYkTguKOg9a8WxKmGIYdCOrjVdg,3525
+validdict-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+validdict-0.1.0.dist-info/RECORD,,
