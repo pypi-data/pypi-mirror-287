@@ -1,0 +1,10 @@
+README.md
+setup.py
+huggingfs/__init__.py
+huggingfs/main.py
+huggingfs.egg-info/PKG-INFO
+huggingfs.egg-info/SOURCES.txt
+huggingfs.egg-info/dependency_links.txt
+huggingfs.egg-info/entry_points.txt
+huggingfs.egg-info/requires.txt
+huggingfs.egg-info/top_level.txt
