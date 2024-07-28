@@ -1,0 +1,9 @@
+pyparsing
+typing_extensions
+
+[all]
+orjson
+discord.py>=2.4.0
+
+[discord]
+discord.py>=2.4.0
