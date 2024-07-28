@@ -1,0 +1,10 @@
+executor/__init__.py,sha256=tDjLwSkGpqnUZPg2N9EB631R5_VclIMy_Kw6ZCZFgNM,267
+executor/_base_executor.py,sha256=7Zrb3wTXM8L2Q5aRXTLTjyawWi7c7oyqE7zJXNEq1No,121
+executor/_decorator.py,sha256=jfpXZBMCcWjZqb83RRmCO7Gci7fjgEky2PfWrqlWmME,584
+executor/_example.py,sha256=3Bg6Qmm-VMVx0tdxcwmcthMwpNW9cn7fbIoloxLG8MQ,233
+executor/_executor.py,sha256=xvVWMmMPY61LLvx_z03qjHfmfo4ptes73lOKsCW_a28,880
+executor/_result.py,sha256=FbC0CExpFM0hYCMZ4GtKk5Ra0URFA4EwuYF_-OqbE38,146
+executor_manhdt-0.0.1.dist-info/METADATA,sha256=6ejozRX693BQnR9yyp4kf15pg1W4nwJuX2WZV3LTEQg,467
+executor_manhdt-0.0.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+executor_manhdt-0.0.1.dist-info/top_level.txt,sha256=BfKIAGgAB2_Hm_mLeuf48RYUl7rNb0FHP0qZP6OlzyY,9
+executor_manhdt-0.0.1.dist-info/RECORD,,
