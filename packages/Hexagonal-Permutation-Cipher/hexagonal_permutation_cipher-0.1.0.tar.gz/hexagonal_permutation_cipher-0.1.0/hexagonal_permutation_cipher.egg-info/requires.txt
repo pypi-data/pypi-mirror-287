@@ -1,0 +1,8 @@
+numpy
+pycryptodome
+pygame
+
+[dev]
+pytest
+flake8
+black
