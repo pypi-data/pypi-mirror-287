@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: umar
+Version: 0.1.2
+Summary: A simple Python package for greeting and adding numbers.
+Home-page: https://github.com/umarmughal824/umar
+Author: Umar Asghar
+Author-email: mrumarasghar@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# Umar Package
+
+A simple Python package for greeting and adding numbers.
+
+## Installation
+
+You can install the `umar` package from PyPi:
+
+```bash
+pip install umar
+```
+
+```
+from umar.greet import greet
+
+greet("Umar Asghar")
+```
+This will print
+```
+Umar Asghar
+```
+
+Another function
+```
+from umar.add import add
+
+add(2, 2)
+```
+This should print
+```
+4
+```
+
+## Links
+- [Github](https://github.com/umarmughal824)
+- [PyPi](https://pypi.org/project/umar/)
