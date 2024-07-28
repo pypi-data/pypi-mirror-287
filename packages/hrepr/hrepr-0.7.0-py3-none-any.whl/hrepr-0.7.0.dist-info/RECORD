@@ -1,0 +1,16 @@
+hrepr/__init__.py,sha256=RI-zzVloL7bVrWtKLq8PVGLusyGmJLrc0FqerM6InCA,501
+hrepr/core.py,sha256=ArtxVz_p8thysA8SmKB7lB6gAx4W5P-fb3MTXRChr-M,16285
+hrepr/h.py,sha256=3kxIPi_PD2um8yndWguvXfOd6Avahr46EwWAaVpRSCg,8081
+hrepr/hgen.py,sha256=h8BQmvvWOkTzJ9zEa9JFoJbXpqJ_cF5EAYufSQCcxH4,14287
+hrepr/hlib.js,sha256=dqIzHwu0JeTiPOLKY0cV-xeR1FJ5Rxtv7H5CHjDiiJQ,3525
+hrepr/j.py,sha256=_8NLz6f8GSF_6pd4SJshSXTISBijwQa8YqUeb4aZLBI,5203
+hrepr/make.py,sha256=8Qbf1on3OkV5IChA3rdz-tXXkFzlu5IQ3qu7FjrIT3o,3571
+hrepr/resource.py,sha256=yL77t5Rb82zxJ2om6UIbw_S654SN_hkD54KxVonhLJk,1286
+hrepr/textgen_simple.py,sha256=bQk9L0jAuhQHSWhSApyzbFthInoo_1FNPjO92kKqmJ8,1369
+hrepr/version.py,sha256=ESRNAX_R5emrFXQebwJqu1nbnBi3F60hyq0071SQWRM,18
+hrepr/style/hrepr.css,sha256=U8aG0SJgTGmKIXnduGWH8VoXTlOBAfhj_GgdG5s8Bds,3727
+hrepr/style/nbreset.css,sha256=fFMuHKC0IuNb7Q3YSxo84NxaHr-kf0csU8vihd_FRI4,267
+hrepr-0.7.0.dist-info/METADATA,sha256=XD9pa8P6e7qcgbchYFxKR_VPxQCRvvvva-hdPM8l09g,11582
+hrepr-0.7.0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+hrepr-0.7.0.dist-info/licenses/LICENSE,sha256=Ti-dzeewwTStqccZRZh_hMStiWg64_hMMCQUwsb3RcQ,1083
+hrepr-0.7.0.dist-info/RECORD,,
