@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "conducta"
+version = "0.0.3"
+description = "A model orchestration library for the modern AI era with a focus on excellent developer experience."
+authors = ["drew-worden <drew.p.worden@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/drew-worden/conducta"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.5"
+poethepoet = "^0.27.0"
+pre-commit = "^3.7.1"
+
+[tool.poe.tasks]
+format = "ruff format ."
+lint = "ruff check ."
+lint-fix = "ruff check . --fix"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "E501",   # line too long
+    "D203",   # 1 blank line required before class docstring
+    "D213",   # 1 blank line required between class docstring and method docstring
+    "G004",   # Use of f-strings,
+    "FA100",  # Import from __future__ import annotations instead of typing
+    "N801",   # Class names should use CapWords convention
+    "COM812", # Missing trailing comma in a multi-line list
+    "ISC001", # Implicitly concatenated string literals on one line
+] 
