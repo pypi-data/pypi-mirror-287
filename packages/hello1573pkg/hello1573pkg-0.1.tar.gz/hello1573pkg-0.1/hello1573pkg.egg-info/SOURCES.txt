@@ -1,0 +1,8 @@
+LICENSE.txt
+README.md
+setup.py
+hello1573pkg/__init__.py
+hello1573pkg.egg-info/PKG-INFO
+hello1573pkg.egg-info/SOURCES.txt
+hello1573pkg.egg-info/dependency_links.txt
+hello1573pkg.egg-info/top_level.txt
