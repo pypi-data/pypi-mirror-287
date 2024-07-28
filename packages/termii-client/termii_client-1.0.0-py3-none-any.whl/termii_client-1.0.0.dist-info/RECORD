@@ -1,0 +1,15 @@
+termii_client/__init__.py,sha256=Wda7zkZKcvAODI0yMFd6BqvE2h7INi_MGnSnvqv4cz8,1452
+termii_client/base.py,sha256=SyuXFHb8W-eeK-tXUXnI1hG9DQ1mj5Q_CQuZmDCvVDI,1690
+termii_client/campaigns.py,sha256=_J1A1zT38lvqbb3rX6j3tDsNeIHoRp4e8CTAg6c4J6E,1675
+termii_client/contacts.py,sha256=oboblHzqzGc8Stc74t4CHZtHlj_mpOhYe8BDzYeuApc,2422
+termii_client/insights.py,sha256=W1G4ZHdkhkE64l4Hcr5reCwToTMbJAAoz6k11-3VTyQ,2053
+termii_client/messaging.py,sha256=nZ60fIYpvKVI78IP8mUmpfsthGLxQp8Vyy9apYeMleI,2023
+termii_client/mixins.py,sha256=wEX3A6XI_PqblU5izCPun1bBS9NTpGd5BbNu-dXr26w,647
+termii_client/phonebook.py,sha256=q5ka6Da3jtOV9_oBW2B9zykZJWBiPIOZ7ldg07BZ230,2181
+termii_client/sender_id.py,sha256=UbIa4eXiLCLc1SjlH2aPfKFHVF_8Ge3SpZ-XJrDWw7U,1412
+termii_client/token.py,sha256=EY1MZH6keb4mO5zuX1tmSClCnByY0jtolYdZFCX3DVA,3031
+termii_client-1.0.0.dist-info/LICENSE,sha256=G0HF8b-WIqGFMiWQd7xCNrmS28FegjWyINGRGVgU9Rg,1071
+termii_client-1.0.0.dist-info/METADATA,sha256=Jh6cHejCW-ghNBzx3_OCmhSKDvBQpIn8Hb_q3fJhgiI,13310
+termii_client-1.0.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+termii_client-1.0.0.dist-info/top_level.txt,sha256=9l8bqOiOkDu8vj9A0IKYQuiSC-LzS585UH9UKxNQS0o,14
+termii_client-1.0.0.dist-info/RECORD,,
