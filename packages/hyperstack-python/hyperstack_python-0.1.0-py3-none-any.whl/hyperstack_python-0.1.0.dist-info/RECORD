@@ -1,0 +1,8 @@
+hyperstack/__init__.py,sha256=4PZYX83HuIbmWSCdihMPbyv3Le8JGo_Bdwb5mnxl8L4,60
+hyperstack/deploy_ollama.py,sha256=EiPGSdgpiUhzKNgTGskAkykwzWcTGrjT5n6q0HU_zuQ,2430
+hyperstack/deploy_pytorch.py,sha256=t4CMHyruZF35gFqNdnJvSqDEWx4tKtuC9eEwNHzEnh8,2467
+hyperstack/hyperstack.py,sha256=KRGV5qwtgzTCPF3Ng2sf9zmdzn8ZQ5OztUaJfUItDxc,27746
+hyperstack_python-0.1.0.dist-info/LICENSE,sha256=pBdoYiJZ7CLIvdAwRciEpwD6F4RPxA1yokkhSx_VPHQ,11338
+hyperstack_python-0.1.0.dist-info/METADATA,sha256=nFhNvCdYLfnUPJYAdD0XeHZzR00R0oslKyBZN8JVu7Y,1713
+hyperstack_python-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+hyperstack_python-0.1.0.dist-info/RECORD,,
