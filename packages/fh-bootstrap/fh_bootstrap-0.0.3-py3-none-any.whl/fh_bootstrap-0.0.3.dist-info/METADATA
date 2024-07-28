@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: fh-bootstrap
+Version: 0.0.3
+Summary: Bootstrap for FastHTML
+Author-email: Jeremy Howard <info@fast.ai>
+Project-URL: Homepage, https://github.com/AnswerDotAI/fh-bootstrap
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: <4,>=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: fastcore
+Requires-Dist: markdown
+Requires-Dist: python-fasthtml >=0.1.10
+
+# Bootstrap for FastHTML
+
+This is very incomplete! Contributions welcome. Currently working are basic versions of:
+
+- navbars
+- icons
+- figures
+- footers
+- table of contents (based on, and largely compatible with, [this project](https://afeld.github.io/bootstrap-toc/))
