@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+StockExchange/__init__.py
+StockExchange/nsestock.py
+StockExchange.egg-info/PKG-INFO
+StockExchange.egg-info/SOURCES.txt
+StockExchange.egg-info/dependency_links.txt
+StockExchange.egg-info/requires.txt
+StockExchange.egg-info/top_level.txt
