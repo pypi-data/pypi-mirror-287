@@ -1,0 +1,7 @@
+LICENSE.txt
+README.md
+setup.py
+packag66e.egg-info/PKG-INFO
+packag66e.egg-info/SOURCES.txt
+packag66e.egg-info/dependency_links.txt
+packag66e.egg-info/top_level.txt
