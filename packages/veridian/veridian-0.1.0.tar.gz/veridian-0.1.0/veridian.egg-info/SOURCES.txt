@@ -1,0 +1,9 @@
+README.md
+setup.py
+veridian-sdk/__init__.py
+veridian-sdk/cleaning.py
+veridian.egg-info/PKG-INFO
+veridian.egg-info/SOURCES.txt
+veridian.egg-info/dependency_links.txt
+veridian.egg-info/requires.txt
+veridian.egg-info/top_level.txt
