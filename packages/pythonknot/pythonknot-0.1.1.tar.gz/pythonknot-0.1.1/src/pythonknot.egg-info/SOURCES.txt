@@ -1,0 +1,14 @@
+README.md
+setup.py
+src/pythonknot/__init__.py
+src/pythonknot/polymer.py
+src/pythonknot/rmsd.py
+src/pythonknot/xyz.py
+src/pythonknot.egg-info/PKG-INFO
+src/pythonknot.egg-info/SOURCES.txt
+src/pythonknot.egg-info/dependency_links.txt
+src/pythonknot.egg-info/not-zip-safe
+src/pythonknot.egg-info/requires.txt
+src/pythonknot.egg-info/top_level.txt
+test/test.py
+test/test2.py
