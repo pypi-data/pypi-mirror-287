@@ -1,0 +1,10 @@
+french_cities/__init__.py,sha256=Rbt69015nm6Ljt2D46rHLe-bzUPSfIwWU_Ebd_uAG9Y,386
+french_cities/city_finder.py,sha256=qfJvx2PNmCKd4OGYvvxkA9K-LruMbv24YlUxfWydhTQ,41313
+french_cities/config.py,sha256=Wcr9x5SToGi_iamuiaytZHUvDRFUJTPNibMSSLW7sGg,319
+french_cities/departement_finder.py,sha256=-ElZd0KzyOgpsn4CxQvZDGzbPk4AaGrLMtAyGM93sz4,17129
+french_cities/ultramarine_pseudo_cog.py,sha256=UbFzv-TEebCF3aDVsep8ii2Yqbr87LgDTfV0O2DAiew,4668
+french_cities/utils.py,sha256=wD3apgFRjVK64dcpqw8Dqq7VPWJuzp-n1FE7HrtfAn0,1484
+french_cities/vintage.py,sha256=iZL3UwtWwSkIjk1k0_nzbuVFzLj9GorVk0VqqVt3ZBw,13917
+french_cities-1.0.0.dist-info/METADATA,sha256=ip79fC5QL0RvBkfcDr8nHC9WOX0k9aQQmemQuS16dgk,10353
+french_cities-1.0.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+french_cities-1.0.0.dist-info/RECORD,,
