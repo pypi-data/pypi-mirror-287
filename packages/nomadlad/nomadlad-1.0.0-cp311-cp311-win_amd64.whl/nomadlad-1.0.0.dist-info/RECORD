@@ -1,0 +1,7 @@
+nomadlad/__init__.py,sha256=9tdeVlSCM_VLFOfguEKkDu7yXPkgTkKyHl721et9M5c,2553
+nomadlad/_nomadlad_bridge.cp311-win_amd64.pyd,sha256=pXWtQeuXIWq319kxRusUfVmcDVU4S6yr1N0nbG5-cdU,2883072
+nomadlad-1.0.0.dist-info/LICENSE,sha256=fTqV5eBpeAZO0_jit8j4Ref9ikBSlHJ8xwj5TLg7gFk,7817
+nomadlad-1.0.0.dist-info/METADATA,sha256=QyjkE4DR9dtDzdwHH8urF3-4X8pz5B31HCzS5pluD7c,2586
+nomadlad-1.0.0.dist-info/WHEEL,sha256=SXv4eJlzP0RNHYKzGRJ91eDhAFO0Eo2_AdrKMJ52XEE,101
+nomadlad-1.0.0.dist-info/top_level.txt,sha256=yAhefSiXKsvmejM4rW4dUOKoo-p-LooPkrKYNS-FuBo,9
+nomadlad-1.0.0.dist-info/RECORD,,
