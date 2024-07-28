@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: apk_python_game
+Version: 0.0.2
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Apk Sameera
+Author-email: apkcschandrarathna@gmail.com
+License: UNKNOWN
+Description: This is a simple Game package. You can use to write your content.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
