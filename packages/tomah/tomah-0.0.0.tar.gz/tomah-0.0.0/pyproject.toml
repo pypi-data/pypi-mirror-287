@@ -1,0 +1,27 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = [ "hatchling", ]
+
+[project]
+name = "tomah"
+version = "0.0.0"
+requires-python = ">=3.8"
+
+dependencies = [
+  "httpx>=0.23.0",
+  "json-api-doc>=0.15.0",
+  "ratelimit>=2.2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "homeassistant==2022.9.6",
+  "black>=21.12b0",
+  "flake8>=4.0.1",
+  "isort>=5.10.2",
+  "pylint>=3.2.5",
+  "homeassistant-cli>=0.9.6"
+]
+
+[tool.black]
+line-length = 120

@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: tomah
+Version: 0.0.0
+License-File: LICENSE
+Requires-Python: >=3.8
+Requires-Dist: httpx>=0.23.0
+Requires-Dist: json-api-doc>=0.15.0
+Requires-Dist: ratelimit>=2.2.1
+Provides-Extra: dev
+Requires-Dist: black>=21.12b0; extra == 'dev'
+Requires-Dist: flake8>=4.0.1; extra == 'dev'
+Requires-Dist: homeassistant-cli>=0.9.6; extra == 'dev'
+Requires-Dist: homeassistant==2022.9.6; extra == 'dev'
+Requires-Dist: isort>=5.10.2; extra == 'dev'
+Requires-Dist: pylint>=3.2.5; extra == 'dev'
