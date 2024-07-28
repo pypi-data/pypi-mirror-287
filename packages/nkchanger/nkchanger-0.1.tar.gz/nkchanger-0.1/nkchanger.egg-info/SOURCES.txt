@@ -1,0 +1,8 @@
+LICENSE
+README.md
+nkchanger.py
+setup.py
+nkchanger.egg-info/PKG-INFO
+nkchanger.egg-info/SOURCES.txt
+nkchanger.egg-info/dependency_links.txt
+nkchanger.egg-info/top_level.txt

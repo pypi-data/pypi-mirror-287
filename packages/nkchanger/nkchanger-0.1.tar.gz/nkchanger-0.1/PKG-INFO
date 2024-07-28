@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: nkchanger
+Version: 0.1
+Summary: Şekilli nickleri ASCII karakterine çevirir - Converts fancy nicknames to ASCII characters
+Home-page: https://github.com/Leo4Bey/nkchanger
+Author: Kemal Sayıt
+Author-email: kemalsayit01@gmail.com
+License: MIT
+Keywords: nick,changer,nick changer,fancy nick
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## Kullanım - usage
+
+```
+>>> from nkchanger import nickChanger
+>>> print(nickChanger().changeNick("ⓁⓔⓞⒷⓔⓨ"))
+Output: LeoBey
+```
+
