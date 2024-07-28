@@ -1,0 +1,109 @@
+Metadata-Version: 2.1
+Name: huggingfs
+Version: 0.3
+Summary: huggingface downloader web ui
+Home-page: https://github.com/cocktailpeanut/huggingfs
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: gradio
+Requires-Dist: huggingface-hub
+
+# HuggingFS
+
+A Web UI for downloading Huggingface repositories.
+
+# Install
+
+```
+git clone https://github.com/cocktailpeanut/huggingfs
+cd huggingfs
+pip install -r requirements.txt
+```
+
+# Usage
+
+## 1. Minimal
+
+Let's say you want to set the root path of the file system as `./models`.
+
+Create a file named `hfs.json`:
+
+```json
+{
+  "fs": [{
+    "path": "models",
+  }]
+}
+```
+
+Then start the UI:
+
+```
+huggingfs hfs.json
+```
+
+## 2. Curated Options
+
+The minimal version only lets you download by entering the HuggingFace ID (example: `KwaiVGI/LivePortrait`).
+
+But often you will want to provide a pre-set options, from which the end users can select from. In this case, you can specify the `options` array:
+
+```json
+{
+  "fs": [{
+    "path": "models",
+    "options": [
+      "nvidia/Minitron-4B-Base",
+      "coqui/XTTS-v2",
+      "KwaiVGI/LivePortrait",
+      "BAAI/bge-m3",
+      "vidore/colpali"
+    ]
+  }]
+}
+```
+
+Now start huggingfs
+
+```
+huggingfs hfs.json
+```
+
+## 3. Multiple Folders
+
+Often you may want to store files to multiple folders.
+
+For example, you may want to allow:
+
+1. downloading model checkpoints to `stable-diffusion-webui/models/Stable-diffusion`
+2. downloading Loras to `stable-diffusion-webui/models/Lora`
+
+In this case you can simply extend the `fs` array like this:
+
+This will create a dropdown
+
+
+```json
+{
+  "fs": [{
+    "path": "stable-diffusion-webui/models/Stable-diffusion",
+    "options": [
+      "stabilityai/stable-diffusion-3-medium",
+      "xinsir/controlnet-union-sdxl-1.0",
+      "fal/AuraFlow"
+    ]
+  }, {
+    "path": "stable-diffusion-webui/models/Lora",
+    "options": [
+      "2vXpSwA7/iroiro-lora",
+      "Cseti/Basic_camera_motion_LoRAs_sd15-ad2-v1"
+    ]
+  }]
+}
+```
+
+And simply restart the app with:
+
+```
+huggingfs hfs.json
+```
