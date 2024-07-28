@@ -1,0 +1,3 @@
+[console_scripts]
+cyberosint = CyberOsint.main:main
+
