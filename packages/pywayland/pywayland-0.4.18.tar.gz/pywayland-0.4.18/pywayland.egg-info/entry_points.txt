@@ -1,0 +1,2 @@
+[console_scripts]
+pywayland-scanner = pywayland.scanner.__main__:main
