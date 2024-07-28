@@ -1,0 +1,12 @@
+tabledai/__init__.py,sha256=tSR8JLgIFnkzD4QTCGgdyCogIK-RTzcNDlIM7qPb43Q,40
+tabledai/create.py,sha256=rcaPYeFsBIxZ9jiHV0HfE-JyD5p_AQpiyrTrbVXXKXw,31886
+tabledai/postgres/__init__.py,sha256=naXVlhnER9FiLu8vUCQ6hCkMf_L_xLkSs42SQG_P0gk,7060
+tabledai/postgres/database_management.py,sha256=TOiR1TmE6SG9yekBVXbZh2MERQtSvjF5fxLssQmxE_A,19650
+tabledai/postgres/llm_integration.py,sha256=0beXxBG6-lNmpP5rupjnCeQ1uD9iA5WZ65hDbvqdG7I,16608
+tabledai/postgres/query_handling.py,sha256=WCXbbhk4jEd3HONq7pPeHCkSd9qE-NzuPdMhczlUDjM,4617
+tabledai/postgres/utils.py,sha256=7S45kAQo8oWc175lGlYZc11UmF4xhBMDwD6uwr83N18,1334
+tabledai-0.0.26.dist-info/LICENSE,sha256=Yrm5Ms9e_9CX3mdfZgTwXcH6V1U61eJTgVY8DNmpIrQ,1045
+tabledai-0.0.26.dist-info/METADATA,sha256=0AT0JxZDjYuFMZaCEKGxiStp5rgYE79QY1vsI5Et1VI,659
+tabledai-0.0.26.dist-info/WHEEL,sha256=rWxmBtp7hEUqVLOnTaDOPpR-cZpCDkzhhcBce-Zyd5k,91
+tabledai-0.0.26.dist-info/top_level.txt,sha256=sXSiYrFedpmwykELuSKacQIgE-oCYuqYohiV9u1MdNk,9
+tabledai-0.0.26.dist-info/RECORD,,
