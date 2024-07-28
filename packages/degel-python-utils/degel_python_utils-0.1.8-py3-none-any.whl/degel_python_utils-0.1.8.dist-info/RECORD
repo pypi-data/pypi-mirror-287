@@ -1,0 +1,17 @@
+degel_python_utils/__init__.py,sha256=odO8QCQXhUsCr-cotIqhCVWewmnke_XoQVF0JN0QCBI,795
+degel_python_utils/data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+degel_python_utils/data/read_table.py,sha256=pTbHRDuA2kRWUsBpGH4sd25BZk1y5HHF_fiISbiDLtU,3093
+degel_python_utils/data/write_table.py,sha256=3-yFr2jg_FfuepgHvSZaXNbYEjEiYYQ9A5t5YR4IW6o,2719
+degel_python_utils/ip/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+degel_python_utils/ip/uspto.py,sha256=bdbxK9jaBhrasuEmz2aTIFf_78z7_iCnDHMVkvJTPSM,3056
+degel_python_utils/sys_utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+degel_python_utils/sys_utils/env.py,sha256=59cwLLIpLEYc-H5G1VlaWsW1N4MwSTqq8bsEI-weOBA,2864
+degel_python_utils/sys_utils/errors.py,sha256=PR_UfLFNQ1PooVhW2rZchNAhmcSpyS5ZkHEgdmxkxOA,1094
+degel_python_utils/sys_utils/file_system.py,sha256=lM4Od3tH4n4Rbgg84e68woh3msTX7MiO-2fVxEdiyoI,404
+degel_python_utils/sys_utils/log_tools.py,sha256=4_PbIm-3TX4GchbKZ5EPlut0MdHu_V64Gp1fxw_5SnM,3835
+degel_python_utils/sys_utils/typing_helpers.py,sha256=OFMtTjkqwciMwq9jnSWMej4wMIoKQgQ4W20VhsZSHTc,145
+degel_python_utils-0.1.8.dist-info/LICENSE,sha256=5NH9b9nb1sXAg5NP3lMGChpcxDDrj6ohOuQ75ytOXQA,948
+degel_python_utils-0.1.8.dist-info/METADATA,sha256=f-2uTHmj_wAKL2m-gTopBGiZNLRqwIX_yVa5EZrvS8c,4180
+degel_python_utils-0.1.8.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+degel_python_utils-0.1.8.dist-info/top_level.txt,sha256=nmghBF8yHwazUF2QRm6iDHWezLtfMNdYQu4DIZuaUSU,19
+degel_python_utils-0.1.8.dist-info/RECORD,,
