@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: rkt-cli-test-101
+Version: 0.0.1
+Requires-Dist: Click
+
