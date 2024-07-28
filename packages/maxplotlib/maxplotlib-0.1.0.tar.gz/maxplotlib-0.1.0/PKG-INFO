@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: maxplotlib
+Version: 0.1.0
+Summary: Custom MLX-augmented visualization tool by Max Cembalest
+Home-page: http://github.com/mcembalest/maxplotlib
+Author: Max Cembalest
+Author-email: macembalest@gmail.com
+License: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: mlx_lm
+Requires-Dist: numpy
+Requires-Dist: pillow
+
+# maxplotlib

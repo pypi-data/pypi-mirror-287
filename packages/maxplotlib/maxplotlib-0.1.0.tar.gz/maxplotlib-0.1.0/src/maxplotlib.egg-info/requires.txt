@@ -1,0 +1,4 @@
+matplotlib
+mlx_lm
+numpy
+pillow
