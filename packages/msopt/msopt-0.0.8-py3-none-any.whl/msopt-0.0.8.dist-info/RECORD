@@ -1,0 +1,8 @@
+msopt/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+msopt/api.cpython-311-darwin.so,sha256=MsoW3Pg44QbeqObwshclD19e-JTF16r_CXSCJ3Y5mKk,468008
+msopt/api.cpython-311-x86_64-linux-gnu.so,sha256=L5E2yzdiab2fO_IltxX2IXSKXIJLbOomZ4IWNn4ZZQ8,649184
+msopt/msopt.cpython-311-darwin.so,sha256=VryF_nwPTQwfyFlK1LIKH1RTGxI4GrBCOe-FOe7Nods,855600
+msopt/msopt.cpython-311-x86_64-linux-gnu.so,sha256=1VFIVTIyLoPI3UcENyQaE4H3JqzrCj-QhtrfrWExlHg,666736
+msopt-0.0.8.dist-info/METADATA,sha256=6_rxxPk5XT5QcGjwuOujzpwPhPZFs9RsSDnQJL51p3s,1970
+msopt-0.0.8.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+msopt-0.0.8.dist-info/RECORD,,
