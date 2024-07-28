@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+time_calcfreename.egg-info/PKG-INFO
+time_calcfreename.egg-info/SOURCES.txt
+time_calcfreename.egg-info/dependency_links.txt
+time_calcfreename.egg-info/top_level.txt
