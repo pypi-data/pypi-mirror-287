@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: django-sage-seo
+Version: 0.2.0
+Summary: SEO tools for Django
+License: MIT
+Author: Sepehr Akbarzadeh
+Author-email: sepehr@sageteam.org
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: json-forms
+Requires-Dist: django (>=5.0.7,<6.0.0)
+Requires-Dist: django-sage-tools (>=0.1.1,<0.2.0)
+Requires-Dist: setuptools (>=71.1.0,<72.0.0)
+Requires-Dist: twine (>=5.1.1,<6.0.0)
+Requires-Dist: wheel (>=0.43.0,<0.44.0)
+Description-Content-Type: text/markdown
+
+# django-sage-seo
