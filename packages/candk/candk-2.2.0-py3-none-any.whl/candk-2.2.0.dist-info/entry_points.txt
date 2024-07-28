@@ -1,0 +1,5 @@
+[console_scripts]
+candk=src.candk:main
+corndog=src.corndog:main
+ketchup=src.ketchup:main
+

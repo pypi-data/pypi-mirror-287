@@ -1,0 +1,15 @@
+candk/src/__init__.py,sha256=VNEq7fxha_Zwn3Kciwo_7B4xUJEnQEIZbDtClvRATxo,41
+candk/src/candk.py,sha256=Qx3-2LpUTXfHUe3ynzx_x5FJ5Vr91UtoeGe4AP2LQu0,2727
+candk/src/corndog.py,sha256=bFHoLV-NvTu_iS5NO2kL6wwoNZyCz47UVzd8OYFCI1Y,8510
+candk/src/ketchup/__init__.py,sha256=CLkIA5XGy_MeiEUxCWssdtywkMwQ9t8Fz74GpZc3tmg,71
+candk/src/ketchup/base.py,sha256=AVrmpoMYeQPJmziD051pNECcjENN3E4GU2eQUL2s45c,7414
+candk/src/ketchup/main.py,sha256=QkRmb5J0cjKRVougWqqHD6j3GuC4p6Ljw7aN5K3V-XI,2391
+candk/src/ketchup/spread.py,sha256=yQBWg8B3pkBpahUYNbWGIafaxvRshH_1JbZ2vRViovA,6772
+candk/src/ketchup/style.css,sha256=tk96oNx9fJv8mKrJTjqkvFxxvyQ2HfqfVVXxZnmzr5A,5957
+candk/src/ketchup/tags.py,sha256=okRIjW2oOg8qvchHs8uVZFFSS0QOMjyxS7X9kVadSBI,12534
+candk/src/style.css,sha256=RN3eFi71r93PXkQdWK4102XJZFt-9bxTEozENy-fgpU,5293
+candk-2.2.0.dist-info/LICENSE,sha256=XTHX8If6nnsAkTWaDRfr5Kct1sjKjNs2IBys-996f-g,1301
+candk-2.2.0.dist-info/METADATA,sha256=gVa6w8JBGerEF8yUoh_rICNQA8Sd2nVBSgpu5ogd8k4,831
+candk-2.2.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+candk-2.2.0.dist-info/entry_points.txt,sha256=EmUYnIdlijKJ7SVJbDeLJiYTsWbPE1QWfitG-jEmubw,90
+candk-2.2.0.dist-info/RECORD,,
