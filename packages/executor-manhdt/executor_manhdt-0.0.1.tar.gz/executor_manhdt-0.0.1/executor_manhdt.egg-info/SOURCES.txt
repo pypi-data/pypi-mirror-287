@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+executor/__init__.py
+executor/_base_executor.py
+executor/_decorator.py
+executor/_example.py
+executor/_executor.py
+executor/_result.py
+executor_manhdt.egg-info/PKG-INFO
+executor_manhdt.egg-info/SOURCES.txt
+executor_manhdt.egg-info/dependency_links.txt
+executor_manhdt.egg-info/top_level.txt
