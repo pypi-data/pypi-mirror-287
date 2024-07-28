@@ -1,0 +1,10 @@
+httpx>=0.4.0
+requests
+tqdm
+setuptools
+beautifulsoup4
+nest_asyncio
+python-dateutil
+browser-cookie3
+hyp3_sdk
+pandas
