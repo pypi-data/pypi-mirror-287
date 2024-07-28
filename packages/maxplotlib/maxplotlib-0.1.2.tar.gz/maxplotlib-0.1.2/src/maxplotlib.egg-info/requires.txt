@@ -1,0 +1,8 @@
+
+[server]
+matplotlib
+mlx_lm
+networkxnumpy
+pillow
+plotly
+torch

@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+src/maxplotlib/__init__.py
+src/maxplotlib/cli.py
+src/maxplotlib/plot.py
+src/maxplotlib/run.py
+src/maxplotlib.egg-info/PKG-INFO
+src/maxplotlib.egg-info/SOURCES.txt
+src/maxplotlib.egg-info/dependency_links.txt
+src/maxplotlib.egg-info/entry_points.txt
+src/maxplotlib.egg-info/requires.txt
+src/maxplotlib.egg-info/top_level.txt
+src/server/__init__.py
+src/server/server.py
