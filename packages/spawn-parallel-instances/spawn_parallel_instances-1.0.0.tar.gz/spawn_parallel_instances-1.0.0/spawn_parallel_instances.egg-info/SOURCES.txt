@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+concurrent_executor/__init__.py
+concurrent_executor/__main__.py
+spawn_parallel_instances.egg-info/PKG-INFO
+spawn_parallel_instances.egg-info/SOURCES.txt
+spawn_parallel_instances.egg-info/dependency_links.txt
+spawn_parallel_instances.egg-info/entry_points.txt
+spawn_parallel_instances.egg-info/requires.txt
+spawn_parallel_instances.egg-info/top_level.txt
+tests/test_main.py
+tests/test_script.py
