@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: solgpt
+Version: 0.1
+Summary: A module to new style easy mining.
+Home-page: https://github.com/gptsol/gptsol
+Author: Dale Vale
+Author-email: solgpt@proton.me
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
