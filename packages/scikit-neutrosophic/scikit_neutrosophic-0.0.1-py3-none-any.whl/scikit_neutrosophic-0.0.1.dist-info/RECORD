@@ -1,0 +1,8 @@
+scikit_neutrosophic/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scikit_neutrosophic/neutrosophic_knn.py,sha256=6eisJKM3DRyLlXQN3iBNYPMhpTOMLVeWSdbcSH5GrFE,813
+scikit_neutrosophic/neutrosophic_linear_regression.py,sha256=2OO5zZoS0ZXbJi1fzLiHiwoHTL0dvUYls9Uut_kA5Qk,869
+scikit_neutrosophic/neutrosophic_svm.py,sha256=R0P6yaCbmtsJ3Tf0lVKlsZoxdrs0jOmcAz1aNaNtUEU,583
+scikit_neutrosophic-0.0.1.dist-info/METADATA,sha256=FDn7_rnTCtK4jj5nxZ1XBx4BXEOIZOQXBCuWFFBYJ1M,2128
+scikit_neutrosophic-0.0.1.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+scikit_neutrosophic-0.0.1.dist-info/top_level.txt,sha256=ci1wSjnaTb1tyos2Ugg4w_rMy_DfC3IycmaZR346aaI,20
+scikit_neutrosophic-0.0.1.dist-info/RECORD,,
