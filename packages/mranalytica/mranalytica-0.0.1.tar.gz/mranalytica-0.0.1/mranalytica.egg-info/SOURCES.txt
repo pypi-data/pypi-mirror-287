@@ -1,0 +1,7 @@
+README.md
+setup.py
+mranalytica.egg-info/PKG-INFO
+mranalytica.egg-info/SOURCES.txt
+mranalytica.egg-info/dependency_links.txt
+mranalytica.egg-info/requires.txt
+mranalytica.egg-info/top_level.txt
