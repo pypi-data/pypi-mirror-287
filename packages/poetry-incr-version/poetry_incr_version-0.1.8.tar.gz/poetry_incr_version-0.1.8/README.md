@@ -1,0 +1,34 @@
+Tool to help manage the version of a Poetry project.
+
+It updates the version of a Poetry project both in:
+
+-   The `pyproject.toml` file: in the `tool.poetry` section.
+-   All the `__init__.py` files of the packages registered in the `tool.poetry.packages` section of the `pyproject.toml` file.
+
+The reason for having the version in both places is to be able to easily access the version at runtime by importing the package and reading the `__version__` attribute in the `__init__.py` file, and still having the version in the `pyproject.toml` file for Poetry during the package build.
+
+It is mainly made for being used in CI pipelines to automatically increment the versions at each deployment. But is also very helpful for manual usage, as it maintain consistancy between the versions in the `pyproject.toml` and the `__init__.py` files at all time.
+
+# Install
+
+```bash
+$ pip install poetry_incr_version # Easiest method for CI.
+
+$ pipx install poetry_incr_version # Preferable in some cases, for exemple to install globally on your machine.
+```
+
+# Usage
+
+```bash
+$ poetry-incr-version --minor . # Increment the minor version of the project in the current directory.
+
+$ poetry-incr-version --set 1.2.3 path/to/project # Sets the version of the project inside path/to/project to '1.2.3'.
+```
+
+See `.gitlab-ci.yml` for a real use case.
+
+# Notes
+
+-   No runtime dependencies: it is fast and easy to install.
+-   Requires at least python 3.11: neeeded to parse the `pyproject.toml`.
+-   Tested: checked by `Pyright` with strict mode, `Ruff` with all lint rules, `Pytest` with 100% test coverage and also by the CI pipelines of the project itself.
