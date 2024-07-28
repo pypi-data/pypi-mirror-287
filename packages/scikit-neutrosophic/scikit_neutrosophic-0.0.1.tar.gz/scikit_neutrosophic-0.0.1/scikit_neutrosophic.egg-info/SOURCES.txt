@@ -1,0 +1,11 @@
+README.md
+setup.py
+scikit_neutrosophic/__init__.py
+scikit_neutrosophic/neutrosophic_knn.py
+scikit_neutrosophic/neutrosophic_linear_regression.py
+scikit_neutrosophic/neutrosophic_svm.py
+scikit_neutrosophic.egg-info/PKG-INFO
+scikit_neutrosophic.egg-info/SOURCES.txt
+scikit_neutrosophic.egg-info/dependency_links.txt
+scikit_neutrosophic.egg-info/requires.txt
+scikit_neutrosophic.egg-info/top_level.txt
