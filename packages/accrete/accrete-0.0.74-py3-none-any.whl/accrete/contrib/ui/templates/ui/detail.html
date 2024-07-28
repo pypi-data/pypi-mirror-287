@@ -1,0 +1,21 @@
+{% extends 'ui/layout.html' %}
+{% load i18n %}
+{% load accrete_ui %}
+
+{% block content %}
+    <div class="columns is-desktop m-0">
+        <div class="column p-0 is-8-desktop">
+            <div class="box mt-2">
+                {% block detail_content %}{% endblock %}
+            </div>
+        </div>
+        {% if info_panel %}
+            <div id="info-panel" class="column pt-0 pr-0 is-hidden-touch">
+                <div id="info-panel-content" class="p-0 mt-2">
+                    {% block info_panel %}
+                    {% endblock %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
