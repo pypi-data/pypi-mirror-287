@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: mformodal
+Version: 1.0.0
+Summary: A simple package to create Discord modals
+Home-page: https://github.com/sforskeezy/mformodal
+Author: sforskeezy | sforskeezy.com
+Author-email: sforskeezy@sforskeezy.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: discord.py
+
+Created by sforskeezy | sforskeezy.com
+discord: sforskeezy
+github: sforskeezy
+
+This is a simple README file for the project __mformodal__
+
+You can create a modal with this
+
+## Installation
+```bash
+npm install mformodal
+```
+
+
