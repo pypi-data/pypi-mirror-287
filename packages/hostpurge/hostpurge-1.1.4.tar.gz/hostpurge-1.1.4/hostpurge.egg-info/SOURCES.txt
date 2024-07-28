@@ -1,0 +1,13 @@
+README.md
+setup.py
+hostpurge.egg-info/PKG-INFO
+hostpurge.egg-info/SOURCES.txt
+hostpurge.egg-info/dependency_links.txt
+hostpurge.egg-info/entry_points.txt
+hostpurge.egg-info/top_level.txt
+pypi/HostPurge.py
+pypi/__init__.py
+pypi/bowtie2_mode.py
+pypi/build_db.py
+pypi/fastp.py
+pypi/kraken2_mode.py
