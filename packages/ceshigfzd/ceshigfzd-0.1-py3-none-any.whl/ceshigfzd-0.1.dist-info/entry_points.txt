@@ -1,0 +1,2 @@
+[console_scripts]
+calculate_dist = genedist.calculate:calculate_dist
