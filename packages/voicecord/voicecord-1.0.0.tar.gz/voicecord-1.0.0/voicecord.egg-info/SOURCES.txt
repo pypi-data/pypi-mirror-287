@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+voicecord/__init__.py
+voicecord.egg-info/PKG-INFO
+voicecord.egg-info/SOURCES.txt
+voicecord.egg-info/dependency_links.txt
+voicecord.egg-info/top_level.txt
