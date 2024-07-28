@@ -1,0 +1,4 @@
+[console_scripts]
+todov1 = todov1.todov1:cli
+todov2 = todov2.todo:cli
+todov3 = todov3.todo:cli
