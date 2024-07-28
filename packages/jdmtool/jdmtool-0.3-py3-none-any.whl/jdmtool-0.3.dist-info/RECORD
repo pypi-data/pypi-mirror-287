@@ -1,0 +1,15 @@
+jdmtool/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jdmtool/avidyne.py,sha256=-PErbvvqlXDfLVa8HFN9ISuVhKCEZ56uadpDauh1RtU,15101
+jdmtool/chartview.py,sha256=un8g42vp63d81HA4IM_2ZWxcCmVlIZeRort32zCAQ80,17234
+jdmtool/dbf.py,sha256=kHCPLl224tAxJR26jIJ5wYVAVORe2_1xlsf6p8VWPWI,7307
+jdmtool/downloader.py,sha256=uN7SZb1x9Hq1pI0rdE_12_42qt1MR7xSxmFFVHJSn0M,6451
+jdmtool/garmin.py,sha256=k3JN8UWsu1QsoMN5KycmAqlX8qxJSX58EuTbiFeeOw0,12579
+jdmtool/main.py,sha256=5fNdAdhIG9fKNStGnhtgLPcaT81AkcFk0qHC6QpQZmA,35262
+jdmtool/service.py,sha256=ERN3jdaH1rtjLie9213my_nu1TG52zMqQ6aRk1FX-NQ,7296
+jdmtool/skybound.py,sha256=UDEZWfw9WLy54dJzicu80HuzZieLWPHnNlmpiKiEtqk,4498
+jdmtool-0.3.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+jdmtool-0.3.dist-info/METADATA,sha256=_qXsbgv_1TZz5voJbCuqv2XRYqjckl_me5_j8HqC3Js,7569
+jdmtool-0.3.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+jdmtool-0.3.dist-info/entry_points.txt,sha256=ZA4hXj2nKSZQjbN3UnMFu8DyB8lizMjXnY5xw51zvk0,81
+jdmtool-0.3.dist-info/top_level.txt,sha256=v0GMk1bkl0f-NnDWwm3Bn0rRHYabb7JQSsz9zvhVFGY,8
+jdmtool-0.3.dist-info/RECORD,,
