@@ -1,0 +1,8 @@
+django>=5.0.7
+setuptools>=71.1.0
+wheel>=0.43.0
+twine>=5.1.1
+django-sage-tools>=0.1.1
+
+[json-forms]
+django-jsonforms<2.0,>=1.0
