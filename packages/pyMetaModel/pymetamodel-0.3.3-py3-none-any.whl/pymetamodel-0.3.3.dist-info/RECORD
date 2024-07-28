@@ -1,0 +1,14 @@
+meta/__init__.py,sha256=8KcCYTXH99C2-gCLuPILJvtT9YftRWJsartIx6TQ2ZY,22
+meta/metamodel.py,sha256=OKIk-t1Sp7Xf3WxK555U4Qpn8Pe8-MVFxEVVZTxNNTc,19917
+meta/metamodel_cmd.py,sha256=llWZRFJxKWs_PWwCGrEGEXZkpzi0md1STw056mw-iuI,6439
+meta/mw.py,sha256=Hp9Nd22XY0r_GHwfJXsNL8sk0-YtFINLvZK5YE_lkD4,3141
+meta/profiler.py,sha256=ahQvh2-JpB8efOAxtzSJdDain5e9d50XgeUPQTmEQ7A,807
+meta/sidif2linkml.py,sha256=OL7ePGmcN2BSD_Oq4ZsNrcVwzsblHhqBANyn63sDJX8,3175
+meta/smw_type.py,sha256=IvafY8QketcxPmeQ9tBzrGjaRIWD7Zc6FYW-z_94Mo8,1836
+meta/uml.py,sha256=RYGcfdO71bA0SqBARVXOYtmi9S3t6mBq5z49ojS5SqA,7203
+meta/version.py,sha256=phOYVU0XA6__-mxXfGnFGIqAl4kOr0U_w5UeX5WeJQg,925
+pymetamodel-0.3.3.dist-info/METADATA,sha256=iixmLJRkjqwcd-hUu8imCbL5IpUWTl2-2gP2EltGaNw,16082
+pymetamodel-0.3.3.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+pymetamodel-0.3.3.dist-info/entry_points.txt,sha256=2j6-XVYqqqLSXfS0dI32OJHqHzBpvUOn6-74vr_PyI4,51
+pymetamodel-0.3.3.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pymetamodel-0.3.3.dist-info/RECORD,,
