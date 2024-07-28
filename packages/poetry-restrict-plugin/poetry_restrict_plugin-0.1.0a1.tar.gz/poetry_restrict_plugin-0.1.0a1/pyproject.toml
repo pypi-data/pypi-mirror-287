@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "poetry-restrict-plugin"
+version = "0.1.0a1"
+description = "Restrict Poetry to a smaller privilege"
+authors = ["Johannes Christ <jc@jchri.st>"]
+readme = "README.md"
+packages = [{include = "poetry_restrict_plugin"}]
+
+[project]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Build Tools"
+]
+maintainers = [
+    {name = "Johannes Christ", email = "jc@jchri.st"}
+]
+
+[project.urls]
+repository = "https://git.jchri.st/jc/poetry-restrict-plugin"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+poetry = "^1.8.3"
+landlock = {version = "^1.0.0.dev4", platform = "linux"}
+
+[tool.poetry.plugins."poetry.plugin"]
+restrict = "poetry_restrict_plugin.plugin:RestrictPlugin"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
