@@ -1,0 +1,13 @@
+include README.md
+include LICENSE
+include ambient_files/
+recursive-include ambient_files *
+exclude test_meditation_video_generator.py
+exclude test_mp3_merger.py
+exclude test_mp3_mixer.py
+exclude venv/
+exclude live/
+exclude archive/
+recursive-exclude venv *
+recursive-exclude live *
+recursive-exclude archive *
