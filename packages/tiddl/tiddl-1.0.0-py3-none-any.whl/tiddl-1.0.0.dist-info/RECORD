@@ -1,0 +1,13 @@
+tiddl/__init__.py,sha256=jj_zfnO9As_pbj6TKh-WBbD5DQJSGBEnz8_DNqXTqDE,3645
+tiddl/api.py,sha256=9JWMPsiYfpBNWJpRuU7xZOdoHPMpbEi2mKl_Q-KBubc,1164
+tiddl/auth.py,sha256=bP0va5r8QBhSd4Q4jUSvME2hfe6rGptpp8sC9X57_5w,1210
+tiddl/config.py,sha256=VE9krrTMNKHnAHzA9Y87BvzPDMAWsCbjUj24p0og9Nk,1612
+tiddl/download.py,sha256=k8soWgn672hhglnk5OTwU86n3d3Q_J37OVNBZECe9R8,2872
+tiddl/parser.py,sha256=aS72iKigc_1mHyddhxQfQuy0UHNqez1ywUBRr-j6wW0,1064
+tiddl/types.py,sha256=GkA2DwI2ZAlM9BuaPu9SnId1SHyWN9fMM3v76q9oDQQ,2930
+tiddl-1.0.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+tiddl-1.0.0.dist-info/METADATA,sha256=bcAy2XqzjsB3Tuu2AhcxW6x3bP0bzfPRSxh8RYStg6Y,2013
+tiddl-1.0.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+tiddl-1.0.0.dist-info/entry_points.txt,sha256=SjPviPW80ZMkgAnfzBIOWmOCZMI35FgA02VldZfSgL4,37
+tiddl-1.0.0.dist-info/top_level.txt,sha256=45g2HIPtH2EUhjZ25fXFaMY4iAiGxgc0h0_OEyjoeqQ,6
+tiddl-1.0.0.dist-info/RECORD,,
