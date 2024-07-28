@@ -1,0 +1,8 @@
+setup.py
+mysunnyday/__init__.py
+mysunnyday/mysunnyday.py
+mysunnyday.egg-info/PKG-INFO
+mysunnyday.egg-info/SOURCES.txt
+mysunnyday.egg-info/dependency_links.txt
+mysunnyday.egg-info/requires.txt
+mysunnyday.egg-info/top_level.txt
