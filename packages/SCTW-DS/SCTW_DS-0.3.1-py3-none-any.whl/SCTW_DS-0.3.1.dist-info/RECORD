@@ -1,0 +1,14 @@
+SCTW_DS/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+SCTW_DS/NeuralNetwork/Classifier.py,sha256=7HdCqtbsXPkcsyx-gQyqqRR15qvNKzwhXl_xHnPp-W4,7308
+SCTW_DS/NeuralNetwork/Layer.py,sha256=VztJooVymNksTeTQ6yO9kWC2B0HpaFBLgx2FTlRp9zY,3799
+SCTW_DS/NeuralNetwork/__init__.py,sha256=oYxezUq6Y1QTNLLerNWLHvXGteM2Zjjaqpgh4MhFtto,63
+SCTW_DS/Regression/__init__.py,sha256=KMu3xLuO2ftU7_aQZ0S2VijStzesA9H8lQd19RJypXA,234
+SCTW_DS/Utils/__init__.py,sha256=-ej_06jEYm7_39apXBKTUMBRHf39fixX8v3P7m0MMz4,126
+SCTW_DS/Utils/dataCleaner.py,sha256=LiKac_raii5sreHHHk20PrmeI1N4Rps74t3ekfGhvMU,5396
+SCTW_DS/Utils/generateDataset.py,sha256=JWIDPLOa5G0Ilz0H7U9Q1shVVv2YkzXu63tVXcTyfMc,2200
+SCTW_DS/Utils/progress_bar.py,sha256=0WjHtjB_BZzGjM6MOWH15ox7qbG7nboHcyzLEldO18A,1341
+SCTW_DS/Utils/trainTestSplit.py,sha256=IG_fRidczGX-J6eTSzW8yyJq3LlDlAmrjmtBvHNe8JY,1745
+SCTW_DS-0.3.1.dist-info/METADATA,sha256=WxfcP7ckTmNhpYNXln-a_rpXpkWRfrpV-q1u-gLibE0,6438
+SCTW_DS-0.3.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+SCTW_DS-0.3.1.dist-info/top_level.txt,sha256=P0tTV4YOSqiTjP8S_7Pknokul3CJ6BQyLK7IBDVtOn8,8
+SCTW_DS-0.3.1.dist-info/RECORD,,
