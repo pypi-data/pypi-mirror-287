@@ -1,0 +1,8 @@
+pyproject.toml
+src/main.py
+src/trust_spec_gen.egg-info/PKG-INFO
+src/trust_spec_gen.egg-info/SOURCES.txt
+src/trust_spec_gen.egg-info/dependency_links.txt
+src/trust_spec_gen.egg-info/entry_points.txt
+src/trust_spec_gen.egg-info/requires.txt
+src/trust_spec_gen.egg-info/top_level.txt
