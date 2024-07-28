@@ -1,0 +1,2 @@
+[console_scripts]
+testofAddition = testofAddition.__main__:main
