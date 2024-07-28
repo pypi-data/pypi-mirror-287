@@ -1,0 +1,9 @@
+foambo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+foambo/core.py,sha256=myUrf8nUVHNBLKqP7vzI4mhEupMlo4NtxKG5_V-Lvac,19036
+foambo/foamBO.py,sha256=Y0VxGseRD_asn40NZ2hOGLmI-8nITjtRG9nyz3-TCOU,11305
+foambo/foamDash.py,sha256=0XihKxOBmfOLK8AJGgEe-mOstjksAGkWtl7lRRUdCTg,5509
+foambo/foamValidate.py,sha256=e3QkDgiYfQRKlZ3126Eib-9LwmrSf8gNVR01zAwx2ps,7817
+foambo-0.1.1.dist-info/METADATA,sha256=xsysCOGAztiAYOTdf7eGmXsuq-QATlNgNU0WPPA0lIQ,3941
+foambo-0.1.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+foambo-0.1.1.dist-info/entry_points.txt,sha256=R9Vq3hvp9cCHsCxrbdhZ07tiK4KKNL0A3wGcsCvWkV4,133
+foambo-0.1.1.dist-info/RECORD,,

@@ -1,0 +1,4 @@
+[console_scripts]
+foamBO = foambo.foamBO:exp_main
+foamDash = foambo.foamDash:dash_main
+foamValidateBO = foambo.foamValidate:val_main
