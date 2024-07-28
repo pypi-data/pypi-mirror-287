@@ -1,0 +1,10 @@
+menu_cli/__init__.py,sha256=8cNkHDbksTufdeP8LBk1YdkAjJ0vLHXfb32edBglgZ4,93
+menu_cli/core.py,sha256=-QEYVv9TizNAudWwSzKJZJhCldE5O4yLeC3Q5UF5JHg,2440
+menu_cli/fzf.py,sha256=KY4d8RZu6S4Go_lnL-vH4HGNATsWX0JVg4noKGCRgsU,2351
+menu_cli/utils.py,sha256=3RzqFmpK1BGozshab5AmZGaM8TD-2ls-usTHaqJ7MG4,924
+fuzzy_menu_cli-0.0.2.dist-info/LICENSE,sha256=7EI8xVBu6h_7_JlVw-yPhhOZlpY9hP8wal7kHtqKT_E,1074
+fuzzy_menu_cli-0.0.2.dist-info/METADATA,sha256=PClHipRRLDXrAehtnBmonYse4O69MWMi51Dc8_7xeZM,824
+fuzzy_menu_cli-0.0.2.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+fuzzy_menu_cli-0.0.2.dist-info/entry_points.txt,sha256=A3EFGj6-uWTUhEMc9ZDawh8Gde3IhQbwsLcQJXYjtMo,48
+fuzzy_menu_cli-0.0.2.dist-info/top_level.txt,sha256=sVdTN3tg-gKlHKZK4F0GwKU9H6fkmSbtuGyo5ltfgr4,9
+fuzzy_menu_cli-0.0.2.dist-info/RECORD,,
