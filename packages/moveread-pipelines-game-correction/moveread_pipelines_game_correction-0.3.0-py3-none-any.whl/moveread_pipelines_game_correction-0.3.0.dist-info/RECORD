@@ -1,0 +1,15 @@
+moveread/pipelines/game_correction/__init__.py,sha256=OFY-huzBISIFFa9V_nkioOHFdCHUjj1Lc2D3dwsDxMA,247
+moveread/pipelines/game_correction/__init__.pyi,sha256=4awbJ-rwirrfSUrLCfl934Sal5gJmkA6MExaanAA7Ig,425
+moveread/pipelines/game_correction/_types.py,sha256=NAd4tFWvAKI47uNeJ1crYSD8qzGNT2jwhIkSCcXF5Ro,1927
+moveread/pipelines/game_correction/api.py,sha256=eF6LYRoTZtj9-1R89SWYM3NAqB7FcwxUWAbHAiKH1GA,3376
+moveread/pipelines/game_correction/cli.py,sha256=CmAlJWLQf8lRcM5JkYCDnE6tSZDIS_O43LqX0Tt-580,1878
+moveread/pipelines/game_correction/sdk.py,sha256=C_Dw0sO8sxLYHZnJGBodVwmadfhnlUXnk09t3CyrbLM,1912
+moveread/pipelines/game_correction/spec.py,sha256=Gjb6_vEJ06zxm3H6CMRYU73p0YbY4u-coslZzJ_Ux20,689
+moveread/pipelines/game_correction/util/__init__.py,sha256=92wdFws-MupIULFzcLYS3bx0m5uaU2lIXutdONlK4R0,53
+moveread/pipelines/game_correction/util/locks.py,sha256=1psehitrm_NgVWUVzUrWC_0bcZv5zMuaDrBpSgd0iSc,600
+moveread/pipelines/game_correction/util/streams.py,sha256=wrHkKEXxghv-e7S056dh8rN39pb7u9-SlWrt8e3mSm4,593
+moveread_pipelines_game_correction-0.3.0.dist-info/METADATA,sha256=k5piB8_Elonwl4W3_XgscjwqkeZ3ez2Ypb3ab4dcbwg,698
+moveread_pipelines_game_correction-0.3.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+moveread_pipelines_game_correction-0.3.0.dist-info/entry_points.txt,sha256=hJ4QsdLBdeNCSqvm9q24jeQBCdD9BRpO51mVsRc9yPs,143
+moveread_pipelines_game_correction-0.3.0.dist-info/top_level.txt,sha256=Nf4zr37sbhc5sbPztUq8FfXD7iyRYJ9bjMTU09166ig,9
+moveread_pipelines_game_correction-0.3.0.dist-info/RECORD,,
