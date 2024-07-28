@@ -1,0 +1,13 @@
+CHANGELOG.txt
+CONTRIBUTING.md
+LICENCE.txt
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+HackathonToolkit/__init__.py
+HackathonToolkit.egg-info/PKG-INFO
+HackathonToolkit.egg-info/SOURCES.txt
+HackathonToolkit.egg-info/dependency_links.txt
+HackathonToolkit.egg-info/requires.txt
+HackathonToolkit.egg-info/top_level.txt
