@@ -1,0 +1,8 @@
+meditation_video_generator/__init__.py,sha256=qoJdOTRv1ERQ6se170ZBr80iwq_kx8NOB5kkqg6GFBc,64
+meditation_video_generator/meditation_video_generator.py,sha256=_3W_nn7UAyXofXYAz6PxQUYsmY87K_Aqx9Bv_aNgHLQ,40004
+meditation_video_generator/mp3_merger.py,sha256=X_0NXna_xoWgQuyStDRj1qtzY9qduPdpp1YKeJkeTlg,8233
+meditation_video_generator/mp3_mixer.py,sha256=Gj722IZk6Stw7ZJPwr4UlhhZhOHQrkVlb0NLEOfddFY,9689
+meditation_video_generator_openai-1.0.2.dist-info/METADATA,sha256=89IhEjQ0l5MVqLDfyRDwfiYaykc4yub-te7drtcUgOw,9163
+meditation_video_generator_openai-1.0.2.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+meditation_video_generator_openai-1.0.2.dist-info/top_level.txt,sha256=EnNUMIUpsBQzPG33CaUD8acnJFfmqLVpkXddjqeSGTA,27
+meditation_video_generator_openai-1.0.2.dist-info/RECORD,,
