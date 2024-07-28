@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+backupfinder/__init__.py
+backupfinder/backup_finder.py
+backupfinder/log_finder.py
+backupfinder/main.py
+backupfinder.egg-info/PKG-INFO
+backupfinder.egg-info/SOURCES.txt
+backupfinder.egg-info/dependency_links.txt
+backupfinder.egg-info/entry_points.txt
+backupfinder.egg-info/top_level.txt
