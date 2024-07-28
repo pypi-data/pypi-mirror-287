@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjupyterlab_hello=self.webpackChunkjupyterlab_hello||[]).push([[509],{509:(e,t,l)=>{l.r(t),l.d(t,{default:()=>a});const a={id:"jupyterlab-hello:plugin",description:"A JupyterLab extension.",autoStart:!0,activate:e=>{console.log("JupyterLab extension jupyterlab-hello is activated!")}}}}]);

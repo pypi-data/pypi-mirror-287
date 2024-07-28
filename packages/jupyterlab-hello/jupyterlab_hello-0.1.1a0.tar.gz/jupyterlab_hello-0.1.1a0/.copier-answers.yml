@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.3.5
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: orih@jfrog.com
+author_name: Ori Hollander
+has_binder: false
+has_settings: false
+kind: frontend
+labextension_name: jupyterlab-hello
+project_short_description: A JupyterLab extension.
+python_name: jupyterlab_hello
+repository: https://github.com/orihjfrog/jupyterlab-hello
+test: true
+
