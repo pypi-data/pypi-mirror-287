@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/autoz/__init__.py
+src/autoz/kit.py
+src/autoz.egg-info/PKG-INFO
+src/autoz.egg-info/SOURCES.txt
+src/autoz.egg-info/dependency_links.txt
+src/autoz.egg-info/requires.txt
+src/autoz.egg-info/top_level.txt
