@@ -1,0 +1,15 @@
+jsify/__init__.py,sha256=RgXl6Bk0PDPhfd2IbVX3Y5fvQvXNL_oZTXRPF0mL-sA,68
+jsify/assertion.py,sha256=AiVCZ61_zGx8_EnsgF5jmEPEKVFL4jIDuj0r0LoZCMc,4177
+jsify/calls.py,sha256=IE1r-mg-G9IA41s4efdMFPJFjNJ1kPg0HuG021NEiRw,1912
+jsify/encoder.py,sha256=wfVY9kOU4cuyujU3EbO8IiLggo0yHV_bRvx2AjJ84nw,1742
+jsify/exceptions.py,sha256=_1VUd0h8BZzPOnJvPNp-6mhzZCAioCyKBJ4zbF9t-yA,28
+jsify/jsify.py,sha256=C6ydcrj16X8Qnw8rdqmHhCi5bP-MAaKPTTZF6hynZHI,32198
+jsify/stringcase.py,sha256=Kjveea1Ur_VCx30ru4keTypt1Lqv4955IMQgkXebJes,2583
+jsify/undefined.py,sha256=11dW3DDWesLoVOImc_Ykfrm3befmzKApZrXs1rQJHB8,1081
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/tests_jsify.py,sha256=iVGK30op26sqQUyHEZEJe0VniWD8_FKfrA7HjzlmtfI,13527
+jsify-0.9.0.dist-info/LICENSE,sha256=aQxObfvZsuYGPSGNRViYtLjUdN169c9rm-uaVA-swzE,1067
+jsify-0.9.0.dist-info/METADATA,sha256=XLh1au-gxVX0JLanbsX97yCngwxZ1cgtr6mIcWnHD-k,1463
+jsify-0.9.0.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+jsify-0.9.0.dist-info/top_level.txt,sha256=1373yJ7gLK3M8irLtKoJbZH-G28NxHCjYZHCLeAlQug,12
+jsify-0.9.0.dist-info/RECORD,,
