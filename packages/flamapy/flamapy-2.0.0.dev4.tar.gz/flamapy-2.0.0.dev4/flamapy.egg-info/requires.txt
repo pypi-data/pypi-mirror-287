@@ -1,0 +1,12 @@
+wheel
+flamapy-fw==2.0.0.dev7
+flamapy-fm==2.0.0.dev8
+flamapy-sat==2.0.0.dev8
+flamapy-bdd==2.0.0.dev10
+
+[dev]
+pytest
+pytest-mock
+prospector
+mypy
+coverage
