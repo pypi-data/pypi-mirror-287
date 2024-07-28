@@ -1,0 +1,162 @@
+Metadata-Version: 2.1
+Name: mediphy
+Version: 1.5.0
+Summary: How to organize remedies.
+License: AGPL-3.0-only
+Keywords: leads,organization
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: biotech (>=1.1.10,<2.0.0)
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: deepmerge (>=1.1.1,<2.0.0)
+Requires-Dist: law_dictionary (>=1.0.12,<2.0.0)
+Requires-Dist: pika (>=1.3.2,<2.0.0)
+Requires-Dist: pydash (>=8.0.1,<9.0.0)
+Requires-Dist: pymongo (>=4.7.2,<5.0.0)
+Requires-Dist: rich (>=13.7.1,<14.0.0)
+Requires-Dist: sanic (>=23.12.1,<24.0.0)
+Requires-Dist: sanic-ext (>=23.12.0,<24.0.0)
+Requires-Dist: sanic_limiter (==0.1.3)
+Requires-Dist: setuptools (>=69.5.1,<70.0.0)
+Requires-Dist: ships (>=1.8.0,<2.0.0)
+Requires-Dist: somatic (>=3.0.1,<4.0.0)
+Requires-Dist: tinydb (>=4.8.0,<5.0.0)
+Requires-Dist: ventures (>=1.6.0,<2.0.0)
+Project-URL: GitLab, https://gitlab.com/status600/treasures/mediphy.1
+Description-Content-Type: text/markdown
+
+
+******
+
+Bravo!  You have received a Mercantilism Diploma in "mediphy" from   
+the Orbital Convergence University International Air and Water 
+Embassy of the tangerine Planet (the planet that is one ellipse further from
+the Sun than Earth's ellipse).
+
+You are now officially certified to include "mediphy" in your practice.
+
+******
+
+Please feel free to use this module however (business, personal, etc.)
+subject to the terms of AGPL 3.0 License, or any of the other licenses
+in the the pypi "mediphy/_licenses/options" directory.
+
+	@ BGraceful
+
+******
+
+
+# mediphy
+
+******
+
+## obtain
+`[xonsh] pip install mediphy`
+
+******
+
+## school
+`[xonsh] mediphy school`
+
+******
+
+## structure
+```
+	/mediphy_1
+		/trends
+		/treasures
+			/treasure.1
+			/treasure.2
+		
+		mediphy_essence.py
+			essence = {}
+```
+
+## on
+From a directory that is after the "mediphy_essence.py" file.   
+```
+[@ mediphy_1]
+mediphy ventures on
+mediphy form
+```
+
+## off
+```
+[@ mediphy_1]
+mediphy ventures off
+```
+
+## refresh
+```
+[@ mediphy_1]
+mediphy ventures refresh
+```
+
+******
+
+## Treasures
+### itemize
+```
+[@ mediphy_1]
+mediphy treasures itemize
+```
+
+### store
+```
+[@ mediphy_1]
+mediphy treasures stow --name "garbage.1"
+```
+
+
+******
+
+## Trends
+### itemize
+```
+[@ mediphy_1]
+mediphy trends itemize
+```
+
+### search
+```
+[@ mediphy_1]
+mediphy trends search --domain "wallet.1"
+```
+
+### insert-document
+```
+[@ mediphy_1]
+mediphy trends insert-document --domain "wallet.1" --names "[ 'name_1', 'name_2' ]"`
+mediphy trends insert-document --domain "solid_food.1" --topics "[ 'food' ]" --cautions "[ 'homo-sapiens ages months 6+' ]"
+```
+
+******
+
+## Trends Saving
+### save export
+This saves the collections as .export files, sort of like JSON.  
+	
+```	
+[@ mediphy_1]
+mediphy trends saves exports-export --version 1
+```
+
+### import export-import-overwrite
+This deletes the collections, and then imports the save.  
+
+```
+[@ mediphy_1]
+mediphy trends saves exports-import-overwrite --version 1
+```
+
+### import export-import-merge
+This merges the save into the current collection.  
+	
+```
+[@ mediphy_1]
+mediphy trends saves exports-import-overwrite --version 
+```
