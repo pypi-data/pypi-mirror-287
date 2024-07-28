@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: fmtparse
+Version: 0.1.dev0
+Summary: parse format string
+Home-page: https://github.com/wtnb75/fmtparse
+Author: Watanabe Takashi
+Author-email: wtnb75@gmail.com
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Documentation
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+
