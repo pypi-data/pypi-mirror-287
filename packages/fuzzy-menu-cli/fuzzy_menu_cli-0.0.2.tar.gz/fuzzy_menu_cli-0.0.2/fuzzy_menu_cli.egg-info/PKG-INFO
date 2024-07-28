@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: fuzzy-menu-cli
+Version: 0.0.2
+Summary: Python package to create command-line interactive menus in an extensible, simple and modular way.
+Author-email: Agustín Carpio <aguscarpio@gmail.com>
+Project-URL: Homepage, https://https://github.com/Aguscarpio/menu-cli
+Project-URL: Issues, https://https://github.com/Aguscarpio/menu-cli/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: fuzzyfinder==2.1.0
+Requires-Dist: greenlet==3.0.3
+Requires-Dist: msgpack==1.0.8
+Requires-Dist: packaging==24.1
+
+Python package to create command-line interactive menus in an extensible, simple and modular way.
