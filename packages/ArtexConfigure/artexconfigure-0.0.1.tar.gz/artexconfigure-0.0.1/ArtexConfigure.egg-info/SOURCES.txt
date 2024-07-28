@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+ArtexConfigure/__init__.py
+ArtexConfigure/conf.py
+ArtexConfigure.egg-info/PKG-INFO
+ArtexConfigure.egg-info/SOURCES.txt
+ArtexConfigure.egg-info/dependency_links.txt
+ArtexConfigure.egg-info/requires.txt
+ArtexConfigure.egg-info/top_level.txt
