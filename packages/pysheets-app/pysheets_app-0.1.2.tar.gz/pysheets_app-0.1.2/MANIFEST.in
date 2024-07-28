@@ -1,0 +1,10 @@
+include requirements.txt
+include ai.py
+include pysheets.py
+include static/*.ico
+include static/*.js
+include static/*.png
+include datafiles/*.csv
+include templates/*.html
+include tests/*.json
+include CONTRIBUTE.MD
