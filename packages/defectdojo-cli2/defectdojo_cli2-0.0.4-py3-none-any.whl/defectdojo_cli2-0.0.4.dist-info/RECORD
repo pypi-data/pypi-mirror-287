@@ -1,0 +1,14 @@
+defectdojo_cli2/__init__.py,sha256=JbD7ZW-KtxTstXcKGx6F-n9bEWgrwUDlybuHIGhEtVU,232
+defectdojo_cli2/__main__.py,sha256=F-3Dh4dqpy71U9NAiLKZZhwQKf--lnR2LyWdjuQU2OE,1821
+defectdojo_cli2/engagements.py,sha256=QD0ZV5fVc4L3sPRYjIWHkQdZZ90RWX-ud3UDuCB02T4,18129
+defectdojo_cli2/findings.py,sha256=eHgqHa2Ns5u40vns1YpRJFIlcWULAVIzd0lKhz4q8v0,32849
+defectdojo_cli2/tests.py,sha256=_9LvIaW4fPGJte_Ki1-hffNzVm6LBv3pF5LWPmS4jxk,16158
+defectdojo_cli2/util.py,sha256=vduvJuSEd-PwnWb-2CAiKw6-sSM8VHnt8PBIqkI2nLk,1170
+defectdojo_cli2-0.0.4.dist-info/AUTHORS,sha256=jK29bi89ROKe63nbIlD-VgN7yGNa4Y1HWfceJL7G23k,46
+defectdojo_cli2-0.0.4.dist-info/LICENSE,sha256=0C0p47gxd5AvvurK7eWHMISKVc4M2IVP0dLx2hBS63w,1079
+defectdojo_cli2-0.0.4.dist-info/METADATA,sha256=82Kacd_YitipWyO_PjyNyn8BALqX9iK5-X0Dkrglheo,705
+defectdojo_cli2-0.0.4.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+defectdojo_cli2-0.0.4.dist-info/entry_points.txt,sha256=zyn3k9-gOB8BpQNt73Ov12-d5IMBjyp8kyTJrzRuxPs,61
+defectdojo_cli2-0.0.4.dist-info/pbr.json,sha256=GRqE333sNnXdC2n7QD5x9K10AtQCTBmQn38FbrukeZA,46
+defectdojo_cli2-0.0.4.dist-info/top_level.txt,sha256=I9c-IBBwLH0PFmm2dbkhPPWHjx4PXDUdtGNm7rGXgBg,16
+defectdojo_cli2-0.0.4.dist-info/RECORD,,
