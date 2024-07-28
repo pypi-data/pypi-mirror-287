@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+    lint:
+        working_directory: ~/devtopy
+        docker:
+            - image: python:3.10
+        steps:
+            - checkout
+            - run:
+                  name: Install Dependencies
+                  command: pip install flake8
+            - run:
+                  name: Lint with flake8
+                  command: flake8 --max-complexity 10
+workflows:
+    lint_and_test:
+        jobs:
+            - lint
