@@ -1,0 +1,15 @@
+candk/__init__.py,sha256=RNyZutA1UHahJFgKqE-ylrIyDflX-A3KNcNqNqj5Zgs,38
+candk/candk.py,sha256=JWZvi7mPkeFPcvP9MXYJDtxSrdtkVJfnlGIC9WNd7P8,2721
+candk/corndog.py,sha256=bFHoLV-NvTu_iS5NO2kL6wwoNZyCz47UVzd8OYFCI1Y,8510
+candk/ketchup/__init__.py,sha256=42oM0mSPtWIs6KsCZdlwSpltezVT4aAec2-feKkUD7E,49
+candk/ketchup/base.py,sha256=1KnS-pVMdROEdsIRVRIKwGqzOK4pK2kDEPKMrvntq_4,7392
+candk/ketchup/main.py,sha256=rCOU_3BW35Ib9PdA4Gi2aZSw1Mms6mIXH5rx2-GDUTk,2369
+candk/ketchup/spread.py,sha256=yQBWg8B3pkBpahUYNbWGIafaxvRshH_1JbZ2vRViovA,6772
+candk/ketchup/style.css,sha256=tk96oNx9fJv8mKrJTjqkvFxxvyQ2HfqfVVXxZnmzr5A,5957
+candk/ketchup/tags.py,sha256=CW-YKfmLvw7sg_iKXAyMHkBvFeZf2rRL_vVSm_TLdXQ,12523
+candk/style.css,sha256=RN3eFi71r93PXkQdWK4102XJZFt-9bxTEozENy-fgpU,5293
+candk-2.2.1.dist-info/LICENSE,sha256=XTHX8If6nnsAkTWaDRfr5Kct1sjKjNs2IBys-996f-g,1301
+candk-2.2.1.dist-info/METADATA,sha256=fBrOFZGInpsTqVLVfDDBuKJ09tshR2fTAgVBBXQPXIA,831
+candk-2.2.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+candk-2.2.1.dist-info/entry_points.txt,sha256=sd0aSypjFn80Pm9R1d89v9pRnPKNPvmFGmukI7S2xa4,96
+candk-2.2.1.dist-info/RECORD,,

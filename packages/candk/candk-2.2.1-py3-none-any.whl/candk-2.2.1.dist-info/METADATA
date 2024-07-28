@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: candk
+Version: 2.2.1
+Summary: Simple text parsing and markup for language-independent source code documentation
+License: BSD-2-Clause
+Author: Charlie Koch
+Author-email: charles@cerrax.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Project-URL: Homepage, http://cerrax.com
+Project-URL: Repository, https://gitlab.com/charles.w.koch/corndog-ketchup
+Description-Content-Type: text/markdown
+
+# Corndog + Ketchup
+
+This is the Corndog + Ketchup project.
+
+See the documentation (```corndog-with-ketchup.html```) for usage.
