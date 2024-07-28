@@ -1,0 +1,15 @@
+kmspy/__init__.py,sha256=23fF60eJXnWPx92ZRB9pglslr8EClT4aPRdGRV9dT2s,122
+kmspy/data/__init__.py,sha256=aic3BR4kORv5nnBOVV6r3xdgYv9e9ZXnB9FbRLW7myU,91
+kmspy/data/dataset.py,sha256=ieXygebztC6w9z_X7hAgM6RPb1Pma4BWY32cHQXorP4,14052
+kmspy/data/prefetch_generator.py,sha256=bYsvLGgNnN6WdyfcEWkdrHCwpXbJdm8_-lmhSuvj7tY,13823
+kmspy/multiprocessing/__init__.py,sha256=P3CR3QGCUPRTuTAZhpFiu7dLgOp149HpNq6a7fUKiwU,28
+kmspy/multiprocessing/process.py,sha256=z43qU65umyIW0tW1Bbai2DZpz40U_csSPPSNuh_e8rM,2899
+kmspy/utils/__init__.py,sha256=Z4N3JOYD0wfIpkDFCB0lbjnpH3MbJ1cA0pVVUXXEBlg,53
+kmspy/utils/_proxy_class.py,sha256=ruEiyAKp7fb25sGwYuE9QVo5JXHAy67Ee-dWUCBtYEc,1726
+kmspy/utils/_utils.py,sha256=Pj6Q5XVyR1gm23YOax6Yjj9HayBJ4QY0BruITMj9f6k,2191
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+kmspy-0.0.26.dist-info/METADATA,sha256=GSc7QtL4YRjxsVRHgGZ3QiOe3RlBrdMqTDOUaFQEogA,349
+kmspy-0.0.26.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+kmspy-0.0.26.dist-info/top_level.txt,sha256=ClaS0s62J-uWDrFWl899hByv7sTaGYGJrMnOxKhh_Rs,12
+kmspy-0.0.26.dist-info/RECORD,,
