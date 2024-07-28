@@ -1,0 +1,2 @@
+[console_scripts]
+pysheets = main:app.run
