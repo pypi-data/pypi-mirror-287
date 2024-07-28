@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+lib/__init__.py
+trackus.egg-info/PKG-INFO
+trackus.egg-info/SOURCES.txt
+trackus.egg-info/dependency_links.txt
+trackus.egg-info/top_level.txt
