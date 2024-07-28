@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: genpixel
+Version: 0.0.3
+Author: okela
+Requires-Dist: setuptools
+Requires-Dist: wheel
+Requires-Dist: twine
+
+This is a module for hello application. (sample for testing)
