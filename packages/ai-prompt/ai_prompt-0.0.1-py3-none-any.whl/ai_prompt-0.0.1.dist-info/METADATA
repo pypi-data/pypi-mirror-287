@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: ai-prompt
+Version: 0.0.1
+Summary: An Ai for command line
+Author: hasan
+Author-email: hasanfq818@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests ==2.32.3
+Requires-Dist: prompt-toolkit ==3.0.43
+
+
+```
+# AI-PROMPT
+
+AI-PROMPT is a user-friendly interface for interacting with an AI-powered prompt tool. It allows users to engage in conversations with an AI model and perform various actions using simple commands.
+
+## Installation
+
+You can install AI-PROMPT via pip:
+
+```bash
+pip install ai-prompt
+```
+
+## Usage
+
+After installing AI-PROMPT, you can start interacting with the AI model by running the `ai-prompt` command in your terminal. This will launch the AI-PROMPT interface, where you can enter messages and receive responses from the AI model.
+
+### Commands
+
+AI-PROMPT supports the following commands:
+
+- `#multi`: Switch to Multiline mode (press ALT + ENTER to enter multiline mode).
+- `#sin`: Switch to Single line mode.
+- `#info`: Show information about AI-PROMPT and available commands.
+- `#help`: Show a list of available commands and their descriptions.
+- `#about`: Show information about AI-PROMPT (version, developer, description).
+- `clr` or `clear`: Clear the conversation history.
+- `undo`: Restore the conversation to the previous state.
+- `q`, `exit`, `quit`: Quit or exit the AI-PROMPT interface.
+
+## Example
+
+```bash
+$ ai-prompt
+AI-PROMPT> Hello, how are you?
+AI: I'm doing well, thank you for asking.
+AI-PROMPT> #multi
+AI-PROMPT> This is a multiline message.
+This is the response to the multiline message.
+AI-PROMPT> #sin
+AI-PROMPT> Back to single line mode.
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+```
+
+Feel free to customize this README according to your project's specifics, such as adding more detailed usage examples or providing additional information about the AI model or any other features of your package.
