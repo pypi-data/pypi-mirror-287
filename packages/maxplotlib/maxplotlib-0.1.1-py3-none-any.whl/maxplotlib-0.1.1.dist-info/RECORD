@@ -1,0 +1,11 @@
+maxplotlib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+maxplotlib/cli.py,sha256=-Pm15DqPl_aHtx_vNgold1XHwvbocTXlPwG9v-SHRW0,1132
+maxplotlib/plot.py,sha256=1pHR2qRdwOMcHLW8T_0usSmRk4mJ1x-Kr6KS1LmA20c,1518
+server/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+server/server.py,sha256=kGf2ulqKSCLN1-TyHZsVhqUVxXlA2Es8b4f_1xceUs4,892
+maxplotlib-0.1.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+maxplotlib-0.1.1.dist-info/METADATA,sha256=PnRo4Wr_6myemfHDzJjgOSKkmH95DOq3QL4yjWBJ5tg,1170
+maxplotlib-0.1.1.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+maxplotlib-0.1.1.dist-info/entry_points.txt,sha256=whPor9C-7eKM09I2KfEKN9DqK0yNpzJO_3hQheEaWdU,48
+maxplotlib-0.1.1.dist-info/top_level.txt,sha256=_iswtW1hwdOenkjjNw4x5weElV_DXBQGk15sh0l52Lk,18
+maxplotlib-0.1.1.dist-info/RECORD,,
