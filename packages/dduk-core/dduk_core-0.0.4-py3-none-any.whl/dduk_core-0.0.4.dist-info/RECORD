@@ -1,0 +1,13 @@
+dduk/__init__.py,sha256=EkA6-F8u0UC5rbN72orlID8ypLvx8alxbDUnwoP-OEQ,530
+dduk/__main__.py,sha256=QCfAPqfTfb0dUzFm8EqtnwjB06qQ3vgA6GVXPwXMdCA,753
+dduk/core/__init__.py,sha256=EkA6-F8u0UC5rbN72orlID8ypLvx8alxbDUnwoP-OEQ,530
+dduk/core/__main__.py,sha256=7nSbnasQy169FGTQ04a2MyPUJa6cZwIYST2oq2yznLE,542
+dduk/utils/__init__.py,sha256=9C8mJBv-CA8-9xJ9xO4LS-a7eIqiyXHCIiY6-8QIKqU,679
+dduk/utils/jsonutil.py,sha256=3a1isBxZ_Gl4GNeBrMJw7CyWh9puTTyteuPsbNIbmPA,2149
+dduk/utils/moduleutil.py,sha256=CjbwUh7JJBEoLOiDHiS6L451iJV-aL6KSNfQmCwHV0g,6746
+dduk/utils/strutil.py,sha256=l_MKUHyBBXhncbF8QUBASAoz8HECMW9ZBCY5jJeUCJI,3188
+dduk_core-0.0.4.dist-info/LICENSE,sha256=AU8OrUcHYBTd6RuKzW0BQx6bM2ALTnqc8vRQwMcRIW0,1087
+dduk_core-0.0.4.dist-info/METADATA,sha256=z3Aj_h1H_kFGxQiI0b5e7jvc7XQE-eb6cSYVzwh8zMU,481
+dduk_core-0.0.4.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+dduk_core-0.0.4.dist-info/top_level.txt,sha256=9323yfNKXRVJxK6FKltPICtDJ0iQpbBE54kOEHJSsCU,5
+dduk_core-0.0.4.dist-info/RECORD,,
