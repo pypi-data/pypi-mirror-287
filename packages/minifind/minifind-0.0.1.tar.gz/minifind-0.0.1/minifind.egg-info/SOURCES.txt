@@ -1,0 +1,7 @@
+LICENSE
+setup.py
+minifind/__init__.py
+minifind.egg-info/PKG-INFO
+minifind.egg-info/SOURCES.txt
+minifind.egg-info/dependency_links.txt
+minifind.egg-info/top_level.txt
