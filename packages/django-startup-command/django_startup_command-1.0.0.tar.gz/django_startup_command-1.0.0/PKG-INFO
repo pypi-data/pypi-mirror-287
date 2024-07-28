@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: django-startup-command
+Version: 1.0.0
+Summary: Django startup command
+Keywords: django
+Classifier: Framework :: Django
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Database
+Description-Content-Type: text/markdown
+Requires-Dist: Django
+Requires-Dist: setuptools
+
+### Installation
+```bash
+$ pip install django-startup-command
+```
+
+#### `settings.py`
+```python
+STARTUP_COMMAND = "startup"
+```
