@@ -1,0 +1,7 @@
+CHANGES
+=======
+
+0.16.1
+------
+
+* Fixes for HA mypy, add more lint rules (#639)
