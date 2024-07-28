@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: voicecord
+Version: 2.1.5
+Summary: A simple yet powerful voice recording package for Discord
+Home-page: https://github.com/petertill/voicecord
+Author: Peter Till
+Author-email: ptertill@gmail.com
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pynacl
+
+# VoiceCord | Discord voice recorder library
+VoiceCord is a simple yet powerful voice recording package for Discord
+
+## Usage
+
+### Installation
+```pip install voicecord```
+
+### Usage
+
+```python
+import voicecord
+import asyncio
+
+client = voicecord.VoiceClient(ip="YOUR_PUBLIC_IP", token="YOUR_TOKEN", guild_id="YOUR_GUILD_ID", channel_id="VC_ID")
+
+
+asyncio.run(client.connect())
+```
