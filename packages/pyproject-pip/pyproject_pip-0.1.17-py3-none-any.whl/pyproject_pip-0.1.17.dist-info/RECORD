@@ -1,0 +1,10 @@
+pyproject_pip/__about__.py,sha256=dZTW1ymHku6-QBVfUG7dyzjkVe4jjZFfo1czu1r9jC8,141
+pyproject_pip/__init__.py,sha256=ZujPZE5wObrWcSW_-pLWwVcYB0tvRxdsLMyDyk8b3A0,118
+pyproject_pip/cli.py,sha256=LF13hsiGBq35BwoCAHP0mV4ExlIKRL6zdL5Nqf79oL0,8361
+pyproject_pip/create.py,sha256=DRES1R94jRVVhPmypFMqahbqsbta-ZyI_eYqrqtd_eY,8388
+pyproject_pip/pypip.py,sha256=zgTgMEPkshfaOk8pJRC0OuPz3hHPJendO7hPw2aHPaQ,18213
+pyproject_pip-0.1.17.dist-info/METADATA,sha256=3PZaIn4XL2ErkDI3-1ZrI-Am9aqb6XOsjaVH7L-rxpo,2393
+pyproject_pip-0.1.17.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+pyproject_pip-0.1.17.dist-info/entry_points.txt,sha256=HQyKp5nNjQGnQQD3vLT72qXiu4jaQH5jQGy6qBFD6jQ,48
+pyproject_pip-0.1.17.dist-info/licenses/LICENSE,sha256=ufv7fH68SJM3IBc79lq9_jbu9jq8YtkuzYWO9P3AuU8,1062
+pyproject_pip-0.1.17.dist-info/RECORD,,
