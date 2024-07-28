@@ -1,0 +1,2 @@
+[console_scripts]
+defectdojo = defectdojo_cli2.__main__:main
