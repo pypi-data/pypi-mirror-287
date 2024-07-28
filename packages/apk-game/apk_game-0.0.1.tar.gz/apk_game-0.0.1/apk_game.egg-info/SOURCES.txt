@@ -1,0 +1,6 @@
+README.md
+setup.py
+apk_game.egg-info/PKG-INFO
+apk_game.egg-info/SOURCES.txt
+apk_game.egg-info/dependency_links.txt
+apk_game.egg-info/top_level.txt
