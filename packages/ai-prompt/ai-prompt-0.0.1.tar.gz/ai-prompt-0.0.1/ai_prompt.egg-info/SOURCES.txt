@@ -1,0 +1,10 @@
+LICENSE
+README.md
+ai.py
+setup.py
+ai_prompt.egg-info/PKG-INFO
+ai_prompt.egg-info/SOURCES.txt
+ai_prompt.egg-info/dependency_links.txt
+ai_prompt.egg-info/entry_points.txt
+ai_prompt.egg-info/requires.txt
+ai_prompt.egg-info/top_level.txt
