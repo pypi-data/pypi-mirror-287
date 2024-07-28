@@ -1,0 +1,39 @@
+Metadata-Version: 2.3
+Name: SES_SNS_Lib
+Version: 0.0.1
+Summary: A small example package
+Project-URL: Homepage, https://github.com/Abdu-AJ/Library_AWS.git
+Project-URL: Bug Tracker, https://github.com/Abdu-AJ/Library_AWS.git
+Author-email: AbdulJalil <x22241388@student.ncirl.ie>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: boto3==1.34.146
+Description-Content-Type: text/markdown
+
+# SES and SNS Utility Library
+
+## Overview
+
+This library provides functionalities to interact with AWS SES (Simple Email Service) and SNS (Simple Notification Service). 
+It includes methods to verify SES email identities, manage SNS subscriptions, and check SNS subscribers.
+
+## Features
+
+- **SES Email Verification**: Verify SES email identities and add new ones if not already verified.
+- **SNS Subscription Management**: Subscribe emails to SNS topics and check subscription statuses.
+- **SNS Subscriber Check**: Check and list subscribers of SNS topics along with their statuses.
+
+## Dependencies
+
+- boto3
+
+## Installation
+
+Install the library using pip:
+
+```bash
+pip install SES_SNS_Lib
