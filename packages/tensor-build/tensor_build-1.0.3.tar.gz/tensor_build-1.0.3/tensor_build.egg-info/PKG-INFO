@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: tensor_build
+Version: 1.0.3
+Summary: A block-based framework for TensorFlow
+Home-page: https://github.com/stony-su/starterhacks
+Author: Darren, Eddie, Kahan, Richard
+Description-Content-Type: text/markdown
+Requires-Dist: tensorflow>=2.0
+
+# starterhacks
+ starterhacks project july 27th
+ 
+## Installation
+
+You can install the package using pip:
+
+```bash
+pip install tensorflow_buidler
