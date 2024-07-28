@@ -1,0 +1,11 @@
+pypi/__init__.py,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
+pypi/bowtie2_mode.py,sha256=OhxXvf8w0jPgQFa3t1hq-oS-d3J6QliXjkLYKES1Gw8,2201
+pypi/build_db.py,sha256=DgYOol4Ah78L6XbzdnNPP6WMICkRyFs-ElrtfHkXYl8,1336
+pypi/fastp.py,sha256=vRuJS3y28YPJEIaT8NwkjOZXqzfdxlEg9Zjr2_4taTY,294
+pypi/hostpurge.py,sha256=-2w3zt701PurXackMM3vF0PW9FlsxBRLG9z4EI7njg8,10831
+pypi/kraken2_mode.py,sha256=hkMB9g0VtHcv76t-3FXOs07Pv69m7ML_ofY-Zzyir-o,858
+hostpurge-1.1.6.dist-info/METADATA,sha256=WEcyx7qSeINQ3-Ci8uxVF23TQVUCqypcTm2W1Zp5O-w,2942
+hostpurge-1.1.6.dist-info/WHEEL,sha256=Z4pYXqR_rTB7OWNDYFOm1qRk0RX6GFP2o8LgvP453Hk,91
+hostpurge-1.1.6.dist-info/entry_points.txt,sha256=bo8RFWZQI5vWpoFyqTHZJsHmwz80K0UJ2A2Kh2FtSX4,45
+hostpurge-1.1.6.dist-info/top_level.txt,sha256=Vq5OhP8UgjcwSC0-bXtLRcFTOpB4dgOwpRf66rC9LiY,5
+hostpurge-1.1.6.dist-info/RECORD,,
