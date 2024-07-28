@@ -1,0 +1,2 @@
+[console_scripts]
+concurrent_executor = concurrent_executor.__main__:main
