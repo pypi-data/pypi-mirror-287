@@ -1,0 +1,9 @@
+cupy_xarray/__init__.py,sha256=2-zQ17lX9Y-tuR47SJnEqrqhemdFgFuqrAz5qJgwdKQ,147
+cupy_xarray/_version.py,sha256=YArVGnwhKCd7nh1_Z4Zc-FhmJOhwIoTcJf57ZNLkVnM,497
+cupy_xarray/accessors.py,sha256=sKmMxk2tau-5eKLNm2jia9gYXEUCTLy7J2o4sEuxW4c,5263
+cupy_xarray/tests/test_accessors.py,sha256=E8Hkcxt9bo75eeHf_XquGlsaX7leW-tXIQS6Fr7vK60,1496
+cupy_xarray-0.1.4.dist-info/LICENSE,sha256=tz9wEKaNCVNXOw8Cy8QkIBQlpq7A0ZVo_1UfU_giJ4Y,11348
+cupy_xarray-0.1.4.dist-info/METADATA,sha256=zTOKVv_XfaC8VYar6vrdeJgr9bugPYoPwDct36YpOtc,2411
+cupy_xarray-0.1.4.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+cupy_xarray-0.1.4.dist-info/top_level.txt,sha256=NkjBaqVj2e8abXOa_ORL_M2JH6oPE2togWX0A6YEaTs,12
+cupy_xarray-0.1.4.dist-info/RECORD,,
