@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: jitcc
+Version: 0.0.1
+Summary: Supports compiling and running C code on the fly
+Home-page: https://github.com/mballance-utils/jitcc
+Author: Matthew Ballance
+Author-email: matt.ballance@gmail.com
+License: Apache 2.0
+Keywords: JIT,Verilog,RTL,Python
+License-File: LICENSE
+Requires-Dist: debug-mgr
+
+
+  Support for compiling and running C code on the fly
+  

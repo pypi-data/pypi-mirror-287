@@ -1,0 +1,2 @@
+[ivpm.pkginfo]
+jitcc = jitcc.pkginfo:PkgInfo
