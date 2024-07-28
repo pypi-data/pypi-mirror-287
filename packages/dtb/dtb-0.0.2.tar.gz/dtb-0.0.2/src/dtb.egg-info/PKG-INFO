@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: dtb
+Version: 0.0.2
+Summary: Databricks Tool Box
+Home-page: https://github.com/zeta-co/dtb
+Author: Zeta
+Author-email: vince@zeta.ms
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Utilities for ETL tasks
