@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: travel-units-converter
+Version: 0.1.0
+Summary: 
+Author: Mohamed-Rirash
+Author-email: mohamedrirash12045@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: wheel (>=0.43.0,<0.44.0)
+Description-Content-Type: text/markdown
+
+

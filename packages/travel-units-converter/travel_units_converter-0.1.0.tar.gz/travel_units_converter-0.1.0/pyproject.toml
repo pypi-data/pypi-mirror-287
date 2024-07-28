@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "travel-units-converter"
+version = "0.1.0"
+description = ""
+authors = ["Mohamed-Rirash <mohamedrirash12045@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+wheel = "^0.43.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
