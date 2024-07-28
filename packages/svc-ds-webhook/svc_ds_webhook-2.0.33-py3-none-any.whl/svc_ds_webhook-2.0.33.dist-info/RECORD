@@ -1,0 +1,10 @@
+F_Discord_webhook/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+F_Discord_webhook/webhook.py,sha256=y6t0w-HSJVwd9eVqhyKnQzIzwBl75Ude-yng38HfMW8,5255
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_webhook.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+svc_ds_webhook-2.0.33.dist-info/LICENSE,sha256=D7PvYSqQFSzZt215Z6BERU8iBnd67Muv3RrdsrkcPKQ,1066
+svc_ds_webhook-2.0.33.dist-info/METADATA,sha256=n_EaMqiX-ZapATBjviz7HSe7YVOTswAr66J_Jv1aEfg,2099
+svc_ds_webhook-2.0.33.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+svc_ds_webhook-2.0.33.dist-info/entry_points.txt,sha256=EJwQ02Rw_X4kSKft4JFG0iOkqClGrkDco7z8Z8d2Sq4,66
+svc_ds_webhook-2.0.33.dist-info/top_level.txt,sha256=g31HyhAC-lwD_px3cbUpeWxAs32hfAUSWn1MjuIUVWw,24
+svc_ds_webhook-2.0.33.dist-info/RECORD,,
