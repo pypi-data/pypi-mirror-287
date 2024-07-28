@@ -1,0 +1,10 @@
+ConfigByLmdb/DB.py,sha256=_AcNVpvu6Bk3uqk2UDXGlYcQbhmaOC787WDxPYaVmMs,52963
+ConfigByLmdb/__init__.py,sha256=YOSU6bgNUSF10tGZsTv1KpD3a5tATSkk3pade-2IFRY,145
+ConfigByLmdb/web.py,sha256=05588IA3pJzvm2lXsGsQfs6MDn6RZZRY7T_Ixmt5cDg,16635
+ConfigByLmdb/Test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ConfigByLmdb/Test/demo.py,sha256=x_38wggGvlMqUiqiAnNXoAqixVbpyPnE4sQx588J1is,13145
+ConfigByLmdb-0.0.8.dist-info/LICENSE,sha256=6-w3_dnIiKbxJMqTFuvJpPov5BklJU8FyVqfhNeaNDM,2255
+ConfigByLmdb-0.0.8.dist-info/METADATA,sha256=vFqwUrAcTcRPfIODHuW01NHzaTFVe3VUv8e3Y7Woi-g,7777
+ConfigByLmdb-0.0.8.dist-info/WHEEL,sha256=4h2DkfJSb0e6Ob8eR1zE5-yQ9f6nK3Do8SfsDGV3_YQ,109
+ConfigByLmdb-0.0.8.dist-info/top_level.txt,sha256=pFwgcwQsOfSpSi2AKP0l8crNFmGcDCM9YEtakXHYkLw,13
+ConfigByLmdb-0.0.8.dist-info/RECORD,,
