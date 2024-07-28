@@ -1,0 +1,13 @@
+kan/__init__.py,sha256=4tCpL_AoAwZMmL8yzQg0PMOSY_mvxYY_THYSfFx8KSE,504
+kan/kan.py,sha256=0OzsTx6xQaHe9OtL7BXymjEJrTFxn0HCtiXxTQvajuE,9492
+kan/test.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+kan/version.py,sha256=GmypIHlw9-BaSEaoucCIwm0ut1DUut0hUvsyTCr17qk,21
+quick_scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+quick_scripts/mnist.py,sha256=i0xKkSt1nGeIzoQOGo9CSjqKrjE_WfmsTTZupI1wxkI,2687
+quick_scripts/quick_train.py,sha256=vEX-ibjYoPe_yNAWyyv928o6_JyBif3s2OxKTUsfgO4,6283
+quick_scripts/utils.py,sha256=TOTKyHwm4oXZ_GJLacKscxrhyjN4jiKBlv8fq73Zlgg,1299
+mlx_kan-0.1.7.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+mlx_kan-0.1.7.dist-info/METADATA,sha256=ihTpK3cYaUySEfDOG3E2jZ_LP9FUosLaWhA0lOyKtig,7264
+mlx_kan-0.1.7.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+mlx_kan-0.1.7.dist-info/top_level.txt,sha256=rjsXb5EZ3vwxzaUL1ZgNswLtKQDrkZf4kbQ_wTd-1vM,18
+mlx_kan-0.1.7.dist-info/RECORD,,
