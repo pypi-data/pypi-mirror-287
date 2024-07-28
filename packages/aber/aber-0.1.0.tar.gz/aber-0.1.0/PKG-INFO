@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: aber
+Version: 0.1.0
+Summary: 
+Author: daugasauron
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Description-Content-Type: text/markdown
+
+# Ziggy Pydust Template
+
+This repository contains a template for writing and packaging native Python extension modules in Zig using [Pydust](https://github.com/fulcrum-so/ziggy-pydust) framework.
+
+This template includes:
+
+- A Python Poetry project.
+- A `src/` directory containing a Pydust Python module.
+- Pytest setup for running both Python and Zig unit tests.
+- GitHub Actions workflows for building and publishing the package.
+- VSCode settings for recommended extensions, debugger configurations, etc.
+
+We recommend heading to [Getting Started](https://pydust.fulcrum.so/latest/getting_started/).
+
