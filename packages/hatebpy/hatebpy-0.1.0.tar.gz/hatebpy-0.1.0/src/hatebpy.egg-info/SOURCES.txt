@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/hatebpy/__init__.py
+src/hatebpy/_api.py
+src/hatebpy/_auth.py
+src/hatebpy/_cli.py
+src/hatebpy/_feed.py
+src/hatebpy/model.py
+src/hatebpy.egg-info/PKG-INFO
+src/hatebpy.egg-info/SOURCES.txt
+src/hatebpy.egg-info/dependency_links.txt
+src/hatebpy.egg-info/entry_points.txt
+src/hatebpy.egg-info/requires.txt
+src/hatebpy.egg-info/top_level.txt

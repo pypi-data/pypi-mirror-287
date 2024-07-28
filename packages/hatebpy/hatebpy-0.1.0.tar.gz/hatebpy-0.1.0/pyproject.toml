@@ -1,0 +1,30 @@
+[project]
+name = "hatebpy"
+version = "0.1.0"
+description = "A Python package for easy interaction with the Hatena Bookmark API"
+authors = [{ name = "K", email = "kmyashi@rmc-8.com" }]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+dependencies = [
+    "requests>=2.32.3",
+    "requests-oauthlib>=2.0.0",
+    "fire>=0.5.0",
+    "feedparser>=6.0.11",
+    "pydantic>=2.0.0",
+]
+
+# python-dotenv
+
+[project.urls]
+Homepage = "https://github.com/rmc8/hatebpy"
+
+[project.scripts]
+hatebpy = "hatebpy._cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
