@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: maxplotlib
+Version: 0.1.1
+Summary: Autoviz API by Max Cembalest
+Home-page: http://github.com/mcembalest/maxplotlib
+Author: Max Cembalest
+Author-email: macembalest@gmail.com
+License: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: server
+Requires-Dist: matplotlib; extra == "server"
+Requires-Dist: mlx_lm; extra == "server"
+Requires-Dist: numpy; extra == "server"
+Requires-Dist: pillow; extra == "server"
+
+# Maxplotlib
+
+`prompt` -> [`mlx_lm`](https://github.com/ml-explore/mlx-examples/blob/main/llms/README.md) -> [`matplotlib`](https://github.com/matplotlib/matplotlib) autoviz API
