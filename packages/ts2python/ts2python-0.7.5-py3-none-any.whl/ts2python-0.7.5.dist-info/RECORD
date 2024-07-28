@@ -1,0 +1,16 @@
+ts2python/__init__.py,sha256=OzLoW8qTucp2FiCVvLzdEc5YMAAQyPBJTX_-yWTl40E,1177
+ts2python/json2.py,sha256=Gjty_gKa3V0XTtoFb4Si4RKRwY9GDzhcWBrYYRRq8JE,15660
+ts2python/json_validation.py,sha256=tylWlXpOdrVRao1LUup7LRtTlX3eUOFTJaFz5hVpcnU,15700
+ts2python/json_validation.py_old,sha256=zmcw7j-JHLuXXp8b-Os-q3_iSehHPxWy3ca01BHntqE,14849
+ts2python/singledispatch_shim.py,sha256=KjRdylac1_FVA84gxAJykfDOKAEgdU5jxMH2D24UUnY,9289
+ts2python/ts2pythonParser.ini,sha256=QtAs4m4mjon8tsz1bshVPUHS8aXAwUVodyAqBPkt3os,656
+ts2python/typeddict_shim.py,sha256=VvDp1Ox-XsSdX9ME0PLIa4i3rKvbQepUZF4ZxlbIiBg,12488
+ts2python/typeddict_shim.py_old,sha256=_PbJzggSN48Ju7_Dhrg6NQelReGC1ObH6sSuWbCqFTs,11647
+ts2python/typing_extensions.py,sha256=ejZHRC4d2aUX9MJnZ8QMhbvx80YNEGudYHVfUXVz0co,111082
+ts2python.ebnf,sha256=tKw44jRuLu_56QDo9QSBfaadDSEzlKVDx1VyKG24N5Q,8144
+ts2pythonParser.py,sha256=n1-SumjQ5vjbvoeXK1GNpU1KCwYPI3h-O_iXL-t89LQ,76176
+ts2python-0.7.5.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+ts2python-0.7.5.dist-info/METADATA,sha256=u6ghyHmOvGHxSaP-hPU1f4KgCi1AS9qiJKeOAAElzzI,11639
+ts2python-0.7.5.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+ts2python-0.7.5.dist-info/entry_points.txt,sha256=GkOexwGMInB6FmjwnXUO7F4FFLjNEqaxKuKkJ1Qh2pA,50
+ts2python-0.7.5.dist-info/RECORD,,
