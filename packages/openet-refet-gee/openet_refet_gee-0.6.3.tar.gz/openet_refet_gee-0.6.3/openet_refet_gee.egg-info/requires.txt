@@ -1,0 +1,6 @@
+earthengine-api>=0.1.364
+
+[test]
+pytest
+pandas
+pytz
