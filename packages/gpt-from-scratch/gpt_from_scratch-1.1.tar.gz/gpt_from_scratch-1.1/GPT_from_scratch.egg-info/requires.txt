@@ -1,0 +1,8 @@
+datasets
+numpy
+Requests
+tiktoken>=0.7.0
+torch
+tqdm
+matplotlib
+seaborn
