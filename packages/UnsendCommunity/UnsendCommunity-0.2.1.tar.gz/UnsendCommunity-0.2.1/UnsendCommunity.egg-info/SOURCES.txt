@@ -1,0 +1,9 @@
+MANIFEST.in
+setup.py
+UnsendCommunity.egg-info/PKG-INFO
+UnsendCommunity.egg-info/SOURCES.txt
+UnsendCommunity.egg-info/dependency_links.txt
+UnsendCommunity.egg-info/requires.txt
+UnsendCommunity.egg-info/top_level.txt
+unsendcommunity/__init__.py
+unsendcommunity/sdk.py
