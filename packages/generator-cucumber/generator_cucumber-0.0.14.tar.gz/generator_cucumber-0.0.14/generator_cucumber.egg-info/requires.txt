@@ -1,0 +1,9 @@
+python-gitlab==4.7.0
+simple-term-menu==1.6.4
+beautifulsoup4==4.12.3
+requests==2.32.3
+requests-toolbelt==1.0.0
+charset-normalizer==3.3.2
+idna==3.4
+urllib3==1.26.19
+certifi==2017.4.17
