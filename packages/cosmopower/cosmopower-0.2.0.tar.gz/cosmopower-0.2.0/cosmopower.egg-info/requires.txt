@@ -1,0 +1,6 @@
+tensorflow<2.14
+scikit-learn
+tqdm
+pytest
+tensorflow<2.14
+tensorflow_probability<0.22
