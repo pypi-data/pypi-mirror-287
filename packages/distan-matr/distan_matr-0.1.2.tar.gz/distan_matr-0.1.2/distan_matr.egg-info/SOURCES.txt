@@ -1,0 +1,10 @@
+LICENCE.txt
+README.md
+setup.py
+distan_matr/__init__.py
+distan_matr/tran.c
+distan_matr.egg-info/PKG-INFO
+distan_matr.egg-info/SOURCES.txt
+distan_matr.egg-info/dependency_links.txt
+distan_matr.egg-info/requires.txt
+distan_matr.egg-info/top_level.txt
