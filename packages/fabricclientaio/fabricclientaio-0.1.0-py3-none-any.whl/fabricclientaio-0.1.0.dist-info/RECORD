@@ -1,0 +1,15 @@
+fabricclientaio/__init__.py,sha256=G4i_I9JMSaVWXvEdo0eGhVGaM7H0748NeohQaJ5k7xg,34
+fabricclientaio/auth/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabricclientaio/auth/fabrictokenprovider.py,sha256=cJRDf1PXMIStu-qPbpPjyo9aYz5G9eDppHewT4F1sFs,313
+fabricclientaio/error.py,sha256=3JAC-tjyG642F0D-z6LrfIGk8XTkOqIGzxz1aeUmITk,554
+fabricclientaio/fabricclient.py,sha256=IEMtR1bajqBtXS4OuEpUIDSTOGarSH145cjEsAea9X8,10235
+fabricclientaio/fabriccoreclient.py,sha256=zBfzXXRFwidYHqmDw9wo_FeTrk3dUW1idhMoXOg7MmM,1481
+fabricclientaio/fabricworkspaceclient.py,sha256=gCvWQ1rxJeXuVBG4FBBj_Usckz0JTevTR6rnipK-Mo4,7041
+fabricclientaio/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabricclientaio/models/responses.py,sha256=eCraKaolIDt2pzXdRLU1_wD4lxG8y73Tvu7vkEW2a0Y,7230
+fabricclientaio/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabricclientaio/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fabricclientaio/utils/timeutils.py,sha256=RGclERhS8m0f4Xk4gOWNdfvi5GXxcDODCVuBTJVFVPU,172
+fabricclientaio-0.1.0.dist-info/METADATA,sha256=96b1F_kA_TC7zXdnXJOOYdp_JSbk6AX6DZQo4GyyM3E,1817
+fabricclientaio-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+fabricclientaio-0.1.0.dist-info/RECORD,,
