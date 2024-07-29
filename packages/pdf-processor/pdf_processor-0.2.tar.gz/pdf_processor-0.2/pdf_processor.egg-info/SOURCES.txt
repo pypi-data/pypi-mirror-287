@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+pdf_processor/__init__.py
+pdf_processor/pdf_processor.py
+pdf_processor.egg-info/PKG-INFO
+pdf_processor.egg-info/SOURCES.txt
+pdf_processor.egg-info/dependency_links.txt
+pdf_processor.egg-info/entry_points.txt
+pdf_processor.egg-info/requires.txt
+pdf_processor.egg-info/top_level.txt
