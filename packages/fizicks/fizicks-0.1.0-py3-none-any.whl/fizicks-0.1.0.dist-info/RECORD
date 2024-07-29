@@ -1,0 +1,9 @@
+fizicks/__init__.py,sha256=m8ApmyW7ZXGPcWSfkukGCBJeMfSED-nPEkaPXwtbhac,26
+fizicks/main.py,sha256=7cWdgNa7v81BPDIWpcBKmEaFoh9cDQgOFX31_QZqRag,3756
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_motion.py,sha256=oRVG3XLiYv8gcUgkzygr1bHQZSMc3Rohe4mznmqVn2g,1604
+fizicks-0.1.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+fizicks-0.1.0.dist-info/METADATA,sha256=Ur0ZKf00fHVacIHeEAqOrBeovjNgJ2qvB3eqyHdIfbg,4039
+fizicks-0.1.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+fizicks-0.1.0.dist-info/top_level.txt,sha256=e0-j3Jl9xzGoxRSLrBpdHaY2F8sbrKRpPrklYZWQ3s8,14
+fizicks-0.1.0.dist-info/RECORD,,
