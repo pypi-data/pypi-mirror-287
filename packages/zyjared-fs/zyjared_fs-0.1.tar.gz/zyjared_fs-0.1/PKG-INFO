@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: zyjared-fs
+Version: 0.1
+Summary: simple tools for file or path
+Home-page: https://github.com/zyjared/kit-python
+Author: Jared Zhang
+Author-email: zyjared@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# fs
+
+## Usage
+
+```sh
+pip install zyjared-fs
+```
+
+```python
+from fs import matches_path, rm_path, clean_directory
+from pathlib import Path
+
+rm_path(Path('test'))
+
+is_matched: bool = matches_path(Path('test'), [r'.*test\.py'])
+
+removed: list[Path] = clean_directory('test', include=[r'.*test\.py'], ignore=[r'\.git'])
+```
