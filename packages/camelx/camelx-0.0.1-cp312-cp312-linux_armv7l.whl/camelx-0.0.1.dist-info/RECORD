@@ -1,0 +1,12 @@
+camelx_cy.cpython-312-darwin.so,sha256=LZNgiySburUzRw3dpZ33OnL6t6sEmhhr-Q1bO7evjT0,517968
+camelx/__init__.py,sha256=UnZEHG18WCO7Fg-aQwEocQIH9EF_mGrzlr3w-xKXuhA,140
+camelx/camelx.py,sha256=R2UaKIfsJnImZi_2CA4VEMR8ftXzG1DqutYc79kTIAY,15793
+camelx/camelx_cy.c,sha256=_b6RGva7SCbrmtuDXutAduOoa3Az5rjIG1aGnwYaKFE,1075443
+camelx/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+camelx/tests/test_docs.py,sha256=zuF4CG6u7L0P8DJj-tWiOKdM49T8ZevKVOk1HkxVWp0,3797
+camelx/tests/test_general.py,sha256=XTOnsaotyWC4fdownQb4z9enWEw5z5accP3YGvLG0AU,4182
+camelx-0.0.1.dist-info/LICENSE,sha256=TrjNLJzyOPyzZTAWvGhkpk7FfuPtvxFNyHT4-A9B6yg,908
+camelx-0.0.1.dist-info/METADATA,sha256=GIj7hHPDTAaEAQ0exdYyT3-ples30GW1o3925fD6w38,1593
+camelx-0.0.1.dist-info/WHEEL,sha256=Muyckd3SQdtfdg1JVenUC9ZdDMoICEAI15SEtVIrVfY,104
+camelx-0.0.1.dist-info/top_level.txt,sha256=mMwI3Tc52jxhVWGtsfgLH72MhhGbUae7hNet7PIPuTA,17
+camelx-0.0.1.dist-info/RECORD,,
