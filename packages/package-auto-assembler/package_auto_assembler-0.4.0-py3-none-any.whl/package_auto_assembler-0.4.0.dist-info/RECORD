@@ -1,0 +1,10 @@
+package_auto_assembler/__init__.py,sha256=tLGATA_KxmdX55Re_VRfxbjTK66XeU3i58F3prXtc10,38
+package_auto_assembler/cli.py,sha256=59dhbKII9dgga697igfbV5R66h0jVE8Sts1GmP5FsEI,15220
+package_auto_assembler/package_auto_assembler.py,sha256=kFqiNWImdBC-RX2AhFVdaRL0KVsxTVhCRKMsNI5gKaw,93669
+package_auto_assembler/setup.py,sha256=zV0ZCLUpkMsGPT5kTh2YjEmvj0Y7bD-xUev6F2TTnW8,1917
+package_auto_assembler-0.4.0.dist-info/LICENSE,sha256=cWOz095esmvweNeqFgIMdVGn-R92WpVVMJm4RTBzToo,1061
+package_auto_assembler-0.4.0.dist-info/METADATA,sha256=VCIdEZXlbvdfPjSmGw3W4V-voJqOI3EaVpcqf5DmyjM,31736
+package_auto_assembler-0.4.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+package_auto_assembler-0.4.0.dist-info/entry_points.txt,sha256=N8Qdy7Ohjbyc2wVJFD7C5nosx9bY_IxfoNSZJSpYucI,55
+package_auto_assembler-0.4.0.dist-info/top_level.txt,sha256=Ja2gUV8zzaTGPcm9RQyP2gLwuoJJGkd7UxD6gxr_WWU,23
+package_auto_assembler-0.4.0.dist-info/RECORD,,
