@@ -1,0 +1,10 @@
+LICENCE.txt
+README.md
+setup.py
+discalla/__init__.py
+discalla/core.c
+discalla.egg-info/PKG-INFO
+discalla.egg-info/SOURCES.txt
+discalla.egg-info/dependency_links.txt
+discalla.egg-info/requires.txt
+discalla.egg-info/top_level.txt
