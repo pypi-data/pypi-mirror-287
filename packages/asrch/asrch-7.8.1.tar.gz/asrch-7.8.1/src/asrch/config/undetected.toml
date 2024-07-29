@@ -1,0 +1,50 @@
+####################################################################
+# Undetected config file                                           #
+# This is the undetected config which is mainly used when being    #
+# undetected is essential and uses a multitude of methods such as  #
+# using a header                                                   #
+####################################################################
+
+# Global settings
+
+[basic]
+url = "https://python.org"
+
+[privacy]
+proxy = ""
+
+# Commands settings
+
+[commands]
+
+    # Settings for the 'open' command
+    [commands.open]
+    header = true
+    pager = true
+    download = false
+    log = true
+    nodriver = false
+    parser = "html.parser"
+
+    # Settings for the 'search' command
+    [commands.search]
+    query = ""
+    header = false
+    nodriver = false
+    log = false
+
+    # Settings for the 'whois' command
+    [commands.whois]
+    header = false
+    
+    # Settings for the 'find' command
+    [commands.find]
+    element = ""
+    header = true
+    log = false
+    locator = "tag_name"
+
+    # Settings for the 'quizlet' command
+    [commands.quizlet]
+    header = true
+    pager = true

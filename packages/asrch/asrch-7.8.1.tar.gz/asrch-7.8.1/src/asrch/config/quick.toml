@@ -1,0 +1,49 @@
+####################################################################
+# Quick config file                                                #
+# This is the quick config for quickly getting your results        #
+# without worry of getting detected                                #
+# (this is highly detectable since it does not use a webdriver)    #
+####################################################################
+
+# Global settings
+
+[basic]
+url = "https://python.org"
+
+[privacy]
+proxy = ""
+
+# Commands settings
+
+[commands]
+
+# Settings for the 'open' command
+[open]
+header = false
+pager = false
+download = false
+log = false
+nodriver = True
+parser = "lxml"
+
+# Settings for the 'search' command
+[search]
+query = ""
+header = false
+log = false
+
+# Settings for the 'whois' command
+[whois]
+header = false
+
+# Settings for the 'find' command
+[find]
+element = ""
+header = false
+log = false
+locator = "tag_name"
+
+# Settings for the 'quizlet' command
+[quizlet]
+header = false
+pager = false

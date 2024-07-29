@@ -1,0 +1,47 @@
+=======
+ ASRCH
+=======
+
+|Coverage Report| |MIT License| |Gitmoji|
+
+Tested |Linux Mint|
+
+Authors
+=======
+
+-  [@certified_CLI_lover](https://bitbucket.org/asrch)
+
+Documentation
+=============
+
+- https://asrch.bitbucket.io/
+
+Features
+========
+
+-  Anonymous web browsing, crawling and scraping
+-  Grab any info from any site
+-  No proxy needed
+-  Highly undetected
+
+Installation
+============
+
+- For installation and usage examples please
+  refer to the documentation
+   
+
+
+.. |Coverage Report| image:: https://svgshare.com/i/15fy.svg
+.. |MIT License| image:: https://img.shields.io/badge/License-MIT-green.svg?style=plastic
+   :target: https://choosealicense.com/licenses/mit/
+.. |Gitmoji| image:: https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=plastic
+   :target: https://gitmoji.dev
+.. |Python| image:: https://img.shields.io/badge/python-3670A0?style=plastic&logo=python&logoColor=ffdd54
+   :target: https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54
+.. |Linux| image:: https://img.shields.io/badge/Linux-FCC624?style=plastic&logo=linux&logoColor=black
+   :target: https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black
+.. |Linux Mint| image:: https://img.shields.io/badge/Linux%20Mint-87CF3E?style=plastic&logo=Linux%20Mint&logoColor=white
+   :target: https://img.shields.io/badge/Linux%20Mint-87CF3E?style=flat-square&logo=Linux%20Mint&logoColor=white
+
+           
