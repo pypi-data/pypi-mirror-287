@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: distvae_tabular
+Version: 0.0.10
+Summary: DistVAE Implementation Package for Synthetic Data Generation
+Home-page: https://github.com/an-seunghwan/DistVAE-Tabular
+Author: Seunghwan An
+Author-email: dpeltms79@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: numpy ==1.26.4
+Requires-Dist: pandas ==2.2.2
+Requires-Dist: scikit-learn ==1.5.1
+Requires-Dist: scipy ==1.14.0
+Requires-Dist: torch ==2.2.2
+Requires-Dist: tqdm ==4.66.4
+
+# DistVAE-Tabular
+
+### 1. Install
+```
+pip install distvae-tabular
+```
+
+### 2. Usage
+```
+from distvae_tabular import distvae
+
+distvae.DistVAE # DistVAE model
+distvae.generate_data # generate synthetic data
+```
+- See `example.ipynb` for detailed usage with `loan` dataset.
+- Link for download `loan` dataset: [https://www.kaggle.com/datasets/teertha/personal-loan-modeling](https://www.kaggle.com/datasets/teertha/personal-loan-modeling)
+
+### Citation
+If you use this code or package, please cite our associated paper:
+```
+@article{an2024distributional,
+  title={Distributional learning of variational AutoEncoder: application to synthetic data generation},
+  author={An, Seunghwan and Jeon, Jong-June},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
+  year={2024}
+}
+```
