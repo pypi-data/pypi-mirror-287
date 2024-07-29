@@ -1,0 +1,9 @@
+float_raster/LICENSE.md,sha256=MqCnOBu8uXsEOzRZWh9EBVfVz-kE9NkXcLCrtGXo2yU,34354
+float_raster/README.md,sha256=qawyFLFjoR3soKFyKy964stt5Nxagk0NdUU6O4y9yac,596
+float_raster/__init__.py,sha256=OAJkHoAwKVHvHBpXOrVNFeuA50thCVGTda4RjJm8u-o,471
+float_raster/float_raster.py,sha256=znzt4D-cOMCg_qcyjeZqMXugN3SItcwtO9qzC0uMrgo,11859
+float_raster/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+float_raster-0.8.dist-info/METADATA,sha256=cfAiJxdjcfuG0vqsWSy_PJs-NyKwipqoqSWnB0bsPnc,41061
+float_raster-0.8.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+float_raster-0.8.dist-info/licenses/LICENSE.md,sha256=MqCnOBu8uXsEOzRZWh9EBVfVz-kE9NkXcLCrtGXo2yU,34354
+float_raster-0.8.dist-info/RECORD,,
