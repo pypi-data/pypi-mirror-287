@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: web3pi-tunnel
+Version: 0.1a2
+Summary: Web3 Pi tunnel - a basic tcp reverse tunnel
+Home-page: https://github.com/Web3-Pi/basic-tcp-tunnel
+License: GNU GENERAL PUBLIC LICENSE Version 3
+Keywords: web3pi,web3,tcp,tunnel,ethereum,proxy
+Requires-Python: >=3.10,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: colorama (>=0.4.6)
+Requires-Dist: python-dotenv (>=1.0.1)
+Requires-Dist: upnpclient (>=1.0.3)
+Requires-Dist: whatismyip (>=2022.7.10)
+Project-URL: Repository, https://github.com/Web3-Pi/basic-tcp-tunnel
+Description-Content-Type: text/markdown
+
+# WEb3Pi Tunnel
+PoC Python implementation of a basic TCP tunnel. Primary purpose: provide a public IP to clients behind NATs.
+
+It was initially developed alongside the [Web3Pi Proxy](https://github.com/Web3-Pi/web3-reverse-proxy).
+
+## Setup
+
+Simply install `web3pi-tunnel` package using your Python package manager, using **pip** for example:
+
+```bash
+pip install web3pi-tunnel
+```
+
+## Configuration
+
+Provide `.env` file or set the system environments with the following entries.
+
+### Client
+
+- `TUNNEL_SERVICE_HOST` - the network address of the tunnel server
+- `CLIENT_SERVICE_HOST` - the network address of the client target service
+- `CLIENT_SERVICE_PORT` - the port of the client target service
+- `TUNNEL_ESTABLISH_PORT` - the port of the tunnel server
+- `TUNNEL_SERVICE_AUTH_KEY` - the api key to authenticate at the tunnel server
+
+### Server
+
+- `SERVICE_PUBLIC_IP` - the network address of the tunnel server
+- `SERVICE_PUBLIC_LISTEN_PORT` - the port of tunnel server for external web3 users
+- `TUNNEL_ESTABLISH_PORT` - the port of the tunnel server for the tunnel client
+- `PROXY_ESTABLISH_PORT` - the port of the tunnel server for stats
+- `TUNNEL_SERVICE_AUTH_KEY` - the api key to authenticate the tunnel client
+
