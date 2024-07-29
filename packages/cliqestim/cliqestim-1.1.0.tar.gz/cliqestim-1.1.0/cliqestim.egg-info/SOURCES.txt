@@ -1,0 +1,10 @@
+LICENCE.txt
+README.md
+setup.py
+cliqestim/__init__.py
+cliqestim/cli.c
+cliqestim.egg-info/PKG-INFO
+cliqestim.egg-info/SOURCES.txt
+cliqestim.egg-info/dependency_links.txt
+cliqestim.egg-info/requires.txt
+cliqestim.egg-info/top_level.txt
