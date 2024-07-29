@@ -1,0 +1,3 @@
+[console_scripts]
+run-asr-app=asr_app.app:main
+
