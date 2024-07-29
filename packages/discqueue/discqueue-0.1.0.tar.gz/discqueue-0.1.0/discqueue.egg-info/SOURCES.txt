@@ -1,0 +1,10 @@
+LICENCE.txt
+README.md
+setup.py
+discqueue/__init__.py
+discqueue/core.c
+discqueue.egg-info/PKG-INFO
+discqueue.egg-info/SOURCES.txt
+discqueue.egg-info/dependency_links.txt
+discqueue.egg-info/requires.txt
+discqueue.egg-info/top_level.txt
