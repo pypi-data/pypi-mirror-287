@@ -1,0 +1,2 @@
+[console_scripts]
+ophis = Ophis:ophis_argv
