@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry]
+name = "dvinci_api"
+version = "0.9.1"
+description = "Package for interacting with the Dvinci RestAPI"
+authors = ["Hendrik Siemens <hendrik.siemens@takko.de>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.3.2"
+
+[tool.poetry.scripts]
+dvinci_api = "dvinci_api.__main__:main"
+
+[tool.poetry.urls]
+homepage = "https://dvinci.thor-systems.de"
+repository = "https://github.com/SiemensHalske/dvinci_api"
+
+[tool.poetry.classifiers]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.9"
+]
