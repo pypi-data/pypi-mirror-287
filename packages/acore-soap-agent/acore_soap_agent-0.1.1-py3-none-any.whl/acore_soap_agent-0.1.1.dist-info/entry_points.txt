@@ -1,0 +1,2 @@
+[console_scripts]
+acoresoapagent = acore_soap_agent.cli.main:run
