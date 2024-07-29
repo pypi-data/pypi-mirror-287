@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: fastapi_authentication
+Version: 0.1.1
+Summary: 
+Author: Mohamed-Rirash
+Author-email: mohamedrirash12045@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: fastapi (>=0.111.1,<0.112.0)
+Requires-Dist: passlib (>=1.7.4,<2.0.0)
+Requires-Dist: pyotp (>=2.9.0,<3.0.0)
+Requires-Dist: python-dotenv (>=1.0.1,<2.0.0)
+Requires-Dist: python-jose (>=3.3.0,<4.0.0)
+Requires-Dist: sqlalchemy (>=2.0.31,<3.0.0)
+Requires-Dist: uvicorn (>=0.30.3,<0.31.0)
+Description-Content-Type: text/markdown
+
+
