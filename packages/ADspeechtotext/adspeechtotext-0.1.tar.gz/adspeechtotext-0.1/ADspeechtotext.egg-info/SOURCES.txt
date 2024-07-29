@@ -1,0 +1,5 @@
+setup.py
+ADspeechtotext.egg-info/PKG-INFO
+ADspeechtotext.egg-info/SOURCES.txt
+ADspeechtotext.egg-info/dependency_links.txt
+ADspeechtotext.egg-info/top_level.txt
