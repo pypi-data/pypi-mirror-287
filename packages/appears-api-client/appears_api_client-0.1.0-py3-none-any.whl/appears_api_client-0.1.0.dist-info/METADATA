@@ -1,0 +1,134 @@
+Metadata-Version: 2.1
+Name: appears-api-client
+Version: 0.1.0
+Summary: Python client for interacting with NASA Earthdata's AppEEARS API
+Home-page: https://github.com/yourusername/your-repository
+Author: Your Name
+Author-email: your.email@example.com
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: affine ==2.4.0
+Requires-Dist: annotated-types ==0.7.0
+Requires-Dist: appnope ==0.1.4
+Requires-Dist: asttokens ==2.4.1
+Requires-Dist: attrs ==23.2.0
+Requires-Dist: certifi ==2024.7.4
+Requires-Dist: charset-normalizer ==3.3.2
+Requires-Dist: click ==8.1.7
+Requires-Dist: click-plugins ==1.1.1
+Requires-Dist: cligj ==0.7.2
+Requires-Dist: comm ==0.2.2
+Requires-Dist: coverage ==7.6.0
+Requires-Dist: debugpy ==1.8.2
+Requires-Dist: decorator ==5.1.1
+Requires-Dist: executing ==2.0.1
+Requires-Dist: idna ==3.7
+Requires-Dist: iniconfig ==2.0.0
+Requires-Dist: ipykernel ==6.29.5
+Requires-Dist: ipython ==8.26.0
+Requires-Dist: jedi ==0.19.1
+Requires-Dist: jupyter-client ==8.6.2
+Requires-Dist: jupyter-core ==5.7.2
+Requires-Dist: matplotlib-inline ==0.1.7
+Requires-Dist: nest-asyncio ==1.6.0
+Requires-Dist: numpy ==2.0.1
+Requires-Dist: packaging ==24.1
+Requires-Dist: pandas ==2.2.2
+Requires-Dist: parso ==0.8.4
+Requires-Dist: pexpect ==4.9.0
+Requires-Dist: platformdirs ==4.2.2
+Requires-Dist: pluggy ==1.5.0
+Requires-Dist: prompt-toolkit ==3.0.47
+Requires-Dist: psutil ==6.0.0
+Requires-Dist: ptyprocess ==0.7.0
+Requires-Dist: pure-eval ==0.2.3
+Requires-Dist: pydantic ==2.8.2
+Requires-Dist: pydantic-core ==2.20.1
+Requires-Dist: Pygments ==2.18.0
+Requires-Dist: pyparsing ==3.1.2
+Requires-Dist: pytest ==8.3.1
+Requires-Dist: pytest-cov ==5.0.0
+Requires-Dist: python-dateutil ==2.9.0.post0
+Requires-Dist: python-dotenv ==1.0.1
+Requires-Dist: pytz ==2024.1
+Requires-Dist: pyzmq ==26.0.3
+Requires-Dist: rasterio ==1.3.10
+Requires-Dist: requests ==2.32.3
+Requires-Dist: requests-mock ==1.12.1
+Requires-Dist: setuptools ==71.1.0
+Requires-Dist: six ==1.16.0
+Requires-Dist: snuggs ==1.4.7
+Requires-Dist: stack-data ==0.6.3
+Requires-Dist: tornado ==6.4.1
+Requires-Dist: traitlets ==5.14.3
+Requires-Dist: typing-extensions ==4.12.2
+Requires-Dist: tzdata ==2024.1
+Requires-Dist: urllib3 ==2.2.2
+Requires-Dist: wcwidth ==0.2.13
+
+# AppEEARS API Client
+I'm building a PIP package.
+
+## Description.
+ Python client for interacting with NASA Earthdata's AρρEEARS API. This package facilitates authentication, querying and handling of data coming from AρρEEARS, allowing Python users to work more efficiently with this service.
+
+## Features
+- Easy authentication with NASA Earthdata Login.
+- Functions to obtain and manipulate available product data.
+- Integrated API-specific error handling.
+
+## Installation
+
+Install the package using pip:
+
+```bash
+pip install appears-api-client
+```
+
+## Usage
+### Initial configuration
+First, import the client and create an instance with your credentials:
+
+```bash
+from appears_api.client import AppEEARSClient
+
+client = AppEEARSClient(username='your_username', password='your_password')
+```
+
+### Obtain product data
+
+```bash
+product_info = client.get_product(product_id='MOD11A1.061')
+print(product_info)
+```
+
+### Logout
+Don't forget to log out when you are finished:
+
+```bash
+client.logout()
+```
+
+## Contributions
+Contributions are welcome! If you wish to contribute, please:
+
+- Fork the repository.
+- Create a new branch for your modifications.
+- Make your changes and write tests when possible.
+- Send a pull request with a clear description of the changes.
+
+## License
+Distributed under the MIT license. See LICENSE for more information.
+
+## Contact
+Your name - @YourTwitter
+Email - example@example.com
