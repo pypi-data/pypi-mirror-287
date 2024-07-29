@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: wv_store
+Version: 0.1
+Summary: A simple file storage server with CLI
+Home-page: https://github.com/imamaris/wv-store
+Author: Imam Aris Munandar
+Author-email: imamarisdeveloper@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: click
+Requires-Dist: requests
+

@@ -1,0 +1,2 @@
+[console_scripts]
+wv-store = wv_store.cli:cli
