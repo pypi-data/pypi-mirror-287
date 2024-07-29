@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: sidereal
+Version: 0.0.15
+Summary: Time and coordinate systems for astrodynamics
+Author-email: Liam Robinson <liamers127@gmail.com>
+Project-URL: Homepage, https://example.com
+Project-URL: Repository, https://github.com/liamrobinson1/sidereal
+Requires-Python: >=3.9
+Requires-Dist: setuptools >=42
+Requires-Dist: wheel
+Requires-Dist: numpy >=1.19.2
+Requires-Dist: pybind11 >=2.11.0
+Requires-Dist: eigency >=1.6.0
+Requires-Dist: setuptools-scm >=8.0
+Requires-Dist: bump2version >=0.0.1
+
