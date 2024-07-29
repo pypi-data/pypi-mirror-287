@@ -1,0 +1,3 @@
+[console_scripts]
+asrch=asrch.__main__:app
+

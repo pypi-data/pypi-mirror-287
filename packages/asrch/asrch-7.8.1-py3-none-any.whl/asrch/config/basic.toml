@@ -1,0 +1,48 @@
+####################################################################
+# Basic config file                                                #
+# This is the basic config with little options selected and mainly #
+# for testing out the program without tinkering                    #
+####################################################################
+
+# Global settings
+
+[basic]
+url = "https://python.org"
+
+[privacy]
+proxy = ""
+
+# Commands settings
+
+[commands]
+
+    # Settings for the 'open' command
+    [commands.open]
+    header = false
+    pager = true
+    download = false
+    log = false
+    nodriver = false
+    parser = "html.parser"
+
+    # Settings for the 'search' command
+    [commands.search]
+    query = ""
+    header = false
+    log = false
+
+    # Settings for the 'whois' command
+    [commands.whois]
+    header = false
+
+    # Settings for the 'find' command
+    [commands.find]
+    element = ""
+    header = true
+    log = false
+    locator = "tag_name"
+
+    # Settings for the 'quizlet' command
+    [commands.quizlet]
+    header = true
+    pager = true

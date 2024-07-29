@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: asrch
+Version: 7.8.1
+Summary: A terminal based webscraper and browser
+License: MIT
+Author: j
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: asrch_ascli (>=1.0.0,<2.0.0)
+Requires-Dist: bs4 (>=0.0.2,<0.0.3)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: selenium (>=4.21.0,<5.0.0)
+Requires-Dist: toml (>=0.10.2,<0.11.0)
+Requires-Dist: typer[all] (>=0.12.3,<0.13.0)
+Description-Content-Type: text/x-rst
+
+=======
+ ASRCH
+=======
+
+|Coverage Report| |MIT License| |Gitmoji|
+
+Tested |Linux Mint|
+
+Authors
+=======
+
+-  [@certified_CLI_lover](https://bitbucket.org/asrch)
+
+Documentation
+=============
+
+- https://asrch.bitbucket.io/
+
+Features
+========
+
+-  Anonymous web browsing, crawling and scraping
+-  Grab any info from any site
+-  No proxy needed
+-  Highly undetected
+
+Installation
+============
+
+- For installation and usage examples please
+  refer to the documentation
+   
+
+
+.. |Coverage Report| image:: https://svgshare.com/i/15fy.svg
+.. |MIT License| image:: https://img.shields.io/badge/License-MIT-green.svg?style=plastic
+   :target: https://choosealicense.com/licenses/mit/
+.. |Gitmoji| image:: https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=plastic
+   :target: https://gitmoji.dev
+.. |Python| image:: https://img.shields.io/badge/python-3670A0?style=plastic&logo=python&logoColor=ffdd54
+   :target: https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54
+.. |Linux| image:: https://img.shields.io/badge/Linux-FCC624?style=plastic&logo=linux&logoColor=black
+   :target: https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black
+.. |Linux Mint| image:: https://img.shields.io/badge/Linux%20Mint-87CF3E?style=plastic&logo=Linux%20Mint&logoColor=white
+   :target: https://img.shields.io/badge/Linux%20Mint-87CF3E?style=flat-square&logo=Linux%20Mint&logoColor=white
+
+           
+

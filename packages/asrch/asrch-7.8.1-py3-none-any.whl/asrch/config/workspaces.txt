@@ -1,0 +1,92 @@
+
+--------------
+WORKSPACE pentest
+--------------
+name:pentest
+config:
+created:2024-06-28 22:00:08.080155
+--------------
+END WORKSPACE pentest
+--------------
+--------------
+WORKSPACE fun
+--------------
+name:fun
+config:
+created:2024-06-28 22:00:11.004466
+--------------
+END WORKSPACE fun
+--------------
+--------------
+WORKSPACE bot
+--------------
+name:bot
+config:
+created:2024-06-28 22:00:13.189013
+--------------
+END WORKSPACE bot
+--------------
+--------------
+WORKSPACE basic_stuff
+--------------
+name:basic_stuff
+config:
+created:2024-06-28 22:00:18.082329
+--------------
+END WORKSPACE basic_stuff
+--------------
+
+
+--------------
+WORKSPACE basic_stuff2
+--------------
+name:basic_stuff2
+config:
+created:2024-06-28 22:00:49.604326
+--------------
+END WORKSPACE basic_stuff2
+--------------
+
+
+            --------------
+            WORKSPACE pentest2
+            --------------
+            name:pentest2
+            config: 
+            created:2024-06-29 11:10:40.242482
+            --------------
+            END WORKSPACE pentest2
+            --------------
+
+
+            --------------
+            WORKSPACE newspace
+            --------------
+            name:newspace
+            config: 
+            created:2024-06-30 13:35:24.079359
+            --------------
+            END WORKSPACE newspace
+            --------------
+
+
+            --------------
+            WORKSPACE myspace
+            --------------
+            name:myspace
+            config: None 
+            created:2024-07-01 22:26:51.088110
+            --------------
+            END WORKSPACE myspace
+            --------------
+
+
+            --------------
+            WORKSPACE testing
+            --------------
+            name:testing
+            config: None 
+            created:2024-07-02 08:49:56.973238
+            --------------
+            END WORKSPACE testing
+            --------------

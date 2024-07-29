@@ -1,0 +1,48 @@
+####################################################################
+# Discrete config file                                             #
+# This config is for discrete webscraping. If the user wants to    #
+# remain private they should look into this config                 #
+####################################################################
+
+# Global settings
+
+[basic]
+url = "https://python.org"
+
+[privacy]
+proxy = "127.0.0.1"
+
+# Commands settings
+
+[commands]
+
+# Settings for the 'open' command
+[open]
+header = false
+pager = false
+download = false
+log = false
+nodriver = false
+parser = "html.parser"
+
+# Settings for the 'search' command
+[search]
+query = ""
+header = false
+log = false
+
+# Settings for the 'whois' command
+[whois]
+header = false
+
+# Settings for the 'find' command
+[find]
+element = ""
+header = false
+log = false
+locator = "tag_name"
+
+# Settings for the 'quizlet' command
+[quizlet]
+header = false
+pager = false
