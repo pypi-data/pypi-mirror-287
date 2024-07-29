@@ -1,0 +1,27 @@
+# joyful-finetune/pyproject.toml
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.setuptools.packages.find]
+where = ["src/"]
+include = ["joyful.labs"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/joyful/labs"]
+
+[project]
+name = "joyful-labs"
+version = "0.0.1"
+authors = [
+  { name="Joy the Scamper", email="joyful.20240721@gmail.com" }
+]
+description = "Experimental APIs from Joyful Labs"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license = {text = "MIT License"}

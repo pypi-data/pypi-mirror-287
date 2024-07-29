@@ -1,0 +1,10 @@
+Metadata-Version: 2.3
+Name: joyful-labs
+Version: 0.0.1
+Summary: Experimental APIs from Joyful Labs
+Author-email: Joy the Scamper <joyful.20240721@gmail.com>
+License: MIT License
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
