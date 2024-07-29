@@ -1,0 +1,2 @@
+from .FuncionesMultivariables import ackley, beale, booth, bunkin, crossintray, easom, eggholder, goldstein, himmelblau, holdertable, levi, matyas, mccormick, rosenbrock, rastrigin, schaffer2, schaffer_n4, shekel, sphere, styblinskitang, threehumpcamel
+from .FuncionesUnivariables import f1, f2, f3, f4
