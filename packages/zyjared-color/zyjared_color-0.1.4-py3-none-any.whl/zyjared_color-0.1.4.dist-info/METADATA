@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: zyjared-color
+Version: 0.1.4
+Summary: A simple package to convert strings to colored strings using ANSI escape codes
+Home-page: https://github.com/zyjared/kit-python
+Author: Jared Zhang
+Author-email: zyjared@outlook.com
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# zyjared-color
+
+## Reference
+
+- [wiki: ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
+
+## Installation
+
+```sh
+pip install zyjared-color
+```
+
+## Usage
+
+```python
+from zyjared_color import Color
+
+Color('Hello World!').red()
+
+Color('Hello World!').bold().italic().underline().fg_red()
+```
