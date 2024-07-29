@@ -1,0 +1,9 @@
+pytestmsfabric/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytestmsfabric/nbdownloader.py,sha256=yelIdEMsPz_238giXXNOhnzTZeG5ooLDsi4Xp0wbJaQ,1771
+pytestmsfabric/nbimport.py,sha256=ahINcoQ0oo_09TvBd8P53YOfw6yxo0jydsyaI5X8gVU,3846
+pytestmsfabric/plugin.py,sha256=QANRqqpFuQz8BLO8apJeC2Px3y12J9kSIbEUG3dzaMY,3354
+pytestmsfabric/upload.py,sha256=MpxLeOk8IJFrLJ-OEG6irO7phzqY6RMi7hrsUm_2XlM,885
+pytestmsfabric-0.1.1.dist-info/entry_points.txt,sha256=tr-5zgy3b7IIXQlpewwniapsi3nUNQxt7X5cliOBnXU,49
+pytestmsfabric-0.1.1.dist-info/METADATA,sha256=7M-BnBhhSKSoN7HTBpUzNmqBnUtrYMly_hN-lrBE4RE,1221
+pytestmsfabric-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+pytestmsfabric-0.1.1.dist-info/RECORD,,
