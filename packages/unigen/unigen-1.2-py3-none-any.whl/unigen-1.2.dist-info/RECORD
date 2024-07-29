@@ -1,0 +1,14 @@
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_unigen.py,sha256=ET_hKe2N5Vk22v-29adIr9lYTrlEfKHtErep4Dtf3C0,7856
+unigen/__init__.py,sha256=16YfSIMeVWCJ0hrLCgAZKRM65BG5Q1ekO9IcV0sI8HM,185
+unigen/audio_factory.py,sha256=GUkMjKcbJWlaF2wzRsYKjRyZgG8yu3q-I4VHc9nP88s,1550
+unigen/audio_manager.py,sha256=b2Nr3qbwbAE01zPzZi_tmzNiteJaLgJPh0GvR2JUZGQ,4068
+unigen/id3.py,sha256=b1VOvyYzlpRRNkl_ZpBXBVyy70tESLpF8O1Nr5w7sNk,7009
+unigen/mp4.py,sha256=Gs20eX7vEr-g06OPiqdAas1sF4Dhv3KVESk2YASd4Ws,4329
+unigen/utils.py,sha256=uM7mMxy-qx906Z39ncACKb-l5sCiO82Nemg6PTJnMpU,5520
+unigen/vorbis.py,sha256=ts74aFbo1yFWY6kitE0fxZLs4TDPUwjkjbOwWxlZJjs,8842
+unigen-1.2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+unigen-1.2.dist-info/METADATA,sha256=9Wmyn-hHHk9H8BnI7Vtliv7eFoi_9XBky-yzs3L31ds,268
+unigen-1.2.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+unigen-1.2.dist-info/top_level.txt,sha256=H9FNfAxa6T3JqHb619po7olPVzU7GMH02pF9bW2TFB8,13
+unigen-1.2.dist-info/RECORD,,
