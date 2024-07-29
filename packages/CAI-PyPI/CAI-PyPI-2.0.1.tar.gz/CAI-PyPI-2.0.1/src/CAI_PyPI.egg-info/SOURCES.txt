@@ -1,0 +1,17 @@
+LICENSE.txt
+README.rst
+setup.py
+src/CAI/CAI.py
+src/CAI/__init__.py
+src/CAI/_version.py
+src/CAI/cli.py
+src/CAI_PyPI.egg-info/PKG-INFO
+src/CAI_PyPI.egg-info/SOURCES.txt
+src/CAI_PyPI.egg-info/dependency_links.txt
+src/CAI_PyPI.egg-info/entry_points.txt
+src/CAI_PyPI.egg-info/requires.txt
+src/CAI_PyPI.egg-info/top_level.txt
+tests/test_cai.py
+tests/test_relative_adaptiveness.py
+tests/test_rscu.py
+tests/test_sharp.py

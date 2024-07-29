@@ -1,0 +1,133 @@
+Metadata-Version: 2.1
+Name: CAI-PyPI
+Version: 2.0.1
+Summary: Python implementation of codon adaptation index, updated for PyPI compatibility
+Home-page: https://github.com/Adibvafa/CodonAdaptationIndex
+Author: Adibvafa Fallahpour
+Author-email: Adibvafafallahpour@gmail.com
+License: MIT
+Project-URL: Bug Reports, https://github.com/Adibvafa/CodonAdaptationIndex/issues
+Project-URL: Source, https://github.com/Adibvafa/CodonAdaptationIndex
+Project-URL: Original Project, https://github.com/Benjamin-Lee/CodonAdaptationIndex
+Keywords: bioinformatics codon adaptation index genetics PyPI
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: scipy>=1.7.1
+Requires-Dist: biopython>=1.79
+Requires-Dist: click>=7
+
+CAI-PyPI: An updated version of the Codon Adaptation Index (CAI) package
+
+This package is based on the original CAI project by Benjamin Lee (https://github.com/Benjamin-Lee/CodonAdaptationIndex). It has been updated to resolve compatibility issues with PyPI and ensure the latest version is easily accessible via pip. While maintaining the core functionality of the original project, this version aims to provide a smoother installation process and better integration with PyPI.
+
+Original README:
+
+# Python Codon Adaptation Index (CAI-PyPI)
+
+![PyPI](https://img.shields.io/pypi/v/CAI-PyPI.svg)
+
+This is a fork of the original [Codon Adaptation Index](https://github.com/Benjamin-Lee/CodonAdaptationIndex) project by Benjamin Lee. It has been updated to resolve compatibility issues with PyPI and ensure the latest version is easily accessible via pip.
+
+## Original Project Information
+
+![DOI](http://joss.theoj.org/papers/8adf6bd9fd6391d5343d15ea0b6b6525/status.svg)
+![Docs](https://readthedocs.org/projects/cai/badge/?version=latest)
+![CodeFactor](https://www.codefactor.io/repository/github/benjamin-lee/codonadaptationindex/badge/master)
+
+An implementation of [Sharp and Li's 1987 formulation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC340524/pdf/nar00247-0410.pdf) of the [codon adaption index](https://en.wikipedia.org/wiki/Codon_Adaptation_Index).
+
+## Why This Fork?
+
+The original CAI package had some issues with PyPI compatibility, making it difficult for users to install via pip. This fork (CAI-PyPI) addresses these issues, providing a smoother installation process and better integration with PyPI. While maintaining the core functionality of the original project, CAI-PyPI ensures that users can easily access and use the latest version of the Codon Adaptation Index implementation.
+
+## Installation
+
+### Installing CAI-PyPI (Recommended)
+
+This forked version is available from PyPI and can be downloaded with the following command:
+
+```
+$ pip install CAI-PyPI
+```
+
+### Installing the Original CAI (For Reference)
+
+The original module is available from PyPI and can be downloaded with the following command:
+
+```
+$ pip install CAI
+```
+
+To install the latest development version of the original project:
+
+```
+$ pip install git+https://github.com/Benjamin-Lee/CodonAdaptationIndex.git
+```
+
+## Quickstart
+
+Finding the CAI of a sequence is easy:
+
+```python
+>>> from CAI import CAI
+>>> CAI("ATG...", reference=["ATGTTT...", "ATGCGC...",...])
+0.24948128951724224
+```
+
+Similarly, from the command line:
+
+```
+$ CAI -s sequence.fasta -r reference_sequences.fasta
+0.24948128951724224
+```
+
+Determining which sequences to use as the reference set is left to the user, though the [HEG-DB](http://genomes.urv.cat/HEG-DB/) is a great resource of highly expressed genes.
+
+## Contributing and Getting Support
+
+If you encounter any issues using CAI-PyPI, feel free to [create an issue](https://github.com/Adibvafa/CodonAdaptationIndex/issues).
+
+To contribute to the project, please [create a pull request](https://github.com/Adibvafa/CodonAdaptationIndex/pulls).
+
+## Citation
+
+If you use this software in your work, please cite the original paper:
+
+Lee, B. D. (2018). Python Implementation of Codon Adaptation Index. *Journal of Open Source Software, 3*(30), 905. [https://doi.org/10.21105/joss.00905](https://doi.org/10.21105/joss.00905)
+
+```bibtex
+@article{Lee2018,
+  doi = {10.21105/joss.00905},
+  url = {https://doi.org/10.21105/joss.00905},
+  year  = {2018},
+  month = {oct},
+  publisher = {The Open Journal},
+  volume = {3},
+  number = {30},
+  pages = {905},
+  author = {Benjamin D. Lee},
+  title = {Python Implementation of Codon Adaptation Index},
+  journal = {Journal of Open Source Software}
+}
+```
+
+## Contact
+
+For issues related to this fork (CAI-PyPI), please contact Adibvafa Fallahpour at [Adibvafafallahpour@gmail.com](mailto:Adibvafafallahpour@gmail.com).
+
+For matters related to the original project, Benjamin Lee is available at [benjamin_lee@college.harvard.edu](mailto:benjamin_lee@college.harvard.edu).
+
+## Reference
+```
+Sharp, P. M., & Li, W. H. (1987). The codon adaptation index--a measure of directional synonymous codon usage bias, and its potential applications. *Nucleic Acids Research*, 15(3), 1281–1295.
+```
