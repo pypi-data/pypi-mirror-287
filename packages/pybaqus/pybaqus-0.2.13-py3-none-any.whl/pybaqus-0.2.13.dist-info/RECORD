@@ -1,0 +1,12 @@
+pybaqus/__init__.py,sha256=FOBcFTFa7DUMm1CPzXRk9dn0TnScKjyUpx59P82nSXA,52
+pybaqus/elements.py,sha256=iVcrr8M9SeCk0E9w39K4-eGl4kk0Mn0VKLftM1gdnD4,20544
+pybaqus/faces.py,sha256=7Uc1noN4NhrWwjEYYUF25BHneLl-vwCFvurQ-q-MFXo,5047
+pybaqus/fil_result.py,sha256=V1QCjLLidYho1Pr5Rn7OWznEvde2L0Uxxf6kaim22fk,19902
+pybaqus/model.py,sha256=GmW5_JBsTeISX3gzbM3nEfNxJA8tZZXCfWww2EkiIOk,27836
+pybaqus/nodes.py,sha256=QgbanBdhQZNVT-0A_2uuCMSwbsumWanz8_psBJYJ2zU,2420
+pybaqus/reader.py,sha256=2AuUKY4UTGonnjkXQ1zN61l4t-33eRNI60ZIVtzThLU,1127
+pybaqus/step.py,sha256=9bXYn3zyKPd1WCJh3_Wue4AVqg538DtZOJzQ6cPwujM,1315
+pybaqus-0.2.13.dist-info/LICENSE,sha256=0nT7yKc_YyrmjYeclyYmFHMvCXeroCXoXW1Lo8g5d4U,1079
+pybaqus-0.2.13.dist-info/METADATA,sha256=nIanODdPlZpelt7CiFco_6PRC-doA6yasJjUqtPJCA4,3657
+pybaqus-0.2.13.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+pybaqus-0.2.13.dist-info/RECORD,,
