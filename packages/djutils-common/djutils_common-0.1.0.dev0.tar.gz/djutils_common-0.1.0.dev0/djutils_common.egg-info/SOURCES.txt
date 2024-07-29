@@ -1,0 +1,10 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+.github/workflows/pypi-release.yml
+djutils_common/__init__.py
+djutils_common.egg-info/PKG-INFO
+djutils_common.egg-info/SOURCES.txt
+djutils_common.egg-info/dependency_links.txt
+djutils_common.egg-info/top_level.txt
