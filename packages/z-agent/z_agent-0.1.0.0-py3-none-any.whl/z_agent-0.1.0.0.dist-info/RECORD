@@ -1,0 +1,9 @@
+z-agent/__init__.py,sha256=DVA-keHnPLm1fCE4i6QxUBBE9-NKdpxCw1D_bG32raI,40
+z-agent/cli.py,sha256=3MFTchkumfwTnttXQbroGbQlbb7-xSffUrr64EBc1Sk,1173
+z-agent/web_sockets.py,sha256=EIg1FtZHdoSyQkltFuWKCRAB1tGLROk3BgQ7ZcOZcDs,6071
+z_agent-0.1.0.0.dist-info/LICENSE,sha256=F7iH8Fn0FUYSU7O0T2gZPI3WSssAve-YHTjvkvkbQmU,1122
+z_agent-0.1.0.0.dist-info/METADATA,sha256=ORFU-osdkKdD7OFZ4W0ekLDhiqgwzDyDlbwglzuQqXU,386
+z_agent-0.1.0.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+z_agent-0.1.0.0.dist-info/entry_points.txt,sha256=Knhc8BO5BY75yGw5AkCEZGo3FF_GO36A_kP8XdLYB0w,45
+z_agent-0.1.0.0.dist-info/top_level.txt,sha256=3TFd1f49ZzLDAnevXC4IUpdXQfrBB8HYJUTYEf3v_EE,8
+z_agent-0.1.0.0.dist-info/RECORD,,
