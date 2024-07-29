@@ -1,0 +1,93 @@
+Metadata-Version: 2.1
+Name: GitToXApi
+Version: 0.2.1
+Summary: Enable creation and edition of xapi file from git source
+Home-page: https://github.com/git4school/gitToXApi
+Download-URL: https://github.com/git4school/gitToXApi/archive/refs/tags/v_0.2.tar.gz
+Author: Git4School
+Author-email: 
+License: MIT
+Keywords: XApi
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENCE.txt
+Requires-Dist: tincan
+Requires-Dist: GitPython
+
+# GitToXApi
+
+Library used to turn git change log data to xapi format
+
+## Format
+
+The file consists of a list of xApi statements with each statement that represent a commit of the master branch.
+To store git differential on a statement we use extensions in object.definition
+
+```json
+"git": [
+            {
+              "objectType": "Differential",
+              "file": "test.txt",
+              "parts": [
+                {
+                  "a_start_line": 0,
+                  "a_interval": 2,
+                  "b_start_line": 0,
+                  "b_interval": 2,
+                  "content": [
+                    " Hello",
+                    "-wold",
+                    "+World !",
+                  ]
+                }
+              ]
+            }
+          ]
+```
+
+## Example
+
+### Conversion
+
+```py
+import GitToXApi.utils as utils
+from tincan import Statement
+import git
+import json
+
+repo = git.Repo("path/to/example_repo")
+stmts: list[Statement] = utils.generate_xapi(repo)
+
+# With custom git diff arguments 
+stmts: list[Statement] = utils.generate_xapi(repo, {"unified": 1000})
+
+
+```
+
+### Serialization
+
+```py
+import json
+with open("dump.json", "w") as f:
+    f.write(utils.serialize_statements(stmts))
+
+    # With custom serializing params
+    f.write(utils.serialize_statements(stmts, indent=2))
+```
+
+### Deserialization
+
+```py
+import GitToXApi.utils as utils
+
+stmts = None
+with open("dump.json", "r") as f:
+    stmts = utils.deserialize_statements(f)
+```

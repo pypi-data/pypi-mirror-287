@@ -1,0 +1,12 @@
+LICENCE.txt
+README.md
+setup.cfg
+setup.py
+GitToXApi/__init__.py
+GitToXApi/differential.py
+GitToXApi/utils.py
+GitToXApi.egg-info/PKG-INFO
+GitToXApi.egg-info/SOURCES.txt
+GitToXApi.egg-info/dependency_links.txt
+GitToXApi.egg-info/requires.txt
+GitToXApi.egg-info/top_level.txt
