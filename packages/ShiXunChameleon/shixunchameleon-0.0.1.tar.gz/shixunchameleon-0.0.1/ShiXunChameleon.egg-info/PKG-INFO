@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: ShiXunChameleon
+Version: 0.0.1
+Summary: Chameleon hash in post quantum cryptography.
+Author-email: ShiXun <tomcruise890604@gmail.com>
+Project-URL: Homepage, https://github.com/ShiXun0604/ShiXunChameleon
+Project-URL: Issues, https://github.com/ShiXun0604/ShiXunChameleon/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+For test
