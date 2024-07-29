@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: pwshc
+Version: 0.1.2
+Summary: compile any powershell .ps1 script to a .cmd file
+Home-page: https://github.com/Koswu/pwshc
+Author: koswu
+Author-email: koswu@outlook.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: chardet (>=5.2.0,<6.0.0)
+Requires-Dist: jinja2 (>=3.1.4,<4.0.0)
+Requires-Dist: typer (>=0.12.3,<0.13.0)
+Description-Content-Type: text/markdown
+
+# PowerShell Compiler
+
+[![PyPI](https://img.shields.io/pypi/v/pwshc?label=pypi%20package)](https://pypi.org/project/pwshc/)
+
+Compile any `.ps1` file into a `.cmd` file so that you can execute it with a double-click in Windows.
+
+## Usage
+
+Install this package by pipx:
+
+```powershell
+pipx install pwshc
+```
+
+
+Compile your `.ps1` file:
+
+```powershell
+pwshc hello_world.ps1 -o hello_world.cmd 
+# -o is optional
+```
+
+
