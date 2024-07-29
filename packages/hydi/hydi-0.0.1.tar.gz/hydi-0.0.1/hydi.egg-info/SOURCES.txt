@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+HyDi/src/hydi/__init__.py
+HyDi/src/hydi/hydi.py
+hydi.egg-info/PKG-INFO
+hydi.egg-info/SOURCES.txt
+hydi.egg-info/dependency_links.txt
+hydi.egg-info/top_level.txt
