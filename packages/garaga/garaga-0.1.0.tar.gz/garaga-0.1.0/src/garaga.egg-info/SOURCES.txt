@@ -1,0 +1,7 @@
+LICENSE
+README.md
+pyproject.toml
+src/garaga.egg-info/PKG-INFO
+src/garaga.egg-info/SOURCES.txt
+src/garaga.egg-info/dependency_links.txt
+src/garaga.egg-info/top_level.txt

@@ -1,0 +1,12 @@
+[project]
+name = "garaga"
+version = "0.1.0"
+
+
+[tool.isort]
+profile = "black"
+
+[tool.autoflake]
+in_place = true
+remove_unused_variables = true
+remove_all_unused_imports = true
