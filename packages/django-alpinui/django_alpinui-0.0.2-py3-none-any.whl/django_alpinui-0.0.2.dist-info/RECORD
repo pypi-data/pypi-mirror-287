@@ -1,0 +1,13 @@
+django_alpinui/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_alpinui/apps.py,sha256=Z9NR9UQlxWw61uOZjgDZQuayho1Em8X4LRbpOMeQaAM,417
+django_alpinui/templates/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_alpinui/templates/adivider.py,sha256=JK1bqUpiuqM1_ARfVUxKSpV6wq7tgamxjSgOENRfh5o,2328
+django_alpinui/templates/alpinui.py,sha256=jrU2b9889uwyYxRRnmvMsDvyxvtd8FLx-eC7qkakmJg,791
+django_alpinui/templates/alpinui_dependencies.py,sha256=MhVesjYLZG29f94wbdZIeEshgwx7o_h3ARiqkicMmmc,2646
+django_alpinui/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_alpinui/templatetags/alpinui.py,sha256=uJRc2XXzg2Fop5SMrQ8eq986sO7sKQ8fVSgPMd-w3w4,907
+django_alpinui-0.0.2.dist-info/LICENSE,sha256=E9YGMoXeHP_DsExGB4Mr0RiabSsjwHJP-9CNfB7qqBE,1068
+django_alpinui-0.0.2.dist-info/METADATA,sha256=oP56jv2NfjXPWOUsHLOLgpVIRwvP2iWKREdh26RbG9o,1099
+django_alpinui-0.0.2.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+django_alpinui-0.0.2.dist-info/top_level.txt,sha256=g1H8SajHMyMLBrTymdV42TSzS5gMgr4BFoHpWS6ZBfk,15
+django_alpinui-0.0.2.dist-info/RECORD,,
