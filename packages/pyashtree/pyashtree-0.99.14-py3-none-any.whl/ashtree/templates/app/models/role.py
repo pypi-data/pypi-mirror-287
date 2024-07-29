@@ -1,0 +1,41 @@
+from mongey.models import TimestampedModel
+from mongey.models.fields import StringField, ListField
+
+
+SUPERVISOR_ROLE_NAME = "supervisor"
+DEFAULT_ROLE_NAME = "user"
+
+SUPERVISOR_ROLE_AUD = [
+    "users:read:me",
+    "users:read:others"
+]
+
+DEFAULT_ROLE_AUD = [
+    "users:read:me",
+    "users:read:others"
+]
+
+
+class Role(TimestampedModel):
+
+    COLLECTION = "roles"
+    KEY_FIELD = "name"
+
+    name = StringField(required=True, unique=True)
+    aud: ListField[str] = ListField(required=True, default=list)
+
+    @classmethod
+    async def supervisor(cls) -> "Role":
+        role = await Role.get(SUPERVISOR_ROLE_NAME)
+        if role is None:
+            role = Role({"name": SUPERVISOR_ROLE_NAME, "aud": SUPERVISOR_ROLE_AUD})
+            await role.save()
+        return role
+
+    @classmethod
+    async def default(cls) -> "Role":
+        role = await Role.get(DEFAULT_ROLE_NAME)
+        if role is None:
+            role = Role({"name": DEFAULT_ROLE_NAME, "aud": DEFAULT_ROLE_AUD})
+            await role.save()
+        return role
