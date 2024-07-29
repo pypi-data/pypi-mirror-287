@@ -1,0 +1,5 @@
+setup.py
+unsendme.egg-info/PKG-INFO
+unsendme.egg-info/SOURCES.txt
+unsendme.egg-info/dependency_links.txt
+unsendme.egg-info/top_level.txt
