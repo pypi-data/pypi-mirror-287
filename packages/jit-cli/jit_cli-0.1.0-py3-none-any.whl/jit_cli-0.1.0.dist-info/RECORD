@@ -1,0 +1,12 @@
+jit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jit/cli.py,sha256=7LgdGCb320AjtaD-YPmsB6HVQCgfSa2z7bUtqYj1Xdc,5818
+jit/constants.py,sha256=rwsSQXVR2sU5E-3ZH0joh2u0EeooZ12SAPvtub9shL0,242
+jit/llm.py,sha256=UN5csd_CqDjb1-_fpRFDDlQN7nC9EM952UqianexrME,1457
+jit/prompts.py,sha256=hz0vrMESiSLCafU3_FD_Qj1o4F3EotkpYtHX99PVqxo,1305
+jit/utils.py,sha256=R-nkMlt7lLqJZwxd1-06fChQ5YfCZtuZNuD61Ti7vbk,9904
+jit_cli-0.1.0.dist-info/LICENSE,sha256=MHeCJOemGaknmJW4lJDmDWmlS3uqYwmFF0_Ywitaxtg,1086
+jit_cli-0.1.0.dist-info/METADATA,sha256=cVRXnutPeYjvkI6bwGL19gGvpxfjhhQbyNhJOyZuBs8,3036
+jit_cli-0.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+jit_cli-0.1.0.dist-info/entry_points.txt,sha256=euwkHe6ANRooL9bR4cZR8-RmEW599e-dH7pXtJ_CkLQ,36
+jit_cli-0.1.0.dist-info/top_level.txt,sha256=M87J2ZLiBQxo1rxVQ8wVnB3khwZggfoz0KkD5IHorGg,4
+jit_cli-0.1.0.dist-info/RECORD,,
