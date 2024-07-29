@@ -1,0 +1,21 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}">{% endblock %}
+
+{% block content %}
+
+<div id="content-mainh">
+
+    <form method="post" action="{% url 'asu_ods_import_containers_page'  command_name="save_raw_data_on_waste_site" %}">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        <tr><td><input type="submit" value="Импортировать сырые данные в БД."></td><td></td></tr>
+        </table>
+    </form>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

@@ -1,0 +1,189 @@
+[
+  {
+    "area": 11,
+    "in_yard": 1,
+    "no_calc": 0,
+    "root_id": 1988235,
+    "end_date": "3000-01-01",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            2196.556285,
+            15910.474553
+          ],
+          [
+            2194.897972,
+            15908.816241
+          ],
+          [
+            2193.23966,
+            15910.474553
+          ],
+          [
+            2194.897972,
+            15912.132866
+          ],
+          [
+            2196.556285,
+            15910.474553
+          ]
+        ]
+      ]
+    },
+    "object_id": 1988235,
+    "start_date": "2018-12-15",
+    "address_list": [
+      {
+        "unad": {
+          "bti_object": "1"
+        },
+        "unom": {
+          "bti_object": "10918"
+        }
+      }
+    ],
+    "coating_type_id": {
+      "coating_type": "asphalt_concrete"
+    },
+    "coating_group_id": {
+      "coating_group": "advanced"
+    },
+    "container_type_id": {
+      "container_type": "container_area"
+    },
+    "ogh_object_type_id": {
+      "ogh_object_type": "container"
+    },
+    "is_diff_height_mark": 0,
+    "is_separate_garbage_collection": 0
+  },
+  {
+    "area": 10.57,
+    "parent": [
+      {
+        "root_id": 179079,
+        "end_date": "3000-01-01",
+        "object_id": 766915324,
+        "start_date": "2021-12-20",
+        "ogh_object_type_id": {
+          "ogh_object_type": "yard"
+        }
+      }
+    ],
+    "in_yard": 1,
+    "no_calc": 0,
+    "root_id": 766916472,
+    "end_date": "3000-01-01",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -6272.560303,
+            -1581.027581
+          ],
+          [
+            -6271.632281,
+            -1579.267219
+          ],
+          [
+            -6276.329529,
+            -1576.790939
+          ],
+          [
+            -6277.257551,
+            -1578.551302
+          ],
+          [
+            -6272.560303,
+            -1581.027581
+          ]
+        ]
+      ]
+    },
+    "object_id": 766916472,
+    "start_date": "2021-12-20",
+    "address_list": [
+      {
+        "unad": {
+          "bti_object": "1"
+        },
+        "unom": {
+          "bti_object": "410182"
+        }
+      }
+    ],
+    "coating_type_id": {
+      "coating_type": "asphalt_concrete"
+    },
+    "coating_group_id": {
+      "coating_group": "advanced"
+    },
+    "container_type_id": {
+      "container_type": "container_area"
+    },
+    "ogh_object_type_id": {
+      "ogh_object_type": "container"
+    },
+    "is_diff_height_mark": 0,
+    "is_separate_garbage_collection": 0
+  },
+  {
+    "area": 239,
+    "in_yard": 0,
+    "no_calc": 0,
+    "root_id": 766578196,
+    "end_date": "3000-01-01",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -11836.862426,
+            -22837.437756
+          ],
+          [
+            -11807.037636,
+            -22851.753655
+          ],
+          [
+            -11838.055417,
+            -22852.946646
+          ],
+          [
+            -11836.862426,
+            -22837.437756
+          ]
+        ]
+      ]
+    },
+    "object_id": 766578196,
+    "start_date": "2021-12-14",
+    "address_list": [
+      {
+        "unad": {
+          "bti_object": "1"
+        },
+        "unom": {
+          "bti_object": "9728"
+        }
+      }
+    ],
+    "coating_type_id": {
+      "coating_type": "asphalt_concrete"
+    },
+    "coating_group_id": {
+      "coating_group": "advanced"
+    },
+    "container_type_id": {
+      "container_type": "bunker_area"
+    },
+    "ogh_object_type_id": {
+      "ogh_object_type": "container"
+    },
+    "is_diff_height_mark": 0,
+    "is_separate_garbage_collection": 0
+  }
+]

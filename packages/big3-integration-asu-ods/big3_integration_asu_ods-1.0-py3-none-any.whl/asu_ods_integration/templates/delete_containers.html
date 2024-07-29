@@ -1,0 +1,21 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block content %}
+    <h1>Удаление контейнеров <span style="font-weight: bold">(Только для тестирования)</span></h1>
+    <br>
+    <div>Нажимая на кнопку, вы удаляете все импортированные контейнеры  <span style="font-weight: bolder">физически</span>, </div>
+    <div>без возможности восстановления.</div>
+    <div>Использовать данный функционал допускается только с целью тестирования, на тестовых серверах.</div>
+    <br>
+<div id="content-mainh">
+    <form method="post" action="{% url 'asu_ods_delete_containers_start' %}">
+        {% csrf_token %}
+        <input type="submit" value="Подтвердить удаление уже импортированных контейнеров">
+    </form>
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
