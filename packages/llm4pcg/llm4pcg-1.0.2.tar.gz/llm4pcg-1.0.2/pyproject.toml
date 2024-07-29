@@ -1,0 +1,34 @@
+[project]
+name = "llm4pcg"
+version = "1.0.2"
+description = "LLM4PCG is a python package containing required and utility functions of ChatGPT4PCG competition, but modified to support local LLMs that compatible with OpenAI API interface."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+keywords = ["chatgpt", "chatgpt4pcg", "competition"]
+authors = [
+    { name = "ChatGPT4PCG Organizing Team", email = "chatgpt4pcg@gmail.com" },
+    { name = "Pittawat Taveekitworachai", email = "pittawat.pete@gmail.com" },
+]
+maintainers = [
+    { name = "Pittawat Taveekitworachai", email = "pittawat.pete@gmail.com" }
+]
+classifiers = [# Optional
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "openai"
+]
+[project.urls]
+"Homepage" = "https://chatgpt4pcg.github.io/"
+"Bug Reports" = "https://github.com/Pittawat2542/llm4pcg-python/issues"
+"Source" = "https://github.com/Pittawat2542/llm4pcg-python"
+[build-system]
+requires = ["setuptools>=69.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
