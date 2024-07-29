@@ -1,0 +1,9 @@
+msteamsapi/__init__.py,sha256=XRwGbE4nqEbhT0_3j7MEN-eqg1JAHkmqrE-Rd_6wy_o,274
+msteamsapi/adaptive_card.py,sha256=rPGqZwiO6uKURTMLGHJtSwfr6EK_uFUOfq4LgSqkNLQ,4960
+msteamsapi/container.py,sha256=GDKJm5lm6ncAFxG8L5ffwIQYny351_txmHY_mk1qFoo,2435
+msteamsapi/enums.py,sha256=5ogC3kTJ7ZlOaZKgffHBfJyvgEMBxQ76Ec2__HG7F7E,826
+msteamsapi/webhook.py,sha256=rG2G94Ybw6IdkysPrRloff1jmkI_IXhp8cUe_Sg4CQw,1217
+msteamsapi-0.9.3.dist-info/LICENSE,sha256=EGZYQCN2bkKH5S5Tovuol89vlrDBomjUzrEKtrpp-v4,1080
+msteamsapi-0.9.3.dist-info/METADATA,sha256=W5rvOc_UTdSXkcuvgVHlqZjAnucjdhv46mNweNxgeq4,4300
+msteamsapi-0.9.3.dist-info/WHEEL,sha256=IrRNNNJ-uuL1ggO5qMvT1GGhQVdQU54d6ZpYqEZfEWo,92
+msteamsapi-0.9.3.dist-info/RECORD,,
