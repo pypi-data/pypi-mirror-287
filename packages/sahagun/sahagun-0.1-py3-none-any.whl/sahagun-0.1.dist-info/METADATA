@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: sahagun
+Version: 0.1
+Summary: Validador de atributos
+Home-page: https://tu_url.com
+Author: Daniel Vanegas
+Author-email: dvanegasf@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# sahagun
+
+DescripciÃ³n de tu paquete.
+
+## InstalaciÃ³n
+
+Puedes instalar el paquete usando pip:
+
+```sh
+pip install sahagun
