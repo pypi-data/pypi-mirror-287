@@ -1,0 +1,8 @@
+appdirs==1.4.3
+click==7.0
+pytoml==0.1.13
+
+[tests]
+pytest
+pytest-xvfb
+pytest-qt
