@@ -1,0 +1,9 @@
+stacklog/__init__.py,sha256=3KlbXgbpDyLnDPm3TqV8Ea24Jb_O3LI8MSUFDwz3hVY,11142
+stacklog/_time_formatters.py,sha256=ax9NUX0_Y9lf4_kziUCeLNTmjFuHq8gRnjYtgXmVBiI,795
+stacklog/compat.py,sha256=4uX3bRybpUVbkFzOVBg9Bg1ZGBQrVZ0IaR0gesBLZgo,1788
+stacklog-2.0.0.dist-info/AUTHORS.rst,sha256=Of1rs1gn-1CbNTCzPaXe1lRLh-y8800_gC3OQ-20x78,158
+stacklog-2.0.0.dist-info/LICENSE,sha256=8iNfKPOdMc3spQMuyf6njPjmklBUfVisQv-kvpeosXA,1070
+stacklog-2.0.0.dist-info/METADATA,sha256=ZSOyPfW1R3F1U3yEQuSIDkQ-pM4fodsBU5J3sUf1xk0,7544
+stacklog-2.0.0.dist-info/WHEEL,sha256=DZajD4pwLWue70CAfc7YaxT1wLUciNBvN_TTcvXpltE,110
+stacklog-2.0.0.dist-info/top_level.txt,sha256=UCkZdVhyNElfpHlNp9lGD2qKXAxdAU-QBIq-jGAVkVs,9
+stacklog-2.0.0.dist-info/RECORD,,
