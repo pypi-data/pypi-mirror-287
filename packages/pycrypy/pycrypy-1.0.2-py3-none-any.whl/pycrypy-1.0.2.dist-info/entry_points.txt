@@ -1,0 +1,2 @@
+[console_scripts]
+pycrypy = pycrypy.main:main
