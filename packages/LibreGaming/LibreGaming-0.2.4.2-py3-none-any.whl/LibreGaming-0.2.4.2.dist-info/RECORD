@@ -1,0 +1,17 @@
+LibreGaming/LibreGaming.py,sha256=_XN4T-oQmR4BYRBxltGD0mkzPZRWRy4rinKSx9VERTY,8469
+LibreGaming/LibreGamingQt.py,sha256=CQln1nWjQvS20sPlcg5x7P4AunEiND4BQEHuTGPQEik,10630
+LibreGaming/__init__.py,sha256=FQwliDJhUMaJc9RiouYz25FCdFC7iFSX-IlNHNXh7Ww,60
+LibreGaming/__main__.py,sha256=A_TUCH4MJf2ZNfuWNdLcXvY_qxFojOtWM7cMLXipUWE,3774
+LibreGaming/distro_pkgs/Arch.py,sha256=ENXRuH97Ary2AzkFGncVPglSN4RS_9XtrEvPMHZCNeg,3353
+LibreGaming/distro_pkgs/Common_Pkgs.py,sha256=CM_sHZ6UGoHmJtp17M_o8UgExErHcMW4aZm179C0K-4,1503
+LibreGaming/distro_pkgs/Fedora.py,sha256=Mo8Z5dnb8smIHqjrRo0dvzEvoXxOVPpz6rV5NvEKMt8,7778
+LibreGaming/distro_pkgs/OpenSUSE.py,sha256=IguGnVK0OwJiak1jYO84cfXrPINw0iYI5J7uybnRmd0,577
+LibreGaming/distro_pkgs/Ubuntu.py,sha256=l4oUJPdOsy_kLFNLzh2_C125g5Vfh3Km7NZP_ZXmi5I,2182
+test/__init__.py,sha256=FQwliDJhUMaJc9RiouYz25FCdFC7iFSX-IlNHNXh7Ww,60
+test/tests_libregaming.py,sha256=Nmep3Rs8rh3Vk_tDge8nLakp5ZkTOVz-EECBzRY_8A0,772
+LibreGaming-0.2.4.2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+LibreGaming-0.2.4.2.dist-info/METADATA,sha256=BIDOX0Pe3Q6aiToe5_EgCcRzV8cuH16FYgqDpAdh738,7903
+LibreGaming-0.2.4.2.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+LibreGaming-0.2.4.2.dist-info/entry_points.txt,sha256=pbBi12hoYXOKSXInmi_Mw1bTuYP4kd42Dw2HpYrRRFc,80
+LibreGaming-0.2.4.2.dist-info/top_level.txt,sha256=6TIPu4tige4eE4yq-JWXnP6AUu54hf_-heDkOHiKFSw,17
+LibreGaming-0.2.4.2.dist-info/RECORD,,
