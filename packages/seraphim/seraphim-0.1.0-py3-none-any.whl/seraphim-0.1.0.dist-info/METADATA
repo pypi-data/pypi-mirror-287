@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: seraphim
+Version: 0.1.0
+Summary: Simple REST framework
+License: LICENSE
+Author: kaliv0
+Author-email: kaloyan.ivanov88@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: jinja2 (>=3.1.4,<4.0.0)
+Requires-Dist: parse (>=1.20.2,<2.0.0)
+Requires-Dist: webob (>=1.8.7,<2.0.0)
+Requires-Dist: whitenoise (>=6.7.0,<7.0.0)
+Description-Content-Type: text/markdown
+
+<p align="center">
+    <img src="https://github.com/kaliv0/seraphim/blob/main/seraphim.jpg?raw=True">
+</p>
+
+---
+
+# Seraphim
+simple REST framework
+
+[![tests](https://github.com/kaliv0/seraphim/actions/workflows/ci.yml/badge.svg)](https://github.com/kaliv0/seraphim/actions/workflows/ci.yml)
+[![Python 3.x](https://img.shields.io/pypi/pyversions/seraphim.svg?logo=python&logoColor=white)](https://pypi.org/project/seraphim/)
+![PyPI](https://img.shields.io/pypi/v/seraphim.svg)
+[![License](https://img.shields.io/badge/license-GPL%203.0-blue.svg)](https://github.com/kaliv0/seraphim/blob/main/LICENSE)
+

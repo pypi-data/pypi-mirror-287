@@ -1,0 +1,9 @@
+seraphim/__init__.py,sha256=xta2xtJ76H5UQ5bDajgHf6F-i1tTwACxDQqsXPDZTXY,290
+seraphim/api.py,sha256=iLYaeg_EIIWbpm92EF9XtnRz_jZ8Tlhf1OyR7pY5Jcg,4444
+seraphim/middleware.py,sha256=KbjMlebrGtp1oEpAB8Bsr8xqfr2zfmXkLEjT4g0DAZY,682
+seraphim/orm.py,sha256=sk4w0Ws1cTkp4PTF2dKOu8UEZ1-ZZ-MSAeafoqd8S3Q,2747
+seraphim/response.py,sha256=3U2cGm7yMM65UpPWPC3ZMlz82IpPyEJ3YGCBYoSjF78,980
+seraphim-0.1.0.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+seraphim-0.1.0.dist-info/METADATA,sha256=fozjBS3-GY-sYbh_k-I4qKkRbXNr3VCX7ErrWccfXw4,1082
+seraphim-0.1.0.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+seraphim-0.1.0.dist-info/RECORD,,
