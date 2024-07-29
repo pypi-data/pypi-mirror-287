@@ -1,0 +1,14 @@
+maxplotlib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+maxplotlib/cli.py,sha256=jKH62AhS2HBW_ISple_13ljO67147toZMsJ1oR3aWDY,1211
+maxplotlib/plot.py,sha256=WIFUfX6cDnzYJ8aDgEsRXj4JmMPScdjPBnhhD7fkCS0,10022
+maxplotlib/run.py,sha256=1RNXSOPjOkOUreEfhFuIb-MBCtbUILwmrRkY16b7ncY,5967
+maxplotlib/llm/__init__.py,sha256=heypmEiwJ1acp18h95OMBwjSMn9GhbuhFleg12pkdLE,136
+maxplotlib/llm/generation.py,sha256=pOcPbx5cJMCJtiwdkSU6a5yQicfp93Cj-6sHY3jOuXI,9350
+server/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+server/server.py,sha256=hy3-E51-A87C6_aF3XVkOMVpCzf-zCeCdhmEcn3KNS4,835
+maxplotlib-0.1.6.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+maxplotlib-0.1.6.dist-info/METADATA,sha256=nJu_xGcr19E4uLPJRI_GZkLmgaLwVQ5TY8zGZCbtsDc,2866
+maxplotlib-0.1.6.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+maxplotlib-0.1.6.dist-info/entry_points.txt,sha256=loDEo6VQR7pQ0uMWkBuSHJrSNXgLeR_tB5d8aKaTNL0,51
+maxplotlib-0.1.6.dist-info/top_level.txt,sha256=_iswtW1hwdOenkjjNw4x5weElV_DXBQGk15sh0l52Lk,18
+maxplotlib-0.1.6.dist-info/RECORD,,
