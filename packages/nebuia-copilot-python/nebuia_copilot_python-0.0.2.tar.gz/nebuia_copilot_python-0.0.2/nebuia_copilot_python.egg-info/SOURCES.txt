@@ -1,0 +1,7 @@
+README.md
+setup.py
+nebuia_copilot_python.egg-info/PKG-INFO
+nebuia_copilot_python.egg-info/SOURCES.txt
+nebuia_copilot_python.egg-info/dependency_links.txt
+nebuia_copilot_python.egg-info/requires.txt
+nebuia_copilot_python.egg-info/top_level.txt
