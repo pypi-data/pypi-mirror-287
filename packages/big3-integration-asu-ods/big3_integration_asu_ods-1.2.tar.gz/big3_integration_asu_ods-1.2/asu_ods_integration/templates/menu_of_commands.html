@@ -1,0 +1,26 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block content %}
+
+<div id="content-mainh">
+    <table>
+        <th><caption><h1 style="font-size: 2em">Доступные команды</h1></caption></th>
+    <tr>
+        <td><a href="{% url "asu_ods_import_containers_page" command_name="asu_ods_import_containers" %}" style="font-size: 1.2em">Страница импорта контейнеров</a></td>
+    </tr>
+    <tr>
+        <td><a href="{% url "asu_ods_import_containers_page" command_name="save_raw_data_on_waste_site" %}" style="font-size: 1.2em">Страница импорта сырых данных о контейнерах</a></td>
+    </tr>
+    <tr>
+       <td><a href="{% url 'asu_ods_delete_containers_page' %}" style="font-size: 1.2em">Удаление импортированных контейнеров</a></td>
+    </tr>
+    <tr>
+       <td><a href="{% url 'asu_ods_import_contracts_page' %}" style="font-size: 1.2em">Импорт контрактов</a></td>
+    </tr>
+</table>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
