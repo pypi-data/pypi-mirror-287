@@ -1,0 +1,9 @@
+pwshc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pwshc/__main__.py,sha256=nVJPmomtvEGZbNJVhbxzmKd3TvT7CH2faObYp-01xc0,88
+pwshc/_cmd.py,sha256=6rqRY3Xguj26_Xo6BUc-Ih1WHeAdyPrxEtPKabA4KmQ,614
+pwshc/_compile.py,sha256=uQhCQ-ijKXUy07LosXUc1U9-OHqrEvBAlwawepOi6T0,1060
+pwshc/templates/out.cmd.jinja,sha256=Klom4z754Jkrh1Ekc6_9dWIVN-JZBkgzUsV7s9M_5RI,627
+pwshc-0.1.3.dist-info/entry_points.txt,sha256=ajo5lP0eAcDKJ4YEHac0YeSr0bk9JavSHvhIWJ-qSr8,40
+pwshc-0.1.3.dist-info/METADATA,sha256=7fJU1GBBjY5tQt3aSUUMBaFr3s3tCubKJQvESHSYwn4,1000
+pwshc-0.1.3.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+pwshc-0.1.3.dist-info/RECORD,,
