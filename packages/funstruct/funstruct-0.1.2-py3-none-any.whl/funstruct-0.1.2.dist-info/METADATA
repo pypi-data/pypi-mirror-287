@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: funstruct
+Version: 0.1.2
+Summary: fun & functional structures
+Home-page: https://github.com/veyga/funstruct
+License: MIT
+Keywords: functional,immutable,fp,data structures,cons
+Author: Andrew Stefanich
+Author-email: andrewstefanich@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: pytest-parametrization (>=2022.2.1,<2023.0.0)
+Requires-Dist: returns (>=0.23.0,<0.24.0)
+Project-URL: Repository, https://github.com/veyga/funstruct
+Description-Content-Type: text/markdown
+
+# funstruct
+
+Some of my fav lil data structures.
+
+These are not meant to be highly performant.
+
+They are useful for smaller datasets and for personal scripts.
+
+Like all functional stuctures, they play very well with recursive algos.
+
