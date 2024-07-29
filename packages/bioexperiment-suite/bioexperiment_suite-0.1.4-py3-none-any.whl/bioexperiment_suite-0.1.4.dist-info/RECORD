@@ -1,0 +1,17 @@
+bioexperiment_suite/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bioexperiment_suite/device_interfaces.json,sha256=YLpJvGzBp9vgqKs5nGexhScBf_uc5_xGPFtgDfG8bLQ,2714
+bioexperiment_suite/experiment/__init__.py,sha256=GkmjZzD8i32qiY3rYsEq8B9f1EC5VLq0wGp8ywIHij8,64
+bioexperiment_suite/experiment/experiment.py,sha256=meNPkkg1CLFgeIZqbU33leg6F8wYYZTmxx4spcnWfbk,9440
+bioexperiment_suite/interfaces/__init__.py,sha256=Hq-x5C2hbwslzttMLvvrC4ByXqmbxBDz9rgSjhNDF_w,186
+bioexperiment_suite/interfaces/pump.py,sha256=wXCGPwp-30LCmyhtj9CmP8nsERNKikuJ47R79JpG4_o,5077
+bioexperiment_suite/interfaces/serial_connection.py,sha256=yonj8xPj4WaOIHlOoRGMzQhJELzb4hXrjfFWlLnek_4,4339
+bioexperiment_suite/interfaces/spectrophotometer.py,sha256=Jt-FDbMEh9hI4t65_dganZ0k9B9AS1TBIh_u3S6GAtc,3023
+bioexperiment_suite/loader.py,sha256=xQbLrnQZ3tspcfLbi9gDpuLk9P4tATxtCH_e4aNBMA4,456
+bioexperiment_suite/tools/__init__.py,sha256=T7OPr8z8hoekqpc8Mt9bYOmnFjJ535R3vud5rsOoWwQ,83
+bioexperiment_suite/tools/devices.py,sha256=NOzPYoFFLUpZ3Sfjo2eqh5duMAn64Ulpw7h92FlE6AI,2117
+bioexperiment_suite/tools/serial_port.py,sha256=HxBnY_88oEbg2l89vOqglWHfLtYQwBDzmTBsfucnhRI,1259
+bioexperiment_suite-0.1.4.dist-info/entry_points.txt,sha256=2M6C4ghwBHET7-bMgJALUdOSXNr3bGciWqY8v8CvCYM,41
+bioexperiment_suite-0.1.4.dist-info/LICENSE,sha256=1qegQgn_0ig8GqiF1WWO1Fe842cAHEF2dP_TW3X8NB8,1087
+bioexperiment_suite-0.1.4.dist-info/METADATA,sha256=cCqN8P-m4hAPw_GQ7K9C9UBUZTXwZog4VJeAYSpRgdA,2253
+bioexperiment_suite-0.1.4.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+bioexperiment_suite-0.1.4.dist-info/RECORD,,
