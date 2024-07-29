@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: slark
+Version: 0.1.3
+Summary: # SLARK Simple LARK(Feishu) SDK
+Author: HSPK
+Author-email: whxway@whu.edu.cn
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: arrow (>=1.3.0,<2.0.0)
+Requires-Dist: httpx (>=0.27.0,<0.28.0)
+Requires-Dist: loguru (>=0.7.2,<0.8.0)
+Requires-Dist: pandas (>=2.2.2,<3.0.0)
+Requires-Dist: pydantic (>=2.8.2,<3.0.0)
+Requires-Dist: pydantic-settings (>=2.3.4,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Slark
+
+[![PyPI version](https://badge.fury.io/py/slark.svg)](https://badge.fury.io/py/slark)
+
+Simple LARK(Feishu) SDK
+
+# Usage
+
+```
+pip install slark
+```
+
+```python
+from slark import AsyncLark
+
+lark = AsyncLark(
+    app_id=xxx, app_secret=xxx, webhook=xxx
+)
+```
+
+Read table
+
+```python
+await lark.sheets.read(url, start_row=0, rows=50, has_header=True)
+```
+
+Write table
+
+```python
+await lark.sheets.write(url, data=df, start_row=0, start_col=2)
+await lark.sheets.append(url, data=df, start_row=0, start_col=2)
+await lark.sheets.prepend(url, data=df, start_row=0, start_col=2)
+```
+
+
+Send webhook message
+
+```python
+await lark.webhook.xxxx
+```
