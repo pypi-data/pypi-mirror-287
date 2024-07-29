@@ -1,0 +1,2 @@
+[console_scripts]
+fetch-github-issues = fetch_github_issues.cli:main

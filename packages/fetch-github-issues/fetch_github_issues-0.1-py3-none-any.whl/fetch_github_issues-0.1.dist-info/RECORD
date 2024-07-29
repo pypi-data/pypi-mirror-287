@@ -1,0 +1,9 @@
+fetch_github_issues/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fetch_github_issues/__main__.py,sha256=8hDtWlaFZK24KhfNq_ZKgtXqYHsDQDetukOCMlsbW0Q,59
+fetch_github_issues/cli.py,sha256=WKPFlq09DP2S9p7YYLWdpNhOWJ1lTy9O4W-eq0jgrfE,3515
+fetch_github_issues-0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+fetch_github_issues-0.1.dist-info/METADATA,sha256=CtNdfKhvm5hJyUcuEOTRmwFiuenCAkABBW6iAXFKHZg,2646
+fetch_github_issues-0.1.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+fetch_github_issues-0.1.dist-info/entry_points.txt,sha256=Ra7Yr_-BTU0i8jMNPwnn2FfFpfDkqqrUu_LVBzSRbCw,69
+fetch_github_issues-0.1.dist-info/top_level.txt,sha256=nJzogvVsLy4nWd1i6zHs4CVG401NjaixqjQCpOd_dAU,20
+fetch_github_issues-0.1.dist-info/RECORD,,
