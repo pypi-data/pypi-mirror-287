@@ -1,0 +1,8 @@
+ntfsutils-stubs/__init__.pyi,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ntfsutils-stubs/fs.pyi,sha256=9DcQs07N4F5g4pRa7ZfVVOl0k6iFcinAsOy9SFpthow,1130
+ntfsutils-stubs/hardlink.pyi,sha256=cz8emIaQZyAiwXJWYvVUnSOUUCe1flTwTZ0i2aGcZHc,262
+ntfsutils-stubs/junction.pyi,sha256=_wxYmmxBVqXyBgewyBKkzwvZD_Km4clxxmwGZrTkGHQ,239
+types_ntfsutils-0.1.5.dist-info/LICENSE,sha256=mMG63soOtEH0jC1ukIQWIDMHdl_JploJNrGshX2Gmyk,1099
+types_ntfsutils-0.1.5.dist-info/METADATA,sha256=Su1h8IUlafgEPKXFYY-jEc97846jLFQMHDK4yYPhD1s,612
+types_ntfsutils-0.1.5.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+types_ntfsutils-0.1.5.dist-info/RECORD,,
