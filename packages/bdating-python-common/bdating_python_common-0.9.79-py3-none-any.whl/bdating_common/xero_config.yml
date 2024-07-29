@@ -1,0 +1,75 @@
+currencies:
+  -
+    code: AUD
+    description: Australian Dollar
+  -
+    code: ZWD
+    description: USDT
+
+accounts:
+  ZWD:
+    alias: USDT
+    list:
+      -
+        code: 601
+        name: USDT Order Received
+        type: OTHERINCOME
+        description: USDT Order Received
+        tax_type: BASEXCLUDED
+      -
+        code: 602
+        name: USDT Platform Commission
+        type: REVENUE
+        description: USDT Platform Commission
+        tax_type: BASEXCLUDED
+      -
+        code: 603
+        name: USDT Referral Commission
+        type: OTHERINCOME
+        description: USDT Referral Commission
+        tax_type: BASEXCLUDED
+      -
+        code: 604
+        name: USDT Withdraw
+        type: EXPENSE
+        description: USDT Withdraw
+        tax_type: BASEXCLUDED
+      -
+        code: 605
+        name: USDT Referral Reconciliation
+        type: OTHERINCOME
+        description: USDT Referral Reconciliation
+        tax_type: BASEXCLUDED
+  AUD:
+    alias: AUD
+    list:
+      -
+        code: 611
+        name: AUD Order Received
+        type: OTHERINCOME
+        description: AUD Order Received
+        tax_type: BASEXCLUDED
+      -
+        code: 612
+        name: AUD Platform Commission
+        type: REVENUE
+        description: AUD Platform Commission
+        tax_type: BASEXCLUDED
+      -
+        code: 613
+        name: AUD Referral Commission
+        type: OTHERINCOME
+        description: AUD Referral Commission
+        tax_type: BASEXCLUDED
+      -
+        code: 614
+        name: AUD Withdraw
+        type: EXPENSE
+        description: AUD Withdraw
+        tax_type: BASEXCLUDED
+      -
+        code: 615
+        name: AUD Referral Reconciliation
+        type: OTHERINCOME
+        description: AUD Referral Reconciliation
+        tax_type: BASEXCLUDED
