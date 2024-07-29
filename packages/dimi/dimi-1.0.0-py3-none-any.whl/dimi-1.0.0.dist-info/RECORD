@@ -1,0 +1,11 @@
+dimi/__init__.py,sha256=WGg0REv1qI-dREG_oADEXi9zpLA1uNRfa8loQdB8xDQ,26
+dimi/dependency.py,sha256=A2oQ7SmLSLjgjpmJdcAWUNPOaCn4mjTrW8BKOd7dps0,2905
+dimi/di.py,sha256=LhHcFPp83i-zn24G6XwhQy41vRI184g55CVs4fh9urI,4429
+dimi/exceptions.py,sha256=fexwahu99xlu9OAb45PZMgUKV3GM6WhGlC0wEgQ8Y_w,177
+dimi/integrations.py,sha256=w69Lztd7qjWCvrOwz1aO22-3Lai6xBgTo8ixT5LxLCw,400
+dimi/scopes.py,sha256=v7hMax9oFDeuZbVg23wdn975ps7a48DPHVd7Z3qtTL0,3388
+dimi-1.0.0.dist-info/LICENSE,sha256=efpsthX7qhFzocTMFPhOYkOVxE9jma7QuqQPmw4RXnw,1072
+dimi-1.0.0.dist-info/METADATA,sha256=UlXfNdKFsiWnZweFx6gZnlEiHS-e5zG6eTMcSDVft4A,6482
+dimi-1.0.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+dimi-1.0.0.dist-info/top_level.txt,sha256=mJqTRBzvdeLlI4Mg06AEMNm8QlaBlQTz9CY_jSwrtxA,5
+dimi-1.0.0.dist-info/RECORD,,
