@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+fizicks/__init__.py
+fizicks/main.py
+fizicks.egg-info/PKG-INFO
+fizicks.egg-info/SOURCES.txt
+fizicks.egg-info/dependency_links.txt
+fizicks.egg-info/top_level.txt
+tests/__init__.py
+tests/test_motion.py
