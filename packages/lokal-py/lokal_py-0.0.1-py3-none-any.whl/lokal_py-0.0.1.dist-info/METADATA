@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: lokal-py
+Version: 0.0.1
+Summary: A Python client for interacting with Lokal Client REST API
+Home-page: https://github.com/lokal-so/lokal-py
+Author: RUBI JIHANTORO
+Author-email: ceo@lokal.so
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests >=2.25.1
+Requires-Dist: colorama >=0.4.6
+Requires-Dist: packaging >=20.9
+
