@@ -1,0 +1,10 @@
+README.md
+setup.py
+vridgeai/__init__.py
+vridgeai/model_load.py
+vridgeai/package_test.py
+vridgeai.egg-info/PKG-INFO
+vridgeai.egg-info/SOURCES.txt
+vridgeai.egg-info/dependency_links.txt
+vridgeai.egg-info/not-zip-safe
+vridgeai.egg-info/top_level.txt
