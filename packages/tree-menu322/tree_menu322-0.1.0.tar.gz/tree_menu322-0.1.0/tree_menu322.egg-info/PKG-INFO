@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: tree-menu322
+Version: 0.1.0
+Summary: A Django app for creating tree menus
+Home-page: https://gitlab.com/test_work1232729/tree_menu
+Author: Me
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 5.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Tree Menu
+
+A Django app for creating tree menus.
+
+## Installation
+
+Install the app using pip:
+
+```sh
+pip install tree_menu322
+```
+Add tree_menu to your INSTALLED_APPS:
+
+```python
+
+INSTALLED_APPS = [
+    ...
+    'tree_menu',
+]
+```
+
+Use the draw_menu template tag in your templates:
+
+```html
+
+{% load menu_tags %}
+{% draw_menu 'main_menu' %}
+```

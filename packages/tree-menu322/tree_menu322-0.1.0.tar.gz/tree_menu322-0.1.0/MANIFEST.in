@@ -1,0 +1,3 @@
+include README.md
+recursive-include tree_menu/templates *
+recursive-include tree_menu/templatetags *
