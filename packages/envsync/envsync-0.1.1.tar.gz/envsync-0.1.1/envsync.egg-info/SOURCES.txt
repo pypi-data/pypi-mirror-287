@@ -1,0 +1,11 @@
+README.md
+setup.py
+envsync/__init__.py
+envsync/cli.py
+envsync/hooks.py
+envsync.egg-info/PKG-INFO
+envsync.egg-info/SOURCES.txt
+envsync.egg-info/dependency_links.txt
+envsync.egg-info/entry_points.txt
+envsync.egg-info/requires.txt
+envsync.egg-info/top_level.txt
