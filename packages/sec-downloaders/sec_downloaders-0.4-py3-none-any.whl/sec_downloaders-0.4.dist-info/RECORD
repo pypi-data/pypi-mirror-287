@@ -1,0 +1,8 @@
+data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+data/basic_company_data.csv,sha256=XQNK05ix1GH6QOjCRlHSiFWhBZlDtVNXvZJ1tFy0cfs,386853
+sec_downloaders/__init__.py,sha256=0k57qBwDz-i5KKio_FSnH-TJo_qtLgwBBU9yroS2tmk,43
+sec_downloaders/sec_downloaders.py,sha256=1RK5Oti6I5P9B5a3QZAiCOcIUCSqkoh2EhWv3Fh5VoQ,3258
+sec_downloaders-0.4.dist-info/METADATA,sha256=C3IvrWPebflDdtNYjqvmSarZ-mbB-A9xsB3d35AD4WU,700
+sec_downloaders-0.4.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+sec_downloaders-0.4.dist-info/top_level.txt,sha256=Efo9_eSKK2tSPJ4EkQFjDteViIqdLlFD9rkH4kGVUOc,21
+sec_downloaders-0.4.dist-info/RECORD,,
