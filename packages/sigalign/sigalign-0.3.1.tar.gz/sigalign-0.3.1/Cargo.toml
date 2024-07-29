@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = ["sigalign-core", "sigalign-impl", "sigalign-utils", "sigalign", "sigalign-py"]
+exclude = [
+    "examples/sigalign-demo-web",
+    "examples/sigalign-demo-wasm",
+    "examples/sigalign-demo-binary",
+    "examples/sig-read-mapper",
+]
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+lto = true
+opt-level = 3
+
+[profile.bench]
+opt-level = 3
