@@ -1,0 +1,34 @@
+name: flussenv
+channels:
+  - conda-forge
+  - defaults
+  - blaze
+  - anaconda
+
+dependencies:
+  - python>=3.10
+  - pip
+  - tabulate
+  - ipykernel
+  - jupyterlab
+  # scientific python
+  - numpy<2.0.0
+  - pandas
+  # plotting
+  - matplotlib
+  - plotly
+  # geospatial python
+  - alphashape
+  - earthpy
+  - gdal
+  - geopandas
+  - geojson
+  - h5py
+  - laspy
+  - mapclassify
+  - networkx
+  - pyshp
+  - rasterio
+  - rasterstats
+  - shapely
+  - tk

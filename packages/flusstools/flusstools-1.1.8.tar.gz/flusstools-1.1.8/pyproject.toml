@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flusstools"
+version = "1.1.8"
+authors = [
+  { name="FlussTeam/Hydro-Informatics.com", email="schwindt.water@gmail.com" },
+]
+description = "A Python package to facilitate river analysis."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://flusstools.readthedocs.io/"
+"Bug Tracker" = "https://github.com/Ecohydraulics/flusstools/issues"
