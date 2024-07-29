@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+src/Fubuki.egg-info/PKG-INFO
+src/Fubuki.egg-info/SOURCES.txt
+src/Fubuki.egg-info/dependency_links.txt
+src/Fubuki.egg-info/top_level.txt
+src/fubuki/__init__.py

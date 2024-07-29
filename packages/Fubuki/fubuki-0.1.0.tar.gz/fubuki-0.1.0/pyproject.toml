@@ -1,0 +1,19 @@
+[project]
+name = "Fubuki"
+version = "0.1.0"
+description = "An Hybrid Web Framework"
+authors = [
+    {name = "AmaseCocoa", email = "amase.cocoa@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.pdm]
+distribution = true
