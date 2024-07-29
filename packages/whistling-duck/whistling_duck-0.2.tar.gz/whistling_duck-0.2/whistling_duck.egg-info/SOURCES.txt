@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+whistling_duck/__init__.py
+whistling_duck/main.py
+whistling_duck.egg-info/PKG-INFO
+whistling_duck.egg-info/SOURCES.txt
+whistling_duck.egg-info/dependency_links.txt
+whistling_duck.egg-info/requires.txt
+whistling_duck.egg-info/top_level.txt
