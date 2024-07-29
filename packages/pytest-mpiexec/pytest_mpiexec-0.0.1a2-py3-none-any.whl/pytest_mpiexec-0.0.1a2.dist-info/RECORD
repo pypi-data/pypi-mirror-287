@@ -1,0 +1,7 @@
+pytest_mpiexec/__init__.py,sha256=3EXaFnXv1z-8AVCGrDM9MpCrpg8I15YhcHCsHzX3iGI,24
+pytest_mpiexec/pytest_plugin.py,sha256=ygyFjO1P1l6347dFxBwnw4UWRjBkNaKmyjkV25e93l4,4833
+pytest_mpiexec-0.0.1a2.dist-info/METADATA,sha256=LrxwttfCfGrrvCWcORXcAdeHCNnJxlY6Y832SCF5d7o,3023
+pytest_mpiexec-0.0.1a2.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+pytest_mpiexec-0.0.1a2.dist-info/entry_points.txt,sha256=a3TIyepUDlNTYeREnpqwRVIO-7CZjyySDLXFT3Pwo2U,50
+pytest_mpiexec-0.0.1a2.dist-info/licenses/LICENSE,sha256=vF3GD2ydyhuRcTlEaCmyg2lcAQcma7H_1TdMIBeBPTo,1063
+pytest_mpiexec-0.0.1a2.dist-info/RECORD,,
