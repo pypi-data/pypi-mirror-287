@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: Fubuki
+Version: 0.1.0
+Summary: An Hybrid Web Framework
+Author-email: AmaseCocoa <amase.cocoa@gmail.com>
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Fubuki
