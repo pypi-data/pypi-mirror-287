@@ -1,0 +1,8 @@
+flax>=0.8.4
+jax>=0.4.26
+optax
+numpy
+tqdm
+mergedeep
+typing
+orbax-checkpoint>=0.5.15
