@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: djutils-common
+Version: 0.1.0.dev0
+Summary: Django Project Utilities - Common
+Author-email: ruriazz <azizruri.s@gmail.com>
+Project-URL: Homepage, https://github.com/ruriazz/djutils-common
+Project-URL: Bug Tracker, https://github.com/ruriazz/djutils-common/issues
+Keywords: djutils_common
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
