@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+lokal/__init__.py
+lokal/lokal.py
+lokal_py.egg-info/PKG-INFO
+lokal_py.egg-info/SOURCES.txt
+lokal_py.egg-info/dependency_links.txt
+lokal_py.egg-info/requires.txt
+lokal_py.egg-info/top_level.txt
