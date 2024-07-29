@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: fh-matplotlib
+Version: 0.0.1
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: python-fasthtml
+Provides-Extra: dev
+Requires-Dist: pytest ; extra == 'dev'
+
