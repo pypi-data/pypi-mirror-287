@@ -1,0 +1,56 @@
+
+### README.md for the Visionlit Package
+
+# Visionlit
+
+Visionlit is a Python package designed to perform computer vision methods. The package provides a command-line interface to verify API keys against a specified service and execute computer vision tasks such as image segmentation.
+## Features
+
+- Perform image segmentation (note: actual segmentation logic needs to be implemented by the user).
+
+## Installation
+
+Install Visionlit using pip:
+
+```bash
+pip install visionlit
+```
+
+## Usage
+
+### Command Line Interface
+
+You can use Visionlit directly from the command line:
+
+#### List Available Methods
+
+To list all available methods that can be executed:
+
+```bash
+visionlit <api_key> <image_path> --list
+```
+
+#### Execute a Method
+
+To execute a specific method on an image:
+
+```bash
+visionlit <api_key> <image_path> <method_name>
+```
+
+Replace `<api_key>` with your actual API key, `<image_path>` with the path to your image file, and `<method_name>` with the method you wish to execute.
+
+### Python Module
+
+You can also use Visionlit as a module in your Python scripts:
+
+```python
+from visionlit import Visionlit
+
+# Create a Visionlit object
+vision = Visionlit("your_api_key")
+
+# Perform an image segmentation
+result = vision.segment_image("path_to_your_image.jpg")
+print(result)
+```
