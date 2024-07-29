@@ -1,0 +1,9 @@
+vridgeai/__init__.py,sha256=kQOJvtmpbHGE0oVJv6oubUfigE6lAOQFBGPyh3SkWZI,21
+vridgeai/dataset_utils.py,sha256=GpHosTWsYC_CTecYARAAyAy3yAV1GUw63RSB28ne1h4,1299
+vridgeai/model_utils.py,sha256=D50YbYle730HN1cfHIlXf9lT60gEwJOHhCZb8KyERXw,1822
+vridgeai/package_test.py,sha256=2aGB0_cF63T3hlFsG7zD4j4eeGOG1aPl2CnpctVayjQ,38
+vridgeai/test.py,sha256=-vDha0c8JeQYEhWYAwRquadKhA1cmmYOcCYRvxaYurA,728
+vridgeai-0.0.3.dist-info/METADATA,sha256=z4EUGFxorpEHraCEtUHP3pc2YtQuOU9XuKJtThislBo,520
+vridgeai-0.0.3.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+vridgeai-0.0.3.dist-info/top_level.txt,sha256=LQ1UH__HXpKw-eK4muEqxO7RWfNh3Kf4EIfSNB_jYzw,9
+vridgeai-0.0.3.dist-info/RECORD,,
