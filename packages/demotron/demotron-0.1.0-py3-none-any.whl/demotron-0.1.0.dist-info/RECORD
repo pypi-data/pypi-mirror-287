@@ -1,0 +1,16 @@
+demotron/__init__.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+demotron/config.py,sha256=YRbEQYoO7t76wwYoPkFHi2ov9V5Mu8HzgoXPcSFCeBE,120
+demotron/load_raw_events.py,sha256=HDbSDE7CTr5OIq5Q187JPrGVpaCrjVxVQwm14KECAJg,2412
+demotron/main.py,sha256=Z-52Cx3FTcso8qSeSTD59FI2rNIHVf7NICnscdspzZc,3557
+demotron/rename_column_util.py,sha256=TcDruhiWN29Qk98VBMiXm0wQ_xB8ANFzf-f8hUVXuPw,1596
+demotron/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+demotron/tests/test_config.py,sha256=qZ0M1beGN9M0cq5ZrpRNsm-GsdZO8WcKi-qvZUVPWcM,1079
+demotron/tests/test_integration.py,sha256=pEmJ-FRHu2l8reMonJ9dWF0TaWHvfcJHmA2STVQ50RI,3088
+demotron/tests/test_load_raw_events.py,sha256=wMyqMIyP-SqhjK7-FQWAANJZ675qO_6b1z5v1XXBELQ,2448
+demotron/tests/test_main.py,sha256=BuFk4KKBOm9bhBhRFB0F-NVwrcq3b6DbKVCJUy5G4YY,2704
+demotron/tests/test_rename_column_util.py,sha256=2xUHoS6_li5wqETQ5-GDv_d1N4_lE8R5wtPbcFwXuQ8,2422
+demotron-0.1.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+demotron-0.1.0.dist-info/METADATA,sha256=O0dMqUqfr85kLKNbGR4u1ky1bIOr4iRiNU8DuMNqEbQ,1060
+demotron-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+demotron-0.1.0.dist-info/entry_points.txt,sha256=MVBioumv3qXB3XnvZFgC-W9DPGbOtipwrMe5hPApfWA,46
+demotron-0.1.0.dist-info/RECORD,,
