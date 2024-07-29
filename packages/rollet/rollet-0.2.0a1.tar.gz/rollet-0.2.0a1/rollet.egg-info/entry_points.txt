@@ -1,0 +1,2 @@
+[console_scripts]
+rollet = rollet.runtime:rollet_extract
