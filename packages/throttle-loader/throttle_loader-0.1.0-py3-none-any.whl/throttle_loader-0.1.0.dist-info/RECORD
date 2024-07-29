@@ -1,0 +1,9 @@
+throttle/__init__.py,sha256=e5KErGOdSV0ryARRYLzyZNerxZEFUeaxHeX4wxT-rSQ,51
+throttle/cli.py,sha256=15ZjBGQEYr45ow2AdOwfLsb4BZxWmkz_89iY1RRIUD0,2819
+throttle/example.py,sha256=IsG-5TcTlwqtFHS16-ti4OJu_PvJUXvBV0T3CgZZPmY,5938
+throttle/throttle.py,sha256=dt_2DNdCiAtClDNX6VcI20rojVqtZBLqhd_U8dZNxJ0,14653
+throttle_loader-0.1.0.dist-info/METADATA,sha256=EV1CfLF4sCCgg3cbPEsQOcFfoH2QxnWh7Y8lvu0KewU,8216
+throttle_loader-0.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+throttle_loader-0.1.0.dist-info/entry_points.txt,sha256=RHO9IpaJqyfz3EHSFXEb8trqZNUU83P-If9Juiqi99g,47
+throttle_loader-0.1.0.dist-info/top_level.txt,sha256=KRjl-fYEoeRLIUi7kmS0Q60PCsiVcEPNK6xHx9-9yVw,9
+throttle_loader-0.1.0.dist-info/RECORD,,
