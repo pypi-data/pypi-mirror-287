@@ -1,0 +1,12 @@
+[project]
+name = "basefwx"
+version = "2.0"
+authors = [
+  { name="F1xGOD", email="f1xgodim@gmail.com" },
+]
+description = "With BaseFWX you can encode strings securely!"
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/F1xGOD/FWX-Encryption"
+Issues = "https://github.com/F1xGOD/FWX-Encryption/issues"
