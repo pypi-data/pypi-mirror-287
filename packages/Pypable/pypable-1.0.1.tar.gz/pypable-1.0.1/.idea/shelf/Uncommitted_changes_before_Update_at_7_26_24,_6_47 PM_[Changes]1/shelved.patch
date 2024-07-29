@@ -1,0 +1,4527 @@
+Index: 4a_customhdr.sh
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/4a_customhdr.sh b/ref/4a_customhdr.sh
+rename from 4a_customhdr.sh
+rename to ref/4a_customhdr.sh
+--- a/4a_customhdr.sh	(revision 3bee9bd8e8270e48f840a507ec905fde8c1195c6)
++++ b/ref/4a_customhdr.sh	(date 1721706058477)
+@@ -86,7 +86,6 @@
+                    echo " |                    STATA SETUP FILE FOR ICPSR $studynum" >> "$dds"
+ 
+                    echo 'dictionary {' > "$dct"
+-
+                    printf '\n*****************************************************************\n' >> "$dct"
+                    echo "* STATA DICTIONARY FOR ICPSR $studynum"          >> "$dct"
+ 
+Index: hermes/_0_config_update.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hermes/_0_config_update.py b/hermes/_0_config_update.py
+new file mode 100644
+--- /dev/null	(date 1721959783597)
++++ b/hermes/_0_config_update.py	(date 1721959783597)
+@@ -0,0 +1,53 @@
++#!/usr/bin/env python3
++
++from sys import argv
++from typing import Literal
++
++from ICPSR.utilities import shell
++from ICPSR.utilities.typing import IntLike
++
++
++T_metadata_source = Literal[
++	'pretdb',
++	'tdb'
++]
++
++
++def run(studynum:IntLike, bypass_oracle:bool = False, metadata_source:T_metadata_source = None) -> str:
++	"""
++	Component of the Hermes toolset developed for use at ICPSR.
++
++	Checks for the existence and completeness of study config files.
++	This module can also be used to update Hermes default settings recorded in the '.hermesrc' file.
++
++	Valid metadata sources include the following:
++		* pretdb — the current metadata project
++		* tdb — released metadata in production
++
++	Args:
++		studynum: the number of the study currently being processed.
++		bypass_oracle: Indicates whether the script should utilize a metadata database.
++			If True, the script will not attempt to connect to utilize the database
++			and will instead utilize a local '.cfg' configuration file for the study.
++			Defaults to False.
++		metadata_source: An optional string denoting the database from which to draw metadata for the study.
++			Ignored if ``bypass_oracle`` is True.
++
++	Returns:
++		CompletedProcess: A CompletedProcess object containing the output of the script.
++	"""
++
++	program = ['0_config_update']
++	args = [ '-s', studynum ]
++
++	if bypass_oracle:
++		args += [ '-b' ]
++
++	if metadata_source:
++		args += [ '-m', metadata_source ]
++
++	return shell.run('0_config_update', *args)
++
++
++# if run as script, run with command line args
++if __name__ == '__main__': shell.run('0_config_update', *argv[1:])
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Hermes\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 3bee9bd8e8270e48f840a507ec905fde8c1195c6)
++++ b/README.md	(date 1721242322672)
+@@ -1,2 +1,0 @@
+-# Hermes
+-
+Index: hermes/_6_rtgdata.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hermes/_6_rtgdata.py b/hermes/_6_rtgdata.py
+new file mode 100644
+--- /dev/null	(date 1721959783593)
++++ b/hermes/_6_rtgdata.py	(date 1721959783593)
+@@ -0,0 +1,27 @@
++#!/usr/bin/env python3
++
++from sys import argv
++
++from ICPSR.utilities import shell
++from ICPSR.utilities.typing import PathLike
++
++def run(outdir:PathLike) -> str:
++	"""
++	Component of the Hermes toolset developed for use at ICPSR.
++
++	Uses DDS and ASCII data files to create "ready-to-go" versions of the data:
++		SAS transport (xport), SPSS portable, Stata system
++
++	Args:
++		outdir: The directory where the output files will be generated.
++			Looks like `12345-0001`, e.g. `studynum-dataset`.
++
++	Returns:
++		CompletedProcess: A CompletedProcess object containing the output of the script.
++	"""
++
++	return shell.run('6_rtgdata.sh', outdir)
++
++
++# if run as script, run with command line args
++if __name__ == '__main__': shell.run('6_rtgdata.sh', *argv[1:])
+Index: hermes/_5_xmlconvert.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hermes/_5_xmlconvert.py b/hermes/_5_xmlconvert.py
+new file mode 100644
+--- /dev/null	(date 1721959783647)
++++ b/hermes/_5_xmlconvert.py	(date 1721959783647)
+@@ -0,0 +1,31 @@
++#!/usr/bin/env python3
++
++from sys import argv
++
++from ICPSR.utilities import shell
++from ICPSR.utilities.typing import PathLike, YesNo
++
++
++def run(outdir:PathLike, addcaseid:YesNo, caseid:YesNo, sdabatch:bool) -> str:
++	"""
++	Component of the Hermes toolset developed for use at ICPSR.
++
++	Performs SDA conversion and generates a variable-level DDI/XML file with
++	frequencies and question text (if provided).
++
++	Args:
++		outdir: The directory where the output files will be generated.
++			Looks like `12345-0001`, e.g. `studynum-dataset`.
++		caseid: Indicates whether to include the CASEID variable in the outputs. Defaults to `True`.
++		addcaseid: Indicates whether to include the CASEID variable in the outputs. Defaults to `True`.
++		sdabatch: Indicates whether the Hermes process is running in SDA batch mode.
++
++	Returns:
++		CompletedProcess: A CompletedProcess object containing the output of the script.
++	"""
++
++	return shell.run('5_xmlconvert.sh', outdir, addcaseid, caseid, sdabatch)
++
++
++# if run as script, run with command line args
++if __name__ == '__main__': shell.run('5_xmlconvert.sh', *argv[1:])
+Index: hermes/_2_meta2ddl.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hermes/_2_meta2ddl.py b/hermes/_2_meta2ddl.py
+new file mode 100644
+--- /dev/null	(date 1721959783634)
++++ b/hermes/_2_meta2ddl.py	(date 1721959783634)
+@@ -0,0 +1,49 @@
++#!/usr/bin/env python3
++
++from sys import argv
++
++from ICPSR.utilities import shell
++from ICPSR.utilities.typing import PathLike
++
++
++def run(outdir:PathLike, infile:PathLike) -> str:
++	"""
++	Component of the Hermes toolset developed for use at ICPSR.
++
++	Converts an SPSS metadata file to SDA Data Description Language (DDL).
++
++	Args:
++		outdir: The output directory where the script will write its output.
++		infile: The input file that will be processed by the script.
++
++	Returns:
++		CompletedProcess: A CompletedProcess object containing the output of the script.
++
++	Raises:
++		CalledProcessError
++
++	Details:
++		The script first checks if the required arguments are provided and displays a
++		usage message if not.
++
++		The script then defines a function called rccheck that checks for any errors
++		during the processing and performs cleanup tasks if necessary.
++
++		The main body of the script then proceeds to add question text to the DDL file
++		if applicable. It does this by copying header information from a merge2.ddl file,
++		adding an asterisk delimiter, and then converting variable names according to the
++		specified variable case. The question text DDL is then merged into the main DDL file.
++
++		Next, the script checks if an optimized print format file (post_short) exists.
++		If it does, the script extracts the necessary information from it,
++		optimizes the SDA formats, and merges the optimized formats into the main DDL file.
++
++		Finally, the script performs cleanup tasks, such as moving any error messages to the
++		SDA directory and removing temporary files and directories.
++	"""
++
++	return shell.run('2_meta2ddl.sh', outdir, infile)
++
++
++# if run as script, run with command line args
++if __name__ == '__main__': shell.run('2_meta2ddl.sh', *argv[1:])
+Index: hermes/_7_partinfo.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hermes/_7_partinfo.py b/hermes/_7_partinfo.py
+new file mode 100644
+--- /dev/null	(date 1721668324035)
++++ b/hermes/_7_partinfo.py	(date 1721668324035)
+@@ -0,0 +1,22 @@
++#!/usr/bin/env python3
++
++from sys import argv
++
++from ICPSR.utilities import shell
++
++
++def run() -> str:
++	"""
++	Component of the Hermes toolset developed for use at ICPSR.
++
++	Reads file info from ASCII data files and DDS, generates part info section for editors' templates.
++
++	Returns:
++		CompletedProcess: A CompletedProcess object containing the output of the script.
++	"""
++
++	return shell.run('7_partinfo.sh')
++
++
++# if run as script, run with command line args
++if __name__ == '__main__': shell.run('7_partinfo.sh', *argv[1:])
+Index: hermes/_3_makedds.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hermes/_3_makedds.py b/hermes/_3_makedds.py
+new file mode 100644
+--- /dev/null	(date 1721959783606)
++++ b/hermes/_3_makedds.py	(date 1721959783606)
+@@ -0,0 +1,67 @@
++#!/usr/bin/env python3
++
++from sys import argv
++
++from ICPSR.utilities import shell
++from ICPSR.utilities.typing import PathLike, YesNo
++
++
++def run(outdir:PathLike, caseid:YesNo = True, addcaseid:YesNo = True) -> str:
++	"""
++	Component of the Hermes toolset developed for use at ICPSR.
++
++	Uses SDA's 'ddltox' program to generate raw Data Definition Statements for SAS, SPSS, and Stata files.
++
++	The values of ``caseid`` and ``addcaseid`` are used together to determine if the CASEID variable
++	should be stripped from the outputs. CASEID is dropped if both `caseid` and `addcaseid` are False ('n').
++
++	Args:
++		outdir: The directory where the output files will be generated.
++			Looks like `12345-0001`, e.g. `studynum-dataset`.
++		caseid: Indicates whether to include the CASEID variable in the outputs. Defaults to `True`.
++		addcaseid: Indicates whether to include the CASEID variable in the outputs. Defaults to `True`.
++
++	Returns:
++		CompletedProcess: A CompletedProcess object containing the output of the script.
++
++	Raises:
++		CalledProcessError
++
++	Details:
++		The script begins by checking if both a DDL and an ASCII file exists for the study
++		that is currently being processed (indicated by the path of 'outdir').
++		If either fileis missing, the script exits with an error message.
++
++		Next, the script checks for various potential problems in the data,
++		related to the constraints of the Stata program:
++			* non-integer value labels
++			* character variables with value labels
++			* numeric variables with labeled categories of more than 8 characters (example: `9999999999 'Missing'`)
++			* more than 32,767 variables in data (Stata-SE limit)
++			* more than 393,204 columns in data (Stata-SE limit) -- max number of variables (32767) times 12 columns
++			* variables that exceed labeling limitations imposed by the various statistical programs used:
++
++				- Stata limits character-variables to 244 characters
++				- SAS limits character-variables to 32767 characters
++				- R limits character-variables to 255 characters
++
++		If any of these issues are found, the script generates appropriate error messages and exits.
++		If no issues are found, the script proceeds to generate setup files for the various
++		statistical software packages. These setup files are produced from the raw DDL files using
++		the SDA too 'DDLtoX' to convert the DDL file to the appropriate type.
++
++		If both the ``caseid`` and ``addcaseid`` arguments are `False` ('n'),
++		then the CASEID variable is removed from the outputs.
++
++		After processing, the `DDLTOX.MSG` log-file is moved to the SDA subfolder of ``outdir``
++	"""
++
++	kwarg_values = []
++	kwarg_values += [ 'y' if caseid else 'n' ]
++	kwarg_values += [ 'y' if addcaseid else 'n' ]
++
++	return shell.run('3_makedds.sh', outdir, *kwarg_values)
++
++
++# if run as script, run with command line args
++if __name__ == '__main__': shell.run('3_makedds.sh', *argv[1:])
+Index: hermes/_8_errorcheck.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hermes/_8_errorcheck.py b/hermes/_8_errorcheck.py
+new file mode 100644
+--- /dev/null	(date 1721959783610)
++++ b/hermes/_8_errorcheck.py	(date 1721959783610)
+@@ -0,0 +1,27 @@
++#!/usr/bin/env python3
++
++from sys import argv
++
++from ICPSR.utilities import shell
++from ICPSR.utilities.typing import PathLike
++
++
++def run(outdir:PathLike) -> str:
++	"""
++	Component of the Hermes toolset developed for use at ICPSR.
++
++	Checks error logs for conversion problems.
++
++	Args:
++		outdir: The directory where the output files will be generated.
++			Looks like `12345-0001`, e.g. `studynum-dataset`.
++
++	Returns:
++		CompletedProcess: A CompletedProcess object containing the output of the script.
++	"""
++
++	return shell.run('8_errorcheck.sh', outdir)
++
++
++# if run as script, run with command line args
++if __name__ == '__main__': shell.run('8_errorcheck.sh', *argv[1:])
+Index: hermes/_4_ddstweak.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hermes/_4_ddstweak.py b/hermes/_4_ddstweak.py
+new file mode 100644
+--- /dev/null	(date 1722009384686)
++++ b/hermes/_4_ddstweak.py	(date 1722009384686)
+@@ -0,0 +1,842 @@
++#!/usr/bin/env python3
++import os
++import textwrap
++from sys import argv
++import shutil
++from re import match
++from pathlib import Path
++from typing import Literal
++
++from ICPSR.utilities import shell
++from ICPSR.utilities.typing import PathLike
++from ICPSR.printers import mprint, print, dedent
++from ICPSR.text import cat, grep, sed, upper, lines_between, Text
++
++
++StatFileType = Literal['spss', 'sas', 'stata']
++
++
++def _check_for_type(outdir:PathLike):
++	try:
++		with open(f'{outdir}/errorlog.txt') as file: errorlog = file.read()
++		nosas   = ' SAS ' in errorlog  # grep ' SAS ' "$outdir"/errorlog.txt 2>/dev/null
++		nostata = 'no Stata files produced' in errorlog  # grep 'no Stata files produced' "$outdir"/errorlog.txt 2>/dev/null
++	except FileNotFoundError as ex:
++		nosas   = False
++		nostata = False
++
++	return nosas, nostata
++
++
++def _tweak_dds(type, outdir, tmpout):
++	""" Simple dispatch function to call the correct tweak-method """
++	if type == 'stata':
++		_4b_tweak_stata(outdir, tmpout)
++	elif type == 'spss':
++		_4b_tweak_spss(outdir, tmpout)
++	elif type == 'sas':
++		_4b_tweak_sas(outdir, tmpout)
++
++
++def run(outdir:PathLike, tmpout:PathLike):
++	"""
++	Component of the Hermes toolset developed for use at ICPSR.
++
++	Standardizes SDA DDS output to Progen-style DDS and standardizes filenames
++	per ICPSR naming conventions.
++
++	See: 4_ddstweak.sh
++
++	Args:
++		outdir: The output directory where the converted files will be saved.
++		tmpout: The temp-directory used for this Hermes session
++
++	Returns:
++		CompletedProcess: A CompletedProcess object containing the output of the script.
++
++	Raises:
++		CalledProcessError
++
++	Details:
++		The script begins by processes the DDS files by generating the top of DDS headers using the
++		"4a_customhdr.sh" script and then tweaks the rest of the DDS files for different data
++		formats (SAS, SPSS, and Stata).
++
++		For each data format, the script removes any white space at the end of lines in the DDS
++		files, then calls the appropriate 4b_tweak script ("4b_tweak" + data_format + ".sh") to
++		further process the DDS files for the specific data format.
++	"""
++
++	#-------------------------------------------------------------------------
++	# Process DDS files
++	#-------------------------------------------------------------------------
++
++	nosas, nostata = _check_for_type(outdir)
++
++	types_to_process = ['spss']
++	if not nosas:   types_to_process += ['sas']
++	if not nostata: types_to_process += ['stata']
++
++	# Generate top of DDS headers
++	_4a_customhdr(outdir, types_to_process, nosas, nostata)
++
++	# Tweak rest of DDS files
++	for type in types_to_process:
++		print(f'         {type.upper()}...')
++		prefix = type[:2]  # echo "${type}" | cut -c1-2
++
++		type_file = Path(f'{tmpout}/{prefix}{outdir}')
++
++		# Remove white space at end of lines
++		shutil.move(f'{type_file}.tmp', f'{type_file}.old')  # backup the old file
++		cat(f'{type_file}.old') | sed(' +$', '') > f'{type_file}.tmp'  # sed 's/  *$//' ${type_file}.old > ${type_file}.tmp
++
++		_tweak_dds(type, outdir, tmpout)
++
++
++def _4a_customhdr(outdir:PathLike, types_to_process:list[StatFileType] = None):
++	""" Creates customized headers for ICPSR setup files (SAS, SPSS, Stata). """
++
++	studynum, part = outdir.split('-')
++
++	if types_to_process is None:
++		nosas, nostata = _check_for_type(outdir)
++		types_to_process = ['spss']
++		if not nosas:   types_to_process += ['sas']
++		if not nostata: types_to_process += ['stata']
++
++	dds_files = {
++		'stata' : Path(f"{outdir}/ARCHIVE/set{studynum}-{part}.do"),
++		'spss'  : Path(f"{outdir}/ARCHIVE/set{studynum}-{part}.sps"),
++		'sas'   : Path(f"{outdir}/ARCHIVE/set{studynum}-{part}.sas"),
++	}
++
++	dct_files = {
++		'stata' : Path(f"{outdir}/ARCHIVE/set{studynum}-{part}.dct"),
++	}
++
++	pgm_files = {
++		'stata' : Path(f"{outdir}/STATFILES/ssf{studynum}-{part}.do"),
++		'sas'   : Path(f"{outdir}/STATFILES/ssf{studynum}-{part}.sas"),
++	}
++
++	cfg_lines = cat(f"{studynum}.cfg")
++
++	#-------------------------------------------------------------------------
++	# Title
++	#-------------------------------------------------------------------------
++	title_inf = cfg_lines | grep('^study_title *=') | sed('^.*= *') | upper()  # grep "^study_title *=" "$cfg" | sed 's/^.*= *//' | tr '[a-z]' '[A-Z]'
++	title_inf = title_inf or '[INSERT STUDY NAME]'
++
++	#-------------------------------------------------------------------------
++	# Part info
++	#-------------------------------------------------------------------------
++	ptname = cfg_lines | grep(f'^p{part}_name') | sed('^[^=]*= *') | upper()  # grep '^p'"${part}"'_name' "${cfg}" | sed 's/^[^=]*= *//' | tr '[a-z]' '[A-Z]'
++
++	part_inf = textwrap.wrap(f"(DATASET {part}:  {ptname})", width=60, break_long_words=False)  # echo "(DATASET ${part}:  ${ptname})" | fmt -60
++
++	p1_skipname = cfg_lines.grep('p1_skipname=y|p1_skipname *$', insensitive=True)  # egrep -i 'p1_skipname=y|p1_skipname *$' "${cfg}"
++
++	#-------------------------------------------------------------------------
++	# PRINT SETUP HEADERS
++	#-------------------------------------------------------------------------
++	for type in types_to_process:
++		if type in dds_files: dds = dds_files[type]
++		if type in dct_files: dct = dct_files[type]
++		if type in pgm_files: pgm = pgm_files[type]
++
++		# noinspection PyUnboundLocalVariable
++		dds_file = open(dds, 'w')
++
++		if type == 'spss':
++			print( '*-------------------------------------------------------------------------*', file=dds_file)
++			print( '*                                                                          ', file=dds_file)
++			print(f'*                     SPSS SETUP FILE FOR ICPSR {studynum}                 ', file=dds_file)
++
++		elif type == 'sas':
++			print( '/*-------------------------------------------------------------------------', file=dds_file)
++			print( ' |                                                                         ', file=dds_file)
++			print(f' |                    SAS SETUP FILE FOR ICPSR {studynum}                  ', file=dds_file)
++
++			with open(pgm, 'w') as pgm_file:
++				print( '/*-------------------------------------------------------------------------', file=pgm_file)
++				print( ' |                                                                         ', file=pgm_file)
++				print(f' |             SAS SUPPLEMENTAL SYNTAX FILE FOR ICPSR {studynum}           ', file=pgm_file)
++
++		elif type == 'stata':
++			print( '/**************************************************************************', file=dds_file)
++			print( ' |                                                                         ', file=dds_file)
++			print(f' |                    STATA SETUP FILE FOR ICPSR {studynum}                ', file=dds_file)
++
++			with open(dct, 'w') as dct_file:
++				print( 'dictionary {', file=dct_file)
++				print( '\n*****************************************************************', file=dct_file)
++				print(f'* STATA DICTIONARY FOR ICPSR {studynum}                            ', file=dct_file)
++
++			with open(pgm, 'w') as pgm_file:
++				print( '/*-------------------------------------------------------------------------*', file=pgm_file)
++				print( ' |                                                                          ', file=pgm_file)
++				print(f' |            STATA SUPPLEMENTAL SYNTAX FILE FOR ICPSR {studynum}           ', file=pgm_file)
++
++
++		for field in ('title', 'part'):
++			#-------------------------------------------------------------------------
++			# Skip if field=part and skipname=y (1 part only; no part name)
++			#-------------------------------------------------------------------------
++			if field == "part" and part == 1 and p1_skipname:
++				continue
++			else:
++				info = title_inf if field == 'title' else part_inf
++				info = textwrap.wrap(info, width=60, break_long_words=False)  #  eval "echo \$${field}_inf" | fmt -60
++				info = Text(info)
++
++				def center_with_left_pad(line, width=72):
++					"""
++					Center-justifies each line of text, with a consistent left-hand margin.
++
++					Example:
++						>>> print(text.transform(pad, 40))
++						 |         this is the first line
++						 |         this is the second line
++						 |          test line followed by
++						 |a much longer test line that exceeds the padding limit for the file
++					"""
++
++					padding = int( (len(line) + width + 1) / 2 )  # Odd number of characters? pad one more to right than left
++					return '{:>{pad}}'.format(line, pad=padding)
++
++				leftstring = '* ' if type == 'spss' else ' |'
++				left_padded = info.transform(center_with_left_pad).prefix(leftstring)
++				left_padded >> dds_file
++
++				if type != "spss":
++					left_padded >> pgm
++
++				if type == "stata":
++					info.prefix('* ') >> dct
++
++		if type == "spss":
++			print('* ', file=dds_file)
++		else:
++			print(' |', file=dds_file)
++			print(' |', file=pgm_file)
++
++		if type == "stata":
++			mprint('''
++					*
++					* Warning: Edit this file at your own risk
++					*
++					*****************************************************************
++					
++				''',
++				file=dct_file
++			)
++
++		dds_file.close()
++
++
++
++def _4b_tweak_sas(outdir:PathLike, tmpout:PathLike):
++	""" Standardizes SDA DDS output to Progen-style DDS and standardize filenames per ICPSR naming conventions. """
++
++	studynum, part = outdir.split('-')
++
++	scriptpath = Path('/opt/hermes')
++
++	sasdds    = Path(f'{outdir}/ARCHIVE/set{studynum}-{part}.sas')
++	companion = Path(f'{outdir}/STATFILES/ssf{studynum}-{part}.sas')
++
++	procfmt  = Path(f'{tmpout}/proc_fmt')
++	numfmts  = Path(f'{tmpout}/numfmts')
++	fmts     = Path(f'{tmpout}/fmt')
++
++	tmpsas = Path(f'{tmpout}/sa{studynum}-{part}.tmp')
++	tmpsas = cat(tmpsas)
++	lrecl = tmpsas | grep('LRECL=.*\.') | sed('s/[^0-9]//g')  # grep 'LRECL=.*\.' "$tmpsas" | sed 's/[^0-9]//g'
++
++	cfg = Path(f'{studynum}.cfg')
++	nonhermes = grep('nonhermes', file=cfg)
++
++	#-------------------------------------------------------------------------
++	# Look for existing sections
++	#-------------------------------------------------------------------------
++	if os.path.isfile(procfmt):
++		procformat = True
++	else:
++		procformat = Text([ tmpsas[idx:idx+2] for idx,line in enumerate(tmpsas) if match('^PROC *FORMAT', line) ])  # grep -A1 '^PROC *FORMAT' "$tmpsas"
++		procformat = match('^ +VALUE ', procformat[-1])  # tail -1 | grep '^  *VALUE '
++
++	varlabels = tmpsas | grep('^ *LABEL')
++
++	missvals  = tmpsas | grep('^IF \(.+ [<>]*= .+\) THEN .+ =', insensitive=True) | \
++						 grep("^IF \([^ ]+ = ' '\) THEN [^ ]+ = '';", invert=True)    # egrep -i '^IF \(.+ [<>]*= .+\) THEN .+ =' "$tmpsas" | egrep -v "^IF \([^ ]+ = ' '\) THEN [^ ]+ = '';"`
++
++	if os.path.isfile(fmts):
++		formats = True
++	else:
++		formats = tmpsas | grep('^ *FORMAT [^ ][^ ]* [^ ][^ ]*\.')  # grep '^ *FORMAT [^ ][^ ]* [^ ][^ ]*\.' "$tmpsas"
++
++	#-------------------------------------------------------------------------
++	# Add rest of SAS header, customizing study and part numbers
++	#-------------------------------------------------------------------------
++	if nonhermes:
++		hdr = 'sashdr_retro.txt'
++	else:
++		hdr = 'sashdr.txt'
++
++	hdr_text = cat(Path(f"{scriptpath}/{hdr}"))
++	hdr_text | sed('NNNNN', studynum) | sed('QQQQ', part) >> sasdds
++
++	if missvals or os.path.isfile(numfmts):
++		cat(Path(f'{scriptpath}/companion.sas')) >> companion
++	else:
++		os.remove(companion)
++
++	#-------------------------------------------------------------------------
++	# SAS SYNTAX
++	#-------------------------------------------------------------------------
++	#-------------------------------------------------------------------------
++	# PROC FORMAT
++	#-------------------------------------------------------------------------
++	sasdds_file = open(sasdds, 'a')
++	if procformat and not os.path.isfile(numfmts):
++		print("\n* SAS PROC FORMAT;\n", file=sasdds_file)
++		print( "/*", file=sasdds_file)
++
++		if os.path.isfile(procfmt):
++			with open(procfmt) as in_file:
++				print(in_file.read(), file=sasdds_file)
++		else:
++			lines = tmpsas | lines_between('PROC *FORMAT', 'RUN; *$')  # sed -n '/PROC *FORMAT/,/RUN; *$/p' "$tmpsas"
++			lines =  lines |  sed('PROC  FORMAT LIB=LIBRARY', 'PROC FORMAT')  # sed 's/PROC  FORMAT LIB=LIBRARY/PROC FORMAT/'
++			lines =  lines | grep('^RUN;', invert=True)  # grep -v '^RUN;'
++			lines >> sasdds_file
++
++		print("*/", file=sasdds_file)
++
++	#-------------------------------------------------------------------------
++	# INFILE, INPUT STATEMENTS
++	#-------------------------------------------------------------------------
++	print("\n\n* SAS DATA, INFILE, INPUT STATEMENTS;", file=sasdds_file)
++
++	print("\nDATA;", file=sasdds_file)
++	print(f'INFILE "data-filename" LRECL={lrecl};', file=sasdds_file)
++
++	lines = tmpsas | lines_between('INFILE INDATA.*;', ';')  # sed -n '/INFILE INDATA.*;/,/;/p' "$tmpsas"
++	lines =  lines | grep('INFILE INDATA', invert=True)  # grep -v 'INFILE INDATA'
++	lines =  lines |  sed('^ *INPUT *$', 'INPUT')  # sed 's/^ *INPUT *$/INPUT/'
++	lines =  lines |  sed('#1 ', '   ')
++	lines >> sasdds_file
++
++	#-------------------------------------------------------------------------
++	# LABEL STATEMENT
++	#-------------------------------------------------------------------------
++	if varlabels:
++		print("\n\n* SAS LABEL STATEMENT;\n", file=sasdds_file)
++
++		lines = tmpsas | lines_between('^ *LABEL', '^ *; *$')  # sed -n '/^ *LABEL/,/^ *; *$/p' "$tmpsas"
++		lines =  lines | sed('^ *LABEL', 'LABEL')  # sed 's/^ *LABEL/LABEL/'
++		lines =  lines | sed('$', ' ')  # sed 's/$/ /'
++		lines >> sasdds_file
++
++	#-------------------------------------------------------------------------
++	# INSERT DATA STEP IN COMPANION FILE, IF APPLICABLE
++	#-------------------------------------------------------------------------
++	if os.path.isfile(companion):
++
++		companion_text = cat(companion)
++
++		with open(companion, 'a') as companion_file:
++			#-------------------------------------------------------------------------
++			# Also, insert proc format if number of formats exceeded the SAS limit of
++			# 4096.
++			#-------------------------------------------------------------------------
++
++			if os.path.isfile(numfmts):
++				companion_text += dedent(f"""
++											* SAS PROC FORMAT;
++											
++											/*
++											{cat(procfmt)}
++											*/
++											"""
++				                         )
++
++			companion_text += '\n* SAS DATA STEP;'
++			companion_text += 'DATA;\nSET SAS-dataset ;\n'
++
++	#-------------------------------------------------------------------------
++	# MISSING VALUES
++	#-------------------------------------------------------------------------
++	if missvals:
++		print("\n\n* USER-DEFINED MISSING VALUES RECODE TO SAS SYSMIS;\n", file=sasdds_file)
++
++		print("/*", file=sasdds_file)
++
++		lines = tmpsas | lines_between('IF .*= *\. *;', 'PROC DATASETS')  # ed -n '/IF .*= *\. *;/,/PROC DATASETS/p' "$tmpsas"
++		lines =  lines | grep('PROC DATASETS', invert=True)  # grep -v 'PROC DATASETS'
++		lines =  lines | grep('^ *$', invert=True)  # grep -v '^ *$'
++		lines =  lines |  sed('^', '   ')  # sed 's/^/   /'
++		mprint(*lines, file=sasdds_file)
++
++		print("*/", file=sasdds_file)
++
++		if os.path.isfile(companion):
++			with open(companion, 'a') as companion_file:
++				print(file=companion_file)
++				with open(sasdds) as in_file:
++					sas_lines = lines_between(in_file.read(), 'USER-DEFINED', '\*\/')  # sed -n '/USER-DEFINED/,/\*\//p' "$sasdds"
++					mprint(*sas_lines, file=companion_file)
++
++	#-------------------------------------------------------------------------
++	# SAS FORMAT STATEMENT
++	#-------------------------------------------------------------------------
++	if formats:
++		if not os.path.isfile(numfmts):
++			print("\n\n* SAS FORMAT STATEMENT;\n", file=sasdds_file)
++
++			pritn("/*", file=sasdds_file)
++
++			if os.path.isfile(fmts):
++				print(fmts.read_text(), file=sasdds_file)
++			else:
++				lines = lines_between(tmpsas.read_text(), '^ *FORMAT', ';')  # sed -n '/^ *FORMAT/,/;/p' "$tmpsas"
++				lines = lines_between(lines, 'min and max', '\Z', remove=True)  # sed '/min and max/,$d'
++				lines = grep(lines, '.')  # grep '.'
++				mprint(*lines, sasdds_file)
++
++			print("*/", file=sasdds_file)
++		else:
++			#-------------------------------------------------------------------------
++			# Also, insert format statement if number of formats exceeded the SAS
++			# limit of 4096.
++			#-------------------------------------------------------------------------
++			with open(companion, 'a') as companion_file:
++				print(companion)
++				print( "* SAS FORMAT STATEMENT;", companion)
++				print(companion)
++				print( "/*", companion)
++				print(fmts.read_text(), companion)
++				print( "*/", companion)
++
++	#-------------------------------------------------------------------------
++	# RUN COMMAND
++	#-------------------------------------------------------------------------
++	print("\nRUN ;", file=sasdds_file)
++
++	if os.path.isfile(companion):
++		with open(companion) as companion_file:
++			print("\nRUN ;", file=companion_file)
++
++	sasdds_file.close()
++
++
++
++def _4b_tweak_spss(outdir:PathLike):
++	""" Cleans and customizes SPSS DDS files generated by module _3_makedds. """
++	return shell.run('4b_tweakspss.sh', outdir)
++
++	# PATH=/usr/bin:/bin:/opt/SPSS/bin:/opt/icpsr/bin
++	#
++	# outdir={1}
++	# scriptpath=/opt/hermes
++	# studynum=`print("{outdir}" | cut -d'-' -f1`)
++	# part=`print("{outdir}" | cut -d'-' -f2`)
++	# tmpspss=${tmpout}/sp"{studynum}-{part}".tmp
++	# spssdds="{outdir}"/ARCHIVE/set"{studynum}-{part}".sps
++	# lrecl=`grep LRECL= "{tmpspss}" | sed 's/[^0-9]//g'`
++	# cfg="{studynum}".cfg
++	# nonhermes=`grep nonhermes {cfg}`
++	# mval_sps=${tmpout}/mval.sps
++	# varlevels=${tmpout}/varlevels
++	# formats=${tmpout}/reapply_print.sps
++	# formats_pres=${tmpout}/spss_reapply_pres.sps
++	#
++	# #-------------------------------------------------------------------------
++	# # Look for existing sections
++	# #-------------------------------------------------------------------------
++	#
++	# varlabs=`grep '^VARIABLE LABELS' "{tmpspss}"`
++	# vallabs=`grep -A1 '^VALUE LABELS' "{tmpspss}" | tail -1 | grep '[^ \.]'`
++	#
++	# if [ -s "{mval_sps}" ]:
++	# 		missvals=y
++	#
++	# #-------------------------------------------------------------------------
++	# # Add rest of SPSS header, customizing study and part numbers
++	# #-------------------------------------------------------------------------
++	#
++	# if [ "{nonhermes}" ]:
++	# 		hdr=spsshdr_retro.txt
++	# else:
++	# 		hdr=spsshdr.txt
++	#
++	# sed "s/NNNNN/{studynum}/" "{scriptpath}/{hdr}" | sed "s/QQQQ/{part}/" >>, file="{spssdds}"
++	#
++	# #-------------------------------------------------------------------------
++	# # SPSS SYNTAX
++	# #-------------------------------------------------------------------------
++	#
++	# #-------------------------------------------------------------------------
++	# # FILE HANDLE AND DATA LIST
++	# #-------------------------------------------------------------------------
++	#
++	# print(>>, file="{spssdds}")
++	# print("* SPSS FILE HANDLE AND DATA LIST COMMANDS." >>, file="{spssdds}")
++	# print(>>, file="{spssdds}")
++	#
++	# print('FILE HANDLE DATA / NAME="data-filename" LRECL='"{lrecl}." >>, file="{spssdds}")
++	# print('DATA LIST FILE=DATA /' >>, file="{spssdds}")
++	#
++	# #-------------------------------------------------------------------------
++	# # Copy data list from SDA SPSS output.  Non-Hermes applications may
++	# # involve card image data.  Leave the card numbers in the output if
++	# # applicable.
++	# #-------------------------------------------------------------------------
++	#
++	# cards=`sed -n '/^DATA LIST/,/^  *\. *$/p' "{tmpspss}" | grep '^ *\/[2-9] '`
++	#
++	# if [ "{cards}" ]:
++	# 		sed -n '/^DATA LIST/,/^  *\. *$/p' "{tmpspss}" | grep '.' | grep -v 'DATA LIST' | grep -v 'FILE=.x.'  >>, file="{spssdds}"
++	# else:
++	# 		sed -n '/^DATA LIST/,/^  *\. *$/p' "{tmpspss}" | grep '.' | grep -v 'DATA LIST' | grep -v 'FILE=.x.' | \
++	# 			 sed 's/\/1/  /' >>, file="{spssdds}"
++	#
++	# #-------------------------------------------------------------------------
++	# # Realign variables on 1st line of data list if only 2 variables
++	# #-------------------------------------------------------------------------
++	#
++	# oldline1=`grep -A1 '^DATA LIST FILE=DATA' "{spssdds}" | tail -1`
++	# numvars=`print("{oldline1}" | splitit | wc -l | sed 's/ //g'`)
++	#
++	# if [ "{numvars}" -eq 2 ]:
++	# 		width=`print("{oldline1}" | wc -L | sed 's/ //g'`)
++	#
++	# 		leftspace=`expr 48 - "{width}"`
++	#
++	# 		leftstring='|'
++	#
++	# 		#-------------------------------------------------------------------------
++	# 		# Left pad
++	# 		#-------------------------------------------------------------------------
++	#
++	# 		i=1
++	#
++	# 		while [ "{i}" -le "{leftspace}" ]
++	# 				leftstring="{leftstring} "
++	# 				i=`expr "{i}" + 1`
++	#
++	# 		mv  "{spssdds}" "{spssdds}".old
++	# 		sed "s#^ *\({oldline1}\)#{leftstring}\1#" "{spssdds}".old  | sed 's/^|//' > "{spssdds}"
++	# 		rm "{spssdds}".old
++	#
++	#
++	# #-------------------------------------------------------------------------
++	# # VARIABLE LABELS
++	# #-------------------------------------------------------------------------
++	# if [ "{varlabs}" ]:
++	# 		print(>>, file="{spssdds}")
++	# 		print("* SPSS VARIABLE LABELS COMMAND" >>, file="{spssdds}")
++	# 		print(>>, file="{spssdds}")
++	#
++	# 		#-------------------------------------------------------------------------
++	# 		# Wrap long labels
++	# 		#-------------------------------------------------------------------------
++	# 		varlabels=`sed -n '/^VARIABLE LABELS/,/^ *\. *$/p' "{tmpspss}"`
++	# 		longlabels=`print("{varlabels}" | grep -n '^.\{256,\}'`)
++	# 		lastline=`print("{varlabels}" | wc -l | sed 's/ //g'`)
++	#
++	# 		if [ not "{longlabels}" ]:
++	# 				print("{varlabels}" >>, file="{spssdds}")
++	# 		else:
++	# 				start=1
++	# 				print("{longlabels}" | while read longline)
++	# 						longnum=`print("{longline}" | cut -d: -f1`)
++	# 						flabel=`print("{longline}" | sed 's/^[0-9]\{1,\}://' | sed 's| /$|/|' | fmt -150`)
++	# 						end=`expr "{longnum}" - 1`
++	# 						check=`expr "{start}" - 1`
++	#
++	# 						if [ "{check}" -ne "{end}" ]:
++	# 								print("{varlabels}" | sed -n "{start},{end}"'p' >>, file="{spssdds}")
++	#
++	# 						#-------------------------------------------------------------------------
++	# 						# How many lines in wrapped label?
++	# 						#-------------------------------------------------------------------------
++	# 						lablines=`print("{flabel}" | wc -l | sed 's/  *//'`)
++	#
++	# 						#-------------------------------------------------------------------------
++	# 						# First line of individual label only needs a + at the end
++	# 						#-------------------------------------------------------------------------
++	# 						print("{flabel}" | head -1 | sed "s/\$/'+/" >>, file="{spssdds}")
++	#
++	# 						#-------------------------------------------------------------------------
++	# 						# Inner lines (if any) need ' at the beginning and + at the end
++	# 						#-------------------------------------------------------------------------
++	# 						if [ "{lablines}" -gt 2 ]:
++	# 								stop=`expr "{lablines}" - 1`
++	#
++	# 								print("{flabel}" | sed -n "2,{stop}"'p' | sed "s/^ */     ' /" | sed "s/'*\$/'+/" >>, file="{spssdds}")
++	#
++	# 						#-------------------------------------------------------------------------
++	# 						# Last line of individual label only needs ' at the beginning unless it
++	# 						# contains only the / variable separator
++	# 						#-------------------------------------------------------------------------
++	# 						separator=`print("{flabel}" | tail -1 | grep '^  */$'`)
++	#
++	# 						if [ "{separator}" ]:
++	# 								print("{flabel}" | tail -1 >>, file="{spssdds}")
++	# 						else:
++	# 								print("{flabel}" | tail -1 | sed "s/^ */     ' /" >>, file="{spssdds}")
++	#
++	# 						#-------------------------------------------------------------------------
++	# 						# Increment start line for next iteration
++	# 						#-------------------------------------------------------------------------
++	# 						start=`expr "{longnum}" + 1`
++	#
++	# 				#-------------------------------------------------------------------------
++	# 				# All done with long labels; print rest of variable labels section
++	# 				#-------------------------------------------------------------------------
++	# 				lastlong=`print("{longlabels}" |  tail -1 | cut -d: -f1`)
++	# 				start=`expr "{lastlong}" + 1`
++	#
++	# 				if [ "{start}" -le "{lastline}" ]:
++	# 						print("{varlabels}" | sed -n "{start},{lastline}"'p' >>, file="{spssdds}")
++	#
++	# #-------------------------------------------------------------------------
++	# # VALUE LABELS
++	# #-------------------------------------------------------------------------
++	# if [ "{vallabs}" ]:
++	# 		print(>>, file="{spssdds}")
++	# 		print(>>, file="{spssdds}")
++	# 		print("* SPSS VALUE LABELS COMMAND." >>, file="{spssdds}")
++	# 		print(>>, file="{spssdds}")
++	# 		sed -n '/^VALUE LABELS/,/\. *$/p' "{tmpspss}"  >>, file="{spssdds}"
++	#
++	# #-------------------------------------------------------------------------
++	# # MISSING VALUES
++	# #-------------------------------------------------------------------------
++	# if [ "{missvals}" ]:
++	# 		print(>>, file="{spssdds}")
++	# 		print("* SPSS MISSING VALUES COMMAND." >>, file="{spssdds}")
++	# 		print(>>, file="{spssdds}")
++	#
++	# 		print("* MISSING VALUES" >>, file="{spssdds}")
++	# 		sed 's/ and / /' "{mval_sps}" | sed 's/through Highest/thru hi/' | sed 's/Lowest through/lo thru/' >>, file="{spssdds}"
++	# 		print('   .'  >>, file="{spssdds}")
++	#
++	# print(>>, file="{spssdds}")
++	# print("EXECUTE." >>, file="{spssdds}")
++	#
++	# #-------------------------------------------------------------------------
++	# # VARIABLE LEVELS
++	# #-------------------------------------------------------------------------
++	# if [ -f "{varlevels}" ]:
++	# 		print(>>, file="{spssdds}")
++	# 		print("* SPSS VARIABLE LEVEL COMMAND." >>, file="{spssdds}")
++	#
++	# 		for level in scale nominal ordinal:
++	# 				 varlist=`grep ";{level}" "{varlevels}" | cut -d\; -f1 | sed 's/^/   /'`
++	#
++	# 				 if [ "{varlist}" ]:
++	# 						 print(>>, file="{spssdds}")
++	# 						 print("VARIABLE LEVEL" >>, file="{spssdds}")
++	# 						 print("{varlist}" >>, file="{spssdds}")
++	# 						 print("    ({level})." >>, file="{spssdds}")
++	#
++	# #-------------------------------------------------------------------------
++	# # REAPPLY ORIGINAL FORMATS IF RUNNING IN PRESERVE FORMAT MODE (-p)
++	# #-------------------------------------------------------------------------
++	# if [ -f "{formats_pres}" ]:
++	# 		has_fmts=`egrep -v '^FORMAT|^ +\.$' "{formats_pres}"`
++	# 		if [ "{has_fmts}" ]:
++	# 				print(>>, file="{spssdds}")
++	# 				print("* SPSS FORMAT COMMAND." >>, file="{spssdds}")
++	# 				print(>>, file="{spssdds}")
++	# 				cat "{formats_pres}" >>, file="{spssdds}"
++	#
++	# #-------------------------------------------------------------------------
++	# # OPTIMIZE PRINT FORMATS
++	# #-------------------------------------------------------------------------
++	# if [ -f "{formats}" ]:
++	# 		has_fmts=`egrep -v 'PRINT FORMAT|^ +\.$' "{formats}"`
++	# 		if [ "{has_fmts}" ]:
++	# 				print(>>, file="{spssdds}")
++	# 				print("* SPSS PRINT FORMAT COMMAND." >>, file="{spssdds}")
++	# 				print(>>, file="{spssdds}")
++	# 				cat "{formats}" >>, file="{spssdds}"
++	#
++	# #-------------------------------------------------------------------------
++	# # OUTFILE SYNTAX
++	# #-------------------------------------------------------------------------
++	# cat ${scriptpath}/outfile.sps >>, file="{spssdds}"
++
++
++
++def _4b_tweak_stata(outdir:PathLike):
++	""" Cleans and customizes Stata DDS files generated by module _3_makedds. """
++	return shell.run('4b_tweakstata.sh', outdir)
++
++	# PATH=/usr/bin:/bin:/opt/SPSS/bin:/opt/newturn/bin
++	#
++	# outdir={1}
++	# scriptpath=/opt/hermes
++	# studynum=`print("{outdir}" | cut -d'-' -f1`)
++	# part=`print("{outdir}" | cut -d'-' -f2`)
++	# tmpstata=${tmpout}/st"{studynum}-{part}".tmp
++	# statadds="{outdir}"/ARCHIVE/set"{studynum}-{part}"
++	# ddl="{outdir}"/SDA/ddl"{studynum}-{part}".txt
++	# companion="{outdir}"/STATFILES/ssf"{studynum}-{part}".do
++	# lrecl=`grep 'LRECL=.*\.' "{tmpstata}" | sed 's/[^0-9]//g'`
++	# ascii="{outdir}"/ARCHIVE/da"{studynum}-{part}".txt
++	# reformat=${tmpout}/reapply_print.do
++	#
++	# if [ not "{lrecl}" ]:
++	# 		lrecl=`grep 'Record length: *[0-9]*' "{tmpstata}" | sed 's/[^0-9]//g'`
++	#
++	# #-----------------------------------------------------------------
++	# # Check for presence of value labels, missing values
++	# #-----------------------------------------------------------------
++	#
++	# vallabs=`grep 'label define' "{tmpstata}"`
++	# mvals=`grep 'replace .* = [\."]"* if .*' "{tmpstata}" | egrep -v 'replace [^ ]+ = "" if \([^ ]+ == "."\)'`
++	#
++	# cfg="{studynum}".cfg
++	# nonhermes=`grep nonhermes {cfg}`
++	#
++	# #-------------------------------------------------------------------------
++	# # Add next chunk of Stata header, customizing study and part numbers
++	# #-------------------------------------------------------------------------
++	# hdr=statahdr.txt
++	#
++	# if [ "{nonhermes}" ]:
++	# 		hdr=statahdr_retro.txt
++	#
++	# lrecl=`head -1 < {ascii} | wc -L`
++	#
++	# numvars=`grep '^name *= *' {ddl} | wc -l | sed 's/[^0-9]//g'`
++	#
++	# if [ "{numvars}" -le 5000 ]:
++	# 		sed "s/NNNNN/{studynum}/" "{scriptpath}/{hdr}"  | sed "s/QQQQ/{part}/"  | grep -v 'set maxvar' >>, file="{statadds}".do
++	# else:
++	# 		maxvars=`expr "{numvars}" + 10`
++	# 		sed "s/NNNNN/{studynum}/" "{scriptpath}/{hdr}"  | sed "s/QQQQ/{part}/"  | \
++	# 		sed "s/set maxvar 5000 \(.* to\) 5000/set maxvar {maxvars} \1 {maxvars}/" >>, file="{statadds}".do
++	#
++	# section=3
++	#
++	# #-------------------------------------------------------------------------
++	# # Reformat to optimized widths
++	# #-------------------------------------------------------------------------
++	# if [ -f "{reformat}" ]:
++	# 		printf '/********************************************************************\n\n' >>, file="{statadds}".do
++	#
++	# 		printf " Section {section}: Reformat\n\n"                                               >>, file="{statadds}".do
++	#
++	# 		print('  This section applies optimized formats to variables.' >>, file="{statadds}".do)
++	# 		print(>>, file="{statadds}".do)
++	#
++	# 		printf '*********************************************************************/\n\n'     >>, file="{statadds}".do
++	#
++	# 		cat "{reformat}" >>, file="{statadds}".do
++	# 		print(>>, file="{statadds}".do)
++	# 		print(>>, file="{statadds}".do)
++	#
++	# 		section=`expr "{section}" + 1`
++	#
++	#
++	# #-------------------------------------------------------------------------
++	# # Add value labels comments if applicable
++	# #-------------------------------------------------------------------------
++	#
++	# if [ "{vallabs}" ]:
++	# 		printf '/*********************************************************\n\n' >>, file="{statadds}".do
++	#
++	# 		print("Section {section}: Value Label Definitions" >>, file="{statadds}".do)
++	# 		print('This section defines labels for the individual values of each variable.'  >>, file="{statadds}".do)
++	# 		print('We suggest that users do not modify this section.' >>, file="{statadds}".do)
++	#
++	# 		printf '\n**********************************************************/\n\n'  >>, file="{statadds}".do
++	#
++	# 		section=`expr "{section}" + 1`
++	#
++	# #-------------------------------------------------------------------------
++	# # Split Stata DDS file into .do and .dct files.  Replace any double quotes
++	# # in the label with single quotes to avoid Stata syntax errors.
++	# #-------------------------------------------------------------------------
++	#
++	# datalabel=`grep '^title *=' {ddl} | cut -d= -f2 | tr '"' "'" | sed 's/^ */"/' | sed 's/ *$/"/'`
++	#
++	# print("label data ${datalabel}" >>, file="{statadds}".do)
++	# print(>>, file="{statadds}".do)
++	#
++	# sed -n '/^#delimit/,/delimit cr/p' "{tmpstata}" >>, file="{statadds}".do
++	# print(>>, file="{statadds}".do)
++	#
++	# #-------------------------------------------------------------------------
++	# # Missing values, if applicable
++	# #-------------------------------------------------------------------------
++	#
++	# if [ "{mvals}" ]:
++	#
++	# 		cat "{scriptpath}"/companion.do >>, file="{companion}"
++	#
++	# 		printf '\n/***************************************************************************\n\n' >>, file="{statadds}".do
++	#
++	# 		printf " Section {section}: Missing Values\n\n"  >>, file="{statadds}".do
++	#
++	# 		print(' This section will replace numeric missing values (i.e., -9) with generic'  >>, file="{statadds}".do)
++	# 		print(' system missing ".".  By default the code in this section is commented out.' >>, file="{statadds}".do)
++	# 		print(' Users wishing to apply the generic missing values should remove the comment' >>, file="{statadds}".do)
++	# 		print(' at the beginning and end of this section.  Note that Stata allows you to' >>, file="{statadds}".do)
++	# 		print(' specify up to 27 unique missing value codes.'                             >>, file="{statadds}".do)
++	# 		print(>>, file="{statadds}".do)
++	#
++	# 		printf '****************************************************************/\n\n'        >>, file="{statadds}".do
++	#
++	# 		print('/*'                                                                         >>, file="{statadds}".do)
++	#
++	# 		sed -n '/^replace/,/^dictionary using Y/p' "{tmpstata}" | grep -v 'dictionary using Y'  >>, file="{statadds}".do
++	# 		sed -n '/^replace/,/^dictionary using Y/p' "{tmpstata}" | grep -v 'dictionary using Y'  >>, file="{companion}"
++	#
++	# 		print('*/'                                                                         >>, file="{statadds}".do)
++	#
++	# 		section=`expr "{section}" + 1`
++	# else:
++	# 		rm "{companion}"
++	#
++	# #-------------------------------------------------------------------------
++	# # Outfile syntax
++	# #-------------------------------------------------------------------------
++	#
++	# printf '/********************************************************************\n\n' >>, file="{statadds}".do
++	#
++	# printf " Section {section}: Save Outfile\n\n"                                               >>, file="{statadds}".do
++	#
++	# print('  This section saves out a Stata system format file.  There is no reason to' >>, file="{statadds}".do)
++	# printf '  modify it if the macros in Section 1 were specified correctly.\n\n'          >>, file="{statadds}".do
++	#
++	# printf '*********************************************************************/\n\n'     >>, file="{statadds}".do
++	#
++	# printf "save \`outfile', replace\n\n"                                                     >>, file="{statadds}".do
++	#
++	# #-------------------------------------------------------------------------
++	# # Rest of Stata .dct file
++	# #-------------------------------------------------------------------------
++	#
++	# sed -n '/^.lines([0-9]\{1,\})/,{p}' "{tmpstata}" | sed 's/\(column.*\)long\(.*%1[0-9]\)/\1double\2/' >>, file="{statadds}".dct
++
++
++
++
++# if run as script, run with command line args
++if __name__ == '__main__':
++	if len(argv) != 2:
++		mprint("""
++			Usage:  4_ddstweak.sh [study_number-part_number]
++					   e.g., 4_ddstweak.sh 1234-3
++			
++					Exiting...
++		""")
++		exit()
++	else:
++		run(argv[1])
+Index: ref/hermes
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ref/hermes b/ref/hermes
+new file mode 100755
+--- /dev/null	(date 1721242064106)
++++ b/ref/hermes	(date 1721242064106)
+@@ -0,0 +1,1532 @@
++#!/bin/sh
++PATH=/usr/bin:/bin:/opt/hermes/bin:/opt/icpsr/bin:/opt/icpsr/lib/shlib:/opt/varmet/bin:/opt/SPSS/bin:/opt/python/bin:/opt/sda/bin:/opt/jq/bin
++
++# hermes
++# Version 2.6
++# Peggy Overcashier
++# Created 3/4/04
++
++#    $Id: hermes,v 1.147 2018/07/10 18:30:14 overcash Exp $
++
++#-----------------------------------------------------------------
++# Hermes is an automated batch production system for ICPSR data
++# collections.  This system provides completely automated batch
++# production of an enhanced suite of ICPSR products, with new
++# products including "ready-to-go" data files for SAS, SPSS, and
++# Stata, as well as variable-level DDI-compliant XML.
++#-----------------------------------------------------------------
++BASEPROG=`basename "$0"`
++sdabatch=`echo "$BASEPROG" | grep sdabatch`
++VERSION=2.6
++LOGVER=`echo $VERSION | sed 's/\.//'`
++HERMESLOG=/isilon/priv-linux/pipeline_logs/hermes${LOGVER}log.txt
++scriptpath=/opt/hermes
++PID=$$
++tmp=/var/tmp
++export PID
++FILE=/opt/icpsr/bin/ifile
++makeddltemplate=${scriptpath}/makeddl_template.txt
++sda_maxwidth=500
++user=`whoami`
++hermesrc=$HOME/.hermesrc
++passed=0
++PRESERVE_FMTS=0
++STATUS=0
++USE_DEFAULTS=0
++
++#-----------------------------------------------------------------
++# Check host; force non-CNS users to run Hermes in SDE only.
++# CNS staff may run on intranet as well.
++#-----------------------------------------------------------------
++CNS_STAFF=`groups "$user" | grep ' cns'`
++EXPECTED_HOST=login65.icpsr.umich.edu
++ALT_EXPECTED_HOST=login65[abc].icpsr.umich.edu   # Update this when we're testing a new server
++CNS_ALT_HOST=intranet2.icpsr.umich.edu
++PHI_EXPECTED_HOST=phi-login0.icpsr.umich.edu
++HOST=$(hostname)
++ALT_HOST_FOUND=`echo "${HOST}" | grep "${ALT_EXPECTED_HOST}"`
++
++
++if [ ! "$HOST" = "$EXPECTED_HOST" -a ! "$ALT_HOST_FOUND" -a ! "$HOST" = "$PHI_EXPECTED_HOST" ]
++then
++		 if [ ! "$CNS_STAFF" ]
++		 then
++				 echo "$BASEPROG must be run on $EXPECTED_HOST"
++				 exit 1
++		 elif [ ! "$HOST" = "$CNS_ALT_HOST" ]
++		 then
++				 echo "$BASEPROG must be run on $EXPECTED_HOST, $ALT_EXPECTED_HOST, or $CNS_ALT_HOST"
++				 exit 1
++		 fi
++fi
++
++if [ ! -f "$HERMESLOG" -a ! "$sdabatch" ]
++then
++		baselog=`basename "$HERMESLOG"`
++		echo "Hermes log ($baselog) doesn't exist. Please contact PC Support."
++		exit 1
++fi
++
++#-----------------------------------------------------------------
++# If -s option, suppress Hermes milestone submission
++# If -r option, quietly submit Hermes milestone without asking
++#-----------------------------------------------------------------
++if [ "$sdabatch" ]
++then
++		 while getopts "bdlptx" opt
++		 do
++				 case $opt in
++						 b ) BYPASS_ORACLE=1 ;;
++						 d ) USE_DEFAULTS=1 ;;
++						 l ) USE_LONG_DECS=1 ;;
++						 p ) PRESERVE_FMTS=1 ;;
++						 t ) TESTING=1 ;;
++						 x ) BYPASS_VLCHECKS=1 ;;
++						 * ) exit 1 ;;
++				 esac
++		 done
++
++		 if [ "$PRESERVE_FMTS" -eq 1 -a "$USE_LONG_DECS" ]
++		 then
++				 echo "Can't specify both -p (preserve formats) and -l (use long decimals)"
++				 exit 1
++		 fi
++
++		 export USE_LONG_DECS
++else
++		 while getopts "bdmprst" opt
++		 do
++				 case $opt in
++						 b ) BYPASS_ORACLE=1 ;;
++						 d ) USE_DEFAULTS=1 ;;
++						 m ) BYPASS_METCHK=1 ;;
++						 r ) RECORD_MILESTONE=1 ;;
++						 p ) PRESERVE_FMTS=1 ;;
++						 s ) SUPPRESS_MILESTONE=1 ;;
++						 t ) TESTING=1 ;;
++						 * ) exit 1 ;;
++				 esac
++		 done
++fi
++
++if [ "$BYPASS_VLCHECKS" ]
++then
++		 echo
++		 echo "WARNING:"
++		 echo "You have selected the -x (bypass variable list comparison) option."
++		 echo "Proceed at your own risk; discrepancies will not be detected."
++fi
++
++#-----------------------------------------------------------------
++# Detect and warn about extraneous command line arguments
++#-----------------------------------------------------------------
++extra_args=`echo "$@" | sed -e 's/-[a-z]\{1,\}//g' -e 's/^  *//'`
++
++if [ "$extra_args" ]
++then
++		echo "Warning: ignoring extraneous arguments ($extra_args)"
++		echo -n "         Continue (N/y)? : "
++		read yesno
++		yesno=`echo "$yesno" | cut -c1 | tr '[A-Z]' '[a-z]'`
++		case "$yesno" in
++				y ) ;;
++				* ) echo
++						echo "         Exiting..."
++						echo
++						exit 3 ;;
++		esac
++fi
++
++export PRESERVE_FMTS
++
++#-----------------------------------------------------------------
++# Set testing parameters if CNS staff running test mode
++#-----------------------------------------------------------------
++if [ "$TESTING" ]
++then
++		if [ ! "$CNS_STAFF" -a ! "$user" = "icpsrpeg" ]
++		then
++				echo "Must be CNS staff to run in test mode"
++				exit 1
++		fi
++
++		TESTDIR=/opt/hermes-test
++		makeddltemplate=${TESTDIR}/makeddl_template.txt
++		PATH="${TESTDIR}/bin:${PATH}"
++		SUPPRESS_MILESTONE=1
++		echo "Test path = $PATH"
++elif [ ! "$CNS_STAFF" ]
++then
++		if [ "$BYPASS_METCHK" ]
++		then
++				echo "Must be CNS staff to bypass metadata check"
++				exit 1
++		fi
++fi
++
++#-----------------------------------------------------------------
++# Invalid command line option combinations
++#-----------------------------------------------------------------
++if [ "$USE_DEFAULTS" -eq 1 -a ! -f "$hermesrc" ]
++then
++		echo "Invalid option -d (use defaults); $hermesrc file not found"
++		exit 1
++fi
++
++if [ "$USE_DEFAULTS" -eq 1 -a "$BYPASS_ORACLE" ]
++then
++		echo "Invalid combination: -d (use defaults) and -b (bypass Oracle)"
++		exit 1
++fi
++
++export USE_DEFAULTS
++
++#-------------------------------------------------------------------------
++# Clean exit if user-interrupted
++#-------------------------------------------------------------------------
++trap "exit 1" 1 2 3 15
++
++#-----------------------------------------------------------------
++# Can't have both -s and -r
++#-----------------------------------------------------------------
++if [ "$SUPPRESS_MILESTONE" -a "$RECORD_MILESTONE" ]
++then
++		echo
++		echo "Can't use both -s and -r!"
++		echo "   -s = Suppress Hermes milestone from Study Tracking System"
++		echo "   -r = Quietly record Hermes milestone in Study Tracking System"
++		echo "        without asking."
++		echo
++		exit 1
++fi
++
++#-----------------------------------------------------------------
++# Display testing message
++#-----------------------------------------------------------------
++if [ ! "$sdabatch" ]
++then
++		echo '***********************************************************'
++		echo "* Hermes version ${VERSION}                                      *"
++		echo '*                                                         *'
++		echo "* Please check all output very carefully!                 *"
++		echo '*                                                         *'
++		echo "* Report all bugs to:  overcash@umich.edu                 *"
++		echo '*                                                         *'
++		echo '***********************************************************'
++fi
++
++#-----------------------------------------------------------------
++# Check to make sure all Hermes scripts are executable by user
++#-----------------------------------------------------------------
++scriptlist=${scriptpath}/scriptlist
++
++for prog in `cat "$scriptlist"`
++do
++		prog="$scriptpath/bin/$prog"
++
++		if [ ! -x "$prog" ]
++		then
++				echo
++				echo "$BASEPROG is currently unavailable"
++				echo
++
++				#-----------------------------------------------------------------
++				# Email Peggy to fix permissions
++				#-----------------------------------------------------------------
++				sendmsg -t 'overcash@umich.edu' -f "$user@umich.edu" -s 'Hermes down' -m 'Fix permissions!'
++				exit 3
++		fi
++done
++
++#-----------------------------------------------------------------
++# Check to see if directory is writeable by user
++#-----------------------------------------------------------------
++if [ ! -w `pwd` ]
++then
++		echo
++		echo "***ERROR:  `pwd` is not writeable..."
++		echo "      Exiting..."
++		echo
++		exit 2
++fi
++
++#-----------------------------------------------------------------
++# Check for input files with old filenaming conventions
++#-----------------------------------------------------------------
++oldfilenames=`find . -maxdepth 1 -name 'da[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]_in.sav' \
++				| sed 's/^\.\///' | sed 's/^/              /'`
++
++if [ "$oldfilenames" ]
++then
++		echo
++		echo "*** Warning:  SPSS files found with old Hermes input filenames:"
++		echo "$oldfilenames"
++		echo
++		echo "    SPSS input files must be named ph#####-####_in.sav"
++		echo
++		echo "    Note: you can run hermes-old2new to rename the files."
++		echo "      (e.g., da99999-9999_in.sav --> ph99999-9999_in.sav)"
++		echo
++		echo "    THESE FILES WILL NOT BE PROCESSED!"
++		echo -n "       Continue? (y/n): "
++		read yesno
++		yesno=`echo "$yesno" | cut -c1 | tr '[A-Z]' '[a-z]'`
++		case "$yesno" in
++				y ) ;;
++				* ) echo
++						echo "       Exiting..."
++						echo
++						exit 3 ;;
++		esac
++fi
++
++#-----------------------------------------------------------------
++# Grab list of input files
++#-----------------------------------------------------------------
++spssfile=`find . -maxdepth 1 -name 'ph[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]_in.sav' \
++				| cut -d/ -f2 | sort -n`
++
++#-----------------------------------------------------------------
++# SPSS portable files no longer supported
++#-----------------------------------------------------------------
++porfiles=`find . -maxdepth 1 -name 'da[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]_in.por' \
++				| sed 's/^\.\///' | sort -n`
++
++if [ "$porfiles" ]
++then
++		echo
++		echo "*** SPSS portable files are no longer supported by Hermes."
++		echo "    Please save the following files to SPSS system (.sav)"
++		echo "    format if you want to use it as input to Hermes:"
++		echo
++		echo "$porfiles" | sed 's/^/    /'
++		echo
++fi
++
++studynums=`echo "$spssfile" | cut -d- -f1 | sed 's/ph0*//' | sort -un`
++
++#-----------------------------------------------------------------
++# Reserve study numbers 99990-99999 for CNS testing
++#-----------------------------------------------------------------
++reserved_study=`echo "$spssfile" | grep 'da9999[0-9]-'`
++
++if [ "$reserved_study" -a ! "$CNS_STAFF" -a ! "$user" = "icpsrpeg" ]
++then
++		#-----------------------------------------------------------------
++		# Exclude data files for 99990-99999 from Hermes processing
++		#-----------------------------------------------------------------
++		spssfile=`echo "$spssfile" | grep -v 'da9999[0-9]-'`
++
++		echo
++		echo "*** Study numbers 99990-99999 are reserved for CNS testing. Excluding the following input files:"
++		echo
++		echo "$reserved_study" | sed 's/^/    /'
++		echo
++
++		#-----------------------------------------------------------------
++		# Exit if no remaining data files to process
++		#-----------------------------------------------------------------
++		if [ ! "$spssfile" ]
++		then
++				echo "*** No remaining input files. Exiting..."
++				exit 1
++		fi
++fi
++
++#-----------------------------------------------------------------
++# Check for at least 1 correctly-named SPSS file
++#-----------------------------------------------------------------
++if [ ! "$spssfile" ]
++then
++		echo
++		echo "***ERROR:  No SPSS input files found..."
++		echo
++		echo "   SPSS input files must be named ph#####-####_in.sav"
++		echo
++		echo "   Note: you can run hermes-old2new to change 'da' to 'ph' in the filename."
++		echo "      (e.g., da99999-9999_in.sav --> ph99999-9999_in.sav)"
++		echo
++		echo "   Exiting..."
++		echo
++		exit 3
++fi
++
++#-----------------------------------------------------------------
++# At least one file remains. Does user want to record the Hermes
++# milestone?
++#-----------------------------------------------------------------
++err=0
++
++if [ "$BYPASS_ORACLE" ]
++then
++		if [ "$RECORD_MILESTONE" ]
++		then
++				echo "Bypassing Oracle; cannot record Hermes milestone in Study Tracking System"
++				SUPPRESS_MILESTONE=1
++				RECORD_MILESTONE=
++		fi
++else
++		if [ ! "$SUPPRESS_MILESTONE" -a ! "$RECORD_MILESTONE" -a ! "$sdabatch" ]
++		then
++				echo
++				echo -n "Record Hermes milestone(s) in Study Tracking System? (Y/n): "
++				read yesno
++				echo
++
++				yesno=`echo "$yesno" | cut -c1 | tr 'a-z' 'A-Z'`
++
++				case $yesno in
++						N ) SUPPRESS_MILESTONE=1;;
++						* ) RECORD_MILESTONE=1;;
++				esac
++		fi
++fi
++
++
++#-----------------------------------------------------------------
++# Check for correct filetypes
++#-----------------------------------------------------------------
++for infile in `echo "$spssfile"`
++do
++		suffix=`echo "$infile" | sed 's/^.*\(...\)$/\1/'`
++		filetype=`${FILE} "$infile"`
++		sav=`echo "$filetype" | grep 'SPSS System'`
++
++		if [ "$suffix" = "sav" -a ! "$sav" ]
++		then
++				 echo
++				 echo "***ERROR:  $infile is not an SPSS system file..."
++				 echo "           $filetype"
++				 echo
++				 err=`expr "$err" + 1`
++		fi
++
++		if [ "$PRESERVE_FMTS" -eq 1 ]
++		then
++				 fmtprobs=`checkwritefmts -f $infile -q`
++				 if [ $? -ne 0 ]
++				 then
++								echo
++								echo "***ERROR:  $infile has non-matching print/write formats..."
++								echo "           Please reconcile non-matching print/write formats using SPSS."
++								echo
++								echo "$fmtprobs"
++								echo
++								echo
++								err=`expr "$err" + 1`
++				 fi
++		fi
++done
++
++if [ "$err" -gt 0 ]
++then
++		 echo "Exiting..."
++		 echo
++		 exit 3
++fi
++
++#-----------------------------------------------------------------
++# Are question text files (if present) UNIX-formatted and
++# syntactically correct?
++#-----------------------------------------------------------------
++qtxtfiles=`ls qtxt*.ddl 2>/dev/null`
++
++if [ "$qtxtfiles" ]
++then
++		echo
++		err=0
++
++		#-----------------------------------------------------------------
++		# If DOS-formatted, convert to UNIX
++		#-----------------------------------------------------------------
++
++		dos=`ifile qtxt*.ddl | grep CRLF | cut -d: -f1`
++
++		if [ "$dos" ]
++		then
++				for dosfile in `echo "$dos"`
++				do
++						echo "Converting $dosfile from DOS to UNIX format..."
++						dos2unix "$dosfile"
++				done
++		fi
++
++		#-----------------------------------------------------------------
++		# Check for missing '*' variable delimiters
++		#-----------------------------------------------------------------
++		nodelimit=`grep -H -n -B1 '^name *=' qtxt*.ddl | egrep -v '[:-]name *=|[:-]label *=|\-\-|\-[0-9]+-\* *$'`
++
++		if [ "$nodelimit" ]
++		then
++				 for ddl in `echo "$nodelimit" | sed 's/ddl-.*/ddl/' | sort -u`
++				 do
++						 echo
++						 echo "***ERROR:  Question text file ($ddl) missing '*' delimiter"
++						 echo "           in column 1 near the following lines:"
++						 echo
++						 lines=`grep -n -B1 'name *=' $ddl | egrep -v '[:-]name *=|[:-]label *=|\-\-|^[0-9]+-\* *$' | \
++									 sed 's/^\([0-9]\{1,\}\)[^0-9].*/\1/'`
++						 for line in `echo "$lines"`
++						 do
++								 varline=`expr "$line" + 1`
++								 var=`sed -n "$varline"p $ddl | sed 's/^name *= /           /'`
++								 printf "$var:\tline $varline\n"
++						 done
++						 echo
++				 done
++				 err=1
++		fi
++
++		#-------------------------------------------------------------------------
++		# Make sure that DDL keywords are all lowercase
++		#-------------------------------------------------------------------------
++		for qtxt in `echo "$qtxtfiles"`
++		do
++				qtxt_contents=`nl "$qtxt"`
++
++				for keyword in name text
++				do
++						caseprob=`echo "$qtxt_contents" | egrep -i "^[[:space:]]*[0-9]+[[:space:]]*+$keyword *=" | egrep -v "^[[:space:]]*[0-9]+[[:space:]]+$keyword *="`
++
++						if [ "$caseprob" ]
++						then
++								 case_errs=`echo "$case_errs"; echo "$caseprob" | cut -d= -f1 | sort -u`
++						fi
++				done
++
++				if [ "$case_errs" ]
++				then
++						msg=`echo "*** Error:  $qtxt contains keywords with one or more";
++								 echo "    upper case characters:";
++								 echo;
++								 echo "$case_errs" | grep '[a-z]' | sed -e "s/^ */        Line /" -e "s/$/ =/";
++								 echo;
++								 echo "    Keywords are case-sensitive and must be lower case.";
++								 echo`
++
++						echo "$msg"
++						err=1
++				 fi
++		done
++
++		if [ "$err" -eq 1 ]
++		then
++				 echo
++				 echo "Exiting..."
++				 echo
++				 exit 3
++		fi
++fi
++
++#-----------------------------------------------------------------
++# Are all config files writable and UNIX-formatted?
++#-----------------------------------------------------------------
++cfgfmt=`cctell *.cfg 2>/dev/null`
++
++for cfg in `ls *.cfg 2>/dev/null`
++do
++		if [ "$cfg" -a ! -w "$cfg" ]
++		then
++				echo "   ***ERROR:  $cfg is not writable... Exiting..."
++				exit 3
++		else
++				dos=`echo "$cfgfmt" | grep -A1 "$cfg" | grep DOS`
++				if [ "$dos" ]
++				then
++						 dos2unix "$cfg"
++				fi
++		fi
++done
++
++#-----------------------------------------------------------------
++# Fill in missing config file information
++#-----------------------------------------------------------------
++echo
++echo "CHECKING FOR MISSING CONFIGURATION INFO..."
++
++for STUDYNUM in `echo "$studynums"`
++do
++		if [ "$BYPASS_ORACLE" ]
++		then
++				0_config_update -s $STUDYNUM -b
++		else
++				metproj=`oralookup -d pretdb -s active -f status -w "study = $STUDYNUM and active > 1"`
++
++				if [ ! "$metproj" -a "$STUDYNUM" -ne 99999 ]
++				then
++						prodmet=`oralookup -d tdb -s study -f studies -w "study = $STUDYNUM"`
++
++						if [ ! "$prodmet" ]
++						then
++								echo
++								echo "***ERROR:  No metadata project or production metadata found for study $STUDYNUM..."
++								echo
++								echo "   Please create a new metadata project at:"
++								echo "     http://www.icpsr.umich.edu/cgi-bin/INTRA/data/met/crproj?s=$STUDYNUM"
++								echo
++								exit 4
++						else
++								metsrc=tdb
++						fi
++				 else
++						metsrc=pretdb
++				 fi
++
++				0_config_update -s $STUDYNUM -m $metsrc
++		fi
++
++		if [ $? -ne 0 ]
++		then
++				echo "   Exiting..."
++				exit 4
++		fi
++done
++
++#-----------------------------------------------------------------
++# Error and cleanup functions
++#-----------------------------------------------------------------
++errorlog ()
++{
++				echo '------------------------------' >> "$studynum"_errors.txt
++				date >> "$studynum"_errors.txt
++				echo '------------------------------' >> "$studynum"_errors.txt
++				echo
++				echo "STUDY $studynum PART $part:" >> "$studynum"_errors.txt
++
++				error=`expr "$error" + 1`
++				STATUS=`expr "$STATUS" + 1`
++}
++
++cleanup ()
++{
++				if [ ! -d "CONVERT_PROBS" ]
++				then
++						mkdir CONVERT_PROBS
++				else
++						rm -rf CONVERT_PROBS/${outdir}
++				fi
++
++				mv "${outdir}" CONVERT_PROBS
++
++				if [ -d "${tmpout}" ]
++				then
++						TMPFILES="CONVERT_PROBS/${outdir}/TEMPFILES"
++						mkdir "${TMPFILES}"
++						find ${tmpout} -type f -exec cp -p {} "${TMPFILES}" \;
++				fi
++}
++
++#-----------------------------------------------------------------
++# Locate existing sources for question text and variable list
++# files if they aren't present in the Hermes directory.
++#-----------------------------------------------------------------
++for infile in `echo "$spssfile"`
++do
++				studynum=`echo "$infile" | cut -d'-' -f1 | sed 's/[^0-9]//g'`
++				part=`echo "$infile" | cut -d'-' -f2 | sed 's/[^0-9]//g'`
++				shortpart=`echo "$part" | sed 's/^0*//' | sed 's/[^0-9]//g'`
++
++				if [ ! "$BYPASS_METCHK" ]
++				then
++						echo
++						echo "SEARCHING FOR QUESTION TEXT AND VARIABLE LIST FOR STUDY $studynum DATASET $shortpart..."
++
++						hermes_chkmet -s $studynum -d $part
++
++						if [ "$?" -ne 0 ]
++						then
++								exit 1
++						fi
++				fi
++done
++
++#-----------------------------------------------------------------
++# Begin processing
++#-----------------------------------------------------------------
++for infile in `echo "$spssfile"`
++do
++				error=0
++				studynum=`echo "$infile" | cut -d'-' -f1 | sed 's/[^0-9]//g'`
++				part=`echo "$infile" | cut -d'-' -f2 | sed 's/[^0-9]//g'`
++				shortpart=`echo "$part" | sed 's/^0*//' | sed 's/[^0-9]//g'`
++				outdir="$studynum-$part"
++				timestamp=`date +%s`
++				tmpout=${tmp}/hermes${outdir}_${timestamp}_${PID}
++				existing_varlist=vl"$studynum-$part".txt
++				cfg="$studynum".cfg
++				qtxtfile=qtxt"$studynum-$part".ddl
++				rescale=`grep 'rescale *= *y' "$cfg"`
++				statio_out=${tmpout}/statio_out
++
++				mkdir ${tmpout}
++				chmod 1777 ${tmpout}
++				mydir=`pwd`
++				ln -s "${mydir}/${infile}" ${tmpout}
++				export tmpout varlist_out PID
++
++				echo
++				echo "PROCESSING STUDY $studynum DATASET $shortpart..."
++
++				#-----------------------------------------------------------------
++				# Parse config file
++				#-----------------------------------------------------------------
++				title=`grep -i 'study_title' ${cfg} | cut -d= -f2 | sed -e "s/'/''/g" -e 's/ *$//'`
++				charset=`grep "encoding *=" ${cfg} | cut -d= -f2 | sed 's/^ *//' | sed 's/ *$//'`
++
++				if [ ! "$charset" ]
++				then
++						charset='UTF-8'
++				fi
++
++				#-----------------------------------------------------------------
++				# Add CASEID?
++				#-----------------------------------------------------------------
++				if [ "$sdabatch" ]
++				then
++						addcaseid=y
++				else
++						addcaseid=`grep -i '^addcaseid *=' ${cfg} | cut -d= -f2 | cut -c1 | tr '[A-Z]' '[a-z]'`
++
++						if [ ! "$addcaseid" ]
++						then
++								addcaseid=n
++						fi
++				fi
++
++				#-----------------------------------------------------------------
++				# Get variable case
++				#-----------------------------------------------------------------
++				varcase=`grep -i '^varcase *=' ${cfg} | cut -d= -f2 | sed 's/ //g' | tr '[A-Z]' '[a-z]'`
++
++				if [ ! "$varcase" ]
++				then
++						 varcase=upper
++				fi
++
++				if [ ! "$varcase" = 'upper' -a ! "$varcase" = 'lower' ]
++				then
++						 echo "Invalid varcase specification ($varcase)."
++						 echo "  Must be upper or lower."
++				fi
++
++				export varcase
++
++				#-----------------------------------------------------------------
++				# Get dataset name from config file
++				#-----------------------------------------------------------------
++				partname=`grep -i "p$part"'_name *=' ${cfg} | cut -d= -f2 | sed "s/'/''/g"`
++
++				if [ "$partname" ]
++				then
++						title="$title, $partname"
++				fi
++
++				#-----------------------------------------------------------------
++				# Generate full variable-level metadata using statio
++				#-----------------------------------------------------------------
++				echo
++				echo "     Reading variable-level metadata..."
++
++				statio -f "$infile" -m summary -o $statio_out
++
++				if [ $? -ne 0 ]
++				then
++						errorlog
++						echo "   ***ERROR: Problem reading variable-level metadata for $infile" | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						cleanup
++						continue
++				fi
++
++				#-------------------------------------------------------------------------
++				# Warn about date/time variables with user-defined missing values that
++				# will become sysmis when converted to strings
++				#-------------------------------------------------------------------------
++				date_mvals=`jq '.variables[] | select ( .categoryMap.numInvalidCategories > 0 \
++						and (.writeFormatString=="ADATE" or .writeFormatString=="DATE" or  \
++						.writeFormatString=="DATETIME" or .writeFormatString=="DTIME" or \
++						.writeFormatString=="EDATE" or .writeFormatString=="JDATE" or \
++						.writeFormatString=="MONTH" or .writeFormatString=="MOYR" or \
++						.writeFormatString=="SDATE" or .writeFormatString=="TIME" or \
++						.writeFormatString=="QYR" or .writeFormatString=="WKYR")) | \
++						{ "varname": .longName, "categoryMap": .categoryMap.categories[] } | \
++						select (.categoryMap.sysMiss==false and .categoryMap.missing==true ) |
++						.varname' < $statio_out | sort -u`
++
++				if [ "$date_mvals" ]
++				then
++						echo >> "$studynum"_errors.txt
++						echo "     ***Warning: Date/time variables with user-defined" | tee -a "$studynum"_errors.txt
++						echo "                 missing values detected in $infile" | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						echo "                 (Will become system missing when converted" | tee -a "$studynum"_errors.txt
++						echo "                 from date/time to string variable)" | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						echo "$date_mvals" | tr -d \" | sed 's/^/                 /' | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++				fi
++
++				#-------------------------------------------------------------------------
++				# Are all variables formatted wide enough to accommodate the data?
++				#-------------------------------------------------------------------------
++				fmtprob=0
++
++				if [ "$PRESERVE_FMTS" -eq 1 ]
++				then
++						reformat_me=${tmpout}/reformat_me
++						reduce_me=${tmpout}/reduce_me
++						fmtinfo=`spssfmts -j "$statio_out" -z | grep '|' | cut -d\| -f1,3,7,9 | egrep -v 'VARNAME|CURRENT' | grep -v 'No discrepancies found'`
++
++						if [ "$fmtinfo" ]
++						then
++								echo "$fmtinfo" | while read varinf
++								do
++										varname=`echo "$varinf" | cut -d\| -f1`
++										curr_write=`echo "$varinf" | cut -d\| -f2 | sed -e 's/^[A-Z]*//' -e 's/\.[0-9]*$//'`
++										sugg_print=`echo "$varinf" | cut -d\| -f3 | sed -e 's/^[A-Z]*//' -e 's/\.[0-9]*$//'`
++										comments=`echo "$varinf" | cut -d\| -f4`
++
++										diff=`expr "$curr_write" - "$sugg_print"`
++										reduce_width=`echo "$comments" | grep 'reduce width to'`
++
++										if [ "$diff" -lt 0 ]
++										then
++												echo "$varinf" >> $reformat_me
++										elif [ "$reduce_width" ]
++										then
++												echo "$varinf" >> $reduce_me
++										fi
++								done
++						fi
++
++						hdr='VARNAME|CURRENT FMT|SUGG FMT';
++				fi
++
++				#-------------------------------------------------------------------------
++				# PRESERVE_FMTS=1; actual width > specified width
++				#-------------------------------------------------------------------------
++				if [ -s "$reformat_me" ]
++				then
++						msg=`echo "$hdr"; cat "$reformat_me" | cut -d\| -f1-3`
++
++						errorlog
++						echo >> "$studynum"_errors.txt
++						echo "     ***ERROR: Formats detected in $infile" | tee -a "$studynum"_errors.txt
++						echo "               that are too narrow for the widest" | tee -a "$studynum"_errors.txt
++						echo "               value of the variable with the specified" | tee -a "$studynum"_errors.txt
++						echo "               number of decimal places." | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++
++						echo "$msg" | sed 's/^/               /' | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						echo "               $infile will not be processed" | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						fmtprob=1
++				fi
++
++				#-------------------------------------------------------------------------
++				# PRESERVE_FMTS=1; width > 15, but can be manually reduced to <= 15
++				#-------------------------------------------------------------------------
++				if [ -s "$reduce_me" ]
++				then
++						msg=`echo "$hdr"; cat "$reduce_me"`
++
++						errorlog
++						echo >> "$studynum"_errors.txt
++						echo "     ***ERROR: Formats detected in $infile" | tee -a "$studynum"_errors.txt
++						echo "               that are wider than 15 columns and can't be" | tee -a "$studynum"_errors.txt
++						echo "               automatically rescaled by Hermes." | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						echo "               However, widest actual values found in file are" | tee -a "$studynum"_errors.txt
++						echo "               <= 15 columns; user can manually reformat the" | tee -a "$studynum"_errors.tx
++						echo "               following variables:" | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++
++						echo "$msg" | sed 's/^/               /' | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						echo "               $infile will not be processed" | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						fmtprob=1
++				fi
++
++				#-------------------------------------------------------------------------
++				# Width > 15 and cannot be reduced to <= 15
++				#-------------------------------------------------------------------------
++				cant_rescale=`echo "$fmtinfo" | grep 'cannot rescale'`
++
++				if [ "$cant_rescale" ]
++				then
++						msg=`echo 'VARNAME|CURRENT WRITE FMT|SUGG WRITE FMT|DIFFERENCE|CURRENT PRINT FMT|SUGG PRINT FMT|DIFFERENCE|COMMENT'; echo "$cant_rescale"`
++						errorlog
++						echo >> "$studynum"_errors.txt
++						echo "     ***ERROR: Formats detected in $infile" | tee -a "$studynum"_errors.txt
++						echo "               that are wider than 15 columns and can't be" | tee -a "$studynum"_errors.txt
++						echo "               automatically rescaled by Hermes." | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++
++						echo "$msg" | sed 's/^/               /' | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						echo "               $infile will not be processed" | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						fmtprob=1
++				fi
++
++				if [ "$fmtprob" -eq 1 ]
++				then
++						continue
++				fi
++
++				#-------------------------------------------------------------------------
++				# Compare variable lists
++				#-------------------------------------------------------------------------
++				if [ ! "$BYPASS_VLCHECKS" -a \( -f "$qtxtfile" -o -f "$existing_varlist" \) ]
++				then
++						echo "     Comparing variable lists..."
++
++						vlcmpargs="-s $studynum -d $part"
++
++						if [ "$varcase" = "lower" ]
++						then
++								 vlcmpargs="$vlcmpargs -l"
++						fi
++
++						hermes_varlistcmp $vlcmpargs
++
++						if [ "$?" -ne 0 ]
++						then
++								 exit 1
++						fi
++				fi
++
++				varlist_out=${tmpout}/varlist.txt
++				reapply_print=${tmpout}/reapply_print.sps
++				reformat_num_out=${tmpout}/pre_long_num.sps
++				reformat_char_out=${tmpout}/pre_long_char.sps
++				makeddl=${tmpout}/makeddl.py
++				makeddl_out=${tmpout}/makeddl.log
++				prochist=${outdir}/ph${outdir}_hermes.py
++				qclog=${outdir}/QCLOGS/makeddl_${outdir}.log
++				tempddl=${tmpout}/merge2.ddl
++				sasddl=${tmpout}/sasmerge2.ddl
++				statalab_out=${tmpout}/statalabprobs.txt
++				ddl=${outdir}/SDA/ddl${outdir}.txt
++				asciifile=da${outdir}.txt
++				sda_ascii=`echo "$asciifile" | sed 's/\.txt/_sda.txt/'`
++				tabfile=da${outdir}.tsv
++				nocaseid=${tmpout}/nocaseid
++				widevars_out=${tmpout}/widevars
++				varlevels=${tmpout}/varlevels
++				sas_other=${tmpout}/post_short.sas
++				post_ddl=${tmpout}/post_short.ddl
++				refmtargs=()
++
++				#-----------------------------------------------------------------
++				# Create directory tree for this part
++				#-----------------------------------------------------------------
++				if [ -d "$outdir" ]
++				then
++						overwrite=`grep 'overwrite *=' "$cfg" | cut -d= -f2 | sed 's/ //g'`
++
++						case "$overwrite" in
++								[Yy]) echo "     Old $outdir"' directory found; overwriting per your preference...' ;;
++								[Nn]) echo "     Old $outdir"' directory found; backing up old files per your preference...' ;;
++						esac
++
++						if [ -d "$outdir"OLD ]
++						then
++								rm -rf "$outdir"OLD
++						fi
++
++						mv "$outdir" "$outdir"OLD
++				fi
++
++				#-----------------------------------------------------------------
++				# Make directory structure for this file
++				#-----------------------------------------------------------------
++				mkdir "$outdir" "$outdir"/SDA "$outdir"/SDA/LOGS "$outdir"/ARCHIVE \
++						"$outdir"/PDF "$outdir"/STATFILES "$outdir"/QCLOGS
++
++				#-----------------------------------------------------------------
++				# Parse statio output
++				#-----------------------------------------------------------------
++				if [ "$PRESERVE_FMTS" -eq 0 ]
++				then
++						#-----------------------------------------------------------------
++						# Run reformat_hermes unless PRESERVE_FMTS selected
++						#-----------------------------------------------------------------
++						echo "     Checking write and print formats..."
++
++						if [ "$rescale" ]
++						then
++								refmtargs="-r"
++						fi
++
++						if [ "$varcase" = "lower" ]
++						then
++								refmtargs=(${refmtargs[@]} -l)
++						fi
++
++						refmtargs=(${refmtargs[@]} -s $studynum -d $part -j $statio_out -o $tmpout )
++
++						eval reformat_hermes ${refmtargs[@]}
++
++						if [ $? -ne 0 ]
++						then
++								errorlog
++								echo "   ***ERROR: problem evaluating $infile" | tee -a "$studynum"_errors.txt
++								echo | tee -a "$studynum"_errors.txt
++								cleanup
++								continue
++						fi
++				fi
++
++				caseid_exists=0
++				has_caseid=`grep -i '"longName" : "CASEID"' $statio_out`
++
++				if [ "$has_caseid" ]
++				then
++						caseid_exists=1
++				fi
++
++				if [ ! "$sdabatch" ]
++				then
++						#-----------------------------------------------------------------
++						# Run parse_statio
++						#-----------------------------------------------------------------
++						dataframe=`echo "$outdir" | tr '-' '.'`
++						parse_args="-j $statio_out -v $varcase -d da${dataframe} -t $tmpout -h -c $charset"
++
++						if [ -f "$sas_other" ]
++						then
++								 parse_args=(${parse_args[@]} -o "$sas_other")
++						fi
++
++						parser=/opt/hermes/bin/parse_statio
++
++						if [ "$TESTING" ]
++						then
++								parser=/opt/hermes-test/bin/parse_statio
++						fi
++
++						eval /opt/icpsr/sbin/run $parser ${parse_args[@]}
++
++						if [ $? -ne 0 ]
++						then
++								errorlog
++								echo "   ***ERROR: problem parsing variable-level metadata for $infile" | tee -a "$studynum"_errors.txt
++								echo | tee -a "$studynum"_errors.txt
++								cleanup
++								continue
++						fi
++
++						errors=`egrep -v 'nominal|ordinal|scale' "$varlevels"`
++
++						if [ "$errors" ]
++						then
++								 errorlog
++								 echo | tee -a "$studynum"_errors.txt
++								 echo "   ***ERROR:  Problems determining variable measurement levels." | tee -a "$studynum"_errors.txt
++								 echo "              Unable to continue..." | tee -a "$studynum"_errors.txt
++								 echo | tee -a "$studynum"_errors.txt
++
++								 cleanup
++								 continue
++						fi
++				fi
++
++				#-----------------------------------------------------------------
++				# Check variables in data file; create DDL and ASCII data files
++				# if variables pass checks.
++				#-----------------------------------------------------------------
++				echo "# encoding: ${charset}" > ${makeddl}
++				echo "title = '${title}'" >> ${makeddl}
++				echo "spssdata_in = '${infile}'" >> ${makeddl}
++				echo "asciidata_out = '${outdir}/ARCHIVE/${asciifile}'" >> ${makeddl}
++				echo "sda_ascii_out = '${outdir}/SDA/${sda_ascii}'" >> ${makeddl}
++				echo "ddlfile_out = '${tempddl}'" >> ${makeddl}
++				echo "sasddlfile_out = '${sasddl}'" >> ${makeddl}
++				echo "hermes_cfg = '${cfg}'" >> ${makeddl}
++				echo "hermes_dir = '${tmpout}'" >> ${makeddl}
++				echo "study = '${studynum}'" >> ${makeddl}
++				echo "part = '${part}'" >> ${makeddl}
++				echo "errorlog = '${studynum}_errors.txt'" >> ${makeddl}
++				echo "varcase = '${varcase}'" >> ${makeddl}
++				echo "caseid_exists = ${caseid_exists}" >> ${makeddl}
++				echo "addcaseid = '${addcaseid}'" >> ${makeddl}
++				echo "charset = '${charset}'" >> ${makeddl}
++
++				if [ ! "$sdabatch" ]
++				then
++						echo "is_hermes = 1" >> ${makeddl}
++				fi
++
++				echo "preserve_fmts = $PRESERVE_FMTS" >> ${makeddl}
++				echo >> ${makeddl}
++				echo "#================================================================" >> ${makeddl}
++
++				if [ "$PRESERVE_FMTS" -eq 0 ]
++				then
++						if [ "$sdabatch" -a ! "$USE_LONG_DECS" ]
++						then
++								refmt_syntax=`sed 's/PRINT FORMAT/FORMAT/' "$reapply_print"`
++								has_caseid=`grep '"longName" : "CASEID"' $statio_out`
++
++								if [ ! "$has_caseid" ]
++								then
++										refmt_syntax=`echo "$refmt_syntax" | egrep -v '^ +CASEID '`
++								fi
++						else
++								refmt_num=
++								refmt_char=
++
++								if [ -f "$reformat_num_out" ]
++								then
++										refmt_num=`sed 's/^/        /' "$reformat_num_out" | sed '$d'`
++										refmt_num=`echo "$refmt_num"; echo '  .'`
++								fi
++
++								if [ -f "$reformat_char_out" ]
++								then
++										refmt_char=`sed 's/^/        /' "$reformat_char_out" | sed '$d'`
++										refmt_char=`echo "$refmt_char"; echo '  .'`
++								fi
++
++								refmt_syntax=`echo "$refmt_num" | grep -i '[A-Z.]'; echo "$refmt_char" | grep -i '[A-Z.]'`
++						fi
++
++						if [ "$refmt_syntax" ]
++						then
++								sed -n '/DO NOT EDIT BELOW THIS LINE/,/FORMAT START/p' ${makeddltemplate} >> ${makeddl}
++								echo 'try:' >>  ${makeddl}
++								echo '        spss.Submit(r"""' >>  ${makeddl}
++								echo "$refmt_syntax" | sed '$d' >>  ${makeddl}
++								echo '        """)' >>  ${makeddl}
++								echo 'except:' >>  ${makeddl}
++								echo '        cleanup()' >>  ${makeddl}
++								echo '        raise Exception, "Problem applying new formats"' >>  ${makeddl}
++
++								sed -n '/FORMAT END/,$p' ${makeddltemplate} >> ${makeddl}
++						else
++								sed -n '/DO NOT EDIT BELOW THIS LINE/,$p' ${makeddltemplate} | sed '/FORMAT START/,/FORMAT END/d' >> ${makeddl}
++						fi
++				else
++						sed -n '/DO NOT EDIT BELOW THIS LINE/,$p' ${makeddltemplate} | sed '/FORMAT START/,/FORMAT END/d' >> ${makeddl}
++				fi
++
++				echo "     Producing metadata and ASCII data files..."
++
++				#-----------------------------------------------------------------
++				# Now run Python
++				#-----------------------------------------------------------------
++				results=`/opt/python/bin/python ${makeddl} | tee "${makeddl_out}"`
++				successful=`echo "$results" | grep 'Conversion successful'`
++
++				#-----------------------------------------------------------------
++				# Add CASEID to variable levels if it is being permanently added
++				#-----------------------------------------------------------------
++				if [ ! "$sdabatch" -a -f "$nocaseid" -a "$addcaseid" = "y" ]
++				then
++						 echo "CASEID;scale" >> "$varlevels"
++				fi
++
++				#-----------------------------------------------------------------
++				# Check for variables exceeding the SDA maximum width
++				#-----------------------------------------------------------------
++				widevars=`grep '.' "$widevars_out" 2>/dev/null`
++
++				if [ "$widevars" ]
++				then
++						errorlog
++						echo "   ***ERROR:  The following variables exceed the SDA maximum width of $sda_maxwidth:" | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						echo "$widevars" | sed 's/^/              /' | tee -a "$studynum"_errors.txt
++
++						cleanup
++						continue
++				fi
++
++				#-----------------------------------------------------------------
++				# If SPSS/Python conversion successful, check ASCII data and
++				# metadata for other possible errors.
++				#-----------------------------------------------------------------
++				if [ "$successful" ]
++				then
++						checkascii.sh "$outdir"
++
++						#-----------------------------------------------------------------
++						# Other errors found, mark run unsuccessful
++						#-----------------------------------------------------------------
++						RC=$?
++						if [ "$RC" -gt 0 ]
++						then
++								successful=
++						fi
++				fi
++
++				#-----------------------------------------------------------------
++				# Successful -- copy Python script and log to user's Hermes
++				# directory.
++				#-----------------------------------------------------------------
++				cp -p "$makeddl_out" "$qclog"
++				chmod 775 "$qclog"
++
++				if [ "$successful" ]
++				then
++						if [ ! "$sdabatch" ]
++						then
++								echo "# FILE FOR INTERNAL ICPSR USE ONLY; DO NOT DISTRIBUTE" > $prochist
++								echo >> $prochist
++								sed -e "s|asciidata_out = '.*/ARCHIVE/|asciidata_out = '|" $makeddl \
++									-e 's|/var/tmp/hermes.*/||' \
++									-e "s|hermes_dir = '/var/tmp/hermes.*'|hermes_dir = '.'|" \
++									-e "s|sda_ascii_out = '.*/SDA/|sda_ascii_out = '|" >> $prochist
++						fi
++
++				#-----------------------------------------------------------------
++				# Unsuccessful -- report, clean up, and move to the next data file
++				#-----------------------------------------------------------------
++				else
++						echo
++						errorlog
++						echo "   ***ERROR:  One or more errors writing out data and/or metadata." | tee -a "$studynum"_errors.txt
++						echo "              Unable to process..." | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						echo "              See $qclog for full details."
++						cleanup
++						continue
++				fi
++
++				#-----------------------------------------------------------------
++				# Check for variable names longer than maximum characters
++				# If found, rename
++				#-----------------------------------------------------------------
++				if [ -f "$existing_varlist" ]
++				then
++						 dos2unix < "$existing_varlist" > "$varlist_out"
++				fi
++
++				longvarnames=`grep '^name *= .\{33,\}' ${tempddl}`
++				maxchars=32
++
++				if [ "$longvarnames" ]
++				then
++						 echo | tee -a "$studynum"_errors.txt
++						 echo "    ***NOTE:  One or more variable names found with more" | tee -a "$studynum"_errors.txt
++						 echo "              than $maxchars characters.  The following will be renamed:" | tee -a "$studynum"_errors.txt
++						 echo | tee -a "$studynum"_errors.txt
++						 echo "$longvarnames" | sed 's/^/         /' | tee -a "$studynum"_errors.txt
++						 echo | tee -a "$studynum"_errors.txt
++						 studypart="$studynum-$part"
++						 rename=${tempddl}
++						 export rename
++
++						 renamelongvars -v ${varlist_out} -s ${studypart} -h -p ${PID}
++						 echo
++				fi
++
++				#-----------------------------------------------------------------
++				# Create variable list in correct case
++				#-----------------------------------------------------------------
++				case "$varcase" in
++						upper ) if [ -f "$existing_varlist" ]
++										then
++												 ucvarlist ${varlist_out} > ${outdir}/SDA/varlist.txt
++										else
++												 sed 's/^ *//' ${varlist_out} | tr '[a-z]' '[A-Z]' > ${outdir}/SDA/varlist.txt
++										fi ;;
++						lower ) if [ -f "$existing_varlist" ]
++										then
++												 lcvarlist ${varlist_out} > ${outdir}/SDA/varlist.txt
++										else
++												 sed 's/^ *//' ${varlist_out} | tr '[A-Z]' '[a-z]' | sed 's/^caseid$/CASEID/' > ${outdir}/SDA/varlist.txt
++										fi ;;
++				esac
++
++
++				#-----------------------------------------------------------------
++				# If no CASEID present, one will be added...
++				#  ...permanently if addcaseid=y
++				#  ...temporarily if addcaseid=n or addcaseid is null
++				#-----------------------------------------------------------------
++				if [ -f "$nocaseid" ]
++				then
++						 caseid=n
++				else
++						 caseid=y
++				fi
++
++				#-----------------------------------------------------------------
++				# Merge additional metadata into SDA DDL format
++				#-----------------------------------------------------------------
++				2_meta2ddl.sh "$outdir" "$infile"
++
++				if [ "$?" -gt 0 ]
++				then
++						DDLMODMSG="$outdir"/SDA/DDLMOD.MSG
++						errorlog
++						echo | tee -a "$studynum"_errors.txt
++						echo "   ***ERROR:  Problems merging additional metadata into SDA DDL." | tee -a "$studynum"_errors.txt
++						echo "              Unable to process..." | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++						cat "$DDLMODMSG" | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++
++						cleanup
++						continue
++				fi
++
++				#-----------------------------------------------------------------
++				# Delete old directory
++				#-----------------------------------------------------------------
++				if [ "$overwrite" = "y" ]
++				then
++						rm -rf "$outdir"OLD
++				fi
++
++				#-----------------------------------------------------------------
++				# Generate DDS files
++				#-----------------------------------------------------------------
++				if [ ! "$sdabatch" ]
++				then
++						3_makedds.sh "$outdir" "$caseid" "$addcaseid"
++
++						if [ "$?" -gt 0 ]
++						then
++								errorlog
++								echo | tee -a "$studynum"_errors.txt
++								echo "   ***ERROR:  Problems creating setup files." | tee -a "$studynum"_errors.txt
++								echo "              Unable to continue..." | tee -a "$studynum"_errors.txt
++								echo | tee -a "$studynum"_errors.txt
++
++								cleanup
++								continue
++						fi
++
++						#-----------------------------------------------------------------
++						# Clean up and customize DDS files
++						#-----------------------------------------------------------------
++						4_ddstweak.sh "$outdir"
++
++						if [ "$?" -gt 0 ]
++						then
++								errorlog
++								echo | tee -a "$studynum"_errors.txt
++								echo "   ***ERROR:  Problems customizing setup files." | tee -a "$studynum"_errors.txt
++								echo "              Unable to continue..." | tee -a "$studynum"_errors.txt
++								echo | tee -a "$studynum"_errors.txt
++
++								cleanup
++								continue
++						fi
++				fi
++
++				#-----------------------------------------------------------------
++				# Convert to SDA; generate DDI/XML file with frequencies
++				#-----------------------------------------------------------------
++				5_xmlconvert.sh "$outdir" "$addcaseid" "$caseid" "$sdabatch"
++
++				rc=$?
++
++				if [ "$rc" -gt 0 ]
++				then
++						case "$rc" in
++									1 ) prob='converting data to SDA' ;;
++									2 ) prob='creating DDI-compliant XML' ;;
++									3 ) prob='creating PDF documents' ;;
++						esac
++						errorlog
++
++						echo "         ***ERROR:  Problems ${prob}." | tee -a "$studynum"_errors.txt
++						echo | tee -a "$studynum"_errors.txt
++
++						if [ "$rc" -ne 3 ]
++						then
++										echo "              Unable to continue..." | tee -a "$studynum"_errors.txt
++										echo | tee -a "$studynum"_errors.txt
++
++										cleanup
++										continue
++						fi
++				fi
++
++				#-----------------------------------------------------------------
++				# Skip rest of steps if sdabatch
++				#-----------------------------------------------------------------
++				if [ "$sdabatch" ]
++				then
++						continue
++				fi
++
++				#-----------------------------------------------------------------
++				# Create ready-to-go data files for major stats packages
++				#-----------------------------------------------------------------
++				6_rtgdata.sh "$outdir"
++
++				#-----------------------------------------------------------------
++				# Cleanup
++				#-----------------------------------------------------------------
++				if [ "$overwrite" = "y" ]
++				then
++						 if [ -d "$outdir"OLD ]
++						 then
++								 find "$outdir"OLD -name "ddl${outdir}.txt" -exec chmod 775 {} \;
++								 find "$outdir"OLD -name "ddi${outdir}.xml" -exec chmod 775 {} \;
++								 find "$outdir"OLD -name "makeddl_${outdir}.log" -exec chmod 775 {} \;
++								 rm -rf "$outdir"OLD
++						 fi
++				fi
++
++				#-----------------------------------------------------------------
++				# Pass or fail?
++				#-----------------------------------------------------------------
++				8_errorcheck.sh "$outdir"
++
++				PASS=`tail -1 "${studynum}_report.log" | grep "${outdir}:  PASS"`
++
++				if [ "$PASS" ]
++				then
++						 passed=`expr "$passed" + 1`
++
++						 #-----------------------------------------------------------------
++						 # Cleanup
++						 #-----------------------------------------------------------------
++						 rm -rf ${tmpout}
++				else
++						 errorlog
++						 echo | tee -a "$studynum"_errors.txt
++						 echo "   ***ERROR:  Problems creating ready-to-go files." | tee -a "$studynum"_errors.txt
++						 echo "              Unable to continue..." | tee -a "$studynum"_errors.txt
++						 echo | tee -a "$studynum"_errors.txt
++						 cleanup
++				fi
++done
++
++#-----------------------------------------------------------------
++# sdabatch logging
++#-----------------------------------------------------------------
++if [ "$sdabatch" ]
++then
++		if [ "$overwrite" = "y" -a -d "${outdir}OLD" ]
++		then
++				 find "$outdir"OLD -name "ddl${outdir}.txt" -exec chmod 775 {} \;
++				 find "$outdir"OLD -name "ddi${outdir}.xml" -exec chmod 775 {} \;
++				 find "$outdir"OLD -name "makeddl_${outdir}.log" -exec chmod 775 {} \;
++				 rm -rf "$outdir"OLD
++		fi
++
++		mv "$outdir"/SDA/* "$outdir"
++		rmdir "$outdir"/SDA
++		rm -rf "$outdir"/PDF "$outdir"/QCLOGS "$outdir"/STATFILES
++
++		if [ ! "$TESTING" -a ! "$CNS_STAFF" ]
++		then
++				for STUDYNUM in `echo "$studynums"`
++				do
++						 . /opt/icpsr/lib/shlib/snums
++
++						 SNLIST="$SNLIST$SNUM_SHORT "
++				done
++
++				LOGFILE=/isilon/priv-linux/pipeline_logs/sdabatch.log
++				LOGENTRY=`date "+%d-%b-%Y:%T"`"/$user/$SNLIST"
++
++				if [ "$PRESERVE_FMTS" -eq 1 ]
++				then
++						LOGENTRY=`echo "$LOGENTRY" | sed 's| *$|/preserve fmts|'`
++				fi
++
++				echo "$LOGENTRY" >> "$LOGFILE"
++		fi
++		exit
++fi
++
++#-----------------------------------------------------------------
++# Unless milestones to be suppressed, submit Hermes milestones to
++# study tracking system, one per unique study number of input
++# files.
++#-----------------------------------------------------------------
++if [ "$RECORD_MILESTONE" ]
++then
++		SNUMS=`echo "$spssfile" | cut -d- -f1 | sed 's|\.*/*ph0*||' | sort -nu`
++
++		for SNUM_SHORT in `echo "$SNUMS"`
++		do
++				exitcode=0
++
++				if [ "$error" -ne 0 -o "$PROBLEM" -o "$passed" -eq 0 ]
++				then
++						exitcode=1
++				fi
++
++				stscomment="($VERSION)($exitcode)"
++
++				track -s "$SNUM_SHORT" -f hermes -c "$stscomment"
++		done
++fi
++
++#-----------------------------------------------------------------
++# If at least one successful run, generate part info and log run.
++#-----------------------------------------------------------------
++if [ "$passed" -gt 0 ]
++then
++		#-----------------------------------------------------------------
++		# Generate part info for study description
++		#-----------------------------------------------------------------
++		7_partinfo.sh
++
++		#-----------------------------------------------------------------
++		# Calculate log data
++		#-----------------------------------------------------------------
++		NUMFILES=`ls -d [0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9] 2>/dev/null | wc -l | sed 's/ *//'`
++
++		GTVARS=0
++		GTRECS=0
++		SNLIST=
++
++		for STUDYNUM in `echo "$studynums"`
++		do
++				 . /opt/icpsr/lib/shlib/snums
++
++				 PARTINFO="$SNUM_5"_partinfo.txt
++
++				 TVARS=0
++				 TRECS=0
++
++				 if [ -f "$PARTINFO" ]
++				 then
++						for NVARS in `grep VARIABLE.COUNT "$PARTINFO" |  cut -d= -f2 | sed 's/[^0-9]//g'`
++						do
++									TVARS=`expr "$TVARS" + "$NVARS"`
++						done
++
++						for NRECS in `grep CASE.COUNT "$PARTINFO" |  cut -d= -f2 | sed 's/[^0-9]//g'`
++						do
++									TRECS=`expr "$TRECS" + "$NRECS"`
++						done
++				 fi
++
++				 GTVARS=`expr "$GTVARS" + "$TVARS"`
++				 GTRECS=`expr "$GTRECS" + "$TRECS"`
++				 SNLIST="$SNLIST$SNUM_SHORT "
++		done
++
++		#-----------------------------------------------------------------
++		# Log session if not testing and not CNS staff
++		#-----------------------------------------------------------------
++		if [ ! "$TESTING" -a ! "$CNS_STAFF" ]
++		then
++				 LOGENTRY=`date "+%d-%b-%Y:%T"`"/$user/$NUMFILES/$GTVARS/$GTRECS/$SNLIST"
++
++				 if [ "$PRESERVE_FMTS" -eq 1 ]
++				 then
++						 LOGENTRY=`echo "$LOGENTRY" | sed 's| *$|/preserve fmts|'`
++				 fi
++
++				 echo "$LOGENTRY" >> "$HERMESLOG"
++		fi
++fi
++
++echo
++echo "Done!"
++
++exit "$STATUS"
+Index: hermes/hermes.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hermes/hermes.py b/hermes/hermes.py
+new file mode 100644
+--- /dev/null	(date 1721959783626)
++++ b/hermes/hermes.py	(date 1721959783626)
+@@ -0,0 +1,1690 @@
++#!/usr/bin/env python3
++
++from __future__ import annotations
++
++import os
++import shutil
++import getpass
++import grp
++import socket
++import time
++from pathlib import Path
++import argparse
++import signal
++from signal import signal as trap
++import re
++import logging
++from glob import glob
++from types import FrameType
++from datetime import datetime
++from pytz import timezone
++
++from ICPSR.printers import boxprint, mprint, tee
++from ICPSR.text import dos2unix
++from ICPSR.utilities.email import sendmsg
++from ICPSR.utilities import shell
++from hermes import _0_config_update, _2_meta2ddl, _3_makedds, _4_ddstweak, _5_xmlconvert, _6_rtgdata, _7_partinfo, _8_errorcheck
++
++# === PROGRAM === #
++
++logger = logging.getLogger(__name__)
++
++## This directory is set to make the hermes code run locally. In Login 65, HOME is an empty string, the default value should be an empty string
++ROOT = os.path.join(Path.home(), 'hermes')
++
++MAINTAINER = 'faelin@umich.edu'
++
++#-----------------------------------------------------------------
++# Hermes is an automated batch production system for ICPSR data
++# collections.  This system provides completely automated batch
++# production of an enhanced suite of ICPSR products, with new
++# products including "ready-to-go" data files for SAS, SPSS, and
++# Stata, as well as variable-level DDI-compliant XML.
++#-----------------------------------------------------------------
++BASEPROG = os.path.basename(__file__)   # `basename "$0"`
++sdabatch = BASEPROG if re.search('sdabatch', BASEPROG) else ''  # `echo "$BASEPROG" | grep sdabatch`
++VERSION = '2.6'
++LOGVER = VERSION.replace('.', '')   # `echo $VERSION | sed 's/\.//'`
++HERMESLOG = f'{ROOT}/isilon/priv-linux/pipeline_logs/hermes{LOGVER}log.txt'
++scriptpath = f'{ROOT}/opt/hermes'
++PID = os.getpid()
++tmp = f'{ROOT}/var/tmp'
++FILE = shell.run('which', 'ifile').strip()  # TODO: confirm that this points to /opt/icpsr/bin/ifile
++makeddltemplate = f'{scriptpath}/makeddl_template.txt'
++sda_maxwidth = 500
++user = getpass.getuser()  # `whoami`
++hermesrc = Path.home().joinpath('.hermesrc')  # "$HOME/.hermesrc"
++passed = False
++PRESERVE_FMTS = False
++STATUS = 0
++USE_DEFAULTS = False
++
++
++
++#-----------------------------------------------------------------
++# Check host; force non-CNS users to run Hermes in SDE only.
++# CNS staff may run on intranet as well.
++#-----------------------------------------------------------------
++CNS_STAFF = 'cns' in [grp.getgrgid(gid).gr_name for gid in os.getgroups()]   #`groups "$user" | grep ' cns'`
++EXPECTED_HOST = 'login65.icpsr.umich.edu'
++ALT_EXPECTED_HOST = 'cnsdev65.icpsr.umich.edu'  # Update this when we're testing a new server
++CNS_ALT_HOST = 'intranet2.icpsr.umich.edu'
++PHI_EXPECTED_HOST = 'phi-login0.icpsr.umich.edu'
++HOST = socket.gethostname()
++
++if HOST not in (EXPECTED_HOST, ALT_EXPECTED_HOST, PHI_EXPECTED_HOST):
++	if not CNS_STAFF:
++		print(f"{BASEPROG} must be run on {EXPECTED_HOST}")
++		exit(1)
++	elif HOST != CNS_ALT_HOST:
++		print(f"{BASEPROG} must be run on {EXPECTED_HOST}, {ALT_EXPECTED_HOST}, or {CNS_ALT_HOST}")
++		exit(1)
++
++
++if not os.path.isfile(HERMESLOG) and not sdabatch:
++	baselog = os.path.basename(HERMESLOG)  # `basename "$HERMESLOG"`
++	print(f"Hermes log ({baselog}) doesn't exist. Please contact PC Support.")
++	exit(1)
++
++
++#-----------------------------------------------------------------
++# If -s option, suppress Hermes milestone submission
++# If -r option, quietly submit Hermes milestone without asking
++#-----------------------------------------------------------------
++
++parser = argparse.ArgumentParser()
++parser.add_argument("-b", dest='BYPASS_ORACLE', action="store_true", help="Bypass Oracle")
++parser.add_argument("-d", dest='USE_DEFAULTS', action="store_true", help="Use defaults")
++parser.add_argument("-p", dest='PRESERVE_FMTS', action="store_true", help="Preserve formats")
++parser.add_argument("-t", dest='TESTING', action="store_true", help="Testing")
++
++if sdabatch:
++	parser.add_argument("-x", dest='BYPASS_VLCHECKS', action="store_true", help="Bypass variable list comparison")
++	parser.add_argument("-l", dest='USE_LONG_DECS', action="store_true", help="Use long decimals")
++else:
++	parser = argparse.ArgumentParser()
++	parser.add_argument("-m", dest='BYPASS_METCHK', action="store_true", help="Bypass metacheck")
++	parser.add_argument("-r", dest='RECORD_MILESTONE', action="store_true", help="Record milestone without asking")
++	parser.add_argument("-s", dest='SUPPRESS_MILESTONE', action="store_true", help="Suppress milestone submission")
++
++args, unknown_args = parser.parse_known_args()
++BYPASS_ORACLE = args.BYPASS_ORACLE
++USE_DEFAULTS = args.USE_DEFAULTS
++PRESERVE_FMTS = args.PRESERVE_FMTS
++TESTING = args.TESTING
++
++args_dict = vars(args)
++USE_LONG_DECS = args_dict.get('USE_LONG_DECS', False)
++BYPASS_METCHK = args_dict.get('BYPASS_METCHK', False)
++RECORD_MILESTONE = args_dict.get('RECORD_MILESTONE', False)
++SUPPRESS_MILESTONE = args_dict.get('SUPPRESS_MILESTONE', False)
++BYPASS_VLCHECKS = args_dict.get('BYPASS_VLCHECKS', False)
++
++if PRESERVE_FMTS and USE_LONG_DECS:
++	print("Can't specify both -p (preserve formats) and -l (use long decimals)")
++	exit(1)
++
++if BYPASS_VLCHECKS:
++	mprint("""
++		WARNING:
++		You have selected the -x (bypass variable list comparison) option.
++		Proceed at your own risk; discrepancies will not be detected.
++	""")
++
++#-----------------------------------------------------------------
++# Detect and warn about extraneous command line arguments
++#-----------------------------------------------------------------
++extra_args = unknown_args
++
++if len(extra_args):
++	print(f"Warning: ignoring extraneous arguments ({extra_args})")
++	yesno = input("         Continue (N/y)? : ")
++
++	if re.search('^[Yy](es)?', yesno):
++		print("\n         Exiting...\n")
++		exit(3)
++
++#-----------------------------------------------------------------
++# Set testing parameters if CNS staff running test mode
++#-----------------------------------------------------------------
++
++if TESTING:
++	if not CNS_STAFF and user != "icpsrpeg":
++		print("Must be CNS staff to run in test mode")
++		exit(1)
++	TESTDIR = '/opt/hermes-test'
++	makeddltemplate = f'{TESTDIR}/makeddl_template.txt'
++	PATH = f"{TESTDIR}/bin:{os.environ['PATH']}"
++	os.environ['PATH'] = PATH
++	SUPPRESS_MILESTONE = True
++	print(f"Test path = {PATH}")
++elif not CNS_STAFF:
++	if BYPASS_METCHK:
++		print("Must be CNS staff to bypass metadata check")
++		exit(1)
++
++#-----------------------------------------------------------------
++# Invalid command line option combinations
++#-----------------------------------------------------------------
++if USE_DEFAULTS and not os.path.isfile(hermesrc):
++	print(f"Invalid option -d (use defaults); '{hermesrc}' file not found")
++	exit(1)
++
++
++if USE_DEFAULTS and BYPASS_ORACLE:
++	print("Invalid combination: -d (use defaults) and -b (bypass Oracle)")
++	exit(1)
++
++os.environ['USE_DEFAULTS'] = str(1 if USE_DEFAULTS else 0)
++
++
++
++#-------------------------------------------------------------------------
++# Clean exit if user-interrupted
++#-------------------------------------------------------------------------
++def exit_handler(_sig:int|signal.Signals, _frame:FrameType):
++	"""
++	Handler for use with signal.signal (imported as 'trap')
++
++	Parameters:
++		_sig (int|signal.Signals): the signal that was trapped
++		_frame (FrameType): the current stack frame when the signal was trapped
++	"""
++	exit(1)
++
++# trap "exit 1" SIGTERM SIGINT SIGHUP SIGQUIT
++trap(signal.SIGTERM, exit_handler)
++trap(signal.SIGINT, exit_handler)
++trap(signal.SIGHUP, exit_handler)
++trap(signal.SIGQUIT, exit_handler)
++
++
++
++#-----------------------------------------------------------------
++# Can't have both -s and -r
++#-----------------------------------------------------------------
++if SUPPRESS_MILESTONE and RECORD_MILESTONE:
++	mprint("""
++		Can't use both -s and -r!
++			-s = Suppress Hermes milestone from Study Tracking System
++			-r = Quietly record Hermes milestone in Study Tracking System
++				 without asking.
++		
++	""")
++	exit(1)
++
++
++
++#-----------------------------------------------------------------
++# Display testing message
++#-----------------------------------------------------------------
++if not sdabatch:
++	boxprint(f'''
++		Please check all output very carefully!
++		
++		Report all bugs to:  {MAINTAINER}
++		''',
++		title=f'<<< Hermes v{VERSION} >>>',
++		width=60,
++		pad=2,
++		margin=4,
++		border='#',
++	)
++
++
++#-----------------------------------------------------------------
++# Check to make sure all Hermes scripts are executable by user
++#-----------------------------------------------------------------
++scriptlist=f"{scriptpath}/scriptlist"
++
++with open(scriptlist) as scriptlist_file:
++	scriptlist = scriptlist_file.read().splitlines()
++
++for prog in scriptlist:  # for prog in `cat "$scriptlist"`:
++	prog=f"{scriptpath}/bin/{prog}"
++
++	if not os.access(prog, os.X_OK):
++		mprint(f"""
++			{BASEPROG} is currently unavailable
++		""")
++
++		#-----------------------------------------------------------------
++		# Email Peggy to fix permissions
++		#-----------------------------------------------------------------
++		sendmsg(
++			destination=MAINTAINER,
++			source=f'{user}@umich.edu',
++			subject='Hermes down',
++			message='Fix permissions!'
++		) #  sendmsg -t "${MAINTAINER}" -f "${user}@umich.edu" -s 'Hermes down' -m 'Fix permissions!'
++		exit(3)
++
++
++#-----------------------------------------------------------------
++# Check to see if directory is writeable by user
++#-----------------------------------------------------------------
++pwd = os.getcwd()
++if not os.access(pwd, os.W_OK):
++	mprint(
++		f"""
++		***ERROR:  {pwd} is not writeable...
++			  Exiting...
++		"""
++	)
++	exit(2)
++
++
++
++#-----------------------------------------------------------------
++# Check for input files with old filenaming conventions
++#-----------------------------------------------------------------
++oldfilenames = [ file for file in os.listdir('.') if re.match('da[0-9]{5}-[0-9]{4}_in\.sav', file)]  # find . -maxdepth 1 -name 'da[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]_in.sav'
++oldfilenames = [ file.replace('./', '', 1) for file in oldfilenames ]  # cut -d/ -f2
++oldfilenames = [ re.sub('^', '              ', file) for file in oldfilenames ]  # sed 's/^/			  /'
++
++if oldfilenames:
++	mprint(
++		'''
++		*** Warning:  SPSS files found with old Hermes input filenames:
++		''',
++		*oldfilenames,
++		'''
++		
++			SPSS input files must be named ph#####-####_in.sav
++			
++			Note: you can run hermes-old2new to rename the files.
++			  (e.g., da99999-9999_in.sav --> ph99999-9999_in.sav)
++			  
++			THESE FILES WILL NOT BE PROCESSED!\
++		'''
++	)
++
++	yesno = input("       Continue? (y/n): ")
++	yesno = yesno[0].lower()  # yesno=`echo "$yesno" | cut -c1 | tr '[A-Z]' '[a-z]'`
++
++	if yesno != 'y':
++		mprint("""
++			   Exiting...
++		""", indent=True)
++		exit(3)
++
++
++
++#-----------------------------------------------------------------
++# Grab list of input files
++#-----------------------------------------------------------------
++spssfile = [ file for file in os.listdir('.') if re.match('ph[0-9]{5}-[0-9]{4}_in\.sav', file)]  # find . -maxdepth 1 -name 'ph[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]_in.sav'
++spssfile = [ os.path.basename(file) for file in spssfile ]  # cut -d/ -f2
++spssfile.sort()  # sort -n  ## this isn't a numeric sort when operating on named files
++
++
++
++#-----------------------------------------------------------------
++# SPSS portable files no longer supported
++#-----------------------------------------------------------------
++porfiles = [ file for file in os.listdir('.') if re.match('da[0-9]{5}-[0-9]{4}_in\.por', file)]  # find . -maxdepth 1 -name 'da[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]_in.por'
++porfiles = [ file.replace('./', '', 1) for file in porfiles ]  # sed 's/^\.\///'
++porfiles.sort()  # sort -n  ## this isn't a numeric sort when operating on named files
++
++if porfiles:
++	mprint("""
++		*** SPSS portable files are no longer supported by Hermes.")
++			Please save the following files to SPSS system (.sav)")
++			format if you want to use it as input to Hermes:")
++	""", indent=True)
++	for file in porfiles: print( re.sub('^', '    ', file) )  # echo "$porfiles" | sed 's/^/	/'
++	print()
++
++studynums = [ file.split('-')[0] for file in spssfile ]  # echo "$spssfile" | cut -d- -f1
++studynums = [ re.sub('ph0*','', file) for file in studynums ]  # | sed 's/ph0*//'
++studynums = sorted(list(set(studynums)), key=int)  # | sort -nu
++
++
++#-----------------------------------------------------------------
++# Reserve study numbers 99990-99999 for CNS testing
++#-----------------------------------------------------------------
++reserved_study = [ file for file in spssfile if re.search('da9999[0-9]-', file) ]  # echo "$spssfile" | grep 'da9999[0-9]-'
++
++if reserved_study and not CNS_STAFF and not user == "icpsrpeg":
++	#-----------------------------------------------------------------
++	# Exclude data files for 99990-99999 from Hermes processing
++	#-----------------------------------------------------------------
++	spssfile = [ file for file in spssfile if not re.search('da9999[0-9]-', file) ]  # echo "$spssfile" | grep -v 'da9999[0-9]-'
++
++	mprint("""
++		*** Study numbers 99990-99999 are reserved for CNS testing. Excluding the following input files:
++	""")
++	for file in reserved_study: print( re.sub('^', '    ', file) )  # echo "$reserved_study" | sed 's/^/	/'
++	print()
++
++	#-----------------------------------------------------------------
++	# Exit if no remaining data files to process
++	#-----------------------------------------------------------------
++	if not spssfile:
++		print("*** No remaining input files. Exiting...")
++		exit(1)
++
++
++
++#-----------------------------------------------------------------
++# Check for at least 1 correctly-named SPSS file
++#-----------------------------------------------------------------
++if not spssfile:
++	print()
++	print("***ERROR:  No SPSS input files found...")
++	print()
++	print("   SPSS input files must be named ph#####-####_in.sav")
++	print()
++	print("   Note: you can run hermes-old2new to change 'da' to 'ph' in the filename.")
++	print("      (e.g., da99999-9999_in.sav --> ph99999-9999_in.sav)")
++	print()
++	print("   Exiting...")
++	print()
++	exit(3)
++
++
++
++#-----------------------------------------------------------------
++# At least one file remains. Does user want to record the Hermes
++# milestone?
++#-----------------------------------------------------------------
++err = 0
++
++if BYPASS_ORACLE:
++	if RECORD_MILESTONE:
++		print("Bypassing Oracle; cannot record Hermes milestone in Study Tracking System")
++		SUPPRESS_MILESTONE = True
++		RECORD_MILESTONE = None
++
++else:
++	if not SUPPRESS_MILESTONE and not RECORD_MILESTONE and not sdabatch:
++		print()
++		yesno = input("Record Hermes milestone(s) in Study Tracking System? (Y/n): ")
++		print()
++
++		yesno = yesno[0].upper()  # echo "$yesno" | cut -c1 | tr 'a-z' 'A-Z'
++
++		if yesno == 'N':
++			SUPPRESS_MILESTONE = True
++		else:
++			RECORD_MILESTONE = True
++
++
++
++#-----------------------------------------------------------------
++# Check for correct filetypes
++#-----------------------------------------------------------------
++for infile in spssfile:
++	suffix = re.sub('^.*\(...\)$', '\1', infile)  # `echo "$infile" | sed 's/^.*\(...\)$/\1/'`
++	filetype = shell.run(FILE, infile).splitlines()  # /opt/icpsr/bin/ifile "$infile"
++	sav = [ line for line in filetype if 'SPSS System' in line ]  # echo "$filetype" | grep 'SPSS System'
++
++	if suffix == "sav" and not sav:
++		print()
++		print(f"***ERROR:  {infile} is not an SPSS system file...")
++		print(f"           {filetype}")
++		print()
++		err += 1
++
++	if PRESERVE_FMTS:
++		try:
++			fmtprobs = shell.run(
++				'checkwritefmts',
++				'-f', infile, '-q'
++			) # /opt/icpsr/bin/checkwritefmts
++		except CalledProcessError as ex: # if $? > 0
++			print()
++			print(f"***ERROR:  {infile} has non-matching print/write formats...")
++			print("           Please reconcile non-matching print/write formats using SPSS.")
++			print()
++			print(ex.output)  # The CalledProcessError object has the subprocess STDOUT in the output attribute.
++			print()
++			print()
++			err += 1
++
++if err > 0:
++	print("Exiting...")
++	print()
++	exit(3)
++
++
++
++#-----------------------------------------------------------------
++# Are question text files (if present) UNIX-formatted and
++# syntactically correct?
++#-----------------------------------------------------------------
++qtxtfiles = glob('qtxt*.ddl')  # `ls qtxt*.ddl 2>/dev/null`
++
++if qtxtfiles:
++	print()
++	err = 0
++
++	#-----------------------------------------------------------------
++	# If DOS-formatted, convert to UNIX
++	#-----------------------------------------------------------------
++	try:
++		dos = shell.run('ifile', 'qtxt*.ddl').splitlines(keepends=True)  # ifile qtxt*.ddl
++	except CalledProcessError as ex:
++		dos = []
++	dos = [ file for file in dos if re.search('\r\n', file) ]  # grep CRLF
++	dos = [ file.split(':')[0] for file in dos ]  # cut -d: -f1
++
++	if dos:
++		for dosfile in dos:
++			print(f"Converting {dosfile} from DOS to UNIX format...")
++			dos2unix(dosfile)
++
++	#-----------------------------------------------------------------
++	# Check for missing '*' variable delimiters
++	#-----------------------------------------------------------------
++	nodelimit = []
++	# grep -H -n -B1 '^name *=' qtxt*.ddl
++	for file in glob('qtxt*.ddl'):
++		with open(file) as qxt_file: ddl = qxt_file.read().splitlines()
++
++		# grep -H -n -B1 '^name *=' ddl
++		for index,line in enumerate(ddl):
++			if line.startswith('name *='):
++				lineno = index + 1
++				if index > 0: nodelimit.append(f'{file}-{lineno-1}-{ddl[index-1]}')  # 'somefile.txt-123-some text goes here'
++				nodelimit.append(f'{file}:{lineno}:{ddl[index]}')  # 'somefile.txt:456:the line we care about'
++
++	nodelimit = [line for line in nodelimit if not re.search('[:-]name *=|[:-]label *=|--|-[0-9]+-\* *$', line) ]  # egrep -v '[:-]name *=|[:-]label *=|\-\-|\-[0-9]+-\* *$'`
++
++	if nodelimit:
++		nodelimit = [ re.sub('ddl-.*', 'ddl', line) for line in nodelimit ]  # sed 's/ddl-.*/ddl/'
++		nodelimit = sorted(list(set(nodelimit)))  # sort -u
++
++		for ddl in nodelimit:
++			print()
++			print(f"***ERROR:  Question text file ({ddl}) missing '*' delimiter")
++			print("           in column 1 near the following lines:")
++			print()
++
++			with open(ddl) as fh: ddl = fh.read().splitlines()
++
++			lines = []
++			# lines=`grep -n -B1 'name *=' $ddl`
++			for index,line in enumerate(ddl):
++				if 'name *=' in line:
++					lineno = index + 1
++					if index > 0: lines.append(f'{lineno-1}-{ddl[index-1]}')  # '123-some text goes here'
++					lines.append(f'{lineno}:{ddl[index]}')  # '456:the line we care about'
++
++			lines = [ line for line in lines if not re.search('[:-]name *=|[:-]label *=|--|^[0-9]+-\* *$', line) ]  # egrep -v '[:-]name *=|[:-]label *=|\-\-|^[0-9]+-\* *$'
++			lines = [ re.sub('^\([0-9]\{1,\}\)[^0-9].*', '\1', line) for line in lines ]  # sed 's/^\([0-9]\{1,\}\)[^0-9].*/\1/'
++
++			for lineno in lines:
++				varline = int(lineno) + 1
++				var = ddl[int(lineno)]  # sed -n "$varline"p $ddl  ## print lines based on line-number
++				var = re.sub('^name *= ', '           ', str(var))  # sed 's/^name *= /		   /'
++				print(f"{var}:\tline {varline}\n")
++
++			print()
++
++		err = 1
++
++
++	#-------------------------------------------------------------------------
++	# Make sure that DDL keywords are all lowercase
++	#-------------------------------------------------------------------------
++	for qtxt in qtxtfiles:
++		with open(qtxt) as qtxt_file:
++			lines = qtxt_file.read().splitlines()
++
++		width = len(str(len(lines))) + 2   # width of left margin for print
++		width = max(width, 6)  # set minimum width for margin
++		format_str = f'%{width}s\t%s'  # format like 'nl' bash command
++		qtxt_contents = [ format_str % (index, line) for index, line in enumerate(lines)]  # nl "$qtxt"
++
++		case_errs = []
++		for keyword in ('name', 'text'):
++			atomic_space = '(?=[[:space:]]*))\1'  ## python before 3.11 does not have a possessive modifier "*+", therefore we have to use a workaround
++			caseprob = qtxt_contents
++			caseprob = [ line for line in caseprob if re.search(rf'^[[:space:]]*[0-9]+{atomic_space}{keyword} *=', line) ]  # egrep -i "^[[:space:]]*[0-9]+[[:space:]]*+$keyword *="
++			caseprob = [ line for line in caseprob if not re.search(rf'^[[:space:]]*[0-9]+[[:space:]]+{keyword} *=', line) ]  # egrep -v "^[[:space:]]*[0-9]+[[:space:]]+$keyword *="
++
++			if caseprob:
++				case_errs += [ item.split('=')[0] for item in caseprob ]  # echo "$caseprob" | cut -d= -f1
++				case_errs = sorted(list(set(case_errs)))  # sort -u
++
++		if case_errs:
++			case_errs = [ error for error in case_errs if re.search('[a-z]', error) ]  # grep '[a-z]'
++			case_errs = [ re.sub('^ *', '        Line ', error) for error in case_errs ]  # sed -e "s/^ */		Line /"
++			case_errs = [ re.sub('$', ' =', error) for error in case_errs ]  # sed -e "s/$/ =/"
++			print(f"*** Error:  {qtxt} contains keywords with one or more")
++			print( "    upper case characters:")
++			print( "")
++			print(case_errs)
++			print( "")
++			print( "    Keywords are case-sensitive and must be lower case.")
++			print( "")
++			err = 1
++
++	if err:
++		print()
++		print("Exiting...")
++		print()
++		exit(3)
++
++
++
++#-----------------------------------------------------------------
++# Are all config files writable and UNIX-formatted?
++#-----------------------------------------------------------------
++try:
++	cfgfmt = shell.run('cctell', '*.cfg')  # /opt/icpsr/bin/cctell
++	cfgfmt = cfgfmt.splitlines()
++except CalledProcessError as ex:
++	cfgfmt = []
++
++
++for cfg in glob('*.cfg'):
++	if cfg and not os.access(cfg, os.W_OK):
++		print(f"   ***ERROR:  {cfg} is not writable... Exiting...")
++		exit(3)
++	else:
++		# echo "$cfgfmt" | grep -A1 "$cfg" | grep DOS
++		dos = [ cfgfmt[index:index+2] for index,line in enumerate(cfgfmt) if re.search(cfg, line) ]
++		dos = [ couplet for couplet in dos if 'DOS' in couplet[1] ]
++
++		if dos:
++			dos2unix(cfg)
++
++
++
++#-----------------------------------------------------------------
++# Fill in missing config file information
++#-----------------------------------------------------------------
++print()
++print("CHECKING FOR MISSING CONFIGURATION INFO...")
++
++for STUDYNUM in studynums:
++	try:
++		if BYPASS_ORACLE:
++			_0_config_update.run(STUDYNUM, BYPASS_ORACLE)  # 0_config_update -s $studynum -b
++
++		else:
++			metproj = shell.run(
++				'oralookup',  # /opt/icpsr/bin/oralookup
++				'-d', 'pretdb',
++				'-s', 'active',
++				'-f', 'status',
++				'-w', f"study = {STUDYNUM} and active > 1"
++			)
++
++			if not metproj and STUDYNUM != 99999:
++				prodmet = shell.run(
++					'oralookup',  # /opt/icpsr/bin/oralookup
++					'-d', 'tdb',
++					'-s', 'study',
++					'-f', 'studies',
++					'-w', f"study = {STUDYNUM}"
++				)
++
++				if not prodmet:
++					print()
++					print(f"***ERROR:  No metadata project or production metadata found for study {STUDYNUM}...")
++					print()
++					print("   Please create a new metadata project at:")
++					print(f"     http://www.icpsr.umich.edu/cgi-bin/INTRA/data/met/crproj?s={STUDYNUM}")
++					print()
++					exit(4)
++				else:
++					metsrc = 'tdb'
++
++			else:
++				metsrc = 'pretdb'
++
++			_0_config_update.run(STUDYNUM, metadata_source=metsrc)  # 0_config_update -s $STUDYNUM -m $metsrc
++
++	except CalledProcessError:
++		print("   Exiting...")
++		exit(4)
++
++
++
++#-----------------------------------------------------------------
++# Error and cleanup functions
++#-----------------------------------------------------------------
++def errorlog():
++	global studynum, part, error, STATUS  # these are defined later in the program
++
++	with open(f'{studynum}_errors.txt', 'a') as error_file:
++		mprint(
++				'------------------------------',
++				datetime.now(timezone('US/Eastern')).strftime('%a %b %d %H:%M:%S %Z %Y'),
++				'------------------------------',
++				'',
++				f'STUDY {studynum} PART {part}:',
++				file=error_file,
++            )
++
++	error += 1
++	STATUS += 1
++
++
++def cleanup():
++	global outdir, tmpout, TMPFILES  # these are defined later in the program
++
++	if not os.path.isdir('CONVERT_PROBS'):
++		os.mkdir('CONVERT_PROBS')
++	else:
++		shutil.rmtree(f'CONVERT_PROBS/{outdir}')  # rm -rf CONVERT_PROBS/${outdir}
++
++	shutil.move(outdir, 'CONVERT_PROBS')  # mv "${outdir}" CONVERT_PROBS
++
++	if os.path.isdir(tmpout):
++		files = [file for file in glob(os.path.join(tmpout, '**'), recursive=True) if os.path.isfile(file)]  # find ${tmpout} -type f
++
++		TMPFILES = f'CONVERT_PROBS/{outdir}/TEMPFILES'
++		os.mkdir(TMPFILES)
++		for file in files: shutil.copy2(file, TMPFILES)  # cp -p file TMPFILES
++
++
++
++#-----------------------------------------------------------------
++# Locate existing sources for question text and variable list
++# files if they aren't present in the Hermes directory.
++#-----------------------------------------------------------------
++for infile in spssfile:
++	studynum = re.sub('[^0-9]', '', infile.split('-')[0])  # echo "$infile" | cut -d'-' -f1 | sed 's/[^0-9]//g'
++	part = re.sub('[^0-9]', '', infile.split('-')[1])  # echo "$infile" | cut -d'-' -f2 | sed 's/[^0-9]//g'
++	shortpart = re.sub('^0*', '', part)  # echo "$part" | sed 's/^0*//' | sed 's/[^0-9]//g'
++
++	if not BYPASS_METCHK:
++		print()
++		print(f'SEARCHING FOR QUESTION TEXT AND VARIABLE LIST FOR STUDY $studynum DATASET {shortpart}...')
++
++		try:
++			shell.run('hermes_chkmet', '-s', studynum, '-d', part)  # hermes_chkmet -s $studynum -d $part
++		except CalledProcessError:
++			exit(1)
++
++
++
++#-----------------------------------------------------------------
++# Begin processing
++#-----------------------------------------------------------------
++error = 0
++for infile in spssfile:
++	global tmpout, varlist_out, PID
++
++	error = 0
++	studynum = re.sub('[^0-9]', '', infile.split('-')[0])  # echo "$infile" | cut -d'-' -f1 | sed 's/[^0-9]//g'
++	part = re.sub('[^0-9]', '', infile.split('-')[1])  # echo "$infile" | cut -d'-' -f2 | sed 's/[^0-9]//g'
++	shortpart = re.sub('^0*', '', part)  # echo "$part" | sed 's/^0*//' | sed 's/[^0-9]//g'
++	outdir = f'{studynum}-{part}'
++	timestamp = int(time.time())
++	tmpout = f'{tmp}/hermes{outdir}_{timestamp}_{PID}'
++	existing_varlist = f'vl{studynum}-{part}.txt'
++	cfg = f'{studynum}.cfg'
++	qtxtfile = f'qtxt{studynum}-{part}.ddl'
++	with open(cfg) as cfg_file: cfg_lines = cfg_file.read().splitlines()
++	rescale = next( line for line in cfg_lines if re.search('rescale *= *y', line) )  # grep 'rescale *= *y' "$cfg"
++	statio_out = f'{tmpout}/statio_out'
++
++	os.mkdir(tmpout)
++	os.chmod(tmpout, 0o1777)
++	mydir = os.getcwd()
++	os.symlink(f'{mydir}/{infile}', tmpout)
++
++	# export tmpout varlist_out PID
++	os.environ.update({
++		'tmpout': tmpout,
++		'varlist_out': varlist_out,
++		'PID': PID,
++	})
++
++	print()
++	print(f'PROCESSING STUDY {studynum} DATASET {shortpart}...')
++
++
++	#-----------------------------------------------------------------
++	# Parse config file
++	#-----------------------------------------------------------------
++	title = next( line.split('=')[1] for line in cfg_lines if re.search('study_title', line, re.I) )  # grep -i 'study_title' ${cfg} | cut -d= -f2
++	title = title.replace("'", "''")  # | sed -e "s/'/''/g"
++	title = re.sub(' *$', '', title)  # | sed -e 's/ *$//'
++
++	charset = next( line.split('=')[1] for line in cfg_lines if re.search('encoding *=', line) )  # grep "encoding *=" ${cfg} | cut -d= -f2
++	charset = re.sub('^ *', '', charset)  # | sed 's/^ *//'
++	charset = re.sub(' *$', '', charset)  # | sed 's/ *$//'
++	if not charset: charset = ['UTF-8']
++
++
++	#-----------------------------------------------------------------
++	# Add CASEID?
++	#-----------------------------------------------------------------
++	if sdabatch:
++		addcaseid = 'y'
++	else:
++		addcaseid = next( line.split('=')[1] for line in cfg_lines if re.search('^addcaseid *=', line, re.I) )  # grep -i '^addcaseid *=' ${cfg} | cut -d= -f2
++		addcaseid = addcaseid.split('\t')[0].lower()  # | cut -c1 | tr '[A-Z]' '[a-z]'
++
++		if not addcaseid:
++			addcaseid = 'n'
++
++
++	#-----------------------------------------------------------------
++	# Get variable case
++	#-----------------------------------------------------------------
++	varcase = next( line.split('=')[1] for line in cfg_lines if re.search('^varcase *=', line, re.I) )  # grep -i '^varcase *=' ${cfg} | cut -d= -f2
++	varcase = varcase.replace(' ', '').lower()  # sed 's/ //g' | tr '[A-Z]' '[a-z]'`
++	if not varcase: varcase = 'upper'
++
++	if not varcase == 'upper' and not varcase == 'lower':
++		print(f'Invalid varcase specification ({varcase}).')
++		print('  Must be upper or lower.')
++
++	os.environ['varcase'] = varcase
++
++
++	#-----------------------------------------------------------------
++	# Get dataset name from config file
++	#-----------------------------------------------------------------
++	partname = next( line.split('=')[1] for line in cfg_lines if re.search(f'p{part}_name *=', line, re.I) )  # grep -i "p$part"'_name *=' ${cfg} | cut -d= -f2
++	partname = partname.replace("'", "''")  # | sed "s/'/''/g"`
++	if partname:
++		title = f'{title}, {partname}'
++
++
++	#-----------------------------------------------------------------
++	# Generate full variable-level metadata using statio
++	#-----------------------------------------------------------------
++	print()
++	print("     Reading variable-level metadata...")
++
++	try:
++		shell.run(
++				'statio',  # /opt/icpsr/bin/statio
++				'-f', infile,
++				'-m', 'summary',
++				'-o', statio_out,
++			)  # statio -f "$infile" -m summary -o $statio_out
++	except CalledProcessError:
++		errorlog()
++		with open(f'{studynum}_errors.txt', 'a') as error_file:
++			tee(error_file, f'   ***ERROR: Problem reading variable-level metadata for {infile}')
++			tee(error_file)
++		cleanup()
++		continue
++
++
++	#-------------------------------------------------------------------------
++	# Warn about date/time variables with user-defined missing values that
++	# will become sysmis when converted to strings
++	#-------------------------------------------------------------------------
++	jquery = str(
++		'.variables[] | select ( .categoryMap.numInvalidCategories > 0 '
++		'and (.writeFormatString=="ADATE" or .writeFormatString=="DATE" or  '
++		'.writeFormatString=="DATETIME" or .writeFormatString=="DTIME" or '
++		'.writeFormatString=="EDATE" or .writeFormatString=="JDATE" or '
++		'.writeFormatString=="MONTH" or .writeFormatString=="MOYR" or '
++		'.writeFormatString=="SDATE" or .writeFormatString=="TIME" or '
++		'.writeFormatString=="QYR" or .writeFormatString=="WKYR")) | '
++		'{ "varname": .longName, "categoryMap": .categoryMap.categories[] } | '
++		'select (.categoryMap.sysMiss==false and .categoryMap.missing==true ) | '
++		'.varname'
++	)
++
++	date_mvals = shell.run(
++		'jq',  # /opt/icpsr/bin/jq
++		jquery,
++		'<', statio_out
++	)  # jq "$jquery" < $statio_out
++	date_mvals = date_mvals.splitlines()
++
++	## alternatively, use Python library pyjq
++	#
++	# with open(statio_out) as statio_file:
++	# 	data = json.load(statio_file)
++	# date_mvals = pyjq.all(jquery, data)
++
++	date_mvals = sorted(list(set(date_mvals)))  # sort -u
++
++	if date_mvals:
++		date_mvals = [ line.replace('"', '') for line in date_mvals ]  # tr -d \"
++		date_mvals = [ re.sub('^', '                 ', line) for line in date_mvals ]  # sed 's/^/				 /'
++		with open(f'{studynum}_errors.txt', 'a') as error_file:
++			print(file=error_file)
++			tee(error_file,  '     ***Warning: Date/time variables with user-defined')
++			tee(error_file, f'                 missing values detected in {infile}')
++			tee(error_file)
++			tee(error_file,  '                 (Will become system missing when converted')
++			tee(error_file,  '                 from date/time to string variable)')
++			tee(error_file)
++			tee(error_file, date_mvals)
++			tee(error_file)
++
++
++	#-------------------------------------------------------------------------
++	# Are all variables formatted wide enough to accommodate the data?
++	#-------------------------------------------------------------------------
++	fmtprob = False
++
++	if PRESERVE_FMTS:
++		reformat_me = f'{tmpout}/reformat_me'
++		reduce_me = f'{tmpout}/reduce_me'
++		fmtinfo = shell.run(
++			'spssfmts',  # /opt/varmet/bin/spssfmts
++			'-j', statio_out, '-z'
++		)  # spssfmts -j "$statio_out" -z
++		fmtinfo = fmtinfo.splitlines()
++		fmtinfo = [ line.split('|') for line in fmtinfo if '|' in line ]  # grep '|' | cut -d\| -f1,3,7,9
++		fmtinfo = [ '|'.join([line[i-1] for i in (1,3,7,9)]) for line in fmtinfo ]  # cut -d\| -f1,3,7,9
++		fmtinfo = [ line for line in fmtinfo if not re.search('VARNAME|CURRENT', line) and 'No discrepancies found' not in line ]  # egrep -v 'VARNAME|CURRENT' | grep -v 'No discrepancies found'`
++
++		if fmtinfo:
++			for varinf in fmtinfo:
++				varname, curr_write, sugg_print, comments = varinf.split('|')
++				curr_write = re.sub('^[A-Z]*|\.[0-9]*$', '', curr_write) # sed -e 's/^[A-Z]*//' -e 's/\.[0-9]*$//'`
++				sugg_print = re.sub('^[A-Z]*|\.[0-9]*$', '', sugg_print) # sed -e 's/^[A-Z]*//' -e 's/\.[0-9]*$//'`
++
++				diff = int(curr_write) - int(sugg_print)
++				reduce_width = [ line for line in comments if 'reduce width to' in line ]  # grep 'reduce width to'
++
++				if diff < 0:
++					with open(reformat_me, 'a') as outfile: print(varinf, file=outfile)
++				elif reduce_width:
++					with open(reduce_me, 'a') as outfile: print(varinf, file=outfile)
++
++		hdr='VARNAME|CURRENT FMT|SUGG FMT'
++
++
++		#-------------------------------------------------------------------------
++		# PRESERVE_FMTS=1; actual width > specified width
++		#-------------------------------------------------------------------------
++		if os.path.getsize(reformat_me):
++			# msg=`echo "$hdr"; cat "$reformat_me" | cut -d\| -f1-3`
++			msg = [hdr]
++			with open(reformat_me, 'r') as reformat_file:
++				msg += [ '|'.join(line.split('|')[0:3]) for line in reformat_file.read().splitlines() ]
++
++			errorlog()
++			with open(f'{studynum}_errors.txt', 'a') as error_file:
++				print(file=error_file)
++				tee(error_file,f"     ***ERROR: Formats detected in {infile}")
++				tee(error_file, '               that are too narrow for the widest')
++				tee(error_file, '               value of the variable with the specified')
++				tee(error_file, '               number of decimal places.')
++				tee(error_file)
++
++				tee(error_file, [ f'               {line}' for line in msg ])  # sed 's/^/			   /'
++				tee(error_file)
++				tee(error_file, f"               {infile} will not be processed")
++				tee(error_file)
++
++			fmtprob = True
++
++
++		#-------------------------------------------------------------------------
++		# PRESERVE_FMTS=1; width > 15, but can be manually reduced to <= 15
++		#-------------------------------------------------------------------------
++		if os.path.getsize(reduce_me):
++			# msg=`echo "$hdr"; cat "$reduce_me"`
++			msg = [hdr]
++			with open(reformat_me, 'r') as reformat_file:
++				msg += reformat_file.read().splitlines()
++
++
++			errorlog()
++			with open(f'{studynum}_errors.txt', 'a') as error_file:
++				print(file=error_file)
++				tee(error_file, f"     ***ERROR: Formats detected in {infile}")
++				tee(error_file,  "               that are wider than 15 columns and can't be")
++				tee(error_file,  "               automatically rescaled by Hermes.")
++				tee(error_file)
++				tee(error_file,  "               However, widest actual values found in file are")
++				tee(error_file,  "               <= 15 columns; user can manually reformat the")
++				tee(error_file,  "               following variables:")
++				tee(error_file)
++
++				tee(error_file, [ f'               {line}' for line in msg ])  # sed 's/^/			   /'
++				tee(error_file)
++				tee(error_file, f"               {infile} will not be processed")
++				tee(error_file)
++
++			fmtprob = True
++
++
++
++		#-------------------------------------------------------------------------
++		# Width > 15 and cannot be reduced to <= 15
++		#-------------------------------------------------------------------------
++		cant_rescale = [ line for line in fmtinfo if 'cannot rescale' in line ]  # `echo "$fmtinfo" | grep 'cannot rescale'`
++
++		if cant_rescale:
++			msg = ['VARNAME|CURRENT WRITE FMT|SUGG WRITE FMT|DIFFERENCE|CURRENT PRINT FMT|SUGG PRINT FMT|DIFFERENCE|COMMENT'] + cant_rescale
++			errorlog()
++			with open(f'{studynum}_errors.txt', 'a') as error_file:
++				print(file=error_file)
++				tee(error_file, f"     ***ERROR: Formats detected in {infile}")
++				tee(error_file,  "               that are wider than 15 columns and can't be")
++				tee(error_file,  "               automatically rescaled by Hermes.")
++				tee(error_file)
++
++				tee(error_file, [ f'               {line}' for line in msg ])  # sed 's/^/			   /'
++				tee(error_file)
++				tee(error_file,  "               $infile will not be processed")
++				tee(error_file)
++			fmtprob = True
++
++		if fmtprob:
++			continue
++
++	#-------------------------------------------------------------------------
++	# Done with formatting problems
++	#-------------------------------------------------------------------------
++	# Compare variable lists
++	#-------------------------------------------------------------------------
++	if not BYPASS_VLCHECKS and ( os.path.isfile(qtxtfile) or os.path.isfile(existing_varlist) ):
++		print("     Comparing variable lists...")
++
++		vlcmpargs = [ '-s', studynum, '-d', part ]
++
++		if varcase == "lower":
++			vlcmpargs = [*vlcmpargs, '-l']
++
++		try:
++			shell.run('hermes_varlistcmp', *vlcmpargs)
++		except CalledProcessError:
++			exit(1)
++
++
++	varlist_out = f"{tmpout}/varlist.txt"
++	reapply_print = f"{tmpout}/reapply_print.sps"
++	reformat_num_out = f"{tmpout}/pre_long_num.sps"
++	reformat_char_out = f"{tmpout}/pre_long_char.sps"
++	makeddl = f"{tmpout}/makeddl.py"
++	makeddl_out = f"{tmpout}/makeddl.log"
++	prochist = f"{outdir}/ph{outdir}_hermes.py"
++	qclog = f"{outdir}/QCLOGS/makeddl_{outdir}.log"
++	tempddl = f"{tmpout}/merge2.ddl"
++	sasddl = f"{tmpout}/sasmerge2.ddl"
++	statalab_out = f"{tmpout}/statalabprobs.txt"
++	ddl = f"{outdir}/SDA/ddl{outdir}.txt"
++	asciifile = f"da{outdir}.txt"
++	sda_ascii = asciifile.replace('.txt', '_sda.txt')  # `echo "$asciifile" | sed 's/\.txt/_sda.txt/'`
++	tabfile = f"da{outdir}.tsv"
++	nocaseid = f"{tmpout}/nocaseid"
++	widevars_out = f"{tmpout}/widevars"
++	varlevels = f"{tmpout}/varlevels"
++	sas_other = f"{tmpout}/post_short.sas"
++	post_ddl = f"{tmpout}/post_short.ddl"
++	refmtargs = []
++
++
++	#-----------------------------------------------------------------
++	# Create directory tree for this part
++	#-----------------------------------------------------------------
++	overwrite = ''
++	if os.path.isdir(outdir):
++		overwrite = next( line.split('=')[1] for line in cfg_lines if re.search('overwrite *=', line) )  # grep 'overwrite *=' "$cfg" | cut -d= -f2
++		overwrite = overwrite.replace(' ','')  # | sed 's/ //g'
++
++		if re.search('^[Yy]$', overwrite):
++			print(f"     Old {outdir} directory found; overwriting per your preference...")
++		elif re.search('^[Nn]$', overwrite):
++			print(f"     Old {outdir} directory found; backing up old files per your preference...")
++
++		if os.path.isdir(f"{outdir}OLD"):
++			shutil.rmtree(f"{outdir}OLD")  # rm -rf "$outdir"OLD
++
++		shutil.move(outdir, f"{outdir}OLD")
++
++
++	#-----------------------------------------------------------------
++	# Make directory structure for this file
++	#-----------------------------------------------------------------
++	dirs = (
++		f"{outdir}",
++		f"{outdir}/SDA",
++		f"{outdir}/SDA/LOGS",
++		f"{outdir}/ARCHIVE",
++		f"{outdir}/PDF",
++		f"{outdir}/STATFILES",
++		f"{outdir}/QCLOGS",
++	)
++	for name in dirs:
++		os.mkdir(name)
++
++
++	#-----------------------------------------------------------------
++	# Parse statio output
++	#-----------------------------------------------------------------
++	if not PRESERVE_FMTS:
++		#-----------------------------------------------------------------
++		# Run reformat_hermes unless PRESERVE_FMTS selected
++		#-----------------------------------------------------------------
++		print("     Checking write and print formats...")
++
++		if rescale:
++			refmtargs = ['-r']
++
++		if varcase == "lower":
++			refmtargs = [*refmtargs, '-l']
++
++		refmtargs = [*refmtargs, '-s', studynum, '-d', part, '-j', statio_out, '-o', tmpout]
++
++		try:
++			shell.run('reformat_hermes', *refmtargs)  # eval reformat_hermes ${refmtargs[@]}
++		except CalledProcessError:
++			errorlog()
++			with open(f'{studynum}_errors.txt', 'a') as error_file:
++				tee(error_file, f"   ***ERROR: problem evaluating {infile}")
++				tee(error_file)
++			cleanup()
++			continue
++
++	caseid_exists = 0
++	with open(statio_out, 'r') as statio_file:
++		has_caseid = [ line for line in statio_file.read().splitlines() if '"longName" : "CASEID"' in line.lower() ]  # grep '"longName" : "CASEID"
++
++	if has_caseid:
++		caseid_exists = 1
++
++
++	if not sdabatch:
++		#-----------------------------------------------------------------
++		# Run parse_statio
++		#-----------------------------------------------------------------
++		dataframe = outdir.replace('-', '.')  # `echo "$outdir" | tr '-' '.'`
++		parse_args = [ '-j', statio_out, '-v', varcase, '-d', f'da{dataframe}', '-t', tmpout, '-h', '-c', charset ]
++
++		if os.path.isfile(sas_other):
++			parse_args = [ *parse_args, '-o', sas_other ]
++
++		parser = '/opt/hermes/bin/parse_statio'
++
++		if TESTING:
++			parser = '/opt/hermes-test/bin/parse_statio'
++
++		try:
++			shell.run('/opt/icpsr/sbin/run', parser, *parse_args)  # eval /opt/icpsr/sbin/run $parser ${parse_args[@]}
++		except CalledProcessError:
++			errorlog()
++			with open(f'{studynum}_errors.txt', 'a') as error_file:
++				tee(error_file, f"   ***ERROR: problem parsing variable-level metadata for {infile}")
++				tee(error_file)
++			cleanup()
++			continue
++
++
++		with open(varlevels, 'r') as varlevels_file:
++			errors = [ line for line in varlevels_file.read().splitlines() if not re.search('nominal|ordinal|scale', line) ]  # egrep -v 'nominal|ordinal|scale' "$varlevels"
++
++		if errors:
++			errorlog()
++			with open(f'{studynum}_errors.txt', 'a') as error_file:
++				tee(error_file)
++				tee(error_file, "   ***ERROR:  Problems determining variable measurement levels.")
++				tee(error_file, "              Unable to continue...")
++				tee(error_file)
++
++			cleanup()
++			continue
++
++
++
++	#-----------------------------------------------------------------
++	# Check variables in data file; create DDL and ASCII data files
++	# if variables pass checks.
++	#-----------------------------------------------------------------
++	with open(makeddl, 'w') as makeddl_file:
++		print(f"# encoding: {charset}", file=makeddl_file)
++		print(f"title = '{title}'", file=makeddl_file)
++		print(f"spssdata_in = '{infile}'", file=makeddl_file)
++		print(f"asciidata_out = '{outdir}/ARCHIVE/{asciifile}'", file=makeddl_file)
++		print(f"sda_ascii_out = '{outdir}/SDA/{sda_ascii}'", file=makeddl_file)
++		print(f"ddlfile_out = '{tempddl}'", file=makeddl_file)
++		print(f"sasddlfile_out = '{sasddl}'", file=makeddl_file)
++		print(f"hermes_cfg = '{cfg}'", file=makeddl_file)
++		print(f"hermes_dir = '{tmpout}'", file=makeddl_file)
++		print(f"study = '{studynum}'", file=makeddl_file)
++		print(f"part = '{part}'", file=makeddl_file)
++		print(f"errorlog = '{studynum}_errors.txt'", file=makeddl_file)
++		print(f"varcase = '{varcase}'", file=makeddl_file)
++		print(f"caseid_exists = {caseid_exists}", file=makeddl_file)
++		print(f"addcaseid = '{addcaseid}'", file=makeddl_file)
++		print(f"charset = '{charset}'", file=makeddl_file)
++
++		if not sdabatch:
++			print("is_hermes = 1", file=makeddl_file)
++
++
++		print(f"preserve_fmts = {PRESERVE_FMTS}", file=makeddl_file)
++		print(file=makeddl_file)
++		print("#================================================================", file=makeddl_file)
++
++		with open(makeddltemplate, 'r') as ddltemplate_file:
++			makeddltemplate_str = ddltemplate_file.read()
++
++		if not PRESERVE_FMTS:
++			if sdabatch and not USE_LONG_DECS:
++				with open(reapply_print, 'r') as reapply_file:
++					refmt_syntax = [ line.replace('PRINT FORMAT', 'FORMAT') for line in reapply_file.read().splitlines() ]  # sed 's/PRINT FORMAT/FORMAT/' "$reapply_print"
++
++				with open(statio_out, 'r') as statio_file:
++					has_caseid = [ line for line in statio_file.read().splitlines() if '"longName" : "CASEID"' in line]  # grep '"longName" : "CASEID"' $statio_out
++
++				if not has_caseid:
++					refmt_syntax = [ line for line in refmt_syntax if not re.search('^ +CASEID ', line) ]  # egrep -v '^ +CASEID '
++
++			else:
++				refmt_num = []
++				refmt_char = []
++
++				if os.path.isfile(reformat_num_out):
++					with open(reformat_num_out, 'r') as reformat_file:
++						refmt_num = [ f'        {line}' for line in reformat_file.read().splitlines() ]  # sed 's/^/		/' "$reformat_num_out"
++					refmt_num = refmt_num[0:-1]  # sed '$d'  ## drop last line
++					refmt_num += ['  .']  # append line '  .'
++
++				if os.path.isfile(reformat_char_out):
++					with open(reformat_char_out, 'r') as reformat_file:
++						refmt_char = [ f'        {line}' for line in reformat_file.read().splitlines() ]  # sed 's/^/		/' "$reformat_char_out"
++					refmt_char = refmt_char[0:-1]  # sed '$d'  ## drop last line
++					refmt_char += ['  .']  # append line '  .'
++
++				refmt_syntax  = [ line for line in refmt_num  if re.search('[A-Z.]', line, re.I) ]  # grep -i '[A-Z.]'
++				refmt_syntax += [ line for line in refmt_char if re.search('[A-Z.]', line, re.I) ]  # grep -i '[A-Z.]'
++
++			if refmt_syntax:
++				# sed -n '/DO NOT EDIT BELOW THIS LINE/,/FORMAT START/p' ${makeddltemplate} >> ${makeddl}
++				text = re.findall('^\V*?(DO NOT EDIT BELOW THIS LINE).*?(FORMAT START)\V*?\n', makeddltemplate_str, flags=re.DOTALL|re.MULTILINE)
++				text = '\n'.join(text)
++				if text: print(text, file=makeddl_file)
++
++				print('try:', file=makeddl_file)
++				print('        spss.Submit(r"""', file=makeddl_file)
++				print(refmt_syntax[0:-1], sep='\n', file=makeddl_file)  # echo "$refmt_syntax" | sed '$d' >>  ${makeddl}
++				print('        """)', file=makeddl_file)
++				print('except:', file=makeddl_file)
++				print('        cleanup()', file=makeddl_file)
++				print('        raise Exception, "Problem applying new formats"', file=makeddl_file)
++
++				# sed -n '/FORMAT END/,$p' ${makeddltemplate} >> ${makeddl}
++				text = re.findall('^\V*?(FORMAT END).*(\Z)', makeddltemplate_str, flags=re.DOTALL|re.MULTILINE)
++				text = '\n'.join(text)
++				if text: print(text, file=makeddl_file)
++			else:
++				# sed -n '/DO NOT EDIT BELOW THIS LINE/,$p' ${makeddltemplate} | sed '/FORMAT START/,/FORMAT END/d' >> ${makeddl}
++				lines = re.findall('^\V*?(DO NOT EDIT BELOW THIS LINE).*(\Z)', makeddltemplate_str, flags=re.DOTALL|re.MULTILINE)
++				lines = '\n'.join(lines)
++				lines = re.sub('^\V*?(FORMAT START).*?(FORMAT END)\V*?\n', '', lines, flags=re.DOTALL|re.MULTILINE)
++				if lines: print(lines, file=makeddl_file)
++		else:
++			# sed -n '/DO NOT EDIT BELOW THIS LINE/,$p' ${makeddltemplate} | sed '/FORMAT START/,/FORMAT END/d' >> ${makeddl}
++			lines = re.findall('^\V*?(DO NOT EDIT BELOW THIS LINE).*(\Z)', makeddltemplate_str, flags=re.DOTALL|re.MULTILINE)
++			lines = '\n'.join(lines)
++			lines = re.sub('^\V*?(FORMAT START).*?(FORMAT END)\V*?\n', '', lines, flags=re.DOTALL|re.MULTILINE)
++			if lines: print(lines, file=makeddl_file)
++
++		print("     Producing metadata and ASCII data files...")
++
++
++	#-----------------------------------------------------------------
++	# Now run Python
++	#-----------------------------------------------------------------
++	results = shell.run('/opt/python/bin/python', 'makeddl')  # /opt/python/bin/python ${makeddl}
++	tee(makeddl_out, results)
++	successful = [ line for line in results.splitlines() if "Conversion successful" in line]  # grep 'Conversion successful'
++
++	#-----------------------------------------------------------------
++	# Add CASEID to variable levels if it is being permanently added
++	#-----------------------------------------------------------------
++	if not sdabatch and os.path.isfile(nocaseid) and addcaseid == "y":
++		with open(varlevels, 'a') as varlevels_file:
++			print("CASEID;scale", file=varlevels_file)
++
++	#-----------------------------------------------------------------
++	# Check for variables exceeding the SDA maximum width
++	#-----------------------------------------------------------------
++	with open(widevars_out, 'r') as widevars_file:
++		widevars = [ line for line in widevars_file.read().splitlines() if line ]  # grep '.' "$widevars_out"
++
++	if widevars:
++		errorlog()
++		with open(f'{studynum}_errors.txt', 'a') as error_file:
++			tee(error_file, f'   ***ERROR:  The following variables exceed the SDA maximum width of {sda_maxwidth}:')
++			tee(error_file)
++			tee(error_file, [ f'			   {line}' for line in widevars ])
++
++		cleanup()
++		continue
++
++
++	#-----------------------------------------------------------------
++	# If SPSS/Python conversion successful, check ASCII data and
++	# metadata for other possible errors.
++	#-----------------------------------------------------------------
++	if successful:
++		try:
++			shell.run('checkascii.sh', outdir)  # checkascii.sh "$outdir"
++		except CalledProcessError:
++			#-----------------------------------------------------------------
++			# Other errors found, mark run unsuccessful
++			#-----------------------------------------------------------------
++			successful = None
++
++
++	#-----------------------------------------------------------------
++	# Successful -- copy Python script and log to user's Hermes
++	# directory.
++	#-----------------------------------------------------------------
++	shutil.copy2(makeddl_out, qclog)  # cp -p "$makeddl_out" "${qclog}"
++	os.chmod(qclog, 0o775)  # chmod 775 "$qclog"
++
++	if successful:
++		if not sdabatch:
++			with open(makeddl, 'r') as makeddl_file:
++				makeddl_lines = makeddl_file.read().splitlines()
++				makeddl_lines = [ re.sub("asciidata_out = '.*/ARCHIVE/", "asciidata_out = '", line) for line in makeddl_lines ]  # sed -e "s|asciidata_out = '.*/ARCHIVE/|asciidata_out = '|"
++				makeddl_lines = [ re.sub('/var/tmp/hermes.*/', '', line) for line in makeddl_lines ]  # sed -e 's|/var/tmp/hermes.*/||'
++				makeddl_lines = [ re.sub("hermes_dir = '/var/tmp/hermes.*'", "hermes_dir = '.'", line) for line in makeddl_lines ]  # sed -e "s|hermes_dir = '/var/tmp/hermes.*'|hermes_dir = '.'|"
++				makeddl_lines = [ re.sub("sda_ascii_out = '.*/SDA/", "sda_ascii_out = '", line) for line in makeddl_lines ]  # sed -e "s|sda_ascii_out = '.*/SDA/|sda_ascii_out = '|"
++
++			with open(prochist, 'w') as prochist_file:
++				print("# FILE FOR INTERNAL ICPSR USE ONLY; DO NOT DISTRIBUTE", file=prochist_file)
++				print(file=prochist_file)
++				print(*makeddl_lines, sep='\n', file=prochist_file)
++
++	#-----------------------------------------------------------------
++	# Unsuccessful -- report, clean up, and move to the next data file
++	#-----------------------------------------------------------------
++	else:
++		print()
++		errorlog()
++		with open(f'{studynum}_errors.txt', 'a') as error_file:
++			tee(error_file, "   ***ERROR:  One or more errors writing out data and/or metadata.")
++			tee(error_file, "              Unable to process...")
++			tee(error_file)
++		print(f'              See {qclog} for full details.')
++		cleanup()
++		continue
++
++
++	#-----------------------------------------------------------------
++	# Check for variable names longer than maximum characters
++	# If found, rename
++	#-----------------------------------------------------------------
++	if os.path.isfile(existing_varlist):
++		dos2unix(existing_varlist, varlist_out)  # dos2unix < "$existing_varlist" > "$varlist_out"
++
++
++	with open(tempddl, 'r') as tempddl_file:
++		longvarnames = [ line for line in tempddl_file.read().splitlines() if re.search('^name *= .{33,}', line) ]  # grep '^name *= .\{33,\}' ${tempddl}
++	maxchars = 32
++
++	if longvarnames:
++		with open(f'{studynum}_errors.txt', 'a') as error_file:
++			tee(error_file)
++			tee(error_file,  "    ***NOTE:  One or more variable names found with more")
++			tee(error_file, f"              than {maxchars} characters.  The following will be renamed:")
++			tee(error_file)
++			tee(error_file, f"         {longvarnames}")
++			tee(error_file)
++
++		studypart=f"{studynum}-{part}"
++		os.environ['rename'] = tempddl  # export rename=tempddl
++
++		shell.run(
++			'renamelongvars',
++			'-v', varlist_out,
++			'-s', studypart,
++			'-h',
++			'-p', PID
++		)  # renamelongvars -v ${varlist_out} -s ${studypart} -h -p ${PID}
++		print()
++
++
++	#-----------------------------------------------------------------
++	# Create variable list in correct case
++	#-----------------------------------------------------------------
++	with open(f'{outdir}/SDA/varlist.txt', 'w') as outfile:
++		if varcase == 'upper':
++			if os.path.isfile(existing_varlist):
++				varlist = shell.run('ucvarlist', varlist_out)  # /opt/sda/bin/ucvarlist
++				print(varlist, file=outfile)
++			else:
++				with open(varlist_out, 'r') as varlist_file:
++					varlist = [ re.sub('^ *', '', line).upper() for line in varlist_file.read().splitlines() ]  # sed 's/^ *//' ${varlist_out}
++				varlist = [ line.upper() for line in varlist ]  # tr '[a-z]' '[A-Z]'
++				print(*varlist, sep='\n', file=outfile)
++
++		elif varcase == 'lower':
++			if os.path.isfile(existing_varlist):
++				varlist = shell.run('lcvarlist', varlist_out)  # /opt/sda/bin/lcvarlist
++				print(varlist, file=outfile)
++			else:
++				with open(varlist_out, 'r') as varlist_file:
++					varlist = [ re.sub('^ *', '', line).upper() for line in varlist_file.read().splitlines() ]  # sed 's/^ *//' ${varlist_out}
++				varlist = [ line.lower() for line in varlist ]  # tr '[A-Z]' '[a-z]'
++				varlist = [ re.sub('^caseid$', 'CASEID', line) for line in varlist ]  # sed 's/^caseid$/CASEID/'
++				print(*varlist, sep='\n', file=outfile)
++
++
++
++	#-----------------------------------------------------------------
++	# If no CASEID present, one will be added...
++	#  ...permanently if addcaseid=y
++	#  ...temporarily if addcaseid=n or addcaseid is null
++	#-----------------------------------------------------------------
++	if os.path.isfile(nocaseid):
++		caseid = 'n'
++	else:
++		caseid = 'y'
++
++
++	#-----------------------------------------------------------------
++	# Merge additional metadata into SDA DDL format
++	#-----------------------------------------------------------------
++	try:
++		_2_meta2ddl.run(outdir, infile)  # 2_meta2ddl.sh "$outdir" "$infile"
++
++	except CalledProcessError as ex:
++		DDLMODMSG=f"{outdir}/SDA/DDLMOD.MSG"
++
++		errorlog()
++
++		with open(f'{studynum}_errors.txt', 'a') as error_file, open(DDLMODMSG, 'r') as ddlmodmsg_file:
++			tee(error_file)
++			tee(error_file, "   ***ERROR:  Problems merging additional metadata into SDA DDL.")
++			tee(error_file, "              Unable to process...")
++			tee(error_file)
++			tee(error_file, ddlmodmsg_file.read())
++			tee(error_file)
++
++		cleanup()
++		continue
++
++
++	#-----------------------------------------------------------------
++	# Delete old directory
++	#-----------------------------------------------------------------
++	if overwrite == 'y':
++		shutil.rmtree(f'{outdir}OLD')  # rm -rf "$outdir"OLD
++
++	#-----------------------------------------------------------------
++	# Generate DDS files
++	#-----------------------------------------------------------------
++	if not sdabatch:
++		try:
++			_3_makedds.run(outdir, caseid, addcaseid)  # 3_makedds.sh "$outdir" "$caseid" "$addcaseid"
++
++		except CalledProcessError:
++			errorlog()
++			with open(f'{studynum}_errors.txt', 'a') as error_file:
++				tee(error_file)
++				tee(error_file, "   ***ERROR:  Problems creating setup files.")
++				tee(error_file, "              Unable to continue...")
++				tee(error_file)
++
++			cleanup()
++			continue
++
++
++		#-----------------------------------------------------------------
++		# Clean up and customize DDS files
++		#-----------------------------------------------------------------
++		try:
++			_4_ddstweak.run(outdir, tmpout)  # 4_ddstweak.sh "$outdir"
++
++		except CalledProcessError:
++			errorlog()
++			with open(f'{studynum}_errors.txt', 'a') as error_file:
++				tee(error_file)
++				tee(error_file, "   ***ERROR:  Problems customizing setup files.")
++				tee(error_file, "              Unable to continue...")
++				tee(error_file)
++
++			cleanup()
++			continue
++
++
++	#-----------------------------------------------------------------
++	# Convert to SDA; generate DDI/XML file with frequencies
++	#-----------------------------------------------------------------
++	result = _5_xmlconvert.run(outdir, addcaseid, caseid, sdabatch)  # 5_xmlconvert.sh "$outdir" "$addcaseid" "$caseid" "$sdabatch"
++	rc = result.returncode
++
++	with open(f'{studynum}_errors.txt', 'a') as error_file:
++		if rc > 0:
++			if rc == 1:   prob = 'converting data to SDA'
++			elif rc == 2: prob = 'creating DDI-compliant XML'
++			elif rc == 3: prob = 'creating PDF documents'
++
++			errorlog()
++
++			tee(error_file, f'         ***ERROR:  Problems {prob}.')
++			tee(error_file)
++
++			if rc != 3:
++				tee(error_file, "              Unable to continue...")
++				tee(error_file)
++
++				cleanup()
++				continue
++
++
++	#-----------------------------------------------------------------
++	# Skip rest of steps if sdabatch
++	#-----------------------------------------------------------------
++	if sdabatch:
++		continue
++
++
++	#-----------------------------------------------------------------
++	# Create ready-to-go data files for major stats packages
++	#-----------------------------------------------------------------
++	_6_rtgdata.run(outdir)  # 6_rtgdata.sh "$outdir"
++
++
++	#-----------------------------------------------------------------
++	# Cleanup
++	#-----------------------------------------------------------------
++	if overwrite == 'y':
++		old_dir = f'{outdir}OLD'
++		if os.path.isdir(old_dir):
++			patterns = (f'ddl{outdir}.txt', f'ddi{outdir}.xml', f'makeddl_{outdir}.log')
++
++			files = []
++			for pattern in patterns: files += glob(f'{old_dir}/**/{pattern}', recursive=True)  # find "$outdir"OLD -name "ddl${outdir}.txt"
++
++			for file in files: os.chmod(file, 0o775)
++			shutil.rmtree(old_dir)  # rm -rf "$outdir"OLD
++
++
++	#-----------------------------------------------------------------
++	# Pass or fail?
++	#-----------------------------------------------------------------
++	_8_errorcheck.run(outdir)  # 8_errorcheck.sh "$outdir"
++
++	with open(f'{studynum}_report.log', 'r') as error_file:
++		*_, last = error_file.read().splitlines()
++
++	PASS = f'{outdir}:  PASS' in last
++
++	if PASS:
++		passed += 1
++
++		#-----------------------------------------------------------------
++		# Cleanup
++		#-----------------------------------------------------------------
++		shutil.rmtree(tmpout)  # rm -rf $tmpout
++
++	else:
++		errorlog()
++		with open(f'{studynum}_report.log', 'r') as error_file:
++			tee(error_file)
++			tee(error_file, "   ***ERROR:  Problems creating ready-to-go files.")
++			tee(error_file, "              Unable to continue...")
++			tee(error_file)
++		cleanup()
++
++
++
++#-----------------------------------------------------------------
++# sdabatch logging
++#-----------------------------------------------------------------
++if sdabatch:
++	old_dir = f'{outdir}OLD'
++	if overwrite == 'y' and os.path.isdir(old_dir):
++			patterns = (f'ddl{outdir}.txt', f'ddi{outdir}.xml', f'makeddl_{outdir}.log')
++
++			files = []
++			for pattern in patterns: files += glob(f'{old_dir}/**/{pattern}', recursive=True)  # find "$outdir"OLD -name "ddl${outdir}.txt"
++
++			for file in files: os.chmod(file, 0o775)
++			shutil.rmtree(old_dir)  # rm -rf "$outdir"OLD
++
++
++	for file in glob("{outdir}/SDA/*"):
++		shutil.move(file, outdir)  # mv "$outdir"/SDA/* "$outdir"
++	os.rmdir(f'{outdir}/SDA')  # rmdir "$outdir"/SDA
++	shutil.rmtree(f'{outdir}/PDF')  # rm -rf "$outdir"/PDF
++	shutil.rmtree(f'{outdir}/QCLOGS')  # rm -rf "$outdir"/QCLOGS
++	shutil.rmtree(f'{outdir}/STATFILES')  # rm -rf "$outdir"/STATFILES
++
++	if not TESTING and not CNS_STAFF:
++		SNLIST = ''
++
++		for STUDYNUM in studynums:
++			try:
++				## source 'snums' script into current shell context
++				# . /opt/icpsr/lib/shlib/snums
++				SNUM_5, SNUM_4, SNUM_SHORT = shell.run(
++					'''
++					/opt/icpsr/lib/shlib/snums;
++					echo SNUM_5;        # \
++					echo SNUM_4;        #  |> These are needed in order to "export" the resulting values from the 'snums' script
++					echo SNUM_SHORT;    # /
++					'''
++				).splitlines()
++			except CalledProcessError as ex:
++				print(ex.output)
++				exit(ex.returncode)
++
++			SNLIST = f'{SNLIST}{SNUM_SHORT} '
++
++
++		LOGFILE = '/isilon/priv-linux/pipeline_logs/sdabatch.log'
++		timestamp = datetime.now(timezone('US/Eastern')).strftime('%d-%b-%Y:%H:%M:%S')  # date like '08-Jul-2024:22:51:14'
++		LOGENTRY=f'{timestamp}/{user}/{SNLIST}'
++
++		if PRESERVE_FMTS:
++			LOGENTRY = re.sub(' *$', '/preserve fmts', LOGENTRY)  # sed 's| *$|/preserve fmts|'
++
++		with open(LOGFILE, 'a') as log_file:
++			print(LOGENTRY, file=log_file)  # echo "$LOGENTRY" >> "$LOGFILE"
++
++	exit(0)
++
++
++#-----------------------------------------------------------------
++# Unless milestones to be suppressed, submit Hermes milestones to
++# study tracking system, one per unique study number of input
++# files.
++#-----------------------------------------------------------------
++if RECORD_MILESTONE:
++	SNUMS = [ line.split('-')[0] for line in spssfile ]  # echo "$spssfile" | cut -d- -f1
++	SNUMS = [ re.sub('\.*/*ph0*', '', line) for line in SNUMS ]  # sed 's|\.*/*ph0*||'
++	SNUMS = sorted(list(set(SNUMS)), key=int)  # | sort -nu
++
++	for SNUM_SHORT in SNUMS:
++		exitcode = 0
++
++		if error or os.environ.get('PROBLEM') or not passed:
++			exitcode = 1
++
++		stscomment= f'({VERSION})({exitcode})'
++
++		shell.run(
++			'track',  # /opt/icpsr/bin/track
++			'-s', SNUM_SHORT,
++			'-f', 'hermes',
++			'-c', stscomment
++		)  # track -s "$SNUM_SHORT" -f hermes -c "$stscomment"
++
++
++#-----------------------------------------------------------------
++# If at least one successful run, generate part info and log run.
++#-----------------------------------------------------------------
++if passed > 0:
++
++	#-----------------------------------------------------------------
++	# Generate part info for study description
++	#-----------------------------------------------------------------
++	_7_partinfo.run()  # 7_partinfo.sh
++
++
++	#-----------------------------------------------------------------
++	# Calculate log data
++	#-----------------------------------------------------------------
++	NUMFILES = [ file for file in glob('[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]') if os.path.isdir(file) ]  # ls -d [0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9] 2>/dev/null
++	NUMFILES = len(NUMFILES)  # wc -l | sed 's/ *//
++
++	GTVARS = 0
++	GTRECS = 0
++	SNLIST = None
++
++	for STUDYNUM in studynums:
++		## source 'snums' script into current shell context
++		# . /opt/icpsr/lib/shlib/snums
++		try:
++			SNUM_5, SNUM_4, SNUM_SHORT = shell.run(
++				'''
++				/opt/icpsr/lib/shlib/snums;
++				echo SNUM_5;
++				echo SNUM_4;
++				echo SNUM_SHORT;
++				'''
++			).splitlines()
++		except CalledProcessError as ex:
++			print(ex.output)
++			exit(ex.returncode)
++
++		PARTINFO = f'{SNUM_5}_partinfo.txt'
++
++		TVARS = 0
++		TRECS = 0
++
++		if os.path.isfile(PARTINFO):
++			with open(PARTINFO, 'r') as part_file:
++				PARTINFO = part_file.read().splitlines()
++
++				nvars_list = [ line.split('=')[1] for line in PARTINFO if re.search('VARIABLE.COUNT', line) ]  # grep VARIABLE.COUNT "$PARTINFO" |  cut -d= -f2
++				nvars_list = [ re.sub('[^0-9]', '', line) for line in nvars_list ]  # sed 's/[^0-9]//g
++				for NVARS in nvars_list:
++					TVARS = int(TVARS) + int(NVARS)
++
++				nrecs_list = [ line.split('=')[1] for line in PARTINFO if re.search('CASE.COUNT', line) ]  # grep CASE.COUNT "$PARTINFO" |  cut -d= -f2
++				nrecs_list = [ re.sub('[^0-9]', '', line) for line in nrecs_list ]  # sed 's/[^0-9]//g
++				for NRECS in nrecs_list:
++					TRECS = int(TRECS) + int(NRECS)
++
++		GTVARS = int(GTVARS) + int(TVARS)
++		GTRECS = int(GTRECS) + int(TRECS)
++		SNLIST = f'{SNLIST}{SNUM_SHORT} '
++
++
++	#-----------------------------------------------------------------
++	# Log session if not testing and not CNS staff
++	#-----------------------------------------------------------------
++	if not TESTING and not CNS_STAFF:
++		timestamp = datetime.now(timezone('US/Eastern')).strftime('%d-%b-%Y:%H:%M:%S')  # date like '08-Jul-2024:22:51:14'
++		LOGENTRY=f'{timestamp}/{user}/{NUMFILES}/{GTVARS}/{GTRECS}/{SNLIST}'
++
++		if PRESERVE_FMTS:
++			LOGENTRY = re.sub(' *$', '/preserve fmts', LOGENTRY)  # sed 's| *$|/preserve fmts|'
++
++		with open(HERMESLOG, 'a') as hermeslog_file:
++			print(LOGENTRY, file=hermeslog_file)  # echo "$LOGENTRY" >> "$HERMESLOG"
++
++
++print()
++print("Done!")
++
++exit(STATUS)
++
+Index: ref/README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ref/README.md b/ref/README.md
+new file mode 100644
+--- /dev/null	(date 1721242064104)
++++ b/ref/README.md	(date 1721242064104)
+@@ -0,0 +1,2 @@
++# Hermes
++
+diff --git a/hermes/__init__.py b/hermes/__init__.py
+new file mode 100644
+diff --git a/5b_makepdf.sh b/ref/5b_makepdf.sh
+rename from 5b_makepdf.sh
+rename to ref/5b_makepdf.sh
+diff --git a/4_ddstweak.sh b/ref/4_ddstweak.sh
+rename from 4_ddstweak.sh
+rename to ref/4_ddstweak.sh
+diff --git a/6_rtgdata.sh b/ref/6_rtgdata.sh
+rename from 6_rtgdata.sh
+rename to ref/6_rtgdata.sh
+diff --git a/7_partinfo.sh b/ref/7_partinfo.sh
+rename from 7_partinfo.sh
+rename to ref/7_partinfo.sh
+diff --git a/2_meta2ddl.sh b/ref/2_meta2ddl.sh
+rename from 2_meta2ddl.sh
+rename to ref/2_meta2ddl.sh
+diff --git a/3a_missing_values.sh b/ref/3a_missing_values.sh
+rename from 3a_missing_values.sh
+rename to ref/3a_missing_values.sh
+diff --git a/4b_tweaksas.sh b/ref/4b_tweaksas.sh
+rename from 4b_tweaksas.sh
+rename to ref/4b_tweaksas.sh
+diff --git a/8_errorcheck.sh b/ref/8_errorcheck.sh
+rename from 8_errorcheck.sh
+rename to ref/8_errorcheck.sh
+diff --git a/checkascii.sh b/ref/checkascii.sh
+rename from checkascii.sh
+rename to ref/checkascii.sh
+diff --git a/3_makedds.sh b/ref/3_makedds.sh
+rename from 3_makedds.sh
+rename to ref/3_makedds.sh
+diff --git a/4b_tweakstata.sh b/ref/4b_tweakstata.sh
+rename from 4b_tweakstata.sh
+rename to ref/4b_tweakstata.sh
+diff --git a/4b_tweakspss.sh b/ref/4b_tweakspss.sh
+rename from 4b_tweakspss.sh
+rename to ref/4b_tweakspss.sh
+diff --git a/5b_makecodebook.sh b/ref/5b_makecodebook.sh
+rename from 5b_makecodebook.sh
+rename to ref/5b_makecodebook.sh
+diff --git a/5_xmlconvert.sh b/ref/5_xmlconvert.sh
+rename from 5_xmlconvert.sh
+rename to ref/5_xmlconvert.sh

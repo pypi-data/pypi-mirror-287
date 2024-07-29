@@ -1,0 +1,48 @@
+ |
+ |  Please edit this file as instructed below.
+ |  To execute, start Stata, change to the directory containing:
+ |       - this do file
+ |       - the ASCII data file
+ |       - the dictionary file
+ |
+ |  Then execute the do file (e.g., do NNNNN-QQQQ-statasetup.do)
+ |
+ **************************************************************************/
+
+set maxvar 5000 /* Increasing maximum variables to 5000 for Stata. */
+
+set more off  /* This prevents the Stata output viewer from pausing the
+                 process */
+
+/****************************************************
+
+Section 1: File Specifications
+   This section assigns local macros to the necessary files.
+   Please edit:
+        "data-filename" ==> The name of data file downloaded from ICPSR
+        "dictionary-filename" ==> The name of the dictionary file downloaded.
+        "stata-datafile" ==> The name you wish to call your Stata data file.
+
+   Note:  We assume that the raw data, dictionary, and setup (this do file) all
+          reside in the same directory (or folder).  If that is not the case
+          you will need to include paths as well as filenames in the macros.
+
+********************************************************/
+
+local raw_data "data-filename"
+local dict "dictionary-filename"
+local outfile "stata-datafile"
+
+/********************************************************
+
+Section 2: Infile Command
+
+This section reads the raw data into Stata format.  If Section 1 was defined
+properly, there should be no reason to modify this section.  These macros
+should inflate automatically.
+
+**********************************************************/
+
+infile using `dict', using (`raw_data') clear
+
+

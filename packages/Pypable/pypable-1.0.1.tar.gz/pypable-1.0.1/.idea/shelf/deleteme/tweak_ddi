@@ -1,0 +1,377 @@
+#!/opt/perl/bin/perl -w
+
+#-----------------------------------------------------------------
+# tweak_ddi
+#
+# $Id: tweak_ddi,v 1.13 2020/06/01 16:04:25 overcash Exp $
+#
+# Component script of the Hermes System.  Augments standard DDI
+# output from sdatoxml.
+#-----------------------------------------------------------------
+use Getopt::Std;
+use File::Basename;
+use File::Slurp    qw< read_file >;
+use strict;
+
+my ( %opts, @ddicontents, @level_contents, $tmpddi, $ddi, $varlevel_file,
+     @tweaked_ddi, %levels, $encoding, $varcount, $study, $dspad, $ds, %widths,
+     $dsname, $studyds, $cfg, @cfgcontents, %cfg, $width_file, @widthcontents,
+     $print_width, $print_decs, $write_width, $write_decs, $pres_fmts,
+     $startcol_file, @startcontents, %startcols, $startcol );
+
+#-------------------------------------------------------------------------
+# Process command line arguments
+#-------------------------------------------------------------------------
+getopts( 'c:d:ps:v:w:', \%opts );
+
+$cfg  = $opts{ 'c' };
+$tmpddi = $opts{ 'd' };
+$startcol_file = $opts{ 's' };
+$varlevel_file = $opts{ 'v' };
+$width_file = $opts{ 'w' };
+$pres_fmts = 1 if $opts{ 'p' };
+
+unless ( $cfg and $tmpddi ){
+    print "Usage:  tweak_ddi -c hermes_cfg -d temp_ddi [-v varlevels.sps]\n";
+    exit( 1 );
+}
+
+unless ( -f $cfg ){
+    print "Specified Hermes config file ($cfg) doesn't exist\n";
+    exit( 1 );
+}
+
+unless ( -f $tmpddi ){
+    print "Specified DDI file ($tmpddi) doesn't exist\n";
+    exit( 1 );
+}
+
+
+if ( $varlevel_file and ! -f $varlevel_file ){
+    print "Specified variable level file ($varlevel_file) doesn't exist\n";
+    exit( 1 );
+}
+
+if ( $width_file and ! -f $width_file ){
+    print "Specified width level file ($width_file) doesn't exist\n";
+    exit( 1 );
+}
+
+if ( $startcol_file and ! -f $startcol_file ){
+    print "Specified start columns file ($startcol_file) doesn't exist\n";
+    exit( 1 );
+}
+
+
+#-------------------------------------------------------------------------
+# Process width file contents, if applicable
+#-------------------------------------------------------------------------
+if ( $width_file ){
+    @widthcontents = read_file( $width_file );
+    get_widths();
+}
+
+#-------------------------------------------------------------------------
+# Process start column file contents, if applicable
+#-------------------------------------------------------------------------
+if ( $startcol_file ){
+    @startcontents = read_file( $startcol_file );
+    get_startcols();
+}
+
+#-------------------------------------------------------------------------
+# Read Hermes config file
+#-------------------------------------------------------------------------
+read_cfg();
+
+#-------------------------------------------------------------------------
+# Process variable measurement file contents, if applicable
+#-------------------------------------------------------------------------
+if ( $varlevel_file ){
+    @level_contents = read_file( $varlevel_file );
+    @level_contents = grep( /./, @level_contents );
+    get_levels();
+}
+
+#-------------------------------------------------------------------------
+# Gather file information to be inserted into existing DDI
+#-------------------------------------------------------------------------
+get_fileinfo();
+
+#-------------------------------------------------------------------------
+# Augment DDI file contents and print to stdout
+#-------------------------------------------------------------------------
+tweak_ddi();
+
+exit( 0 );
+
+#=========================================================================
+sub read_cfg {
+#-------------------------------------------------------------------------
+# Build hash of key/value pairs Hermes configuration file
+#-------------------------------------------------------------------------
+     my ( $cfginfo, $key, $value );
+     @cfgcontents = read_file( $cfg );
+     for my $cfginfo ( @cfgcontents ){
+        chomp( $cfginfo );
+        next unless $cfginfo =~ /=/;
+        ( $key, $value ) = split( / *= */, $cfginfo, 2 );
+        $cfg{ $key } = $value;
+     }
+}
+
+#-------------------------------------------------------------------------
+sub get_levels {
+#-------------------------------------------------------------------------
+# Build hash of variable measurement levels
+#-------------------------------------------------------------------------
+    my ( $varinfo, $varname, $nature, $reptype, $varcase );
+    for $varinfo ( @level_contents ){
+        chomp( $varinfo );
+        ( $varname, $nature, $reptype ) = split( /;/, $varinfo );
+
+        $varcase = $cfg{ 'varcase' };
+        if ( $varcase eq 'upper' or $varname eq 'CASEID' ){
+            $varname = uc($varname);
+        } else {
+            $varname = lc($varname);
+        }
+
+        $nature = 'interval' if $nature eq 'scale';
+        $levels{ $varname }{ 'nature' } = $nature;
+        $levels{ $varname }{ 'reptype' } = $reptype;
+    }
+}
+
+#-------------------------------------------------------------------------
+sub get_startcols {
+#-------------------------------------------------------------------------
+# Build hash of start columns
+#-------------------------------------------------------------------------
+    my ( $varinfo, $varname, $startcol );
+    for $varinfo ( @startcontents ){
+        chomp( $varinfo );
+        ( $varname, $startcol ) = split( /;/, $varinfo );
+
+        $startcols{ $varname } = $startcol;
+    }
+}
+
+#-------------------------------------------------------------------------
+sub get_widths {
+#-------------------------------------------------------------------------
+# Build hash of before and after widths
+#-------------------------------------------------------------------------
+    my ( $varinfo, $varname );
+    for $varinfo ( @widthcontents ){
+        chomp( $varinfo );
+        ( $varname, $print_width, $print_decs, $write_width, $write_decs ) = split( /;/, $varinfo );
+
+        $widths{ $varname }{ 'w_width' } = $write_width;
+        $widths{ $varname }{ 'p_width' } = $print_width;
+        $widths{ $varname }{ 'w_decs' } = $write_decs;
+        $widths{ $varname }{ 'p_decs' } = $print_decs;
+    }
+}
+
+#-------------------------------------------------------------------------
+sub get_fileinfo {
+#-------------------------------------------------------------------------
+# Gather file information to be inserted into existing DDI
+#-------------------------------------------------------------------------
+    my $basetmpddi = basename( $tmpddi );
+    ( $studyds = $basetmpddi ) =~ s/tmp.xml//;
+    ( $study, $dspad ) = split( /-/, $studyds );
+
+    $study =~ s/^0+//;
+    ( $ds = $dspad ) =~ s/^0+//;
+
+    $dsname   = $cfg{ "p${dspad}_name" };
+    $encoding = $cfg{ 'encoding' };
+    $encoding = 'UTF-8' unless $encoding;
+    $encoding = uc($encoding) if $encoding eq 'utf-8';
+    $varcount = `/bin/grep -c "<var name=" $tmpddi`;
+    chomp( $varcount );
+}
+
+#-------------------------------------------------------------------------
+sub tweak_ddi {
+#-------------------------------------------------------------------------
+# Augment DDI file contents and print new DDI file to stdout
+#-------------------------------------------------------------------------
+    my ( $line, $suppress, $varname, $nature, $reptype, $title, $title_found,
+         @ddicontents );
+
+    #-------------------------------------------------------------------------
+    # Escape special XML characters in dataset name
+    #-------------------------------------------------------------------------
+    $dsname = xml_escape( $dsname ) if $dsname;
+
+    #-------------------------------------------------------------------------
+    # Process line by line
+    #-------------------------------------------------------------------------
+    @ddicontents = read_file( "$tmpddi" ) or die "Can't open $tmpddi: $!";
+
+    $suppress = 1;
+    $suppress = 0 if grep( /ddi:codebook:2_5/, @ddicontents );
+
+    for $line ( @ddicontents ){
+        chomp( $line );
+
+        #-------------------------------------------------------------------------
+        # Update to DDI 2.5 (only necessary for DDI XML generated by pre-SDA4
+        # version of SDATOXML)
+        #-------------------------------------------------------------------------
+        if ( $line =~ /<codeBook/ ){
+            if ( $suppress == 0 ){
+                print "$line\n\n";
+            } else {
+                my @header = qq{<?xml version="1.0" encoding="$encoding"?>
+<codeBook xmlns="ddi:codebook:2_5"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="ddi:codebook:2_5 http://www.ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/codebook.xsd"
+  version="2.5">\n};
+
+                for my $line ( @header) {
+                    print "$line";
+                }
+                $suppress = 0;
+            }
+
+            if ( $pres_fmts ){
+                my @dscrnotes = qq{   <docDscr>
+      <notes>hermes -p</notes>
+   </docDscr>\n};
+                for my $line ( @dscrnotes) {
+                    print "$line";
+                }
+            }
+            next;
+        }
+
+        #-------------------------------------------------------------------------
+        # Ignore fileName lines in temp output; these will be replaced later in
+        # script when applicable
+        #-------------------------------------------------------------------------
+        next if $line =~  /<\/*fileName/;
+        next if $line =~ /Attention: replace the dummy name/ or $line =~ /mydatafile.txt/;
+        next if $line =~  /mydatafile.txt/;
+
+        #-------------------------------------------------------------------------
+        # Flag <stdyInfo> section for suppression per specs from 2005
+        #-------------------------------------------------------------------------
+        $suppress = 1 if $line =~ /<stdyInfo>/;
+
+        #-------------------------------------------------------------------------
+        # Insert variable measurement levels as <var> "nature" attribute
+        #-------------------------------------------------------------------------
+        if ( $line =~ /<var name=/ ){
+            ( $varname = $line ) =~ s/^\s+<var name="([^"]+)".+/$1/;
+            if ( $varlevel_file ){
+                $nature = $levels{ $varname }{ 'nature' };
+                $reptype = $levels{ $varname }{ 'reptype' };
+                $line =~ s/>/ nature="$nature">/ if $nature;
+                $line =~ s/>/ representationType="$reptype">/ if $reptype;
+            }
+
+            if ( $width_file ){
+                $write_decs = $widths{ $varname }{ 'w_decs' };
+                $print_decs = $widths{ $varname }{ 'p_decs' };
+
+                $line =~ s/dcml="$print_decs"/dcml="$write_decs"/ if $write_decs;
+            }
+        }
+
+        #-------------------------------------------------------------------------
+        # Replace <location width> with write width, if applicable
+        #-------------------------------------------------------------------------
+        if ( $line =~ /<location / ){
+            if ( $width_file ){
+                $write_width = $widths{ $varname }{ 'w_width' };
+                $print_width = $widths{ $varname }{ 'p_width' };
+
+                $line =~ s/width="$print_width"/width="$write_width"/ if $write_width;
+            }
+
+            if ( %startcols ){
+                $startcol = $startcols{ $varname };
+
+                $line =~ s/StartPos="\d+"/StartPos="$startcol"/ if $startcol >= 65535;
+            }
+        }
+
+        #-------------------------------------------------------------------------
+        # Remove dataset name, if present, from study title. It will be documented
+        # separately under the <fileName> tag.
+        #-------------------------------------------------------------------------
+        if ( $title_found ){
+            $title = $cfg{ 'study_title' };
+            $title = xml_escape( $title );
+            $line = "               $title";
+            undef $title_found;
+        }
+
+        $title_found = 1 if $line =~ /\<titl\>/;
+
+        #-------------------------------------------------------------------------
+        # List ICPSR as the producer instead of the default "Based on the SDA
+        # dataset...." value
+        #-------------------------------------------------------------------------
+        $line =~ s/Based on the SDA dataset located at.+/ICPSR/;
+
+        #-------------------------------------------------------------------------
+        # Insert ID attribute for <fileDescr>
+        #-------------------------------------------------------------------------
+        $line =~ s/<fileDscr>/<fileDscr ID="F${dspad}">/;
+
+        #-------------------------------------------------------------------------
+        # Insert ID attribute for <fileTxt>
+        #-------------------------------------------------------------------------
+        $line =~ s/<fileTxt>/<fileTxt ID="Dataset_${ds}">/;
+
+        #-------------------------------------------------------------------------
+        # Insert <IDNo> into <titlStmt> section
+        #-------------------------------------------------------------------------
+        print "            <IDNo>$study</IDNo>\n" if $line =~ /<\/titlStmt>/;
+
+        #-------------------------------------------------------------------------
+        # Insert dataset name as <fileName>, if applicable
+        #-------------------------------------------------------------------------
+        print "         <fileName>$dsname</fileName>\n" if $line =~ /<fileStrc/ and $dsname;
+
+        #-------------------------------------------------------------------------
+        # Insert variable count as <varQnty>
+        #-------------------------------------------------------------------------
+        print "            <varQnty>\n               $varcount\n            </varQnty>\n"
+            if $line =~ /<\/dimensns>/;
+
+        #-------------------------------------------------------------------------
+        # Print tweaked DDI line unless line is suppressed
+        #-------------------------------------------------------------------------
+        print "$line\n" unless $suppress;
+
+        #-------------------------------------------------------------------------
+        # Turn off line suppression after </stdyInfo>
+        #-------------------------------------------------------------------------
+        $suppress = 0 if $line =~ /<\/stdyInfo>/;
+    }
+}
+
+#-------------------------------------------------------------------------
+sub xml_escape {
+#-------------------------------------------------------------------------
+# Escape special characters in XML:
+#
+# &  -> &amp;             '  -> &apos;
+# <  -> &lt;              "  -> &quot;
+# >  -> &gt;
+#-------------------------------------------------------------------------
+    my ( $string ) = @_;
+    $string =~ s/&/&amp;/g;
+    $string =~ s/</&lt;/g;
+    $string =~ s/>/&gt;/g;
+    $string =~ s/'/&apos;/g;
+    $string =~ s/"/&quot;/g;
+
+    return( $string );
+}

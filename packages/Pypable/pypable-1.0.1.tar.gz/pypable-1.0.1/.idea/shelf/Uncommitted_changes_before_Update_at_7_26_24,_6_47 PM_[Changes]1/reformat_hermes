@@ -1,0 +1,407 @@
+#!/bin/sh
+PATH=/usr/bin:/bin:/opt/icpsr/bin:/opt/varmet/bin:/opt/jq/bin
+
+#-----------------------------------------------------------------
+# reformat_hermes
+#
+# $Id: reformat_hermes,v 1.3 2015/04/17 19:46:07 overcash Exp $
+#
+# Component script of the Hermes System.  Runs spssfmts to prepare
+# scratch files for the various stat packages to apply differing
+# print and write formats downstream.
+#-----------------------------------------------------------------
+
+#-------------------------------------------------------------------------
+# Defaults
+#-------------------------------------------------------------------------
+rescale=n
+FILE='/opt/icpsr/bin/ifile -L'
+RC=0
+
+#-------------------------------------------------------------------------
+# Process command line options
+#-------------------------------------------------------------------------
+while getopts "a:c:d:f:j:lo:s:r" opt
+do
+    case $opt in
+        c ) cfg=$OPTARG ;;
+        d ) DSNUM=$OPTARG ;;
+        f ) spssfile=$OPTARG ;;
+        j ) json_out=$OPTARG ;;
+        l ) varcase=lower ;;
+        o ) tmpdir=$OPTARG ;;
+        r ) rescale=y ;;
+        s ) STUDYNUM=$OPTARG ;;
+        * ) echo "Exiting..."
+            exit 3 ;;
+    esac
+done
+
+#-------------------------------------------------------------------------
+# Require study and dataset numbers
+#-------------------------------------------------------------------------
+if [ ! "$STUDYNUM" -o ! "$DSNUM" ]
+then
+    echo "Usage: reformat_hermes -s study -d ds -f spssfile.sav -o temp_dir [ -l for lowercase ]"
+    exit 1
+fi
+
+#-------------------------------------------------------------------------
+# Get all forms of study and DS numbers
+#-------------------------------------------------------------------------
+. /opt/icpsr/lib/shlib/snums
+. /opt/icpsr/lib/shlib/dsnums
+
+
+#-------------------------------------------------------------------------
+# Hermes config file
+#-------------------------------------------------------------------------
+if [ ! "$cfg" ]
+then
+    cfg=${SNUM_5}.cfg
+fi
+
+if [ ! -f "$cfg" ]
+then
+    echo "Config file ($cfg) does not exist"
+    exit 1
+fi
+
+#-------------------------------------------------------------------------
+# Set $addcaseid
+#-------------------------------------------------------------------------
+addcaseid=`grep -i '^addcaseid *=' ${cfg} | cut -d= -f2 | cut -c1 | tr '[A-Z]' '[a-z]'`
+
+if [ ! "$addcaseid" ]
+then
+    addcaseid=n
+fi
+
+#-------------------------------------------------------------------------
+# Temp dir
+#-------------------------------------------------------------------------
+if [ ! "$tmpdir" ]
+then
+    tmpdir=/var/tmp/spssfmts_$$
+fi
+
+if [ ! -d "$tmpdir" ]
+then
+    mkdir "$tmpdir"
+fi
+
+#-------------------------------------------------------------------------
+# Variable case
+#-------------------------------------------------------------------------
+if [ ! "$varcase" ]
+then
+     varcase=upper
+fi
+
+#-------------------------------------------------------------------------
+# Output file locations
+#-------------------------------------------------------------------------
+pre_long_num=$tmpdir/pre_long_num.sps
+pre_long_char=$tmpdir/pre_long_char.sps
+post_short_sas=$tmpdir/post_short.sas
+post_short_r=$tmpdir/post_short.R
+reapply_write_spss=$tmpdir/reapply_write.sps
+reapply_print_spss=$tmpdir/reapply_print.sps
+reapply_print_stata=$tmpdir/reapply_print.do
+dec_diffs=$tmpdir/dec_diffs
+
+#-----------------------------------------------------------------
+# Check to see if directory is writable by user
+#-----------------------------------------------------------------
+if [ ! -w `pwd` ]
+then
+    echo
+    echo "***ERROR:  `pwd` is not writable..."
+    echo "      Exiting..."
+    echo
+    exit 1
+fi
+
+#-----------------------------------------------------------------
+# Was a filename passed?
+#-----------------------------------------------------------------
+if [ ! "$spssfile" -a ! "$json_out" ]
+then
+    echo
+    echo "***ERROR:  No SPSS input file specified..."
+    echo
+    exit 1
+
+#-----------------------------------------------------------------
+# Check for correct filetypes
+#-----------------------------------------------------------------
+elif [ "$spssfile" ]
+then
+    err=0
+    isspss=`${FILE} "$spssfile" | grep 'SPSS System'`
+
+    if [ ! "$isspss" ]
+    then
+         echo
+         echo "***ERROR:  $spssfile is not an SPSS system data file!"
+         echo
+         exit 1
+    fi
+ fi
+
+#-------------------------------------------------------------------------
+# Run spssfmts to get suggested write and print formats
+#-------------------------------------------------------------------------
+if [ "$json_out" ]
+then
+    spssfmts_out=`spssfmts -j "$json_out" -v`
+    hdr=`echo "$spssfmts_out" | head -1`
+    spssfmts_out=`echo "$spssfmts_out" | sed 1d`
+else
+    json_out="$tmpdir/statio_out"
+    spssfmts_out=`spssfmts -f "$spssfile" -v`
+    hdr=`echo "$spssfmts_out" | head -1`
+    spssfmts_out=`echo "$spssfmts_out" | sed 1d`
+
+    echo "$spssfmts_out" > "$json_out"
+fi
+
+if [ $? -ne 0 ]
+then
+    echo
+    echo "***ERROR:  Problem reading SPSS variable format info for $spssfile"
+    echo
+    exit 1
+fi
+
+#-------------------------------------------------------------------------
+# Exit quietly if all formats match those found in file
+#-------------------------------------------------------------------------
+if [ ! "$spssfmts_out" ]
+then
+    exit 0
+fi
+
+#-------------------------------------------------------------------------
+# Any exceptions reported by spssfmts?
+#-------------------------------------------------------------------------
+rescale_required=`echo "$spssfmts_out" | grep 'rescale required'`
+cant_rescale=`echo "$spssfmts_out" | grep 'Cannot rescale'`
+
+if [ "$rescale_required" -a "$rescale" = "n" ]
+then
+     echo
+     echo "       You currently have the Hermes rescale option turned off."
+     echo "       The following numeric variables exceed the limit of 15 columns and need to be rescaled:"
+     echo "$hdr" | sed 's/^/          /'
+     echo "$rescale_required"  | sed 's/^/          /'
+     RC=`expr "$RC" + 1`
+fi
+
+if [ "$cant_rescale" ]
+then
+     echo "The following numeric variables exceed the limit of 15 columns and cannot be rescaled:"
+     echo "$hdr" | sed 's/^/          /'
+     echo "$cant_rescale" | sed 's/^/          /'
+     echo
+     RC=`expr "$RC" + 1`
+fi
+
+if [ "$RC" -gt 0 ]
+then
+     exit "$RC"
+fi
+
+#-------------------------------------------------------------------------
+# Convert non-F numeric format types to F
+#-------------------------------------------------------------------------
+for fmt_type in CC COMMA DOLLAR E N PCT
+do
+    spssfmts_out=`echo "$spssfmts_out" | sed "s/|$fmt_type\([0-9]\)/|F\1/g"`
+done
+
+#-------------------------------------------------------------------------
+# Start scratch files
+#-------------------------------------------------------------------------
+rm -f "$post_short_sas"
+
+echo "FORMAT" > "$pre_long_num"
+echo "ALTER TYPE" > "$pre_long_char"
+echo "WRITE FORMAT" > "$reapply_write_spss"
+echo "PRINT FORMAT" > "$reapply_print_spss"
+
+#-------------------------------------------------------------------------
+# Get format for CASEID if being added
+#-------------------------------------------------------------------------
+has_caseid=`grep '"longName" : "CASEID"' $json_out`
+
+if [ ! "$has_caseid" -a "$addcaseid" = "y" ]
+then
+    casecount=`jq '.fileHeader.numCases' < $json_out`
+    caseid_width=`echo "$casecount" | wc -L`
+
+    echo "format CASEID %${caseid_width}.0f" >> "$reapply_print_stata"
+    echo "   CASEID (F${caseid_width})" >> "$reapply_write_spss"
+    echo "   CASEID (F${caseid_width})" >> "$reapply_print_spss"
+fi
+
+#-------------------------------------------------------------------------
+# Loop through variables
+#-------------------------------------------------------------------------
+echo "$spssfmts_out" | grep \| | cut -d\| -f1,3,4,6,7 | while read varinfo
+do
+    var=`echo "$varinfo" | cut -d\| -f1`
+
+    #-------------------------------------------------------------------------
+    # Apply case, excluding CASEID, which must be upper case for SDA
+    #-------------------------------------------------------------------------
+    if [ "$varcase" = "upper" ]
+    then
+         var=`echo "$var" | tr '[a-z]' '[A-Z]'`
+    else
+         var=`echo "$var" | tr '[A-Z]' '[a-z]'`
+         if [ "$var" = "caseid" ]
+         then
+              var=CASEID
+         fi
+    fi
+
+    #-------------------------------------------------------------------------
+    # Determine current and suggested variable format info (A and F only)
+    #-------------------------------------------------------------------------
+    current_write_fmt=`echo "$varinfo" | cut -d\| -f2`
+    sugg_write_fmt=`echo "$varinfo" | cut -d\| -f3 | grep '^[AF]'`
+    current_print_fmt=`echo "$varinfo" | cut -d\| -f4`
+    sugg_print_fmt=`echo "$varinfo" | cut -d\| -f5 | grep '^[AF]'`
+
+    if [ ! "$sugg_write_fmt" -a ! "$sugg_print_fmt" ]
+    then
+         continue
+    fi
+
+    type=`echo "$sugg_write_fmt" | cut -c1`
+    pre_width=`echo "$sugg_write_fmt" | sed 's/[AF]\([0-9][0-9]*\)\.*.*$/\1/'`
+    post_width=`echo "$sugg_print_fmt" | sed 's/[AF]\([0-9][0-9]*\)\.*.*$/\1/'`
+
+    #-------------------------------------------------------------------------
+    # Capture suggested write and print formats to be reapplied after data
+    # are read into SPSS and Stata during ready-to-go file production.
+    #-------------------------------------------------------------------------
+    if [ "$type" = "F" ]
+    then
+        pre_decs=`echo "$sugg_write_fmt" | grep '\.' | sed 's/^.*\.\([0-9][0-9]*\)$/\1/'`
+        post_decs=`echo "$sugg_print_fmt" | grep '\.' | sed 's/^.*\.\([0-9][0-9]*\)$/\1/'`
+
+        if [ ! "$pre_decs" ]
+        then
+            pre_decs=0
+        fi
+
+        if [ ! "$post_decs" ]
+        then
+            post_decs=0
+        fi
+
+        sprintf_fmt=`echo "$sugg_print_fmt" | sed 's/F\([0-9]\{1,\}\.*[0-9]*\)/%\1/' | sed 's/^\(%[0-9]\{1,\}\)$/\1.0/' | \
+              sed 's/$/f/' | sed 's/A\([0-9]\{1,\}\)f/%\1s/'`
+        echo "format $var $sprintf_fmt" >> "$reapply_print_stata"
+        echo "   $var (${sugg_write_fmt})" >> "$reapply_write_spss"
+        echo "   $var (${sugg_print_fmt})" >> "$reapply_print_spss"
+
+        #-------------------------------------------------------------------------
+        # Suggested write formats to be applied at the beginning
+        #-------------------------------------------------------------------------
+        if [ ! "$sugg_write_fmt" = "$current_write_fmt" -o ! "$current_write_fmt" = "$current_print_fmt" ]
+        then
+            echo "   $var (${sugg_write_fmt})" >> "$pre_long_num"
+        fi
+
+        #-------------------------------------------------------------------------
+        # Suggested print formats to be appended to setup files after the data
+        # have been read
+        #-------------------------------------------------------------------------
+        if [ ! "$sugg_write_fmt" = "$current_write_fmt" -a ! "$sugg_print_fmt" = "$sugg_write_fmt" ]
+        then
+            #-------------------------------------------------------------------------
+            # SAS
+            #-------------------------------------------------------------------------
+            sasfmt=`echo "$sugg_print_fmt" | sed 's/F\([0-9]\{1,\}\.*[0-9]*\)/\1/' | sed 's/^\([0-9]\{1,\}\)$/\1./'`
+            echo "${var};${sasfmt}" >> "$post_short_sas"
+        fi
+
+        #-------------------------------------------------------------------------
+        # SDA -- pre_decs=write format  post_decs=print format
+        #-------------------------------------------------------------------------
+        if [ ! "$pre_decs" = "$post_decs" ]
+        then
+            echo "    ${var}|Current format: $pre_decs decimals|Specified: $post_decs decimals"  >> $dec_diffs
+        fi
+    elif [ "$type" = "A" ]
+    then
+        #-------------------------------------------------------------------------
+        # Suggested write formats to be applied at the beginning
+        #-------------------------------------------------------------------------
+        if [ ! "$sugg_write_fmt" = "$current_write_fmt" -o ! "$current_write_fmt" = "$current_print_fmt" ]
+        then
+            echo "   $var (${sugg_write_fmt})" >> "$pre_long_char"
+        fi
+    fi
+done
+
+#-------------------------------------------------------------------------
+# Finish SPSS write format syntax or remove unless content is detected
+#-------------------------------------------------------------------------
+for syntax in "$pre_long_num" "$pre_long_char" "$reapply_write_spss" "$reapply_print_spss"
+do
+    if [ -f "$syntax" ]
+    then
+        echo '  .' >> "$syntax"
+    fi
+done
+
+for syntax in "$pre_long_num" "$pre_long_char"
+do
+    if [ -f "$syntax" ]
+    then
+        pre_content=`grep '(' "$syntax"`
+
+        if [ ! "$pre_content" ]
+        then
+            rm -f "$syntax"
+        fi
+    fi
+done
+
+for syntax in "$reapply_write_spss" "$reapply_print_spss"
+do
+    if [ -f "$syntax" ]
+    then
+        has_content=`egrep -v 'WRITE FORMAT|PRINT FORMAT|  +\.' "$syntax"`
+
+        if [ ! "$has_content" ]
+        then
+            rm "$syntax"
+        fi
+    fi
+done
+
+#-------------------------------------------------------------------------
+# Finish SAS print format syntax or remove unless content is detected
+#-------------------------------------------------------------------------
+if [ -f "$reapply_print_spss" ]
+then
+    post_content=`grep '(' "$reapply_print_spss"`
+
+    if [ ! "$post_content" ]
+    then
+        rm -f "$post_short_sas"
+    fi
+fi
+
+#-------------------------------------------------------------------------
+# Delete spssfmts dir if empty
+#-------------------------------------------------------------------------
+if [ "$tmpdir" = "/var/tmp/spssfmts_$$" ]
+then
+     find "$tmpdir" -empty -delete
+fi

@@ -1,0 +1,114 @@
+<changelist name="Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1" date="1722034049979" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 7/26/24, 6:47 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="companion.do" />
+    <option name="AFTER_PATH" value="ref/companion.do" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/companion.do" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="hermes_varlistcmp" />
+    <option name="AFTER_PATH" value="ref/hermes_varlistcmp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/hermes_varlistcmp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="0__config_update_notes.txt" />
+    <option name="AFTER_PATH" value="ref/0__config_update_notes.txt" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/0__config_update_notes.txt" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="reformat_hermes" />
+    <option name="AFTER_PATH" value="ref/reformat_hermes" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/reformat_hermes" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="spsshdr.txt" />
+    <option name="AFTER_PATH" value="ref/spsshdr.txt" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/spsshdr.txt" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="spss2rda.r" />
+    <option name="AFTER_PATH" value="ref/spss2rda.r" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/spss2rda.r" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="tweak_ddi" />
+    <option name="AFTER_PATH" value="ref/tweak_ddi" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/tweak_ddi" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="statahdr_retro.txt" />
+    <option name="AFTER_PATH" value="ref/statahdr_retro.txt" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/statahdr_retro.txt" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="outfile.sps" />
+    <option name="AFTER_PATH" value="ref/outfile.sps" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/outfile.sps" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parse_statio" />
+    <option name="AFTER_PATH" value="ref/parse_statio" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/parse_statio" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="hermes_chkmet" />
+    <option name="AFTER_PATH" value="ref/hermes_chkmet" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/hermes_chkmet" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="spsshdr_retro.txt" />
+    <option name="AFTER_PATH" value="ref/spsshdr_retro.txt" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/spsshdr_retro.txt" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="renamelongvars" />
+    <option name="AFTER_PATH" value="ref/renamelongvars" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/renamelongvars" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="0_config_update_acx" />
+    <option name="AFTER_PATH" value="ref/0_config_update_acx" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/0_config_update_acx" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="make_sasmissing" />
+    <option name="AFTER_PATH" value="ref/make_sasmissing" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/make_sasmissing" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="sashdr_retro.txt" />
+    <option name="AFTER_PATH" value="ref/sashdr_retro.txt" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/sashdr_retro.txt" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="companion.sas" />
+    <option name="AFTER_PATH" value="ref/companion.sas" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/companion.sas" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="0_config_update_legacy" />
+    <option name="AFTER_PATH" value="ref/0_config_update_legacy" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/0_config_update_legacy" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="makeddl_template.txt" />
+    <option name="AFTER_PATH" value="ref/makeddl_template.txt" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/makeddl_template.txt" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="scriptlist" />
+    <option name="AFTER_PATH" value="ref/scriptlist" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/scriptlist" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="sashdr.txt" />
+    <option name="AFTER_PATH" value="ref/sashdr.txt" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/sashdr.txt" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="statahdr.txt" />
+    <option name="AFTER_PATH" value="ref/statahdr.txt" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_26_24,_6_47 PM_[Changes]1/statahdr.txt" />
+  </binary>
+</changelist>

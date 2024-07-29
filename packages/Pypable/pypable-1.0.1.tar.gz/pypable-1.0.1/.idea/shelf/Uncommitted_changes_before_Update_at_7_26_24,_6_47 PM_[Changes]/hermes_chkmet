@@ -1,0 +1,110 @@
+#!/bin/sh
+PATH=/usr/bin:/bin:/opt/icpsr/bin:/opt/icpsr/lib/shlib:/opt/sda/bin:/opt/varmet/bin
+
+# hermes_chkmet
+# Peggy Overcashier
+# Created 3/20/12
+
+#    $Id: hermes_chkmet,v 1.1 2012/03/20 19:20:04 overcash Exp $
+
+#-----------------------------------------------------------------
+# Component script of the Hermes System.  Wrapper script for
+# find_qtxt and find_vargrps to look for sources of question text
+# and variable groups that could be used as input to Hermes.
+#-----------------------------------------------------------------
+#-----------------------------------------------------------------
+# Process command line options
+#-----------------------------------------------------------------
+while getopts "d:s:" opt
+do
+    case $opt in
+        d ) DSNUM=$OPTARG ;;
+        s ) STUDYNUM=$OPTARG ;;
+    esac
+done
+
+#-----------------------------------------------------------------
+# Study and DS required
+#-----------------------------------------------------------------
+if [ ! "$DSNUM" -o ! "$STUDYNUM" ]
+then
+    echo "Usage:  `basename $0` -s study -d dataset"
+    exit 1
+fi
+
+. snums
+. dsnums
+
+#-----------------------------------------------------------------
+# Hermes question text and variable list input files
+#-----------------------------------------------------------------
+qtxt="qtxt${SNUM_5}-${DSNUM_4}.ddl"
+varlist="vl${SNUM_5}-${DSNUM_4}.txt"
+
+#-----------------------------------------------------------------
+# Check for question text source if qtxt file not present
+#-----------------------------------------------------------------
+if [ ! -f "$qtxt" ]
+then
+      qtxtsources=`find_qtxt -s $SNUM_SHORT -d $DSNUM_SHORT -n 5`
+      numsources=`echo "$qtxtsources" | wc -l`
+
+      if [ "$qtxtsources" ]
+      then
+           echo
+           echo "*** No question text file present for study $SNUM_SHORT, dataset $DSNUM_SHORT;"
+           echo "    source file(s) found -- $numsources most recent:"
+           echo "$qtxtsources" | sed 's/^/       /'
+           echo
+           echo -n "Exit and create question text file from source? (Y/n): "
+           read yesno
+           yesno=`echo "$yesno" | cut -c1 | tr 'a-z' 'A-Z'`
+
+           if [ "$yesno" = "Y" -o ! "$yesno" ]
+           then
+                echo
+                echo '---------------------------------------------------------'
+                echo "To extract question text from one of the sources above:"
+                echo '---------------------------------------------------------'
+                echo "SDA:  ddl2qtxt SDA DDL filename > $qtxt"
+                echo "DDI:  ddi2qtxt ddifile.xml > $qtxt"
+                echo
+                exit 1
+           fi
+      fi
+fi
+
+#-----------------------------------------------------------------
+# Check for variable group source if var group file not present
+#-----------------------------------------------------------------
+if [ ! -f "$varlist" ]
+then
+      vargrpsources=`find_vargrps -s $SNUM_SHORT -d $DSNUM_SHORT -n 5`
+      numsources=`echo "$qtxtsources" | wc -l`
+
+      if [ "$vargrpsources" ]
+      then
+           echo
+           echo "*** No variable group file present for study $SNUM_SHORT, dataset $DSNUM_SHORT;"
+           echo "    source file(s) found -- $numsources most recent:"
+           echo
+           echo "$vargrpsources" | sed 's/^/       /'
+           echo
+           echo -n "Exit and create variable group file? (Y/n): "
+           read yesno
+           yesno=`echo "$yesno" | cut -c1 | tr 'a-z' 'A-Z'`
+
+           if [ "$yesno" = "Y" -o ! "$yesno" ]
+           then
+                echo
+                echo '---------------------------------------------------------'
+                echo "To extract variable groups from one of the sources above:"
+                echo '---------------------------------------------------------'
+                echo "SDA:  sda2varlist SDA_source_file > $varlist"
+                echo "DDI:  ddi2varlist ddi_source_file.xml > $varlist"
+                echo
+                exit 1
+           fi
+      fi
+fi
+

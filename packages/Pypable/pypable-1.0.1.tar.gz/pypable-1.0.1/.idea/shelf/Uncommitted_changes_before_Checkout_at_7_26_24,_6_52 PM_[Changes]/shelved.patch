@@ -1,0 +1,1164 @@
+Index: ICPSR/text.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import os\nimport re\nfrom typing import overload\nfrom typing import Sequence, Callable, IO, SupportsIndex, Union, Optional, Iterator\nfrom types import MethodDescriptorType\nfrom pathlib import Path\n\nfrom ICPSR.utilities.typing import is_str_list, is_subscripted_type, get_parent_class\nfrom ICPSR.utilities.typing import PathLike, Destination, PatternLike, StringList, OpenMode, Placeholder, LineIdentifier, RegexFlag\nfrom ICPSR.mixins.pipable import PipableMixin, Receiver\nfrom ICPSR.printers import print\n\n\nclass Text(PipableMixin, list[str]):\n\t\"\"\"\n\tA Text object is a thinly-wrapped list of strings.\n\n\tThe Text class is an interface around a list of strings, exposing additional text-manipulation tools\n\tto quickly filter, sort, search, transform, and modify the text. Each string in the list represents a single\n\tline of text, without line-endings. Line-endings are applied when converting the Text object to a string.\n\n\tText objects inherit most of the methods of the underlying base-class (str). Therefore, any method\n\tthat could be used to modify, inspect, or search a string can be applied to a Text object.\n\t\"\"\"\n\n\tdef __init__(self, source:Union[PathLike, Sequence[str], Iterator[str]] = None, end:str = '\\n'):\n\t\t\"\"\"\n\t\tParameters:\n\t\t\tsource: Either a file-path to load as a Text object, or a list of strings to be treated as lines of text.\n\t\t\tend: The default end to apply when converting the Text() object into a single contiguous string.\n\t\t\"\"\"\n\n\t\tself.end = end\n\n\t\tif source is None:\n\t\t\tlines = []\n\t\telif isinstance(source, str) and end in source:\n\t\t\tlines = source.split(end)\n\t\telif is_subscripted_type(source, PathLike):  # if PathLike\n\t\t\tlines = Path(source).read_text().split(end)\n\t\telif isinstance(source, Iterator) or is_str_list(source):\n\t\t\tlines = Text._flatten([str(string).split(end) for string in source])\n\t\telse:\n\t\t\traise TypeError('source must be a file-path or a list of strings')\n\n\t\tsuper().__init__(lines)\n\n\tdef __str__(self): return self.end.join(self)\n\t# def __repr__(self): return str(self)  # uncertain if we want this...\n\n\tdef __contains__(self, key): return self.contains(key)\n\n\tdef __format__(self, format_spec):\n\t\treturn str(Text([line.__format__(format_spec) for line in self], end=self.end))\n\n\n\t# noinspection PyUnresolvedReferences\n\tdef __add__(self, value):\n\t\t\"\"\" Append value to the text. \"\"\"\n\t\tif isinstance(value, Text):\n\t\t\treturn super().__add__(value)\n\t\telse:\n\t\t\treturn super().__add__(Text(value.split(self.end) if isinstance(value, str) else value, self.end))\n\n\tdef __iadd__(self, value):\n\t\t\"\"\" Append value to the text. \"\"\"\n\t\tif isinstance(value, Text):\n\t\t\treturn super().__iadd__(value)\n\t\telse:\n\t\t\treturn super().__iadd__(Text(value.split(self.end) if isinstance(value, str) else value, self.end))\n\n\tdef __lt__(self, value): raise NotImplemented\n\n\tdef __lshift__(self, path:PathLike):\n\t\t\"\"\" Appends the contents of a file to self. \"\"\"\n\t\tif is_subscripted_type(path, PathLike):\n\t\t\treturn self + Text(path, self.end)\n\t\telse:\n\t\t\treturn NotImplemented\n\n\n\t# === STATIC METHODS ===\n\n\t@staticmethod\n\tdef _flatten(xss): return [x for xs in xss for x in xs]\n\n\n\t@staticmethod\n\tdef _call_transform(__obj, callable:Callable, *args, **kwargs):\n\t\t\"\"\"\n\t\tInternal method used to apply a transform to an object.\n\n\t\tIf a method is supplied, ``__obj`` will first be converted to an appropriate type for the method.\n\t\tIf args are included, then either the args or kwargs must include a :py:class:`Placeholder` type\n\n\t\tParameters:\n\t\t\t__obj: Object to be transformed.\n\t\t\tcallable: Method or function to apply.\n\t\t\t*args: Arguments to be sent to the transform.\n\t\t\t**kwargs: Keyword-arguments to be sent to the transform.\n\n\t\tReturns:\n\t\t\tThe result of the transform, or the value of ``__obj`` if the transform returned `None`.\n\t\t\"\"\"\n\n\t\t# search args/kwargs for Placeholder object and replace with __obj\n\t\targs = list(args)\n\t\tfound = False\n\t\tfor idx, arg in enumerate(args):\n\t\t\tif arg is Placeholder:\n\t\t\t\targs[idx] = __obj\n\t\t\t\tfound = True\n\t\tfor key in kwargs:\n\t\t\tif kwargs[key] is Placeholder:\n\t\t\t\tkwargs[key] = __obj\n\t\t\t\tfound = True\n\n\t\t# if the callable is a Method, we must cast the __obj as a type that has callable.\n\t\tif isinstance(callable, MethodDescriptorType):\n\t\t\tcast = get_parent_class(callable)\n\t\t\tif isinstance(cast, type) and not isinstance(__obj, cast): __obj = cast(__obj)\n\t\t\tcallable = __obj.__getattribute__(callable.__name__)\n\n\t\t# if the callable is not a Method, then the args/kwargs must include a Placeholder\n\t\telif not found:\n\t\t\tif args:\n\t\t\t\traise TypeError('args must include a Placeholder object')\n\t\t\telse:\n\t\t\t\targs = (__obj,)\n\n\t\t# and finally, we call the callable\n\t\treturn callable(*args, **kwargs) or __obj\n\n\n\t# === FILTER METHODS ===\n\n\tdef grep(self, pattern:PatternLike, insensitive = False, invert = False, flags:Union[int,RegexFlag] = 0):\n\t\t\"\"\"\n\t\tFilters the lines of the Text object based on a given pattern.\n\n\t\tParameters:\n\t\t\tpattern: The pattern to search for in the lines of the Text object.\n\t\t\tinsensitive: If True, the search will be case-insensitive. Defaults to False.\n\t\t\tinvert: If True, the function will return lines that do *not* match the pattern. Defaults to False.\n\t\t\tflags: Flags to be passed to the regular-expression engine. Defaults to 0.\n\n\t\tReturns:\n\t\t\tA new Text object containing the lines that match the specified pattern.\n\t\t\"\"\"\n\n\t\tif insensitive: flags = flags | re.I\n\t\treturn Text( [line for line in self if invert ^ bool(re.search(pattern, line, flags=flags))], self.end )\n\n\n\tdef lines_between(self, start:PatternLike, end:PatternLike, invert = False, flags:Union[int,RegexFlag] = 0):\n\t\t\"\"\"\n\t\tExtracts lines between two patterns from a given file.\n\t\tWorks similarly to the sed operation 'sed -n \"/$start/,/$end/p\" $file'\n\n\t\tLines are returned starting with the line that matches the ``start`` pattern,\n\t\tcontinuously until (and including) the line that matches the ``end`` pattern.\n\t\tIf the ``end`` pattern is never matched, then all remaining lines are matched.\n\n\t\tThe ``start`` pattern may be matched multiple times. Each subsequent start-end block\n\t\tis appended to the returned lines.\n\n\t\tParameters:\n\t\t\tstart: The start pattern to search for in the text.\n\t\t\tend: The end pattern to search for in the text.\n\t\t\tinvert: If True, only lines that are *not* matched are returned. Defaults to False.\n\t\t\tflags: Flags to be passed to the regular-expression engine. Defaults to 0.\n\n\t\tReturns:\n\t\t\tA new Text object containing all the lines between the specified start and end patterns.\n\t\t\"\"\"\n\n\t\tlines = []\n\t\tbegin = None\n\t\tfor i, line in enumerate(self):\n\t\t\tif begin is None:  # if we haven't started matching yet...\n\t\t\t\tif re.search(start, line, flags):\n\t\t\t\t\tbegin = i  # begin matching...\n\t\t\t\telif invert:\n\t\t\t\t\t# if we are in \"invert\" mode, append every line that is not inside of the begin-block\n\t\t\t\t\tlines.append(line)\n\t\t\telif re.search(end, line, flags):\n\t\t\t\tif not invert:\n\t\t\t\t\t# if we are NOT in \"invert\" mode, append lines between the 'start' and 'end' patterns (inclusive)\n\t\t\t\t\tlines += self[begin:i]\n\t\t\t\tbegin = None  # end matching...\n\n\t\t# if we found the start-pattern but never found the end-pattern, append all remaining lines\n\t\tif begin and not invert:\n\t\t\tlines += self[begin:]\n\n\t\treturn Text(lines, self.end)\n\n\n\tdef unique(self):\n\t\t\"\"\" Returns a new Text object containing only the unique lines from the original Text object. Order is not guaranteed. \"\"\"\n\t\treturn Text(list(set(self)), self.end)\n\n\n\tdef sort(self, reverse = False, unique = True, inplace = False) -> Optional[Text]:\n\t\t\"\"\"\n\t\tReturn a sorted copy of the Text object.\n\n\t\tParameters:\n\t\t\treverse: Sort the list in descending order.\n\t\t\tunique: Remove duplicate lines.\n\t\t\tinplace: Sort the Text object in-place (returns the original object, now sorted).\n\t\t\t\tCannot be combined with the ``unique`` argument.\n\n\t\tReturns:\n\t\t\tA new Text object containing the sorted lines.\n\t\t\tIf the \"inplace\" option is used, then nothing is returned.\n\t\t\"\"\"\n\n\t\tif inplace:\n\t\t\tif unique: raise ValueError(\"cannot call sort() with both 'unique' and 'inplace'\")\n\t\t\treturn super().sort(reverse=reverse)\n\t\telse:\n\t\t\treturn Text(sorted(self.unique() if unique else self, reverse=reverse), self.end)\n\n\n\t# === TRANSFORM METHODS ===\n\t# methods for modifying the contents of the Text object.\n\n\tdef transform(\n\t\t\tself,\n\t\t\tfunc: Callable,\n\t\t\t*args,\n\t\t\tstart: LineIdentifier = None,\n\t\t\tend: LineIdentifier = None,\n\t\t\tinvert = False,\n\t\t\tmatch_flags: RegexFlag = 0,\n\t\t\t**kwargs\n\t\t\t):\n\t\t\"\"\"\n\t\tApplies a transformation function to each line in the Text object.\n\n\t\tParameters:\n\t\t\tfunc: A callable function that will be applied to each line in the Text object.\n\t\t\tstart: The start pattern to search for in the text.\n\t\t\tend: The end pattern to search for in the text.\n\t\t\tinvert: If True, only lines that are *not* matched are returned. Defaults to False.\n\t\t\tmatch_flags: Regex flags to use when looking for the `start` or `end` patterns.\n\t\t\t*args: Additional positional arguments to be passed to the specified function.\n\t\t\t**kwargs: Additional keyword arguments to be passed to the specified function.\n\n\t\tReturns:\n\t\t\tA new Text object where all lines have been transformed according to the specified function and arguments.\n\t\t\"\"\"\n\n\t\tif not (start or end):\n\t\t\t# if no `start` or `end`, process every line\n\t\t\tlines = [ Text._call_transform(line, func, *args, **kwargs) for line in self ]\n\n\t\telse:\n\t\t\tlines = []\n\t\t\tin_block = False\n\n\t\t\tfor i, line in enumerate(self):\n\t\t\t\t# if we are inside a match-block...\n\t\t\t\tif in_block:\n\t\t\t\t\t# if `end` is an index or line matches the `end` pattern...\n\t\t\t\t\tif i == end or re.search(end, line, match_flags):\n\t\t\t\t\t\tin_block = False  # end match-block\n\n\t\t\t\t\t# and...\n\t\t\t\t\tif not invert:\n\t\t\t\t\t\t# transform lines that are inside of the match-block\n\t\t\t\t\t\tline = Text._call_transform(line, func, *args, **kwargs)\n\n\t\t\t\t# if we haven't found a match-block yet...\n\t\t\t\telse:\n\t\t\t\t\t# if `start` is an index or this line contains the `start` pattern...\n\t\t\t\t\tif i == start or re.search(start, line, match_flags):\n\t\t\t\t\t\tin_block = True  # begin match-block\n\n\t\t\t\t\t\t# transform the matched line if we are not inverted\n\t\t\t\t\t\tif not invert:\n\t\t\t\t\t\t\tline = Text._call_transform(line, func, *args, **kwargs)\n\n\t\t\t\t\t# otherwise...\n\t\t\t\t\tif invert:\n\t\t\t\t\t\t# transform lines that are *not* inside of the match-block\n\t\t\t\t\t\tline = Text._call_transform(line, func, *args, **kwargs)\n\n\t\t\t\t# finally, append the current line, whether or not it was modified\n\t\t\t\tlines.append(line)\n\n\t\treturn Text( lines, end=self.end )\n\n\n\tdef encode(self, encoding:str = \"utf-8\", errors:str = \"strict\"):\n\t\t\"\"\"\n\t\tEncode the Text object using the codec registered for encoding.\n\t\tThe :py:attr:`Text.end` attribute will also be encoded.\n\n\t\t\tencoding\n\t\t\t\tThe encoding in which to encode the lines of the Text object.\n\t\t\terrors\n\t\t\t\tThe error handling scheme to use for encoding errors.\n\t\t\t\tThe default is 'strict' meaning that encoding errors raise a\n\t\t\t\tUnicodeEncodeError.  Other possible values are 'ignore', 'replace' and\n\t\t\t\t'xmlcharrefreplace' as well as any other name registered with\n\t\t\t\tcodecs.register_error that can handle UnicodeEncodeErrors.\n\t\t\"\"\"\n\n\t\tself.end = self.end.encode(encoding, errors)\n\t\treturn self.transform(str.encode, encoding, errors)\n\n\n\tdef decode(self, encoding:str = \"utf-8\", errors:str = \"strict\"):\n\t\t\"\"\"\n\t\tEncode the Text object using the codec registered for encoding.\n\t\tThe :py:attr:`end` attribute will also be encoded.\n\n\t\t\tencoding\n\t\t\t\tThe encoding in which to decode the lines of the Text object.\n\t\t\terrors\n\t\t\t\tThe error handling scheme to use for decoding errors.\n\t\t\t\tThe default is 'strict' meaning that decoding errors raise a\n\t\t\t\tUnicodeEncodeError.  Other possible values are 'ignore', 'replace' and\n\t\t\t\t'xmlcharrefreplace' as well as any other name registered with\n\t\t\t\tcodecs.register_error that can handle UnicodeEncodeErrors.\n\t\t\"\"\"\n\n\t\tif isinstance(self.end, bytes): self.end = self.end.decode(encoding, errors)\n\t\treturn self.transform(bytes.decode, encoding, errors)\n\n\t# --- add strings ---\n\n\tdef prefix(self, string:str, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Add a prefix to each line of the text.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(lambda line : string + line, start=start, end=end)\n\n\tdef suffix(self, string:str, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Add a suffix to each line of the text.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(lambda line : line + string, start=start, end=end)\n\n\tdef zfill(self, width:SupportsIndex, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Left-pad each line with zeroes, to the given width.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.zfill, width, start=start, end=end)\n\n\t# --- remove strings ---\n\n\tdef strip(self, chars:str = None, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Removes leading and trailing whitespace from each line.\n\t\tIf `chars` is given, remove any characters found in `chars` instead.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.strip, chars, start=start, end=end)\n\n\tdef lstrip(self, chars:str = None, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Removes leading whitespace from each line.\n\t\tIf `chars` is given, remove any characters found in `chars` instead.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.lstrip, chars, start=start, end=end)\n\n\tdef rstrip(self, chars:str = None, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Removes trailing whitespace from each line.\n\t\tIf `chars` is given, remove any characters found in `chars` instead.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.rstrip, chars, start=start, end=end)\n\n\t# --- change case ---\n\n\tdef casefold(self, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Return a version of the Text object suitable for caseless comparisons.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.casefold, start=start, end=end)\n\n\tdef title(self, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Converts the first character of each word to upper case.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.title, start=start, end=end)\n\n\tdef capitalize(self, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Capitalize the first character of each line, and make all other characters lowercase.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.capitalize, start=start, end=end)\n\n\tdef upper(self, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Converts each line to upper case.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.upper, start=start, end=end)\n\n\tdef lower(self, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Converts the text into lower case.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.lower, start=start, end=end)\n\n\tdef swapcase(self, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Swaps cases: lower case characters becomes upper case and vice versa.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.swapcase, start=start, end=end)\n\n\t# --- replace characters ---\n\n\tdef expandtabs(self, tabsize = 8, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Expands each tab in the text into the number of spaces given by ``tabsize`` (default is 8).\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.expandtabs, tabsize, start=start, end=end)\n\n\tdef format(self, *args, start:LineIdentifier = None, end:LineIdentifier = None, **kwargs):\n\t\t\"\"\" Formats specified values in the text.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.format, *args, **kwargs, start=start, end=end)\n\n\tdef format_map(self, mapping, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Formats specified values in the text, using subsitutions from the provided mapping.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.format_map, mapping, start=start, end=end)\n\n\tdef replace(self, old, new, count = -1, limit = None, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\"\n\t\tReturns a Text object where each instance of the `old` string is replaced with the `new` string.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\n\t\tParameters:\n\t\t\told: The string to look for in the text.\n\t\t\tnew: The string to replace the matched text with. If blank, the matched text will simply be removed.\n\t\t\tcount: Optional, only the first `count` occurrences in each line will be replaced.\n\t\t\t\t-1 (the default value) means replace all occurrences.\n\t\t\tlimit: Optional, only the first `limit` lines containing the ``old`` string will be modified.\n\t\t\t\tIgnored if not a positive integer.\n\t\t\tstart: Optional, the start point (index or pattern) to search for in the text.\n\t\t\tend: Optional, the end point (index or pattern) to search for in the text.\n\t\t\"\"\"\n\n\t\t# noinspection PyGlobalUndefined\n\t\tglobal __found\n\t\t__found = 0\n\n\t\t# noinspection PyShadowingNames\n\t\tdef replace_in_line(line:str, old:str, new:str, count:int = -1, limit:int = None) -> str:\n\t\t\t\"\"\" Inline function used to replace text in a string.\n\n\t\t\tArgs:\n\t\t\t\tline: The string to be modified.\n\t\t\t\told: Pattern to replace.\n\t\t\t\tnew: Pattern to replace it with.\n\t\t\t\tcount: How many instances of the pattern to replace per line.\n\t\t\t\tlimit: The total number of lines that should be replaced.\n\t\t\t\t\tThis refers to the `_Text__found` global variable used by the :py:meth:`Text.replace` method,\n\t\t\t\t\twhich is reset each time a call is made to the method.\n\n\t\t\tReturns:\n\t\t\t\tThe modified string.\n\t\t\t\"\"\"\n\n\t\t\tif limit > 0:\n\t\t\t\t# noinspection PyGlobalUndefined\n\t\t\t\tglobal __found\n\t\t\t\tif __found < limit:\n\t\t\t\t\t__found += 1\n\t\t\t\t\treturn line.replace(old, new, count)\n\t\t\telse:\n\t\t\t\treturn line.replace(old, new, count)\n\n\t\treturn self.transform(replace_in_line, Placeholder, old, new, count, limit, start=start, end=end)\n\n\n\tdef translate(self, table, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Translate each line of the text, according to the translation table.\n\t\t``table`` must be a mapping of Unicode ordinals to Unicode ordinals, strings, or None.\n\t\tThe table must implement lookup/indexing via __getitem__, for instance a dictionary or list.\n\t\tIf this operation raises LookupError, the character is left untouched.\n\t\tCharacters mapped to None are deleted.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.translate, table, start=start, end=end)\n\n\n\tdef sed(self, pattern:PatternLike, replacement:PatternLike = '', start:LineIdentifier = None, end:LineIdentifier = None, **kwargs):\n\t\t\"\"\"\n\t\tSubstitutes all instances of a specified pattern with a replacement pattern.\n\n\t\tIf no replacement pattern is provided, the matched pattern will be removed.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\n\t\tParameters:\n\t\t\tpattern: The pattern to search for in the lines of the Text object.\n\t\t\treplacement: The string to replace the matched pattern with. Defaults to an empty string.\n\t\t\tstart: Optional, the start point (index or pattern) to search for in the text.\n\t\t\tend: Optional, the end point (index or pattern) to search for in the text.\n\t\t\t**kwargs: arguments to be passed to the re.sub operation\n\n\t\tReturns:\n\t\t\tA new Text object where the specified pattern has been replaced with the replacement pattern.\n\t\t\"\"\"\n\n\t\treturn self.transform(re.sub, pattern, replacement, Placeholder, **kwargs, start=start, end=end)\n\n\n\tdef tr(self, before:str, after:str, start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\"\n\t\tTranslate each `before` character in the object into the corresponding `after` character.\n\n\t\tThis function applies the built-in string method `translate()` to each line in the Text object,\n\t\treplacing all characters in the ``before`` string with the corresponding characters in the ``after`` string.\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\n\t\tParameters:\n\t\t\tbefore: A string containing the characters to be replaced.\n\t\t\tafter: A string containing the replacement characters.\n\t\t\tstart: Optional, the start point (index or pattern) to search for in the text.\n\t\t\tend: Optional, the end point (index or pattern) to search for in the text.\n\n\t\tReturns:\n\t\t\tA new Text object where all lines have been transformed according to the specified translation patterns.\n\n\t\tSee str.translate and str.maketrans (https://docs.python.org/3/library/stdtypes.html#str.maketrans)\n\t\tfor more information.\n\t\t\"\"\"\n\n\t\ttable = str.maketrans(before, after)\n\t\treturn self.transform(str.translate, table, start=start, end=end)\n\n\t# --- justify ---\n\n\tdef center(self, width:int, fill:str = ' ', start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Returns a center-justified version of the text.\n\t\tPadding is done using the specified fill character (default is a space).\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.center, width, fill, start=start, end=end)\n\n\tdef ljust(self, width:int, fill:str = ' ', start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Returns a left-justified version of the text.\n\t\tPadding is done using the specified fill character (default is a space).\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.ljust, width, fill, start=start, end=end)\n\n\tdef rjust(self, width:int, fill:str = ' ', start:LineIdentifier = None, end:LineIdentifier = None):\n\t\t\"\"\" Returns a right-justified version of the string.\n\t\tPadding is done using the specified fill character (default is a space).\n\n\t\tIf a 'start' or 'end' is provided, only the specified lines will be modified.\n\t\tSee :py:meth:`Text.transform` for more information.\n\t\t\"\"\"\n\t\treturn self.transform(str.rjust, width, fill, start=start, end=end)\n\n\n\t# === OUTPUT METHODS ===\n\t# methods for sending the content of the Text object.\n\n\tdef print(self, file:Destination = None, mode:OpenMode = 'w') -> None:\n\t\t\"\"\"\n\t\tPrints the lines of the Text object to the specified file or IO stream.\n\n\t\tKeyword Arguments:\n\t\t\tfile (Destination): The optional file or file-like object to which the message will be printed. If not provided, the message will only be printed to the standard output.\n\t\t\tmode (OpenMode): The mode in which the destination file will be opened. Defaults to 'w' (write).\n\t\t\"\"\"\n\t\tprint(self, file=file, mode=mode, end=self.end)\n\n\n\tdef tee(self, file:Destination = None, mode:OpenMode = 'w', stdout = True):\n\t\t\"\"\"\n\t\tPrints the lines of the Text object to the specified file or IO stream, and to stdout.\n\n\t\tParameters:\n\t\t\tfile: The optional file or file-like object to which the message will be printed. If not provided, the message will only be printed to the standard output.\n\t\t\tstdout: Determines if the tee() operation should print to sys.stdout\n\t\t\tmode (OpenMode): The mode in which the destination file will be opened. Defaults to 'w' (write).\n\t\t\"\"\"\n\n\t\tif file:   self.print(file=file, mode=mode)\n\t\tif stdout: self.print()\n\t\treturn self\n\n\n\t# === SEARCH METHODS ===\n\t# methods for searching within the content of the Text object\n\n\t# noinspection PyRedeclaration\n\tdef count(self, pattern:PatternLike = None, substring:str = None, start:SupportsIndex = None, end:SupportsIndex = None) -> int:\n\t\t\"\"\"\n\t\tReturns the number of times a specified value occurs in the text.\n\n\t\tRequires either a pattern or a substring to search for.\n\t\tIf both values are provided, the pattern will be used.\n\n\t\tParameters:\n\t\t\tpattern: Pattern to search for in the text.\n\t\t\tsubstring: Substring to search for in the text.\n\t\t\tstart: Optional, indicates which line to start searching from.\n\t\t\tend: Optional, indicates the last line to include in the search space.\n\n\t\tReturns:\n\t\t\tThe number of times the specified substring or pattern occurs in the text.\n\n\t\tRaises:\n\t\t\tTypeError: If neither a substring nor a pattern is provided as an argument.\n\t\t\"\"\"\n\n\t\tif pattern:\n\t\t\treturn sum( len(re.findall(pattern, line)) for line in self[start:end] )\n\t\telif substring:\n\t\t\treturn sum( line.count(substring) for line in self[start:end] )\n\t\telse:\n\t\t\traise TypeError(\"count() requires a pattern or substring argument\")\n\n\n\tdef find(self, pattern:PatternLike = None, substring:str = None, start:SupportsIndex = None, end:SupportsIndex = None, last = False) -> tuple[int,int]:\n\t\t\"\"\"\n\t\tReturns the position of the first occurence of a pattern or substring in the text.\n\n\t\tRequires either a pattern or a substring to search for.\n\t\tIf both values are provided, the pattern will be used.\n\n\t\tThe position is returned as a tuple in the form of `(line_index, string_index)`.\n\n\t\tParameters:\n\t\t\tpattern: Pattern to search for in the text.\n\t\t\tsubstring: Substring to search for in the text.\n\t\t\tstart: Optional, indicates which line to start searching from.\n\t\t\tend: Optional, indicates the last line to include in the search space.\n\t\t\tlast: If true, searching starts at the end and works backward\n\t\t\t\t(end of last line for substrings, beginning of last line for patterns).\n\n\t\tReturns:\n\t\t\t(index, position): Tuple containing the index of the matching line,\n\t\t\t\tand the position of the match within that line.\n\n\t\tRaises:\n\t\t\tTypeError: If neither a substring nor a pattern is provided as an argument.\n\t\t\"\"\"\n\n\t\tif last:\n\t\t\tenumerator = reversed(list(enumerate(self[start:end])))\n\t\t\tfinder = 'rfind'\n\t\telse:\n\t\t\tenumerator = enumerate(self[start:end])\n\t\t\tfinder = 'find'\n\n\t\tfor idx,line in enumerator:\n\t\t\tif pattern and (match := re.search(pattern, line)): return idx,match.start()\n\t\t\telif substring and (pos := getattr(line, finder)(substring)) > -1: return idx,pos\n\t\telse:\n\t\t\traise TypeError(\"count() requires a pattern or substring argument\")\n\n\n\tdef rfind(self, substring:str = None, start:SupportsIndex = None, end:SupportsIndex = None) -> tuple[int,int]:\n\t\t\"\"\"\n\t\tReturns the position of the last occurence of a substring in the text.\n\n\t\tThe position is returned as a tuple in the form of `(line_index, string_index)`.\n\n\t\tParameters:\n\t\t\tsubstring: Substring to search for in the text.\n\t\t\tstart: Optional, indicates which line to start searching from.\n\t\t\tend: Optional, indicates the last line to include in the search space.\n\n\t\tReturns:\n\t\t\t(index, position): Tuple containing the index of the matching line,\n\t\t\t\tand the position of the match within that line.\n\n\t\tRaises:\n\t\t\tTypeError: If neither a substring nor a pattern is provided as an argument.\n\t\t\"\"\"\n\n\t\treturn self.find(None, substring, start, end, last=True)\n\n\n\t# === EVALUATION METHODS ===\n\t# methods for verifying the content of the Text object\n\n\tdef endswith(self, suffix:Union[str,tuple[str, ...]], start:SupportsIndex = None, end:SupportsIndex = None) -> bool:\n\t\t\"\"\"\n\t\tReturns true if every line in the text ends with the specified value.\n\n\t\tParameters:\n\t\t\tsuffix: String(s) to check for at the end of each line. If multiple strings are provided, checks for any of them.\n\t\t\tstart: Optional, indicates which line to start searching from.\n\t\t\tend: Optional, indicates the last line to include in the search space.\n\t\t\"\"\"\n\n\t\treturn all( line.endswith(suffix, start, end) for line in self )\n\n\n\tdef startswith(self, prefix:Union[str,tuple[str, ...]], start:SupportsIndex = None, end:SupportsIndex = None) -> bool:\n\t\t\"\"\"\n\t\tReturns true if every line in the text begins with the specified value.\n\n\t\tParameters:\n\t\t\tprefix: String to check for at the start of each line.\n\t\t\tstart: Optional, indicates which line to start searching from.\n\t\t\tend: Optional, indicates the last line to include in the search space.\n\t\t\"\"\"\n\n\t\treturn all( line.startswith(prefix, start, end) for line in self )\n\n\tdef contains(self, substring) -> bool:\n\t\t\"\"\" Returns True if the substring occurs anywhere in the text. \"\"\"\n\t\treturn any( substring in line for line in self )\n\n\tdef isalnum(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are alphanumeric. \"\"\"\n\t\treturn all( line.isalnum for line in self )\n\n\tdef isalpha(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are in the alphabet. \"\"\"\n\t\treturn all( line.isalpha for line in self )\n\n\tdef isascii(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are ascii characters. \"\"\"\n\t\treturn all( line.isascii() for line in self )\n\n\tdef isdecimal(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are decimals. \"\"\"\n\t\treturn all( line.isdecimal() for line in self )\n\n\tdef isdigit(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are digits. \"\"\"\n\t\treturn all( line.isdigit() for line in self )\n\n\tdef islower(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are lower case. \"\"\"\n\t\treturn all( line.islower() for line in self )\n\n\tdef isnumeric(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are numeric. \"\"\"\n\t\treturn all( line.isnumeric() for line in self )\n\n\tdef isprintable(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are printable. \"\"\"\n\t\treturn all( line.isprintable() for line in self )\n\n\tdef isspace(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are whitespaces. \"\"\"\n\t\treturn all( line.isspace() for line in self )\n\n\tdef istitle(self) -> bool:\n\t\t\"\"\" Returns True if the text follows the rules of a title. \"\"\"\n\t\treturn all( line.istitle() for line in self )\n\n\tdef isupper(self) -> bool:\n\t\t\"\"\" Returns True if all characters in the text are upper case. \"\"\"\n\t\treturn all( line.isupper() for line in self )\n\n\n\n\n# === generic text-transformation functions ===\n\ndef dos2unix(infile:PathLike, outfile:PathLike = None):\n\t\"\"\"\n\tMimics the dos2unix shell program.\n\n\tThis function converts a text file from CRLF to LF line endings.\n\n\tParameters:\n\t\tinfile (os.PathLike[str]): The path to the input file.\n\t\toutfile (os.PathLike[str], optional): The path to the output file. If not provided, the same file as the input file will be used.\n\n\tReturns:\n\t\tNone: The function does not return any value, but it modifies the input or output file.\n\t\"\"\"\n\n\twith open(infile, \"rb\") as file:\n\t\t## Convert example.txt from CRLF to LF\n\t\tbuffer = file.read().replace(b'\\r\\n', b'\\n')  # dos2unix \"$dosfile\"\n\twith open(outfile or infile, \"wb\") as file:\n\t\tfile.write(buffer)\n\n\ndef upcase(text:StringList) -> Union[str,Text]:\n\t\"\"\"Convert the string(s) to upper-case.\"\"\"\n\treturn transform(text, str.upper)\n\n\ndef downcase(text:StringList) -> Union[str,Text]:\n\t\"\"\"Convert the string(s) to lower-case.\"\"\"\n\treturn transform(text, str.lower)\n\n\ndef transform(text:StringList, func:Callable, *args, **kwargs) -> Union[str,Text]:\n\t\"\"\"\n\tApplies a transformation function to a string, or to each item in a list.\n\n\tParameters:\n\t\ttext: the string or list of strings to be transformed.\n\t\tfunc: A callable function that will be applied to each line in the text.\n\t\t*args: Additional positional arguments to be passed to the specified function.\n\t\t**kwargs: Additional keyword arguments to be passed to the specified function.\n\n\tReturns:\n\t\tIf text is a string, a transformed string will be returned.\n\t\tIf text is a list of strings, a new :py:class:`Text` object will be returned,\n\t\twhere all lines have been transformed according to the specified function and arguments.\n\t\"\"\"\n\n\tif isinstance(text, str):\n\t\treturn text.__getattribute__(func.__name__)(*args, **kwargs)\n\telif isinstance(text, Text):\n\t\treturn text.transform(func, *args, **kwargs)\n\telif isinstance(text, Sequence):\n\t\treturn Text(text).transform(func, *args, **kwargs)\n\telse:\n\t\traise TypeError(f\"invalid type '{text.__class__}'\")\n\n\n# === Text() object generating functions ===\n\ndef cat(file:Destination) -> Text:\n\t\"\"\"\n\tReads the contents of a file and returns a new Text object containing the lines of the file.\n\n\tParameters:\n\t\tfile: The file to read.\n\n\tReturns:\n\t\tA new :py:class:`Text` object containing the lines of the specified file.\n\t\"\"\"\n\n\tif isinstance(file, IO):\n\t\treturn Text(file.readlines())\n\telse:\n\t\treturn Text(file)\n\n\n@overload\ndef grep(file:PathLike, pattern:PatternLike, **kwargs) -> Text: ...\n@overload\ndef grep(pattern:PatternLike, **kwargs) -> Receiver: ...\ndef grep(pattern:PatternLike, file:PathLike = None, **kwargs) -> Union[Text, Receiver]:\n\t\"\"\"\n\tSearches for lines in a file that match a given pattern.\n\n\tParameters:\n\t\tfile: The file to search through.\n\t\tpattern: The pattern to search for in the text.\n\t\t**kwargs: keyword arguments not specified below will be passed to the :py:meth:`re.search` method\n\n\tKeyword Arguments:\n\t\tinsensitive (bool): If True, the search will be case-insensitive.\n\t\tinvert (bool): If True, the function will return lines that do *not* match the pattern.\n\n\tReturns:\n\t\tA new :py:class:`Text` object containing the lines that match the specified pattern.\n\n\t\tIf no file is provided, a :py:class:`Receiver` is returned, for use in piped context\n\t\t(ex: ``cat('example.txt') | grep('substring')``)\n\t\"\"\"\n\tif file:\n\t\treturn Text(file).grep(pattern, **kwargs)\n\telse:\n\t\treturn Receiver(Text.grep, pattern, **kwargs)\n\n\n@overload\ndef sed(pattern:PatternLike, replacement:PatternLike = '', file:PathLike = None, **kwargs) -> Text: ...\n@overload\ndef sed(pattern:PatternLike, replacement:PatternLike = '', **kwargs) -> Receiver: ...\ndef sed(pattern:PatternLike, replacement:PatternLike = '', file:PathLike = None, **kwargs) -> Union[Text, Receiver]:\n\t\"\"\"\n\tRead in a file or :py:class:`Text`, substituting all instances of ``pattern`` with the pattern in ``replacement``.\n\n\tIf a start or end is specified, only the matched lines will be modified.\n\n\tParameters:\n\t\tfile: The file to search through.\n\t\tpattern: The pattern to search for in the text.\n\t\treplacement: The string to replace the matched pattern with. If not provided, the matched pattern will be removed.\n\t\t**kwargs: keyword arguments not specified below will be passed to the :py:meth:`re.sub` method\n\n\tKeyword Arguments:\n\t\tstart (LineIdentifier): Optional, the start point (index or pattern) to search for in the text.\n\t\tend (LineIdentifier): Optional, the end point (index or pattern) to search for in the text.\n\t\tinvert (bool): If True, only lines that are *not* matched are returned.\n\n\tReturns:\n\t\tA new :py:class:`Text` object containing the lines where the specified pattern has been replaced with the replacement pattern.\n\n\t\tIf no file is provided, a :py:class:`Receiver` is returned, for use in piped context\n\t\t(ex: ``cat('example.txt') | sed('substring', 'replacement')``)\n\t\"\"\"\n\tif file:\n\t\treturn Text(file).sed(pattern, replacement, **kwargs)\n\telse:\n\t\treturn Receiver(Text.sed, pattern, replacement, **kwargs)\n\n\n\n@overload\ndef lines_between(start:PatternLike, end:PatternLike, file:PathLike, **kwargs) -> Text: ...\n@overload\ndef lines_between(start:PatternLike, end:PatternLike, **kwargs) -> Receiver: ...\ndef lines_between(start:PatternLike, end:PatternLike, file:PathLike = None, **kwargs) -> Union[Text, Receiver]:\n\t\"\"\"\n\tExtracts lines between two patterns from a given file or :py:class:`Text`.\n\n\tWorks similarly to the sed operation 'sed -n \"/$start/,/$end/p\" $file'\n\n\tLines are returned starting with the line that matches the ``start`` pattern,\n\tcontinuously until (and including) the line that matches the ``end`` pattern.\n\tIf the ``end`` pattern is never matched, then all remaining lines are matched.\n\n\tThe ``start`` pattern may be matched multiple times. Each subsequent start-end block\n\tis appended to the returned lines.\n\n\tParameters:\n\t\tfile: The file to search through.\n\t\tstart: The start pattern to search for in the text.\n\t\tend: The end pattern to search for in the text.\n\t\t**kwargs: keyword arguments not specified below will be passed to the :py:meth:`re.search` method\n\n\tKeyword Arguments:\n\t\tinvert (bool): If True, only lines that are *not* matched are returned.\n\n\tReturns:\n\t\tA new :py:class:`Text` object containing all the lines between the specified start and end patterns.\n\n\t\tIf no file is provided, a :py:class:`Receiver` is returned, for use in piped context\n\t\t(ex: ``cat('example.txt') | lines_between('start', 'end')``)\n\t\"\"\"\n\tif file:\n\t\treturn Text(file).lines_between(start, end, **kwargs)\n\telse:\n\t\treturn Receiver(Text.lines_between, start, end, **kwargs)\n\ndef upper() -> Receiver:\n\t\"\"\" Pipe Function. Convert the contents of a :py:class:`Text` object to upper-case. \"\"\"\n\treturn Receiver(Text.upper)\n\ndef lower() -> Receiver:\n\t\"\"\" Pipe Function. Convert the contents of a :py:class:`Text` object to lower-case. \"\"\"\n\treturn Receiver(Text.lower)\n\ndef head(length:int) -> Receiver:\n\t\"\"\" Pipe Function. Return the first N lines as a :py:class:`Text` object. \"\"\"\n\treturn Receiver(Text.__getitem__, slice(None, length))\n\ndef tail(length:int) -> Receiver:\n\t\"\"\" Pipe Function. Return the last N lines as a :py:class:`Text` object. \"\"\"\n\treturn Receiver(Text.__getitem__, slice(-length, None))\n\ndef tee(file:Destination, mode:OpenMode = 'w') -> Receiver:\n\t\"\"\" Pipe Function. Return the last N lines as a :py:class:`Text` object. \"\"\"\n\treturn Receiver(Text.tee, file=file, mode=mode)\n\ndef tr(before:str, after:str) -> Receiver:\n\t\"\"\" Pipe Function.\n\tTranslate each `before` character in the object into the corresponding `after` character.\n\n\tThis function applies the built-in string method `translate()` to each line in a :py:class:`Text` object,\n\treplacing all characters in the ``before`` string with the corresponding characters in the ``after`` string.\n\n\tParameters:\n\t\tbefore: A string containing the characters to be replaced.\n\t\tafter: A string containing the replacement characters.\n\n\tReturns:\n\t\ta :py:class:`Receiver` object, for use in pipe-chaining\n\n\tSee str.translate and str.maketrans (https://docs.python.org/3/library/stdtypes.html#str.maketrans)\n\tfor more information.\n\t\"\"\"\n\treturn Receiver(Text.tr, before, after)
+===================================================================
+diff --git a/ICPSR/text.py b/ICPSR/text.py
+--- a/ICPSR/text.py	
++++ b/ICPSR/text.py	
+@@ -1,15 +1,230 @@
++from __future__ import annotations
++
+ import os
++import textwrap
+ import re
++from re import RegexFlag
+ from typing import overload
+ from typing import Sequence, Callable, IO, SupportsIndex, Union, Optional, Iterator
+-from types import MethodDescriptorType
++from types import LambdaType, MethodDescriptorType
+ from pathlib import Path
+ 
+-from ICPSR.utilities.typing import is_str_list, is_subscripted_type, get_parent_class
+-from ICPSR.utilities.typing import PathLike, Destination, PatternLike, StringList, OpenMode, Placeholder, LineIdentifier, RegexFlag
++from ICPSR.utilities.typing import is_str_list, is_subscripted_type
++from ICPSR.utilities.typing import PathLike, Destination, PatternLike, StringList, OpenMode
+ from ICPSR.mixins.pipable import PipableMixin, Receiver
+ from ICPSR.printers import print
+ 
++# === generic text-transformation functions ===
++
++def dos2unix(infile:PathLike, outfile:PathLike = None):
++	"""
++	Mimics the dos2unix shell program.
++
++	This function converts a text file from CRLF to LF line endings.
++
++	Parameters:
++		infile (os.PathLike[str]): The path to the input file.
++		outfile (os.PathLike[str], optional): The path to the output file. If not provided, the same file as the input file will be used.
++
++	Returns:
++		None: The function does not return any value, but it modifies the input or output file.
++	"""
++
++	with open(infile, "rb") as file:
++		## Convert example.txt from CRLF to LF
++		buffer = file.read().replace(b'\r\n', b'\n')  # dos2unix "$dosfile"
++	with open(outfile or infile, "wb") as file:
++		file.write(buffer)
++
++
++def upcase(text:StringList) -> Union[str,Text]:
++	"""Convert the string(s) to upper-case."""
++	return transform(text, str.upper)
++
++
++def downcase(text:StringList) -> Union[str,Text]:
++	"""Convert the string(s) to lower-case."""
++	return transform(text, str.lower)
++
++
++def transform(text:StringList, func:Callable, *args, **kwargs) -> Union[str,Text]:
++	"""
++	Applies a transformation function to a string, or to each item in a list.
++
++	Args:
++		text: the string or list of strings to be transformed.
++		func: A callable function that will be applied to each line in the text.
++		*args: Additional positional arguments to be passed to the specified function.
++		**kwargs: Additional keyword arguments to be passed to the specified function.
++
++	Returns:
++		If text is a string, a transformed string will be returned.
++		If text is a list of strings, a new :py:class:`Text` object will be returned,
++		where all lines have been transformed according to the specified function and arguments.
++	"""
++
++	if isinstance(text, str):
++		return text.__getattribute__(func.__name__)(*args)
++	elif isinstance(text, Sequence):
++		return Text(text).transform(func, *args)
++	else:
++		raise TypeError(f"invalid type '{text.__class__}'")
++
++
++# === Text() object generating functions ===
++
++def cat(file:Destination) -> Text:
++	"""
++	Reads the contents of a file and returns a new Text object containing the lines of the file.
++
++	Parameters:
++		file: The file to read.
++
++	Returns:
++		A new :py:class:`Text` object containing the lines of the specified file.
++	"""
++
++	if isinstance(file, IO):
++		return Text(file.readlines())
++	else:
++		return Text(file)
++
++
++@overload
++def grep(file:PathLike, pattern:PatternLike, **kwargs) -> Text: ...
++@overload
++def grep(pattern:PatternLike, **kwargs) -> Receiver: ...
++def grep(pattern:PatternLike, file:PathLike = None, **kwargs) -> Text|Receiver:
++	"""
++	Searches for lines in a file that match a given pattern.
++
++	Parameters:
++		file: The file to search through.
++		pattern: The pattern to search for in the file.
++
++	Keyword Arguments:
++		insensitive (bool): If True, the search will be case-insensitive.
++		invert (bool): If True, the function will return lines that do *not* match the pattern.
++		flags (int|re.RegexFlag): Flags to be passed to the regular-expression engine.
++
++	Returns:
++		A new :py:class:`Text` object containing the lines that match the specified pattern.
++
++		If no file is provided, a :py:class:`Receiver` is returned, for use in piped context
++		(ex: ``cat('example.txt') | grep('substring')``)
++	"""
++	if file:
++		return Text(file).grep(pattern, **kwargs)
++	else:
++		return Receiver(Text.grep, pattern, **kwargs)
++
++
++@overload
++def sed(pattern:PatternLike, replacement:PatternLike = '', file:PathLike = None, **kwargs) -> Text: ...
++@overload
++def sed(pattern:PatternLike, replacement:PatternLike = '', **kwargs) -> Receiver: ...
++def sed(pattern:PatternLike, replacement:PatternLike = '', file:PathLike = None, **kwargs) -> Text|Receiver:
++	"""
++	Reads a file, substituting all instances of ``pattern`` with the pattern in ``replacement``.
++
++	Parameters:
++		file: The file to search through.
++		pattern: The pattern to search for in the file.
++		replacement: The string to replace the matched pattern with. If not provided, the matched pattern will be removed.
++
++	Keyword Arguments:
++		flags: Flags to be passed to the regular-expression engine.
++
++	Returns:
++		A new :py:class:`Text` object containing the lines where the specified pattern has been replaced with the replacement pattern.
++
++		If no file is provided, a :py:class:`Receiver` is returned, for use in piped context
++		(ex: ``cat('example.txt') | sed('substring', 'replacement')``)
++	"""
++
++	if file:
++		return Text(file).sed(pattern, replacement, **kwargs)
++	else:
++		return Receiver(Text.sed, pattern, replacement, **kwargs)
++
++
++
++@overload
++def lines_between(start:PatternLike, end:PatternLike, file:PathLike, **kwargs) -> Text: ...
++@overload
++def lines_between(start:PatternLike, end:PatternLike, **kwargs) -> Receiver: ...
++def lines_between(start:PatternLike, end:PatternLike, file:PathLike = None, **kwargs) -> Text|Receiver:
++	"""
++	Extracts lines between two patterns from a given file.
++
++	Works similarly to the sed operation 'sed -n "/$start/,/$end/p" $file'
++
++	Lines are returned starting with the line that matches the ``start`` pattern,
++	continuously until (and including) the line that matches the ``end`` pattern.
++	If the ``end`` pattern is never matched, then all remaining lines are matched.
++
++	The ``start`` pattern may be matched multiple times. Each subsequent start-end block
++	is appended to the returned lines.
++
++	Parameters:
++		file: The file to search through.
++		start: The start pattern to search for in the file.
++		end: The end pattern to search for in the file.
++
++	Keyword Arguments:
++		invert: If True, only lines that are *not* matched are returned.
++		flags: Flags to be passed to the regular-expression engine.
++
++	Returns:
++		A new :py:class:`Text` object containing all the lines between the specified start and end patterns.
++
++		If no file is provided, a :py:class:`Receiver` is returned, for use in piped context
++		(ex: ``cat('example.txt') | lines_between('start', 'end')``)
++	"""
++	if file:
++		return Text(file).lines_between(start, end, **kwargs)
++	else:
++		return Receiver(Text.lines_between, start, end, **kwargs)
++
++def upper() -> Receiver:
++	""" Pipe Function. Convert the contents of a :py:class:`Text` object to upper-case. """
++	return Receiver(Text.upper)
++
++def lower() -> Receiver:
++	""" Pipe Function. Convert the contents of a :py:class:`Text` object to lower-case. """
++	return Receiver(Text.lower)
++
++def head(length:int) -> Receiver:
++	""" Pipe Function. Return the first N lines as a :py:class:`Text` object. """
++	return Receiver(Text.__getitem__, slice(None, length))
++
++def tail(length:int) -> Receiver:
++	""" Pipe Function. Return the last N lines as a :py:class:`Text` object. """
++	return Receiver(Text.__getitem__, slice(-length, None))
++
++def tee(file:Destination, mode:OpenMode = 'w') -> Receiver:
++	""" Pipe Function. Return the last N lines as a :py:class:`Text` object. """
++	return Receiver(Text.tee, file=file, mode=mode)
++
++def tr(before:str, after:str) -> Receiver:
++	""" Pipe Function.
++	Translate each `before` character in the object into the corresponding `after` character.
++
++	This function applies the built-in string method `translate()` to each line in a :py:class:`Text` object,
++	replacing all characters in the ``before`` string with the corresponding characters in the ``after`` string.
++
++	Args:
++		before: A string containing the characters to be replaced.
++		after: A string containing the replacement characters.
++
++	Returns:
++		a :py:class:`Receiver` object, for use in pipe-chaining
++
++	See str.translate and str.maketrans (https://docs.python.org/3/library/stdtypes.html#str.maketrans)
++	for more information.
++	"""
++	return Receiver(Text.tr, before, after)
++
+ 
+ class Text(PipableMixin, list[str]):
+ 	"""
+@@ -25,7 +240,7 @@
+ 
+ 	def __init__(self, source:Union[PathLike, Sequence[str], Iterator[str]] = None, end:str = '\n'):
+ 		"""
+-		Parameters:
++		Args:
+ 			source: Either a file-path to load as a Text object, or a list of strings to be treated as lines of text.
+ 			end: The default end to apply when converting the Text() object into a single contiguous string.
+ 		"""
+@@ -73,7 +288,7 @@
+ 
+ 	def __lshift__(self, path:PathLike):
+ 		""" Appends the contents of a file to self. """
+-		if is_subscripted_type(path, PathLike):
++		if is_subscripted_type(PathLike):
+ 			return self + Text(path, self.end)
+ 		else:
+ 			return NotImplemented
+@@ -85,60 +300,13 @@
+ 	def _flatten(xss): return [x for xs in xss for x in xs]
+ 
+ 
+-	@staticmethod
+-	def _call_transform(__obj, callable:Callable, *args, **kwargs):
+-		"""
+-		Internal method used to apply a transform to an object.
+-
+-		If a method is supplied, ``__obj`` will first be converted to an appropriate type for the method.
+-		If args are included, then either the args or kwargs must include a :py:class:`Placeholder` type
+-
+-		Parameters:
+-			__obj: Object to be transformed.
+-			callable: Method or function to apply.
+-			*args: Arguments to be sent to the transform.
+-			**kwargs: Keyword-arguments to be sent to the transform.
+-
+-		Returns:
+-			The result of the transform, or the value of ``__obj`` if the transform returned `None`.
+-		"""
+-
+-		# search args/kwargs for Placeholder object and replace with __obj
+-		args = list(args)
+-		found = False
+-		for idx, arg in enumerate(args):
+-			if arg is Placeholder:
+-				args[idx] = __obj
+-				found = True
+-		for key in kwargs:
+-			if kwargs[key] is Placeholder:
+-				kwargs[key] = __obj
+-				found = True
+-
+-		# if the callable is a Method, we must cast the __obj as a type that has callable.
+-		if isinstance(callable, MethodDescriptorType):
+-			cast = get_parent_class(callable)
+-			if isinstance(cast, type) and not isinstance(__obj, cast): __obj = cast(__obj)
+-			callable = __obj.__getattribute__(callable.__name__)
+-
+-		# if the callable is not a Method, then the args/kwargs must include a Placeholder
+-		elif not found:
+-			if args:
+-				raise TypeError('args must include a Placeholder object')
+-			else:
+-				args = (__obj,)
+-
+-		# and finally, we call the callable
+-		return callable(*args, **kwargs) or __obj
+-
+-
+ 	# === FILTER METHODS ===
+ 
+-	def grep(self, pattern:PatternLike, insensitive = False, invert = False, flags:Union[int,RegexFlag] = 0):
++	def grep(self, pattern:PatternLike, insensitive = False, invert = False, flags:Union[int,RegexFlag] = 0) -> Text:
+ 		"""
+ 		Filters the lines of the Text object based on a given pattern.
+ 
+-		Parameters:
++		Args:
+ 			pattern: The pattern to search for in the lines of the Text object.
+ 			insensitive: If True, the search will be case-insensitive. Defaults to False.
+ 			invert: If True, the function will return lines that do *not* match the pattern. Defaults to False.
+@@ -152,7 +320,7 @@
+ 		return Text( [line for line in self if invert ^ bool(re.search(pattern, line, flags=flags))], self.end )
+ 
+ 
+-	def lines_between(self, start:PatternLike, end:PatternLike, invert = False, flags:Union[int,RegexFlag] = 0):
++	def lines_between(self, start:PatternLike, end:PatternLike, invert = False, flags:Union[int,RegexFlag] = 0) -> Text:
+ 		"""
+ 		Extracts lines between two patterns from a given file.
+ 		Works similarly to the sed operation 'sed -n "/$start/,/$end/p" $file'
+@@ -164,9 +332,9 @@
+ 		The ``start`` pattern may be matched multiple times. Each subsequent start-end block
+ 		is appended to the returned lines.
+ 
+-		Parameters:
+-			start: The start pattern to search for in the text.
+-			end: The end pattern to search for in the text.
++		Args:
++			start: The start pattern to search for in the file.
++			end: The end pattern to search for in the file.
+ 			invert: If True, only lines that are *not* matched are returned. Defaults to False.
+ 			flags: Flags to be passed to the regular-expression engine. Defaults to 0.
+ 
+@@ -196,7 +364,7 @@
+ 		return Text(lines, self.end)
+ 
+ 
+-	def unique(self):
++	def unique(self) -> Text:
+ 		""" Returns a new Text object containing only the unique lines from the original Text object. Order is not guaranteed. """
+ 		return Text(list(set(self)), self.end)
+ 
+@@ -205,7 +373,7 @@
+ 		"""
+ 		Return a sorted copy of the Text object.
+ 
+-		Parameters:
++		Args:
+ 			reverse: Sort the list in descending order.
+ 			unique: Remove duplicate lines.
+ 			inplace: Sort the Text object in-place (returns the original object, now sorted).
+@@ -226,25 +394,12 @@
+ 	# === TRANSFORM METHODS ===
+ 	# methods for modifying the contents of the Text object.
+ 
+-	def transform(
+-			self,
+-			func: Callable,
+-			*args,
+-			start: LineIdentifier = None,
+-			end: LineIdentifier = None,
+-			invert = False,
+-			match_flags: RegexFlag = 0,
+-			**kwargs
+-			):
++	def transform(self, func:Callable, *args, **kwargs) -> Text:
+ 		"""
+ 		Applies a transformation function to each line in the Text object.
+ 
+-		Parameters:
++		Args:
+ 			func: A callable function that will be applied to each line in the Text object.
+-			start: The start pattern to search for in the text.
+-			end: The end pattern to search for in the text.
+-			invert: If True, only lines that are *not* matched are returned. Defaults to False.
+-			match_flags: Regex flags to use when looking for the `start` or `end` patterns.
+ 			*args: Additional positional arguments to be passed to the specified function.
+ 			**kwargs: Additional keyword arguments to be passed to the specified function.
+ 
+@@ -252,48 +407,15 @@
+ 			A new Text object where all lines have been transformed according to the specified function and arguments.
+ 		"""
+ 
+-		if not (start or end):
+-			# if no `start` or `end`, process every line
+-			lines = [ Text._call_transform(line, func, *args, **kwargs) for line in self ]
+-
++		if isinstance(func, LambdaType):
++			return Text( [ func(line, *args, **kwargs) for line in self ], self.end )
++		elif isinstance(func, MethodDescriptorType):
++			return Text( [ line.__getattribute__(func.__name__)(*args, **kwargs) for line in self ], self.end )
+ 		else:
+-			lines = []
+-			in_block = False
+-
+-			for i, line in enumerate(self):
+-				# if we are inside a match-block...
+-				if in_block:
+-					# if `end` is an index or line matches the `end` pattern...
+-					if i == end or re.search(end, line, match_flags):
+-						in_block = False  # end match-block
+-
+-					# and...
+-					if not invert:
+-						# transform lines that are inside of the match-block
+-						line = Text._call_transform(line, func, *args, **kwargs)
+-
+-				# if we haven't found a match-block yet...
+-				else:
+-					# if `start` is an index or this line contains the `start` pattern...
+-					if i == start or re.search(start, line, match_flags):
+-						in_block = True  # begin match-block
+-
+-						# transform the matched line if we are not inverted
+-						if not invert:
+-							line = Text._call_transform(line, func, *args, **kwargs)
+-
+-					# otherwise...
+-					if invert:
+-						# transform lines that are *not* inside of the match-block
+-						line = Text._call_transform(line, func, *args, **kwargs)
+-
+-				# finally, append the current line, whether or not it was modified
+-				lines.append(line)
++			raise ValueError("transform function must be a String built-in method, or a lambda.")
+ 
+-		return Text( lines, end=self.end )
+ 
+-
+-	def encode(self, encoding:str = "utf-8", errors:str = "strict"):
++	def encode(self, encoding:str = "utf-8", errors:str = "strict") -> Text:
+ 		"""
+ 		Encode the Text object using the codec registered for encoding.
+ 		The :py:attr:`Text.end` attribute will also be encoded.
+@@ -312,7 +434,7 @@
+ 		return self.transform(str.encode, encoding, errors)
+ 
+ 
+-	def decode(self, encoding:str = "utf-8", errors:str = "strict"):
++	def decode(self, encoding:str = "utf-8", errors:str = "strict") -> Text:
+ 		"""
+ 		Encode the Text object using the codec registered for encoding.
+ 		The :py:attr:`end` attribute will also be encoded.
+@@ -332,237 +454,141 @@
+ 
+ 	# --- add strings ---
+ 
+-	def prefix(self, string:str, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Add a prefix to each line of the text.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(lambda line : string + line, start=start, end=end)
++	def prefix(self, string:str) -> Text:
++		""" Add a prefix to each line of the text. """
++		return Text([ string + line for line in self ], self.end)
+ 
+-	def suffix(self, string:str, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Add a suffix to each line of the text.
++	def suffix(self, string:str) -> Text:
++		""" Add a suffix to each line of the text. """
++		return Text([ line + string for line in self ], self.end)
+ 
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(lambda line : line + string, start=start, end=end)
+-
+-	def zfill(self, width:SupportsIndex, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Left-pad each line with zeroes, to the given width.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.zfill, width, start=start, end=end)
++	def zfill(self, width:SupportsIndex) -> Text:
++		""" Left-pad each line with zeroes, to the given width. """
++		return Text([ line.zfill(width) for line in self ], self.end)
+ 
+ 	# --- remove strings ---
+ 
+-	def strip(self, chars:str = None, start:LineIdentifier = None, end:LineIdentifier = None):
++	def strip(self, chars:str = None) -> Text:
+ 		""" Removes leading and trailing whitespace from each line.
+ 		If `chars` is given, remove any characters found in `chars` instead.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+ 		"""
+-		return self.transform(str.strip, chars, start=start, end=end)
++		return Text([ line.strip(chars) for line in self ], self.end)
+ 
+-	def lstrip(self, chars:str = None, start:LineIdentifier = None, end:LineIdentifier = None):
++	def lstrip(self, chars:str = None) -> Text:
+ 		""" Removes leading whitespace from each line.
+ 		If `chars` is given, remove any characters found in `chars` instead.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+ 		"""
+-		return self.transform(str.lstrip, chars, start=start, end=end)
++		return Text([ line.lstrip(chars) for line in self ], self.end)
+ 
+-	def rstrip(self, chars:str = None, start:LineIdentifier = None, end:LineIdentifier = None):
++	def rstrip(self, chars:str = None) -> Text:
+ 		""" Removes trailing whitespace from each line.
+ 		If `chars` is given, remove any characters found in `chars` instead.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+ 		"""
+-		return self.transform(str.rstrip, chars, start=start, end=end)
++		return Text([ line.rstrip(chars) for line in self ], self.end)
+ 
+ 	# --- change case ---
+ 
+-	def casefold(self, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Return a version of the Text object suitable for caseless comparisons.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.casefold, start=start, end=end)
+-
+-	def title(self, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Converts the first character of each word to upper case.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.title, start=start, end=end)
+-
+-	def capitalize(self, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Capitalize the first character of each line, and make all other characters lowercase.
++	def casefold(self) -> Text:
++		""" Return a version of the Text object suitable for caseless comparisons. """
++		return Text([ line.casefold() for line in self ], self.end)
+ 
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.capitalize, start=start, end=end)
++	def title(self) -> Text:
++		""" Converts the first character of each word to upper case. """
++		return Text([ line.title() for line in self ], self.end)
+ 
+-	def upper(self, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Converts each line to upper case.
++	def capitalize(self) -> Text:
++		""" Capitalize the first character of each line, and make all other characters lowercase. """
++		return Text([ line.capitalize() for line in self ], self.end)
+ 
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.upper, start=start, end=end)
++	def upper(self) -> Text:
++		""" Converts each line to upper case. """
++		return Text([ line.upper() for line in self ], self.end)
+ 
+-	def lower(self, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Converts the text into lower case.
++	def lower(self) -> Text:
++		""" Converts the text into lower case. """
++		return Text([ line.lower() for line in self ], self.end)
+ 
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.lower, start=start, end=end)
+-
+-	def swapcase(self, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Swaps cases: lower case characters becomes upper case and vice versa.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.swapcase, start=start, end=end)
++	def swapcase(self) -> Text:
++		""" Swaps cases: lower case characters becomes upper case and vice versa. """
++		return Text([ line.swapcase() for line in self ], self.end)
+ 
+ 	# --- replace characters ---
+ 
+-	def expandtabs(self, tabsize = 8, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Expands each tab in the text into the number of spaces given by ``tabsize`` (default is 8).
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.expandtabs, tabsize, start=start, end=end)
++	def expandtabs(self, tabsize = 8) -> Text:
++		""" Expands each tab in the text into the number of spaces given by ``tabsize`` (default is 8). """
++		return Text([ line.expandtabs(tabsize) for line in self ], self.end)
+ 
+-	def format(self, *args, start:LineIdentifier = None, end:LineIdentifier = None, **kwargs):
+-		""" Formats specified values in the text.
++	def format(self) -> Text:
++		""" Formats specified values in the text. """
++		return Text([ line.format() for line in self ], self.end)
+ 
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.format, *args, **kwargs, start=start, end=end)
++	def format_map(self, mapping) -> Text:
++		""" Formats specified values in the text, using subsitutions from the provided mapping. """
++		return Text([ line.format_map(mapping) for line in self ], self.end)
+ 
+-	def format_map(self, mapping, start:LineIdentifier = None, end:LineIdentifier = None):
+-		""" Formats specified values in the text, using subsitutions from the provided mapping.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-		"""
+-		return self.transform(str.format_map, mapping, start=start, end=end)
+-
+-	def replace(self, old, new, count = -1, limit = None, start:LineIdentifier = None, end:LineIdentifier = None):
++	def replace(self, old, new, count = -1, limit = None) -> Text:
+ 		"""
+ 		Returns a Text object where each instance of the `old` string is replaced with the `new` string.
+ 
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-
+-		Parameters:
++		Args:
+ 			old: The string to look for in the text.
+ 			new: The string to replace the matched text with. If blank, the matched text will simply be removed.
+ 			count: Optional, only the first `count` occurrences in each line will be replaced.
+-				-1 (the default value) means replace all occurrences.
+ 			limit: Optional, only the first `limit` lines containing the ``old`` string will be modified.
+-				Ignored if not a positive integer.
+-			start: Optional, the start point (index or pattern) to search for in the text.
+-			end: Optional, the end point (index or pattern) to search for in the text.
+ 		"""
+ 
+-		# noinspection PyGlobalUndefined
+-		global __found
+-		__found = 0
+-
+-		# noinspection PyShadowingNames
+-		def replace_in_line(line:str, old:str, new:str, count:int = -1, limit:int = None) -> str:
+-			""" Inline function used to replace text in a string.
++		if limit:
++			found = 0
++			copy = self.copy()
++			for idx,_ in enumerate(copy):
++				if found < limit:
++					copy[idx] = copy[idx].replace(old, new, count)
++					found += 1
+ 
+-			Args:
+-				line: The string to be modified.
+-				old: Pattern to replace.
+-				new: Pattern to replace it with.
+-				count: How many instances of the pattern to replace per line.
+-				limit: The total number of lines that should be replaced.
+-					This refers to the `_Text__found` global variable used by the :py:meth:`Text.replace` method,
+-					which is reset each time a call is made to the method.
++			return copy
+ 
+-			Returns:
+-				The modified string.
+-			"""
+-
+-			if limit > 0:
+-				# noinspection PyGlobalUndefined
+-				global __found
+-				if __found < limit:
+-					__found += 1
+-					return line.replace(old, new, count)
+-			else:
+-				return line.replace(old, new, count)
++		else:
++			return Text([ line.replace(old, new, count) for line in self ], self.end)
+ 
+-		return self.transform(replace_in_line, Placeholder, old, new, count, limit, start=start, end=end)
+ 
+-
+-	def translate(self, table, start:LineIdentifier = None, end:LineIdentifier = None):
++	def translate(self, table) -> Text:
+ 		""" Translate each line of the text, according to the translation table.
+ 		``table`` must be a mapping of Unicode ordinals to Unicode ordinals, strings, or None.
+ 		The table must implement lookup/indexing via __getitem__, for instance a dictionary or list.
+ 		If this operation raises LookupError, the character is left untouched.
+ 		Characters mapped to None are deleted.
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+ 		"""
+-		return self.transform(str.translate, table, start=start, end=end)
++		return Text([ line.translate(table) for line in self ], self.end)
+ 
+ 
+-	def sed(self, pattern:PatternLike, replacement:PatternLike = '', start:LineIdentifier = None, end:LineIdentifier = None, **kwargs):
++	def sed(self, pattern:PatternLike, replacement:PatternLike = '', flags:Union[int,RegexFlag] = 0) -> Text:
+ 		"""
+ 		Substitutes all instances of a specified pattern with a replacement pattern.
+ 
+ 		If no replacement pattern is provided, the matched pattern will be removed.
+ 
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-
+-		Parameters:
++		Args:
+ 			pattern: The pattern to search for in the lines of the Text object.
+ 			replacement: The string to replace the matched pattern with. Defaults to an empty string.
+-			start: Optional, the start point (index or pattern) to search for in the text.
+-			end: Optional, the end point (index or pattern) to search for in the text.
+-			**kwargs: arguments to be passed to the re.sub operation
++			flags: Flags to be passed to the regular-expression engine.
+ 
+ 		Returns:
+ 			A new Text object where the specified pattern has been replaced with the replacement pattern.
+ 		"""
+ 
+-		return self.transform(re.sub, pattern, replacement, Placeholder, **kwargs, start=start, end=end)
++		return Text( [re.sub(pattern, replacement, line, flags=flags) for line in self], self.end )
+ 
+ 
+-	def tr(self, before:str, after:str, start:LineIdentifier = None, end:LineIdentifier = None):
++	def tr(self, before:str, after:str) -> Text:
+ 		"""
+ 		Translate each `before` character in the object into the corresponding `after` character.
+ 
+ 		This function applies the built-in string method `translate()` to each line in the Text object,
+ 		replacing all characters in the ``before`` string with the corresponding characters in the ``after`` string.
+ 
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+-
+-		Parameters:
++		Args:
+ 			before: A string containing the characters to be replaced.
+ 			after: A string containing the replacement characters.
+-			start: Optional, the start point (index or pattern) to search for in the text.
+-			end: Optional, the end point (index or pattern) to search for in the text.
+ 
+ 		Returns:
+ 			A new Text object where all lines have been transformed according to the specified translation patterns.
+@@ -572,36 +598,27 @@
+ 		"""
+ 
+ 		table = str.maketrans(before, after)
+-		return self.transform(str.translate, table, start=start, end=end)
++		return self.transform(str.translate, table)
+ 
+ 	# --- justify ---
+ 
+-	def center(self, width:int, fill:str = ' ', start:LineIdentifier = None, end:LineIdentifier = None):
++	def center(self, width:int, fill:str = ' ') -> Text:
+ 		""" Returns a center-justified version of the text.
+ 		Padding is done using the specified fill character (default is a space).
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+ 		"""
+-		return self.transform(str.center, width, fill, start=start, end=end)
++		return Text([ line.center(width, fill) for line in self ], self.end)
+ 
+-	def ljust(self, width:int, fill:str = ' ', start:LineIdentifier = None, end:LineIdentifier = None):
++	def ljust(self, width:int, fill:str = ' ') -> Text:
+ 		""" Returns a left-justified version of the text.
+ 		Padding is done using the specified fill character (default is a space).
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+ 		"""
+-		return self.transform(str.ljust, width, fill, start=start, end=end)
++		return Text([ line.ljust(width, fill) for line in self ], self.end)
+ 
+-	def rjust(self, width:int, fill:str = ' ', start:LineIdentifier = None, end:LineIdentifier = None):
++	def rjust(self, width:int, fill:str = ' ') -> Text:
+ 		""" Returns a right-justified version of the string.
+ 		Padding is done using the specified fill character (default is a space).
+-
+-		If a 'start' or 'end' is provided, only the specified lines will be modified.
+-		See :py:meth:`Text.transform` for more information.
+ 		"""
+-		return self.transform(str.rjust, width, fill, start=start, end=end)
++		return Text([ line.rjust(width, fill) for line in self ], self.end)
+ 
+ 
+ 	# === OUTPUT METHODS ===
+@@ -644,7 +661,7 @@
+ 		Requires either a pattern or a substring to search for.
+ 		If both values are provided, the pattern will be used.
+ 
+-		Parameters:
++		Args:
+ 			pattern: Pattern to search for in the text.
+ 			substring: Substring to search for in the text.
+ 			start: Optional, indicates which line to start searching from.
+@@ -674,7 +691,7 @@
+ 
+ 		The position is returned as a tuple in the form of `(line_index, string_index)`.
+ 
+-		Parameters:
++		Args:
+ 			pattern: Pattern to search for in the text.
+ 			substring: Substring to search for in the text.
+ 			start: Optional, indicates which line to start searching from.
+@@ -710,7 +727,7 @@
+ 
+ 		The position is returned as a tuple in the form of `(line_index, string_index)`.
+ 
+-		Parameters:
++		Args:
+ 			substring: Substring to search for in the text.
+ 			start: Optional, indicates which line to start searching from.
+ 			end: Optional, indicates the last line to include in the search space.
+@@ -733,7 +750,10 @@
+ 		"""
+ 		Returns true if every line in the text ends with the specified value.
+ 
+-		Parameters:
++		To determine if the `final` line of the text ends with the suffix,
++		first convert the Text object into a string, then apply the :py:meth:`endswith` method.
++
++		Args:
+ 			suffix: String(s) to check for at the end of each line. If multiple strings are provided, checks for any of them.
+ 			start: Optional, indicates which line to start searching from.
+ 			end: Optional, indicates the last line to include in the search space.
+@@ -746,7 +766,10 @@
+ 		"""
+ 		Returns true if every line in the text begins with the specified value.
+ 
+-		Parameters:
++		To determine if the `first` line of the text ends with the suffix,
++		first convert the Text object into a string, then apply the :py:meth:`startswith` method.
++
++		Args:
+ 			prefix: String to check for at the start of each line.
+ 			start: Optional, indicates which line to start searching from.
+ 			end: Optional, indicates the last line to include in the search space.
+@@ -800,224 +823,4 @@
+ 
+ 	def isupper(self) -> bool:
+ 		""" Returns True if all characters in the text are upper case. """
+-		return all( line.isupper() for line in self )
+-
+-
+-
+-
+-# === generic text-transformation functions ===
+-
+-def dos2unix(infile:PathLike, outfile:PathLike = None):
+-	"""
+-	Mimics the dos2unix shell program.
+-
+-	This function converts a text file from CRLF to LF line endings.
+-
+-	Parameters:
+-		infile (os.PathLike[str]): The path to the input file.
+-		outfile (os.PathLike[str], optional): The path to the output file. If not provided, the same file as the input file will be used.
+-
+-	Returns:
+-		None: The function does not return any value, but it modifies the input or output file.
+-	"""
+-
+-	with open(infile, "rb") as file:
+-		## Convert example.txt from CRLF to LF
+-		buffer = file.read().replace(b'\r\n', b'\n')  # dos2unix "$dosfile"
+-	with open(outfile or infile, "wb") as file:
+-		file.write(buffer)
+-
+-
+-def upcase(text:StringList) -> Union[str,Text]:
+-	"""Convert the string(s) to upper-case."""
+-	return transform(text, str.upper)
+-
+-
+-def downcase(text:StringList) -> Union[str,Text]:
+-	"""Convert the string(s) to lower-case."""
+-	return transform(text, str.lower)
+-
+-
+-def transform(text:StringList, func:Callable, *args, **kwargs) -> Union[str,Text]:
+-	"""
+-	Applies a transformation function to a string, or to each item in a list.
+-
+-	Parameters:
+-		text: the string or list of strings to be transformed.
+-		func: A callable function that will be applied to each line in the text.
+-		*args: Additional positional arguments to be passed to the specified function.
+-		**kwargs: Additional keyword arguments to be passed to the specified function.
+-
+-	Returns:
+-		If text is a string, a transformed string will be returned.
+-		If text is a list of strings, a new :py:class:`Text` object will be returned,
+-		where all lines have been transformed according to the specified function and arguments.
+-	"""
+-
+-	if isinstance(text, str):
+-		return text.__getattribute__(func.__name__)(*args, **kwargs)
+-	elif isinstance(text, Text):
+-		return text.transform(func, *args, **kwargs)
+-	elif isinstance(text, Sequence):
+-		return Text(text).transform(func, *args, **kwargs)
+-	else:
+-		raise TypeError(f"invalid type '{text.__class__}'")
+-
+-
+-# === Text() object generating functions ===
+-
+-def cat(file:Destination) -> Text:
+-	"""
+-	Reads the contents of a file and returns a new Text object containing the lines of the file.
+-
+-	Parameters:
+-		file: The file to read.
+-
+-	Returns:
+-		A new :py:class:`Text` object containing the lines of the specified file.
+-	"""
+-
+-	if isinstance(file, IO):
+-		return Text(file.readlines())
+-	else:
+-		return Text(file)
+-
+-
+-@overload
+-def grep(file:PathLike, pattern:PatternLike, **kwargs) -> Text: ...
+-@overload
+-def grep(pattern:PatternLike, **kwargs) -> Receiver: ...
+-def grep(pattern:PatternLike, file:PathLike = None, **kwargs) -> Union[Text, Receiver]:
+-	"""
+-	Searches for lines in a file that match a given pattern.
+-
+-	Parameters:
+-		file: The file to search through.
+-		pattern: The pattern to search for in the text.
+-		**kwargs: keyword arguments not specified below will be passed to the :py:meth:`re.search` method
+-
+-	Keyword Arguments:
+-		insensitive (bool): If True, the search will be case-insensitive.
+-		invert (bool): If True, the function will return lines that do *not* match the pattern.
+-
+-	Returns:
+-		A new :py:class:`Text` object containing the lines that match the specified pattern.
+-
+-		If no file is provided, a :py:class:`Receiver` is returned, for use in piped context
+-		(ex: ``cat('example.txt') | grep('substring')``)
+-	"""
+-	if file:
+-		return Text(file).grep(pattern, **kwargs)
+-	else:
+-		return Receiver(Text.grep, pattern, **kwargs)
+-
+-
+-@overload
+-def sed(pattern:PatternLike, replacement:PatternLike = '', file:PathLike = None, **kwargs) -> Text: ...
+-@overload
+-def sed(pattern:PatternLike, replacement:PatternLike = '', **kwargs) -> Receiver: ...
+-def sed(pattern:PatternLike, replacement:PatternLike = '', file:PathLike = None, **kwargs) -> Union[Text, Receiver]:
+-	"""
+-	Read in a file or :py:class:`Text`, substituting all instances of ``pattern`` with the pattern in ``replacement``.
+-
+-	If a start or end is specified, only the matched lines will be modified.
+-
+-	Parameters:
+-		file: The file to search through.
+-		pattern: The pattern to search for in the text.
+-		replacement: The string to replace the matched pattern with. If not provided, the matched pattern will be removed.
+-		**kwargs: keyword arguments not specified below will be passed to the :py:meth:`re.sub` method
+-
+-	Keyword Arguments:
+-		start (LineIdentifier): Optional, the start point (index or pattern) to search for in the text.
+-		end (LineIdentifier): Optional, the end point (index or pattern) to search for in the text.
+-		invert (bool): If True, only lines that are *not* matched are returned.
+-
+-	Returns:
+-		A new :py:class:`Text` object containing the lines where the specified pattern has been replaced with the replacement pattern.
+-
+-		If no file is provided, a :py:class:`Receiver` is returned, for use in piped context
+-		(ex: ``cat('example.txt') | sed('substring', 'replacement')``)
+-	"""
+-	if file:
+-		return Text(file).sed(pattern, replacement, **kwargs)
+-	else:
+-		return Receiver(Text.sed, pattern, replacement, **kwargs)
+-
+-
+-
+-@overload
+-def lines_between(start:PatternLike, end:PatternLike, file:PathLike, **kwargs) -> Text: ...
+-@overload
+-def lines_between(start:PatternLike, end:PatternLike, **kwargs) -> Receiver: ...
+-def lines_between(start:PatternLike, end:PatternLike, file:PathLike = None, **kwargs) -> Union[Text, Receiver]:
+-	"""
+-	Extracts lines between two patterns from a given file or :py:class:`Text`.
+-
+-	Works similarly to the sed operation 'sed -n "/$start/,/$end/p" $file'
+-
+-	Lines are returned starting with the line that matches the ``start`` pattern,
+-	continuously until (and including) the line that matches the ``end`` pattern.
+-	If the ``end`` pattern is never matched, then all remaining lines are matched.
+-
+-	The ``start`` pattern may be matched multiple times. Each subsequent start-end block
+-	is appended to the returned lines.
+-
+-	Parameters:
+-		file: The file to search through.
+-		start: The start pattern to search for in the text.
+-		end: The end pattern to search for in the text.
+-		**kwargs: keyword arguments not specified below will be passed to the :py:meth:`re.search` method
+-
+-	Keyword Arguments:
+-		invert (bool): If True, only lines that are *not* matched are returned.
+-
+-	Returns:
+-		A new :py:class:`Text` object containing all the lines between the specified start and end patterns.
+-
+-		If no file is provided, a :py:class:`Receiver` is returned, for use in piped context
+-		(ex: ``cat('example.txt') | lines_between('start', 'end')``)
+-	"""
+-	if file:
+-		return Text(file).lines_between(start, end, **kwargs)
+-	else:
+-		return Receiver(Text.lines_between, start, end, **kwargs)
+-
+-def upper() -> Receiver:
+-	""" Pipe Function. Convert the contents of a :py:class:`Text` object to upper-case. """
+-	return Receiver(Text.upper)
+-
+-def lower() -> Receiver:
+-	""" Pipe Function. Convert the contents of a :py:class:`Text` object to lower-case. """
+-	return Receiver(Text.lower)
+-
+-def head(length:int) -> Receiver:
+-	""" Pipe Function. Return the first N lines as a :py:class:`Text` object. """
+-	return Receiver(Text.__getitem__, slice(None, length))
+-
+-def tail(length:int) -> Receiver:
+-	""" Pipe Function. Return the last N lines as a :py:class:`Text` object. """
+-	return Receiver(Text.__getitem__, slice(-length, None))
+-
+-def tee(file:Destination, mode:OpenMode = 'w') -> Receiver:
+-	""" Pipe Function. Return the last N lines as a :py:class:`Text` object. """
+-	return Receiver(Text.tee, file=file, mode=mode)
+-
+-def tr(before:str, after:str) -> Receiver:
+-	""" Pipe Function.
+-	Translate each `before` character in the object into the corresponding `after` character.
+-
+-	This function applies the built-in string method `translate()` to each line in a :py:class:`Text` object,
+-	replacing all characters in the ``before`` string with the corresponding characters in the ``after`` string.
+-
+-	Parameters:
+-		before: A string containing the characters to be replaced.
+-		after: A string containing the replacement characters.
+-
+-	Returns:
+-		a :py:class:`Receiver` object, for use in pipe-chaining
+-
+-	See str.translate and str.maketrans (https://docs.python.org/3/library/stdtypes.html#str.maketrans)
+-	for more information.
+-	"""
+-	return Receiver(Text.tr, before, after)
+\ No newline at end of file
++		return all( line.isupper() for line in self )
+\ No newline at end of file
+Index: ICPSR/mixins/pipable.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import os\nimport sys\nimport inspect\nfrom typing import IO, Any, Callable, Sequence, Union\nfrom types import BuiltinFunctionType\n\nfrom ICPSR.utilities.typing import get_parent_class, extend_class, is_subscripted_type\nfrom ICPSR.utilities.typing import PathLike, Destination\nfrom ICPSR.printers import print\n\n# === HELPER FUNCTIONS ===\n\ndef functions_in_scope(module = None):\n\treturn [obj for name,obj in inspect.getmembers(sys.modules[module or __name__]) if inspect.isfunction(obj)]\n\n\n# === EXCEPTIONS ===\n\nclass PipeError(TypeError):\n\t\"\"\" Exception raised an error has occurred during a pipe operation. \"\"\"\n\t__module__ = Exception.__module__\n\nclass UnpipableError(PipeError):\n\t\"\"\" Exception raised when an attempt is made to pipe an object that cannot be piped. \"\"\"\n\t__module__ = Exception.__module__\n\n\tdef __init__(self, __obj:Any = '', *args):\n\t\t\"\"\"\n\t\tParameters:\n\t\t\t__obj: Optional, the unpipable object that caused the exception.\n\t\t\t*args: additional information for the exception\n\t\t\"\"\"\n\t\tout = ()\n\t\tmessage = \"cannot pipe object of type '{}'\"\n\t\tif __obj == '':\n\t\t\tout = args\n\t\tif isinstance(__obj, str):\n\t\t\tout = (__obj, *args)\n\t\telif isinstance(__obj, type):\n\t\t\tout = (message.format(__obj.__name__), *args)\n\t\telse:\n\t\t\tout = (message.format(__obj.__class__.__name__), *args)\n\n\t\tsuper().__init__(*out)\n\n\n# === MIXINS ===\n\nclass UnpipableMixin:\n\t\"\"\"\" Mixin class to handle unwanted/impossible piping ('|'). \"\"\"\n\tdef __or__(self, _): raise UnpipableError(self.__class__)\n\n\nclass PipableMixin:\n\t\"\"\" Mixin class to enable use of the pipe ('|') operator. \"\"\"\n\n\tdef __lt__(self, other): return NotImplemented\n\tdef __lshift__(self, other): return NotImplemented\n\n\tdef __gt__(self, file:Destination):\n\t\t\"\"\" Attempts to (over)write the left-hand value to the file or file-path on the right. \"\"\"\n\t\tif is_subscripted_type(file, Destination):\n\t\t\treturn print(self, file=file, mode='w')\n\t\telse:\n\t\t\treturn NotImplemented\n\n\tdef __rshift__(self, file:Destination):\n\t\t\"\"\" Attempts to append the left-hand value to the file or file-path on the right. \"\"\"\n\t\tif is_subscripted_type(file, Destination):\n\t\t\tif isinstance(self, Receiver):\n\t\t\t\tself.chain = Receiver(print, file=file, mode='a')\n\t\t\t\treturn None\n\t\t\telse:\n\t\t\t\treturn print(self, file=file, mode='a')\n\t\telse:\n\t\t\treturn NotImplemented\n\n\t# noinspection PyUnresolvedReferences\n\tdef __or__(self, receiver):\n\t\t\"\"\"\n\t\tOverrides the '|' operator to enable left-associative piping of return values.\n\n\t\tThis is equivalent to the POSIX pipe operation chaining.\n\t\tIn a shell script, this might looks like ``cat 'example.txt' | grep 'some text'``.\n\n\t\tIf a\n\n\t\tParameters:\n\t\t\treceiver (Receiver, Callable): the object to receive the value of the left-hand object.\n\n\t\tReturns:\n\t\t\tThe result of the right-hand callable.\n\n\t\tExamples:\n\t\t\t>>> from ICPSR.utilities.text import cat, grep, sed\n\t\t\t>>> cat('example.txt') | grep('some text') | sed('_', '.')\n\t\t\"\"\"\n\n\t\t# set defaults\n\t\targs = ()\n\t\tkwargs = {}\n\t\tchain = None\n\n\n\t\t# extract arguments\n\t\tif isinstance(receiver, Receiver):\n\t\t\t__callable = receiver.__callable\n\t\t\targs = receiver.__args\n\t\t\tkwargs = receiver.__kwargs\n\t\t\tchain = receiver.chain\n\n\t\telif isinstance(receiver, str) or receiver is None:\n\t\t\t# prevent a plain string from being interpreted as a list of arguments\n\t\t\traise TypeError(f\"cannot pipe to object of type '{receiver.__class__.__name__}'\")\n\n\t\telif isinstance(receiver, Sequence):\n\t\t\t__callable = receiver[0]\n\t\t\targs = receiver[1:]\n\t\t\tkwargs = {}\n\n\t\t\tif len(args):\n\t\t\t\tif isinstance(args[-1], dict):\n\t\t\t\t\tkwargs = args[-1]  # copy dict from __args to kwargs\n\t\t\t\t\targs = args[:-1]  # pop dict from __args\n\n\t\t\t\tif len(args) == 1:\n\t\t\t\t\targs = args[0]  # if only one item is left, it's an *args tuple\n\n\t\telse:\n\t\t\t__callable = receiver\n\n\n\t\t# process call\n\t\tif get_parent_class(__callable) == self.__class__:\n\t\t\t# if right-hand is same class as left-hand, call as a method of left-hand object\n\t\t\t#   ex.   Text() | grep('!)   ->   foo.grep('!')\n\t\t\t#         Text() | (Text.grep, '!')   ->   foo.grep('!')\n\t\t\tresult = getattr(self, __callable.__name__)(*args, **kwargs)\n\n\t\t# this has to be the second conditional, in case `self` is a subclass of `str`\n\t\telif isinstance(__callable, str):\n\t\t\t# if right-hand is a string, call as a method of left-hand object\n\t\t\t#   ex.   foo | ('print',)   ->   foo.print()\n\t\t\tresult = getattr(self, __callable)(*args, **kwargs)\n\n\t\telif hasattr(self, __callable.__name__):\n\t\t\t# if right-hand is a callable that exists as a method of the left-hand object...\n\t\t\t#   ex.   Text() | print('!)   ->   foo.print('!')\n\t\t\t# this behavior should override built-ins, so it should come before the BuiltinFunctionType check\n\t\t\tresult = getattr(self, __callable.__name__)(*args, **kwargs)\n\n\t\telif isinstance(__callable, BuiltinFunctionType):\n\t\t\t# if right-hand is a builtin function, call left-hand as an argument\n\t\t\t#   ex.   foo | len   ->   len(foo)\n\t\t\tresult = __callable(self, *args, **kwargs)  # assume any args/kwargs were intended for the builtin\n\t\t\tif result is None: raise UnpipableError(result)\n\n\t\t\tpipable_obj = extend_class(result.__class__, Receiver)\n\t\t\tresult = pipable_obj(result)\n\n\t\telif __callable in functions_in_scope():\n\t\t\t# if right-hand is a defined function, try calling it with self and args\n\t\t\tresult = __callable(self, *args, **kwargs)\n\t\t\tpipable_obj = extend_class(result.__class__, Receiver)\n\t\t\tresult = pipable_obj(resut)\n\n\t\telif isinstance(__callable, type):\n\t\t\t# if right-hand is a class, attempt to extend it using the PipableMixin mixin\n\t\t\tpipable_obj = extend_class(__callable, Receiver)\n\t\t\tresult = pipable_obj(self, *args, **kwargs)  # assume any args/kwargs were intended for the constructor\n\n\t\telse:\n\t\t\t# if all else fails, we attempt to cast `self` as\n\t\t\t# whatever the parent class of the __callable is,\n\t\t\t# and then make the call against the new object\n\t\t\tcast = get_parent_class(__callable)(self)\n\t\t\tresult = getattr(cast, __callable.__name__)(*args, **kwargs)\n\n\n\t\t# finalize return\n\t\tif chain:\n\t\t\treturn result | chain\n\t\telse:\n\t\t\treturn result\n\n\n# noinspection PyInitNewSignature\nclass Receiver(PipableMixin):\n\t\"\"\" Receivers are a special class intended to go on the right side of a pipe ('|') operation. \"\"\"\n\n\tdef __init__(self, __callable:Union[Callable,str], *args, **kwargs):\n\t\tself.__callable = __callable\n\t\tself.__args = args\n\t\tself.__kwargs = kwargs\n\t\tself.chain = None\n\n\tdef __lt__(self, other): return NotImplemented\n\tdef __gt__(self, other): return NotImplemented\n\n\tdef __lshift__(self, path:PathLike):\n\t\t\"\"\" Feeds the right-hand value to the '<<' (:py:meth:`__lshift__`) operator of the object on the left. \"\"\"\n\n\t\tif isinstance(path, str) or isinstance(path, os.PathLike):\n\t\t\tself.chain = Receiver('__lshift__', path)\n\t\t\treturn self\n\t\telse:\n\t\t\treturn NotImplemented\n\n\tdef __rshift__(self, out:Destination):\n\t\t\"\"\" Feeds the right-hand value to the '>>' (:py:meth:`__rshift__`) operator of the object on the left. \"\"\"\n\t\tif is_subscripted_type(out, Destination):\n\t\t\tself.chain = Receiver('__rshift__', out)\n\t\t\treturn self\n\t\telse:\n\t\t\treturn NotImplemented
+===================================================================
+diff --git a/ICPSR/mixins/pipable.py b/ICPSR/mixins/pipable.py
+--- a/ICPSR/mixins/pipable.py	
++++ b/ICPSR/mixins/pipable.py	
+@@ -4,7 +4,7 @@
+ from typing import IO, Any, Callable, Sequence, Union
+ from types import BuiltinFunctionType
+ 
+-from ICPSR.utilities.typing import get_parent_class, extend_class, is_subscripted_type
++from ICPSR.utilities.typing import getclass, extend_class, is_subscripted_type
+ from ICPSR.utilities.typing import PathLike, Destination
+ from ICPSR.printers import print
+ 
+@@ -131,7 +131,7 @@
+ 
+ 
+ 		# process call
+-		if get_parent_class(__callable) == self.__class__:
++		if getclass(__callable) == self.__class__:
+ 			# if right-hand is same class as left-hand, call as a method of left-hand object
+ 			#   ex.   Text() | grep('!)   ->   foo.grep('!')
+ 			#         Text() | (Text.grep, '!')   ->   foo.grep('!')
+@@ -173,7 +173,7 @@
+ 			# if all else fails, we attempt to cast `self` as
+ 			# whatever the parent class of the __callable is,
+ 			# and then make the call against the new object
+-			cast = get_parent_class(__callable)(self)
++			cast = getclass(__callable)(self)
+ 			result = getattr(cast, __callable.__name__)(*args, **kwargs)
+ 
+ 
+Index: ICPSR/utilities/typing.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import os\nimport sys\nfrom typing import get_args, get_origin\nfrom typing import Literal, Union, Sequence, Mapping, Callable, IO\nimport re\nimport inspect\n\n\n# === PUBLIC TYPES ===\n\nIntLike = Union[int, str]\n\nPathLike = Union[str, os.PathLike]\n\nDestination = Union[IO, PathLike]\n\nPatternLike = Union[str, re.Pattern]\n\nLineIdentifier = Union[int, PatternLike]\n\nRegexFlag = Union[int, re.RegexFlag]\n\nYesNo = Literal['y','n', True, False]\n\nStringList = Union[str, Sequence[str]]\n\nReceiver = tuple[Callable, Sequence, Mapping]\n\n\n\n_OpenDirection = Literal['r', 'w', 'x', 'a']\n_OpenEncoding = Literal['b', 't']\n_OpenModifier = Literal['+', '']\n# noinspection PyTypeHints\nOpenMode = Literal[\n\t\t\t\t\ttuple(\n\t\t\t\t\t\t\t[x + z for x in get_args(_OpenDirection) for z in get_args(_OpenModifier)]\n\t\t\t\t\t\t\t+\n\t\t\t\t\t\t\t[x + y + z for x in get_args(_OpenDirection) for y in get_args(_OpenEncoding) for z in get_args(_OpenModifier)]\n\t\t\t\t\t\t )\n\t\t\t\t  ]\n\nclass Placeholder:\n\t\"\"\" Throwaway class used to mark an intended variable injection into an :py:class:`Unpack` (*args or **kwargs). \"\"\"\n\tpass\n\n\n# === TYPING HELPERS ===\n\ndef get_parent_class(__obj):\n\t\"\"\" Return the parent class of an object or function. \"\"\"\n\tif hasattr(__obj, '__module__') and __obj.__module__ is not None:\n\t\tmodule = sys.modules[__obj.__module__]\n\t\tclass_name = __obj.__qualname__.split('.<locals>', 1)[0].rsplit('.', 1)[0]\n\t\treturn getattr(module, class_name)\n\telif hasattr(__obj, '__qualname__') and __obj.__qualname__ is not None:\n\t\tmodule = sys.modules['builtins']\n\t\tclass_name = __obj.__qualname__.split('.<locals>', 1)[0].rsplit('.', 1)[0]\n\t\treturn getattr(module, class_name)\n\telse:\n\t\treturn __obj.__class__\n\n\ndef extend_class(cls:type, *mixins:type, **attrs) -> type:\n\t\"\"\" Shorthand method to extend an object of unknown type using a mixin. \"\"\"\n\n\tif issubclass(cls, mixins): return cls  # return if already extended\n\n\tmixin_names = [ mixin.__name__.title() for mixin in mixins ]\n\textension_name = ''.join(mixin_names) + cls.__name__.title()\n\tclasses_in_frame = { name: obj for name, obj in inspect.getmembers(sys.modules[__name__]) if inspect.isclass(obj) }\n\n\t# generate the extension\n\tif extension_name in classes_in_frame:\n\t\t# the extended class already exists, attempt to instantiate it with cls\n\t\treturn classes_in_frame[extension_name]\n\telse:\n\t\t# otherwise we create the extended class, then attempt to instantiate it with cls\n\t\textended_class = type(extension_name, (*mixins, cls), attrs)\n\t\treturn extended_class\n\n\ndef is_str_list(val):\n\t\"\"\" Determines whether all objects in the list are strings \"\"\"\n\tif val is str:\n\t\treturn False\n\telse:\n\t\treturn all(isinstance(x, str) or hasattr(x, '__str__') for x in val)\n\n\ndef is_subscripted_type(obj, typ):\n\t\"\"\" Like isinstance(), but allows subscripted types. \"\"\"\n\tif get_origin(typ) is None:\n\t\treturn isinstance(obj, typ)\n\telif get_origin(typ) is Union:\n\t\treturn any(isinstance(obj, _type) for _type in get_args(typ))\n\telse:\n\t\treturn isinstance(obj, get_origin(typ)) and all(isinstance(arg, typ_arg) for arg, typ_arg in zip(obj, get_args(typ)))\n\n\ndef class_path(__obj):\n\tcls = __obj.__class__\n\n\tif hasattr(cls, '__module__'):\n\t\tmodule = cls.__module__\n\t\tif module not in ('builtins', '__builtin__', '__main__'):\n\t\t\treturn module + '.' + cls.__name__\n\n\treturn cls.__name__ # avoid outputs like '__builtin__.str'
+===================================================================
+diff --git a/ICPSR/utilities/typing.py b/ICPSR/utilities/typing.py
+--- a/ICPSR/utilities/typing.py	
++++ b/ICPSR/utilities/typing.py	
+@@ -10,15 +10,11 @@
+ 
+ IntLike = Union[int, str]
+ 
+-PathLike = Union[str, os.PathLike]
++PathLike = Union[os.PathLike, str]
+ 
+ Destination = Union[IO, PathLike]
+ 
+-PatternLike = Union[str, re.Pattern]
+-
+-LineIdentifier = Union[int, PatternLike]
+-
+-RegexFlag = Union[int, re.RegexFlag]
++PatternLike = Union[re.Pattern, str]
+ 
+ YesNo = Literal['y','n', True, False]
+ 
+@@ -26,8 +22,6 @@
+ 
+ Receiver = tuple[Callable, Sequence, Mapping]
+ 
+-
+-
+ _OpenDirection = Literal['r', 'w', 'x', 'a']
+ _OpenEncoding = Literal['b', 't']
+ _OpenModifier = Literal['+', '']
+@@ -40,14 +34,10 @@
+ 						 )
+ 				  ]
+ 
+-class Placeholder:
+-	""" Throwaway class used to mark an intended variable injection into an :py:class:`Unpack` (*args or **kwargs). """
+-	pass
+-
+ 
+ # === TYPING HELPERS ===
+ 
+-def get_parent_class(__obj):
++def getclass(__obj):
+ 	""" Return the parent class of an object or function. """
+ 	if hasattr(__obj, '__module__') and __obj.__module__ is not None:
+ 		module = sys.modules[__obj.__module__]
