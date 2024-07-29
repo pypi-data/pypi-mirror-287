@@ -1,0 +1,12 @@
+JaxSSO/SSO_model.py,sha256=0dSfVe-GPNcgaeQ1jYplqH5ehjIx0e8lQtJS3rG8pjc,14901
+JaxSSO/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+JaxSSO/assemblemodel.py,sha256=VpMqRD0aOVZJAR_3AbsUOHpLWIEyDXr3KyTYszvzelI,10923
+JaxSSO/element.py,sha256=DRp_Wv7gMifHLEh5e7NAyQpAr8vIRu3lYt1nblE2CsI,54850
+JaxSSO/model.py,sha256=4gh3EgkIToQUrBq1sPHZS-FSifSFkM4CCwxDwroOLQk,13583
+JaxSSO/optimization.py,sha256=zDTlOjIta2puz9fNnro9o1sYKcRjD62kW7JSrtvSm3Y,12594
+JaxSSO/solver.py,sha256=e9LbdVg4wsK2DKWIR1QpcXeF4n9mlUDc8nVenTGyWa0,9025
+JaxSSO-1.0.0.dist-info/LICENSE.txt,sha256=QYcvG2LCtb2sHjcz2BU1NKLsKlHLDiLW9RpDSRap7Pw,1053
+JaxSSO-1.0.0.dist-info/METADATA,sha256=raZprfdhWlpy6GvTHyKGFFWASlS4yL8PopFkt08jZ5I,3917
+JaxSSO-1.0.0.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+JaxSSO-1.0.0.dist-info/top_level.txt,sha256=1mgPK4qbhiSMRfA0sk11UZEsqSxLbEVWNx3cPFFnf-I,7
+JaxSSO-1.0.0.dist-info/RECORD,,
