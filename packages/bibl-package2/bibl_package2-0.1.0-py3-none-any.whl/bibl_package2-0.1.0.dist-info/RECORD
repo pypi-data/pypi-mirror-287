@@ -1,0 +1,9 @@
+div/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+div/div3.py,sha256=tXm6pn_CXaT3koTKj31Grb9Hjyiy9wXUXiCm88kV3Sc,45
+mult/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mult/mult3.py,sha256=RbZIitR__kl9oC9WcjTXA1vEehPE1Er4KnmUO01HYtM,47
+bibl_package2-0.1.0.dist-info/LICENSE.txt,sha256=fNvwfjHnutM-wmZALop3_ioXSchN2NwWGICidoFQo2M,1074
+bibl_package2-0.1.0.dist-info/METADATA,sha256=DB6Kxga1Pkb45PkkAADHZsKJl7IiY6OuPJMwFYzMXIE,1648
+bibl_package2-0.1.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+bibl_package2-0.1.0.dist-info/top_level.txt,sha256=quzpgODmvRd1hxe8v1GFrkwBKXE4eZqKBOe6HJJ3DBk,9
+bibl_package2-0.1.0.dist-info/RECORD,,
