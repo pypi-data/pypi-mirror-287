@@ -1,0 +1,13 @@
+CHANGES.txt
+LICENSE.txt
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+django_autoresponse_middleware/__init__.py
+django_autoresponse_middleware.egg-info/PKG-INFO
+django_autoresponse_middleware.egg-info/SOURCES.txt
+django_autoresponse_middleware.egg-info/dependency_links.txt
+django_autoresponse_middleware.egg-info/requires.txt
+django_autoresponse_middleware.egg-info/top_level.txt
+tests/test_response.py

@@ -1,0 +1,7 @@
+django
+
+[test]
+isort>=5.13
+pytest>=8.2
+pytest-django
+setuptools>=61
