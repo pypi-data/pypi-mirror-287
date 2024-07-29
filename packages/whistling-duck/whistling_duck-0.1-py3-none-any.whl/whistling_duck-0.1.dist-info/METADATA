@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: whistling-duck
+Version: 0.1
+Summary: Whistling Duck is a Python library for data quality exploration and validation, designed for small to medium-sized datasets. It is written using DuckDB.
+Author: Subha Saha
+Author-email: whistlingducklib@gmail.com
+License-File: LICENSE
+
