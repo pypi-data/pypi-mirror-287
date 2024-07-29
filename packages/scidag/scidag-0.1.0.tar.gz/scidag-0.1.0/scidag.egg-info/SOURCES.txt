@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+scidag/__init__.py
+scidag/init.py
+scidag/scidag.py
+scidag.egg-info/PKG-INFO
+scidag.egg-info/SOURCES.txt
+scidag.egg-info/dependency_links.txt
+scidag.egg-info/top_level.txt
+tests/test_scidag.py
