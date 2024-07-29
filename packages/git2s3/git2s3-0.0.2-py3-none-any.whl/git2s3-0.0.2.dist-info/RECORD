@@ -1,0 +1,12 @@
+git2s3/__init__.py,sha256=nEON4Lz2a3sgSkZuTvt_Vgle5ngdgfcrDc1St786FDk,2614
+git2s3/config.py,sha256=VAyBik_Waq2ZeNjnzmgcxjKqKzVohxc2Vd7qf-_EpZY,4010
+git2s3/exc.py,sha256=mfp6GbWIyXTfwq0QNzEhCEnMhPjV7KCN5O1HNarzHho,787
+git2s3/main.py,sha256=fcsCT3blXUH3dPmDAehEf3SJ5w1VJAG4eqVWyVinaAI,15078
+git2s3/s3.py,sha256=tUfc-ZrDJth2FNXiUMK1vSoE8DsZOVLaR4vO1DmEaNM,3063
+git2s3/squire.py,sha256=B8dZsxkQJcaAa-GQ5b8KCKIZghoiOezPCC8QHX7jXuk,3966
+git2s3-0.0.2.dist-info/LICENSE,sha256=xnHdLNCLt4RW3vtnE_TfN_cjViUHyIv0m8024fS4bws,1068
+git2s3-0.0.2.dist-info/METADATA,sha256=tVDrfiIFdsMDLcTWR8H8GWvBeODqb8nYSTK9vR9OQkE,8134
+git2s3-0.0.2.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+git2s3-0.0.2.dist-info/entry_points.txt,sha256=PUhs9IfK0EIY0MKcrYMuAaxseOwJ4mzr3q2iAA-bPWc,46
+git2s3-0.0.2.dist-info/top_level.txt,sha256=GdybTzMqA5GCztvBcerz8gQ_40dh1Q7oRp6aU79Gh-g,7
+git2s3-0.0.2.dist-info/RECORD,,
