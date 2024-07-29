@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+video_filter/__init__.py
+video_filter/filter.py
+video_filter/stock_filters.py
+video_filter.egg-info/PKG-INFO
+video_filter.egg-info/SOURCES.txt
+video_filter.egg-info/dependency_links.txt
+video_filter.egg-info/requires.txt
+video_filter.egg-info/top_level.txt
