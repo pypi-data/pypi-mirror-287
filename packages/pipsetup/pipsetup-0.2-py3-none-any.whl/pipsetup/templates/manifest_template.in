@@ -1,0 +1,17 @@
+# Include all files in the 'project_creator/templates' directory
+recursive-include project_creator/templates *
+
+# Include README.md and LICENSE in the root directory
+include README.md
+include LICENSE
+
+# If you have additional files or directories to include, you can add them here
+# For example, include a config file or data files:
+# include config/*.ini
+# recursive-include data *
+
+# Exclude files that should not be included
+# exclude *.pyc
+# global-exclude *.pyo
+
+# Make sure to adjust the above includes and excludes as needed for your project
