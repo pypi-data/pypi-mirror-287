@@ -1,0 +1,9 @@
+README.md
+setup.py
+mypackage/__init__.py
+mypackage/example.py
+nusratjahanjahan.egg-info/PKG-INFO
+nusratjahanjahan.egg-info/SOURCES.txt
+nusratjahanjahan.egg-info/dependency_links.txt
+nusratjahanjahan.egg-info/top_level.txt
+tests/test_example.py
