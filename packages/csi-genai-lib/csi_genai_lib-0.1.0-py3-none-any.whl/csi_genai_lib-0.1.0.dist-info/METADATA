@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: csi-genai-lib
+Version: 0.1.0
+Summary: Caber GenAI Chat Capture Library
+Home-page: UNKNOWN
+Author: Rob Quiros
+Author-email: dev@caber.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: pandas ==1.5.3
+Requires-Dist: numpy ==1.26.4
+Requires-Dist: packaging >=21.0
+Requires-Dist: boto3 >=1.18.1
+Requires-Dist: smart-open[s3] >=5.1.0
+Requires-Dist: requests >=2.26.0
+Requires-Dist: urllib3 >=1.25.11
+Requires-Dist: frozendict
+Requires-Dist: dnspython ==2.4.0
+Requires-Dist: netifaces2 >=0.0.18
+Requires-Dist: python-nmap >=0.7.1
+
+UNKNOWN
+
