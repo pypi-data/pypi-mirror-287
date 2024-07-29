@@ -1,0 +1,11 @@
+[mlflow.artifact_repository]
+oss = pai_mlflow.store:get_oss_artifact_repository
+
+[mlflow.model_registry_store]
+pai = pai_mlflow.store:get_pai_model_registry_store
+
+[mlflow.run_context_provider]
+unused = pai_mlflow.store:get_paiflow_run_context
+
+[mlflow.tracking_store]
+pai-tracking-plugin = pai_mlflow.store.tracking.pai_rest_store:PluginPAIRestStore

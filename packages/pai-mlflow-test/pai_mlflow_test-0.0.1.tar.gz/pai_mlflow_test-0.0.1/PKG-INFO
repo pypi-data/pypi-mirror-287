@@ -1,0 +1,131 @@
+Metadata-Version: 2.1
+Name: pai-mlflow-test
+Version: 0.0.1
+Summary: Alibaba Cloud PAI MLflow Plugin
+Home-page: https://code.alibaba-inc.com/PAI/pai-mlflow-plugin
+License: Apache License 2.0
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mlflow
+Requires-Dist: oss2
+Requires-Dist: alibabacloud_tea_util<1.0.0,>=0.3.3
+Requires-Dist: alibabacloud_tea_openapi<1.0.0,>=0.2.4
+Requires-Dist: alibabacloud_openapi_util<1.0.0,>=0.1.4
+Requires-Dist: alibabacloud_endpoint_util<1.0.0,>=0.0.3
+
+# AlibabaCloud PAI MLflow Plugin
+
+[English](README.md) | [中文](README_CN.md)
+
+## What is MLflow
+
+[Mlflow](https://mlflow.org/) is an open source platform to manage the ML lifecycle, including experimentation,
+reproducibility, deployment, and a central model registry.
+
+AlibabaCloud PAI MLflow Plugin integrated MLflow capacities
+with [AlibabaCloud Machine Learning Platform for AI](https://www.alibabacloud.com/product/machine-learning). You can
+manage your machine learning task by using MLflow SDK.
+
+## Installing
+
+```shell
+pip install pai-mlflow
+```
+
+## Usage
+
+AlibabaCloud PAI MLflow Plugin including 3 main components：PaiTrackingStore、PaiModelRegistryStore and
+OssArtifactRepository.
+
+``PaiTrackingStore`` tracking and recording machine learning tasks，logging parameters, metrics and artifacts。
+
+``PaiModelRegistryStore`` registering generated model, and offering model version management。
+
+``OssArtifactRepository`` storing artifacts
+via [AlibabaCloud Object Storage Service](https://www.alibabacloud.com/product/oss)
+
+### PaiTrackingStore & PaiModelRegistryStore
+
+#### Set AccessKey via environment
+
+```shell
+export PAI_ACCESS_KEY_ID=LTAIxxxxxxxxxxxxxx;
+export PAI_ACCESS_KEY_SECRET=asdfxxxxxxxxxxxxxxxxxxxxxxxxxxxx;
+```
+
+More about AccessKey, please reference [create an AccessKey pair](https://www.alibabacloud.com/help/doc-detail/53045.html)
+
+#### Set MLflow tracking uri to PAI tracking uri.
+
+```python
+import mlflow
+
+mlflow.set_tracking_uri(
+    "pai://mlflow.{regionId}.aliyuncs.com")  # replace {regionId} with the real one, likes 'cn-hangzhou'
+
+```
+
+#### Start training
+
+```python
+import mlflow
+
+"""
+some pre-conditions code...
+"""
+with mlflow.start_run():
+    mlflow.log_param("param1", randint(0, 100))
+    """
+    some training code...
+    """
+
+    mlflow.log_metric("foo", random())
+    mlflow.log_metric("foo", random() + 1)
+    mlflow.log_metric("foo", random() + 2)
+```
+
+More about MLflow API，please reference [MLflow Docs](https://mlflow.org/docs/latest/tracking.html)
+
+#### View Results
+
+TODO
+
+### OssArtifactRepository
+
+#### Set AccessKey via environment
+
+You can skip this step if you already set AccessKey before using ``PaiTrackingStore``. Try code below if you want
+to specify an AccessKey differ from PaiTrackingStore。
+
+```shell
+# AccessKey used by OssArtifactRepository
+export MLFLOW_OSS_KEY_ID=LTAIxxxxxxxxxxxxxx;
+export MLFLOW_OSS_KEY_SECRET=asdfxxxxxxxxxxxxxxxxxxxxxxxxxxxx;
+
+# AccessKey used by PaiTrackingStore and PaiModelRegistryStore
+#export PAI_ACCESS_KEY_ID=LTAIxxxxxxxxxxxxxx;
+#export PAI_ACCESS_KEY_SECRET=asdfxxxxxxxxxxxxxxxxxxxxxxxxxxxx;
+```
+
+#### Save Artifacts
+
+```python
+import mlflow
+
+uri = "oss://your-bucket.oss-cn-hangzhou.aliyuncs.com/path/to/artifact"
+
+exp_id = mlflow.create_experiment("exp_name", artifact_location=uri)
+"""
+some pre-conditions code...
+"""
+with mlflow.start_run(experiment_id=exp_id):
+    """
+    some training code...
+    """
+    mlflow.log_artifact("/local_path/to/artifact")
+```
+
+#### Check the artifact from OSS console
+
+![](https://img.alicdn.com/imgextra/i3/O1CN01OYVnlQ1kHrwKCBMRi_!!6000000004659-2-tps-709-464.png)
