@@ -1,0 +1,30 @@
+[tool.poetry.urls]
+"Homepage" = "https://github.com/camronh/promptnado"
+"Bug Tracker" = "https://github.com/camronh/promptnado/issues"
+
+[tool.poetry]
+name = "promptnado"
+version = "0.1.0"
+description = "A framework for iterating on system prompts using evaluations"
+authors = ["Camron H <camron.haider@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+packages = [{ include = "promptnado", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9.0,<3.12"
+langsmith = "*"
+pydantic = "^1.8,<3.0"
+python-dotenv = "*"
+langchain = "*"
+langchain-openai = "*"
+langgraph = "^0.1.15"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
