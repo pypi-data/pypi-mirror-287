@@ -1,0 +1,9 @@
+django_rest_framework_client-0.11.1.dist-info/METADATA,sha256=LDRakfHzEKABFzjsyT6U8FHZHrFvxTq_2KPe9DZFxMM,6886
+django_rest_framework_client-0.11.1.dist-info/WHEEL,sha256=rSwsxJWe3vzyR5HCwjWXQruDgschpei4h_giTm0dJVE,90
+django_rest_framework_client-0.11.1.dist-info/licenses/LICENSE,sha256=iwI6b-cjxExT1y6VziJRkc9SqXn31ZIYwvjpPcW-czk,1080
+drf_client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+drf_client/connection.py,sha256=hhfDPbX9E4mv3vaLbdxEJq75rEPn59j9Gu_9yRFwUj0,15687
+drf_client/exceptions.py,sha256=9u4-k3uV3IMNqrw4nkuuwZCjPunjC4uxXmLD2TflmZA,1503
+drf_client/helpers/base_facade.py,sha256=6KE0gP5lykaJm5H-6ipvrx84kq3cwdxdxXRGTuVTxxg,832
+drf_client/helpers/base_main.py,sha256=ncjgeq7CB3DhYM-GhPzOVKqhQXXMUsWkXdeiYyHl9Cc,4930
+django_rest_framework_client-0.11.1.dist-info/RECORD,,
