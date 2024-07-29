@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "fastapi_authentication"
+version = "0.1.1"
+description = ""
+authors = ["Mohamed-Rirash <mohamedrirash12045@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+uvicorn = "^0.30.3"
+sqlalchemy = "^2.0.31"
+fastapi = "^0.111.1"
+pyotp = "^2.9.0"
+python-jose = "^3.3.0"
+passlib = "^1.7.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
