@@ -1,0 +1,14 @@
+qrdata/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qrdata/enums.py,sha256=w7090DmErduF2WWPbpN2fgIgJUz-dR6iositM6ms1sg,252
+qrdata/inputdata.py,sha256=w7FWyTR6WksR4XAexxNZgN_U0b0b4i0guQ5NsV81DXU,660
+qrdata/logger.py,sha256=YgiNC9E9KSpVoouxmsOv2sD9KrO7JiUklZmj7gvh4Vo,262
+qrdata/main.py,sha256=b3zp-RoLDfREtNW263EAJdq2BG5QLPvUUEnE4l9GUE4,4284
+qrdata/qrcode_data.py,sha256=-qqSKTZsrLVthqHbBO8Vnrl0h2-B72-l64UYBVV_K7A,409
+qrdata/qrcode_generator.py,sha256=nrE-IhdKVE-TguTLWoHExqbGo6oLslarO9tRppvo-ls,2413
+qrdata/qrdata_ui.py,sha256=AfU8OM_urN7GWmvzWO6eIcmwXGFvlL-BkLX0Pawww-w,13932
+qrdata/data/qrcode.csv,sha256=_jqhN0TcZgTcWM7noczbHAgEfg3XrHK1nVaQStjRtCU,3544
+qrdata-0.0.2.dist-info/METADATA,sha256=46pdpCdgB58IukNxnsStdUDsDw-krudCrKYvdqSn4dg,1337
+qrdata-0.0.2.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+qrdata-0.0.2.dist-info/entry_points.txt,sha256=02cUmFfxPjSsdIm5Wk4PdUqIBSLJ2r1EVdFrE6xcXnQ,44
+qrdata-0.0.2.dist-info/top_level.txt,sha256=01rXSGn3YP7K1Z0_CNyC8gjVJXluAzOrcM4T1Mh5STU,7
+qrdata-0.0.2.dist-info/RECORD,,

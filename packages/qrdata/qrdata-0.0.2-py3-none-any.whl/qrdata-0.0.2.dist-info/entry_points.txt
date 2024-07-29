@@ -1,0 +1,2 @@
+[console_scripts]
+qrdata = qrdata.main:main
