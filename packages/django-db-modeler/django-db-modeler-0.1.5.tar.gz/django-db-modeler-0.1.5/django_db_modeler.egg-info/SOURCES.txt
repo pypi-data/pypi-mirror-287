@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+db_modeler/__init__.py
+db_modeler/management/__init__.py
+db_modeler/management/commands/__init__.py
+db_modeler/management/commands/model_db.py
+django_db_modeler.egg-info/PKG-INFO
+django_db_modeler.egg-info/SOURCES.txt
+django_db_modeler.egg-info/dependency_links.txt
+django_db_modeler.egg-info/entry_points.txt
+django_db_modeler.egg-info/requires.txt
+django_db_modeler.egg-info/top_level.txt
