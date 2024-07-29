@@ -1,0 +1,2 @@
+[console_scripts]
+image_to_form_app = image_to_form_app.main:main
