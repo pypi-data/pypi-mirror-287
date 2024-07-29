@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: vridgeai
+Version: 0.0.4
+Summary: vridgeai python package
+Home-page: https://git.vazil.me/byungchan/vridgeai-python-package.git
+Author: byungchan
+Author-email: bgk@vazilcompany.com
+Keywords: vazil,vazilcompany,vridge,vridgeai
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Requires-Dist: numpy
+Requires-Dist: tensorflow
+Requires-Dist: matplotlib
