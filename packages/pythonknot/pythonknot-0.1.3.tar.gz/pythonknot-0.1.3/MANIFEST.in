@@ -1,0 +1,2 @@
+include src/cpp_module/CMakeLists.txt
+recursive-include src/cpp_module *.cpp *.h
