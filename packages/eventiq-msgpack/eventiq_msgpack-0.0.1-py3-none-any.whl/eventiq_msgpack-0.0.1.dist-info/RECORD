@@ -1,0 +1,9 @@
+eventiq_msgpack/__about__.py,sha256=sXLh7g3KC4QCFxcZGBTpG2scR7hmmBsMjq6LqRptkRg,22
+eventiq_msgpack/__init__.py,sha256=oVwL2K-d2I3CEUwziPyJcF6bYRgsQjtoZ79V1JH36b8,170
+eventiq_msgpack/decoder.py,sha256=AtZngBSwNzMRMhIO_R6NlO8LDQ7nVW770FQgiu2IFEE,718
+eventiq_msgpack/encoder.py,sha256=efK_IQ2KZBJ3A10wJTA_zX7GmjLh6ixPO7gZyuNg0w0,439
+eventiq_msgpack/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+eventiq_msgpack-0.0.1.dist-info/METADATA,sha256=zJWx6AnNLXeDImmPcGEOFLl45tXEfS2342DKK_UK8MI,1738
+eventiq_msgpack-0.0.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+eventiq_msgpack-0.0.1.dist-info/licenses/LICENSE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
+eventiq_msgpack-0.0.1.dist-info/RECORD,,
