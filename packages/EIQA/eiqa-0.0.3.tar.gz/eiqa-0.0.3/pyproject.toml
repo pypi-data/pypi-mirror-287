@@ -1,0 +1,32 @@
+[project]
+name = "EIQA"
+version = "0.0.3"
+authors = [
+  { name = "Luster", email = "hangyang@lusterinc.com"},
+]
+dependencies = [
+    "scikit-image == 0.21.0",
+    "Pillow == 9.4.0",
+    "json5 == 0.9.17",
+    "opencv-python == 4.8.1.78",
+    "numpy >= 1.22.3",
+    "onnxruntime==1.16.3",
+    "onnxruntime-gpu==1.18.1",
+    "torchvision>=0.14.1",
+]
+description = "A small toolkit for image enhancement and quality assessment"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+
+[build-system]
+requires = ["setuptools==70.3.0"]
+build-backend = "setuptools.build_meta"
+
+#[project.urls]
