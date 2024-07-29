@@ -1,0 +1,11 @@
+klib/__init__.py,sha256=BAGxQxJKtj8zZsFVLoZ6A-H3Smy3G_FpK5MWZRY5O7Q,1033
+klib/_version.py,sha256=oWlPx1Whl6IfnCYADBw05fFq1CPi6oy4ZcgY69ZyWlM,54
+klib/clean.py,sha256=nywFIzjiv982NnuoQOoeSHJz0v3tfeqrjiUmp5BQagI,20802
+klib/describe.py,sha256=3eNw0Y4i3bpznK4pfJmJmsOvj_FMfNjOTCkXHMIVSSg,35545
+klib/scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+klib/scripts/performance.py,sha256=VHFur8DXfS3g8na1FDEzWDBFhViNcqvlzVsnausJkPM,1746
+klib/utils.py,sha256=MPkPzK5o00WQxY7vbI1JNsNxP-ayyoH1nxdD7AN5HFg,9723
+klib-1.2.0.dist-info/LICENSE,sha256=D2FkqMKafLW4lAmTPWlnOYv5hiF8Amckc9F_35v2HRg,1069
+klib-1.2.0.dist-info/METADATA,sha256=vpdZfdHHbV4N-LmslnUrBJpSOaNICXGO43SfpPuv9IE,7662
+klib-1.2.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+klib-1.2.0.dist-info/RECORD,,
