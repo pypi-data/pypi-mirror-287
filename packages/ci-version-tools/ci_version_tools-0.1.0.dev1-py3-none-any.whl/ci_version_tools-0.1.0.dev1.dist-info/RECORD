@@ -1,0 +1,12 @@
+ci_version_tools/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ci_version_tools/exceptions.py,sha256=tM-OJS5WMka0Uv3WDS_5ZLhA9EUyyawca7TfDvJhdI0,224
+ci_version_tools/git.py,sha256=jPSKxpL0JCl7DoCuck5yj1yEmuT9Bl6k0a-SHdHC330,674
+ci_version_tools/project.py,sha256=6Hyql9JD4ocbyN-tl3blYCEG0MaoyYMOC4Rmv2DtQFw,7909
+ci_version_tools/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ci_version_tools/util.py,sha256=PjoEPr-GAPBwcVjYQZicalQPfYhALJk8LpuPnCxyAUo,115
+ci_version_tools/version_env_vars.py,sha256=vpwPMbVzBhH81eYmYilKHy6P6C8qvO5gE0CzqMbk2MU,1861
+ci_version_tools-0.1.0.dev1.dist-info/LICENSE,sha256=wrxuucj88B7gR8U7VHhBry8GdcMoR1nX67Yy0hHHSrw,1089
+ci_version_tools-0.1.0.dev1.dist-info/METADATA,sha256=GMjQOOEhuq-vIN67-gres5xoeqLLkLCkIJjFY3HzFDI,483
+ci_version_tools-0.1.0.dev1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+ci_version_tools-0.1.0.dev1.dist-info/entry_points.txt,sha256=hpzlw2w8DShy1Kjh-A_9Fnpz5lhEZDpMX-RyQ-U_LFc,121
+ci_version_tools-0.1.0.dev1.dist-info/RECORD,,
