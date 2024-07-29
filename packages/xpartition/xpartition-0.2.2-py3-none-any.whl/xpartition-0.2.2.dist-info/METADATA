@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: xpartition
+Version: 0.2.2
+Summary: Tool for writing large xarray datasets to zarr stores with independent processes
+Home-page: https://github.com/spencerkclark/xpartition
+Author: Spencer K. Clark
+Author-email: spencerkclark@gmail.com
+License: MIT License
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: xarray >=0.16.2
+Requires-Dist: dask[array] >=2.9.0
+Requires-Dist: setuptools >=38.4
+Requires-Dist: zarr
+Requires-Dist: dataclasses ; python_version == "3.6"
+
+
+xpartition provides a way to split N-dimensional dask-backed arrays into
+a user-specified number of blocks of dask chunks.  This can be useful for
+assigning work to batch jobs on HPC systems or Dataflow workers in an
+Apache Beam pipeline in the cloud.
