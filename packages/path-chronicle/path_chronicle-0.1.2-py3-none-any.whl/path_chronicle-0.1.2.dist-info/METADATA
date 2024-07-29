@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: path-chronicle
+Version: 0.1.2
+Summary: 
+Author: Suzuki Kakeru
+Author-email: kakeruuuuuu0114@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: pandas (>=2.2.2,<3.0.0)
+Requires-Dist: pydantic (>=2.8.2,<3.0.0)
+Description-Content-Type: text/markdown
+
+
