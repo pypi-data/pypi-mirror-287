@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+makpdf.egg-info/PKG-INFO
+makpdf.egg-info/SOURCES.txt
+makpdf.egg-info/dependency_links.txt
+makpdf.egg-info/top_level.txt
+mpdf/__init__.py
+mpdf/pdf2image.py
+mpdf/pdf2text.py
