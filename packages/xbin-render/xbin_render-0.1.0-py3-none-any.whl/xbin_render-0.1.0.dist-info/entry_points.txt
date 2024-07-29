@@ -1,0 +1,2 @@
+[console_scripts]
+xbin_render = xbin_render:main
