@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: cp_data_structures
+Version: 0.1.0
+Summary: 
+Author: Christian Pedrigal
+Author-email: pedrigalchristian@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: matplotlib (>=3.9.1,<4.0.0)
+Requires-Dist: networkx (>=3.3,<4.0)
+Description-Content-Type: text/markdown
+
+
