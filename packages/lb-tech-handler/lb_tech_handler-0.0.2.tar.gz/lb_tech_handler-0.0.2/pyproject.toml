@@ -1,0 +1,22 @@
+[project]
+name = "lb_tech_handler"
+version = "0.0.2"
+authors = [
+  { name="Johnson Rebeiro", email="rebeirojohnson@gamil.com" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/code-learnbasics/lb_tech_handler"
+Issues = "https://github.com/code-learnbasics/lb_tech_handler/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
