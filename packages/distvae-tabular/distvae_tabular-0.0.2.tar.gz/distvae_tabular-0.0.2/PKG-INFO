@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: distvae_tabular
+Version: 0.0.2
+Summary: DistVAE Implementation Package for Synthetic Data Generation
+Home-page: https://github.com/an-seunghwan/DistVAE-Tabular
+Author: Seunghwan An
+Author-email: dpeltms79@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# DistVAE-Tabular
+
