@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: open_flags
+Version: 0.0.1
+Summary: A package for retrieving Open Flags SVGs
+Home-page: https://github.com/Open-Flags-API/open_flags_py
+Author: RAD Labz
+Author-email: openflags@radlabz.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE.md
+
