@@ -1,0 +1,8 @@
+my_test_package/__init__.py,sha256=VyWhMMBcMvu5a78eNmGPklwksV5iUYqBcbCk66uJRpI,62
+my_test_package/data_api_class.py,sha256=oPAxdzuNJ9GhgZqRbsLeL5Jxa__YNisdb95n28Mdkus,63910
+my_test_package/dict_data.py,sha256=XuaLjGHYz0oXb8oJr0xfHI4kwHubhMjR6OyGERRiH2I,3624
+my_test_package/dolphin_db_info.py,sha256=vjDmGQOi7YlgsVEE_k2k5GfhCo_dclEZLwZH2UPJ62A,4115
+my_test_gj_package-0.0.1.dist-info/METADATA,sha256=Qtxn59AwDmH2lARA_y7ukbprcFCb6eYs2KKi1EB1Ghw,421
+my_test_gj_package-0.0.1.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+my_test_gj_package-0.0.1.dist-info/top_level.txt,sha256=t9t76yv2k7wiva0TKeXKjxhzOtsBmG2Ckz7xkju9ucQ,16
+my_test_gj_package-0.0.1.dist-info/RECORD,,
