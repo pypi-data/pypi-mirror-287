@@ -1,0 +1,11 @@
+gitutils/__init__.py,sha256=9eEoIhTapLACMktzLiVtgUCoSHEH0G1VkxvSLtadTBE,1040
+gitutils/gitclone.py,sha256=UQ3wxIAjfnCFaonENeUXasnTHyB6QtDHc-4s4nF0bbU,3486
+gitutils/github.py,sha256=4hMSQSSbzCZSnCKSVq7SGIVZ4MVn0e-AZpXWG4GptUg,1923
+gitutils/gitsync.py,sha256=Nw80HQI-a-k7d3IvwxBtE1H8kdqUug93Fcq1j8MIv7Y,7493
+gitutils/version.py,sha256=GXmeCkCYJ_FSo5PMzUaU1G7nL7etlTlWLNwncHUGkPU,43
+gitutils/utils/__init__.py,sha256=USYBXLPb6EtLDlmTS2MRbEFatjX1FRLhL6QtqlPrssg,2255
+xgit_utils-1.1.7.dist-info/METADATA,sha256=ApInIKhdBCGS-2uOwzIfu1SGXCPi2IUfzCyVaNM2Bpc,432
+xgit_utils-1.1.7.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+xgit_utils-1.1.7.dist-info/entry_points.txt,sha256=zICqa8CscYnrfYRVO6MPo-g3FqZL2Y9njHt302p56rw,120
+xgit_utils-1.1.7.dist-info/top_level.txt,sha256=4PFSdcuGMWtFXurED4ISsYbR4z4G3z5HesYhES1Bugk,9
+xgit_utils-1.1.7.dist-info/RECORD,,
