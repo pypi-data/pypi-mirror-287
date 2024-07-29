@@ -1,0 +1,8 @@
+mlflow_oauth_keycloak_auth/__about__.py,sha256=QvlVh4JTl3JL7jQAja76yKtT-IvF4631ASjWY1wS6AQ,22
+mlflow_oauth_keycloak_auth/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mlflow_oauth_keycloak_auth/authentication.py,sha256=dy7r2y6E5BTe9vgUMglEN4Ez1PfdSIaiF-hWrct-GaY,4258
+mlflow_oauth_keycloak_auth/exceptions.py,sha256=VM0xP4DaIaoWkVm9XQfQefF2Sd11_o2J5SNWB5TGD4w,331
+mlflow_oauth_keycloak_auth-0.0.2.dist-info/METADATA,sha256=dn8DBc7-d-kDW0G4t7oN1Lgfca06ekZKhRIXmziQaBU,1942
+mlflow_oauth_keycloak_auth-0.0.2.dist-info/WHEEL,sha256=fl6v0VwpzfGBVsGtkAkhILUlJxROXbA3HvRL6Fe3140,105
+mlflow_oauth_keycloak_auth-0.0.2.dist-info/licenses/LICENCE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+mlflow_oauth_keycloak_auth-0.0.2.dist-info/RECORD,,
