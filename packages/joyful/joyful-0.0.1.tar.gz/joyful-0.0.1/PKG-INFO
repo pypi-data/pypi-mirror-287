@@ -1,0 +1,13 @@
+Metadata-Version: 2.3
+Name: joyful
+Version: 0.0.1
+Summary: Python SDKs from Joyful Labs
+Project-URL: Homepage, https://github.com/joyful2024/llmops
+Project-URL: Issues, https://github.com/joyful2024/llmops/issues
+Author-email: Joy the Scamper <joyful.20240721@gmail.com>
+License: MIT License
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
