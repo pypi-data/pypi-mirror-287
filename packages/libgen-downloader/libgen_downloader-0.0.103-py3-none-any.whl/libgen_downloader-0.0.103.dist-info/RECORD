@@ -1,0 +1,14 @@
+libgen_cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+libgen_cli/__main__.py,sha256=4_ca8gs1hcypGBknfc3q8edSbE_h4XILyyhPc_q6PJk,2365
+libgen_cli/constants.py,sha256=4tLKIqrsk0r5d_APLux0NWUDoajYQAfj4vPA9DBf6Ik,291
+libgen_cli/utils.py,sha256=aeBequhienjlnbPKEDfTQfIthZ8M42UK3F28E2QCPjc,2067
+libgen_cli/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+libgen_cli/api/constants.py,sha256=Ps7ATgzWQ1irHFn8lTyRTwal11VQmFo_OFq_JHGySLM,658
+libgen_cli/api/libgen_search.py,sha256=LV6N7PnqzC4BQt-HKpKZ3t9EmbmAKu8DaHYIqLgcCWg,2764
+libgen_cli/api/search_request.py,sha256=wLpAo7upGJSMWz1R4MacZbPNG32DhGw4jjEiUGS8KXE,3934
+libgen_downloader-0.0.103.dist-info/LICENSE,sha256=pAZXnNE2dxxwXFIduGyn1gpvPefJtUYOYZOi3yeGG94,1068
+libgen_downloader-0.0.103.dist-info/METADATA,sha256=hI-edT6F7nf4lhKA21zPWJwzyj3D0S_QpDxefyIcR-0,3954
+libgen_downloader-0.0.103.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+libgen_downloader-0.0.103.dist-info/entry_points.txt,sha256=V2XdSz0lPfjfvEjUtM6nK7uPKJr0f4Ac_2-Kxwg1bjw,55
+libgen_downloader-0.0.103.dist-info/top_level.txt,sha256=1OiHcXzcswxCPp3gAP6gIcGhAWUcBkW_wwpJ-nJq-Fg,11
+libgen_downloader-0.0.103.dist-info/RECORD,,
