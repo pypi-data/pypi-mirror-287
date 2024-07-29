@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: asr-app
+Version: 0.3.0
+Summary: 
+Author: Łukasz Kopociński
+Author-email: lkopocinski@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: gradio (>=4.32.0,<5.0.0)
+Requires-Dist: openai-whisper (>=20231117,<20231118)
+Requires-Dist: pydantic (>=2.7.4,<3.0.0)
+Requires-Dist: pydantic-settings (>=2.3.4,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Simple Application for Automatic Speech Recognition using Whisper AI
