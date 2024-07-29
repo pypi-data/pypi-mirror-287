@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: co_simulations
+Version: 0.1.0
+Summary: A package containing the necessary simulations for Common Optima
+Author: HZ-9000
+License: MIT
+Requires-Python: >=3.8
+License-File: LICENSE
+Provides-Extra: linting
+Requires-Dist: pylint; extra == "linting"
+Requires-Dist: ruff; extra == "linting"
+Provides-Extra: testing
+Requires-Dist: pytest; extra == "testing"

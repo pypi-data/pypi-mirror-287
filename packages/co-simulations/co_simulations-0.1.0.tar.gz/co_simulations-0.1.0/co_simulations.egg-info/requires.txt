@@ -1,0 +1,7 @@
+
+[linting]
+pylint
+ruff
+
+[testing]
+pytest
