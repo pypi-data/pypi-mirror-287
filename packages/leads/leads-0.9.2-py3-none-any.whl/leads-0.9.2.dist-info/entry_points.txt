@@ -1,0 +1,5 @@
+[console_scripts]
+leads-vec-rc = leads_vec_rc:__entry__
+
+[gui_scripts]
+leads-vec = leads_vec:__entry__
