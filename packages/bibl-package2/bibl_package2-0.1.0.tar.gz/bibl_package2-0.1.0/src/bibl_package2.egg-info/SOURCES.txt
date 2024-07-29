@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+src/bibl_package2.egg-info/PKG-INFO
+src/bibl_package2.egg-info/SOURCES.txt
+src/bibl_package2.egg-info/dependency_links.txt
+src/bibl_package2.egg-info/top_level.txt
+src/div/__init__.py
+src/div/div3.py
+src/mult/__init__.py
+src/mult/mult3.py
+tests/test_div3.py
+tests/test_mult3.py
