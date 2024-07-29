@@ -1,0 +1,17 @@
+[package]
+name = "regex_sampler"
+version = "0.1.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "regex_sampler"
+crate-type = ["cdylib"]
+
+[dependencies]
+regex-automata = "0.4.7"
+rustc-hash = "2.0.0"
+
+[dependencies.pyo3]
+version = "0.21.1"
+features = ["abi3-py38"]
