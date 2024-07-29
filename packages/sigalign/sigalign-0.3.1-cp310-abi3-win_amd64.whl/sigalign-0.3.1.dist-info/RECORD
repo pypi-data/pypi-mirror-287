@@ -1,0 +1,5 @@
+sigalign-0.3.1.dist-info/METADATA,sha256=pF-n53SxG3kseqqhS4rfJHsBWt99lq-_zVRh7UyH5yE,11260
+sigalign-0.3.1.dist-info/WHEEL,sha256=ooo3OLxJB34JFfOmPzfiM9QlB2wmB_Cl3_kcSm8NkLg,95
+sigalign/__init__.py,sha256=928hvsko3s9_CLgcSyD68HBhK2nU-lf0NFoFW475T1I,115
+sigalign/sigalign.pyd,sha256=wKwENig-aX1lc47F8UQrehsMF8b9eXJ_VXw2r6coKw4,1102336
+sigalign-0.3.1.dist-info/RECORD,,
