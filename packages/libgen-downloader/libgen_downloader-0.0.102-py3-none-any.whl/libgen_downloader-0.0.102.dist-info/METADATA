@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: libgen-downloader
+Version: 0.0.102
+Summary: A command line interface for download books from libgen.
+Author-email: Ali Koçak <kocakali5834@gmail.com>
+Project-URL: Homepage, https://github.com/KocakAli/libgen-cli
+Project-URL: Issues, https://github.com/KocakAli/libgen-cli/issues
+Keywords: libgen,cli,download,books,library,ebooks,pdf,epub,mobi
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Utilities
+Classifier: Topic :: Internet :: WWW/HTTP :: Indexing/Search
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: beautifulsoup4 ==4.12.3
+Requires-Dist: requests ==2.32.3
+Requires-Dist: typer ==0.12.3
+Requires-Dist: tqdm ==2.2.3
+
+# Libgen Ebook Downloader
+
+A CLI tool to search and download ebooks from Libgen.
+
+
+## Description
+
+Libgen Ebook Downloader is a command-line tool that allows users to search for and download ebooks from the Library Genesis (Libgen) website. It simplifies the process of finding and retrieving digital books.
+
+This project uses a combination of Python's `requests` and `BeautifulSoup` libraries for web scraping to gather data from the Library Genesis (Libgen) website. Specifically, it employs a modified version of the [libgen-api](https://github.com/harrison-broadbent/libgen-api) library.
+
