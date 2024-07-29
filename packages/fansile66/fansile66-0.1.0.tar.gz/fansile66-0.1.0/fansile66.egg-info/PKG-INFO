@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: fansile66
+Version: 0.1.0
+Summary: 一个描述你的包的简短说明
+Home-page: https://github.com/yourusername/mypackage
+Author: 你的名字
+Author-email: 你的邮箱@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENCE.txt
+
+# GeneDist
+
+A package to calculate genetic distance between sequences.
+
+## Installation
+
+```sh
+pip install fansile66
