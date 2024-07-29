@@ -1,0 +1,7 @@
+README.md
+setup.py
+telegrafbot.egg-info/PKG-INFO
+telegrafbot.egg-info/SOURCES.txt
+telegrafbot.egg-info/dependency_links.txt
+telegrafbot.egg-info/requires.txt
+telegrafbot.egg-info/top_level.txt
