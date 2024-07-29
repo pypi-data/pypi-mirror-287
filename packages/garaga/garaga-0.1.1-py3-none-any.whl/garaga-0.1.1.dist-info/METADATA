@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: garaga
+Version: 0.1.1
+Requires-Python: <3.11,>=3.10
+License-File: LICENSE
+
