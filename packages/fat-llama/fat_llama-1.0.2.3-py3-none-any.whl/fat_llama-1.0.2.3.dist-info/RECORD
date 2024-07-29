@@ -1,0 +1,11 @@
+fat_llama/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fat_llama/audio_fattener/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fat_llama/audio_fattener/feed.py,sha256=6kCXmlpRf9Co76lV9PgODk1GovoZ6bXtnb7lcyvHDqs,8891
+fat_llama/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fat_llama/tests/test_feed.py,sha256=uvFrCY7UFi0LIO9w5WOC1yTREAxDO0hbFSoNRP8nhqY,5013
+fat_llama-1.0.2.3.dist-info/LICENSE,sha256=-eTuG1ooblmKkW9DMgPrTeUIjsPAtQRfwfP5M0ReMjk,1491
+fat_llama-1.0.2.3.dist-info/METADATA,sha256=Qy__luxNkL7LOplALPW8LDui7a59ZT9YhPtLoJgmCA8,8207
+fat_llama-1.0.2.3.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+fat_llama-1.0.2.3.dist-info/entry_points.txt,sha256=5WsSg8uWr-_dHQ8Bz0pxO9miRbzygnIgcbC6jko6Td0,41
+fat_llama-1.0.2.3.dist-info/top_level.txt,sha256=gPmnUPamcFYMhEaJ-zuzX5bBGg56PZ2qsWR3vUabFEI,10
+fat_llama-1.0.2.3.dist-info/RECORD,,
