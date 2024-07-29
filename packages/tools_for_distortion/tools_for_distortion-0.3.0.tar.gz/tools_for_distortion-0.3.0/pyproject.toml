@@ -1,0 +1,24 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "tools_for_distortion"
+version = "0.3.0"
+description = "A brief description of your package"
+readme = "README.md"
+readme-content-type = "text/markdown"
+requires-python = ">=3.6"
+dependencies = [
+    "numpy",
+    "preflibtools",
+    # other dependencies
+]
+
+[project.urls]
+homepage = "https://github.com/AshleyDong34/voting_rules_and_distortion"
+repository = "https://github.com/AshleyDong34/voting_rules_and_distortion"
+
+[tool.flit.module]
+name = "tools_for_distortion"
+package-dir = "src"
