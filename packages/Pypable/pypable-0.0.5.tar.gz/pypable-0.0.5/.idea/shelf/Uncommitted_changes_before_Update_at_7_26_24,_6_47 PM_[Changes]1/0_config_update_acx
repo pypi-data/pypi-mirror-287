@@ -1,0 +1,667 @@
+#!/opt/perl/bin/perl -w
+
+#-----------------------------------------------------------------
+# 0_config_update
+#
+# $Id: 0_config_update,v 1.15 2019/05/14 20:16:00 overcash Exp $
+#
+# Component script of the Hermes System.  Checks for existence
+# and completeness of study config files.
+#
+# Can also be used to update Hermes default settings in .hermesrc
+# if script called as hermes_defaults.
+#
+# Originally created as Bourne shell script on 3/17/04.
+# Replaced with Perl script on 5/21/14.
+#-----------------------------------------------------------------
+use Getopt::Std;
+use Cwd  qw< getcwd >;
+use File::Slurp  qw< read_file write_file read_dir >;
+use File::Basename;
+use JSON::PP  qw< decode_json >;
+use LWP::UserAgent;
+use Tie::IxHash;
+use ICPSR::Oracle;
+use strict;
+
+#-----------------------------------------------------------------
+# Exit quietly if user-interrupted
+#-----------------------------------------------------------------
+$SIG{INT} = sub { print "\n"; exit( 2 ) };
+
+my ( %opts, $dbh, $sql, $cfg, $study, $studypad, $ds, $dspad, $studyinfo,
+     $metenv, $hermesrc, @rccontents, $USE_DEFAULTS, %defaults, %cfg, $rc,
+     $ver_label, @nukefields, %req_keywords, $yesno, @cfgcontents, $metsrc,
+     $hermes_defaults, $baseprog, $bypass_oracle, $use_current_cfg );
+
+#-----------------------------------------------------------------
+# Initialize variables
+#-----------------------------------------------------------------
+$hermesrc = $ENV{"HOME"} . "/.hermesrc";
+$USE_DEFAULTS = $ENV{"USE_DEFAULTS"};       # May be passed by calling script
+$baseprog = basename( $0 );
+
+#-----------------------------------------------------------------
+# Was script called as hermes_defaults?
+#-----------------------------------------------------------------
+$hermes_defaults = 1 if $baseprog eq 'hermes_defaults';
+
+#-----------------------------------------------------------------
+# If not, study required
+#-----------------------------------------------------------------
+getopts( 'bm:s:t', \%opts );
+$metsrc = $opts{'m'};
+$study = $opts{'s'};
+$bypass_oracle = 1 if $opts{'b'};
+
+$metenv = 'prod';
+$metenv = 'test' if $opts{'t'};
+
+usage() unless $hermes_defaults or $study;
+
+#-----------------------------------------------------------------
+# Is directory writable by user?
+#-----------------------------------------------------------------
+my $pwd = getcwd();
+my $user = getpwuid( $< );
+unless ( -w $pwd ){
+    print "$pwd is not Linux-writable by $user\n";
+    exit( 1 );
+}
+
+#-----------------------------------------------------------------
+# Set script defaults unless being called as hermes_defaults
+#-----------------------------------------------------------------
+unless( $hermes_defaults ){
+    $study =~ s/^0*//;
+    $metenv = lc($metenv) if $metenv;
+
+    validate_args();
+    $studypad = sprintf( "%05d", $study );
+    @nukefields = qw< study_title '^p[0-9]+_name' dcr summstat maxcat >;
+    @nukefields = qw< dcr summstat maxcat > if $bypass_oracle;
+    $cfg = $studypad . ".cfg";
+    %cfg = ();
+}
+
+#-----------------------------------------------------------------
+# Make hash of required keywords and user prompt labels
+#-----------------------------------------------------------------
+tie( %req_keywords, 'Tie::IxHash' );
+
+%req_keywords = (
+      'addcaseid' => {
+                       label => "Add CASEID variable if it doesn't already exist? (y/n)",
+                       def   => 'y',
+                       alt   => 'n'
+                    },
+      'overwrite' => {
+                       label => 'Overwrite old files if found? (y/n)',
+                       def   => 'y',
+                       alt   => 'n'
+                    },
+      'sascodes' =>  {
+                       label => qq{Embed codes in SAS formats?\n                  e.g., 1="Male" --> 1="(1) Male" (y/n)},
+                       def   => 'y',
+                       alt   => 'n'
+                    },
+      'xml_order' => {
+                       label => 'XML file variables in (a)lphabetical or (f)ile order? ',
+                       def   => 'f',
+                       alt   => 'a'
+                    },
+      'varcase' =>  {
+                       label => 'Variable names (u)pper or (l)ower case? ',
+                       def   => 'u',
+                       alt   => 'l'
+                    },
+      'rescale' =>  {
+                       label => 'Allow Hermes to automatically rescale numeric variables > 15 columns where possible? (y/n)',
+                       def   => 'y',
+                       alt   => 'n',
+                    },
+      'encoding' => {
+                       label => 'Character encoding (type charset name or hit <enter> to use default UTF-8) ',
+                       def   => 'UTF-8',
+                    }
+    );
+
+#-----------------------------------------------------------------
+# Is there a .hermesrc file containing default Hermes settings?
+# Should it be used?
+#-----------------------------------------------------------------
+if ( -f $hermesrc ){
+    read_rc();
+    $USE_DEFAULTS = use_defaults() unless ( $USE_DEFAULTS );
+} else {
+    $USE_DEFAULTS = 0;
+}
+
+#-----------------------------------------------------------------
+# Process config file, if applicable
+#-----------------------------------------------------------------
+if ( $cfg ){
+    undef $use_current_cfg;
+
+    #-----------------------------------------------------------------
+    # Preliminary config checks
+    #-----------------------------------------------------------------
+    if ( -f $cfg ){
+       check_config();
+       $use_current_cfg = use_current() unless $USE_DEFAULTS;
+       $use_current_cfg = 1 if $bypass_oracle;
+    }
+
+    #-----------------------------------------------------------------
+    # Get study title and dataset names from specified source
+    # (Archonnex/environment or existing cfg)
+    #-----------------------------------------------------------------
+    get_study( $metenv );
+
+    #-----------------------------------------------------------------
+    # Do we have a dataset name for every input file in the Hermes
+    # directory?
+    #-----------------------------------------------------------------
+    get_dsnames() unless $bypass_oracle;
+    check_dsnames();
+}
+
+#-----------------------------------------------------------------
+# Add missing specifications
+#-----------------------------------------------------------------
+finish_config();
+
+#-----------------------------------------------------------------
+# Check encoding
+#-----------------------------------------------------------------
+check_encoding( $cfg{ 'encoding' } );
+
+#-----------------------------------------------------------------
+# Print config file
+#-----------------------------------------------------------------
+print_config() if $cfg;
+
+#-----------------------------------------------------------------
+# If .hermesrc doesn't exist, ask user if they would like to set
+# current values as Hermes defaults.
+#-----------------------------------------------------------------
+set_defaults() unless -f $hermesrc;
+
+exit( 0 );
+
+#-----------------------------------------------------------------
+sub usage {
+#-----------------------------------------------------------------
+# Usage message
+#-----------------------------------------------------------------
+    unless ( $baseprog eq 'hermes_defaults' ){
+        print "Usage:  $baseprog -s study number\n\n",
+              "        Exiting...\n";
+
+        exit( 1 );
+    }
+}
+
+#-----------------------------------------------------------------
+sub prompt_user {
+#-----------------------------------------------------------------
+# Prompt user for response with default and alternative responses
+#-----------------------------------------------------------------
+    my ( $default, $alternative ) = @_;
+
+    undef $default unless length($default) > 0;
+    undef $alternative unless length($alternative) > 0;
+
+    #-----------------------------------------------------------------
+    # First, get response from STDIN and return unless default was
+    # specified.
+    #-----------------------------------------------------------------
+    my $response = <STDIN>;
+    chomp( $response );
+    return( $response ) unless defined $default;
+    undef $response unless length($response) > 0;
+
+    #-----------------------------------------------------------------
+    # Response is default if user hits <enter>; return unless
+    # alternative was specified.
+    #-----------------------------------------------------------------
+    $response = $default unless defined $response;
+    return( $response ) unless defined $alternative;
+
+    #-----------------------------------------------------------------
+    # Response doesn't match default or alternative
+    #-----------------------------------------------------------------
+    unless( $response eq $default or $response eq $alternative ){
+        print "       Enter $default or $alternative: ";
+        $response = prompt_user( $default, $alternative );
+    }
+    return( $response );
+}
+
+#-----------------------------------------------------------------
+sub validate_args {
+#-----------------------------------------------------------------
+# Validate command line arguments
+#-----------------------------------------------------------------
+    $rc = 0;
+    my @metenvs = qw< prod test >;
+
+    #-----------------------------------------------------------------
+    # Study numbers
+    #-----------------------------------------------------------------
+    unless ( $study =~ /^\d+$/ ){
+        print "Invalid study number ($study) !\n";
+        $rc++;
+    }
+
+    #-----------------------------------------------------------------
+    # $metenv irrelevant in bypass_oracle mode; bail here
+    #-----------------------------------------------------------------
+    if ( $bypass_oracle ){
+       exit( $rc ) if $rc > 0;
+       return;
+    }
+
+    #-----------------------------------------------------------------
+    # Metadata environment
+    #-----------------------------------------------------------------
+    unless ( grep( /$metenv/, @metenvs )){
+        print "Invalid metadata environment ($metenv) -- use prod or test!\n";
+        $rc++;
+    }
+    exit( $rc ) if $rc > 0;
+}
+
+#-----------------------------------------------------------------
+sub get_study {
+#-----------------------------------------------------------------
+# Look up study title
+#-----------------------------------------------------------------
+    my ( $metenv ) = @_;
+    my ( $ua, $url, $page, $title, $errsrc, $errmsg );
+    $errsrc = "$metenv environment";
+
+    if ( $bypass_oracle ){
+        $title = $cfg{ 'study_title' };
+        $errsrc = $cfg;
+    } else {
+        $ua  = new LWP::UserAgent;
+        $url = "https://curation.$metenv.icpsr.umich.edu/curation/api/1.0/object/baseinfo?objectId=$study";
+        $url =~ s/\.prod// if $metenv eq 'prod';
+        $page = $ua->get( $url );
+        $errmsg = "baseinfo API not working:\n        " . $page->message() unless $page->is_success;
+
+        # baseinfo only returns a message if there is an error
+
+        unless ( $errmsg ){
+            $studyinfo = decode_json $page->content;
+            $errmsg = $$studyinfo{ 'message' };
+        }
+
+        if ( $errmsg ){
+            $errmsg =~ s/^/     /;
+            print "\n  ***Problem retrieving study info from $errsrc for study ${study}:\n\n",
+                   "$errmsg\n\n";
+            exit( 1 );
+        }
+
+        $title = $$studyinfo{ 'title' };
+    }
+
+    unless ( $title ){
+        print "\n  ***ERROR:  Title not found in $errsrc for study ${study}!\n\n";
+        exit( 1 );
+    }
+
+    $cfg{ 'study_title' } = $title;
+}
+
+#-----------------------------------------------------------------
+sub get_dsnames {
+#-----------------------------------------------------------------
+# Get dataset names from Archonnex and create config entries
+#-----------------------------------------------------------------
+    my ( $dsname, $keyword, $rads, $dsinfo );
+
+    $rads = $$studyinfo{ 'datasets' };
+
+    for $dsinfo ( @$rads ) {
+        $ds = $$dsinfo{ 'dsno' };
+        $dspad = sprintf('%04d', $ds );
+        $dsname = $$dsinfo{ 'title' };
+
+        $keyword = "p${dspad}_name";
+        $cfg{ $keyword } = $dsname if $dsname and $dsname ne $$studyinfo{ 'title' };
+
+        if ( @$rads == 1 and $ds == 1 ){
+            $cfg{ p1_skipname } = 'y' unless $cfg{ $keyword };
+        }
+    }
+}
+
+#-----------------------------------------------------------------
+sub check_dsnames {
+#-----------------------------------------------------------------
+# Check dataset names against files found in Hermes directory
+#-----------------------------------------------------------------
+    my ( $err, @files, @dsnums, $errsrc );
+    $err = 0;
+    $errsrc = "$metenv environment" if $metenv;
+    $errsrc = $cfg if $bypass_oracle;
+    @files = read_dir( "." );
+    @dsnums = grep( /^ph${studypad}-\d\d\d\d_in.sav$/, @files );
+
+    #-----------------------------------------------------------------
+    # Extract DS numbers from filenames
+    #-----------------------------------------------------------------
+    for $a ( @dsnums ){
+       $a =~ s/^.+-(\d+)_in.sav/$1/;
+    }
+
+    #-----------------------------------------------------------------
+    # Examine each DS number
+    #-----------------------------------------------------------------
+    for $dspad ( sort @dsnums ){
+        ( $ds = $dspad ) =~ s/^0*//;
+
+        #-----------------------------------------------------------------
+        # Assign p1_skipname=1 if only DS 1 in directory and no DS names
+        # exist for this study
+        #-----------------------------------------------------------------
+        if ( $ds == 1 and @dsnums == 1 and ! grep {/p\d+_name/} keys %cfg ){
+            $cfg{ 'p1_skipname' } = 'y';
+        } else {
+            #-----------------------------------------------------------------
+            # Complain if DS name expected and not found
+            #-----------------------------------------------------------------
+            unless ( $cfg{ "p${dspad}_name" } ){
+                print "   ***ERROR:  Dataset name not found in $errsrc for study $study, DS $ds!\n";
+                $err++;
+            }
+        }
+
+        #-----------------------------------------------------------------
+        # Delete p1_skipname if it doesn't belong in the config file
+        #-----------------------------------------------------------------
+        delete $cfg{ 'p1_skipname' } if $ds > 1 or grep {/p\d+_name/} keys %cfg ;
+    }
+
+    #-----------------------------------------------------------------
+    # Err out
+    #-----------------------------------------------------------------
+    if  ( $err > 0 ){
+        if ( $bypass_oracle ){
+            print "\n   Please add missing dataset name(s) to $cfg\n\n";
+        } else {
+            print "\n   Please add missing dataset name(s) to the metadata project for study $study\n",
+                  "       using the Curation Manager.\n\n";
+        }
+    }
+
+    exit( $err ) if $err > 0;
+}
+
+
+#-----------------------------------------------------------------
+sub read_rc {
+#-----------------------------------------------------------------
+# Read .hermesrc file if it exists; prompt user unless
+# $USE_DEFAULTS was exported by calling program
+#-----------------------------------------------------------------
+    @rccontents = read_file( "$hermesrc" );
+
+    print "\nYour default settings (from $hermesrc):\n" unless $USE_DEFAULTS;
+
+    for my $line ( @rccontents ){
+       next unless $line =~ /=/;
+       my ( $keyword, $value ) = split( /=/, $line );
+       next if grep( /^${keyword}$/, @nukefields );
+       $keyword =~ s/\s//g;
+       $value =~ s/\s//g;
+       print "     $line" unless $USE_DEFAULTS;
+
+       $defaults{ $keyword } = "$value";
+       $cfg{ $keyword } = "$value";
+    }
+}
+
+#-----------------------------------------------------------------
+sub use_defaults {
+#-----------------------------------------------------------------
+# Prompt user about whether to use their Hermes defaults
+#-----------------------------------------------------------------
+    my $msg = 'Use defaults';
+    $msg .= " with study ${study}" if $study;
+    print "\n$msg? (y/n): ";
+    $yesno = prompt_user('y', 'n');
+
+    $USE_DEFAULTS = 0 if $yesno eq 'n';
+    $USE_DEFAULTS = 1 if $yesno eq 'y';
+
+    return( $USE_DEFAULTS );
+}
+
+#-----------------------------------------------------------------
+sub use_current {
+#-----------------------------------------------------------------
+# Prompt user about whether to use current Hermes config file
+#-----------------------------------------------------------------
+    print "Use values in $cfg? (y/n): ";
+    $yesno = prompt_user('y', 'n');
+
+    $use_current_cfg = 0 if $yesno eq 'n';
+    $use_current_cfg = 1 if $yesno eq 'y';
+
+    return( $use_current_cfg );
+}
+
+#-----------------------------------------------------------------
+sub check_config {
+#-----------------------------------------------------------------
+# Preliminary config checks
+#-----------------------------------------------------------------
+    #-----------------------------------------------------------------
+    # Is config file writable?
+    #-----------------------------------------------------------------
+    unless ( -w $cfg ){
+        print "   ***ERROR:  $cfg is not writeable... Exiting...\n";
+        exit( 1 );
+    }
+
+    #-----------------------------------------------------------------
+    # Is config file UNIX formatted?
+    #-----------------------------------------------------------------
+    my $is_dos=`/opt/icpsr/bin/cctell -s $cfg | /bin/grep MS-DOS`;
+
+    if ( $is_dos ){
+        print "   ***Converting DOS-formatted config file to UNIX...\n";
+        system( "/usr/bin/dos2unix -q ${cfg}" ) and die "dos2unix failed";
+    }
+
+    #-----------------------------------------------------------------
+    # Read old config
+    #-----------------------------------------------------------------
+    my @oldcfg = read_file( "$cfg" );
+
+    for my $field ( @nukefields ){
+       @oldcfg = grep( ! /^${field} *=/, @oldcfg );
+    }
+
+    for my $line ( @oldcfg ){
+       next unless $line =~ /[a-z]/;
+       next if $line =~ /^p[0-9]+_name|^p1_skipname/ and ! $bypass_oracle;
+       chomp( $line );
+       my ( $keyword, $value ) = split( /=/, $line );
+       $keyword =~ s/\s//g;
+       $value =~ s/^\s*//;
+       $value =~ s/\s*$//;
+
+       $cfg{ $keyword } = "$value" unless $cfg{ $keyword } and $USE_DEFAULTS == 1;
+       check_encoding( $value ) if $keyword eq 'encoding' and $USE_DEFAULTS == 0;
+    }
+}
+
+#-----------------------------------------------------------------
+sub finish_config {
+#-----------------------------------------------------------------
+# Validate existing config values, if present. Prompt user for any
+# missing configuration info.
+#-----------------------------------------------------------------
+    my ( $label, $def, $alt, $info, $msg, $changed, $invalid );
+
+    for my $keyword ( sort keys %req_keywords ){
+       undef $invalid;
+       $label = $req_keywords{ $keyword }{ 'label' };
+       $def = $req_keywords{ $keyword }{ 'def' };
+       $alt = $req_keywords{ $keyword }{ 'alt' };
+
+       #-----------------------------------------------------------------
+       # Is existing config value valid? If not, report and undef. If so,
+       # move on.
+       #-----------------------------------------------------------------
+       if ( $def and $alt and $cfg{ $keyword } ){
+           unless ( substr($cfg{ $keyword }, 0, 1) eq $def or
+                    substr($cfg{ $keyword }, 0, 1) eq $alt ){
+               print "Invalid $keyword: $cfg{ $keyword }\n";
+               undef $cfg{ $keyword };
+               $invalid = 1;
+           }
+       }
+
+       next if $cfg{ $keyword } and ( $use_current_cfg or $USE_DEFAULTS );
+
+       #-----------------------------------------------------------------
+       # Prompt user for missing config info
+       #-----------------------------------------------------------------
+       undef $info;
+       undef $msg;
+
+       $alt = '' unless $alt;
+       print "     ";
+       print "Study $study - " if $study;
+       print "$label: ";
+
+       $info = prompt_user( "$def", "$alt" );
+
+       if ( $keyword eq 'varcase' ){
+           $info = 'upper' if $info eq 'u';
+           $info = 'lower' if $info eq 'l';
+       }
+
+       #-----------------------------------------------------------------
+       # Validate encoding
+       #-----------------------------------------------------------------
+       check_encoding( $info ) if $keyword eq 'encoding';
+
+       #-----------------------------------------------------------------
+       # Add or change required keyword in default settings?
+       #-----------------------------------------------------------------
+       $msg = "Add '$keyword=$info' to your default settings" unless $defaults{ $keyword };
+       $msg = "Change default setting from '$keyword=$defaults{ $keyword }' to '$keyword=$info'"
+           if ( $USE_DEFAULTS == 0 and $defaults{ $keyword } and $defaults{ $keyword } ne $info )
+                or ( $USE_DEFAULTS == 1 and $invalid );
+
+       if ( $msg ){
+           print "        ** $msg? (y/n): ";
+           my $addinfo = prompt_user( 'y', 'n' );
+           print "\n";
+
+           if ( $addinfo eq 'y' ){
+               @rccontents = grep( ! /${keyword}=/, @rccontents );
+               push( @rccontents, "${keyword}=$info\n" );
+               $changed = 1;
+           }
+       }
+
+       #-----------------------------------------------------------------
+       # Add user-supplied specification to config
+       #-----------------------------------------------------------------
+       $cfg{ $keyword } = $info if defined $info;
+    }
+
+    #-----------------------------------------------------------------
+    # Write out new copy of .hermesrc if anything changed
+    #-----------------------------------------------------------------
+    write_file("$hermesrc", sort(@rccontents) ) or die "Can't overwrite $hermesrc" if $changed;
+}
+
+#-----------------------------------------------------------------
+sub check_encoding {
+#-----------------------------------------------------------------
+# Check specified encoding against known character sets in
+# Oracle table
+#-----------------------------------------------------------------
+    my ( $encoding ) = @_;
+    my ( $found );
+
+    $dbh = ora_connect_dns("hermes");
+
+    $sql = qq{ SELECT encoding
+               FROM charsets
+               WHERE regexp_like(encoding, '${encoding}', 'i' )};
+
+    my $ra = $dbh->selectall_arrayref($sql);
+    die $dbh->errstr if $dbh->err;
+
+    for my $rarow ( @$ra ){
+        my ( $result ) = @$rarow;
+        if ( $result eq $encoding ){
+           $found = $result;
+           last;
+        }
+    }
+
+    $dbh->disconnect;
+
+    unless ( $found ){
+        print "   Character set '$encoding' is not recognized.\n\n",
+              "   For the current list of recognized character sets, please see:\n\n",
+              "      http://www.icpsr.umich.edu/DBInfo/executeQuery/tdb-oracle-prod?schId=tdb-oracle-prod&select=description%2C+encoding&from=hermes.charsets&where=encoding+is+not+null\n";
+        exit( 1 );
+    }
+
+    $cfg{ 'encoding' } = $found;
+}
+
+#-----------------------------------------------------------------
+sub print_config {
+#-----------------------------------------------------------------
+# Print Hermes config file
+#-----------------------------------------------------------------
+    open( CFG, "> $cfg") or die "Can't open $cfg";
+
+    for my $keyword ( sort keys %cfg ){
+        if ( $keyword eq 'varcase' ){
+            $cfg{ $keyword } = 'upper' if $cfg{ $keyword } eq 'u';
+            $cfg{ $keyword } = 'lower' if $cfg{ $keyword } eq 'l';
+        }
+
+        my $entry = "${keyword}=" . $cfg{ $keyword };
+
+        print CFG "$entry\n";
+        push( @cfgcontents, "$entry\n" ) unless grep( /^${keyword}$/, @nukefields ) or $keyword eq 'p1_skipname';
+    }
+
+    close CFG;
+}
+
+#-----------------------------------------------------------------
+sub set_defaults {
+#-----------------------------------------------------------------
+# If .hermesrc doesn't exist, ask user if they would like to set
+# current values as Hermes defaults.
+#-----------------------------------------------------------------
+    my ( $entry );
+    print "\n";
+
+    for $entry ( @cfgcontents ){
+         print "$entry";
+    }
+
+    print "\nSet as Hermes defaults? (y/n): ";
+    $yesno = prompt_user( 'y', 'n' );
+
+    if ( "$yesno" eq "y" ){
+        write_file( "$hermesrc", @cfgcontents ) or die "Can't write $hermesrc";
+    }
+}

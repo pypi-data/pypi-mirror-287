@@ -1,0 +1,469 @@
+#!/opt/perl/bin/perl -w
+
+#-----------------------------------------------------------------
+# make_sasmissing
+#
+# $Id: make_sasmissing,v 1.1 2014/03/05 17:23:26 overcash Exp $
+#
+# Generate SAS missing recodes and formats syntax.
+#-----------------------------------------------------------------
+use JSON;
+use Getopt::Std;
+use File::Basename;
+use File::Slurp  qw< read_file write_file append_file >;
+use Digest::MD5 qw < md5 >;
+use Text::Wrap;
+use Tie::IxHash;
+#use Data::Dumper;
+use strict;
+
+my ( %opts, $infile, $json_txt, $rhjson, %rhjson, $var, %varmap, $RC,
+     $label, $vars, $statio_out, @mvalrecodes, $procfmt, %procfmts,
+     %catlabels, $fmtname, $i, $code, $sasmissing, $is_missing, $numeric,
+     $varcase, %catinfo, %fmts, $reportdir, $md5, $other, @other,
+     $numfmt, $maxfmts, $procfmt_out, $fmt_out, $errorlog, @fmtnames,
+     $fmtlen, $placeholder, $hermes );
+
+$RC = 0;
+$procfmt_out = "/dev/stdout";
+$fmt_out = "/dev/stdout";
+$maxfmts = 4096;
+$placeholder = 'xxxxxxxxxxxxxxx';
+
+#--------------------------------------------------------------------------
+# Process command line options
+#--------------------------------------------------------------------------
+getopts( 'e:f:hj:o:r:v:', \%opts );
+
+$errorlog = $opts{e};
+$infile = $opts{f};
+$hermes = 1 if $opts{h};
+$statio_out = $opts{j};
+$other = $opts{o};
+$reportdir = $opts{r};
+$varcase = $opts{v};
+
+$varcase = 'upper' unless $varcase;
+
+#--------------------------------------------------------------------------
+# Require SPSS system file or statio output
+#--------------------------------------------------------------------------
+unless( $infile or $statio_out ){
+    print "Usage: make_sasmissing -f spss_filename.sav\n\n";
+    exit( 1 );
+}
+
+#--------------------------------------------------------------------------
+# Verify report directory, if specified
+#--------------------------------------------------------------------------
+if ( $reportdir ){
+    unless ( -d $reportdir ){
+        print "Report directory ($reportdir) doesn't exist\n";
+        $RC++;
+    }
+
+    unless ( -w $reportdir and -x $reportdir ){
+        print "Report directory ($reportdir) is either not executable or not writable\n";
+        $RC++;
+    }
+    exit( $RC ) if $RC > 0;
+
+    $procfmt_out = "$reportdir/proc_fmt";
+    $fmt_out = "$reportdir/fmt";
+}
+
+#--------------------------------------------------------------------------
+# Process "other" file, if specified
+#--------------------------------------------------------------------------
+if ( $other ){
+    unless ( $reportdir ){
+        print "Report dir (-r) required if 'other' file specified\n";
+        $RC++;
+    }
+
+    unless ( -f $other ){
+        print "SAS 'other' file ($other) doesn't exist\n";
+        $RC++;
+    }
+
+    unless ( -r $other ){
+        print "SAS 'other' file ($other) is not readable\n";
+        $RC++;
+    }
+    exit( $RC ) if $RC > 0;
+
+    @other = read_file($other);
+}
+
+#--------------------------------------------------------------------------
+# If statio output and infile both specified, ignore infile
+#--------------------------------------------------------------------------
+undef $infile if $infile and $statio_out;
+
+#--------------------------------------------------------------------------
+# Specified input file exists and is an SPSS system file
+#--------------------------------------------------------------------------
+if ( $infile ){
+    $statio_out = "/var/tmp/statio_out_$$";
+
+    unless ( -f $infile ){
+        print "Specified input file ( $infile ) doesn't exist\n";
+        exit( 1 );
+    }
+
+    unless ( grep( /SPSS System File/, `/opt/icpsr/bin/ifile "$infile"` )){
+        print "Specified input file ( $infile ) isn't SPSS system file\n";
+        exit( 1 );
+    }
+    #--------------------------------------------------------------------------
+    # Run statio to generate complete variable-level metadata
+    #--------------------------------------------------------------------------
+    system("/opt/icpsr/bin/statio -f $infile -t sav > $statio_out" ) and die "Problem retrieving metadata from $infile";
+}
+
+#--------------------------------------------------------------------------
+# Statio output file exists
+#--------------------------------------------------------------------------
+unless ( -f $statio_out ){
+    print "Output file for $infile doesn't exist\n";
+    exit( 1 );
+}
+
+$json_txt = read_file( $statio_out );
+
+#--------------------------------------------------------------------------
+# Suck statio output into hash
+#--------------------------------------------------------------------------
+$rhjson = decode_json($json_txt) or die "Problem parsing JSON metadata from $infile";
+
+#--------------------------------------------------------------------------
+# Grab variable index mappings
+#--------------------------------------------------------------------------
+my $rhmap = $$rhjson{ 'varMap' };
+%varmap = %$rhmap;
+
+#--------------------------------------------------------------------------
+# Grab variables from JSON output
+#--------------------------------------------------------------------------
+my $ravars = $$rhjson{ 'variables' };
+
+#--------------------------------------------------------------------------
+# Grab value labels, missing values
+#--------------------------------------------------------------------------
+tie( %procfmts, 'Tie::IxHash' );
+
+my $numvars = @$ravars;
+my $count = 0;
+
+for my $rhvar ( @$ravars ){
+    %catlabels = ();
+    undef $procfmt;
+
+    my %varinfo = %$rhvar;
+
+    #--------------------------------------------------------------------------
+    # Apply case, excluding CASEID, which must be upper case for SDA
+    #--------------------------------------------------------------------------
+    $var = $varinfo{ 'longName' };
+    $var = uc($var) if $varcase eq 'upper';
+    $var = lc($var) if $varcase eq 'lower' and $var ne 'CASEID';
+
+    #--------------------------------------------------------------------------
+    # Is variable numeric?
+    #--------------------------------------------------------------------------
+    $numeric = $varinfo{ 'numeric' };
+
+    #--------------------------------------------------------------------------
+    # Grab category info for this variable
+    #--------------------------------------------------------------------------
+    my $rhcats = $varinfo{ 'categoryMap' }->{ 'categories' };
+    %catinfo = %$rhcats;
+    my $numlabeled = $varinfo{ 'categoryMap'}{ 'numLabeledCategories' };
+    my $num_invalid_cats = $varinfo{ 'categoryMap'}{ 'numInvalidCategories' };
+
+    #--------------------------------------------------------------------------
+    # Build recodes, formats, and proc formats
+    #--------------------------------------------------------------------------
+    $i = 0;
+    $procfmt = $placeholder;
+    $fmtlen = length( $procfmt );
+
+    #--------------------------------------------------------------------------
+    # Build recodes, formats, and proc formats
+    #--------------------------------------------------------------------------
+    if ( $numeric ){
+        #--------------------------------------------------------------------------
+        # Numeric variables
+        #--------------------------------------------------------------------------
+        for my $val( sort { $a <=> $b } keys %catinfo ){
+            proc_val( $val, $num_invalid_cats );
+        }
+
+        #--------------------------------------------------------------------------
+        # Add "other" numeric formats for unlabeled values, if applicable
+        #--------------------------------------------------------------------------
+        if ( $other ){
+            my @hasnumfmt = grep(/^${var};/, @other );
+            chomp(@hasnumfmt);
+            if ( @hasnumfmt ){
+                my $hasnumfmt = join('',@hasnumfmt);
+                ( $var, $numfmt ) = split(/;/, $hasnumfmt );
+                if ( $procfmt eq $placeholder ){
+                    $numfmt =~ s/\.$//;
+                    $fmts{ $var } = "$numfmt";
+                } else {
+                    $procfmt .= " other=[${numfmt}]" if $procfmt;
+                }
+            }
+        }
+    } else {
+        #--------------------------------------------------------------------------
+        # Character variables
+        #--------------------------------------------------------------------------
+        for my $val( sort { $a cmp $b } keys %catinfo ){
+             proc_val( $val, $num_invalid_cats );
+        }
+    }
+
+    #$i = 0;
+
+    #--------------------------------------------------------------------------
+    # Unduplicated proc formats
+    #--------------------------------------------------------------------------
+    if ( $procfmt and $procfmt ne $placeholder ){
+        $md5 = md5( $procfmt );
+
+        unless ( $procfmts{ $md5 } ){
+            $fmtname = getfmtname( $var );
+            $procfmts{ $md5 }{ 'fmtname' } = $fmtname;
+            $procfmts{ $md5 }{ 'fmt' }  = $procfmt;
+        }
+
+        $fmts{ $var } = $procfmts{ $md5 }{ 'fmtname' };
+        undef $procfmt;
+    }
+
+    $count++;
+}
+
+#--------------------------------------------------------------------------
+# Are there more than 4096 unduplicated SAS formats?
+#--------------------------------------------------------------------------
+my $numfmts = keys %procfmts;
+
+if ( $numfmts > $maxfmts and $hermes ){
+    $infile = $$rhjson{ 'originalFileName' };
+    $infile = basename( $infile );
+
+    print "\n       Warning: $numfmts unduplicated SAS formats found in ${infile}.\n",
+          "         This exceeds the SAS limit of $maxfmts formats.\n",
+          "         A SAS transport data file will be created without\n",
+          "         value labels.  A supplemental syntax file containing all\n",
+          "         $numfmts formats will be generated for end user reference.\n\n";
+
+    write_file("$reportdir/numfmts", "$numfmts" );
+}
+
+#--------------------------------------------------------------------------
+# If run standalone to detect excessive SAS formats, report and exit here
+#--------------------------------------------------------------------------
+unlink( $statio_out ) unless $hermes or $opts{j};
+
+unless ( $hermes ){
+    print "$numfmts unduplicated SAS formats\n";
+    exit( 0 );
+}
+
+#--------------------------------------------------------------------------
+# Write out PROC FORMAT; it will either be used downstream in SAS setup or
+# supplemental syntax file depending on the number of unique formats.
+#--------------------------------------------------------------------------
+proc_fmt() if $numfmts > 0;
+
+#--------------------------------------------------------------------------
+# Print SAS missing value recodes
+#--------------------------------------------------------------------------
+#for my $line ( @mvalrecodes ){
+#    print "${line}\n";
+#}
+
+#--------------------------------------------------------------------------
+# Print FORMAT section
+#--------------------------------------------------------------------------
+print_fmts() if %fmts;
+
+exit( $RC );
+
+#--------------------------------------------------------------------------
+sub wrapfmt {
+#--------------------------------------------------------------------------
+# Wrap PROC FORMAT syntax at 90 columns for human readability
+#--------------------------------------------------------------------------
+    my ( $fmtstr ) = @_;
+    my ( $strlen, $maxcols );
+    $maxcols = 90;
+
+    $strlen = length( $fmtstr );
+    $fmtlen = $fmtlen + $strlen;
+
+    if ( $fmtlen > $maxcols ){
+        $procfmt .= "\n               ";
+        $fmtlen = $strlen;
+    }
+}
+
+#--------------------------------------------------------------------------
+sub proc_val {
+#--------------------------------------------------------------------------
+# Process each value of the variable
+#--------------------------------------------------------------------------
+    my ( $val, $num_invalid_cats ) = @_;
+    my ( $fmtstr, $sysmis, $recode );
+    #print "$var | $val | $num_invalid_cats \n";
+
+    #=============================================
+    #undef $sasmissing;
+    #=============================================
+
+    $code = $catinfo{ $val }{ 'value' };
+    #next unless $code
+    $code =~ s/\s+$//;
+    $label = $catinfo{ $val }{ 'label' };
+    $val =~ s/\s+$//;
+    #print "$var | $val | $num_invalid_cats | $label\n" if $label;
+
+    #=============================================
+    #$is_missing = $catinfo{ $val }{ 'missing' };
+    #$sysmis = $catinfo{ $val }{ 'sysMiss' };
+    #
+    #if ( $is_missing and ! $sysmis ){
+    #    $sasmissing = '.';
+    #    $sasmissing = recode_missing($code) unless $num_invalid_cats > 27;
+    #    $recode = "IF ($var = $code) THEN $var = ${sasmissing};";
+    #    $recode = '/* ' . $recode . ' */' if $num_invalid_cats > 27;
+    #
+    #    push ( @mvalrecodes, "   $recode");
+    #    #$code = $sasmissing;
+    #}
+    #=============================================
+
+    if ( $label ){
+        $label =~ s/'/''/g;
+
+    #=============================================
+        #if ( $sasmissing ){
+        #    $procfmt .= " $sasmissing='($code) $label'";
+        #} elsif ( $numeric ){
+    #=============================================
+
+        if ( $numeric ){
+            $fmtstr .= " $code='($code) $label'";
+        } else {
+            $fmtstr .= " '$code'='($code) $label'";
+        }
+
+        return unless $fmtstr;
+        wrapfmt($fmtstr) if $hermes;
+        $procfmt .= "$fmtstr";
+    }
+}
+
+#--------------------------------------------------------------------------
+sub proc_fmt {
+#--------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------
+    my (@procfmts, @fmt, $indent1, $indent2, $maxcols );
+
+    push( @procfmts, "PROC FORMAT;\n");
+
+    for my $md5 ( keys %procfmts ){
+        $fmtname = $procfmts{ $md5 }{ 'fmtname' };
+        $procfmt = $procfmts{ $md5 }{ 'fmt' };
+        $procfmt =~ s/^x+/VALUE ${fmtname} /;
+        $procfmt =~ s/$/;\n/;
+        push( @procfmts, $procfmt );
+    }
+    write_file( $procfmt_out, @procfmts );
+}
+
+##--------------------------------------------------------------------------
+#sub recode_missing {
+##--------------------------------------------------------------------------
+## Compute SAS special missing value recode
+##--------------------------------------------------------------------------
+#    my ( $code ) = @_;
+#    my @missingcodes = ( "A".."Z", "_" );
+#
+#    $sasmissing = '.' . $missingcodes[$i];
+#    $i++;
+#    return( $sasmissing );
+#}
+
+#--------------------------------------------------------------------------
+sub print_fmts {
+#--------------------------------------------------------------------------
+# Print FORMAT section
+#--------------------------------------------------------------------------
+    $i = 0;
+    my ( $line, $fmt, @fmts );
+    push ( @fmts, "   FORMAT\n" );
+    #print "   FORMAT\n";
+    for $var ( sort { $a cmp $b } keys %fmts ){
+        if ( $i == 3 ){
+           push ( @fmts, "        ${line}\n" );
+           #print "        ${line}\n";
+           undef $line;
+           $i = 0;
+        }
+
+        $fmt = $fmts{ $var };
+        $line .= " ${var} ${fmt}.";
+        $i++;
+    }
+
+    push ( @fmts, "        ${line}\n" ) if $line;
+    push ( @fmts, "    ;\n" );
+
+    write_file( $fmt_out, @fmts );
+}
+
+#--------------------------------------------------------------------------
+sub getfmtname {
+#--------------------------------------------------------------------------
+# Construct unique format name of around 8 characters
+#--------------------------------------------------------------------------
+    my ( $var ) = @_;
+    my ( $varlen, $fillen, $sublen, $fillstr, $count );
+
+    $varlen = length( $var );
+    $fillen = 1;
+    $sublen = 7;
+
+    if ( $varlen < 7 ) {
+        $fillen = ( $sublen - $varlen ) + $fillen;
+        $sublen = $varlen;
+    }
+    #print "var = $var sublen = $sublen fillen = $fillen\n";
+
+    $fillstr = '';
+
+    for ( $count = $fillen; $count >=1; $count-- ){
+         $fillstr .= 'f';
+    }
+    #$fmtname = lc(${var}) . $fillstr;
+    $fmtname = substr(lc(${var}), 0, $sublen) . $fillstr;
+    if ( grep(/$fmtname/, @fmtnames )){
+        #print "$var: $fmtname already used\n";
+        $count = 1;
+        until ( ! grep(/$fmtname/,@fmtnames )){
+            $fmtname =  substr(lc(${var}), 0, $sublen) . "_${count}f" ;
+            $count++;
+        }
+    }
+
+    $fmtname = '$'.$fmtname unless ( $numeric );
+    push( @fmtnames, $fmtname );
+    return( $fmtname );
+}
+

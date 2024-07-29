@@ -1,0 +1,134 @@
+#!/bin/sh
+PATH=/usr/bin:/bin:/opt/icpsr/bin:/opt/icpsr/lib/shlib:/opt/sda/bin:/opt/varmet/bin
+
+# hermes_varlistcmp
+# Peggy Overcashier
+# Created 3/20/12
+
+#    $Id: hermes_varlistcmp,v 1.7 2016/06/29 23:32:20 overcash Exp $
+
+#-----------------------------------------------------------------
+# Component script of the Hermes System.  Wrapper script for
+# varlistcmp to compare variable lists in SPSS, varlist, and
+# question text input files to Hermes.
+#-----------------------------------------------------------------
+
+#-----------------------------------------------------------------
+# Process command line options
+#-----------------------------------------------------------------
+while getopts "d:ls:v" opt
+do
+    case $opt in
+        d ) DSNUM=$OPTARG ;;
+        s ) STUDYNUM=$OPTARG ;;
+        v ) VERBOSE=1 ;;
+        l ) LOWERCASE=1 ;;
+    esac
+done
+
+#-----------------------------------------------------------------
+# Study and DS required
+#-----------------------------------------------------------------
+if [ ! "$DSNUM" -o ! "$STUDYNUM" ]
+then
+    echo "Usage:  `basename $0` -s study -d dataset"
+    exit 1
+fi
+
+. snums
+. dsnums
+
+#-----------------------------------------------------------------
+# Hermes input files
+#-----------------------------------------------------------------
+spssfile="ph${SNUM_5}-${DSNUM_4}_in.sav"
+qtxt="qtxt${SNUM_5}-${DSNUM_4}.ddl"
+varlist="vl${SNUM_5}-${DSNUM_4}.txt"
+cfg="${SNUM_5}.cfg"
+
+#-----------------------------------------------------------------
+# Use files from parent dir if BETA_OUT
+#-----------------------------------------------------------------
+beta_out=`pwd | grep '/BETA_OUT$'`
+
+if [ "$beta_out" ]
+then
+    spssfile="../ph${SNUM_5}-${DSNUM_4}_in.sav"
+    qtxt="../qtxt${SNUM_5}-${DSNUM_4}.ddl"
+    varlist="../vl${SNUM_5}-${DSNUM_4}.txt"
+fi
+
+#-----------------------------------------------------------------
+# SPSS data file required (.sav or .por)
+#-----------------------------------------------------------------
+if [ ! -f "$spssfile" ]
+then
+    echo "SPSS file required:  $spssfile"
+    exit 1
+fi
+
+#-----------------------------------------------------------------
+# No question text or varlist files to compare; exit
+#-----------------------------------------------------------------
+if [ ! -f "$qtxt" -a ! -f "$varlist" ]
+then
+    if [ "$VERBOSE" ]
+    then
+        echo "No question text or variable list files found"
+        echo "Expecting $qtxt and/or $varlist"
+        exit 1
+    else
+        exit 0  # exit quietly
+    fi
+fi
+
+#-----------------------------------------------------------------
+# Build arguments for varlistcmp
+#-----------------------------------------------------------------
+ARGS="-s $spssfile"
+
+if [ -f "$qtxt" ]
+then
+    ARGS="$ARGS -q $qtxt"
+fi
+
+if [ -f "$varlist" ]
+then
+    ARGS="$ARGS -v $varlist"
+fi
+
+if [ "$LOWERCASE" ]
+then
+    ARGS="$ARGS -l"
+fi
+
+#-----------------------------------------------------------------
+# Execute varlistcmp and exit using RC from varlistcmp
+#-----------------------------------------------------------------
+vlcmp=`varlistcmp $ARGS`
+
+RC=$?
+
+#-----------------------------------------------------------------
+# Allow CASEID in varlist if user intends to add CASEID
+# (addcase=y in Hermes config file)
+#-----------------------------------------------------------------
+if [ "$RC" -ne 0 ]
+then
+     addcaseid=`grep -i 'addcaseid *= *y' "$cfg"`
+     if [ "$addcaseid" ]
+     then
+          vlcmp=`echo "$vlcmp" | grep -v '^CASEID *$'`
+     fi
+
+     lists_still_differ=`echo "$vlcmp" | grep -i '[a-z]' | sed 1d`
+
+     if [ "$lists_still_differ" ]
+     then
+          echo "$vlcmp"
+     else
+          RC=0
+     fi
+fi
+
+exit $RC

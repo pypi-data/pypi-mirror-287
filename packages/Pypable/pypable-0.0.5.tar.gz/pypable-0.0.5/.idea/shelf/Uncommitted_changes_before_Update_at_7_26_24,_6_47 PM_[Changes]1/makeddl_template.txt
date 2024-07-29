@@ -1,0 +1,1155 @@
+*************************************************************************
+* Copyright (c) 2007 by The Regents of the University of Michigan
+*
+* makeddl.py
+* $Id: makeddl_template.txt,v 1.56 2020/06/01 16:04:25 overcash Exp $
+
+* Generates SDA DDL file and ASCII data directly from SPSS system file.
+*
+* Developed by:
+*   Computing & Network Services
+*   Inter-university Consortium for Political and Social Research (ICPSR)
+*   Institute for Social Research (ISR)
+*   University of Michigan
+*
+* Permission to use, copy, modify, and distribute this software for any
+* purpose with or without fee is hereby granted, provided that the above
+* copyright notice and this permission notice appear in all copies.
+*
+* THE SOFTWARE IS PROVIDED "AS IS" AND ICPSR, ISR, AND THE UNIVERSITY OF
+* MICHIGAN DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING
+* ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+* ICPSR, ISR, OR THE UNIVERSITY OF MICHIGAN BE LIABLE FOR ANY SPECIAL,
+* DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+* RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+* CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+* CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*
+*************************************************************************.
+
+*************************************************************************
+* SYSTEM REQUIREMENTS:
+*
+*    SPSS 14.0.1 or higher
+*    Python 2.x (with standard os, sys, string, re, and shutil
+*                library modules)
+*    SPSS-Python programmability plug-in (select download package
+*                carefully -- specific to version of SPSS)
+*    SPSS-Python module:  spssaux
+*
+* SPSS-Python products are freely downloadable from:
+*    http://www.spss.com
+*
+* Python is freely downloadable from:
+*    http://www.python.org/download
+*
+*************************************************************************
+* This syntax has been tested with the following versions of SPSS and
+* Python:
+*
+*    Linux:    SPSS Server 21 and Python 2.7.2
+*
+* To use:
+*
+*    (1) Edit lines 92-95 of this file to specify title and filenames.
+*        This may be done in any text editor, including the SPSS Syntax
+*        Editor in Windows.
+*
+*    (2) Run in SPSS as a normal syntax file.
+*
+*           Linux command line:
+*               spssb -i -f makeddl.sps -type text -hide PTW
+*
+*           Windows:
+*               Run edited file from SPSS Syntax Editor
+*
+*************************************************************************.
+
+#================================================================
+# EDIT HERE:  Specify dataset title, input and output filenames
+#
+# IMPORTANT:  Be sure to use a pair of forward slashes between
+# directories in path specifications, e.g.,
+#
+#    asciidata_out = 'h://mydir//sda//mydata.txt'
+#
+#----------------------------------------------------------------
+
+#================================================================
+# USER-DEFINED SPECIFICATIONS:
+#===============================
+
+title = 'SDA Dataset Title'
+spssdata_in = 'labeltest.sav'
+asciidata_out = 'asciidata-new.txt'
+sda_ascii_out = 'sda_ascii.txt'
+ddlfile_out = 'myddl-new.txt'
+sasddlfile_out = 'myddl-new_sas.txt'
+hermes_cfg = '99999.cfg'
+hermes_dir = '/var/tmp/hermes99999_1234'
+study = 99999
+part = 1
+errorlog = '99999_errors.txt'
+varcase = 'upper'
+addcaseid = 'n'
+charset = 'UTF-8'
+preserve_fmts = 0
+
+#===============================
+# DO NOT EDIT BELOW THIS LINE!
+#================================================================
+try:
+    is_hermes
+except NameError:
+    is_hermes = 0
+
+#----------------------------------------------------------------
+# Import Python modules.  All except spss and spssaux are
+# included in the standard Python libraries.
+#----------------------------------------------------------------
+import spss, spssaux, string, re, os, sys, shutil, math
+
+#----------------------------------------------------------------
+# Suppress printback of submitted commands in SPSS output and
+# set unicode off to prevent ASCII data issues.
+#----------------------------------------------------------------
+spss.Submit("set printback = none.")
+spss.Submit("set unicode off.")
+
+#================================================================
+# FUNCTIONS
+#================================================================
+# Re-enable verbose output listing after running
+#----------------------------------------------------------------
+def listing():
+        spss.Submit("set printback = listing.")
+
+#----------------------------------------------------------------
+# Define cleanup function
+#----------------------------------------------------------------
+def cleanup():
+        if os.path.exists(tmpout):
+            try:
+                    shutil.rmtree(tmpout)
+                    listing()
+            except SystemError, detail:
+                    listing()
+                    raise Exception, 'Cannot delete ' + tmpout, detail
+
+#----------------------------------------------------------------
+# Define mval lookup function
+#----------------------------------------------------------------
+def is_missing( code, val1, val2, val3 ):
+        mval = 0
+        mval1 = val1
+        mval2 = val2
+        mval3 = val3
+
+        if rawMvals:
+                mvaltype = int(rawMvals[0])
+                if val1 != 'None':
+                        mval1 = float(val1)
+
+                if val2 != 'None':
+                        mval2 = float(val2)
+
+                if val3 != 'None':
+                        mval3 = float(val3)
+
+                if mvaltype == 0:
+                        if str(code) == re.sub("\.0+$", "", str(val1)) or code == re.sub("\.0+$", "", str(val2)) or code == re.sub("\.0+", "", str(val3)):
+                                mval = 1
+
+                if mvaltype > 0:
+                        if float(code) >= mval1 and float(code) <= mval2:
+                            mval = 1
+
+                if mvaltype == 2:
+                        if float(code) == mval3:
+                            mval = 1
+
+                return mval
+
+#----------------------------------------------------------------
+# Reformatting function
+#----------------------------------------------------------------
+def reformat(name, n, formattype, oldtype, width, decimals, spssdata_in):
+        dropname = 'ddd' + str(n)
+        newwidth = width
+
+        if oldtype == 'numeric':
+                spss.Submit(r"""
+                    format %(name)s (F%(width)s.%(decimals)s).
+                    execute.
+                """ %locals())
+        else:
+                ftype = 'A' + str(width)
+
+                #-------------------------------------------------------------------------
+                # CHARACTER
+                #------------------------------------------------------------------------
+                if formattype == 'Z' or formattype == 'WKDAY':
+                    oldformat = formattype + str(width)
+
+                    spss.Submit(r"""
+                        rename vars (%(name)s = ddd%(n)s).
+                        string %(name)s (A%(width)s).
+                        compute %(name)s = string(ddd%(n)s, %(oldformat)s).
+                        execute.
+                    """ %locals())
+
+                #-------------------------------------------------------------------------
+                # ADATE (mm/dd/yy) or EDATE (dd.mm.yy) or SDATE (yy/mm/dd)
+                #-------------------------------------------------------------------------
+                elif formattype == 'ADATE' or formattype == 'DATE' or formattype == 'EDATE' or formattype == 'SDATE':
+                    newwidth = 11
+                    spss.Submit(r"""
+                        rename vars (%(name)s = ddd%(n)s).
+                        string %(name)s (A%(newwidth)s).
+                        compute %(name)s =
+                           concat(char.lpad(ltrim(string(XDATE.MDAY(ddd%(n)s),f2)),2,"0"),
+                           "-",char.lpad(ltrim(string(XDATE.MONTH(ddd%(n)s),month3)),3,"0"),
+                           "-",string(XDATE.YEAR(ddd%(n)s),f4)).
+                        execute.
+                        recode %(name)s ('0.-0.-   .' = '').
+                        recode %(name)s ('0.-00.-   .' = '').
+                        recode %(name)s ('    .' = '').
+                        missing values %(name)s ('').
+                    """ %locals())
+
+                #-------------------------------------------------------------------------
+                # DATE/TIME (dd-mmm-yyyy hh:mm) or (dd-mmm-yyyy hh:mm:ss) or
+                # (dd-mmm-yyyy hh:mm:ss.ss)
+                #-------------------------------------------------------------------------
+                elif formattype == 'DATETIME':
+                    if newwidth <= 17:
+                        newwidth = 17
+                        timewidth = 5
+                    elif newwidth <= 20:
+                        newwidth = 20
+                        timewidth = 8
+                    elif newwidth <= 23:
+                        newwidth = 23
+                        timewidth = 11
+
+                    spss.Submit(r"""
+                        rename vars (%(name)s = ddd%(n)s).
+                        string %(name)s (A%(newwidth)s).
+                        compute %(name)s =
+                           concat(char.lpad(ltrim(string(XDATE.MDAY(ddd%(n)s),f2)),2,"0"),
+                           "-",char.lpad(ltrim(string(XDATE.MONTH(ddd%(n)s),month3)),3,"0"),
+                           "-",string(XDATE.YEAR(ddd%(n)s),f4),
+                           " ",char.lpad(ltrim(string(XDATE.TIME(ddd%(n)s),time%(timewidth)s.%(decimals)s)),%(timewidth)s,"0")).
+                        missing values %(name)s ('').
+                        execute.
+                    """ %locals())
+
+                    if newwidth == 17:
+                        spss.Submit(r"""
+                            recode %(name)s ('0.-0.-   . 0.:0. ' = '').
+                            recode %(name)s ('    .' = '').
+                            missing values %(name)s ('').
+                        """ %locals())
+                    elif newwidth == 20:
+                        spss.Submit(r"""
+                            recode %(name)s ('0.-00.-   . 0000000.' = '').
+                            recode %(name)s ('0.-0.-   . 0.:0.:0. ' = '').
+                            recode %(name)s ('    .' = '').
+                            missing values %(name)s ('').
+                        """ %locals())
+
+                #-------------------------------------------------------------------------
+                # DATE/TIME (dd hh:mm) or (dd hh:mm:ss) or (dd hh:mm:ss.ss)
+                # QUARTER (q Q yyyy)
+                # TIME (hh:mm) or (hh:mm:ss) or (hh:mm:ss.ss)
+                # WEEK YEAR (w WK yyyy)
+                #-------------------------------------------------------------------------
+                elif formattype == 'DTIME' or formattype == 'QYR' or formattype == 'TIME' or formattype == 'WKYR':
+                    oldfmt = formattype + str(width)
+                    if decimals > 0:
+                        oldfmt = oldfmt + "." + str(decimals)
+
+                    spss.Submit(r"""
+                        rename vars (%(name)s = ddd%(n)s).
+                        string %(name)s (A%(newwidth)s).
+                        compute %(name)s =
+                           string(ddd%(n)s, %(oldfmt)s).
+                        missing values %(name)s ('').
+                        execute.
+                    """ %locals())
+                    if formattype == 'QYR':
+                        spss.Submit(r"""
+                            recode %(name)s ('. Q    .' = '').
+                            recode %(name)s ('    .' = '').
+                            missing values %(name)s ('').
+                        """ %locals())
+                    elif formattype == 'WYR':
+                        spss.Submit(r"""
+                            recode %(name)s ('. W    .' = '').
+                            recode %(name)s ('    .' = '').
+                            missing values %(name)s ('').
+                        """ %locals())
+                    elif formattype == 'TIME' and newwidth == 5:
+                        spss.Submit(r"""
+                            recode %(name)s ('0.:0.' = '').
+                            recode %(name)s ('    .' = '').
+                            missing values %(name)s ('').
+                        """ %locals())
+
+                #-------------------------------------------------------------------------
+                # JULIAN DATE (yyyy-ddd)
+                #-------------------------------------------------------------------------
+                elif formattype == 'JDATE':
+                    newwidth = 8
+                    spss.Submit(r"""
+                        rename vars (%(name)s = ddd%(n)s).
+                        string %(name)s (A%(newwidth)s).
+                        compute %(name)s =
+                           concat(string(XDATE.YEAR(ddd%(n)s),f4),
+                           "-",char.lpad(ltrim(string(XDATE.JDAY(ddd%(n)s),f3)),3,"0")).
+                        execute.
+                        recode %(name)s ('   .-00.' = '').
+                        recode %(name)s ('    .' = '').
+                        missing values %(name)s ('').
+                        """ %locals())
+
+                #-------------------------------------------------------------------------
+                # MONTH (Oct or October)
+                #-------------------------------------------------------------------------
+                elif formattype == 'MONTH':
+                    newwidth = 9
+                    spss.Submit(r"""
+                        rename vars (%(name)s = ddd%(n)s).
+                        string %(name)s (A%(newwidth)s).
+                        compute %(name)s =
+                           char.lpad(ltrim(string(XDATE.MONTH(ddd%(n)s),month9)),9,"0").
+                        missing values %(name)s ('').
+                        execute.
+                    """ %locals())
+
+                #-------------------------------------------------------------------------
+                # MOYR (mmm-yyyy)
+                #-------------------------------------------------------------------------
+                elif formattype == 'MOYR':
+                    newwidth = 8
+                    spss.Submit(r"""
+                        rename vars (%(name)s = ddd%(n)s).
+                        string %(name)s (A%(newwidth)s).
+                        compute %(name)s =
+                           concat(char.lpad(ltrim(string(XDATE.MONTH(ddd%(n)s),month3)),3,"0"),
+                           "-",string(XDATE.YEAR(ddd%(n)s),f4)).
+                        execute.
+                        recode %(name)s ('00.-   .' = '').
+                        recode %(name)s ('    .' = '').
+                        missing values %(name)s ('').
+                    """ %locals())
+
+                #-------------------------------------------------------------------------
+                # Reapply dictionary info
+                #-------------------------------------------------------------------------
+                spss.Submit(r"""
+                    apply dictionary from = '%(spssdata_in)s'
+                        /source variable = %(name)s
+                        /target variable = %(name)s
+                        /varinfo varlabel.
+                """ %locals())
+
+        return newwidth
+
+def trimval(value_orig, var_format):
+    dpDigitV = value_orig.find(".")
+    dpDigitF = var_format.find(".")
+    if dpDigitF < 0:
+        if dpDigitV < 0:
+            return value_orig
+        else:
+            return value_orig[0:dpDigitV ]
+    else:
+        return value_orig
+
+
+#================================================================
+# MAIN SCRIPT
+#================================================================
+
+#----------------------------------------------------------------
+# Initialize variables
+#----------------------------------------------------------------
+sig_digits = 15              # SPSS limit is 15 significant digits
+sda_maxwidth = 500           # SDA maximum variable width
+start = 1                    # DDL column location
+errors = 0
+pid = os.getpid()            # Process ID
+
+#----------------------------------------------------------------
+# Temporary output directory and filenames.
+#----------------------------------------------------------------
+spsstmp = '/var/tmp/SPSStmp'
+tmpout = spsstmp + '/tmpout_' + str(pid)
+
+hdr_ddl = tmpout + '/hdr.ddl'
+tmp_ddl = tmpout + '/tmp.ddl'
+sastmp_ddl = tmpout + '/sastmp.ddl'
+caseid_ddl = tmpout + '/caseid.ddl'
+startcols = hermes_dir + '/startcols'
+varlist_out = hermes_dir + '/varlist.txt'
+statalab_out = hermes_dir + '/statacharlabs.txt'
+mvalsyntax = hermes_dir + '/mval.sps'
+widevar_out = hermes_dir + '/widevars'
+widelabel = hermes_dir + '/stata_toowide'
+spss_reapply = hermes_dir + '/spss_reapply_pres.sps'
+
+allerrs = '\n'
+
+#----------------------------------------------------------------
+# If varcase isn't upper or lower, exit
+#----------------------------------------------------------------
+if not (varcase == 'upper' or varcase == 'lower'):
+        vcprob = "\n   *** ERROR:  invalid varcase specification (must be 'upper' or 'lower'). Exiting...\n"
+        listing()
+        raise Exception, vcprob
+
+#----------------------------------------------------------------
+# If specified SPSS file doesn't exist, exit
+#----------------------------------------------------------------
+if os.path.exists(spssdata_in) == 0:
+        nofile = "\n   *** ERROR:  Specified file (" + spssdata_in + ") doesn't exist. Exiting...\n"
+        listing()
+        raise Exception, nofile
+
+#----------------------------------------------------------------
+# Generate SPSS file command based on filetype:
+#    get file (.sav)
+#----------------------------------------------------------------
+basefn, ext = os.path.splitext(spssdata_in)
+
+if ext == '.sav':
+        action = 'get'
+else:
+        listing()
+        raise Exception, 'SPSS data file (' + spssdata_in + ') must have a .sav extension\n'
+
+command = action + ' file="' + spssdata_in + '".'
+
+#----------------------------------------------------------------
+# Specified SPSS file exists and is properly named; proceed.
+# Make temp directory called tmpout unless it already exists.
+#----------------------------------------------------------------
+if os.path.exists(tmpout) == 0:
+        try:
+                os.mkdir(tmpout)
+        except SystemError, detail:
+                listing()
+                raise Exception, 'Cannot mkdir tmpout: ', detail
+
+#----------------------------------------------------------------
+# Open input data file using get/import file command
+#----------------------------------------------------------------
+try:
+        spss.Submit(command)
+except:
+        cleanup()
+        raise Exception, "Couldn't " + command
+
+#----------------------------------------------------------------
+# Format variables to widest possible write format based on
+# actual data, if different
+#----------------------------------------------------------------
+#FORMAT START
+try:
+        spss.Submit(r"""
+        FORMAT
+           LAR_COUNT (F7)
+  .
+        ALTER TYPE
+           RESPONDENT_CITY_TS (A22)
+           PARENT_CITY_TS (A22)
+           RESPONDENT_CITY_PANEL (A24)
+        """)
+except:
+        cleanup()
+        raise Exception, "Problem applying new formats"
+#FORMAT END
+
+#-----------------------------------------------------------------
+# Check up front for data file with 0 records.
+#-----------------------------------------------------------------
+recordcount = spss.GetCaseCount()
+
+if recordcount == 0:
+        allerrs = '   ***ERROR:  ' + spssdata_in + ' has 0 records.\n'
+        cleanup()
+        errlog = open(errorlog, "a")
+        errlog.write(allerrs + '\n')
+        errlog.write('              Unable to process Study ' + study + ' Dataset ' + part + '...\n')
+        errlog.close()
+        raise ValueError, allerrs
+
+#----------------------------------------------------------------
+# Begin header info
+#----------------------------------------------------------------
+hdrout = open(hdr_ddl, "w")
+hdrout.write('path         = .\n')
+hdrout.write('title        = ' + title + '\n')
+hdrout.write('charset      = ' + charset + '\n')
+hdrout.write('records/case = 1\n')
+
+#----------------------------------------------------------------
+# Temporary DDL variable output file
+#----------------------------------------------------------------
+ddlout = open(tmp_ddl, "w")
+
+#----------------------------------------------------------------
+# Write out DDL with SAS value labels with embedded codes
+#----------------------------------------------------------------
+sasddlout = open(sastmp_ddl, "w")
+
+#----------------------------------------------------------------
+# Write out variables and start columns
+#----------------------------------------------------------------
+startcolsout = open(startcols, "w")
+
+#----------------------------------------------------------------
+# Write out SPSS syntax to reapply specified formats and
+# measurement levels
+#----------------------------------------------------------------
+reapply = open(spss_reapply, "w")
+
+if preserve_fmts == 1:
+        reapply.write("FORMAT\n")
+
+#----------------------------------------------------------------
+# Write out temp varlist
+#----------------------------------------------------------------
+vlout = open(varlist_out, "w")
+
+#----------------------------------------------------------------
+# Note variable widths exceeding SDA limit
+#----------------------------------------------------------------
+widevars = open(widevar_out, "w")
+
+#----------------------------------------------------------------
+# Note character variables with value labels (no Stata can be
+# produced)
+#----------------------------------------------------------------
+statacharlabs = open(statalab_out, "w")
+
+#----------------------------------------------------------------
+# Note variables with wide numeric categories for which a value
+# label has been assigned (no Stata can be produced)
+#----------------------------------------------------------------
+stata_toowide = open(widelabel, "w")
+
+#----------------------------------------------------------------
+# Write out SPSS missing values syntax directly
+#----------------------------------------------------------------
+mvals = open(mvalsyntax, "w")
+
+#----------------------------------------------------------------
+# Regular expression for splitting SPSS formats into
+# type, width, and decimals (e.g., F8.2)
+#----------------------------------------------------------------
+splitter = re.compile(r'^([A-Z]+)([0-9]+)\.*([0-9]+)*$')
+
+#----------------------------------------------------------------
+# Pattern for acceptable variable names
+#----------------------------------------------------------------
+pattern = re.compile(r'[^A-Za-z0-9_]')
+badnames = 0
+
+#----------------------------------------------------------------
+# Display n
+#----------------------------------------------------------------
+spss.Submit("show n.")
+
+#----------------------------------------------------------------
+# Loop through variables
+#----------------------------------------------------------------
+for i in range(spss.GetVariableCount()):
+        n = i + 1
+        myddl = ddlout
+        has_labels = 0
+
+        #----------------------------------------------------------------
+        # Get variable measurement level for R factors
+        #----------------------------------------------------------------
+        varlevel = spss.GetVariableMeasurementLevel(i)
+
+        #----------------------------------------------------------------
+        # Get field information for DDL file
+        #----------------------------------------------------------------
+        if varcase == 'upper':
+                name = spss.GetVariableName(i).upper()
+        elif varcase == 'lower':
+                name = spss.GetVariableName(i).lower()
+
+        label =  spss.GetVariableLabel(i)
+        label = re.sub('^ *$','', label)
+
+        if name == 'caseid':
+                name = 'CASEID'
+
+        if not label:
+                label = name
+
+        if n == 1:
+                if caseid_exists == 0:
+                        vlout.write('CASEID\n')
+                varlist = '   ' + name
+        else:
+                varlist = varlist + '\n   ' + name
+
+        vlout.write(name + '\n')
+
+        #-----------------------------------------------------------------
+        # Check up front for variable names with illegal characters.
+        # SAS can only accept [A-Za-z0-9_].
+        #-----------------------------------------------------------------
+        badfound = pattern.search(name)
+        if badfound:
+                errmsg = '   ***ERROR: ' + name + ' contains one or more illegal characters for SAS.\n(   Legal characters are:  A-Z, a-z, 0-9, and _).  Please rename.\n'
+                errors = errors + 1
+                allerrs = allerrs + errmsg
+
+        #-----------------------------------------------------------------
+        # Check up front for variable names with illegal names (SPSS
+        # reserved words).
+        #-----------------------------------------------------------------
+        resnames = ['ALL', 'AND', 'BY', 'EQ', 'GE', 'GT', 'LE', 'LT', 'NE', 'NOT', 'OR', 'TO', 'WITH', 'PRN', 'CON', 'NUL', 'KBDS', 'PRN', 'COM1', 'COM2', 'COM3', 'COM4', 'COM5', 'COM6', 'COM7', 'COM8', 'COM9', 'LPT1', 'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 'LPT7', 'LPT9', 'LPT9' ]
+
+        for var in resnames:
+                if name.upper() == var:
+                        errmsg = '***ERROR: ' + name.upper() + ' is a reserved word in SPSS or SAS.  Please rename variable.\n'
+                        errors = errors + 1
+                        allerrs = allerrs + errmsg
+
+        #----------------------------------------------------------------
+        # SDA requires all variables to be formatted as numeric or
+        # character only.
+        #----------------------------------------------------------------
+        printformat = spss.GetVariableFormat(i)
+        rawformat = splitter.search(printformat)
+
+        formattype = rawformat.group(1)
+        oldwidth = rawformat.group(2)
+        width = int(oldwidth)
+        newwidth = width
+
+        decimals = rawformat.group(3)
+
+        if decimals <= 0:
+                decimals = 0
+
+        print "var = " + name + ", formattype = " + formattype + ", decimals = " + str(decimals) + "\n"
+
+        if name == 'CASEID' and formattype != 'F':
+                errmsg = '   ***ERROR:  CASEID must numeric.\n'
+                errors = errors + 1
+                allerrs = allerrs + errmsg
+                break
+
+        if name == 'CASEID' and decimals > 0:
+                errmsg = '   ***ERROR:  CASEID must be an integer. Please reformat CASEID with 0 decimal places.\n'
+                errors = errors + 1
+                allerrs = allerrs + errmsg
+                break
+
+        #----------------------------------------------------------------
+        # Report variables exceeding SDA variable width limit
+        #----------------------------------------------------------------
+        if width > sda_maxwidth:
+                widevars.write(name + ' (width = ' + str(width) + ')\n')
+
+        #----------------------------------------------------------------
+        # Automatically reformat non-alphanumeric variables if at all
+        # possible.  Applicable format types are listed in 'numericfmts'
+        # and 'charfmts' arrays.
+        #----------------------------------------------------------------
+        numericfmts = [ 'F', 'CC', 'COMMA', 'DOLLAR', 'E', 'N', 'PCT' ]
+        charfmts = [ 'A', 'WKDAY', 'Z' ]
+        datefmts = [ 'ADATE', 'DATE', 'DATETIME', 'DTIME', 'EDATE', 'JDATE', 'MONTH', 'MOYR', 'SDATE', 'TIME', 'QYR', 'WKYR' ]
+
+        vartype = 0
+        fromdate = 0
+        for fmt in numericfmts:
+                if formattype == fmt:
+                        newwidth = width
+                        oldtype = 'numeric'
+                        vartype = 'numeric'
+                        mvaltag = 'md'
+                        if fmt == 'COMMA' or fmt == 'DOLLAR' or fmt == 'PCT':
+                                newwidth = reformat(name, n, formattype, oldtype, width, decimals, spssdata_in)
+                        break
+
+        if vartype == 0:
+                for fmt in charfmts:
+                        if formattype == fmt:
+                                newwidth = width
+                                oldtype = 'character'
+                                vartype = 'character'
+                                mvaltag = 'md_c'
+                                if fmt == 'Z' or fmt == 'WKDAY':
+                                        newwidth = reformat(name, n, formattype, oldtype, width, decimals, spssdata_in)
+                                if preserve_fmts == 1:
+                                        reapply.write("    " + name + " (A" + str(newwidth) + ") /\n")
+                                break
+
+        if vartype == 0:
+                for fmt in datefmts:
+                        if formattype == fmt:
+                                fromdate = 1
+                                oldtype = 'date'
+                                width = width
+                                vartype = 'character'
+                                mvaltag = 'md_c'
+                                newwidth = reformat(name, n, formattype, oldtype, width, decimals, spssdata_in)
+                                if preserve_fmts == 1:
+                                        reapply.write("    " + name + " (A" + str(newwidth) + ") /\n")
+                                break
+
+        #----------------------------------------------------------------
+        # User will need to reformat all other variables in SPSS
+        #----------------------------------------------------------------
+        if vartype == 0:
+                vartype = 'other'
+                errmsg = '   ***ERROR: ' + name + ' is formatted as ' + formattype + '. SDA requires numeric or character formats.\n'
+                errors = errors + 1
+                allerrs = allerrs + errmsg
+                continue
+
+        #-----------------------------------------------------------------
+        # Check up front for numeric variables with > 15 significant digits
+        # (SPSS limitation) and not enough decimals to rescale down to 15.
+        #-----------------------------------------------------------------
+        if vartype == 'numeric' and int(width) > sig_digits:
+                rescale = 0
+                rescalevar = re.compile(r'^rescale *= *y', re.IGNORECASE)
+
+                for line in file(hermes_cfg):
+                        if rescalevar.search(line):
+                                rescale = 1
+
+                if rescale == 0:
+                        errmsg = '***ERROR: ' + name + ' has more than ' + str(sig_digits) + ' significant digits and you have blocked rescaling\n'
+                        errors = errors + 1
+                        allerrs = allerrs + errmsg
+
+                if rescale == 1:
+                        #-----------------------------------------------------------------
+                        # Determine rescalability mathematically: width - sig_digits - decimals.
+                        # If <= 0, then enough decimals to rescale.
+                        #-----------------------------------------------------------------
+                        rescalable = int(newwidth) - sig_digits - int(decimals)
+                        if rescalable > 0:
+                                errmsg = '***ERROR: ' + name + ' has more than ' + str(sig_digits) + ' significant digits and cannot be rescaled\n'
+                                errors = errors + 1
+                                allerrs = allerrs + errmsg
+                        else:
+                                print "***NOTE: " + name + " will be rescaled"
+                                newwidth = sig_digits
+                                decimals = abs(rescalable)
+                                reformat(name, n, formattype, oldtype, newwidth, decimals, spssdata_in)
+
+        if vartype == 'numeric' and preserve_fmts == 1:
+                reapply.write("    " + name + " (F" + str(newwidth) + "." + str(decimals) + ") /\n")
+
+        #-----------------------------------------------------------------
+        # Check for carriage returns and line feeds in string variables
+        # and replace with one space.
+        #-----------------------------------------------------------------
+        if vartype == 'character':
+                spss.Submit(r"""
+                    COMPUTE hascr = CHAR.INDEX(%(name)s,string(10, ib1)).
+                    COMPUTE haslf = CHAR.INDEX(%(name)s,string(13, ib1)).
+
+                    DO IF (hascr > 0).
+                    COMPUTE %(name)s = replace(%(name)s, string(10, ib1),' ').
+                       DO IF (haslf > 0).
+                       COMPUTE %(name)s = replace(%(name)s, string(13, ib1),'').
+                       END IF.
+                    ELSE IF (haslf > 0).
+                    COMPUTE %(name)s = replace(%(name)s, string(13, ib1),' ').
+                    END IF.
+                """ %locals())
+
+
+        if errors == 0:
+                #----------------------------------------------------------------
+                # Save CASEID to be displayed first in the final DDL
+                #----------------------------------------------------------------
+                if name == 'CASEID':
+                        caseidout = open(caseid_ddl, "w")
+                        myddl = caseidout
+                elif is_hermes == 1:
+                        sasddlout.write('*\nname = ' + name)
+                        sasddlout.write('\nlabel = ' + label)
+                        sasddlout.write('\ntype = ' + vartype)
+                        sasddlout.write('\ncolumn = ' + str(start))
+                        sasddlout.write('\nwidth = ' + str(newwidth))
+
+                #----------------------------------------------------------------
+                # Write out rest of temporary DDL file
+                #----------------------------------------------------------------
+                myddl.write('*\nname = ' + name)
+                myddl.write('\nlabel = ' + label)
+                myddl.write('\ntype = ' + vartype)
+                myddl.write('\ncolumn = ' + str(start))
+                myddl.write('\nwidth = ' + str(newwidth))
+
+                if decimals > 0 and vartype == 'numeric':
+                        myddl.write('\ndecimals = ' + str(decimals))
+                        if is_hermes == 1:
+                                sasddlout.write('\ndecimals = ' + str(decimals))
+
+                startcolsout.write(name + ';' + str(start) + '\n')
+
+                #----------------------------------------------------------------
+                # Translate SPSS missing value range indicators to SDA DDL
+                # syntax.
+                #----------------------------------------------------------------
+                rawMvals=spssaux.GetMissingValues2(i)
+
+                #----------------------------------------------------------------
+                # The first element of the returned tuple (rawMvals[0]) indicates
+                # the type of the associated triple:
+                #
+                #    0 = simple values
+                #    1 = range
+                #    2 = range plus one additional missing value
+                #----------------------------------------------------------------
+                type = str(rawMvals[0])
+                type = re.sub(' *$','', type)
+
+                #----------------------------------------------------------------
+                # The second through 4th elements of the tuple contain the
+                # values of the triple:
+                #
+                # If type = 0 (simple values):
+                #    rawMvals[1] = first missing value
+                #    rawMvals[2] = second missing value, if present
+                #    rawMvals[3] = third missing value, if present
+                #
+                # If type = 1 (range):
+                #    rawMvals[1] = lowest missing value in range
+                #    rawMvals[2] = highest missing value in range
+                #    rawMvals[3] = unused
+                #
+                # If type = 2 (range plus one additional missing value):
+                #    rawMvals[1] = lowest missing value in range
+                #    rawMvals[2] = highest missing value in range
+                #    rawMvals[3] = additional discrete missing value
+                #----------------------------------------------------------------
+                val1 = str(rawMvals[1])
+                val1 = re.sub(' *$','', val1)
+                val2 = str(rawMvals[2])
+                val2 = re.sub(' *$','', val2)
+                val3 = str(rawMvals[3])
+                val3 = re.sub(' *$','', val3)
+
+                #----------------------------------------------------------------
+                # Lowest in 'low thru n' missing value range is represented as
+                #      -1.79769313486e+308 in the tuple
+                #
+                # Highest in 'n thru high' missing value range is represented as
+                #      1.79769313486e+308 in the tuple
+                #----------------------------------------------------------------
+                lowval = '-1.79769313486e+308'
+                hival = '1.79769313486e+308'
+                spssMvals = ''
+                ddlMvals = ''
+
+                #----------------------------------------------------------------
+                # type = 0 (simple values):
+                #----------------------------------------------------------------
+                if rawMvals[0] == 0 and not (val1 == 'None'):
+                    if vartype == 'numeric':
+                        spssMvals = trimval(val1,printformat)
+                        if not(val2 == 'None'):
+                            spssMvals += ", "
+                            spssMvals += trimval(val2,printformat)
+                            if not(val3 == 'None'):
+                                spssMvals += ", "
+                                spssMvals += trimval(val3,printformat)
+                    elif vartype == 'character' and len(val1) > 0:
+                         myquote = "'"
+                         if val1.find("'") > -1:
+                            myquote = '"'
+
+                         spssMvals = myquote + val1 + myquote
+                         if not(val2 == 'None'):
+                            myquote = "'"
+                            if val2.find("'") > -1:
+                                myquote = '"'
+                            spssMvals += ","
+                            spssMvals += myquote + val2 + myquote
+
+                         if not(val3 == 'None'):
+                             myquote = "'"
+                             if val3.find("'") > -1:
+                                 myquote = '"'
+
+                             spssMvals += ","
+                             spssMvals += myquote + val3 + myquote
+
+                    ddlMvals = spssMvals
+                #----------------------------------------------------------------
+                # type = 1 or 2 (containing a missing value range)
+                #----------------------------------------------------------------
+                elif rawMvals[0] == 1 or rawMvals[0] == 2 and vartype == 'numeric':
+                    if val1 == lowval:
+                        spssMvals = "low thru " + trimval(val2,printformat)
+                    elif str(rawMvals[2]) == str(hival):
+                        spssMvals = trimval(val1,printformat) + " thru high"
+                    else:
+                        spssMvals = trimval(val1,printformat) + " thru " + trimval(val2,printformat)
+
+                    if rawMvals[0] == 2:
+                        spssMvals += ", "
+                        spssMvals += trimval(val3,printformat)
+
+                    ddlMvals = string.replace(spssMvals, "low thru ", "*-")
+                    ddlMvals = string.replace(ddlMvals, " thru high", "-*")
+                    ddlMvals = string.replace(ddlMvals, " thru ", "-")
+
+                if fromdate == 1:
+                    ddlMvals = '""'
+                    spssMvals = "' '"
+
+                if len(spssMvals) > 0:
+                    mvals.write( '     ' + name + ' (' + spssMvals + ') /\n' )
+
+                if len(ddlMvals) > 0:
+                    myddl.write('\n' + mvaltag + ' = ' + ddlMvals)
+                    if is_hermes == 1:
+                                sasddlout.write('\n' + mvaltag + ' = ' + ddlMvals)
+
+                #----------------------------------------------------------------
+                # Value labels
+                #----------------------------------------------------------------
+                catlabels = spssaux.GetValueLabels(i)
+
+                if catlabels and fromdate != 1:
+                      myddl.write('\ncatlabels = \n')
+                      if is_hermes == 1:
+                                sasddlout.write('\ncatlabels = \n')
+
+                      codes = catlabels.keys()
+                      codes.sort()
+
+                      if vartype == 'numeric':
+                                ncatlabels = []
+                                codes.sort(key=float)
+                                for code in codes:
+                                        ismiss = is_missing( code, val1, val2, val3 )
+                                        if ismiss == 0:
+                                                ncatlabels.append(float(code))
+
+                                if len(ncatlabels) > 0:
+                                        hi_code = (sorted(ncatlabels)[-1])
+                                        hi_code = int(math.floor(hi_code))
+                                        hi_code_width = len(str(hi_code))
+
+                      for code in codes:
+                                sascode = code
+                                catlabel = catlabels[code]
+                                catwidth = len(code)
+
+                                if catwidth > 9 and vartype == 'numeric':
+                                        stata_toowide.write(name + ": " + code + " (width = " + str(catwidth) + ")\n")
+
+                                if catlabel:
+                                        if vartype == 'character':
+                                                sq = re.compile("^'+$")
+                                                m = sq.match(code)
+                                                if m:
+                                                      code = re.sub('^', '"', code)
+                                                      code = re.sub('$', '"', code)
+                                                else:
+                                                      code = string.replace(code, "'", "''")
+                                                      code = re.sub('^', "'", code)
+                                                      code = re.sub('$', "'", code)
+                                        scode = code
+
+                                        if vartype == 'numeric' and len(ncatlabels) > 0:
+                                                wh = int(float(scode))
+                                                fr = float(scode) - wh
+
+                                                if fr > 0:
+                                                    fr = re.sub('^0+\.', '.', str(fr) )
+                                                    wh = str(wh).zfill(hi_code_width)
+                                                    scode = str(wh) + str(fr)
+                                                else:
+                                                    scode = code.zfill(hi_code_width)
+
+                                        sascatlabel = re.sub('^', "(" + scode + ") ", catlabel )
+                                        sascatlabel = re.sub("\('", "(", sascatlabel)
+                                        sascatlabel = re.sub("'\)", ")", sascatlabel)
+
+                                        myddl.write("            " + code + " " + catlabel + "\n")
+                                        if is_hermes == 1:
+                                                sasddlout.write("            " + code + " " + sascatlabel + "\n")
+
+                                        if vartype == 'character':
+                                                statacharlabs.write("         " + name + "\n")
+                else:
+                      myddl.write('\n')
+                      if is_hermes == 1:
+                                sasddlout.write('\n')
+
+                #----------------------------------------------------------------
+                # Calculate next start column based on width of variable just
+                # added
+                #----------------------------------------------------------------
+                start = start + int(newwidth)
+
+                if name == 'CASEID':
+                        myddl.close()
+
+myddl.close()
+if is_hermes == 1:
+        sasddlout.close()
+
+reapply.close()
+stata_toowide.close()
+
+#----------------------------------------------------------------
+# Clean up and exit here if errors
+#----------------------------------------------------------------
+if errors > 0:
+        hdrout.close()
+        cleanup()
+        errlog = open(errorlog, "w")
+        errlog.write(allerrs + '\n')
+        errlog.write('              Unable to process Study ' + study + ' Dataset ' + part + '...\n')
+        errlog.close()
+
+        allerrs = allerrs + '\n              Unable to process Study ' + study + ' Dataset ' + part + '...\n'
+        raise Exception, allerrs
+
+#----------------------------------------------------------------
+# If CASEID doesn't exist in data file, create one
+#----------------------------------------------------------------
+if os.path.exists(caseid_ddl) == 0:
+        nocaseid = open(hermes_dir + '/nocaseid', "w")
+        nocaseid.close()
+
+        ccount = spss.GetCaseCount()
+        casecount = str(ccount)
+        cwidth = len( casecount )
+        cidwidth = str(cwidth)
+
+        #----------------------------------------------------------------
+        # Compute variable
+        #----------------------------------------------------------------
+        spss.Submit("compute CASEID = $casenum.")
+        spss.Submit("format CASEID (F" + cidwidth + ".0).")
+        spss.Submit("variable label CASEID 'CASE IDENTIFICATION NUMBER'.")
+
+        #----------------------------------------------------------------
+        # DDL definition
+        #----------------------------------------------------------------
+        caseidout = open(caseid_ddl, "w")
+        caseidout.write('*\nname = CASEID')
+        caseidout.write('\nlabel = CASE IDENTIFICATION NUMBER')
+        caseidout.write('\ntype = numeric')
+        caseidout.write('\ncolumn = ' + str(start))
+        caseidout.write('\nwidth = ' + str(cwidth))
+        caseidout.write('\n')
+        caseidout.close()
+        startcolsout.write('CASEID;' + str(start) + '\n')
+
+        start = start + cwidth
+        varlist_sda = varlist + '\n   ' + 'CASEID'
+
+        if addcaseid == 'y':
+             varlist = varlist_sda
+
+
+startcolsout.close()
+mvals.close()
+statacharlabs.close()
+vlout.close()
+widevars.close()
+
+#----------------------------------------------------------------
+# Calculate LRECL and add to DDL header
+#----------------------------------------------------------------
+reclen = start - 1
+hdrout.write('reclen       = ' + str(reclen) + '\n')
+hdrout.close()
+
+#----------------------------------------------------------------
+# Combine DDL pieces into one
+#----------------------------------------------------------------
+try:
+        ddlout = open(ddlfile_out,'w')
+
+        chunks = [hdr_ddl, caseid_ddl, tmp_ddl]
+
+        for i in range(len(chunks)):
+             ddlout.write( open(chunks[i]).read() )
+        ddlout.close()
+
+except SystemError, detail:
+        cleanup()
+        raise Exception, 'Cannot combine DDL files: ', detail
+
+#----------------------------------------------------------------
+# Combine SAS DDL pieces into one
+#----------------------------------------------------------------
+if is_hermes == 1:
+        try:
+                sasddlout = open(sasddlfile_out,'w')
+
+                chunks = [hdr_ddl, caseid_ddl, sastmp_ddl]
+
+                for i in range(len(chunks)):
+                     sasddlout.write( open(chunks[i]).read() )
+                sasddlout.close()
+
+        except SystemError, detail:
+                cleanup()
+                raise Exception, 'Cannot combine DDL files: ', detail
+
+#----------------------------------------------------------------
+# Write out archival version of ASCII data file
+#----------------------------------------------------------------
+try:
+        spss.Submit(r"""
+        write outfile = '%(asciidata_out)s' table /
+           %(varlist)s
+           .
+        """ %locals())
+
+        spss.Submit("execute.")
+
+except:
+        cleanup()
+        raise Exception, "Couldn't write out ASCII data (" + asciidata_out + ")"
+
+#----------------------------------------------------------------
+# Write out SDA version of ASCII data file if different from
+# archival version because of CASEID variable
+#----------------------------------------------------------------
+if addcaseid == 'n' and caseid_exists == 0:
+    try:
+            spss.Submit(r"""
+            write outfile = '%(sda_ascii_out)s' table /
+               %(varlist_sda)s
+               .
+            """ %locals())
+
+            spss.Submit("execute.")
+
+    except:
+            cleanup()
+            raise Exception, "Couldn't write out SDA ASCII data (" + sda_ascii_out + ")"
+
+#----------------------------------------------------------------
+# Successful run; clean up and exit Python program block.
+#----------------------------------------------------------------
+cleanup()
+
+print "-------------------------------\n"
+print "Done!  Conversion successful\n"
+print "-------------------------------\n"

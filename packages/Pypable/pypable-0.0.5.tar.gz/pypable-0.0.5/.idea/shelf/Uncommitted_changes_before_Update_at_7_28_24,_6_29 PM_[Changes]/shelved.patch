@@ -1,0 +1,19 @@
+Index: pyproject.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[build-system]\nrequires = [\"hatchling\"]\nbuild-backend = \"hatchling.build\"\n\n[project]\nname = \"Pypable\"\nversion = \"1.0.0\"\nauthors = [\n  { name=\"Faelin\", email=\"faelin.codes@gmail.com\" },\n]\ndescription = \"A toolset for piping values between functions, with optional shell-like text-processing tools.\"\nreadme = \"README.md\"\nrequires-python = \">=3.7\"\nclassifiers = [\n    \"Programming Language :: Python :: 3\",\n    \"License :: OSI Approved :: MIT License\",\n    \"Operating System :: OS Independent\",\n]\n\n[project.urls]\nHomepage = \"https://github.com/faelin/Pypable\"\nIssues = \"https://github.com/faelin/Pypable/issues\"
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml	(revision 3795f85f2a442250c2531e7fd7d7ae6aec2005d5)
++++ b/pyproject.toml	(date 1722205666917)
+@@ -4,7 +4,7 @@
+ 
+ [project]
+ name = "Pypable"
+-version = "1.0.0"
++version = "1.0.1"
+ authors = [
+   { name="Faelin", email="faelin.codes@gmail.com" },
+ ]

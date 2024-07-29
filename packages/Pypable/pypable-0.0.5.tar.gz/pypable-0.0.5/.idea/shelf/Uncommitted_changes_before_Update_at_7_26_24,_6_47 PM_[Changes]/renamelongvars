@@ -1,0 +1,533 @@
+#!/bin/sh
+PATH=/usr/bin:/bin:/opt/icpsr/bin
+
+##-------------------------------------------------------------------------
+## Copyright (c) 2007
+## Regents of the University of Michigan.  All rights reserved.
+##
+## renamelongvars
+##
+## $Id: renamelongvars,v 1.15 2015/09/24 16:34:48 overcash Exp $
+##
+##-------------------------------------------------------------------------
+## Component script of the Hermes System.  Renames variables having names
+## of > current maximum characters to unique max-character names.
+##-------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------
+# Get varlist and data file specifications from command line args
+#-------------------------------------------------------------------------
+while getopts "c:s:hp:v:" opt
+do
+    case $opt in
+        c ) CHARACTERS=$OPTARG ;;
+        s ) STUDYPART=$OPTARG ;;
+        p ) PID=$OPTARG ;;
+        h ) HERMES=1;;
+        v ) varlist=$OPTARG ;;
+    esac
+done
+
+tmp=/var/tmp
+
+if [ ! "$PID" ]
+then
+    PID=$$
+    tmpout=${tmp}
+    taken=$tmpout/takenvars_${PID}
+else
+    if [ ! "$tmpout" ]
+    then
+        tmpout=${tmp}/hermes${STUDYPART}_${PID}
+    fi
+    taken=$tmpout/takenvars
+    mval=$tmpout/mval.sps
+    ddiwidths=$tmpout/ddiwidths
+    varlevels=$tmpout/varlevels
+    sasddl=$tmpout/sasmerge2.ddl
+    ddl=$tmpout/merge2.ddl
+    pre_long_num=$tmpout/pre_long_num.sps
+    pre_long_char=$tmpout/pre_long_char.sps
+    post_short_sas=$tmpout/post_short.sas
+    post_short_r=$tmpout/post_short.R
+    reapply_pres=$tmpout/spss_reapply_pres.sps
+    reapply_write_spss=$tmpout/reapply_write.sps
+    reapply_print_spss=$tmpout/reapply_print.sps
+    reapply_print_stata=$tmpout/reapply_print.do
+    rfactors=$tmpout/rfactors
+    sasfmts=$tmpout/fmt
+fi
+
+#-----------------------------------------------------------------
+# Usage
+#-----------------------------------------------------------------
+if [ ! -f "$varlist" ]
+then
+      echo
+      echo "Usage:  renamelongvars -v varlistfile"
+      echo
+      exit 1
+fi
+
+#-----------------------------------------------------------------
+# Set min and max number of characters.  Max is determined by the
+# lowest common denominator among stat packages.
+# Min is the width of the number of variables + 2.  This will
+# allow for a one-character prefix, followed by _###.
+#-----------------------------------------------------------------
+MAXCHARS=32                        # Current maximum based on SDA
+VARCOUNT=`countlines < "$varlist"`
+WIDTH=`echo "$VARCOUNT" | wc -L`
+MINCHARS=`expr "$WIDTH" + 2`
+
+#-----------------------------------------------------------------
+# Set default number of characters if not set with command line
+# argument.
+#-----------------------------------------------------------------
+if [ "$CHARACTERS" ]
+then
+    if [ "$CHARACTERS" -gt "$MAXCHARS" ]
+    then
+        echo
+        echo "Error:  Variable names cannot exceed ${MAXCHARS} characters."
+        echo
+        exit 1
+    elif [ "$CHARACTERS" -lt "$MINCHARS" ]
+    then
+        echo
+        echo "Error:  Variable names must be at least ${MINCHARS} characters"
+        echo "        for a data file with ${VARCOUNT} variables."
+        echo
+        exit 1
+    fi
+else
+    CHARACTERS=${MAXCHARS}
+fi
+
+#-----------------------------------------------------------------
+# Number of characters to use in variable name 'prefix'
+#-----------------------------------------------------------------
+PREFIX=`expr "${CHARACTERS}" - 2`
+
+#-----------------------------------------------------------------
+# Number of characters that would be too long
+#-----------------------------------------------------------------
+TOOLONG=`expr "${CHARACTERS}" + 1`
+
+#-----------------------------------------------------------------
+# Set output filenames.  If infile name passed from Hermes, use.
+#-----------------------------------------------------------------
+if [ "$STUDYPART" ]
+then
+    remaps=doc${STUDYPART}_renamed.txt
+    ddl=merge2.ddl
+
+    if [ "${rename}" ]
+    then
+        ddl="${rename}"
+    fi
+else
+    remaps=renamedvars.txt
+    ddl=merge2.ddl
+fi
+
+longvarnames=`grep "^.\{$TOOLONG\}" ${varlist} | grep -v '^2*\*\*'`
+
+#-----------------------------------------------------------------
+# Are there any long variable names here?
+#-----------------------------------------------------------------
+if [ "$longvarnames" ]
+then
+    #-----------------------------------------------------------------
+    # Grab all variable names that are ${CHARACTERS} characters or
+    # less and flag as 'taken' (to avoid collision with auto-generated
+    # variable names).
+    #-----------------------------------------------------------------
+    sed 's/ //g' ${varlist} | grep "^.\{1,$CHARACTERS\}"'$' | grep -v '^2*\*\*'  > $taken
+
+    echo "     Renaming long variables to ${CHARACTERS} characters..."
+
+    #-----------------------------------------------------------------
+    # Begin documenting remaps
+    #-----------------------------------------------------------------
+    echo > $remaps
+
+    if [ "$INFILE" ]
+    then
+        echo "Filename:  $INFILE" >> $remaps
+        echo >> $remaps
+    fi
+
+    echo '------------------------------' >> $remaps
+    echo 'Abbreviated variable mappings' >> $remaps
+    echo '------------------------------' >> $remaps
+    echo >> $remaps
+    echo 'ABBREVIATED              LONG ORIGINAL' >> $remaps
+    echo '-----------              -------------' >> $remaps
+
+    #-----------------------------------------------------------------
+    # Determine unique abbreviated variable name beginnings
+    #-----------------------------------------------------------------
+    abbrs=`echo "$longvarnames" | sort | cut -c1-${PREFIX} | uniq`
+
+    for abbr in `echo "$abbrs"`
+    do
+          #-----------------------------------------------------------------
+          # Find all long varnames beginning with each $PREFIX-character
+          # string.
+          #-----------------------------------------------------------------
+          vars=`grep "^$abbr" $varlist | grep "^.\{$TOOLONG\}"`
+          numvars=`echo "$vars" | countlines`
+          abbr_used=`grep "^$abbr" $varlist | grep "^.\{$CHARACTERS\}"`
+
+          #-----------------------------------------------------------------
+          # If only 1 variable found, just truncate to $CHARACTERS
+          # characters and mark as 'taken'.
+          #-----------------------------------------------------------------
+          if [ "$numvars" -eq 1 -a ! "$abbr_used" ]
+          then
+              oldvar="$vars"
+              newvar=`echo "$oldvar" | cut -c1-${CHARACTERS}`
+              echo "        New: $newvar    Old: $oldvar"
+              echo "$newvar   <-->  $oldvar" >> $remaps
+              echo "$newvar" >> $taken
+          #-----------------------------------------------------------------
+          # Initialize counter variables
+          #-----------------------------------------------------------------
+          else
+              i=1                # Variable count; number to append to variable name as '_$i'
+              j="${PREFIX}"      # Number of characters in core variable name, based on variable count
+                                 # ( = $CHARACTERS - 2 )
+
+              e=1                # Power of 10, which determines how many characters to use
+                                 # in the core variable name.  As $i reaches 10 ^ $e,
+                                 # $j will decrement by 1 to accommodate an additional digit
+                                 # in the new variable name.
+
+              #-----------------------------------------------------------------
+              # Determine new 32-character variable name
+              #-----------------------------------------------------------------
+              for oldvar in `echo "$vars"`
+              do
+                    OK=
+
+                    #-----------------------------------------------------------------
+                    # Keep trying variable names, incrementing suffix by 1, until
+                    # finding one that isn't already used.
+                    #-----------------------------------------------------------------
+                    until [ "$OK" ]
+                    do
+                        corename=`echo "$abbr" | cut -c1-$j`
+                        newvar="${corename}_${i}"
+                        found=`grep "^$newvar"'$' $taken`
+
+                        if [ ! "$found" ]
+                        then
+                            echo "     New: $newvar    Old: $oldvar"
+                            echo "$newvar   <-->  $oldvar" >> $remaps
+                            echo "$newvar" >> $taken
+                            OK=1
+                        fi
+                        i=`expr "$i" + 1`
+
+                        #-----------------------------------------------------------------
+                        # If count has reached a power of 10, increment $e (exponent) by 1
+                        # and decrement the number of characters ($j) used in core variable
+                        # string ($abbr) by 1.  Recompute $abbr with one less character.
+                        #-----------------------------------------------------------------
+                        if [ "$i" -eq `echo "10^${e}" | bc` ]
+                        then
+                             j=`expr "$j" - 1`
+                             e=`expr "$e" + 1`
+                             abbr=`echo "$abbr" | cut -c1-$j`
+                        fi
+                    done
+              done
+          fi
+    done
+
+    #-----------------------------------------------------------------
+    # Grab contents of scratch files to be update and make back up
+    #-----------------------------------------------------------------
+    #-----------------------------------------------------------------
+    # varlist.txt
+    #-----------------------------------------------------------------
+    vlcontents=`dos2unix < "$varlist"`
+    mv "$varlist" "${varlist}-old"
+
+    #-----------------------------------------------------------------
+    # SPSS missing values
+    #-----------------------------------------------------------------
+    if [ -f "$mval" ]
+    then
+        mvalcontents=`cat "$mval"`
+        mv "$mval" "$mval"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SDA DDL
+    #-----------------------------------------------------------------
+    if [ -f "$ddl" ]
+    then
+        ddlcontents=`cat "$ddl"`
+        mv "$ddl" "$ddl"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SAS merge DDL
+    #-----------------------------------------------------------------
+    if [ -f "$sasddl" ]
+    then
+        sasddlcontents=`cat "$sasddl"`
+        mv "$sasddl" "$sasddl"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # Variable measurement levels
+    #-----------------------------------------------------------------
+    if [ -f "$varlevels" ]
+    then
+        varlevelcontents=`cat "$varlevels"`
+        mv "$varlevels" "$varlevels"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SPSS print formats syntax
+    #-----------------------------------------------------------------
+    if [ -f "$reapply_print_spss" ]
+    then
+        reapply_print_spsscontents=`cat "$reapply_print_spss"`
+        mv "$reapply_print_spss" "$reapply_print_spss"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SPSS long numeric syntax
+    #-----------------------------------------------------------------
+    if [ -f "$pre_long_num" ]
+    then
+        pre_long_numcontents=`cat "$pre_long_num"`
+        mv "$pre_long_num" "$pre_long_num"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SPSS long character syntax
+    #-----------------------------------------------------------------
+    if [ -f "$pre_long_char" ]
+    then
+        pre_long_charcontents=`cat "$pre_long_char"`
+        mv "$pre_long_char" "$pre_long_char"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SAS short numeric syntax
+    #-----------------------------------------------------------------
+    if [ -f "$post_short_sas" ]
+    then
+        post_short_sascontents=`cat "$post_short_sas"`
+        mv "$post_short_sas" "$post_short_sas"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # R short numeric syntax
+    #-----------------------------------------------------------------
+    if [ -f "$post_short_r" ]
+    then
+        post_short_rcontents=`cat "$post_short_r"`
+        mv "$post_short_r" "$post_short_r"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SPSS reapply preserve formats syntax
+    #-----------------------------------------------------------------
+    if [ -f "$reapply_pres" ]
+    then
+        reapply_prescontents=`cat "$reapply_pres"`
+        mv "$reapply_pres" "$reapply_pres"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SPSS write formats syntax
+    #-----------------------------------------------------------------
+    if [ -f "$reapply_write_spss" ]
+    then
+        reapply_write_spsscontents=`cat "$reapply_write_spss"`
+        mv "$reapply_write_spss" "$reapply_write_spss"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SPSS print formats syntax
+    #-----------------------------------------------------------------
+    if [ -f "$reapply_print_spss" ]
+    then
+        reapply_print_spsscontents=`cat "$reapply_print_spss"`
+        mv "$reapply_print_spss" "$reapply_print_spss"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # Stata print formats syntax
+    #-----------------------------------------------------------------
+    if [ -f "$reapply_print_stata" ]
+    then
+        reapply_print_statacontents=`cat "$reapply_print_stata"`
+        mv "$reapply_print_stata" "$reapply_print_stata"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # R factor syntax
+    #-----------------------------------------------------------------
+    if [ -f "$rfactors" ]
+    then
+        rfactorscontents=`cat "$rfactors"`
+        mv "$rfactors" "$rfactors"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # SAS formats syntax
+    #-----------------------------------------------------------------
+    if [ -f "$sasfmts" ]
+    then
+        sasfmtscontents=`cat "$sasfmts"`
+        mv "$sasfmts" "$sasfmts"-old
+    fi
+
+    #-----------------------------------------------------------------
+    # Update varnames in each scratch file
+    #-----------------------------------------------------------------
+    renamed_vars=`grep '<-->' "$remaps" | sed -e 's/<-->/;/' -e 's/ //g'`
+
+    for varinfo in `echo "$renamed_vars"`
+    do
+        new_name=`echo "$varinfo" | cut -d\; -f1`
+        orig_name=`echo "$varinfo" | cut -d\; -f2`
+
+        vlcontents=`echo "$vlcontents" | sed "s/^$orig_name"' *$'"/$new_name/i"`
+        mvalcontents=`echo "$mvalcontents" | sed "s/ $orig_name / $new_name /i"`
+#        ddiwidthcontents=`echo "$ddiwidthcontents" | sed "s/^${orig_name};/${new_name};/i"`
+        ddlcontents=`echo "$ddlcontents" | sed "s/^name *= *$orig_name"' *$'"/name = $new_name/i"`
+        sasddlcontents=`echo "$sasddlcontents" | sed "s/^name = ${orig_name}"'$'"/name = ${new_name}/i"`
+        varlevelcontents=`echo "$varlevelcontents" | sed "s/^${orig_name};/${new_name};/i"`
+        pre_long_numcontents=`echo "$pre_long_numcontents" | sed "s/ $orig_name / $new_name /i"`
+        pre_long_charcontents=`echo "$pre_long_charcontents" | sed "s/ $orig_name / $new_name /i"`
+        post_short_sascontents=`echo "$post_short_sascontents" | sed "s/^${orig_name};/${new_name};/i"`
+#        post_short_sdacontents=`echo "$post_short_sdacontents" | sed "s/^name *= *$orig_name"' *$'"/name = $new_name/i"`
+#        post_short_ddicontents=`echo "$post_short_ddicontents" | sed "s/^name *= *$orig_name"' *$'"/name = $new_name/i"`
+        reapply_prescontents=`echo "$reapply_prescontents" | sed "s/ $orig_name / $new_name /i"`
+        reapply_write_spsscontents=`echo "$reapply_write_spsscontents" | sed "s/ $orig_name / $new_name /i"`
+        reapply_print_spsscontents=`echo "$reapply_print_spsscontents" | sed "s/ $orig_name / $new_name /i"`
+        reapply_print_statacontents=`echo "$reapply_print_statacontents" | sed "s/ $orig_name / $new_name /i"`
+        rfactorscontents=`echo "$rfactorscontents" | sed "s/\\\$${orig_name}\([ ,]\)/\\\$${new_name}\1/g"`
+	#rfactorscontents=`echo "$rfactorscontents" | sed "s/${orig_name}\([ ,]\)/${new_name}\1/g"`
+        sasfmtscontents=`echo "$sasfmtscontents" | sed "s/ $orig_name / $new_name /i"`
+    done
+
+    if [ "$vlcontents" ]
+    then
+        echo "$vlcontents" > "$varlist"
+    fi
+
+    if [ "$mvalcontents" ]
+    then
+        echo "$mvalcontents" > "$mval"
+    fi
+
+    if [ "$ddiwidthcontents" ]
+    then
+        echo "$ddiwidthcontents" > "$ddiwidths"
+    fi
+
+    if [ "$ddlcontents" ]
+    then
+        echo "$ddlcontents" > "$ddl"
+    fi
+
+    if [ "$sasddlcontents" ]
+    then
+        echo "$sasddlcontents" > "$sasddl"
+    fi
+
+    if [ "$varlevelcontents" ]
+    then
+        echo "$varlevelcontents" > "$varlevels"
+    fi
+
+    if [ "$reapplycontents" ]
+    then
+        echo "$reapplycontents" > "$reapply"
+    fi
+
+    if [ "$pre_long_numcontents" ]
+    then
+        echo "$pre_long_numcontents" > "$pre_long_num"
+    fi
+
+    if [ "$pre_long_charcontents" ]
+    then
+        echo "$pre_long_charcontents" > "$pre_long_char"
+    fi
+
+    if [ "$post_short_sascontents" ]
+    then
+        echo "$post_short_sascontents" > "$post_short_sas"
+    fi
+
+    if [ "$post_short_rcontents" ]
+    then
+        echo "$post_short_rcontents" > "$post_short_r"
+    fi
+
+    if [ "$post_short_sdacontents" ]
+    then
+        echo "$post_short_sdacontents" > "$post_short_sda"
+    fi
+
+    if [ "$post_short_ddicontents" ]
+    then
+        echo "$post_short_ddicontents" > "$post_short_ddi"
+    fi
+
+    if [ "$reapply_prescontents" ]
+    then
+        echo "$reapply_prescontents" > "$reapply_pres"
+    fi
+
+    if [ "$reapply_write_spsscontents" ]
+    then
+        echo "$reapply_write_spsscontents" > "$reapply_write_spss"
+    fi
+
+    if [ "$reapply_print_spsscontents" ]
+    then
+        echo "$reapply_print_spsscontents" > "$reapply_print_spss"
+    fi
+
+    if [ "$reapply_print_statacontents" ]
+    then
+        echo "$reapply_print_statacontents" > "$reapply_print_stata"
+    fi
+
+    if [ "$sasfmtscontents" ]
+    then
+        echo "$sasfmtscontents" > "$sasfmts"
+    fi
+
+    if [ "$rfactorscontents" ]
+    then
+        echo "$rfactorscontents" > "$rfactors"
+    fi
+else
+    #-----------------------------------------------------------------
+    # If run outside of Hermes and no long variable names found,
+    # display message.
+    #-----------------------------------------------------------------
+    if [ ! "$HERMES" ]
+    then
+        echo "No long variable names found."
+    fi
+fi
+
+
+#-----------------------------------------------------------------
+# Cleanup
+#-----------------------------------------------------------------
+rm -f $taken
+exit 0

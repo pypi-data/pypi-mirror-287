@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="da273ea3-5c90-41af-b60e-6c8a74b225a1" name="Changes" comment="README v0.0.1?">
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Setup Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$/ICPSR" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_COMMON_BRANCH" value="data-engineering/python-conversion" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
+    <option name="ROOT_SYNC" value="SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="v1.0.0" />
+        <option name="rewordedMessage" value="v1.0.0" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="9ef870bf1950eed8f05a6488810404970e147b56" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="faelin/hermes-improvement" />
+                    <option name="lastUsedInstant" value="1720805085" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="data-engineering/python-conversion" />
+                    <option name="lastUsedInstant" value="1719940199" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$USER_HOME$" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="Pypable/main" />
+                    <option name="lastUsedInstant" value="1722034605" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/ICPSR" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="Pypable" />
+                    <option name="lastUsedInstant" value="1722209724" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1722209705" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2gHvU95QXNdsMT6D1kgPtF8TLaJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.Dockerfile.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "app.teamhub.selectedTeam": "github.com/faelin/Pypable",
+    "app.teamhub.trackedBranches": "stilbu/Pypable",
+    "git-widget-placeholder": "faelin/hermes-improvement",
+    "last_opened_file_path": "/Users/Faelin/Projects/PyHermes",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hermes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Pypable" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/Pypable" />
+      <recent name="$PROJECT_DIR$/ICPSR" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da273ea3-5c90-41af-b60e-6c8a74b225a1" name="Changes" comment="" />
+      <created>1704382879365</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704382879365</updated>
+      <workItem from="1715367331811" duration="253000" />
+      <workItem from="1718293469932" duration="5862000" />
+      <workItem from="1718906899995" duration="4331000" />
+      <workItem from="1719340587132" duration="11909000" />
+      <workItem from="1719354587363" duration="34743000" />
+      <workItem from="1719602503092" duration="10921000" />
+      <workItem from="1719849382500" duration="268000" />
+      <workItem from="1719933295868" duration="48251000" />
+      <workItem from="1720721073697" duration="3263000" />
+      <workItem from="1720805005928" duration="6273000" />
+      <workItem from="1721161019129" duration="10034000" />
+      <workItem from="1721241782383" duration="2826000" />
+      <workItem from="1721247385653" duration="486000" />
+      <workItem from="1721247875449" duration="27852000" />
+      <workItem from="1721332462069" duration="11784000" />
+      <workItem from="1721400772860" duration="1847000" />
+      <workItem from="1721408701487" duration="121000" />
+      <workItem from="1721408839251" duration="49006000" />
+      <workItem from="1721662028317" duration="42166000" />
+      <workItem from="1721745961995" duration="128000" />
+      <workItem from="1721746277368" duration="331000" />
+      <workItem from="1721748805665" duration="123000" />
+      <workItem from="1721749081683" duration="694000" />
+      <workItem from="1721749970989" duration="7000" />
+    </task>
+    <task id="LOCAL-00034" summary="rename main hermes file">
+      <option name="closed" value="true" />
+      <created>1721242480518</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1721242480518</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Move helper utilities to separate modules">
+      <option name="closed" value="true" />
+      <created>1721250719492</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1721250719493</updated>
+    </task>
+    <task id="LOCAL-00036" summary="update printers">
+      <option name="closed" value="true" />
+      <created>1721268615114</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1721268615114</updated>
+    </task>
+    <task id="LOCAL-00037" summary="use printers">
+      <option name="closed" value="true" />
+      <created>1721268619808</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1721268619808</updated>
+    </task>
+    <task id="LOCAL-00038" summary="checkpoint">
+      <option name="closed" value="true" />
+      <created>1721272023474</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1721272023475</updated>
+    </task>
+    <task id="LOCAL-00039" summary="initial pass at adding hermes submodules">
+      <option name="closed" value="true" />
+      <created>1721326106267</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1721326106267</updated>
+    </task>
+    <task id="LOCAL-00040" summary="refactor submodules to use shared tools">
+      <option name="closed" value="true" />
+      <created>1721340878820</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1721340878820</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add simple email tool to replace sendmsg">
+      <option name="closed" value="true" />
+      <created>1721344032865</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1721344032865</updated>
+    </task>
+    <task id="LOCAL-00042" summary="finish fleshing out submodules">
+      <option name="closed" value="true" />
+      <created>1721420248111</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1721420248111</updated>
+    </task>
+    <task id="LOCAL-00043" summary="begin converting submodule 4">
+      <option name="closed" value="true" />
+      <created>1721420265273</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1721420265273</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Make shell subprocesses throw a CalledProcessError if they return non-zero">
+      <option name="closed" value="true" />
+      <created>1721422051422</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1721422051422</updated>
+    </task>
+    <task id="LOCAL-00045" summary="shell.run now returns a string instead of a CompletedProcess object">
+      <option name="closed" value="true" />
+      <created>1721442720520</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1721442720520</updated>
+    </task>
+    <task id="LOCAL-00046" summary="create additional shell-like utilities">
+      <option name="closed" value="true" />
+      <created>1721599944231</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1721599944231</updated>
+    </task>
+    <task id="LOCAL-00047" summary="checkpoint">
+      <option name="closed" value="true" />
+      <created>1721599953543</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1721599953543</updated>
+    </task>
+    <task id="LOCAL-00048" summary="checkpoint">
+      <option name="closed" value="true" />
+      <created>1721618873476</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1721618873476</updated>
+    </task>
+    <task id="LOCAL-00049" summary="checkpoint">
+      <option name="closed" value="true" />
+      <created>1721668009154</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1721668009155</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Moves hermes.utilities.* to ICPSR.utilites">
+      <option name="closed" value="true" />
+      <created>1721669037452</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1721669037453</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Move text-modification methods from ICPSR.utilities.prints to ICPSR.utilities.text">
+      <option name="closed" value="true" />
+      <created>1721670900189</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1721670900189</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Add print function to Text">
+      <option name="closed" value="true" />
+      <created>1721671890090</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1721671890090</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Add additional string-modifying functions to Text,&#10;moved dos2unix to the text module.">
+      <option name="closed" value="true" />
+      <created>1721704282961</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1721704282961</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Add additional string-modifying functions to Text,&#10;moved dos2unix to the text module.">
+      <option name="closed" value="true" />
+      <created>1721704367524</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1721704367525</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Fix import path for typing in various modules">
+      <option name="closed" value="true" />
+      <created>1721704489875</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1721704489875</updated>
+    </task>
+    <task id="LOCAL-00056" summary="fixup Text string methods">
+      <option name="closed" value="true" />
+      <created>1721711303739</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1721711303739</updated>
+    </task>
+    <task id="LOCAL-00057" summary="fix mprint adding an additional leading line due to triple-quoted strings starting with a newline">
+      <option name="closed" value="true" />
+      <created>1721711917228</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1721711917228</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Add support for pipable Text objects, for use with shell-like method chaining0">
+      <option name="closed" value="true" />
+      <created>1721851527306</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1721851527307</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Add support for pipable Text objects, for use with shell-like method chaining0">
+      <option name="closed" value="true" />
+      <created>1721873463029</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1721873463030</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Major refactor of Pipable utility class">
+      <option name="closed" value="true" />
+      <created>1721937720889</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1721937720890</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Can now pipe into (nearly) any class or function">
+      <option name="closed" value="true" />
+      <created>1721940683269</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1721940683270</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Can now pipe into (nearly) any class or function">
+      <option name="closed" value="true" />
+      <created>1721941122632</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1721941122632</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Renamed ICPSR.pipable module to ICPSR.mixins&#10;Improved error logging in pipes.">
+      <option name="closed" value="true" />
+      <created>1721952044715</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1721952044715</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Renamed ICPSR.pipable module to ICPSR.mixins&#10;Improved error logging in pipes.">
+      <option name="closed" value="true" />
+      <created>1721952057187</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1721952057187</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Resolve a bunch of issues regarding circular dependencies...">
+      <option name="closed" value="true" />
+      <created>1721960072332</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1721960072332</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Fix pipable default &gt;&gt; and &gt; operators">
+      <option name="closed" value="true" />
+      <created>1721960393891</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1721960393891</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Fix pipable default &gt;&gt; and &gt; operators">
+      <option name="closed" value="true" />
+      <created>1721961951282</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1721961951282</updated>
+    </task>
+    <task id="LOCAL-00068" summary="fix Text object + ops">
+      <option name="closed" value="true" />
+      <created>1721965654893</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1721965654894</updated>
+    </task>
+    <task id="LOCAL-00069" summary="experimenting with better text management">
+      <option name="closed" value="true" />
+      <created>1721965815329</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1721965815329</updated>
+    </task>
+    <task id="LOCAL-00070" summary="init">
+      <option name="closed" value="true" />
+      <created>1722033878941</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1722033878942</updated>
+    </task>
+    <task id="LOCAL-00071" summary="more progress on _4_ddstweak">
+      <option name="closed" value="true" />
+      <created>1722035115603</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1722035115603</updated>
+    </task>
+    <task id="LOCAL-00072" summary="small bug fixes">
+      <option name="closed" value="true" />
+      <created>1722122432908</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1722122432909</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Add additional magic methods to Text">
+      <option name="closed" value="true" />
+      <created>1722140770590</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1722140770591</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Add inplace option to transform methods">
+      <option name="closed" value="true" />
+      <created>1722198680149</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1722198680149</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Add inplace option to transform methods">
+      <option name="closed" value="true" />
+      <created>1722199232693</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1722199232694</updated>
+    </task>
+    <task id="LOCAL-00076" summary="checkpoint">
+      <option name="closed" value="true" />
+      <created>1722199273618</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1722199273618</updated>
+    </task>
+    <task id="LOCAL-00077" summary="v1.0.0">
+      <option name="closed" value="true" />
+      <created>1722205480682</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1722205480683</updated>
+    </task>
+    <task id="LOCAL-00078" summary="v1.0.0">
+      <option name="closed" value="true" />
+      <created>1722205775493</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1722205775494</updated>
+    </task>
+    <task id="LOCAL-00079" summary="v1.0.0">
+      <option name="closed" value="true" />
+      <created>1722205805695</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1722205805695</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Add readme">
+      <option name="closed" value="true" />
+      <created>1722208354259</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1722208354259</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Rearrange project structure... (should not do this in v1 but oh well)">
+      <option name="closed" value="true" />
+      <created>1722208374626</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1722208374626</updated>
+    </task>
+    <task id="LOCAL-00082" summary="README v0.0.1?">
+      <option name="closed" value="true" />
+      <created>1722209460783</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1722209460783</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="GitHub.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$USER_HOME$" />
+    </ignored-roots>
+    <MESSAGE value="fixup Text string methods" />
+    <MESSAGE value="fix mprint adding an additional leading line due to triple-quoted strings starting with a newline" />
+    <MESSAGE value="Add support for pipable Text objects, for use with shell-like method chaining" />
+    <MESSAGE value="Add support for pipable Text objects, for use with shell-like method chaining0" />
+    <MESSAGE value="Major refactor of Pipable utility class" />
+    <MESSAGE value="Can now pipe into (nearly) any class or function" />
+    <MESSAGE value="Add support" />
+    <MESSAGE value="Renamed ICPSR.pipable module to ICPSR.mixins&#10;Improved error logging in pipes." />
+    <MESSAGE value="Resolve a bunch of issues regarding circular dependencies..." />
+    <MESSAGE value="Add tee functionality to text.Text&#10;fix a typo in pipable" />
+    <MESSAGE value="Add tee functionality to text.Text&#10;fix a typo in pipable" />
+    <MESSAGE value="fix Text object + ops" />
+    <MESSAGE value="experimenting with better text management" />
+    <MESSAGE value="deleteme" />
+    <MESSAGE value="init" />
+    <MESSAGE value="more progress on _4_ddstweak" />
+    <MESSAGE value="small bug fixes" />
+    <MESSAGE value="Add additional magic methods to Text" />
+    <MESSAGE value="Add inplace option to transform methods&#10;&#10;(cherry picked from commit 951274cb23794d4332be6cecbd042e58098af785)" />
+    <MESSAGE value="Add inplace option to transform methods" />
+    <MESSAGE value="checkpoint" />
+    <MESSAGE value="v1.0.0" />
+    <MESSAGE value="Add readme" />
+    <MESSAGE value="Rearrange project structure... (should not do this in v1 but oh well)" />
+    <MESSAGE value="README v0.0.1?" />
+    <option name="LAST_COMMIT_MESSAGE" value="README v0.0.1?" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+</project>

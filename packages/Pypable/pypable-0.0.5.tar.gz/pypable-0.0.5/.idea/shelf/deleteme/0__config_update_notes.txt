@@ -1,0 +1,9 @@
+Gets install in /opt/hermes/bin (also known as /pub/hermes/bin).
+Both are currently installed.
+Needs to be accessible from login65.
+
+Software expects 0_config_update which is currently a symbolic link pointing to _legacy. 
+When we switchover, drop the sym link and point to _acx.
+
+Treat the symlink setup as a temporary testing feature. Once everything looks good, drop the 
+symlink and extra versions and just rename the _acx file.
