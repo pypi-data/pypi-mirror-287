@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+unigen.egg-info/PKG-INFO
+unigen.egg-info/SOURCES.txt
+unigen.egg-info/dependency_links.txt
+unigen.egg-info/requires.txt
+unigen.egg-info/top_level.txt
+unigen__/__init__.py
+unigen__/audio_factory.py
+unigen__/audio_manager.py
+unigen__/audio_metadata.py
+unigen__/id3.py
+unigen__/mp4.py
+unigen__/utils.py
+unigen__/vorbis.py
