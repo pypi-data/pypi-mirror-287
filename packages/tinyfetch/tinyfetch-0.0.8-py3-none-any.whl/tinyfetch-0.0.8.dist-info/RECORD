@@ -1,0 +1,9 @@
+tinyfetch/__init__.py,sha256=A84sLTbKtplEtLCWd6ApZYgNMNdEKJyfRvGIjROUrgY,66
+tinyfetch/cli.py,sha256=MF0lLylsAYrFeU1LbOXKLdeuIkT2JuhhjoQengfOCfo,1323
+tinyfetch/core.py,sha256=jaayaHIAM44InulKWEM1FSqUcdJWWtRl1-FJM3tm4iU,943
+tinyfetch/module.py,sha256=coHQhmA4BUXvIep9a8c3hO8oewxPLcv4XXjxZyOzydI,4217
+tinyfetch-0.0.8.dist-info/METADATA,sha256=C2CXj_1OYViCsSWl6edVtHK79IhNmKdVsoejfgtoF3Y,2724
+tinyfetch-0.0.8.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+tinyfetch-0.0.8.dist-info/entry_points.txt,sha256=_tc4Ia_E42PEGq56A6-qUpRRGQsC_CMacXzmpTn9bHk,77
+tinyfetch-0.0.8.dist-info/licenses/LICENSE.txt,sha256=LWWUiVYtLjNok6oRomaQOVBlM_PU4gm5rPsZ03sga5o,1099
+tinyfetch-0.0.8.dist-info/RECORD,,
