@@ -1,0 +1,16 @@
+Metadata-Version: 2.3
+Name: unblockme
+Version: 0.0.2
+Summary: A package that solves an unblockme puzzle for you
+Project-URL: Homepage, https://github.com/zlliu246/unblockme
+Project-URL: Issues, https://github.com/zlliu246/unblockme/issues
+Author-email: Liu Zuo Lin <zlliu246@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: unprint
+Description-Content-Type: text/markdown
+
+# unblockme
