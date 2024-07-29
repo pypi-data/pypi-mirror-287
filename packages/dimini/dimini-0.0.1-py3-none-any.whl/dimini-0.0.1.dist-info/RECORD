@@ -1,0 +1,11 @@
+tinydi/__init__.py,sha256=4pX6u9S0KKWPwkL4B18bW0nLsZJRe-pCG8qSUv-dEVQ,23
+tinydi/dependency.py,sha256=A2oQ7SmLSLjgjpmJdcAWUNPOaCn4mjTrW8BKOd7dps0,2905
+tinydi/di.py,sha256=bE10nlGhufglQRYVaTrIrlpFIBPUmFcbB6I-QQbILhA,4426
+tinydi/exceptions.py,sha256=w2kFSi4AcIm11myOBYR4EsRHZA87dotV8A0VMal53To,185
+tinydi/integrations.py,sha256=4ZkE_9302x3oQQvpZB1uemlyHni8RI62El9QjboLQ1Y,404
+tinydi/scopes.py,sha256=v7hMax9oFDeuZbVg23wdn975ps7a48DPHVd7Z3qtTL0,3388
+dimini-0.0.1.dist-info/LICENSE,sha256=efpsthX7qhFzocTMFPhOYkOVxE9jma7QuqQPmw4RXnw,1072
+dimini-0.0.1.dist-info/METADATA,sha256=qS6B8a7_cDtcd-lj4TFzx-RpM56UTq4v-1zOGSGGAYM,6478
+dimini-0.0.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+dimini-0.0.1.dist-info/top_level.txt,sha256=JnkViwVof4mPXBeouD0ktrSVdRSZqlCO3oXzJzsydOc,7
+dimini-0.0.1.dist-info/RECORD,,
