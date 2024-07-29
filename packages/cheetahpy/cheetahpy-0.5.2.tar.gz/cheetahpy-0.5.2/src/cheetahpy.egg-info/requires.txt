@@ -1,0 +1,14 @@
+pandas
+requests
+
+[dev]
+pytest
+flake8
+pylint
+
+[linting]
+flake8
+pylint
+
+[testing]
+pytest
