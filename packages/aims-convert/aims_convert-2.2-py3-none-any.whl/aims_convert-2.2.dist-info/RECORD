@@ -1,0 +1,15 @@
+aims/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aims/cli.py,sha256=ed4iNjgB46ZioVS6tx9VAff1roI97_UfRnoX3NLrsPE,1056
+aims/data_structures.py,sha256=O8kqGv52ZP4CwfbKzjWmuQL7YoNkbz08z7Z6Cv3FB68,662
+aims/gui.py,sha256=oaC0fcZnhmA95ClY1A8YIPEf6zIU7QJ1sTdnxXzBpCM,14950
+aims/logbook_report.py,sha256=6QASkWyfehkHfyb3ARRf8fmNTkvCf3fWiB8X4SWy3eU,2012
+aims/output.py,sha256=tn3NGuYGD5g46W2BYDgOhBuHtYgvu52RO8BKwCHRUbE,9311
+aims/parse.py,sha256=teTLgifYmPn_OLyNFRkmHaHEEWhgHDuv2J0z6tKKE8o,659
+aims/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aims/roster.py,sha256=_J1zXqGulWss3LGtEQEX6yuyrvUAM1YO-QnoaVQ1PcU,9332
+aims/version.py,sha256=KxjcXdHjsrdfjlw9EeAAJCgi2cKQJn9cCdqgsEVxHvo,75
+aims_convert-2.2.dist-info/METADATA,sha256=BChU8JUHoTnBMFF3r7N1PUOB7Ig1_ncsL_03uVmwQOk,2264
+aims_convert-2.2.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+aims_convert-2.2.dist-info/entry_points.txt,sha256=GzUbDsN1KuO4eFGTMt_yGnqiM58jiAn6B66ae_Hyq1c,78
+aims_convert-2.2.dist-info/top_level.txt,sha256=BsjspwvOrE5O77Yws21IYQ9NmR2QEnwr-7RnOOakq4Q,5
+aims_convert-2.2.dist-info/RECORD,,
