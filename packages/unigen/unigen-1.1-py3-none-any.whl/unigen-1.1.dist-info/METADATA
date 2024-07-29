@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: unigen
+Version: 1.1
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mutagen >=1.47.0
+
+# unigen
+Wrapper around python's mutagen package which provides a single interface to interact with audio metadata of various formats
