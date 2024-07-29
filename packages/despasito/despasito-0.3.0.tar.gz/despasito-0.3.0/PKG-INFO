@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: despasito
+Version: 0.3.0
+Author: Jennifer A Clark
+Author-email: jennifer.clark@gnarlyoak.com
+License: BSD-3-Clause
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: numba
+Requires-Dist: flake8
+Provides-Extra: extra
+Requires-Dist: cython; extra == "extra"
+Provides-Extra: tests
+Requires-Dist: pytest; extra == "tests"

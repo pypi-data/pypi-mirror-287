@@ -1,0 +1,10 @@
+numpy
+scipy
+numba
+flake8
+
+[extra]
+cython
+
+[tests]
+pytest
