@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+appears_api_client.egg-info/PKG-INFO
+appears_api_client.egg-info/SOURCES.txt
+appears_api_client.egg-info/dependency_links.txt
+appears_api_client.egg-info/requires.txt
+appears_api_client.egg-info/top_level.txt
+src/__init__.py
+src/client.py
+src/exceptions.py
+src/models.py
+src/utils.py
+tests/__init__.py
+tests/test_client.py
