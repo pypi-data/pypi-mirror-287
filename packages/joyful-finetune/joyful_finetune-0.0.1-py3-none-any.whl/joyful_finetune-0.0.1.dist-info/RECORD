@@ -1,0 +1,5 @@
+finetune/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+finetune/autotune.py,sha256=8-tKoJWAiLIG4SGbh07JZVwWkj9xLrN5UXWq9Z4jTts,45
+joyful_finetune-0.0.1.dist-info/METADATA,sha256=a0rGFPBEwtDgl4bbbBP0UQ_ysZ0t4UmRuqfUMd-fg_Q,358
+joyful_finetune-0.0.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+joyful_finetune-0.0.1.dist-info/RECORD,,
