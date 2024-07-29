@@ -1,0 +1,9 @@
+fh_matplotlib/__init__.py,sha256=xn8E0gKHygNBDf5gzgUesmq2cweP7RDIfLa8AZSdCfk,1108
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_basics.py,sha256=b-ox_rHz-Q8v6ZoaBrCpgAprf1dfiv2Ajx2HWEdfsT0,316
+tests/test_clicker.py,sha256=bPwvKFYl7X-7_w32yU5tzfRb9Je6V6MrcoZ1eRd7fjI,1220
+fh_matplotlib-0.0.3.dist-info/LICENSE,sha256=_4lHqmvCF2XPO1R0fX63Z2E7d4vAU1eAXPqQtBYI9i0,1077
+fh_matplotlib-0.0.3.dist-info/METADATA,sha256=hpJ21QUJ9KQhSF5yL-cfpQpYHIT634uE6s0uDdjNR9w,2286
+fh_matplotlib-0.0.3.dist-info/WHEEL,sha256=DZajD4pwLWue70CAfc7YaxT1wLUciNBvN_TTcvXpltE,110
+fh_matplotlib-0.0.3.dist-info/top_level.txt,sha256=rtqfjk2JujIYGOMfS2xWVTOygXZQRsrKs7siy7IrtiM,20
+fh_matplotlib-0.0.3.dist-info/RECORD,,
