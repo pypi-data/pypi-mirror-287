@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+wv_store/__init__.py
+wv_store/cli.py
+wv_store/main.py
+wv_store.egg-info/PKG-INFO
+wv_store.egg-info/SOURCES.txt
+wv_store.egg-info/dependency_links.txt
+wv_store.egg-info/entry_points.txt
+wv_store.egg-info/requires.txt
+wv_store.egg-info/top_level.txt
