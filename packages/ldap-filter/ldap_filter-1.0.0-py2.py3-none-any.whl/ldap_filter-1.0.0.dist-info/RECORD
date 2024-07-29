@@ -1,0 +1,9 @@
+ldap_filter/__init__.py,sha256=IBveJCbduXe1X2iRyMZJKgesOaAZvor93c6iUgkqm0U,58
+ldap_filter/filter.py,sha256=t_9Px3PuwLOq7H8VyXKPLfzGN8YDEftjG0ALHw4yYEs,12517
+ldap_filter/parser.py,sha256=NCY5ejp9EBFr-xTxR5sN2_FScsNfNx4dTPmH6tuBUW0,59559
+ldap_filter/soundex.py,sha256=qtq8pVvPsbKEzCh3OvZioaGeHN0h8XLvGxW_-qUHfjs,493
+ldap_filter-1.0.0.dist-info/LICENSE.txt,sha256=oqGTrfPs2Hg-WtDsiGmHU-w_cOT6bRhqviPjlidjQyk,1079
+ldap_filter-1.0.0.dist-info/METADATA,sha256=KWrL0L8bZezNaDFZZIzkRRkyElHENaHE-9PT_cGwzKc,10615
+ldap_filter-1.0.0.dist-info/WHEEL,sha256=ANi2y8tYx-p70pj7MSdqQMJNFJEUgAOyfPpHzqz0w84,109
+ldap_filter-1.0.0.dist-info/top_level.txt,sha256=nlI0o5nboTpEVhfimbd48fCttzP_cAf0Ule48yXpAsc,12
+ldap_filter-1.0.0.dist-info/RECORD,,
