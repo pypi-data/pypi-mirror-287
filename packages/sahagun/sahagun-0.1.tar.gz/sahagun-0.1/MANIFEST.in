@@ -1,0 +1,4 @@
+### Archivo `MANIFEST.in`
+
+```plaintext
+include README.md
