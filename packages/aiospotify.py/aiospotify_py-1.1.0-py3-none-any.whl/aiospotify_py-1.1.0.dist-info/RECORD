@@ -1,0 +1,15 @@
+spotify/__init__.py,sha256=fInP0FdrbkqKvmDy4c-JOAe6uxJtdUCPvUJNfN7tGjI,1440
+spotify/api.py,sha256=AjcBeEMCmMjoHK3WKZrhDlGgpE9qW6nVqGrzvSIYmec,112574
+spotify/enums.py,sha256=SkDjw9-bqznOxaMfEs33Zja72-zChQAoGS4A2duEUew,8905
+spotify/errors.py,sha256=5C_LpUUz0hFc0RBK7nyZdGgbmrsnXTL7-4VegcqJP9Y,1720
+spotify/internals.py,sha256=44j-Lj_GtVhxAX2cyu2Abq6PYn-U5y3kett0cjwx1M0,2960
+spotify/models.py,sha256=1JG0uWbkehX1LrqanzQrwpaBY7FWmjjJjl-5PgLMPU8,58929
+spotify/oauth.py,sha256=siwMLhQ3MqqreMfVQiFE3jApDHzgGqYllq0VeXe6pRg,14676
+spotify/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spotify/types.py,sha256=dTbkqFj9x7Er1mlWTvkikfXeDM012y92b7ZtBAGckD4,2822
+spotify/types.pyi,sha256=QVE4J6SkMtbFo1kU0bJVkOcasUdJvEtNLx6lCaikW4M,1586
+spotify/utils.py,sha256=d-DGzyC36Yjbp8S4vcRyCid9_Xz_ZbnzWByxUJ_OCBs,1778
+aiospotify_py-1.1.0.dist-info/LICENSE,sha256=pI7d5Qt4sajal2Ja5ooS7wU9cBsuzMYKehicUHJWad4,1081
+aiospotify_py-1.1.0.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+aiospotify_py-1.1.0.dist-info/METADATA,sha256=6cR0xfUh6JykQp1xKgbv6ovFHj4F4bVVSb49fbsWNJA,2314
+aiospotify_py-1.1.0.dist-info/RECORD,,
