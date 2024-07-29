@@ -1,0 +1,10 @@
+def bold(word):
+    print('\033[1m', word)
+def italic(word):
+    print('\033[3m', word)
+def underline(word):
+    print('\033[4m', word)
+def crossed_out(word):
+    print('\033[9m', word)
+def bold_underline(word):
+    print('\033[21m', word)
