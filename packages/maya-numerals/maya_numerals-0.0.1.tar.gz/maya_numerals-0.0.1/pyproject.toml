@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "maya_numerals"
+version = "0.0.1"
+authors = [
+  { name="Ian Goodale", email="ianpgoodale@gmail.com" },
+]
+description = "A package that converts numbers in Western digits into Maya numerical glyphs."
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ian-nai/maya_numerals"
+"Bug Tracker" = "https://github.com/ian-nai/maya_numerals"
