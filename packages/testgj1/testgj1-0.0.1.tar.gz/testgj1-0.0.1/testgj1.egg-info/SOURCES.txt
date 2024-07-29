@@ -1,0 +1,10 @@
+setup.py
+my_test_package/__init__.py
+my_test_package/data_api_class.py
+my_test_package/dict_data.py
+my_test_package/dolphin_db_info.py
+testgj1.egg-info/PKG-INFO
+testgj1.egg-info/SOURCES.txt
+testgj1.egg-info/dependency_links.txt
+testgj1.egg-info/requires.txt
+testgj1.egg-info/top_level.txt
