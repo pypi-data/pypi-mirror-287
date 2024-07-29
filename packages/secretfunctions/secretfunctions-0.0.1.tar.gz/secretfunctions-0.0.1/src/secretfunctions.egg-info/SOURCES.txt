@@ -1,0 +1,12 @@
+LICENSE
+README.md
+license
+pyproject.toml
+readme.md
+src/secretfunctions/__init__.py
+src/secretfunctions/secretfunctions.py
+src/secretfunctions.egg-info/PKG-INFO
+src/secretfunctions.egg-info/SOURCES.txt
+src/secretfunctions.egg-info/dependency_links.txt
+src/secretfunctions.egg-info/requires.txt
+src/secretfunctions.egg-info/top_level.txt
