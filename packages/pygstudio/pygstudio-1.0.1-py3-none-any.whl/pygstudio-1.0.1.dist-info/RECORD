@@ -1,0 +1,12 @@
+pygstudio/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pygstudio/__main__.py,sha256=3RvrHCQxpMpPx83z5Arh9XD8tGLh3W5n9m7l8SZsyTw,3880
+pygstudio/_template/engine.py,sha256=bbZptocPNhnFPPZoq1dMxHYwN_t_uMStdE0eCxUyQcQ,873
+pygstudio/_template/globals.py,sha256=K3BrL5UBHWSyyt2Yhlfpokau0Y0y8QnQXictBX7pa94,706
+pygstudio/_template/main_game.py,sha256=YZdahcbXLFQW1rpgq_366Cp4HhsR05v_jjRuLeXYnP0,1094
+pygstudio/_template/script_manager.py,sha256=UyJoX58lgL9V6TfgJpMUL-Mnbrhv1TZo-VN7T2-U208,1935
+pygstudio/_template/components/__init__.py,sha256=JF972z9vvj2lrlglUEkNcHP_rgGlP65ruLWJ2dSWB-E,238
+pygstudio-1.0.1.dist-info/LICENSE,sha256=HrhfyXIkWY2tGFK11kg7vPCqhgh5DcxleloqdhrpyMY,11558
+pygstudio-1.0.1.dist-info/METADATA,sha256=CdC9sWaf78QWZ04rrvTHVS7fjYUwID2c7E5kP96QtUA,3268
+pygstudio-1.0.1.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+pygstudio-1.0.1.dist-info/top_level.txt,sha256=NpNZ9wU0XBx8PMC0htJM_8EfZp5iD_8dTyTlOB6itbw,10
+pygstudio-1.0.1.dist-info/RECORD,,
