@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: queuer
+Version: 0.1
+Summary: Easily create queues
+Author-email: cjenf <cjenf844747@gmail.com>
+Project-URL: Source, https://github.com/cjenf/queuetools
+Keywords: proton,queue,data
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
