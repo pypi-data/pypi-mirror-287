@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xbin_render"
+dynamic = ["version"]
+description = "Convert XBin images to PNG or to terminal"
+readme = "README.md"
+license = "WTFPL"
+requires-python = ">=3"
+
+keywords = [
+    "ansi",
+    "ascii",
+    "xbin",
+    "image",
+    "terminal",
+]
+dependencies = [
+    "pillow",
+]
+
+# https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: Public Domain",
+    "Topic :: Desktop Environment",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[[authors]]
+name = "Hg"
+email = "dev@indigo.re"
+
+[project.scripts]
+xbin_render = "xbin_render:main"
+
+[project.urls]
+Homepage = "https://gitlab.com/hydrargyrum/xbin_render"
+
+[tool.hatch.version]
+path = "xbin_render.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/xbin_render.py",
+]
