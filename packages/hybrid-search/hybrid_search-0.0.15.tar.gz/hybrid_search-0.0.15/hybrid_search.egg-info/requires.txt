@@ -1,0 +1,8 @@
+pycomfort>=0.0.15
+click
+transformers>=4.35.2
+sentence_transformers
+opensearch-py>=2.6.0
+langchain>=0.2.11
+langchain-community>=0.2.10
+langchain-huggingface>=0.0.3
