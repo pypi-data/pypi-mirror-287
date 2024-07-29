@@ -1,0 +1,13 @@
+LICENSE
+NOTICE.txt
+README.md
+setup.py
+societyai/__doc__.py
+societyai/__init__.py
+societyai/helpers.py
+societyai.egg-info/PKG-INFO
+societyai.egg-info/SOURCES.txt
+societyai.egg-info/dependency_links.txt
+societyai.egg-info/requires.txt
+societyai.egg-info/top_level.txt
+tests/test_helpers.py
