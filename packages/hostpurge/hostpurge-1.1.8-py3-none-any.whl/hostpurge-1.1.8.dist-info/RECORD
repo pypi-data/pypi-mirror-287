@@ -1,0 +1,12 @@
+hostpurge/__init__.py,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
+hostpurge/bowtie2_mode.py,sha256=OhxXvf8w0jPgQFa3t1hq-oS-d3J6QliXjkLYKES1Gw8,2201
+hostpurge/build_db.py,sha256=DgYOol4Ah78L6XbzdnNPP6WMICkRyFs-ElrtfHkXYl8,1336
+hostpurge/fastp.py,sha256=vRuJS3y28YPJEIaT8NwkjOZXqzfdxlEg9Zjr2_4taTY,294
+hostpurge/hostpurge.py,sha256=-2w3zt701PurXackMM3vF0PW9FlsxBRLG9z4EI7njg8,10831
+hostpurge/kraken2_mode.py,sha256=hkMB9g0VtHcv76t-3FXOs07Pv69m7ML_ofY-Zzyir-o,858
+hostpurge-1.1.8.dist-info/LICENSE.txt,sha256=h1n-k1wozdzbV4e-fa7Hb0H2V6xbXR_q6Aex6EavX4c,1067
+hostpurge-1.1.8.dist-info/METADATA,sha256=h-Gk7GNPDqJWtttgGPukfEwXBnA7CjhgJaBGZ7W5vMg,2968
+hostpurge-1.1.8.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+hostpurge-1.1.8.dist-info/entry_points.txt,sha256=VzCjuZplI84pUe4NFJMyJm-bocZJ__Ccs7D0mPLW4WA,55
+hostpurge-1.1.8.dist-info/top_level.txt,sha256=JGbANa-6ainDOqOkUjhKfjFimIkls50V8PD7Xwib_dw,10
+hostpurge-1.1.8.dist-info/RECORD,,
