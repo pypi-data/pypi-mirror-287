@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+strongkong/__init__.py
+strongkong/color.py
+strongkong.egg-info/PKG-INFO
+strongkong.egg-info/SOURCES.txt
+strongkong.egg-info/dependency_links.txt
+strongkong.egg-info/top_level.txt
