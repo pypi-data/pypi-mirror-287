@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: envsync
+Version: 0.1.0
+Summary: A tool to set up Git hooks for your target local git repo, that automatically synchronize and updates for requirements.txt and virtual environments, streamlining the process of managing development environment for projects.
+Home-page: https://github.com/pakkinlau/envsync
+Author: Pak Kin LAU
+Author-email: pakkinlau.general@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: click
+
+# envsync
+
+envsync is a Python package to manage coding environments and projects using Python virtual environments and Git hooks.
+
+## Installation
+
+You can install envsync from PyPI:
+
+```
+pip install envsync
+```
+
+## Usage
+
+
+To initialize a local Git repository with the necessary hooks, run:
+
+```
+
+envsync /path/to/local_git_repo_folder
+```
+
+```
+
+```
+
+This command will set up the following hooks:
+
+* `post-checkout`: Updates `requirements.txt` whenever you checkout a new branch or commit.
+* `pre-commit`: Prevents committing files larger than 100MB.
+* `post-merge`: Updates the virtual environment if `requirements.txt` changes after a merge.
+
+
+## License 
+
+
+This project is licensed under the MIT License.
