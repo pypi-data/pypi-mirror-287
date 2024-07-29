@@ -1,0 +1,6 @@
+setup.py
+flashinfer.egg-info/PKG-INFO
+flashinfer.egg-info/SOURCES.txt
+flashinfer.egg-info/dependency_links.txt
+flashinfer.egg-info/not-zip-safe
+flashinfer.egg-info/top_level.txt
