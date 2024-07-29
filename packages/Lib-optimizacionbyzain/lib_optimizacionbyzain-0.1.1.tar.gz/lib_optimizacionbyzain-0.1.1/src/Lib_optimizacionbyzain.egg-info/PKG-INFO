@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: Lib_optimizacionbyzain
+Version: 0.1.1
+Summary: Una gran variedad de metodos de optimizacion
+Author-email: Zain <azi3lmtz@gmail.com>
+Project-URL: Homepage, https://github.com/zamm079/Lib-optimizacion-byzain
+Project-URL: Issues, https://github.com/zamm079/Lib-optimizacion-byzain/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Paqueteria de metodos de optimizacion
+
+Esta libreria tiene distintos metodos que son utilizados para la optimizacion
+en el encontraras metodos para funciones de una variable y metodos para funciones multivariable
