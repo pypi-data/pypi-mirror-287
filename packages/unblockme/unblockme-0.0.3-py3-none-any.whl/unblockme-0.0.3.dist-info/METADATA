@@ -1,0 +1,63 @@
+Metadata-Version: 2.3
+Name: unblockme
+Version: 0.0.3
+Summary: A package that solves an unblockme puzzle for you
+Project-URL: Homepage, https://github.com/zlliu246/unblockme
+Project-URL: Issues, https://github.com/zlliu246/unblockme/issues
+Author-email: Liu Zuo Lin <zlliu246@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: unprint
+Description-Content-Type: text/markdown
+
+# unblockme
+
+A Python package that solves unblockme puzzles for you
+
+To install:
+```
+pip install unblockme
+```
+
+Example puzzle:
+
+![example puzzle](./example.jpeg)
+
+Example State Representation:
+
+* each block is represented by a letter
+* the Red target block is represented by an X
+
+```
+state = '''
+AAAB  
+CDDBEE
+CXXB F
+C GHHF
+  G IF
+JJJ I
+'''
+
+```
+
+Example Usage:
+
+```
+from unblockme import unblockme
+
+state = '''
+AAAB  
+CDDBEE
+CXXB F
+C GHHF
+  G IF
+JJJ I
+'''
+
+unblockme(state)
+
+# watch the solution get animated in front of you
+```
