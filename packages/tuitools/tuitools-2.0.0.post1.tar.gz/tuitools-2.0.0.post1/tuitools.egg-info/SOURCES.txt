@@ -1,0 +1,17 @@
+README.md
+setup.py
+tuitools/__init__.py
+tuitools/aligntext.py
+tuitools/cmd_run.py
+tuitools/formattime.py
+tuitools/loading_animation.py
+tuitools/progressbar.py
+tuitools/setup.py
+tuitools/wordcolor.py
+tuitools/wordcolor_backgrandcolor.py
+tuitools/wordstyle.py
+tuitools/xml_parameter_test_examples.py
+tuitools.egg-info/PKG-INFO
+tuitools.egg-info/SOURCES.txt
+tuitools.egg-info/dependency_links.txt
+tuitools.egg-info/top_level.txt
