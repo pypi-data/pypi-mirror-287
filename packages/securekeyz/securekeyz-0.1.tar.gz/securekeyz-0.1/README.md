@@ -1,0 +1,85 @@
+
+# SecureKeyz
+
+SecureKeyz is a Python-based command-line tool designed to help you securely manage your API keys. It allows you to store, modify, and transfer API keys between different services while keeping them encrypted.
+
+## Features
+
+- **Secure Storage**: Encrypts API keys before storing them in a JSON file.
+- **Service Management**: Add new services or manage existing ones.
+- **Key Management**: Add, modify, and transfer keys between services.
+- **Command-Line Interface**: Easy-to-use CLI with prompt-based interaction.
+
+## Installation
+
+You can install SecureKeyz via pip:
+
+```sh
+pip install securekeyz
+```
+
+## Usage
+
+To use SecureKeyz, run the script with the desired command-line arguments. Here are some examples:
+
+### Add a New API Key
+
+To add a new API key to a service:
+
+```sh
+securekeyz --add
+```
+
+This command will prompt you to select an existing service or create a new one, and then to enter the API key and its description.
+
+### Modify an Existing API Key
+
+To modify an existing API key:
+
+```sh
+securekeyz --modify INDEX
+```
+
+This command will prompt you to select a service and the key index you want to modify. You can then enter the new key and its description.
+
+### List Services and Keys
+
+Running the script without arguments will list the existing services and their keys:
+
+```sh
+securekeyz
+```
+
+## Commands
+
+- `--ser`: Specify the service for which you want to add or view keys.
+- `--add`: Add a new API key for the specified service.
+- `--modify INDEX`: Modify an existing API key for the specified service (provide index).
+
+## Examples
+
+### Add a Key to a New Service
+
+```sh
+securekeyz --add
+```
+
+### Modify a Key in an Existing Service
+
+```sh
+securekeyz --modify 1
+```
+
+### List All Services and Keys
+
+```sh
+securekeyz
+```
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+Hasan (hasanfq818@gmail.com)

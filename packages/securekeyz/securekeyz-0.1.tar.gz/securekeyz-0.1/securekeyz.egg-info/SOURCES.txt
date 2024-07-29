@@ -1,0 +1,9 @@
+README.md
+mail.py
+setup.py
+securekeyz.egg-info/PKG-INFO
+securekeyz.egg-info/SOURCES.txt
+securekeyz.egg-info/dependency_links.txt
+securekeyz.egg-info/entry_points.txt
+securekeyz.egg-info/requires.txt
+securekeyz.egg-info/top_level.txt
