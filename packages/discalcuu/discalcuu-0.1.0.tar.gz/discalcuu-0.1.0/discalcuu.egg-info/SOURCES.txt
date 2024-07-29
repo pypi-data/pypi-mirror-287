@@ -1,0 +1,10 @@
+LICENCE.txt
+README.md
+setup.py
+discalcuu/__init__.py
+discalcuu/core.c
+discalcuu.egg-info/PKG-INFO
+discalcuu.egg-info/SOURCES.txt
+discalcuu.egg-info/dependency_links.txt
+discalcuu.egg-info/requires.txt
+discalcuu.egg-info/top_level.txt
