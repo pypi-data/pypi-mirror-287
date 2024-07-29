@@ -1,0 +1,17 @@
+buildamol>=1.2.5
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+networkx
+biopython
+pdbecif
+periodictable
+plotly
+alive_progress
+gym
+pubchempy
+tabulate
+scikit-learn
+ipywidgets<8.0.1
