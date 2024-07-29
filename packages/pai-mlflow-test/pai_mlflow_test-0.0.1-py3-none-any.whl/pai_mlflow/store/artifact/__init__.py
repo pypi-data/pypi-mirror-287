@@ -1,0 +1,1 @@
+from pai_mlflow.store.artifact.oss_artifact_repo import OssArtifactRepository
