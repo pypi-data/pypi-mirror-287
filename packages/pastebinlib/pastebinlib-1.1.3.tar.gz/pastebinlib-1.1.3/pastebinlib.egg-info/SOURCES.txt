@@ -1,0 +1,7 @@
+README.md
+setup.py
+pastebinlib.egg-info/PKG-INFO
+pastebinlib.egg-info/SOURCES.txt
+pastebinlib.egg-info/dependency_links.txt
+pastebinlib.egg-info/requires.txt
+pastebinlib.egg-info/top_level.txt
