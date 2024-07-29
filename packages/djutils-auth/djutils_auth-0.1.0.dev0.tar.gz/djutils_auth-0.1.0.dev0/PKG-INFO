@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: djutils-auth
+Version: 0.1.0.dev0
+Summary: Django Project Utilities - Authentication Module
+Author-email: ruriazz <azizruri.s@gmail.com>
+Project-URL: Homepage, https://github.com/ruriazz/djutils-auth
+Project-URL: Bug Tracker, https://github.com/ruriazz/djutils-auth/issues
+Keywords: djutils_auth
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
