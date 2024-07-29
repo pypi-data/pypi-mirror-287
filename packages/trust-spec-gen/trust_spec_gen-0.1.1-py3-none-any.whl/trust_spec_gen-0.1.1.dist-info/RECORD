@@ -1,0 +1,15 @@
+abcde/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+abcde/main.py,sha256=1RSVphWBQW8i5LFTLFp5TUwxEw5Aqd_6Qy_1yqGVh9Y,81
+abcde/xxx.py,sha256=1RSVphWBQW8i5LFTLFp5TUwxEw5Aqd_6Qy_1yqGVh9Y,81
+src/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/abc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/abc/xxx.py,sha256=1RSVphWBQW8i5LFTLFp5TUwxEw5Aqd_6Qy_1yqGVh9Y,81
+src/abcde/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/abcde/xxx.py,sha256=1RSVphWBQW8i5LFTLFp5TUwxEw5Aqd_6Qy_1yqGVh9Y,81
+trust_spec_gen/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+trust_spec_gen/main.py,sha256=1RSVphWBQW8i5LFTLFp5TUwxEw5Aqd_6Qy_1yqGVh9Y,81
+trust_spec_gen-0.1.1.dist-info/METADATA,sha256=-0vmV8NZVL_TUAR9es8YEQjY4lAQ-gC0bJC66MMFK0M,163
+trust_spec_gen-0.1.1.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+trust_spec_gen-0.1.1.dist-info/entry_points.txt,sha256=-0qf7Tw0tNuAzF2CAcjxa0MzN_u4AGNnHUAAEWM5p1Y,51
+trust_spec_gen-0.1.1.dist-info/top_level.txt,sha256=1Pg0BZLodKxhXLDCAmh_vyfUDxxKM4DoPxBEJS9PvhA,15
+trust_spec_gen-0.1.1.dist-info/RECORD,,
