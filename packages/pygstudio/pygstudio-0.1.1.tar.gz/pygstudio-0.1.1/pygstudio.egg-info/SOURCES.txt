@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+pygstudio/__init__.py
+pygstudio/__main__.py
+pygstudio/template.zip
+pygstudio.egg-info/PKG-INFO
+pygstudio.egg-info/SOURCES.txt
+pygstudio.egg-info/dependency_links.txt
+pygstudio.egg-info/entry_points.txt
+pygstudio.egg-info/requires.txt
+pygstudio.egg-info/top_level.txt
+tests/test_dummy.py
+tests/test_setup.py
