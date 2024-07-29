@@ -1,0 +1,34 @@
+Metadata-Version: 2.3
+Name: pybayesprism
+Version: 0.0.1
+Summary: Python implementation of BayesPrism
+Project-URL: Homepage, https://github.com/ziluwang829/pyBayesPrism
+Project-URL: Issues, https://github.com/ziluwang829/pyBayesPrism/issues
+Author-email: Zilu Wang <ziluwang829@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+This is a Python implementation of [BayesPrism](https://github.com/Danko-Lab/BayesPrism).
+
+
+Usage
+```
+sc_dat_filtered = process_input.cleanup_genes(sc_dat, "count.matrix", "hs", \
+                  ["Rb", "Mrp", "other_Rb", "chrM", "MALAT1", "chrX", "chrY"], 5)
+                  
+sc_dat_filtered_pc = process_input.select_gene_type(sc_dat_filtered, ["protein_coding"])
+
+my_prism = prism.Prism.new(reference = sc_dat_filtered_pc, 
+                          mixture = bk_dat, input_type = "count.matrix", 
+                          cell_type_labels = cell_type_labels, 
+                          cell_state_labels = cell_state_labels, 
+                          key = "tumor", 
+                          outlier_cut = 0.01, 
+                          outlier_fraction = 0.1)
+
+bp_res = my_prism.run(n_cores = 36, update_gibbs = True)      
+```
