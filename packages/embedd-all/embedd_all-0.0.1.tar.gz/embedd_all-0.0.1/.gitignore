@@ -1,0 +1,10 @@
+# Ignore Python cache files and directories
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment directories
+venv/
+.env/
+
+# Other project-specific ignores
+.DS_Store
