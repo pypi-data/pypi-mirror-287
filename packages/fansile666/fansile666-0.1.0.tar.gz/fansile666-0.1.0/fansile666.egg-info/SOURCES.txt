@@ -1,0 +1,9 @@
+LICENCE.txt
+README.md
+setup.py
+fansile666/__init__.py
+fansile666/core.py
+fansile666.egg-info/PKG-INFO
+fansile666.egg-info/SOURCES.txt
+fansile666.egg-info/dependency_links.txt
+fansile666.egg-info/top_level.txt
