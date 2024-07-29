@@ -1,0 +1,6 @@
+setup.py
+flytekit_my_plugin.egg-info/PKG-INFO
+flytekit_my_plugin.egg-info/SOURCES.txt
+flytekit_my_plugin.egg-info/dependency_links.txt
+flytekit_my_plugin.egg-info/requires.txt
+flytekit_my_plugin.egg-info/top_level.txt
