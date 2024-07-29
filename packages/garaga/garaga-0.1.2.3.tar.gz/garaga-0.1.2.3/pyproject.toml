@@ -1,0 +1,32 @@
+[project]
+name = "garaga"
+version = "0.1.2.3"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "cairo-lang==0.13.2a0",
+    "protobuf==3.20.3",
+    "pandas>=2.2.2",
+    "tabulate>=0.9.0",
+    "pyarrow>=17.0.0",
+    "pytest>=8.3.2",
+]
+
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+
+
+[tool.maturin]
+profile = "release"
+python-packages = ["hydra"]
+module-name = "hades_binding"
+features = ["pyo3/extension-module"]
+bindings = "pyo3"
+manifest-path = "tools/hades_binding/Cargo.toml"
+strip = true
+cargo-extra-args = "--release"
+compatibility = "manylinux_2_34"
+skip-auditwheel = false
+[tool.rye]
+namespace_packages = true
