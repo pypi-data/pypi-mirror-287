@@ -1,0 +1,4 @@
+pwcp==0.8.1
+
+[tests]
+pytest

@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "yabi-bython"
+version = "0.4.3"
+description = "Yet Another Bython (braced Python) Implementation"
+readme = "README.md"
+dependencies = ["pwcp==0.8.1"]
+optional-dependencies = {tests = ["pytest"]}
+scripts = {yabi = "yabi:main", yabi-convert = "yabi:convert_main"}
+
+[tool.setuptools]
+packages = ["yabi"]
