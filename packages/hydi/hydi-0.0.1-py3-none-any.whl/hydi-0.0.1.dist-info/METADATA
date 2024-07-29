@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: hydi
+Version: 0.0.1
+Summary: A small example package
+Author-email: Doron Ben <doronbenishay@gmail.com>
+Project-URL: Homepage, https://github.com/playbaq/HyDi
+Project-URL: Issues, https://github.com/playbaq/HyDi/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# HyDi
+A over-simplified UserID generator.
