@@ -1,0 +1,10 @@
+README.md
+setup.py
+PackageBuilding.egg-info/PKG-INFO
+PackageBuilding.egg-info/SOURCES.txt
+PackageBuilding.egg-info/dependency_links.txt
+PackageBuilding.egg-info/top_level.txt
+custom_module/__init__.py
+custom_module/exceptions.py
+custom_module/main.py
+custom_module/utils.py
