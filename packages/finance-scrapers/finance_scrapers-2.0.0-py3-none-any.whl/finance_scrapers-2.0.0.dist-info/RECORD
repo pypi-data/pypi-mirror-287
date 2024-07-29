@@ -1,0 +1,8 @@
+finance_scrapers/__init__.py,sha256=0GcmE4TnuSusp2OS6BnaT6_pV0zUZ1lr8CKtrRJSnLo,106
+finance_scrapers/downloader.py,sha256=TK9kfyiqnCcwSKLgbW8L8C71UYYr_C8iXxBCwy5SPfw,1682
+finance_scrapers/yahoo_finance.py,sha256=O4ozE5TWYHXYayPxXErH0KTsjGC9MRgcMO4LlD_uR8s,3282
+finance_scrapers-2.0.0.dist-info/LICENSE,sha256=0PuB-v8IZ4xxGkUwIlccJU2V36Pvh0hlHFB8l53OO4w,1068
+finance_scrapers-2.0.0.dist-info/METADATA,sha256=g8SMlLZQUuc2NdGpx5xAerAiitsUxjRtjFxXUfCsjF4,2098
+finance_scrapers-2.0.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+finance_scrapers-2.0.0.dist-info/top_level.txt,sha256=zMGTFvNIQOK6g_Kv1L98lRG9MZhMVsLGCho70Y6E2cI,17
+finance_scrapers-2.0.0.dist-info/RECORD,,
