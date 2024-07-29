@@ -1,0 +1,2 @@
+[console_scripts]
+hotvox_client = hotvox_client.__main__:main
