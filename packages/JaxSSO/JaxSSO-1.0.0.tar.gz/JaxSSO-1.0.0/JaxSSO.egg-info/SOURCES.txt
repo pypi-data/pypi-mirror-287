@@ -1,0 +1,14 @@
+README.md
+setup.py
+JaxSSO/SSO_model.py
+JaxSSO/__init__.py
+JaxSSO/assemblemodel.py
+JaxSSO/element.py
+JaxSSO/model.py
+JaxSSO/optimization.py
+JaxSSO/solver.py
+JaxSSO.egg-info/PKG-INFO
+JaxSSO.egg-info/SOURCES.txt
+JaxSSO.egg-info/dependency_links.txt
+JaxSSO.egg-info/requires.txt
+JaxSSO.egg-info/top_level.txt
