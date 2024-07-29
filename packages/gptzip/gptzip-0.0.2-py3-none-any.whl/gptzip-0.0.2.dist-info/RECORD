@@ -1,0 +1,9 @@
+gptzip/__init__.py,sha256=mwhWp_G9qEiO1D7mAqldN9eKHP72yib2bBbzgQiCRKg,36
+gptzip/gptzip.py,sha256=VmFzLlOBqy37aMHOaTQB2RkqjvJN8BC9qku0HnQNfD4,7662
+gptzip/helpers.py,sha256=dPj-QcOAx27ji4Au3qdBP7TUbPeF4U2pdHZWMEWz9lI,12402
+gptzip/utils.py,sha256=71z4lUaivmPs1ssW3caTBNeu_FE_XExXZz7TzZMNpDc,2981
+gptzip-0.0.2.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+gptzip-0.0.2.dist-info/METADATA,sha256=b79QVXg1TZXh7DoBfcMCg5Hi1WXsYqzvSVnKZD4_K7A,227
+gptzip-0.0.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+gptzip-0.0.2.dist-info/top_level.txt,sha256=GWnU77CcFR2v5Ikb6LDvyFg8wakRwlTeqpPYj9HoLoY,7
+gptzip-0.0.2.dist-info/RECORD,,
