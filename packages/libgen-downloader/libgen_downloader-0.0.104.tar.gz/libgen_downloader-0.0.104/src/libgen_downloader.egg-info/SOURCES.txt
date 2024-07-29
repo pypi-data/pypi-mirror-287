@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+src/libgen_cli/__init__.py
+src/libgen_cli/__main__.py
+src/libgen_cli/constants.py
+src/libgen_cli/utils.py
+src/libgen_cli/api/__init__.py
+src/libgen_cli/api/constants.py
+src/libgen_cli/api/libgen_search.py
+src/libgen_cli/api/search_request.py
+src/libgen_downloader.egg-info/PKG-INFO
+src/libgen_downloader.egg-info/SOURCES.txt
+src/libgen_downloader.egg-info/dependency_links.txt
+src/libgen_downloader.egg-info/entry_points.txt
+src/libgen_downloader.egg-info/requires.txt
+src/libgen_downloader.egg-info/top_level.txt
