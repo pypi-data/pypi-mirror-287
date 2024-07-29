@@ -1,0 +1,40 @@
+[project]
+name = "kada-gx-plugin"
+version = "1.1.0"
+authors = [
+  { name="kada", email="contact@kada.ai" },
+]
+maintainers = [
+  { name="kada", email="contact@kada.ai" },
+]
+description="kada-gx-plugin generates validation results in a format for loading into the K Platform."
+readme = "README.md"
+requires-python = ">=3.8,<4.0"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "great-expectations>=0.15.41,<=0.18.19"
+]
+
+[project.optional-dependencies]
+azure = [
+    "azure-identity>=1.12.0",
+    "azure-storage-blob>=12.14.1"
+]
+
+[project.urls]
+"Homepage" = "https://kada.ai"
+
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "great-expectations>=0.15.41,<=0.18.19"
+]
+build-backend = "setuptools.build_meta"
