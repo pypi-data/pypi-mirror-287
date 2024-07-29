@@ -1,0 +1,2 @@
+[console_scripts]
+throttle = throttle.cli:main

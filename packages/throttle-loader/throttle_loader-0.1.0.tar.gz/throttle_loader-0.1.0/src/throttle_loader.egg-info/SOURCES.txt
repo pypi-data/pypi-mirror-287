@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+src/throttle/__init__.py
+src/throttle/cli.py
+src/throttle/example.py
+src/throttle/throttle.py
+src/throttle_loader.egg-info/PKG-INFO
+src/throttle_loader.egg-info/SOURCES.txt
+src/throttle_loader.egg-info/dependency_links.txt
+src/throttle_loader.egg-info/entry_points.txt
+src/throttle_loader.egg-info/top_level.txt
+test/test_helper.py
+test/test_throttle.py
