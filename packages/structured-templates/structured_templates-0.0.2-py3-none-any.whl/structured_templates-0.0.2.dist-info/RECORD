@@ -1,0 +1,9 @@
+structured_templates-0.0.2.dist-info/METADATA,sha256=W4NjUobYyDvDmnkvfyd4WvBZNpp7hzsGOI0eJ6Z8OnI,3055
+structured_templates-0.0.2.dist-info/WHEEL,sha256=rSwsxJWe3vzyR5HCwjWXQruDgschpei4h_giTm0dJVE,90
+structured_templates/__init__.py,sha256=OQP0njuuTag17UT8hfnWx6nYNgv_uKJPDUObroMQPyw,85
+structured_templates/context.py,sha256=TX0vqOgobNNQfMmu02n2XL3XL9fXAJHFn-At4knbqn8,2143
+structured_templates/engine.py,sha256=zMK6LZ21P3-g3-6xNE1w_wFADNM4uBtxaewb6pc9694,4223
+structured_templates/engine_test.py,sha256=GXn7VP1p9-fdYgLMQ4TfXO4IWJLDWiI6yCKqmOSzumI,1037
+structured_templates/exceptions.py,sha256=VkbxK5Pq2O13UQchkBQRxRzsjr9XV8YOWUuPjyqPjt4,417
+structured_templates/types.py,sha256=S2vEswYvupJo6x59P5PeLHqP6Hz60oS9UkB7bmh2Iy0,145
+structured_templates-0.0.2.dist-info/RECORD,,
