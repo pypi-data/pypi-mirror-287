@@ -1,0 +1,12 @@
+batchwizard/__init__.py,sha256=JQ4HokFqKiEMRPN_uLh0K5DvdVliLlZP7WFg1aSvj48,185
+batchwizard/cli.py,sha256=gkDq8GXiWi4ehC5ettu5zKrT0kakpBJFMoj6sxNPZk8,6318
+batchwizard/config.py,sha256=uWv4B-g4keSxqMIMsEiIYgAKHqQ-pnE_bIlI4skAN9E,1333
+batchwizard/models.py,sha256=z2kjkJXVx8GbPLiHAZz-1Egq-bSOpySTMpfXZ71Izk0,331
+batchwizard/processor.py,sha256=rx6I9qoOXZT4jA6iYP-FVzg3A8nlSG5wDaeR8EJ1wcg,5966
+batchwizard/ui.py,sha256=2W94LvRdcJaEiF8eg3f2uC99vjr5O4WVBgPVaL6wn-s,9881
+batchwizard/utils.py,sha256=2Y7YkNLn9881y5BBLWeAhwHwlQE5-c8PD1qJ1SA2Ctk,886
+batchwizard-0.1.0.dist-info/LICENSE,sha256=0f6arLlgOl4eIPJC0pdIzfdlv7-9sVjrtNxMCN7K0G0,1070
+batchwizard-0.1.0.dist-info/METADATA,sha256=PhApELisXEuHd1tpi-_BwTqvYCsg7KNqW2n5kttvQwY,4588
+batchwizard-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+batchwizard-0.1.0.dist-info/entry_points.txt,sha256=77--tIWGL9Ub4O_TrbvPBLFsmqXrEyUfexG9Z2YExF8,51
+batchwizard-0.1.0.dist-info/RECORD,,
