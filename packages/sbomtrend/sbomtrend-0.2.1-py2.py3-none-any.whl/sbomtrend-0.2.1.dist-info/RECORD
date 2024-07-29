@@ -1,0 +1,12 @@
+sbomtrend/__init__.py,sha256=MV03a2xsSEJaVspFICQoG4U_GcK96DsrJut_rV5-5_k,76
+sbomtrend/analysis.py,sha256=SgByZ2tPJpB8Hy4O3OdZXDK56mRCdWCgKes9ydSL2Do,1204
+sbomtrend/cli.py,sha256=LUUEATa0fax0JKM5XpKuO6aNeJhqhTqDCbynp2OiIIU,7803
+sbomtrend/maintained.py,sha256=ocjlo2WKf0UYo-F6mkExPCtb36zk5lc9Ts3in3uipeM,1445
+sbomtrend/summmary.py,sha256=OYxzMPig3IU3CuqwYXXwfQFYLfzpYKj1N4LC5JXjgMw,661
+sbomtrend/version.py,sha256=sD6N5k_oGBsjGx1QODocLL5VvWCIhD-l3WX6s66tBT8,100
+sbomtrend-0.2.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+sbomtrend-0.2.1.dist-info/METADATA,sha256=FuYxmQapvZKwL_o08qlKsHvlTbHiA4Ife1if-FWVMAU,29704
+sbomtrend-0.2.1.dist-info/WHEEL,sha256=-G_t0oGuE7UD0DrSpVZnq1hHMBV9DD2XkS5v7XpmTnk,110
+sbomtrend-0.2.1.dist-info/entry_points.txt,sha256=GBItEMqTdi1hwwtDsEJD7vIGVaMsVnPvN3QP9DcRFS4,49
+sbomtrend-0.2.1.dist-info/top_level.txt,sha256=gixFKSwDozc5tFJUDNR-KwUWtur4ie_I32k_dTKT4gg,10
+sbomtrend-0.2.1.dist-info/RECORD,,
