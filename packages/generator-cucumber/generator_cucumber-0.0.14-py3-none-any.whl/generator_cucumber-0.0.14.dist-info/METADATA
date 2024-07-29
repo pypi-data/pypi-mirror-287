@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: generator-cucumber
+Version: 0.0.14
+Summary: Generation .feature file
+Home-page: https://gitlab.com/python_lib/generator_cucumber
+Author: Dmitry Shibikin
+Author-email: dmitry.shibikin@yandex.ru
+License: UNKNOWN
+Project-URL: Documentation, https://gitlab.com/python_lib/generator_cucumber
+Keywords: python cucmber generator
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: python-gitlab ==4.7.0
+Requires-Dist: simple-term-menu ==1.6.4
+Requires-Dist: beautifulsoup4 ==4.12.3
+Requires-Dist: requests ==2.32.3
+Requires-Dist: requests-toolbelt ==1.0.0
+Requires-Dist: charset-normalizer ==3.3.2
+Requires-Dist: idna ==3.4
+Requires-Dist: urllib3 ==1.26.19
+Requires-Dist: certifi ==2017.4.17
+
+# Cucmber generator
+
+РџСЂРѕРµРєС‚ РЅР°С…РѕРґРёС‚СЊСЃСЏ РЅР° СЃС‚Р°РґРёРё СЂР°Р·СЂР°Р±РѕС‚РєРё
+
+### Structure
+```
+# РџСЂРѕРµРєС‚ РїРѕ РіРµРЅРµСЂР°С†РёРё .feature
+в”њв”Ђв”Ђ рџ“Ѓ generator_cucumber/
+|   в”њв”Ђв”Ђ рџђЌ api_github.py        #
+|   в”њв”Ђв”Ђ рџђЌ api_gitlab.py        #
+|   в”њв”Ђв”Ђ рџђЌ bdd_generator.py     #
+|   в”њв”Ђв”Ђ рџђЌ cache_file.py        #
+|   в”њв”Ђв”Ђ рџђЌ create_file.py       #
+|   в”њв”Ђв”Ђ рџђЌ cucumber_text.py     #
+|   в””в”Ђв”Ђ рџђЌ generator.py         #
+в””в”Ђв”Ђ ... 
+```
+
