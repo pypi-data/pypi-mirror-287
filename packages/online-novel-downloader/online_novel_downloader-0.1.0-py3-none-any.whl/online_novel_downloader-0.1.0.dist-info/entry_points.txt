@@ -1,0 +1,3 @@
+[console_scripts]
+online-novel-downloader=online_novel_downloader.main:app
+
