@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+pygstudio/__init__.py
+pygstudio/__main__.py
+pygstudio/_template/engine.py
+pygstudio/_template/globals.py
+pygstudio/_template/main_game.py
+pygstudio/_template/script_manager.py
+pygstudio/_template/components/__init__.py
+pygstudio_flamfrosticboio.egg-info/PKG-INFO
+pygstudio_flamfrosticboio.egg-info/SOURCES.txt
+pygstudio_flamfrosticboio.egg-info/dependency_links.txt
+pygstudio_flamfrosticboio.egg-info/top_level.txt
+tests/test_setup.py

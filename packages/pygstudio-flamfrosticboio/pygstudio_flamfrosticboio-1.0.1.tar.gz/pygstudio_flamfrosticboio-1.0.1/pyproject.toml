@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pygstudio_flamfrosticboio"
+version = "1.0.1"
+authors = [
+  { name="flamfrosticboio", email="ffe.jhexe@gmail.com" },
+]
+description = "A simple format with tools to help build games easily with pygame."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers"
+]
+
+[project.urls]
+Homepage = "https://github.com/flamfrosticboio/pygstudio"
+Issues = "https://github.com/flamfrosticboio/pygstudio/issues"
