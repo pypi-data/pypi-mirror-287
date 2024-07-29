@@ -1,0 +1,20 @@
+# A zorg file containing subnotes.
+
+################################ p::1
+- 240510#1c foobar
+o 240721#1t This todo has checkboxes
+  * [X] Done subtask
+  * [ ] Open subtask
+o 240510#1d This todo is due::2024-03-30 and has some subnotes
+  * Todo subnote A
+  * Todo subnote B
+    - Todo subsubnote C
+- 240510#1k This note has many subnotes.
+  * This note contains a key::value pair.
+  * bazbuz
+  * pig
+    - is fat
+      + foo
+      + bar
+      + baz
+    - is stinky
