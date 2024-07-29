@@ -1,0 +1,3 @@
+[console_scripts]
+trust = trust_spec_gen.main:run
+
