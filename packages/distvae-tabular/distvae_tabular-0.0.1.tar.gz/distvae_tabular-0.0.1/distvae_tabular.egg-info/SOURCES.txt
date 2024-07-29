@@ -1,0 +1,11 @@
+README.md
+setup.py
+distvae-tabular/__init__.py
+distvae-tabular/dataset.py
+distvae-tabular/distvae.py
+distvae-tabular/example.py
+distvae-tabular/model.py
+distvae_tabular.egg-info/PKG-INFO
+distvae_tabular.egg-info/SOURCES.txt
+distvae_tabular.egg-info/dependency_links.txt
+distvae_tabular.egg-info/top_level.txt
