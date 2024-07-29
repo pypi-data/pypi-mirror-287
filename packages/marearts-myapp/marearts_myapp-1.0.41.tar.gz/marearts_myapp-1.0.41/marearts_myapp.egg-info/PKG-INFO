@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: marearts-myapp
+Version: 1.0.41
+Summary: A short description of your application
+Home-page: https://github.com/MareArts/pypi_test
+Author: MareArts
+Author-email: hello@marearts.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: cython
+
+# MyApp
+
+A brief description of what your application does.
+
+## Installation
+
+You can install MyApp using pip:
+
+```
+pip install myapp
+```
+
+## Usage
+
+After installation, you can run MyApp from the command line:
+
+```
+myapp
+```
+
+Or you can use it in your Python scripts:
+
+```python
+from myapp_compiled import cy_sensitive_function
+
+result = cy_sensitive_function(10)
+print(result)
+```
+
+## Development
+
+To set up the development environment:
+
+1. Clone this repository
+2. Install the development dependencies: `pip install -r requirements-dev.txt`
+3. Run the build and test script: `./build_and_test.sh`
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

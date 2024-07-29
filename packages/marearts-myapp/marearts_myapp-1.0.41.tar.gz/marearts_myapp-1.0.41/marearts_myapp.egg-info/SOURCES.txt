@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+myapp.c
+myapp.pyx
+run_myapp.py
+setup.py
+marearts_myapp.egg-info/PKG-INFO
+marearts_myapp.egg-info/SOURCES.txt
+marearts_myapp.egg-info/dependency_links.txt
+marearts_myapp.egg-info/entry_points.txt
+marearts_myapp.egg-info/requires.txt
+marearts_myapp.egg-info/top_level.txt
