@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: image_to_form_app
+Version: 0.2
+Summary: A CLI tool to upload images to a REST API and handle the response.
+Home-page: https://yourprojecturl.com
+Author: Preetam Verma
+Author-email: preetam.verma@hcl.software
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: PyQt5
+Requires-Dist: requests
+
+# Image to Form (version 0.2)
+
+A CLI tool to upload images to a REST API and handle the response.
+
+## Installation
+
+```sh
+pip install image_to_form_app

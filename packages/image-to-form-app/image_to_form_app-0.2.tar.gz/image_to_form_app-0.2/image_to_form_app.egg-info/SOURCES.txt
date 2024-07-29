@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+image_to_form_app/__init__.py
+image_to_form_app/gui.py
+image_to_form_app/main.py
+image_to_form_app.egg-info/PKG-INFO
+image_to_form_app.egg-info/SOURCES.txt
+image_to_form_app.egg-info/dependency_links.txt
+image_to_form_app.egg-info/entry_points.txt
+image_to_form_app.egg-info/requires.txt
+image_to_form_app.egg-info/top_level.txt
