@@ -1,0 +1,2 @@
+[console_scripts]
+ce2fs = ce2fs:cli_main
