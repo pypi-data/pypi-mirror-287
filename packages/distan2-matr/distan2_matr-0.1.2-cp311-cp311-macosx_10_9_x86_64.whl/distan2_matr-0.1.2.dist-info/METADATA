@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: distan2-matr
+Version: 0.1.2
+Summary: A package for processing FASTA files
+Author: Geroge
+Author-email: 
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENCE.txt
+Requires-Dist: pandas
+
+# GeneDist
+
+A package to calculate genetic distance between sequences.
+
+## Installation
+
+```sh
+pip install distan2_matr
