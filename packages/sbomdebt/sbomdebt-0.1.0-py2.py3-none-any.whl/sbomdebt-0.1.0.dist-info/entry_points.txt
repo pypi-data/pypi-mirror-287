@@ -1,0 +1,2 @@
+[console_scripts]
+sbomdebt = sbomdebt.cli:main

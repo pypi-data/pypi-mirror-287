@@ -1,0 +1,11 @@
+sbomdebt/__init__.py,sha256=MV03a2xsSEJaVspFICQoG4U_GcK96DsrJut_rV5-5_k,76
+sbomdebt/cli.py,sha256=bifctDymhu9o9Cm6TEmMHaxQInU-gGFvF7uvt_oZHFk,3271
+sbomdebt/debt.py,sha256=_nbvycCDH5JRrWFYyM10dAd5xTSKxbQ7P-9Qpb5dynA,5792
+sbomdebt/sbomdebt.py,sha256=VpbZupQdFN92pcAcziHJ2RVQdbCgkqBW3HuZxSAfly0,1633
+sbomdebt/version.py,sha256=6LOKBBhWyh0xOqBVXN8nr9XHaNNfAQ-yz9TuqDOy-Ns,100
+sbomdebt-0.1.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+sbomdebt-0.1.0.dist-info/METADATA,sha256=B3wQY1exu1-FolLEbjJVSc5NwUgSy0gIiTFWo7CWm44,6382
+sbomdebt-0.1.0.dist-info/WHEEL,sha256=DZajD4pwLWue70CAfc7YaxT1wLUciNBvN_TTcvXpltE,110
+sbomdebt-0.1.0.dist-info/entry_points.txt,sha256=M4OJXIZ-Ee9_hBocqJJaXa7t4adWCPXA7srT4MEJ3Ow,47
+sbomdebt-0.1.0.dist-info/top_level.txt,sha256=i0KjHL2ywtx-7jVbjxI8pw6g7_jKSIVWfHqeGmS6278,9
+sbomdebt-0.1.0.dist-info/RECORD,,
