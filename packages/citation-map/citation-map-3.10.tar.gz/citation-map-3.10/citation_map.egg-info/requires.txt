@@ -1,0 +1,7 @@
+scholarly
+geopy
+folium
+tqdm
+requests
+bs4
+pycountry
