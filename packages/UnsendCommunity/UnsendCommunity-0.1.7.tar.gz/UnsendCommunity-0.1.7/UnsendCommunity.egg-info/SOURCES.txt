@@ -1,0 +1,6 @@
+setup.py
+UnsendCommunity.egg-info/PKG-INFO
+UnsendCommunity.egg-info/SOURCES.txt
+UnsendCommunity.egg-info/dependency_links.txt
+UnsendCommunity.egg-info/requires.txt
+UnsendCommunity.egg-info/top_level.txt
