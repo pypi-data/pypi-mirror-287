@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/exam_pseries.dir/exam_pseries.cpp.o  -o exam_pseries  ../ginac/libginac.a -ldl -lcln 

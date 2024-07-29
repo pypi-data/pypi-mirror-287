@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/exam_indexed.dir/exam_indexed.cpp.o  -o exam_indexed  ../ginac/libginac.a -ldl -lcln 

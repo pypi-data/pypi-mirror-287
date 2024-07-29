@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/exam_numeric.dir/exam_numeric.cpp.o  -o exam_numeric  ../ginac/libginac.a -ldl -lcln 

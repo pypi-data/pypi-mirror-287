@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/viewgar.dir/viewgar.cpp.o  -o viewgar  -Wl,-rpath,::::::::::::::::::::::::::::: ../ginac/libginac.a -ldl -lcln 

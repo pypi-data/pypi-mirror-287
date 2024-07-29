@@ -1,0 +1,289 @@
+Start testing: Jul 28 17:49 HKT
+----------------------------------------------------------
+1/60 Testing: check_numeric
+1/60 Test: check_numeric
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/check_numeric"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"check_numeric" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+checking consistency of numeric types..
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"check_numeric" end time: Jul 28 17:49 HKT
+"check_numeric" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/60 Testing: check_inifcns
+2/60 Test: check_inifcns
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/check_inifcns"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"check_inifcns" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+checking consistency of symbolic functions....
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"check_inifcns" end time: Jul 28 17:49 HKT
+"check_inifcns" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/60 Testing: check_matrices
+3/60 Test: check_matrices
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/check_matrices"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"check_matrices" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+checking symbolic matrix manipulations.....
+<end of output>
+Test time =   0.45 sec
+----------------------------------------------------------
+Test Passed.
+"check_matrices" end time: Jul 28 17:49 HKT
+"check_matrices" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/60 Testing: check_lsolve
+4/60 Test: check_lsolve
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/check_lsolve"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"check_lsolve" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+checking linear solve..........
+<end of output>
+Test time =   8.58 sec
+----------------------------------------------------------
+Test Passed.
+"check_lsolve" end time: Jul 28 17:49 HKT
+"check_lsolve" time elapsed: 00:00:08
+----------------------------------------------------------
+
+5/60 Testing: check_mul_info
+5/60 Test: check_mul_info
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/check_mul_info"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"check_mul_info" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"check_mul_info" end time: Jul 28 17:49 HKT
+"check_mul_info" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/60 Testing: heur_gcd_bug
+6/60 Test: heur_gcd_bug
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/heur_gcd_bug"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"heur_gcd_bug" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+checking if heur_gcd() can cope with rational polynomials. 
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"heur_gcd_bug" end time: Jul 28 17:49 HKT
+"heur_gcd_bug" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/60 Testing: exam_paranoia
+7/60 Test: exam_paranoia
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_paranoia"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_paranoia" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+examining several historic failures just out of paranoia..........................
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"exam_paranoia" end time: Jul 28 17:49 HKT
+"exam_paranoia" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/60 Testing: exam_heur_gcd
+8/60 Test: exam_heur_gcd
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_heur_gcd"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_heur_gcd" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+checking if heur_gcd() can cope with rational polynomials. 
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"exam_heur_gcd" end time: Jul 28 17:49 HKT
+"exam_heur_gcd" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/60 Testing: match_bug
+9/60 Test: match_bug
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/match_bug"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"match_bug" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+checking for historical bugs in match()... not found. 
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"match_bug" end time: Jul 28 17:49 HKT
+"match_bug" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/60 Testing: parser_bugs
+10/60 Test: parser_bugs
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/parser_bugs"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"parser_bugs" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+checking for parser bugs. Not found. 
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"parser_bugs" end time: Jul 28 17:49 HKT
+"parser_bugs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/60 Testing: exam_numeric_archive
+11/60 Test: exam_numeric_archive
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_numeric_archive"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_numeric_archive" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+checking if numeric::archive handles complex numbers properly
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"exam_numeric_archive" end time: Jul 28 17:49 HKT
+"exam_numeric_archive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/60 Testing: exam_numeric
+12/60 Test: exam_numeric
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_numeric"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_numeric" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+examining consistency of numeric types......
+<end of output>
+Test time =   0.91 sec
+----------------------------------------------------------
+Test Passed.
+"exam_numeric" end time: Jul 28 17:49 HKT
+"exam_numeric" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/60 Testing: exam_powerlaws
+13/60 Test: exam_powerlaws
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_powerlaws"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_powerlaws" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+examining power laws......
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"exam_powerlaws" end time: Jul 28 17:49 HKT
+"exam_powerlaws" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/60 Testing: exam_inifcns
+14/60 Test: exam_inifcns
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_inifcns"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_inifcns" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+examining consistency of symbolic functions.........
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"exam_inifcns" end time: Jul 28 17:49 HKT
+"exam_inifcns" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/60 Testing: exam_inifcns_nstdsums
+15/60 Test: exam_inifcns_nstdsums
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_inifcns_nstdsums"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_inifcns_nstdsums" start time: Jul 28 17:49 HKT
+Output:
+----------------------------------------------------------
+examining consistency of nestedsums functions........................................................................................................................................................................................................................................................
+<end of output>
+Test time =  22.85 sec
+----------------------------------------------------------
+Test Passed.
+"exam_inifcns_nstdsums" end time: Jul 28 17:50 HKT
+"exam_inifcns_nstdsums" time elapsed: 00:00:22
+----------------------------------------------------------
+
+16/60 Testing: exam_differentiation
+16/60 Test: exam_differentiation
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_differentiation"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_differentiation" start time: Jul 28 17:50 HKT
+Output:
+----------------------------------------------------------
+examining symbolic differentiation.......
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"exam_differentiation" end time: Jul 28 17:50 HKT
+"exam_differentiation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/60 Testing: exam_polygcd
+17/60 Test: exam_polygcd
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_polygcd"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_polygcd" start time: Jul 28 17:50 HKT
+Output:
+----------------------------------------------------------
+examining polynomial GCD computation.........
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"exam_polygcd" end time: Jul 28 17:50 HKT
+"exam_polygcd" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/60 Testing: exam_normalization
+18/60 Test: exam_normalization
+Command: "/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check/exam_normalization"
+Directory: /home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/build/check
+"exam_normalization" start time: Jul 28 17:50 HKT
+Output:
+----------------------------------------------------------
+examining rational function normalization.....
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"exam_normalization" end time: Jul 28 17:50 HKT
+"exam_normalization" time elapsed: 00:00:00
+----------------------------------------------------------
+

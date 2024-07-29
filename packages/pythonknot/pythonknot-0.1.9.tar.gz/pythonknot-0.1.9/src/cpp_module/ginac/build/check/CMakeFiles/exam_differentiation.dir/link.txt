@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/exam_differentiation.dir/exam_differentiation.cpp.o  -o exam_differentiation  ../ginac/libginac.a -ldl -lcln 

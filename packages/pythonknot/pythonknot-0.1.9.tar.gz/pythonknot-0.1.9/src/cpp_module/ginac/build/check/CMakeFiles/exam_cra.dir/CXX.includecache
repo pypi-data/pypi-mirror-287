@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../ginac/polynomial/cra_garner.h
+cln/integer.h
+-
+vector
+-
+
+/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/check/exam_cra.cpp
+polynomial/cra_garner.h
+/home/yongjian/Yongjian_data/my_python/pythonknot/src/cpp_module/ginac/check/polynomial/cra_garner.h
+cln/integer.h
+-
+cln/integer_io.h
+-
+cln/random.h
+-
+cln/numtheory.h
+-
+iostream
+-
+limits
+-
+map
+-
+stdexcept
+-
+vector
+-
+algorithm
+-
+

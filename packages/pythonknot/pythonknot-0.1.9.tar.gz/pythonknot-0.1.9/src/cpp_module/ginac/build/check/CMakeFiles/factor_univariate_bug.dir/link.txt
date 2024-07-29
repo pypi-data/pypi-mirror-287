@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/factor_univariate_bug.dir/factor_univariate_bug.cpp.o  -o factor_univariate_bug  ../ginac/libginac.a -ldl -lcln 

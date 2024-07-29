@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/exam_clifford.dir/exam_clifford.cpp.o  -o exam_clifford  ../ginac/libginac.a -ldl -lcln 

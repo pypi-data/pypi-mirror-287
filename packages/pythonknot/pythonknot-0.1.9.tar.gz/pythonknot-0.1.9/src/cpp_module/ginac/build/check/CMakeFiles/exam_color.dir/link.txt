@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/exam_color.dir/exam_color.cpp.o  -o exam_color  ../ginac/libginac.a -ldl -lcln 

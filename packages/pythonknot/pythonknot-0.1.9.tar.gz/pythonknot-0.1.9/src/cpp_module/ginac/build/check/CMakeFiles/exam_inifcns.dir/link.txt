@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/exam_inifcns.dir/exam_inifcns.cpp.o  -o exam_inifcns  ../ginac/libginac.a -ldl -lcln 

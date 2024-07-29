@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/check_matrices.dir/check_matrices.cpp.o CMakeFiles/check_matrices.dir/genex.cpp.o  -o check_matrices  ../ginac/libginac.a -ldl -lcln 

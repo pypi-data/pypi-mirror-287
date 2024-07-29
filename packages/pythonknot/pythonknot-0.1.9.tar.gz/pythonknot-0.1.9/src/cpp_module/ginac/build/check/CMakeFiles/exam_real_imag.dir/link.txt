@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/exam_real_imag.dir/exam_real_imag.cpp.o  -o exam_real_imag  ../ginac/libginac.a -ldl -lcln 

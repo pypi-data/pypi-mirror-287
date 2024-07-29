@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/parser_bugs.dir/parser_bugs.cpp.o  -o parser_bugs  ../ginac/libginac.a -ldl -lcln 

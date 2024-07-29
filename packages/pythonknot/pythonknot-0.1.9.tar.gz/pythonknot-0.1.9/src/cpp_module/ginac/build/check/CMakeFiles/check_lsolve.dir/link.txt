@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/check_lsolve.dir/check_lsolve.cpp.o CMakeFiles/check_lsolve.dir/genex.cpp.o  -o check_lsolve  ../ginac/libginac.a -ldl -lcln 

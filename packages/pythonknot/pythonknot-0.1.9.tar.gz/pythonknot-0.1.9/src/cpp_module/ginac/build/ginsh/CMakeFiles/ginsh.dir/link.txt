@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/ginsh.dir/ginsh_parser.cpp.o CMakeFiles/ginsh.dir/ginsh_lexer.cpp.o  -o ginsh  -Wl,-rpath,::::::::::::::::::::::::::::: ../ginac/libginac.a -lreadline -ldl -lcln 

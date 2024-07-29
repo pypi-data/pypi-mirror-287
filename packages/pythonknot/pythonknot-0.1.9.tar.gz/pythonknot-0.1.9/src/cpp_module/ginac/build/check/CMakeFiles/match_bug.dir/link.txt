@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/match_bug.dir/match_bug.cpp.o  -o match_bug  ../ginac/libginac.a -ldl -lcln 

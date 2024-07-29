@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/check_mul_info.dir/check_mul_info.cpp.o  -o check_mul_info  ../ginac/libginac.a -ldl -lcln 

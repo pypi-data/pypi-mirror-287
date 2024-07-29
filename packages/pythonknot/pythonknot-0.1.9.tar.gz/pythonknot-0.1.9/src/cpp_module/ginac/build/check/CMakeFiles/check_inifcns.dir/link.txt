@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/check_inifcns.dir/check_inifcns.cpp.o  -o check_inifcns  ../ginac/libginac.a -ldl -lcln 

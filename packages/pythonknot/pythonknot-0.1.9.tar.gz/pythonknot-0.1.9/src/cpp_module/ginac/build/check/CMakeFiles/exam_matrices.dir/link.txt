@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/exam_matrices.dir/exam_matrices.cpp.o  -o exam_matrices  ../ginac/libginac.a -ldl -lcln 

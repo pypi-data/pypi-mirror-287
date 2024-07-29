@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/check_numeric.dir/check_numeric.cpp.o  -o check_numeric  ../ginac/libginac.a -ldl -lcln 
