@@ -1,0 +1,2 @@
+[console_scripts]
+libgen-cli = libgen_cli.__main__:run
