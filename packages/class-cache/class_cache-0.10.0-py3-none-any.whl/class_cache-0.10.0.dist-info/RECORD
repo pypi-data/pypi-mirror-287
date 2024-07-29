@@ -1,0 +1,11 @@
+class_cache/__init__.py,sha256=Fh6NyMugG0bJsUiBrSVehEZw1KGmZMKGVwTsp60Zfuk,176
+class_cache/backends.py,sha256=4RgHr0qBksNlwyA9BMKm_kL-3rz9myZNnipuPskG4y0,8826
+class_cache/core.py,sha256=jPNohQL5bZP42kztFkhaBUfSLpTbafTFiiD1RtfRFjI,4837
+class_cache/lru_queue.py,sha256=ZGC_iUYcrx_YTL3OWfyuWrguuOQs1BeIISZ8ld2M_7U,3706
+class_cache/types.py,sha256=lumeRIUyqGBCFyLOMpkDiWQEP1NWgiHhcUb3SmX-feU,2069
+class_cache/utils.py,sha256=gwGlwkXmGGJdQF1voBIBK9U0y9WhL1lKix4MwC-RLSs,310
+class_cache/wrappers.py,sha256=CNCSVW_uavzMIVgKIbb-lmXN6GWPB5F-jZwAjpj3KQY,4503
+class_cache-0.10.0.dist-info/LICENSE,sha256=XUpLiSC7Kf3bTu873_NPuvQuZjpUvcjWsJV-0wpCHPI,1070
+class_cache-0.10.0.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+class_cache-0.10.0.dist-info/METADATA,sha256=WPjmM0uQWDurOJYa8DAJgn7RpOj9-jpy19mDQgpgga0,4607
+class_cache-0.10.0.dist-info/RECORD,,
