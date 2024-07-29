@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: online-novel-downloader
+Version: 0.1.0
+Summary: Helps with downloading web novels from popular websites.
+License: MIT
+Author: GreatestJakeEVR
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: beautifulsoup4 (>=4.12.3,<5.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: typer (>=0.12.3,<0.13.0)
+Description-Content-Type: text/markdown
+
+# Online Novel Downloader
+
+## Description
+
+Light novel cave is a website that hosts web novels. This program is made to help with downloading novel chapters.
+
+## Use
+
+For the first version it will only work on <www.lightnovelcave.com>
+
+After installing the module in your python environment, you can run it via the terminal
+by having python run the package as a script like so:
+
+```
+python -m online_novel_downloader
+```
+
+or by using its CLI name like so:
+
+```
+online-novel-downloader
+```
+
+
