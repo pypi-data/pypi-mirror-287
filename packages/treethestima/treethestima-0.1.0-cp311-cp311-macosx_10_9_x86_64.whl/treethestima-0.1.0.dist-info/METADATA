@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: treethestima
+Version: 0.1.0
+Home-page: https://github.com/yourusername/treethestima
+Author: Your Name
+Author-email: your.email@example.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Cython
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: cython
+
+# treethestima
+
+A package for estimating thresholds using Cython.
+
+## Installation
+
+```sh
+pip install treethestima
