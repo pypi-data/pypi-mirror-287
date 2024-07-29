@@ -1,0 +1,14 @@
+dockrich/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dockrich/dockcompose.py,sha256=B16zD10txU_6oVTXjd4H_pdX7ALN7GIy_XT1uTvEhkQ,261
+dockrich/dockerclimanager.py,sha256=35MGwSPyyErnBMyQdFEnRVkkQXFgiAW0OMfL5IGTMAg,11612
+dockrich/dockerhistory.py,sha256=VDb2WgvJUjd2NMVUw2X-mE9YXVlp0QMNmTz73soFSDg,1095
+dockrich/dockerinspector.py,sha256=N9VfDhvGVuKxkw_uTC3IIRs387Lkp_D9Vk5v7jMUfbE,1968
+dockrich/dockermanage.py,sha256=VNeMlQfJx7YBOp_Z9p43TeYAzSoofa3tuYdrhwA6fLE,1419
+dockrich/dockerstats.py,sha256=wnmyA4XhcduUWiVIhW_1ewOb3YCECJR7bqWO5o4-HIQ,2511
+dockrich/dockrich.py,sha256=hUmzamMLxPK7g672qdn3wJjYx6leVzQQhOjzWMsVXjU,1580
+dockrich-0.5.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dockrich-0.5.dist-info/METADATA,sha256=u7GmEemY5CSuCVs2HHOJBOQM4MTwckB69-nNWaoo5TY,2131
+dockrich-0.5.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+dockrich-0.5.dist-info/entry_points.txt,sha256=4S6sSH3Nb25tkq4_u78roFOvY3HGyCg9hY0VXAVjxJE,52
+dockrich-0.5.dist-info/top_level.txt,sha256=ym9UvSkpdwhFbRuuuDuRTYOUuEMG5uXFVM1z_amUYD0,9
+dockrich-0.5.dist-info/RECORD,,
