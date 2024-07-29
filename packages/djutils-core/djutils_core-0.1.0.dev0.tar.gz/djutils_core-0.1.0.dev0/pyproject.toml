@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "djutils-core"
+version = "0.1.0-dev"
+authors = [{ name = "ruriazz", email = "azizruri.s@gmail.com" }]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.11",
+]
+description = "Django Project Utilities - Core"
+keywords = ["djutils_core"]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    
+]
+
+[tool.setuptools.packages.find]
+exclude = ["tests*", "example*"]
+
+[project.urls]
+"Homepage" = "https://github.com/ruriazz/djutils-core"
+"Bug Tracker" = "https://github.com/ruriazz/djutils-core/issues"
