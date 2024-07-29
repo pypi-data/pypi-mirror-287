@@ -1,0 +1,6 @@
+setup.py
+MM_JWT.egg-info/PKG-INFO
+MM_JWT.egg-info/SOURCES.txt
+MM_JWT.egg-info/dependency_links.txt
+MM_JWT.egg-info/requires.txt
+MM_JWT.egg-info/top_level.txt
