@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: PyNanoCMS
+Version: 0.4.0
+Summary: Static site generator
+Home-page: https://github.com/rombr/pynano
+License: BSD
+Keywords: HTTP,static site generator
+Author: Roman Bondar
+Author-email: rombr5@gmail.com
+Requires-Python: >=3.9
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Dist: Jinja2
+Description-Content-Type: text/markdown
+
+# PyNanoCMS
+
+Статичный сайт генерируется в папку `<site>_static`. Её
+содержимое помещается на сервер и будет доступно пользователю,
+заходящему на сайт.
+
+### Структура папок.
+
+* Папка `templates` содержит шаблоны сайта
+* Папка `static` содержит файлы, необходимые для отображения сайта (CSS, Java Script)
+* Папка `other` содержит прочие файлы и папки, которые нужно разместить на сайте как есть. Например, `favicon.ico`, `robots.txt` и т. д. При генерации они все будут автоматически скопированы в папку `<site>_static`.
+
+### Конфигурация
+
+Файл `pages.json` содержит описания страниц. Например:
+```json
+[
+{
+    "url": "/help/",
+    "page_id": "help",
+    "context": {},
+    "template": "help.html"
+}
+]
+```
+
+Где:
+
+* `url` - адрес страницы на сайте;
+* `page_id` - уникальный идентификатор страницы, состоящий из букв латиницы, цифр и подчеркиваний.
+Используется в шаблонах для указания адреса страницы, например, `<a href="{{ urls.help }}">Помощь</a>`.
+* `context` - дополнительный контекст для передачи в шаблон.
+Например, `"context": {"cost": "10 руб."}`, в шаблоне может быть исрользован как `{{ cost }}`.
+* `template` - шаблон страницы, у разных страниц может быть один шаблон, шаблоны можно организовать в папки и тогда писать соответственно, например, `"template\": "help/help.html"`.
+
+### Генерация
+
+Для запуска генерации служит `pyNanoCMS.exe` Файл `pynano.log`, сюда пишутся
+ошибки, если происходят.
+
+При перегенерации меняются только те файлы, которые реально изменились.
+
+### Live-сервер
+
+Если запустить команду с опцией `--serve` (короткий вариант `-s`), то по
+адресу `<http://127.0.0.1:8000/>` будет доступна сгенерированная версия
+сайта, причем при любом изменении исходных файлов сайт будет
+автоматически регенерироваться.
+
