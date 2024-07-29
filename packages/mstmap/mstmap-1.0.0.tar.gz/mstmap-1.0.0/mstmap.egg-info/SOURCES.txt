@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.py
+mstmap.egg-info/PKG-INFO
+mstmap.egg-info/SOURCES.txt
+mstmap.egg-info/dependency_links.txt
+mstmap.egg-info/not-zip-safe
+mstmap.egg-info/top_level.txt

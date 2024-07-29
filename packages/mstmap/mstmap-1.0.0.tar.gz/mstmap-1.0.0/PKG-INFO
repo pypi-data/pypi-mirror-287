@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: mstmap
+Version: 1.0.0
+Summary: A C++ library for genetic mapping with pybind11 interface
+Author: Amirsadra Mohseni
+Author-email: amohs002@ucr.edu
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
