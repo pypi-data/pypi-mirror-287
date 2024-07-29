@@ -1,0 +1,10 @@
+db_modeler/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+db_modeler/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+db_modeler/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+db_modeler/management/commands/model_db.py,sha256=1HMzUEvvEzwVC5cCU8dlNSkC_mOCzrY8FLswLg2IHMg,3767
+django_db_modeler-0.1.5.dist-info/LICENSE,sha256=V_4IpouFAomRvGzR_lIKC_nHK3FMNCBan4IeMIeI8FM,1055
+django_db_modeler-0.1.5.dist-info/METADATA,sha256=S_JyFBmRdpNZkKCEoKkykUYnXbesn2NNZFyM7i84xbg,1954
+django_db_modeler-0.1.5.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+django_db_modeler-0.1.5.dist-info/entry_points.txt,sha256=DrcYnw0KN4qUHqT3OoGBY7GvE98pev31qUSbM2VuBnQ,78
+django_db_modeler-0.1.5.dist-info/top_level.txt,sha256=FR5xxFJX4el8EcmhCr86Th8bU2lFO-LCNZNoe-GuGEQ,11
+django_db_modeler-0.1.5.dist-info/RECORD,,

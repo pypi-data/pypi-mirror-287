@@ -1,0 +1,3 @@
+[console_scripts]
+model_db = db_modeler.management.commands.model_db:Command
+

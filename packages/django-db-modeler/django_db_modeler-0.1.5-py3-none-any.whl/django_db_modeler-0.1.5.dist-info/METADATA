@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: django-db-modeler
+Version: 0.1.5
+Summary: A Django management command to generate a graph of a model and its neighbors up to a specified depth.
+Home-page: https://github.com/yourusername/django-graph-models-command
+Author: Felix Lohrke
+Author-email: Sontyp@bin-wieder-da.de
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Django (>=3.0)
+Requires-Dist: django-extensions (>=3.0)
+Requires-Dist: pygraphviz (==1.13)
+
+# Django Graph Models Command
+
+This package provides a Django custom management command to generate a graph of a model and its neighbors up to a specified depth.
+
+## Installation
+
+0. Make sure Graphviz is installed
+> sudo apt-get update && sudo apt-get install graphviz graphviz-dev
+
+1. Install the package using pip:
+> pip install django-db-modeler
+
+2. Add the app to your Django project's `INSTALLED_APPS`:
+```python
+INSTALLED_APPS = [
+    ...,
+    'db_modeler',
+]
+```
+
+
+## Usage
+
+> python manage.py model_db your_app.ModelName 1 --output output_file.svg
+
+## Options
+
+- model_name: The name of the model to visualize.
+- depth: The depth of relationships to include.
+- --output: The output file name.
+- --theme: The theme to use for the graph (default: original).
+- --layout: The layout of the graph (default: dot).
+
+## Example 
+
+> python manage.py model_db product.Product 1 --output model.svg
+
+## License 
+
+This project is licensed under the MIT License. 
+
