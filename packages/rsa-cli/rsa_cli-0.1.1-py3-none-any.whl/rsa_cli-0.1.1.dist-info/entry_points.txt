@@ -1,0 +1,3 @@
+[console_scripts]
+rsa=rsa.core.cli:cli
+
