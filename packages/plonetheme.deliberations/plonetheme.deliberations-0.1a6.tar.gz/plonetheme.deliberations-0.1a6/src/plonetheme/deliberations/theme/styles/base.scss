@@ -1,0 +1,106 @@
+html {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .outer-wrapper {
+    flex: 1;
+  }
+
+  background-color: $grey-100;
+}
+
+#mainnavigation {
+  background-color: $white;
+  box-shadow: $shadow-md;
+  margin-bottom: 1em;
+}
+
+#content > header {
+  margin-bottom: 0;
+}
+
+#section-byline {
+  margin-bottom: 1em;
+  color: $grey-600;
+  font-style: italic;
+}
+
+#content-header {
+  @extend .full-width;
+  box-shadow: $shadow-md;
+  background: $white;
+}
+
+#content {
+  //@extend .full-width;
+  //background-color: $white;
+  //box-shadow: $shadow-md;
+  //margin-top: 0px;
+  //z-index: 2; // This will hide the top shadow
+
+  h1 {
+    @extend .container;
+    padding: 0.5em 0;
+    border-bottom: 1px solid $grey-300;
+    font-size: 2em;
+    font-weight: 500;
+  }
+}
+
+.documentDescription, .documentByline, #content header .lead {
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: $grey-700;
+  font-size: 1.1em;
+}
+
+#main-container {
+  margin-bottom: 0;
+}
+
+#content-core {
+  margin-bottom: 0;
+}
+
+
+.template-document_view #content-core,
+.template-contact-info #content-core,
+.template-sitemap #content-core {
+  @extend .card;
+  padding: 1.5em 2.5em;
+}
+
+
+.placeholder {
+  border-radius: $rounded-sm;
+  opacity: 0.1;
+}
+
+.formControls {
+  display: flex;
+  justify-content: flex-end;
+
+  > * {
+    margin-left: 0.25em;
+  }
+}
+
+
+.dark {
+
+  background-color: $grey-800;
+
+  #mainnavigation {
+    background-color: $grey-800;
+  }
+
+  #content-header {
+    @extend .full-width;
+    background-color: $grey-900;
+  }
+}
