@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/dvinci_api/__init__.py
+src/dvinci_api.egg-info/PKG-INFO
+src/dvinci_api.egg-info/SOURCES.txt
+src/dvinci_api.egg-info/dependency_links.txt
+src/dvinci_api.egg-info/entry_points.txt
+src/dvinci_api.egg-info/requires.txt
+src/dvinci_api.egg-info/top_level.txt
+src/dvinci_api/core/__init__.py
+src/dvinci_api/core/api.py
+src/dvinci_api/core/auth.py
+src/dvinci_api/endpoints/__init__.py
