@@ -1,0 +1,3 @@
+[console_scripts]
+spi-repl=spi_repl.__main__:main
+
