@@ -1,0 +1,12 @@
+Pypable/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+Pypable/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+Pypable/printers.py,sha256=wt7yRIW8hQdG9BS4bIQMw90_aUydi7PUGwtDWByeKBI,10952
+Pypable/text.py,sha256=CCNGBOaQrLW6MSCklWwauiKYJ6guCJCmiW7ZCfLsvco,41394
+Pypable/mixins/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+Pypable/mixins/pipable.py,sha256=J1kuYA2dKHe4hHrfa5vyRUZvUgH2gpHtpaEAof1vV-0,6985
+Pypable/utilities/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+Pypable/utilities/typing.py,sha256=L73kJRoJQsVSR7NlNYNQoOOANdzjN4iQNvD0KBuB7Mk,3537
+pypable-1.0.1.dist-info/METADATA,sha256=HrhdFxFTVcutXHc1I3WnoAdVASxN67g3EJp5GqcND4U,511
+pypable-1.0.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+pypable-1.0.1.dist-info/licenses/LICENSE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
+pypable-1.0.1.dist-info/RECORD,,
