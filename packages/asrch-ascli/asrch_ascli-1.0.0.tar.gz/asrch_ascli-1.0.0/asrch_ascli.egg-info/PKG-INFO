@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: asrch_ascli
+Version: 1.0.0
+Summary: Formatter / dependency for asrch
+Home-page: https://bitbucket.org/asrch/ascli/src/main/
+Author: j
+Author-email: none@none.com
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Formatter / dependency for asrch

@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+asrch_ascli.egg-info/PKG-INFO
+asrch_ascli.egg-info/SOURCES.txt
+asrch_ascli.egg-info/dependency_links.txt
+asrch_ascli.egg-info/top_level.txt
