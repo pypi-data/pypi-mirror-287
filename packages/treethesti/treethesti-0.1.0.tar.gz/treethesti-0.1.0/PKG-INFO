@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: treethesti
+Version: 0.1.0
+Summary: A package for using pkl files to calculate frequency percentages
+Home-page: https://github.com/yourusername/treethestima
+Author: YN
+Author-email: morgen@emory.edu.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# treethesti
+
+A package for using pkl files to calculate frequency percentages.
+
+## Installation
+
+```sh
+pip install treethesti
