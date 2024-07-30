@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: spedpy
+Version: 1.1.1
+Summary: Biblioteca SPED em Python
+Author: Ismael Nascimento
+Author-email: ismaelnjr@icloud.com
+License: MIT License
+Keywords: sped fiscal
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: six
+
+# SPED para python
+
+Biblioteca para geraÃ§Ã£o dos arquivos do Sistema PÃºblico de EscrituraÃ§Ã£o Digital (SPED) para Python.
+
+Essa biblioteca Ã© originado de uma ramificaÃ§Ã£o do projeto python-sped de contribuiÃ§Ã£o de Sergio Garcia (sergio@ginx.com.br)
+
+## Requisitos
+
+- python
+- six
+
+## Como instalar
+
+    $ pip install spedpy
+
+## Objetivos do Projeto
+
+A ideia inicial do projeto e unificar em uma Ãºnica biblioteca mÃ³dulos para facilitar a geraÃ§Ã£o dos arquivos do SPED, diminuido o retrabalho necessÃ¡rio para isso e tentando ao mÃ¡ximo garantir que o arquivo gerado seja considerado vÃ¡lido pelo validador do SPED.
+
+NÃ£o Ã© objetivo deste projeto, remover a necessidade do programador em conhecer o SPED, bem como sua legislaÃ§Ã£o e saber informar adequadamente todas as informaÃ§Ãµes corretamente.
+
