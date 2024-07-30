@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+sequenceDiagram.py
+sequenceDiagram.egg-info/PKG-INFO
+sequenceDiagram.egg-info/SOURCES.txt
+sequenceDiagram.egg-info/dependency_links.txt
+sequenceDiagram.egg-info/top_level.txt

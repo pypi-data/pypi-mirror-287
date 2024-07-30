@@ -1,0 +1,18 @@
+[project]
+name = "sequenceDiagram"
+version = "0.0.2"
+authors = [
+  { name="Brijesh Kulkarni", email="brijesh.kulkarni@gmail.com" },
+]
+description = "library to generate seqeuence diagram for python code"
+readme = "README.md"
+requires-python = ">=3"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/brijeshkulkarni/sequenceDiagram"
+Issues = "https://github.com/brijeshkulkarni/sequenceDiagram/issues"
