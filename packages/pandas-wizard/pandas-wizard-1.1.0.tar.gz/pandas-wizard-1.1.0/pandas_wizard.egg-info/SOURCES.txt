@@ -1,0 +1,16 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+pandas_wizard.egg-info/PKG-INFO
+pandas_wizard.egg-info/SOURCES.txt
+pandas_wizard.egg-info/dependency_links.txt
+pandas_wizard.egg-info/top_level.txt
+pandaswizard/__init__.py
+pandaswizard/aggregate.py
+pandaswizard/window.py
+pandaswizard/wrappers.py
+pandaswizard/functions/__init__.py
+pandaswizard/functions/collate.py
