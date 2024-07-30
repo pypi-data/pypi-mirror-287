@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: marearts-anpr-d
+Version: 0.0.8
+Summary: marearts anpr detector
+Home-page: https://github.com/MareArts/MareArts-ANPR
+Author: MareArts
+Author-email: hello@marearts.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# marearts-anpr-d

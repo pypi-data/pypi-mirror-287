@@ -1,0 +1,5 @@
+include README.md
+include main.py
+include license.pyx
+include pyproject.toml
+include setup.py

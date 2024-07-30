@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+license.pyx
+main.py
+pyproject.toml
+setup.py
+/home/runner/work/marearts-anpr-d/marearts-anpr-d/license.c
+marearts_anpr_d.egg-info/PKG-INFO
+marearts_anpr_d.egg-info/SOURCES.txt
+marearts_anpr_d.egg-info/dependency_links.txt
+marearts_anpr_d.egg-info/entry_points.txt
+marearts_anpr_d.egg-info/top_level.txt
