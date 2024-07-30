@@ -1,0 +1,118 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "assemblyinfo"
+version = "0.0.1"
+description = "A Python library for working with harmonized genome metadata"
+license = {text = "MIT"}
+authors = [
+  {name = "Open2C", email = "open.chromosome.collective@gmail.com"},
+]
+keywords = [
+    "genomics",
+    "bioinformatics",
+    "database",
+    "genome",
+    "annotation",
+    "metadata",
+    "reference",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+readme = "README.md"
+dependencies = [
+    "numpy>=1.10, <2",
+    "pandas>=1.3",
+    "importlib-resources ; python_version<'3.9'",
+    "pyarrow>=5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "pytest",
+    "ruff",
+]
+docs = [
+    "autodocsumm",
+    "jinja2",
+    "myst_nb",
+    "nbsphinx",
+    "Sphinx",
+    "sphinx-autobuild",
+    "sphinx_rtd_theme",
+]
+
+[project.urls]
+homepage = "https://github.com/open2c/assemblyinfo"
+documentation = "https://assemblyinfo.readthedocs.io"
+repository = "https://github.com/open2c/assemblyinfo"
+changelog = "https://github.com/open2c/assemblyinfo/blob/main/CHANGES.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["assemblyinfo"]
+
+[tool.ruff]
+target-version = "py37"
+exclude = [
+    ".venv",
+]
+
+[tool.ruff.lint]
+extend-select = [
+    "B",  # bugbear
+    # "C",  # mccabe complexity
+    # "D",  # pydocstyle
+    "E",  # style errors
+    "F",  # pyflakes
+    "I",  # isort
+    "RUF", # ruff-specific rules
+    "UP", # pyupgrade
+    "W",  # style  warnings
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["assemblyinfo"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.pytest.ini_options]
+minversion = "7"
+log_cli_level = "info"
+xfail_strict = true
+addopts = [
+    "-ra",
+    "--showlocals",
+    "--strict-config",
+    "--strict-markers",
+]
+filterwarnings = ["ignore::PendingDeprecationWarning"]
+testpaths = ["tests"]
+pythonpath = "."
+
+[tool.hatch.envs.default]
+features = ["dev", "docs"]
+
+[tool.hatch.envs.default.scripts]
+fix = "ruff check --fix ."
+lint = "ruff check assemblyinfo tests"
+format = "ruff format assemblyinfo tests"
+docs = "sphinx-autobuild docs docs/_build/html"
+
+[tool.hatch.envs.test]
+features = ["dev"]
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.8", "3.9", "3.10", "3.11"]
