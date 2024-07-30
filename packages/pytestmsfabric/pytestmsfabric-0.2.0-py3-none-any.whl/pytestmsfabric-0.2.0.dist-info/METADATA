@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: pytestmsfabric
+Version: 0.2.0
+Summary: 
+Author: Austin M. Reppert
+Author-email: austinmreppert@gmail.com
+Requires-Python: >=3.11
+Classifier: Framework :: Pytest
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: asyncio (>=3.4.3,<4.0.0)
+Requires-Dist: azure-identity (>=1.17.1,<2.0.0)
+Requires-Dist: azure-storage-file-datalake (>=12.16.0,<13.0.0)
+Requires-Dist: fabricclientaio (==0.1.0)
+Requires-Dist: ipython (>=8.26.0,<9.0.0)
+Requires-Dist: nbformat (>=5.10.4,<6.0.0)
+Requires-Dist: pyspark (>=3.4.0,<4.0.0)
+Requires-Dist: pytest (>=8.2.2,<9.0.0)
+Description-Content-Type: text/markdown
+
+# pytest-fabric
+A pytest plugin for testing Microsoft Fabric Notebooks and data quality.
+
+## Use Cases:
+- Run tests in a CI/CD pipeline via a Docker container
+- Run tests in a CI/CD pipeline via a Fabric workspace
+- Run tests directly from a notebook in Fabric
+- Run data quality tests on a dataset
+
+## Features:
+- Unit tests
+- Data quality tests
+- Upload tests to Azure DevOps
+- PEP302 import hooks for Fabric Notebooks
+
+## Non-Goals:
+- Testing non-python code including magic commands
