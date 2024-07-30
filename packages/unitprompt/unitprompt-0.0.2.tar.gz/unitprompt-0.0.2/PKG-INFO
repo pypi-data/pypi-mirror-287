@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: unitprompt
+Version: 0.0.2
+Summary: A custom pytest matcher that helps you test prompts
+Author: JannisConen
+Author-email: jannis.conen@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Description-Content-Type: text/markdown
+
+
