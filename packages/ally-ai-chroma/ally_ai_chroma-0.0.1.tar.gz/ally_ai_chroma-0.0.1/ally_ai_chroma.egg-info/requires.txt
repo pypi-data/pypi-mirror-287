@@ -1,0 +1,3 @@
+ally-ai-core
+chromadb==0.5.3
+langchain_chroma
