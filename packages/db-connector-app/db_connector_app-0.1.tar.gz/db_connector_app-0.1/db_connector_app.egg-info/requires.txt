@@ -1,0 +1,8 @@
+sqlalchemy
+pymongo
+cassandra-driver
+redis
+couchdb
+boto3
+neo4j
+python-dotenv
