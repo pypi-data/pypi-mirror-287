@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: CryptoPayAPI
+Version: 1.4
+Summary: Simple library for https://t.me/CryptoBot
+Home-page: https://github.com/aweone/CryptoPayAPI
+Author: aweone
+Author-email: aweonegithub@gmail.com
+License: MIT License
+Project-URL: Source Code, https://github.com/aweone/CryptoPayAPI
+Project-URL: API Docs, https://help.crypt.bot/crypto-pay-api
+Keywords: crypto api pay p2p wrapper async cryptopay cryptopayapi
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp~=3.8.1
+Requires-Dist: httpx~=0.23.0
+
+# CryptoPayAPI
+Simple library for https://t.me/CryptoBot
+### Installation
+```
+$ pip install CryptoPayAPI
+```
+
+### Usage
+#### Asynchronous
+```Python
+from CryptoPayAPI.AioCryptoPay import AioCryptoPay
+from CryptoPayAPI.types.asset import USDT
+
+import asyncio
+
+async def main():
+    # create session
+    cryptopay = AioCryptoPay(
+        token="token",
+        is_test_net=True
+    )
+
+    await cryptopay.get_balance()
+
+    invoice = await cryptopay.create_invoice(amount=1, asset=USDT)
+    print(invoice.bot_invoice_url)
+
+    await cryptopay.close()
+
+asyncio.run(main())
+
+```
+
+#### Synchronous
+```Python
+from CryptoPayAPI.CryptoPay import CryptoPay
+from CryptoPayAPI.types.asset import BTC
+
+# create session
+cryptopay = CryptoPay(
+    token="token"
+)
+
+cryptopay.get_balance()
+
+invoice = cryptopay.create_invoice(amount=0.3, asset=BTC)
+print(invoice.bot_invoice_url)
+
+
+```
+
+### Docs
+The library is fully compatible with the official api - https://help.crypt.bot/crypto-pay-api
