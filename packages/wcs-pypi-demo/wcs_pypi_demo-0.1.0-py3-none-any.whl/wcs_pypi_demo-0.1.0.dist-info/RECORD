@@ -1,0 +1,7 @@
+wcs_pypi_demo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wcs_pypi_demo/middlewares/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wcs_pypi_demo/middlewares/middleware1.py,sha256=7SuD-P36m6ndzR_in5gt9J5GPn4zyRoIWJlNRcVBW4E,166
+wcs_pypi_demo-0.1.0.dist-info/METADATA,sha256=4bR-lCqXNa-n9ZcM5VeAJyIrUXn7d82tIivRpJ6kftM,323
+wcs_pypi_demo-0.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+wcs_pypi_demo-0.1.0.dist-info/top_level.txt,sha256=9Fbr0BrKKF9jqUdwFbklS0Qg8WWAnkPsq4cJZEF-QGw,14
+wcs_pypi_demo-0.1.0.dist-info/RECORD,,
