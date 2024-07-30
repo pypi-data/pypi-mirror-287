@@ -1,0 +1,10 @@
+git_author_stats/__init__.py,sha256=_xk9b_Yy2cfxG2OC5UyGSgztIbRh6mbaE7vmb1SQNpw,191
+git_author_stats/__main__.py,sha256=le7CZN2aE-CkZt22woqT_BdiHg7D8XgjDBC13WE7m2A,5238
+git_author_stats/_github.py,sha256=GVfaMA80qxggRHKVYcNTorc8BC2YU7vyNsp4FVpwPhA,1926
+git_author_stats/_stats.py,sha256=Sc_snF763mlka6zNhAE4HRbZtpQzbppqmhYKBqGIYdA,21373
+git_author_stats/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+git_author_stats-0.0.1.dist-info/METADATA,sha256=wL-cEu45j-Uq6zC6YWdKE7u1K8YyuNvmXlB-VmuvZ9c,8331
+git_author_stats-0.0.1.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+git_author_stats-0.0.1.dist-info/entry_points.txt,sha256=YEXvleYFv2fRRknOoqf_rPfxAsKF1G5g0yzZZH6cVHg,68
+git_author_stats-0.0.1.dist-info/top_level.txt,sha256=5K82SSkjCW4GiGCS9rLU0g1GSil2uIRtck1DHFULwPk,17
+git_author_stats-0.0.1.dist-info/RECORD,,
