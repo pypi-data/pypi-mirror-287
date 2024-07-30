@@ -1,0 +1,5 @@
+lavague/contexts/anthropic/__init__.py,sha256=fQJVv_FHl5bY0r4DyONGA171GfN-Jf8hQts_qWZtzNU,61
+lavague/contexts/anthropic/base.py,sha256=ulopGENSGgzqcIazX1YVWFG2q-73D81ePfevg_Oj_58,1219
+lavague_contexts_anthropic-0.1.2.dist-info/METADATA,sha256=0gP2fqit7dsHSyRLvud_LNFvvvnhzcbUM_LBijfjRws,1178
+lavague_contexts_anthropic-0.1.2.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+lavague_contexts_anthropic-0.1.2.dist-info/RECORD,,
