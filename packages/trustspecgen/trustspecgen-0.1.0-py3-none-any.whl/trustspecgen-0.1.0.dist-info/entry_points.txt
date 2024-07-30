@@ -1,0 +1,3 @@
+[console_scripts]
+trust=trustspecgen.main:run
+
