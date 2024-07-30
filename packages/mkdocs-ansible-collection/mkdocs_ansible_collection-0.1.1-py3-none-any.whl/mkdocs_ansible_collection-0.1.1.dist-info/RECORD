@@ -1,0 +1,9 @@
+mkdocs_ansible_collection/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mkdocs_ansible_collection/plugin.py,sha256=9QO0g03a9GdgjtK0VWIvziSvvqvs4qSkTvXsqK_4OJc,4088
+mkdocs_ansible_collection/templates/collection_index.md.jinja,sha256=--m9iqU4uFeMAjB3vG056ugwC4TVuuhaW5xFgg1IEps,238
+mkdocs_ansible_collection/templates/plugin_list.md.jinja,sha256=GWzgsIAlkwr0kaDFljtd5-gGjr0NVm7BGRWpyG35UG0,126
+mkdocs_ansible_collection-0.1.1.dist-info/LICENSE,sha256=z0vxxRPb5DfgxW93VRlSmPir_jXJyxyGixybpJry9rs,1071
+mkdocs_ansible_collection-0.1.1.dist-info/METADATA,sha256=0r61Hzjm_CgyLqIoic_GHGUIkp9TDuB-fjMc4FpEUhY,1167
+mkdocs_ansible_collection-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+mkdocs_ansible_collection-0.1.1.dist-info/entry_points.txt,sha256=iIpiAJCGT63h8YWLJ7kHKpqQVrVp2PQvhUL3UyCcTSI,88
+mkdocs_ansible_collection-0.1.1.dist-info/RECORD,,
