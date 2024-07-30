@@ -1,0 +1,2 @@
+[console_scripts]
+granloader = fast_downloads.app:main
