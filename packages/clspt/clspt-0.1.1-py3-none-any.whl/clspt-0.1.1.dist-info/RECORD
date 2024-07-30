@@ -1,0 +1,10 @@
+clspt/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clspt/extensions/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clspt/extensions/failed_requests.py,sha256=nIet4IcRjO07M76mBtL7Lrbk81H_VuJKmMAeHWnNlL4,3027
+clspt/middlewares/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clspt/pipelines/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clspt/pipelines/pipeline_to_sql.py,sha256=QA_IdD0pYSX1OVAeAycNUMK38ImN1xafYiSfhp_XuE0,5310
+clspt-0.1.1.dist-info/METADATA,sha256=tqKOIKdCY4sq4NHrxlIHXNDlrA5zvhQyI4ZD9syoPOQ,315
+clspt-0.1.1.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+clspt-0.1.1.dist-info/top_level.txt,sha256=XOO655_Qk-PbyrpO96rAdPJ3y7D1kmLpRNbwspJN_b4,6
+clspt-0.1.1.dist-info/RECORD,,
