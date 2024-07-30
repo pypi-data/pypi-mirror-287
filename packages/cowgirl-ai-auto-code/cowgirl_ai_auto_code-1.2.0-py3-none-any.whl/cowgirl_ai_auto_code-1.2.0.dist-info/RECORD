@@ -1,0 +1,15 @@
+auto_code/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+auto_code/auto_code.py,sha256=gBZaN9D80WKLr944YkLzaaPz7BlqQv9ijSJBW7q4xDQ,4641
+auto_code/back_end_bot.py,sha256=zf2jgdCQ4goio4bYW_q23RfZzp2QcFtveXorRRGK-Fw,4690
+auto_code/config.py,sha256=aEBrHohKKyd6Ah1D8RorhvVaDLK-70Ws60eOA5RhWhE,1290
+auto_code/front_end_bot.py,sha256=RzXL-GCGaJtuu-W2jFPUXhdhfoHrrWoJ_2uU2iW16cI,4691
+cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cli/back_end.py,sha256=NT1LYqWzNrt2LAUlr0N3sFM1BXRt5r4N8x4UOsxyOaQ,1363
+cli/front_end.py,sha256=I1OEOegrhjju_6z8y8hE4F310H9ZUvBEvrh5dpAgpHA,1334
+cli/main.py,sha256=R6gQh2UYyLzYgoDVRX_8qsKJhRz24cYI4uERk_mN6Kk,1479
+cowgirl_ai_auto_code-1.2.0.dist-info/LICENSE,sha256=m0qBgCW5OTBIEaCrLeP3bPwuV4FyUBkbXp-KWZxNX2E,1070
+cowgirl_ai_auto_code-1.2.0.dist-info/METADATA,sha256=c7rN1ZalvxEyDPLEVSE12ncdDcXxEHnDFGQkgUxqUHo,913
+cowgirl_ai_auto_code-1.2.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+cowgirl_ai_auto_code-1.2.0.dist-info/entry_points.txt,sha256=IQvUSJ-lzTDv9_SVw7CCsLrZzrg984A5mw6JKSVES7o,115
+cowgirl_ai_auto_code-1.2.0.dist-info/top_level.txt,sha256=ZRia53kPCTMNUVpu0YysjWN9ino3qKfM2gJMjQeQ0jg,14
+cowgirl_ai_auto_code-1.2.0.dist-info/RECORD,,
