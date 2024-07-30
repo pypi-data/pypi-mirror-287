@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+curl_fetch2py/__init__.py
+curl_fetch2py/api.py
+curl_fetch2py.egg-info/PKG-INFO
+curl_fetch2py.egg-info/SOURCES.txt
+curl_fetch2py.egg-info/dependency_links.txt
+curl_fetch2py.egg-info/top_level.txt
