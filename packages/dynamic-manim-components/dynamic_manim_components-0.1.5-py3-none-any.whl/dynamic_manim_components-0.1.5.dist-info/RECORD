@@ -1,0 +1,10 @@
+dynamic_manim_components/__init__.py,sha256=4i-XKCSZk41d0yb1HFLkdjY8LMLvxYG_tM3PQN8cBlM,104
+dynamic_manim_components/src/animation.py,sha256=uYXvf49BqP9sDuYEZxZ_gfRS_NnPEMvRHnQPG4XnCRI,42968
+dynamic_manim_components/src/dynamic_mobject.py,sha256=HBuQL_mq7whrIkY6lcYgaF7MTKrLyK7aQ48J5u9qOIw,30623
+dynamic_manim_components/src/dynamic_tex_mobject.py,sha256=NEg0otRmoWZq7wADI8jrNC_23Br9_iBFiE6bE1i0wrI,29713
+dynamic_manim_components/src/numpy_mobject_array.py,sha256=MZq9uzQfnZH05T6O0Y_vlKRLF6y4Nv0CR7y1oZ3ikHE,2707
+dynamic_manim_components/src/manim_src/composition.py,sha256=7lJpa5feZA44iQGkWIIHH7EDkE07OSXskL3DsbMTbHk,5749
+dynamic_manim_components-0.1.5.dist-info/METADATA,sha256=dpFg-nLotwqdhuRz3uErbTzZfFdM1OKtJy72QxdmWms,29908
+dynamic_manim_components-0.1.5.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+dynamic_manim_components-0.1.5.dist-info/top_level.txt,sha256=FVApSoInB1dHCQqPoiEEd-5liIWMrp6ahz97wLlSSS0,25
+dynamic_manim_components-0.1.5.dist-info/RECORD,,
