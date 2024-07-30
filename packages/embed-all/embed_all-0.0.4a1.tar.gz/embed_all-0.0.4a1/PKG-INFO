@@ -1,0 +1,12 @@
+Metadata-Version: 2.3
+Name: embed_all
+Version: 0.0.4a1
+Summary: Add your description here
+Author-email: Arnab Bhattacharya <53032587+Arnab28122000@users.noreply.github.com>
+License-File: LICENSE
+Requires-Python: >=3.8
+Requires-Dist: openpyxl>=3.1.5
+Requires-Dist: pandas>=2.2.2
+Description-Content-Type: text/markdown
+
+# Create venv named vembed using pyenv
