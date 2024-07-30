@@ -1,0 +1,9 @@
+pytorchfire/__about__.py,sha256=J-j-u0itpEFT6irdmWmixQqYMadNl1X91TxUmoiLHMI,22
+pytorchfire/__init__.py,sha256=Nx2ogT7UCv_esBtaWl02dJa7XO_NtA5oGSPcCmBRAnk,135
+pytorchfire/model.py,sha256=qsJR4HKAb2IfhFkzdtJHRG_cCtHjcSMrLdJ8cuBZd7E,18217
+pytorchfire/trainer.py,sha256=ogadGXdBKdRMD50HS3LbKAAuhYm7eKHY0L1q6-RJx5s,10437
+pytorchfire/utils.py,sha256=_vamijnFkGlFr6gCY-1_5-hg6KImJBpCrCnRZhZpnHc,4068
+pytorchfire-1.0.0.dist-info/METADATA,sha256=NoW4prP6WkzTA9nIDgkk5VVJT4neo5PggfGgoIkoIuc,3635
+pytorchfire-1.0.0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+pytorchfire-1.0.0.dist-info/licenses/LICENSE,sha256=iBuNs0JuMJs6xdzx0DUA2RvPgdssWunpEwERxUEIAjU,1065
+pytorchfire-1.0.0.dist-info/RECORD,,
