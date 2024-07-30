@@ -1,0 +1,7 @@
+README.md
+setup.py
+azure_identiy.egg-info/PKG-INFO
+azure_identiy.egg-info/SOURCES.txt
+azure_identiy.egg-info/dependency_links.txt
+azure_identiy.egg-info/not-zip-safe
+azure_identiy.egg-info/top_level.txt
