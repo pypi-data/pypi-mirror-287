@@ -1,0 +1,16 @@
+DualRegev/Config.py,sha256=z8vdoAspZHItMJQ9w4xERmi2R_Cy1gMT0YOkSmSwym0,1880
+DualRegev/__init__.py,sha256=IG3tdwA_oF_tzxepf7E4U8ulvnnZQZTyYyxZnxOuXiA,202
+DualRegev/Cipher/Crypto.py,sha256=Z7-_mJ-d8jAKshzRA3ZrWBnSV68CA1zmSWuxgoE2oTc,9176
+DualRegev/Cipher/__init__.py,sha256=T3hmMH4Gy6YQA5oTknpuG0qpw0jYBOzdddEgmdAza10,61
+DualRegev/IO/Converter.py,sha256=4g23IVL3VykNO82Q16oLmPaQjcVOoVcNTnqqWdquGQ0,1681
+DualRegev/IO/Error.py,sha256=thvs2PaPdln4Uto9wUTd_S8fmw0q_FXHY4eVhxwe4r0,1147
+DualRegev/IO/String.py,sha256=t65SusGPoiBWi8qiYnwKyipbmxj2onLtyBYUNZapj40,346
+DualRegev/IO/__init__.py,sha256=ouTYKOajjWBSuOq-O_VJTqR4uSZaPuW7OX-PQKdcOGE,134
+DualRegev/Math/Matrix.py,sha256=vP3mmz9Vv5NTeNoqG8K2oDXE6rA-uLwvA2WzVtSCn1c,5662
+DualRegev/Math/Prime.py,sha256=CbvgB8SwNP0CwvGKkMW3sSywLHJ3LSfzGZeyk3xI-B8,312
+DualRegev/Math/__init__.py,sha256=7gbjimQ8WExWmpZriWwE6ZqymiBkhk3ZjOE1NmMa-t0,20
+DualRegevEncryption-1.0.0.dist-info/LICENSE.txt,sha256=VDwABkM0IrFViDhA3gIzLuzayIE8QYPpKh_k951qWLI,1120
+DualRegevEncryption-1.0.0.dist-info/METADATA,sha256=dbF0Qvr26EzltPDooH8a8P3LxKqOO22LNhtzfACwg7E,3776
+DualRegevEncryption-1.0.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+DualRegevEncryption-1.0.0.dist-info/top_level.txt,sha256=Nr0Nlyg8VX2BItPmHyyhK6wyvUTZDHHhHMbPJCQkesU,10
+DualRegevEncryption-1.0.0.dist-info/RECORD,,
