@@ -1,0 +1,21 @@
+Bootstrap: docker
+From : library/python:3.11
+#From : nvidia/cuda:12.5.1-cudnn-devel-ubuntu22.04
+#From : tensorflow/tensorflow:nightly-gpu
+
+%labels
+    Author maxime@helical-ai.com
+    Author benoit@helical-ai.com
+    Version v0.0.1
+
+%post
+   cd /home
+   apt-get -y upgrade 
+   apt-get -y update
+   apt-get install -y cmake wget git curl gcc gfortran 
+   apt-get clean
+   python3 -m pip install --extra-index-url https://test.pypi.org/simple/ helical
+
+   #pip install --upgrade git+https://github.com/helicalAI/helical.git
+   #python3 -m pip install --upgrade tensorflow[and-cuda]==2.17.0
+   #python3 -m pip install --upgrade torch==2.3.0 torchvision
