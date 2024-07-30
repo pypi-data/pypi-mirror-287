@@ -1,0 +1,9 @@
+openobd/__init__.py,sha256=OzjBsewfkMuXHDdwm4dQEwoD5FtAVcfztkqG5fWgywk,2305
+openobd/_metadata.py,sha256=m3KwqTPSyglvdkL8ZVtCe-iTXn6P8Bz06hxbY0iqJkk,23
+openobd/openobd.py,sha256=U2F-Nl44y2hhR7sHEkTVPDTrnb0pjkfk-cZHNltZf6s,15233
+openobd/openobd_exceptions.py,sha256=oL-nT_IE3E-bl0KQiXEgkR_6V8V28hSzO8HGs8PjGoU,732
+openobd-1.15.0.dist-info/LICENSE,sha256=Exo1J4-rXUp99HQN_5-0KkMojzHvsRnkppVwRnMmxwk,1066
+openobd-1.15.0.dist-info/METADATA,sha256=2o0mtIN0e1DC3G_EIZ4VRaYcN3im8niH9HWMnHu8erI,2385
+openobd-1.15.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+openobd-1.15.0.dist-info/top_level.txt,sha256=88ioEZc5jcxKNr63Gti_lhCVCMyQa1U8YjvJ-4FzRJQ,8
+openobd-1.15.0.dist-info/RECORD,,
