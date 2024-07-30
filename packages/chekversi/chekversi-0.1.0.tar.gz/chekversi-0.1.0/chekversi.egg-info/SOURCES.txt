@@ -1,0 +1,10 @@
+LICENCE.txt
+README.md
+setup.py
+chekversi/__init__.py
+chekversi/main.py
+chekversi.egg-info/PKG-INFO
+chekversi.egg-info/SOURCES.txt
+chekversi.egg-info/dependency_links.txt
+chekversi.egg-info/entry_points.txt
+chekversi.egg-info/top_level.txt
