@@ -1,0 +1,2 @@
+[console_scripts]
+disprocos2 = disprocos2:main
