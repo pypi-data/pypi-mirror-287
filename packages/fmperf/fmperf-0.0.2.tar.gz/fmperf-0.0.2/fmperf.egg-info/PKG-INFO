@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: fmperf
+Version: 0.0.2
+Home-page: https://github.com/fmperf-project/fmperf.git
+Author: IBM Research
+License: Apache 2.0
+License-File: LICENSE
+Requires-Dist: kubernetes==24.2.0
+Requires-Dist: black~=24.0
+Requires-Dist: pandas
+Requires-Dist: pyyaml
+Requires-Dist: typing
+Requires-Dist: pytest
+Requires-Dist: wheel
+Requires-Dist: scikit-learn
+Requires-Dist: durations
+Requires-Dist: transformers
+Requires-Dist: sentencepiece
