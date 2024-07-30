@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/vider/__init__.py
+src/vider/gox.py
+src/vider_dl.egg-info/PKG-INFO
+src/vider_dl.egg-info/SOURCES.txt
+src/vider_dl.egg-info/dependency_links.txt
+src/vider_dl.egg-info/entry_points.txt
+src/vider_dl.egg-info/requires.txt
+src/vider_dl.egg-info/top_level.txt
+tests/test_download.py
+tests/test_gox.py

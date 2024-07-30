@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vider-dl"
+version = "0.0.1"
+authors = [
+  { name = "Dwa Bece", email = "pypispam@c40.pl" },
+]
+description = "vider.info downloader"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "aiofiles>=24.1.0",
+    "aiohttp>=3.9.5",
+    "click>=8.1.7",
+    "tqdm>=4.66.4",
+    "beautifulsoup4>=4.12.3",
+    "bs4>=0.0.2"
+]
+
+[project.urls]
+Homepage = "https://github.com/dwabece/vider-dl"
+Issues = "https://github.com/dwabece/vider-dl/issues"
+
+[project.scripts]
+vider-dl = "vider.gox:download_video"
+
+[project.optional-dependencies]
+dev = [
+    "ipdb",
+    "pytest",
+    "aioresponses",
+    "pytest-asyncio",
+    "pytest-mock",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
