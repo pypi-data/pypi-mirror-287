@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+church_rec_manager.egg-info/PKG-INFO
+church_rec_manager.egg-info/SOURCES.txt
+church_rec_manager.egg-info/dependency_links.txt
+church_rec_manager.egg-info/requires.txt
+church_rec_manager.egg-info/top_level.txt
+middleware/Baptism.py
+middleware/Confirmation.py
+middleware/__init__.py
+middleware/dbconnection.py
+middleware/death.py
+middleware/marriage.py
+middleware/storefile.py
