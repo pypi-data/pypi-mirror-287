@@ -1,0 +1,9 @@
+README.md
+setup.py
+jquery-datatables-django-backend/__init__.py
+jquery-datatables-django-backend/utils.py
+jquery_datatables_django_backend.egg-info/PKG-INFO
+jquery_datatables_django_backend.egg-info/SOURCES.txt
+jquery_datatables_django_backend.egg-info/dependency_links.txt
+jquery_datatables_django_backend.egg-info/requires.txt
+jquery_datatables_django_backend.egg-info/top_level.txt
