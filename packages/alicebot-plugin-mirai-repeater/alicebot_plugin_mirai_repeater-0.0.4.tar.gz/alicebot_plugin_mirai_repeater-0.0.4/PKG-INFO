@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: alicebot-plugin-mirai-repeater
+Version: 0.0.4
+Summary: using mirai adapter, will repeat group member's message randomly
+Keywords: bot,chatbot,alicebot,mirai
+Author-Email: DekuWang <2873450572@qq.com>
+License: AGPL-3.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: AsyncIO
+Classifier: Framework :: Robot Framework
+Classifier: Framework :: Robot Framework :: Library
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Communications :: Chat
+Project-URL: Homepage, https://github.com/DekuWang/alicebot-plugin-mirai-repeater
+Project-URL: Repository, https://github.com/DekuWang/alicebot-plugin-mirai-repeater
+Requires-Python: >=3.8
+Requires-Dist: alicebot[all]>=0.10.0
+Requires-Dist: alicebot-adapter-mirai>=0.10.0
+Description-Content-Type: text/markdown
+
+# AliceBot-Plugin-Mirai-Repeater
+
+**AliceBot Mirai框架用复读机**
+
+可以用来复读群友的话
+
+可以通过在机器人主程序中修改Repeater的repeat_len变量来决定多少次以后复读
+![alt text](resources/img/image.png)
+
+
+
+</div>
