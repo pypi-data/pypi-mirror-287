@@ -1,0 +1,12 @@
+unitprompt/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unitprompt/matchers/parsable/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unitprompt/matchers/parsable/test_parsable_csv.py,sha256=Oj-vuRKrk0dqNmULxDHO7zGX4W0HnBYRBY4gOATbMws,316
+unitprompt/matchers/parsable/test_parsable_json.py,sha256=3DA9rREfkxFXix80Z4WxOX66nHIhSEXAx2gUtxuUihU,192
+unitprompt/matchers/parsable/test_parsable_xml.py,sha256=Lsek7-gQjBRI0bCmCvYmRcvrgi6GHfQQO7lhwVbsYRs,219
+unitprompt/matchers/parsable/test_parsable_yaml.py,sha256=ngN1ENbFWgHDBnc4Sn81Wa-HFWhfxk2IU9ekwuwHFII,186
+unitprompt/matchers/style/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unitprompt/matchers/uses/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unitprompt/unit_prompt_matcher.py,sha256=nG6JKQHi2l6eWNEocSQq4EAtG4EVigGyesJutAVdZpY,619
+unitprompt-0.0.2.dist-info/METADATA,sha256=K4zdzEeiKdTGgz3wiza5ovMr-cSP77LU1OMsZCw9ehw,444
+unitprompt-0.0.2.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+unitprompt-0.0.2.dist-info/RECORD,,
