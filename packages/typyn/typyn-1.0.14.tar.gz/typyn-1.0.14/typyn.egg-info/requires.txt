@@ -1,0 +1,6 @@
+typer
+windows-curses
+toml
+pyfiglet
+asciichartpy
+asciimatics
