@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: livepng
+Version: 0.1.3
+Summary: LivePNG is a format to create avatars based on PNG images with lipsync support
+Home-page: https://github.com/francescocaracciolo/livepng
+Download-URL: https://github.com/FrancescoCaracciolo/LivePNG/archive/refs/tags/0.1.3.tar.gz
+Author: Francesco Caracciolo
+Author-email: francescocaracciolo78@gmail.com
+License: GGPLv3
+Keywords: avatar,png,lipsync,livepng,anime
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+License-File: LICENSE.txt
+Requires-Dist: pydub
+Requires-Dist: pyaudio
