@@ -1,0 +1,10 @@
+easyload/__init__.py,sha256=03JUb0jzc0wtdRoRnDOpU2SsjvlKqqu0yZHuo693sJM,803
+easyload/built_excel.py,sha256=OD-1Pxf6P1sV7W8XT2sCi07JRyS1XABomXJkFJ6R2eA,4594
+easyload/easy_load_data.py,sha256=D92xLRLTjK-HWZZpUMOBt8LKoHV8gFmjyV7IB4ZCuN4,3266
+easyload/easy_save_data.py,sha256=rBFymyVzaNGaoBWLKwZmMf3z-KS09gfxOgtkblKjlqc,1745
+easyload/load_any_json.py,sha256=pQ7GpYH0HInQK0inmmnudq0iZCBvwgF0BnLLmB98LaY,1320
+easyload-1.0.9.dist-info/LICENSE,sha256=vZuCeH76NXNK_CNZWmYQlewQPzE4zuIBkCde2n5i7r0,1087
+easyload-1.0.9.dist-info/METADATA,sha256=9TvgajlFWSTXX7ZlEihQwbnhu0cqdrAUaxGU5H3u_pc,1973
+easyload-1.0.9.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+easyload-1.0.9.dist-info/top_level.txt,sha256=GSys6jVh6BjVsF6n0Z5jvnsUSWCb7nO4zOoK0KGJFV0,19
+easyload-1.0.9.dist-info/RECORD,,
