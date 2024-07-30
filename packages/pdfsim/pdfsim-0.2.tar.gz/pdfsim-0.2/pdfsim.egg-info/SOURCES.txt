@@ -1,0 +1,8 @@
+README.md
+main.py
+setup.py
+pdfsim.egg-info/PKG-INFO
+pdfsim.egg-info/SOURCES.txt
+pdfsim.egg-info/dependency_links.txt
+pdfsim.egg-info/entry_points.txt
+pdfsim.egg-info/top_level.txt
