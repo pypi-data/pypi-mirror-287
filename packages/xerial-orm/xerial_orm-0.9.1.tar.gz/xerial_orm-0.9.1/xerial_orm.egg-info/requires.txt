@@ -1,0 +1,9 @@
+psycopg2
+asyncpg
+aiosqlite
+pyodbc
+aioodbc
+shapely
+packaging
+tabulate
+xlsxwriter
