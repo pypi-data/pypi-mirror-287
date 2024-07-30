@@ -1,0 +1,2 @@
+[console_scripts]
+assertai-alpha-deployer = assertai_alpha_deployer.__main__:main

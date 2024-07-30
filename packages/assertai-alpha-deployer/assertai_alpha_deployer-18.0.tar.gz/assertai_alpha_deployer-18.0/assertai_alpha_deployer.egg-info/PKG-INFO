@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: assertai_alpha_deployer
+Version: 18.0
+Summary: A package to deploy python codes on bare-metal
+Home-page: https://www.linkedin.com/in/rajeshroy402
+Author: Rajesh Roy
+Author-email: rajeshroy402@gmail.com
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: psutil
+
+A longer description of your package, can be the content of your README file
