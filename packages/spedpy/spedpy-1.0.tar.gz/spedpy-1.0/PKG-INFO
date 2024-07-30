@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: spedpy
+Version: 1.0
+Summary: Biblioteca SPED em Python
+Author: Ismael Nascimento
+Author-email: ismaelnjr@icloud.com
+License: MIT
+Keywords: sped fiscal
+Requires-Dist: six
+
+Biblioteca SPED em Python

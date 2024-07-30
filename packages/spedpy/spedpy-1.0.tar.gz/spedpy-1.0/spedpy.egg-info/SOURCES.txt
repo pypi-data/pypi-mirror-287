@@ -1,0 +1,6 @@
+spedpy/setup.py
+spedpy.egg-info/PKG-INFO
+spedpy.egg-info/SOURCES.txt
+spedpy.egg-info/dependency_links.txt
+spedpy.egg-info/requires.txt
+spedpy.egg-info/top_level.txt
