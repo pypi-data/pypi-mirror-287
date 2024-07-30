@@ -1,0 +1,11 @@
+LICENCE.txt
+README.md
+setup.py
+DozDetPazuihouyici/__init__.py
+DozDetPazuihouyici/main.py
+DozDetPazuihouyici/timer.py
+DozDetPazuihouyici.egg-info/PKG-INFO
+DozDetPazuihouyici.egg-info/SOURCES.txt
+DozDetPazuihouyici.egg-info/dependency_links.txt
+DozDetPazuihouyici.egg-info/entry_points.txt
+DozDetPazuihouyici.egg-info/top_level.txt
