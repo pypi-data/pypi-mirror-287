@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<data>
+<record id="property_equipment_location" forcecreate="True" model="ir.property">
+    <field name="name">equipment_location_id</field>
+    <field
+                name="fields_id"
+                search="[('model','=','res.partner'),('name','=','equipment_location_id')]"
+            />
+    <field eval="'stock.location,'+str(equipment_location)" name="value" />
+</record>
+</data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<!-- Workflow -->
+<record id="equipment_in_workflow_module_category" model="ir.module.category">
+    <field name="name">Equipment In</field>
+    <field name="parent_id" ref="ssi_stock.inventory_workflow_module_category" />
+</record>
+
+<record id="equipment_out_workflow_module_category" model="ir.module.category">
+    <field name="name">Equipment Out</field>
+    <field name="parent_id" ref="ssi_stock.inventory_workflow_module_category" />
+</record>
+
+<!-- Data Ownership -->
+<record id="equipment_in_data_ownership_module_category" model="ir.module.category">
+    <field name="name">Equipment In</field>
+    <field name="parent_id" ref="ssi_stock.inventory_data_ownership_module_category" />
+</record>
+
+<record id="equipment_out_data_ownership_module_category" model="ir.module.category">
+    <field name="name">Equipment Out</field>
+    <field name="parent_id" ref="ssi_stock.inventory_data_ownership_module_category" />
+</record>
+
+
+
+</odoo>

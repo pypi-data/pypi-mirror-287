@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<data>
+<record id="equipment_root_location" model="stock.location">
+    <field name="name">Equipment View</field>
+    <field name="usage">view</field>
+    <field name="company_id" />
+</record>
+
+<record id="equipment_location" model="stock.location">
+    <field name="name">Equipment</field>
+    <field name="location_id" ref="equipment_root_location" />
+    <field name="usage">internal</field>
+    <field name="company_id" />
+    <field name="type_id" ref="location_type_equipment" />
+</record>
+</data>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<record id="equipment_out_action" model="ir.actions.act_window">
+    <field name="name">Equipment Out</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">stock.picking</field>
+    <field name="view_mode">tree,form</field>
+    <field
+            name="domain"
+            eval="[('picking_type_category_id','=',ref('picking_category_eqo'))]"
+        />
+    <field
+            name="context"
+            eval="{'default_picking_type_category_id':ref('picking_category_eqo')}"
+        />
+</record>
+
+<menuitem
+        id="equipment_out_menu"
+        name="Equipment Out"
+        parent="ssi_stock.menu_outgoing_movement"
+        groups="equipment_out_viewer_group"
+        action="equipment_out_action"
+        sequence="119"
+    />
+</odoo>
