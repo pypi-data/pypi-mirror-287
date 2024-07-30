@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: critical-component-finder-rv
+Version: 1.1.0
+Summary: Finds critical component in C/C++ CMake projects
+Home-page: https://github.com/Valiewramis/Critical-Component-Finder
+Author: Ramis
+License: MIT
+Project-URL: Source, https://github.com/Valiewramis/Critical-Component-Finder
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: grapihviz
+Requires-Dist: networkx
+
+# Description
+
+Draws graph and finds critical component chain in C/C++ CMake projects
