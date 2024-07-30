@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+envparse2.py
+setup.cfg
+setup.py
+envparse2.egg-info/PKG-INFO
+envparse2.egg-info/SOURCES.txt
+envparse2.egg-info/dependency_links.txt
+envparse2.egg-info/not-zip-safe
+envparse2.egg-info/top_level.txt
+tests/test_casts.py
