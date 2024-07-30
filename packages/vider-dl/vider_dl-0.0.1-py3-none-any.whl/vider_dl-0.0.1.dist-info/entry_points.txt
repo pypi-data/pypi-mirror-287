@@ -1,0 +1,2 @@
+[console_scripts]
+vider-dl = vider.gox:download_video
