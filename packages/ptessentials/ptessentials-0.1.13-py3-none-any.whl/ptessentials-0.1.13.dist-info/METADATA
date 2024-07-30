@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: ptessentials
+Version: 0.1.13
+Summary: A PixelTycoons Dev Best Friend.
+Home-page: https://github.com/funkaclau
+Author: funkaclau
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: aanft (>=0.1.2)
+Requires-Dist: funkmodel (>=0.1.1)
+Requires-Dist: funktgtools (>=0.1.15)
+Requires-Dist: pyntelope
+Requires-Dist: waxfetcher
+Requires-Dist: waxnftdispatcher (==0.3.5)
+Requires-Dist: waxtion (>=0.1.5)
+
+UNKNOWN
+
+
