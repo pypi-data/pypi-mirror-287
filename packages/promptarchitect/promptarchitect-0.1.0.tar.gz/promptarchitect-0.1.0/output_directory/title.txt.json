@@ -1,0 +1,32 @@
+{
+    "prompt_file_path": "/Users/willemm/projects/promptcraft/examples/prompts/podcast_titels.prompt",
+    "output_path": "output_directory",
+    "input_file": null,
+    "input_text": "",
+    "latency": 2.3746238749590702,
+    "cost": 8.999999999999999e-05,
+    "errors": {
+        "errors": [],
+        "duplicates": 0
+    },
+    "completion": {
+        "system_role": "You are a helpful assistant.",
+        "model": "gpt-4o-mini",
+        "parameters": {
+            "model": "gpt-4o-mini",
+            "prompt_version": "1.0",
+            "temperature": "0.9",
+            "input": "examples/inputs/podcast_titels/beschrijving.txt",
+            "output": "title.txt",
+            "topic": "title",
+            "test_path": "examples/tests/podcast_titels"
+        },
+        "cost": 8.999999999999999e-05,
+        "is_json": false,
+        "test_path": "",
+        "response_message": "Natuurlijk! Hier zijn vijf titels voor een AI-podcast die zich richt op ethiek en de impact van AI op de maatschappij:\n\n1. **\"Ethiek en Algoritmen: De Toekomst van Mens en Machine\"**\n2. **\"Menselijkheid in de Era van AI: Een Ethisch Dialoog\"**\n3. **\"De Morele Kompas van Kunstmatige Intelligentie\"**\n4. **\"AI en de Samenleving: Ethische Uitdagingen van de Digitale Revolutie\"**\n5. **\"Verantwoordelijk Innovatief: Ethiek in de Wereld van AI\"**\n\nIk hoop dat je deze titels inspirerend vindt!",
+        "latency": 2.3746238749590702
+    },
+    "completion_type": "OpenAICompletion",
+    "response_message": "Natuurlijk! Hier zijn vijf titels voor een AI-podcast die zich richt op ethiek en de impact van AI op de maatschappij:\n\n1. **\"Ethiek en Algoritmen: De Toekomst van Mens en Machine\"**\n2. **\"Menselijkheid in de Era van AI: Een Ethisch Dialoog\"**\n3. **\"De Morele Kompas van Kunstmatige Intelligentie\"**\n4. **\"AI en de Samenleving: Ethische Uitdagingen van de Digitale Revolutie\"**\n5. **\"Verantwoordelijk Innovatief: Ethiek in de Wereld van AI\"**\n\nIk hoop dat je deze titels inspirerend vindt!"
+}

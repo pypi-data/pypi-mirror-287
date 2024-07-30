@@ -1,0 +1,43 @@
+[project]
+name = "promptarchitect"
+version = "0.1.0"
+description = "Engineered prompts are carefully designed inputs for AI models to ensure consistent and reliable outputs, playing a crucial role in automated processes involving large language models."
+authors = [
+    { name = "Joop Snijder", email = "joop@aigency.com" }
+]
+
+dependencies = [
+    "click==8.1.3",
+    "coloredlogs==15.0.1",
+    "Markdown==3.6",
+    "openai>=1.37.1",
+    "python-dotenv==1.0.1",
+    "retry==0.9.2",
+    "bs4>=0.0.2",
+    "art>=6.2",
+    "typer>=0.12.3",
+]
+
+readme = "README.md"
+requires-python = ">= 3.11"
+
+[project.scripts]
+promptcraft = "promptcraft.main:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+virtual = false
+
+dev-dependencies = [
+    "pytest>=8.3.2",
+    "ruff>=0.5.5",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/promptcraft"]
+include = [ "src/promptcraft/templates/**/*"]
+
