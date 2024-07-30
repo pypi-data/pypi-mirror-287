@@ -1,0 +1,10 @@
+points2regions/__init__.py,sha256=K6G-5Q1d9ZR9GRwauf9w_6B7aLhTCHysz6AtzTj6JL0,74
+points2regions/_points2regions.py,sha256=uQj0P6fnDPnEuF6TW9iAy_Z6NLXwIs9-62fS9rPeCY8,32034
+points2regions/benchmark.py,sha256=njNotvFPdWKIvqydxnGHVwjZ00ZxsHiGO80lMHeTO1o,7247
+points2regions/geojson.py,sha256=oZyxqBcysa6fEDBDBQ8AGZfPTWPUKztfy-9nKnhWoME,4659
+points2regions/utils.py,sha256=JkrLP_Ev-HhUxSPjJVCBEYWTmb1otRfx0OXconHyZfI,9837
+points2regions-0.0.6.dist-info/LICENSE,sha256=E4Cy75Vs0yTFMXs36fov5M2WJsRdK4h1BkPLeyfw7V4,1070
+points2regions-0.0.6.dist-info/METADATA,sha256=yt52oFntXJfH4sRMl3wYGgDr7EWQ9DDFRW8I-06Dlqs,2418
+points2regions-0.0.6.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+points2regions-0.0.6.dist-info/top_level.txt,sha256=Tq9q4hZKM43Ed6l55wAAIMIn4GGeuTUnk7FeVBfvn2Y,15
+points2regions-0.0.6.dist-info/RECORD,,
