@@ -1,0 +1,56 @@
+{
+    "test_id": "test_01",
+    "test_prompt": "Controleer of de titels in de lijst in \"normal casing\" zijn geschreven. Dit betekent dat alleen het eerste woord van de titel en eventuele eigennamen of acroniemen met een hoofdletter beginnen. Woorden na een dubbele punt hoeven geen hoofdletter te hebben, tenzij het eigen namen of acroniemen betreft. Antwoord met JA/NEE of alle titels correct zijn geschreven volgens dit principe. Indien NEE, leg uit waarom niet.",
+    "test_completion": "NEE. \n\nDe titels zijn niet correct geschreven volgens de \"normal casing\" regels. Hier zijn de specifieke punten:\n\n1. **\"De AI-Agenda: MLOps, Transparantie en de Toekomst van Taalmodellen\"** - \"AI-Agenda\" is correct, maar \"MLOps\" en \"Transparantie\" zouden niet met een hoofdletter moeten beginnen na de dubbele punt, tenzij ze eigennamen zijn. \"De Toekomst van Taalmodellen\" is ook niet correct, omdat \"Toekomst\" niet met een hoofdletter zou moeten beginnen.\n\n2. **\"Inzichten in AI: MLOps en de Kracht van Uitlegbaarheid\"** - \"Kracht\" zou niet met een hoofdletter moeten beginnen na de dubbele punt.\n\n3. **\"AI in Actie: Navigeren door MLOps en Large Language Models\"** - \"Large Language Models\" is een acroniem, maar \"Navigeren\" zou niet met een hoofdletter moeten beginnen na de dubbele punt.\n\n4. **\"Van Data naar Beslissingen: De Sleutels tot Succesvolle AI-implementatie\"** - \"De\" zou niet met een hoofdletter moeten beginnen na de dubbele punt.\n\n5. **\"De AI-Revolutie: MLOps, Uitlegbaarheid en Innovatie met Taalmodellen\"** - \"Uitlegbaarheid\" en \"Innovatie\" zouden niet met een hoofdletter moeten beginnen na de dubbele punt.\n\nSamenvattend, de titels bevatten meerdere woorden die niet correct zijn gecapituleerd volgens de \"normal casing\" regels.",
+    "passed": false,
+    "completion": {
+        "system_role": "Je bent een prompt tester.",
+        "model": "gpt-4o-mini",
+        "parameters": {
+            "temperature": 0.2
+        },
+        "cost": 0.00024134999999999998,
+        "is_json": false,
+        "test_path": "",
+        "response_message": "NEE. \n\nDe titels zijn niet correct geschreven volgens de \"normal casing\" regels. Hier zijn de specifieke punten:\n\n1. **\"De AI-Agenda: MLOps, Transparantie en de Toekomst van Taalmodellen\"** - \"AI-Agenda\" is correct, maar \"MLOps\" en \"Transparantie\" zouden niet met een hoofdletter moeten beginnen na de dubbele punt, tenzij ze eigennamen zijn. \"De Toekomst van Taalmodellen\" is ook niet correct, omdat \"Toekomst\" niet met een hoofdletter zou moeten beginnen.\n\n2. **\"Inzichten in AI: MLOps en de Kracht van Uitlegbaarheid\"** - \"Kracht\" zou niet met een hoofdletter moeten beginnen na de dubbele punt.\n\n3. **\"AI in Actie: Navigeren door MLOps en Large Language Models\"** - \"Large Language Models\" is een acroniem, maar \"Navigeren\" zou niet met een hoofdletter moeten beginnen na de dubbele punt.\n\n4. **\"Van Data naar Beslissingen: De Sleutels tot Succesvolle AI-implementatie\"** - \"De\" zou niet met een hoofdletter moeten beginnen na de dubbele punt.\n\n5. **\"De AI-Revolutie: MLOps, Uitlegbaarheid en Innovatie met Taalmodellen\"** - \"Uitlegbaarheid\" en \"Innovatie\" zouden niet met een hoofdletter moeten beginnen na de dubbele punt.\n\nSamenvattend, de titels bevatten meerdere woorden die niet correct zijn gecapituleerd volgens de \"normal casing\" regels.",
+        "latency": 6.10387625003932,
+        "completion_type": "OpenAICompletion"
+    },
+    "engineered_prompt": {
+        "prompt_file_path": "examples/prompts/podcast_titels.prompt",
+        "output_path": "examples/completions/podcast_titels/beschrijving",
+        "input_file": "examples/tests/podcast_titels/beschrijving.txt",
+        "input_text": "",
+        "latency": 3.6943562920205295,
+        "cost": 0.00010905,
+        "errors": {
+            "errors": [],
+            "duplicates": 0
+        },
+        "completion": {
+            "system_role": "You are a helpful assistant.",
+            "model": "gpt-4o-mini",
+            "parameters": {
+                "model": "gpt-4o-mini",
+                "prompt_version": "1.0",
+                "temperature": "0.9",
+                "input": "examples/inputs/podcast_titels/beschrijving.txt",
+                "output": "title.txt",
+                "topic": "title",
+                "test_path": "examples/tests/podcast_titels"
+            },
+            "cost": 0.00010905,
+            "is_json": false,
+            "test_path": "",
+            "response_message": "Hier zijn vijf titels voor een AI-podcast gericht op zakelijke professionals met een IT-achtergrond:\n\n1. **\"De AI-Agenda: MLOps, Transparantie en de Toekomst van Taalmodellen\"**\n2. **\"Inzichten in AI: MLOps en de Kracht van Uitlegbaarheid\"**\n3. **\"AI in Actie: Navigeren door MLOps en Large Language Models\"**\n4. **\"Van Data naar Beslissingen: De Sleutels tot Succesvolle AI-implementatie\"**\n5. **\"De AI-Revolutie: MLOps, Uitlegbaarheid en Innovatie met Taalmodellen\"**\n\nDeze titels weerspiegelen de belangrijkste onderwerpen en zijn aantrekkelijk voor een zakelijk publiek.",
+            "latency": 3.6943562920205295
+        },
+        "completion_type": "OpenAICompletion",
+        "response_message": "Hier zijn vijf titels voor een AI-podcast gericht op zakelijke professionals met een IT-achtergrond:\n\n1. **\"De AI-Agenda: MLOps, Transparantie en de Toekomst van Taalmodellen\"**\n2. **\"Inzichten in AI: MLOps en de Kracht van Uitlegbaarheid\"**\n3. **\"AI in Actie: Navigeren door MLOps en Large Language Models\"**\n4. **\"Van Data naar Beslissingen: De Sleutels tot Succesvolle AI-implementatie\"**\n5. **\"De AI-Revolutie: MLOps, Uitlegbaarheid en Innovatie met Taalmodellen\"**\n\nDeze titels weerspiegelen de belangrijkste onderwerpen en zijn aantrekkelijk voor een zakelijk publiek."
+    },
+    "last_run": "2024-07-29 15:05:44",
+    "errors": {
+        "errors": [],
+        "duplicates": 0
+    }
+}

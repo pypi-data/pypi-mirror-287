@@ -1,0 +1,32 @@
+{
+    "prompt_file_path": "examples/prompts/my_first_prompt.prompt",
+    "output_path": "examples/completions/my_first_prompt/hello",
+    "input_file": "examples/tests/hello_world/hello.txt",
+    "input_text": "",
+    "latency": 2.9649927919963375,
+    "cost": 0.00010245,
+    "errors": {
+        "errors": [],
+        "duplicates": 0
+    },
+    "completion": {
+        "system_role": "You are a helpful assistant.",
+        "model": "gpt-4o-mini",
+        "parameters": {
+            "model": "gpt-4o-mini",
+            "prompt_version": "1.0",
+            "temperature": "0.9",
+            "input": "examples/inputs/hello_world/hello.txt",
+            "output": "title.txt",
+            "topic": "title",
+            "test_path": "examples/tests/hello_world"
+        },
+        "cost": 0.00010245,
+        "is_json": false,
+        "test_path": "",
+        "response_message": "Hier zijn vijf titels voor een AI-podcast gericht op business professionals met een IT-achtergrond:\n\n1. **\"AI Inzicht: De Kracht van MLOps en Explainable AI\"**\n2. **\"Machine Learning Mastery: Navigeren door Large Language Models\"**\n3. **\"De AI Toolbox: Van MLOps tot Begrijpelijke Intelligentie\"**\n4. **\"Zakelijke AI: Praktische Toepassingen van MLOps en LLMs\"**\n5. **\"Toekomst van AI: Transparantie, Operaties en Taalmodellen\"**\n\nDeze titels zijn ontworpen om de belangrijkste onderwerpen van de podcast aan te stippen en de interesse van je doelgroep aan te wakkeren.",
+        "latency": 2.9649927919963375
+    },
+    "completion_type": "OpenAICompletion",
+    "response_message": "Hier zijn vijf titels voor een AI-podcast gericht op business professionals met een IT-achtergrond:\n\n1. **\"AI Inzicht: De Kracht van MLOps en Explainable AI\"**\n2. **\"Machine Learning Mastery: Navigeren door Large Language Models\"**\n3. **\"De AI Toolbox: Van MLOps tot Begrijpelijke Intelligentie\"**\n4. **\"Zakelijke AI: Praktische Toepassingen van MLOps en LLMs\"**\n5. **\"Toekomst van AI: Transparantie, Operaties en Taalmodellen\"**\n\nDeze titels zijn ontworpen om de belangrijkste onderwerpen van de podcast aan te stippen en de interesse van je doelgroep aan te wakkeren."
+}

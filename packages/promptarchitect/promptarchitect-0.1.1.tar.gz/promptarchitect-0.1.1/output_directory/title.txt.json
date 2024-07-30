@@ -1,0 +1,32 @@
+{
+    "prompt_file_path": "/Users/willemm/projects/promptcraft/examples/prompts/podcast_titels.prompt",
+    "output_path": "output_directory",
+    "input_file": null,
+    "input_text": "",
+    "latency": 2.355413624958601,
+    "cost": 8.999999999999999e-05,
+    "errors": {
+        "errors": [],
+        "duplicates": 0
+    },
+    "completion": {
+        "system_role": "You are a helpful assistant.",
+        "model": "gpt-4o-mini",
+        "parameters": {
+            "model": "gpt-4o-mini",
+            "prompt_version": "1.0",
+            "temperature": "0.9",
+            "input": "examples/inputs/podcast_titels/beschrijving.txt",
+            "output": "title.txt",
+            "topic": "title",
+            "test_path": "examples/tests/podcast_titels"
+        },
+        "cost": 8.999999999999999e-05,
+        "is_json": false,
+        "test_path": "",
+        "response_message": "Hier zijn vijf titels voor een AI-podcast die zich richt op ethiek en de maatschappelijke impact van kunstmatige intelligentie:\n\n1. **\"Slimme Dilemma's: Ethiek in het Tijdperk van AI\"**\n2. **\"Mens en Machine: De Ethiek van Kunstmatige Intelligentie\"**\n3. **\"De AI Conversatie: Morele Keuzes in de Digitale Wereld\"**\n4. **\"Toekomst in Balans: De Impact van AI op Onze Waarden\"**\n5. **\"Ethiek en Algoritmen: Navigeren door de AI Revolutie\"**\n\nLaat het me weten als je meer idee\u00ebn of inspiratie nodig hebt!",
+        "latency": 2.355413624958601
+    },
+    "completion_type": "OpenAICompletion",
+    "response_message": "Hier zijn vijf titels voor een AI-podcast die zich richt op ethiek en de maatschappelijke impact van kunstmatige intelligentie:\n\n1. **\"Slimme Dilemma's: Ethiek in het Tijdperk van AI\"**\n2. **\"Mens en Machine: De Ethiek van Kunstmatige Intelligentie\"**\n3. **\"De AI Conversatie: Morele Keuzes in de Digitale Wereld\"**\n4. **\"Toekomst in Balans: De Impact van AI op Onze Waarden\"**\n5. **\"Ethiek en Algoritmen: Navigeren door de AI Revolutie\"**\n\nLaat het me weten als je meer idee\u00ebn of inspiratie nodig hebt!"
+}
