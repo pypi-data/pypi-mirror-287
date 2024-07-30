@@ -1,0 +1,15 @@
+boostflask/__about__.py,sha256=L13tn9RJ95yP6pc_gEcavIOuoDk9ZXuqchHjdHQzs4A,52
+boostflask/__init__.py,sha256=T2MY2IqoZMTX0ihO_TpenkjT2sGnhQn-zrVBHtcN2y8,88
+boostflask/_utils.py,sha256=Fj1rqC_hPGu9Zca29wP-Fbz2G5Vdd9xfZZDbqkxI_EU,249
+boostflask/bootstrap.py,sha256=3kKiaGw6nftU1wxX6ZnwWoZehPC20rgsNKp43fZrIdY,4000
+boostflask/config.py,sha256=nZkUx_YEHcLEkkyYXPW81TF4RlhsYJeJ8Ax5ujmKI5M,789
+boostflask/pool.py,sha256=Iat0Sj8FSVxNIkffmCkOEuerRF4q7K-d2z9hgRETnIQ,3358
+boostflask/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+boostflask/view/__init__.py,sha256=1zQu6x8Tqx4MrImlkuSaOH89t6wv8b6mJyx7QJzXAZc,125
+boostflask/view/base.py,sha256=rTl6h-YGoIqGXMjUNb5OGgVXtG0AEFVscfibK1XFdnM,2120
+boostflask/view/renderer.py,sha256=p_ZLNzi85DAmdKtYWBQjgSso0EcTFW6MQZ5Qt-wqDJ0,1970
+boostflask/view/resolver.py,sha256=6NwqYoaCBZhXQ1ZjOpAVwpmOLWeaqd5Y5E2Ahl8gTQI,3924
+boost_flask-0.0.1.dev2.dist-info/METADATA,sha256=oK_CxG9Oz1fHFI_FuZAVazhpVfhAVS5GNTFlHN5W8qU,2735
+boost_flask-0.0.1.dev2.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+boost_flask-0.0.1.dev2.dist-info/licenses/LICENSE,sha256=SSFDZ1GuoDvU8wy7-B2nikGLypMDRSN1yPedzSFvZUY,1069
+boost_flask-0.0.1.dev2.dist-info/RECORD,,
