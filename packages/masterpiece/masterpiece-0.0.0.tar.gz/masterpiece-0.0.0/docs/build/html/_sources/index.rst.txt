@@ -1,0 +1,35 @@
+Welcome to MasterPiece documentation!
+=====================================
+
+.. image:: _static/masterpiece.png
+    :alt: Masterpiece framework
+    :width: 400px
+    :height: 300px
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+   README
+   CHANGELOG
+   LICENSE
+   CONTRIBUTING
+   TODO
+   masterpiece/index
+
+
+Classes
+-------
+
+.. inheritance-diagram:: masterpiece.MasterPiece group.Group
+   :parts: 1
+
+
+
+Index
+=====
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

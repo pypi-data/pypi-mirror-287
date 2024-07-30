@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Project Overview &#8212; masterpiece  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=4468db6d" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/masterpiece.css?v=7a3aeb84" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="TODOs for MasterPiece" href="../TODO.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          masterpiece</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Welcome to MasterPiece Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">MIT License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TODO.html">TODOs for MasterPiece</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project Overview</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Project Overview</a><ul>
+<li><a class="reference internal" href="#masterpiece.MasterPiece"><code class="docutils literal notranslate"><span class="pre">MasterPiece</span></code></a><ul>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.app_name"><code class="docutils literal notranslate"><span class="pre">MasterPiece.app_name</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.classattrs_from_dict"><code class="docutils literal notranslate"><span class="pre">MasterPiece.classattrs_from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.classattrs_to_dict"><code class="docutils literal notranslate"><span class="pre">MasterPiece.classattrs_to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.config_folder"><code class="docutils literal notranslate"><span class="pre">MasterPiece.config_folder</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.copy"><code class="docutils literal notranslate"><span class="pre">MasterPiece.copy()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.debug"><code class="docutils literal notranslate"><span class="pre">MasterPiece.debug()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.deserialize_from_json"><code class="docutils literal notranslate"><span class="pre">MasterPiece.deserialize_from_json()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.epoc2utc"><code class="docutils literal notranslate"><span class="pre">MasterPiece.epoc2utc()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.error"><code class="docutils literal notranslate"><span class="pre">MasterPiece.error()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.find_class"><code class="docutils literal notranslate"><span class="pre">MasterPiece.find_class()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.from_dict"><code class="docutils literal notranslate"><span class="pre">MasterPiece.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.get_class_id"><code class="docutils literal notranslate"><span class="pre">MasterPiece.get_class_id()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.get_json_file"><code class="docutils literal notranslate"><span class="pre">MasterPiece.get_json_file()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.info"><code class="docutils literal notranslate"><span class="pre">MasterPiece.info()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.initialize_class"><code class="docutils literal notranslate"><span class="pre">MasterPiece.initialize_class()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.instantiate"><code class="docutils literal notranslate"><span class="pre">MasterPiece.instantiate()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.instantiate_with_param"><code class="docutils literal notranslate"><span class="pre">MasterPiece.instantiate_with_param()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.is_abstract"><code class="docutils literal notranslate"><span class="pre">MasterPiece.is_abstract()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.is_time_between"><code class="docutils literal notranslate"><span class="pre">MasterPiece.is_time_between()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.load_from_json"><code class="docutils literal notranslate"><span class="pre">MasterPiece.load_from_json()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.parse_args"><code class="docutils literal notranslate"><span class="pre">MasterPiece.parse_args()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.quantize"><code class="docutils literal notranslate"><span class="pre">MasterPiece.quantize()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.register"><code class="docutils literal notranslate"><span class="pre">MasterPiece.register()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.register_class"><code class="docutils literal notranslate"><span class="pre">MasterPiece.register_class()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.save_to_json"><code class="docutils literal notranslate"><span class="pre">MasterPiece.save_to_json()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.serialize_to_json"><code class="docutils literal notranslate"><span class="pre">MasterPiece.serialize_to_json()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.set_log"><code class="docutils literal notranslate"><span class="pre">MasterPiece.set_log()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.timestamp"><code class="docutils literal notranslate"><span class="pre">MasterPiece.timestamp()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.timestampstr"><code class="docutils literal notranslate"><span class="pre">MasterPiece.timestampstr()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.to_dict"><code class="docutils literal notranslate"><span class="pre">MasterPiece.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.warning"><code class="docutils literal notranslate"><span class="pre">MasterPiece.warning()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../TODO.html" title="Previous Chapter: TODOs for MasterPiece"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; TODOs for MasterPiece</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/masterpiece/index.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Project Overview</a><ul>
+<li><a class="reference internal" href="#masterpiece.MasterPiece"><code class="docutils literal notranslate"><span class="pre">MasterPiece</span></code></a><ul>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.app_name"><code class="docutils literal notranslate"><span class="pre">MasterPiece.app_name</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.classattrs_from_dict"><code class="docutils literal notranslate"><span class="pre">MasterPiece.classattrs_from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.classattrs_to_dict"><code class="docutils literal notranslate"><span class="pre">MasterPiece.classattrs_to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.config_folder"><code class="docutils literal notranslate"><span class="pre">MasterPiece.config_folder</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.copy"><code class="docutils literal notranslate"><span class="pre">MasterPiece.copy()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.debug"><code class="docutils literal notranslate"><span class="pre">MasterPiece.debug()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.deserialize_from_json"><code class="docutils literal notranslate"><span class="pre">MasterPiece.deserialize_from_json()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.epoc2utc"><code class="docutils literal notranslate"><span class="pre">MasterPiece.epoc2utc()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.error"><code class="docutils literal notranslate"><span class="pre">MasterPiece.error()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.find_class"><code class="docutils literal notranslate"><span class="pre">MasterPiece.find_class()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.from_dict"><code class="docutils literal notranslate"><span class="pre">MasterPiece.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.get_class_id"><code class="docutils literal notranslate"><span class="pre">MasterPiece.get_class_id()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.get_json_file"><code class="docutils literal notranslate"><span class="pre">MasterPiece.get_json_file()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.info"><code class="docutils literal notranslate"><span class="pre">MasterPiece.info()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.initialize_class"><code class="docutils literal notranslate"><span class="pre">MasterPiece.initialize_class()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.instantiate"><code class="docutils literal notranslate"><span class="pre">MasterPiece.instantiate()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.instantiate_with_param"><code class="docutils literal notranslate"><span class="pre">MasterPiece.instantiate_with_param()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.is_abstract"><code class="docutils literal notranslate"><span class="pre">MasterPiece.is_abstract()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.is_time_between"><code class="docutils literal notranslate"><span class="pre">MasterPiece.is_time_between()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.load_from_json"><code class="docutils literal notranslate"><span class="pre">MasterPiece.load_from_json()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.parse_args"><code class="docutils literal notranslate"><span class="pre">MasterPiece.parse_args()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.quantize"><code class="docutils literal notranslate"><span class="pre">MasterPiece.quantize()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.register"><code class="docutils literal notranslate"><span class="pre">MasterPiece.register()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.register_class"><code class="docutils literal notranslate"><span class="pre">MasterPiece.register_class()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.save_to_json"><code class="docutils literal notranslate"><span class="pre">MasterPiece.save_to_json()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.serialize_to_json"><code class="docutils literal notranslate"><span class="pre">MasterPiece.serialize_to_json()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.set_log"><code class="docutils literal notranslate"><span class="pre">MasterPiece.set_log()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.timestamp"><code class="docutils literal notranslate"><span class="pre">MasterPiece.timestamp()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.timestampstr"><code class="docutils literal notranslate"><span class="pre">MasterPiece.timestampstr()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.to_dict"><code class="docutils literal notranslate"><span class="pre">MasterPiece.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#masterpiece.MasterPiece.warning"><code class="docutils literal notranslate"><span class="pre">MasterPiece.warning()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <li>
+    <a href="../TODO.html" title="Previous Chapter: TODOs for MasterPiece"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; TODOs for MasterPiece</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../_sources/masterpiece/index.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="module-masterpiece">
+<span id="project-overview"></span><h1>Project Overview<a class="headerlink" href="#module-masterpiece" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">masterpiece.</span></span><span class="sig-name descname"><span class="pre">MasterPiece</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'noname'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class of everything. Serves as the foundational class offering  key
+features needed by any robust object-oriented software.</p>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Link to this heading">¶</a></h2>
+<p>All objects have logging methods e.g. info() and error() at their fingertips, for
+centralized logging.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_good</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Damn, did bad </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="factory-method-pattern">
+<h2>Factory Method Pattern<a class="headerlink" href="#factory-method-pattern" title="Link to this heading">¶</a></h2>
+<p>Instantiation via class identifiers, adhering to the factory method pattern. This allows for the dynamic creation of
+instances based on class identifiers, promoting decoupled and extensible design required by plugin architecture.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># instead of fixed implementation car = Ferrari()</span>
+<span class="n">car</span> <span class="o">=</span> <span class="n">Object</span><span class="o">.</span><span class="n">instantiate</span><span class="p">(</span><span class="n">car_class_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="serialization">
+<h2>Serialization<a class="headerlink" href="#serialization" title="Link to this heading">¶</a></h2>
+<p>Serialization of both class and instance attributes serves as a means of configuration.</p>
+<p>Class attributes should follow a consistent naming convention where an underscore prefix
+(‘_’ or ‘__’) implies the attribute is private and transient, meaning it is not serialized.
+Class attributes without an underscore prefix are initialized from configuration files named
+‘~/.masterpiece/[appname]/[classname].json’, if present. If the class-specific configuration
+files do not already exist, they are automatically created upon the first run.</p>
+<p>Instance attributes can be serialized and deserialized using the <cite>serialize()</cite> and <cite>deserialize()</cite> methods:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># serialize to json file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">foo</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># deserialize</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">F</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">foo</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Deserialization must restore the object’s state to what it was when it was serialized.
+As Python does not have ‘transient’ keyword to tag attributes that should be serialized, all
+classes must explicitely describe information for the serialization. This is done with
+<cite>to_dict()</cite> and <cite>from_dict()</cite> methods:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;_foo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">topic</span><span class="p">,</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;_foo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="copying-objects">
+<h2>Copying Objects<a class="headerlink" href="#copying-objects" title="Link to this heading">¶</a></h2>
+<p>Any object can be copied using the <cite>copy()</cite> method. This feature is based on serialization, so
+typically, subclasses don’t need to implement the <cite>copy()</cite> method; everything is taken care of
+by the base class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foo2</span> <span class="o">=</span> <span class="n">foo</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.app_name">
+<span class="sig-name descname"><span class="pre">app_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'masterpiece'</span></em><a class="headerlink" href="#masterpiece.MasterPiece.app_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.classattrs_from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">classattrs_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.classattrs_from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.classattrs_from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Set class attributes from a dictionary.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.classattrs_to_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">classattrs_to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.classattrs_to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.classattrs_to_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Convert class attributes to a dictionary.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.config_folder">
+<span class="sig-name descname"><span class="pre">config_folder</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'config'</span></em><a class="headerlink" href="#masterpiece.MasterPiece.config_folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.copy" title="Link to this definition">¶</a></dt>
+<dd><p>Create and return a copy of the current object.</p>
+<p>This method serializes the current object to a dictionary using the <cite>to_dict</cite> method,
+creates a new instance of the object’s class, and populates it with the serialized data
+using the <cite>from_dict</cite> method.</p>
+<p>This method uses class identifier based instantiation (see factory method pattern) to create a new instance
+of the object, and ‘to_dict’ and ‘from_dict’  methods to initialize object’s state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new instance of the object’s class with the same state as the original object.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">john</span> <span class="o">=</span> <span class="n">Human</span><span class="p">(</span><span class="s2">&quot;john&quot;</span><span class="p">)</span>
+<span class="n">john</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mf">1.8</span>
+<span class="n">john</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">62</span>
+<span class="n">clone_of_john</span> <span class="o">=</span> <span class="n">john</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.debug">
+<span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.debug"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.debug" title="Link to this definition">¶</a></dt>
+<dd><p>Logs the given debug message to the application log.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg</strong> (<em>str</em>) – The information message to be logged.</p></li>
+<li><p><strong>details</strong> (<em>str</em>) – Additional detailed information for the message to be logged</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.deserialize_from_json">
+<span class="sig-name descname"><span class="pre">deserialize_from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.deserialize_from_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.deserialize_from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Load  attributes from a JSON file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.epoc2utc">
+<span class="sig-name descname"><span class="pre">epoc2utc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.epoc2utc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.epoc2utc" title="Link to this definition">¶</a></dt>
+<dd><p>Converts the given epoch time to UTC time string. All time
+coordinates are represented in UTC time. This allows the time
+coordinate to be mapped to any local time representation without
+ambiguity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epoch</strong> (<em>float</em>) – timestamp in UTC time</p></li>
+<li><p><strong>rc</strong> (<em>str</em>) – time string describing date, time and time zone e.g 2024-07-08T12:10:22Z</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UTC time</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.error">
+<span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.error" title="Link to this definition">¶</a></dt>
+<dd><p>Logs the given error message to the application log.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg</strong> (<em>str</em>) – The message to be logged.</p></li>
+<li><p><strong>details</strong> (<em>str</em>) – Additional detailed information for the message to be logged</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.find_class">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">find_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.find_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.find_class" title="Link to this definition">¶</a></dt>
+<dd><p>Given class identifier find the registered class. If no class with
+the give identifier exists return None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>class_id</strong> (<em>int</em>) – class identifier</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>class or null if not registered</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj (obj)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.from_dict">
+<span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Update instance attributes from a dictionary.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.get_class_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_class_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.get_class_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.get_class_id" title="Link to this definition">¶</a></dt>
+<dd><p>Return the class id of the class. Each class has an unique
+identifier that can be used for instantiating the class via
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">Object.instantiate()</span></code> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cls</strong> (<em>class</em>) – class</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>id (int) unique class identifier through which the class can be instantiated by factory method pattern.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.get_json_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_json_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.get_json_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.get_json_file" title="Link to this definition">¶</a></dt>
+<dd><p>Generate the JSON file name based on the class name.</p>
+<p>The file is created into users home folder.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.info" title="Link to this definition">¶</a></dt>
+<dd><p>Logs the given information message to the application log.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg</strong> (<em>str</em>) – The information message to be logged.</p></li>
+<li><p><strong>details</strong> (<em>str</em>) – Additional detailed information for the message to be logged</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.initialize_class">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_class_attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.initialize_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.initialize_class" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize the class for instantiation, if not initialized already.
+This method initializes the class identifier and deserializes the
+public attributes from the specified configuration folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>load_class_attrs</strong> (<em>bool</em><em>, </em><em>optional</em>) – If true then attempts to initialize class attributes</p></li>
+<li><p><strong>True.</strong> (<em>from the class specific configuration files. Defaults to</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>returns true if the class was initialized, false implies the class is already initialized
+in which case the method call has no effect.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.instantiate">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">instantiate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.instantiate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.instantiate" title="Link to this definition">¶</a></dt>
+<dd><p>Create an instance of the class corresponding to the given class identifier.
+This method implements the factory method pattern, which is essential for a plugin architecture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>class_id</strong> (<em>int</em>) – Identifier of the class to instantiate.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An instance of the class corresponding to the given class identifier.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.instantiate_with_param">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">instantiate_with_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.instantiate_with_param"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.instantiate_with_param" title="Link to this definition">¶</a></dt>
+<dd><p>Given class identifier and one constructor argument create the
+corresponding object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>class_id</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – class identifier</p></li>
+<li><p><strong>param</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – class specific constructor parameter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>instance of the given class.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.is_abstract">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_abstract</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.is_abstract"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.is_abstract" title="Link to this definition">¶</a></dt>
+<dd><p>Check whether the class is abstract or real. Override in the derived
+sub-classes. The default is False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True (bool) if abstract</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.is_time_between">
+<span class="sig-name descname"><span class="pre">is_time_between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">begin_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.is_time_between"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.is_time_between" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the given time is within the given time line. All
+timestamps must be in UTC time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>begin_time</strong> (<em>timestamp</em>) – beginning of the timeline</p></li>
+<li><p><strong>end_time</strong> (<em>timestamp</em>) – end of the timeline</p></li>
+<li><p><strong>check_time</strong> (<em>timestamp</em>) – time to be checked</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if within the timeline</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rc (bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.load_from_json">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_from_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.load_from_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.load_from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Load class attributes from a JSON file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.parse_args">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.parse_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.parse_args" title="Link to this definition">¶</a></dt>
+<dd><p>Parse the startup arguments defined by this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.quantize">
+<span class="sig-name descname"><span class="pre">quantize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quanta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.quantize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.quantize" title="Link to this definition">¶</a></dt>
+<dd><p>Quantize the given value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quanta</strong> (<em>float</em>) – resolution for quantization</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – value to be quantized</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>quantized value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.register">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.register" title="Link to this definition">¶</a></dt>
+<dd><p>Register the class to the class database.</p>
+<p>Once registered the class can be instantiated by its class
+identifier. Note that this method is called automatically by the
+system when the python loads the class. In this method sub
+classes should prepare themselves for instantiation by
+initializing their class attributes, for example.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.register_class">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.register_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.register_class" title="Link to this definition">¶</a></dt>
+<dd><p>Register the given class identifier for identifier based
+instantiation . This, factory method pattern, as it is called,
+decouples the actual implementation from the interface.  For more
+information see <a class="reference internal" href="#masterpiece.MasterPiece.instantiate" title="masterpiece.MasterPiece.instantiate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">instantiate()</span></code></a> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>class_id</strong> (<em>str</em>) – class identifier</p></li>
+<li><p><strong>ctor</strong> (<em>function</em>) – constructor</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.save_to_json">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.save_to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.save_to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create class configuration file, if the file does not exist yet.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.serialize_to_json">
+<span class="sig-name descname"><span class="pre">serialize_to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.serialize_to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.serialize_to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Serialize.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.set_log">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.set_log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.set_log" title="Link to this definition">¶</a></dt>
+<dd><p>Set logger.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>l</strong> (<em>logger</em>) – logger object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.timestamp">
+<span class="sig-name descname"><span class="pre">timestamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.timestamp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.timestamp" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the current date-time in UTC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>datetime in UTC.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>rc (datetime)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.timestampstr">
+<span class="sig-name descname"><span class="pre">timestampstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.timestampstr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.timestampstr" title="Link to this definition">¶</a></dt>
+<dd><p>Converts the given timestamp to human readable string of form ‘Y-m-d
+H:M:S’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ts</strong> (<em>timestamp</em>) – time stamp to be converted</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>human readable date-time string</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rc (string)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.to_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Convert instance attributes to a dictionary.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="masterpiece.MasterPiece.warning">
+<span class="sig-name descname"><span class="pre">warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/masterpiece.html#MasterPiece.warning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#masterpiece.MasterPiece.warning" title="Link to this definition">¶</a></dt>
+<dd><p>Logs the given warning message to the application log.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg</strong> (<em>str</em>) – The message to be logged.</p></li>
+<li><p><strong>details</strong> (<em>str</em>) – Additional detailed information for the message to be logged</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2024, juha meskanen.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
