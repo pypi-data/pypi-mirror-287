@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: generator_cucumber
+Version: 0.0.15
+Summary: Generation gitlab/github <=  .feature file
+Author-email: Dmitry Shibikin <dmitry.shibikin@yandex.ru>
+License: The MIT License (MIT)
+        
+        Copyright (c) 2024 Shibikin Dmitry
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Repository, https://gitlab.com/python_lib/generator_cucumber
+Project-URL: Homepage, https://gitlab.com/python_lib/generator_cucumber
+Project-URL: Documentation, https://bdd-generator.readthedocs.io/ru/latest/
+Keywords: python,cucmber,generator
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: python-gitlab==4.7.0
+Requires-Dist: simple-term-menu==1.6.4
+Requires-Dist: beautifulsoup4==4.12.3
+
+# Cucmber generator
+
+Проект находиться на стадии разработки
+
+### Structure
+```
+# Проект по генерации .feature
+├── 📁 generator_cucumber/
+|   ├── 🐍 api_github.py        #
+|   ├── 🐍 api_gitlab.py        #
+|   ├── 🐍 bdd_generator.py     #
+|   ├── 🐍 cache_file.py        #
+|   ├── 🐍 create_file.py       #
+|   ├── 🐍 cucumber_text.py     #
+|   └── 🐍 generator.py         #
+└── ... 
+```
