@@ -1,0 +1,60 @@
+ops:
+  /op0/path:
+    - name: op0Gett
+      params:
+        - name: commonCookieParam0
+          loc: cookie
+          type: str
+        - name: commonHeaderParam2
+          loc: header
+          type: str
+        - name: commonPathParam1
+          loc: path
+          type: str
+        - name: commonQueryParam4
+          loc: query
+          type: str
+        - name: optCookieParam0
+          loc: cookie
+          type: int
+          default: 4
+        - name: optHeaderParam2
+          loc: header
+          type: str
+          default: abc
+        - name: optPathParam1
+          loc: path
+          type: str
+          default: null
+        - name: optQueryParam4
+          loc: query
+          type: str
+          default: default
+      type: GET
+    - name: op1Postt
+      params:
+        - name: commonCookieParam0
+          loc: cookie
+          type: str
+        - name: commonHeaderParam2
+          loc: header
+          type: str
+        - name: commonPathParam1
+          loc: path
+          type: str
+        - name: commonQueryParam4
+          loc: query
+          type: str
+        - name: anotherCookieParam3
+          loc: cookie
+          type: str
+        - name: anotherHeaderParam1
+          loc: header
+          type: str
+        - name: anotherPathParam4
+          loc: path
+          type: str
+        - name: anotherQueryParam2
+          loc: query
+          type: str
+      type: POST

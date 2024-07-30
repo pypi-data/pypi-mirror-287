@@ -1,0 +1,5 @@
+**/.venv
+**/build
+**/target
+docker
+test
