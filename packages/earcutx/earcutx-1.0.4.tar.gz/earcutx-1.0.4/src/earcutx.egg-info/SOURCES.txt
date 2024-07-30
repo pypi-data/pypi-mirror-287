@@ -1,0 +1,15 @@
+LICENSE.md
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+include/mapbox/LICENSE
+include/mapbox/earcut.hpp
+src/main.cpp
+src/earcutx.egg-info/PKG-INFO
+src/earcutx.egg-info/SOURCES.txt
+src/earcutx.egg-info/dependency_links.txt
+src/earcutx.egg-info/not-zip-safe
+src/earcutx.egg-info/requires.txt
+src/earcutx.egg-info/top_level.txt
+tests/test_earcut.py
