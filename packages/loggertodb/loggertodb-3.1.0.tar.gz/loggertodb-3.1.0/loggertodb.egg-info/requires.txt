@@ -1,0 +1,5 @@
+Click<9,>=7
+enhydris-api-client<4,>=3
+iso8601
+simpletail
+tzdata
