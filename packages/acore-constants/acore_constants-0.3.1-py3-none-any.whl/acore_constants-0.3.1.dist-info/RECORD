@@ -1,0 +1,12 @@
+acore_constants/__init__.py,sha256=TL60a6Xgq2-40Wql_ahgo8al4jmAF7PBjsw4Bph39ww,415
+acore_constants/_version.py,sha256=wz7Y4SGYrAkGpS3AYBuUkK_zxtj3nrAEMOwuQ2PdpQ4,93
+acore_constants/api.py,sha256=Ab6VPbUdz_S9Q1L2RYLuRzG5TUkfkoKww5Pfj99umzE,94
+acore_constants/constants.py,sha256=HvETSuJBFVn1kMxYYiE5suCk6SKpBPTFCkKhaAMHHH8,3200
+acore_constants/paths.py,sha256=97S8BLeL_V7rmEA-I0RmMZCJ8p1lZseMiorow53W4C8,642
+acore_constants/docs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+acore_constants-0.3.1.dist-info/AUTHORS.rst,sha256=nHTveFzFQh1uHjbLOIj6LbooSLAAByNffYkdIMKP-Pc,670
+acore_constants-0.3.1.dist-info/LICENSE.txt,sha256=0TUasuJPcIR073kS0tqDtmlhB_o5L8igVJqbWeWj1EI,1126
+acore_constants-0.3.1.dist-info/METADATA,sha256=4kJy-EwPwKeydvolesLQStZ0QuLK6Wpypfxc-5uA3AA,4891
+acore_constants-0.3.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+acore_constants-0.3.1.dist-info/top_level.txt,sha256=b_GBGxyleA8h0S0C4RemwlJ-S6oFpT_SKpF54WnC2bg,16
+acore_constants-0.3.1.dist-info/RECORD,,
