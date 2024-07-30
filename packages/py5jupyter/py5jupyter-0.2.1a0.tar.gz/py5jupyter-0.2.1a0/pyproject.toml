@@ -1,0 +1,75 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "py5jupyter"
+description = "Jupyter tools for py5"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Jim Schmitz", email = "jim@ixora.io" },
+]
+keywords = [
+    "IPython",
+    "Jupyter",
+    "Processing",
+    "Widgets",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)",
+    "Programming Language :: Java",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Artistic Software",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "ipykernel>=6.29.5",
+    "ipython>=8.18",
+    "jupyter>=1.0",
+    "py5>=0.10.1a1",
+    "traitlets>=5.14",
+]
+version = "0.2.1a0"
+
+[project.license]
+file = "LICENSE"
+
+[project.optional-dependencies]
+docs = [
+    "jupyter_sphinx",
+    "nbsphinx",
+    "nbsphinx-link",
+    "pypandoc",
+    "pytest_check_links",
+    "recommonmark",
+    "sphinx>=1.5",
+    "sphinx_rtd_theme",
+]
+examples = []
+test = [
+    "nbval",
+    "pytest-cov",
+    "pytest>=4.6",
+]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/py5coding/py5jupyter/issues"
+Documentation = "https://py5coding.org/"
+Download = "https://pypi.org/project/py5jupyter"
+Homepage = "https://py5coding.org/"
+"Source Code" = "https://github.com/py5coding/py5jupyter"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    ".github",
+]
