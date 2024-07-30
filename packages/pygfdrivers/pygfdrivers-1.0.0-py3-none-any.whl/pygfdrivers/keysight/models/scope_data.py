@@ -1,0 +1,29 @@
+from typing import List, Dict
+from collections import defaultdict
+from pydantic import BaseModel, Field
+
+# custom models
+from common.models.device.visa import BaseVisaDeviceModel
+from keysight.models.capture import KeysightCaptureModel
+from keysight.models.trigger import KeysightTriggerModel
+from keysight.models.channel import KeysightChannelDataModel
+
+
+# This model represents what is ultimately saved into the server as containing the user set configurations, the
+# actual configurations read from the scope, and also the data obtained from the scope.
+class KeysightScopeDataModel(BaseModel):
+    scope: BaseVisaDeviceModel = Field(
+        default_factory=lambda: BaseVisaDeviceModel()
+    )
+    capture: KeysightCaptureModel = Field(
+        default_factory=lambda: KeysightCaptureModel()
+    )
+    trigger: KeysightTriggerModel = Field(
+        default_factory=lambda: KeysightTriggerModel()
+    )
+    active_channels: List[int] = Field(
+        default_factory=lambda: list()
+    )
+    channels: Dict[str, KeysightChannelDataModel] = Field(
+        default_factory=lambda: defaultdict(KeysightChannelDataModel)
+    )
