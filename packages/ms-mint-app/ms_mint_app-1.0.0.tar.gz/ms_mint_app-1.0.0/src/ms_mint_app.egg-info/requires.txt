@@ -1,0 +1,17 @@
+ms-mint>=1.0.0
+xlsxwriter
+waitress
+dash
+dash[diskcache]
+dash_extensions
+dash_bootstrap_components
+flask_login
+urllib3
+dash_tabulator
+dash_uploader==0.7.0a1
+beautifulsoup4
+dask[diskcache]
+h5py
+hdf5plugin
+werkzeug>=3.0.1
+packaging==21.3.0
