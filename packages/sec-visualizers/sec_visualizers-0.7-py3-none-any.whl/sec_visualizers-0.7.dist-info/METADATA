@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: sec-visualizers
+Version: 0.7
+Summary: A package to visualize SEC filings
+Home-page: https://github.com/john-friedman/SEC-Visualizers
+Author: John Friedman
+Description-Content-Type: text/markdown
+Requires-Dist: flask
+
+## SEC Visualizers
+WIP. Package to visualize sec filings. Best used in conjunction with SEC-Parsers
+
+### TODO
+* nested toc
+* nested display toc
