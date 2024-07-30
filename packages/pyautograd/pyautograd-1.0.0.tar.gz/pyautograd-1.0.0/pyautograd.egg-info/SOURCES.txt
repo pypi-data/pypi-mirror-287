@@ -1,0 +1,7 @@
+README.md
+setup.py
+pyautograd.egg-info/PKG-INFO
+pyautograd.egg-info/SOURCES.txt
+pyautograd.egg-info/dependency_links.txt
+pyautograd.egg-info/requires.txt
+pyautograd.egg-info/top_level.txt
