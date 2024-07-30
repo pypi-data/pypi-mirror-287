@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+fetch_github_issues/__init__.py
+fetch_github_issues/__main__.py
+fetch_github_issues/cli.py
+fetch_github_issues.egg-info/PKG-INFO
+fetch_github_issues.egg-info/SOURCES.txt
+fetch_github_issues.egg-info/dependency_links.txt
+fetch_github_issues.egg-info/entry_points.txt
+fetch_github_issues.egg-info/requires.txt
+fetch_github_issues.egg-info/top_level.txt
