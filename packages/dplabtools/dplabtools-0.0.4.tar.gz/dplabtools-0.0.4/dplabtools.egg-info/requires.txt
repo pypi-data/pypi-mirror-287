@@ -1,0 +1,10 @@
+numpy
+pillow>=9.1.0
+opencv-python<4.10
+scikit-image
+matplotlib<3.8
+shapely<=1.8.5
+tifffile
+tiffslide
+openslide-python
+paquo
