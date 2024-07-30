@@ -1,0 +1,17 @@
+cvpl_tools/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cvpl_tools/array_key_dict.py,sha256=zuNQcYVTBTf3VerkRDCkQYCDTHMMqyTjavFTA2wnbcI,10098
+cvpl_tools/dataset_reference.py,sha256=AKog9xhn7mmPB8RiROqNpy4q6m_FReCdNHl70CmnF0k,4761
+cvpl_tools/fs.py,sha256=AYXRvNlWbhU1RJd4ChkvOcsrf1gSUhwarQv-xPFE9do,17988
+cvpl_tools/im/algorithms.py,sha256=RCDyxLAhC6jHpG69r50X6BkBhWlo-IMqPHcqX4UlfQ8,8925
+cvpl_tools/im/seg_postprocess.py,sha256=drqQWNMLH2UcF9WRj1Zgo4xQS4UH8wC62gKcBdgJbio,20724
+cvpl_tools/napari/zarr.py,sha256=gOKntGlhMiPefyzzoSxOU2Qa5qY1p_9DvnzTq8ZoIiY,2931
+cvpl_tools/np_algs.py,sha256=uc08YHtmcc22cHGDkcGx6z7CBn4aWXwPQI4uacPEr4Q,19304
+cvpl_tools/ome_zarr/io.py,sha256=i4zkNUFgPO6spuhWK3SLq5gCF7v1v9dTzY0Xd4W4FIw,10735
+cvpl_tools/ome_zarr/ome_zarr_writer_patched.py,sha256=BChO_XMbI7CwxpM0tE2TSr8EV6atiuCiKG7sIDG8b2A,28026
+cvpl_tools/persistence.py,sha256=HH8U5S62CzjAXocRFJEHW844B-T-IHTHAL3zUTIhf8U,3337
+cvpl_tools/reader_from_cmd.py,sha256=0hqgBn_7AiKUis2iGXWK1NAJPgktu4zyiBbsgEnW0RU,1874
+cvpl_tools/strenc.py,sha256=ZP1HIh_8PSWl3iElPPglE2E0FrxwZeuf5dno2ReDr3g,4495
+cvpl_tools-0.4.0.dist-info/LICENSE,sha256=AT7eiFXkdK2Z7FBi3vTD-WjJetQAWnCoil8Mg6fA2YI,1088
+cvpl_tools-0.4.0.dist-info/METADATA,sha256=cXmxp0yeHGbSmUZw4iNJLuK8XLQlO2LWkYAYowmbOz4,1962
+cvpl_tools-0.4.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+cvpl_tools-0.4.0.dist-info/RECORD,,
