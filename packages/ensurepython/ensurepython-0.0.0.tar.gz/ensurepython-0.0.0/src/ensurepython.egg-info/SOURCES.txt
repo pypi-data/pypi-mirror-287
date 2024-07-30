@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/ensurepython/__init__.py
+src/ensurepython/__main__.py
+src/ensurepython/cli.py
+src/ensurepython/py.typed
+src/ensurepython.egg-info/PKG-INFO
+src/ensurepython.egg-info/SOURCES.txt
+src/ensurepython.egg-info/dependency_links.txt
+src/ensurepython.egg-info/entry_points.txt
+src/ensurepython.egg-info/requires.txt
+src/ensurepython.egg-info/top_level.txt
