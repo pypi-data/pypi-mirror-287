@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: pyfastflow
+Version: 0.0.1
+Summary: In process streaming workflows
+Author-email: Alex Kwiatkowski <alex+pypi@fremantle.io>
+Project-URL: Homepage, https://github.com/rupurt/fastflow
+Project-URL: Issues, https://github.com/rupurt/fastflow/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: build>=1.2.1; extra == "dev"
+Requires-Dist: twine>=5.0.0; extra == "dev"
+Requires-Dist: ruff>=0.3.4; extra == "dev"
+Requires-Dist: pip-tools>=7.4.1; extra == "dev"
+Requires-Dist: pygments>=2.17.0; extra == "dev"
+Requires-Dist: pyhamcrest>=2.1.0; extra == "dev"
+Requires-Dist: pyright>=1.1.0; extra == "dev"
+Requires-Dist: pytest>=8.1.0; extra == "dev"
+Requires-Dist: pytest-cov>=5.0.0; extra == "dev"
+Requires-Dist: pytest-unordered>=0.6.0; extra == "dev"
+Requires-Dist: pytest-watcher>=0.4.0; extra == "dev"
+
+# fastflow
+![pypi](https://img.shields.io/pypi/v/fastflow.svg)
+![versions](https://img.shields.io/pypi/pyversions/fastflow.svg)
+
+In process streaming workflows
+
+## Usage
+
+```console
+> pip install fastflow
+```
+
+## Getting Started
+
+- [Quick Start](#quick-start)
+- [Development](./docs/DEVELOPMENT.md)
+  - [setup](./docs/DEVELOPMENT.md#setup)
+  - [check](./docs/DEVELOPMENT.md#check)
+  - [dream2nix](./docs/DEVELOPMENT.md#dream2nix)
+  - [pypi](./docs/DEVELOPMENT.md#pypi)
+
+## Quick Start
+
+Install Nix
+
+```console
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+Perform initial setup with:
+
+```console
+> direnv allow
+> dev setup
+```
+
+Then explore other options with:
+
+```console
+> dev --help
+```
+
+## License
+
+`fastflow` is released under the [MIT license](./LICENSE)

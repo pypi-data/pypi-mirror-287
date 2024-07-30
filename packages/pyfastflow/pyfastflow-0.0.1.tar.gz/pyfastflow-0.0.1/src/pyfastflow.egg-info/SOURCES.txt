@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/fastflow/__init__.py
+src/pyfastflow.egg-info/PKG-INFO
+src/pyfastflow.egg-info/SOURCES.txt
+src/pyfastflow.egg-info/dependency_links.txt
+src/pyfastflow.egg-info/requires.txt
+src/pyfastflow.egg-info/top_level.txt
