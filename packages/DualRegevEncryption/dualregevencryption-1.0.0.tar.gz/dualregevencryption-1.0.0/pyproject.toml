@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DualRegevEncryption"
+version = "1.0.0"
+authors = [
+  { name="ShiXun", email="tomcruise890604@gmail.com" },
+]
+description = "Dual Regev Encryption"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/ShiXun0604/DualRegevEncryption"
+Issues = "https://github.com/ShiXun0604/DualRegevEncryption/issues"
