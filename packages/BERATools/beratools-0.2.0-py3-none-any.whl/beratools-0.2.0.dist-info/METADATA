@@ -1,0 +1,63 @@
+Metadata-Version: 2.3
+Name: BERATools
+Version: 0.2.0
+Summary: An advanced forest line feature analysis platform
+Project-URL: Homepage, https://github.com/RichardQZeng/BTools
+Author-email: AppliedGRG <appliedgrg@gmail.com>, Richard Zeng <richardqzeng@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2023, AppliedGRG
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+License-File: LICENSE
+Keywords: BERA,Line
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.9
+Requires-Dist: dask
+Requires-Dist: distributed
+Requires-Dist: geopandas
+Requires-Dist: label-centerlines
+Requires-Dist: pip
+Requires-Dist: psutil
+Requires-Dist: pyogrio>=0.9.0
+Requires-Dist: pyqt5
+Requires-Dist: rioxarray
+Requires-Dist: rpy2
+Requires-Dist: scikit-image>=0.24.0
+Requires-Dist: xarray-spatial
+Description-Content-Type: text/markdown
+
+- HTML documentation is generated from .rst files with Sphinx
+
+$ sphinx-build -b html ./sphinx/rst OutDir/sphinx/html
+Or use the target doc in the cmake build system
+$ make doc
+
+Sphinx setup:
+Please follow the http://sphinx-doc.org/latest/install.html guide.
+
