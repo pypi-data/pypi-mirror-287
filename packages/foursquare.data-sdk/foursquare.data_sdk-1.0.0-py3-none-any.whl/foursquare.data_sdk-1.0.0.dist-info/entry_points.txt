@@ -1,0 +1,3 @@
+[console_scripts]
+fsq-data-sdk=foursquare.data_sdk.cli:main
+
