@@ -1,0 +1,16 @@
+aind-data-schema==0.36.0
+aind-data-schema-models==0.1.7
+openpyxl
+pydantic-settings>=2.0
+pandas
+numpy
+pytz
+
+[dev]
+black
+coverage
+flake8
+interrogate
+isort
+Sphinx
+furo
