@@ -1,0 +1,2 @@
+[console_scripts]
+marearts-anpr-d = run_myapp:main
