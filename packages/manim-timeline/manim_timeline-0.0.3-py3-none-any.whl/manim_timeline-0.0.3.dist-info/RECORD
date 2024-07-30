@@ -1,0 +1,11 @@
+manim_timeline/__init__.py,sha256=9gYWNBKAIS9uQmdSD_RZ59ctLUgRAWo5FGSujGwU3Co,284
+manim_timeline/axes.py,sha256=TOS3F1laB11KSV4vPK6yPpUWGp4rxtL32NZHIDnd_Lw,1878
+manim_timeline/graph.py,sha256=F3sb18zSN7WYcjmD6ASXJqSpQEQ3ojB8lpvpOZA1GeM,822
+manim_timeline/quotes.py,sha256=avEZRjUhO9ngDueSkXHprnDvOXgUlI5tvbnCAi7tEPs,2302
+manim_timeline/timeline.py,sha256=76rc4q0PS-llad_mUVCwai6VMrSZzyYsyTOY6HhDriM,26339
+manim_timeline/timeline_helper.py,sha256=wrNR1nIm4a3px0RREYuRfMdCn-1B8T0fStByw_IfA9A,4077
+manim_timeline/utils.py,sha256=9OOPTmQ7b-eBbadYsiEB0E5GiinmzX00yG6I3jqFVUY,221
+manim_timeline-0.0.3.dist-info/METADATA,sha256=q-u4dpXz37tWqOsTo8JogJCtWkiv390Pzbw8mZwyPrQ,2235
+manim_timeline-0.0.3.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+manim_timeline-0.0.3.dist-info/licenses/LICENSE,sha256=nEv94GEMDF4JYgNnlboBTgB45TB7sWCiInjGrHd8tvM,1078
+manim_timeline-0.0.3.dist-info/RECORD,,
