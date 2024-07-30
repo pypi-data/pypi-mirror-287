@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: funktgtools
+Version: 0.1.15
+Summary: Modular TG Features
+Home-page: https://github.com/funkaclau
+Author: funkaclau
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: aiogram (==3.0.0b6)
+
+UNKNOWN
+
+
