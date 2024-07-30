@@ -1,0 +1,12 @@
+middleware/Baptism.py,sha256=SRX2VLirhJr7Xc_Ur59QGTZ2aHmopRzxumY4hVpPZQg,3109
+middleware/Confirmation.py,sha256=isFqFapb-44TwhUOtqH3Bwc1WTCyGzY5hkf2srs0EYY,2875
+middleware/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+middleware/dbconnection.py,sha256=fAkPiRb1Oi0TcMtCWUAfoqg2cZ4R9Q5m29ldXjrMHKs,2100
+middleware/death.py,sha256=zUyzYXQnhA1rqmPpNLIbDd193ZZ6xLFM5PEON-Epb_E,2431
+middleware/marriage.py,sha256=vMj4kuN7pCZ-0_blRrD4Tt4KlYP-Y3GFe3c_pffXuUw,2670
+middleware/storefile.py,sha256=p76g9Ebu5BJFpmgByT5sDuoQ5mxTBTW4iQTFy9-l4Pw,199
+church_rec_manager-0.1.0.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+church_rec_manager-0.1.0.dist-info/METADATA,sha256=4jyEoQSbb7N2i1gEQsi7Ga3zYsLyssQZmGQ3Jf3NKw8,2931
+church_rec_manager-0.1.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+church_rec_manager-0.1.0.dist-info/top_level.txt,sha256=4lLxxDRA9JlWrXsv3B2Q7oQGTqdmEnppkdoHPAiZhg0,11
+church_rec_manager-0.1.0.dist-info/RECORD,,
