@@ -1,0 +1,9 @@
+[console_scripts]
+ucdp-ipxact = ucdp_ipxact.cli:ipxact
+
+[ucdp.cli]
+ipxact = ucdp_ipxact.cli.ipxact
+
+[ucdp_ipxact.parser]
+Spirit2009Parser = ucdp_ipxact.spirit_1685_2009.parser.Spirit2009Parser
+
