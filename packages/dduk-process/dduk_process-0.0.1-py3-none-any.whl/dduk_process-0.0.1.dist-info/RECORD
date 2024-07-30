@@ -1,0 +1,11 @@
+dduk/__init__.py,sha256=EkA6-F8u0UC5rbN72orlID8ypLvx8alxbDUnwoP-OEQ,530
+dduk/__main__.py,sha256=QCfAPqfTfb0dUzFm8EqtnwjB06qQ3vgA6GVXPwXMdCA,753
+dduk/process/__init__.py,sha256=EkA6-F8u0UC5rbN72orlID8ypLvx8alxbDUnwoP-OEQ,530
+dduk/process/__main__.py,sha256=7nSbnasQy169FGTQ04a2MyPUJa6cZwIYST2oq2yznLE,542
+dduk/process/processinfo.py,sha256=ohHWR41kTC0IpiFLAsTXNPBMV_yOZFRrjSMbjskbqwo,1466
+dduk/process/processmanager.py,sha256=jTrCfs8xZtcpYFUC9eDWK6_qZ98CcsrdaggOCUEpar4,4310
+dduk_process-0.0.1.dist-info/LICENSE,sha256=AU8OrUcHYBTd6RuKzW0BQx6bM2ALTnqc8vRQwMcRIW0,1087
+dduk_process-0.0.1.dist-info/METADATA,sha256=peMz4cpTsUwLl_ndDm8c8aiTCdA3QNZ0xN_GpvH1qSY,536
+dduk_process-0.0.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+dduk_process-0.0.1.dist-info/top_level.txt,sha256=9323yfNKXRVJxK6FKltPICtDJ0iQpbBE54kOEHJSsCU,5
+dduk_process-0.0.1.dist-info/RECORD,,
