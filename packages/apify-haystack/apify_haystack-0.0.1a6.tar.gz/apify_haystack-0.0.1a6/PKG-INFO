@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: apify_haystack
+Version: 0.0.1a6
+Summary: Apify-haystack integration
+Home-page: https://apify.com
+License: Apache-2.0
+Keywords: apify,crawler,haystack,rag,scraper,scraping
+Author: Apify Technologies s.r.o.
+Author-email: support@apify.com
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries
+Requires-Dist: apify-client (>=1.7.1,<2.0.0)
+Requires-Dist: haystack-ai (>=2.3.1,<3.0.0)
+Requires-Dist: python-dotenv (>=1.0.1,<2.0.0)
+Project-URL: Changelog, https://github.com/apify/apify-haystack/blob/master/CHANGELOG.md
+Project-URL: Documentation, https://github.com/apify/apify-haystack
+Project-URL: Issue Tracker, https://github.com/apify/apify-haystack/issues
+Project-URL: Repository, https://github.com/apify/apify-haystack
+Description-Content-Type: text/markdown
+
+# Apify-Haystack integration
+
+The Apify-Haystack integration allows easy interaction between the Apify platform and Haystack.
+
+Apify is a platform for web scraping, data extraction, and web automation tasks.
+It provides serverless applications called Actors for different tasks, like crawling websites, and scraping Facebook, Instagram, and Google results, etc.
+
+Haystack offers an ecosystem of tools for building, managing, and deploying search engines and LLM applications.
+
+## Installation
+
+Apify-haystack is available as the [`apify-haystack`](https://pypi.org/project/apify-haystack/) PyPI package.
+
+```sh
+pip install apify-haystack
+```
+
+## Examples
+
+See the [examples directory](https://github.com/apify/apify-haystack/blob/master/src/apify_haystack/examples) for more examples, here is a list of few of them
+
+- Load a dataset from Apify and convert it to Haystack Documents
+- Call Apify Actor and load a dataset to convert it to Haystack Documents
+- Crawl website, scrape text content, and store it in the InMemoryDocumentStore
+- Retrieval-Augmented Generation (RAG): Extracting text from a website & question answering
+
+## Support
+
+If you find any bug or issue, please [submit an issue on GitHub](https://github.com/apify/apify-haystack/issues).
+For questions, you can ask on [Stack Overflow](https://stackoverflow.com/questions/tagged/apify), in GitHub Discussions or you can join our [Discord server](https://discord.com/invite/jyEM2PRvMU).
+
+## Contributing
+
+Your code contributions are welcome.
+If you have any ideas for improvements, either submit an issue or create a pull request.
+For contribution guidelines and the code of conduct, see [CONTRIBUTING.md](https://github.com/apify/apify-haystack/blob/master/CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/apify/apify-haystack/blob/master/LICENSE) file for details.
+
