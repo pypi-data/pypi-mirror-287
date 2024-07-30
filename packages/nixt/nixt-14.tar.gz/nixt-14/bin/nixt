@@ -1,0 +1,87 @@
+#!/usr/bin/env python3
+# This file is placed in the Public Domain.
+# pylint: disable=C0413,W0212,W0613,E0401
+
+
+"main"
+
+
+import getpass
+import os
+import sys
+
+
+sys.path.insert(0, os.getcwd())
+
+
+from nixt.cfg    import Config
+from nixt.cmds   import Commands
+from nixt.errors import errors
+from nixt.disk   import Persist, skel
+from nixt.main   import cmnd, enable, scan
+from nixt.parse  import parse
+from nixt.utils  import modnames, privileges
+
+
+from nixt import modules, user
+
+
+Cfg         = Config()
+Cfg.dis     = ""
+Cfg.mod     = "mod,cmd,err,skl,thr"
+Cfg.name    = "nixt"
+Cfg.opts    = ""
+Cfg.user    = getpass.getuser()
+Cfg.wdr     = os.path.expanduser(f"~/.{Cfg.name}")
+Cfg.pidfile = os.path.join(Cfg.wdr, f"{Cfg.name}.pid")
+
+
+Persist.workdir = Cfg.wdr
+
+
+def skl(event):
+    "create service file (pipx)."
+    privileges(getpass.getuser())
+    skel()
+
+
+def srv(event):
+    "create service file (pipx)."
+    if event.args:
+        username = event.args[0]
+    else:
+        username  = getpass.getuser()
+    txt = f"""[Unit]
+Description={Cfg.name.upper()}
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User={username}
+Group={username}
+WorkingDirectory=/home/{username}/.{Cfg.name}
+ExecStart=/home/{username}/.local/bin/{Cfg.name}d
+ExitType=cgroup
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target"""
+    event.reply(txt)
+
+
+def main():
+    "main"
+    parse(Cfg, " ".join(sys.argv[1:]))
+    Commands.add(skl)
+    Commands.add(srv)
+    enable(print)
+    Cfg.dis = Cfg.sets.dis
+    Cfg.mod = ",".join(modnames(modules, user))
+    scan(Cfg.mod, modules, user)
+    cmnd(Cfg.otxt, print)
+
+
+if __name__ == "__main__":
+    main()
+    errors()
