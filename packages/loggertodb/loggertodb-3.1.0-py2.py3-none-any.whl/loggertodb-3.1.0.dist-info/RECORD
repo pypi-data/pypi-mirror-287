@@ -1,0 +1,12 @@
+loggertodb/__init__.py,sha256=rWjLwwGRZhx7ArvoYZvGAcpKVrDxRluaKS0k92DqlR0,99
+loggertodb/cli.py,sha256=SN0NBAr5oo6JmygZksqHrB-apKXyMISnuPnJvxI0318,5179
+loggertodb/enhydris.py,sha256=hRBbiDzxTmz0jWct44BKbxOQylzGR16DK2JZQGwgVAs,3484
+loggertodb/exceptions.py,sha256=B4C3dfXtjbYXBr7TZfvjjPjewuUysVx12XuFAVJ4Xgk,160
+loggertodb/meteologgerstorage.py,sha256=b9sRwj9rKsB7DQUW5jP1s95LF94wAgzwbMpLUwSLbVQ,32284
+loggertodb/upgrade.py,sha256=UXcflp7ARXvHbCX5QtpEyluYvsx0032x-jR2LD4t7g0,3735
+loggertodb-3.1.0.dist-info/LICENSE.rst,sha256=7hEbtns6kGPI3hpPBVPQeiPYy0zgz3IgFNBZXz1EAKM,1369
+loggertodb-3.1.0.dist-info/METADATA,sha256=WBdE7HAG7WZMk2HeCKdnrCuoOsyUdGXNS0Zhgaq9vSM,3072
+loggertodb-3.1.0.dist-info/WHEEL,sha256=bb2Ot9scclHKMOLDEHY6B2sicWOgugjFKaJsT7vwMQo,110
+loggertodb-3.1.0.dist-info/entry_points.txt,sha256=_l7_Ams4u2EvzXZLryYq1rPNUClV7OqsQPPINovZWCY,51
+loggertodb-3.1.0.dist-info/top_level.txt,sha256=U4qgBUwJla-0HgmwDHzye7rXGiLnuGn6bZND-KmZP1o,11
+loggertodb-3.1.0.dist-info/RECORD,,
