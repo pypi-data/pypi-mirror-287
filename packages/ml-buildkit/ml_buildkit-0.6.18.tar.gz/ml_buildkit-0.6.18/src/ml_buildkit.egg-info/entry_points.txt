@@ -1,0 +1,2 @@
+[console_scripts]
+ml-buildkit = ml_buildkit._cli:app
