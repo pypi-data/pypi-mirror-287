@@ -1,0 +1,11 @@
+GeoAreaCalc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+GeoAreaCalc/area_calculator.py,sha256=X4bBHHaJQjR6rrDj3lgWR6B3-brW93ianxIlt3XCCwY,155
+GeoAreaCalc/shapes.py,sha256=7kBquaNcpH51Qi9m8cjH8Vj4o8BuLaMlLlXJrqdTKPs,958
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_area_calculator.py,sha256=QbCpQXr4lsOup50fvbaGXGPpsoFDqvvSlV5NKOQiNIg,417
+tests/test_shapes.py,sha256=FbpJMt0tLiVZ1-j9QzSLYFioXXUj6W2v8ywdQuevPOg,488
+GeoAreaCalc-0.0.1.dist-info/LICENSE,sha256=Jq8mquXuNuWB3ADdqxPuQsyE4k5-SM025Q_Y9rrh78I,1094
+GeoAreaCalc-0.0.1.dist-info/METADATA,sha256=sgkNTbp_pXMXMpt84yODzHGfl0821f5AKvoWepobHow,3769
+GeoAreaCalc-0.0.1.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+GeoAreaCalc-0.0.1.dist-info/top_level.txt,sha256=r1EPRBDD1hKBNXKug0PFHaAJsfyyCMZ2BeiZtN6qipY,18
+GeoAreaCalc-0.0.1.dist-info/RECORD,,
