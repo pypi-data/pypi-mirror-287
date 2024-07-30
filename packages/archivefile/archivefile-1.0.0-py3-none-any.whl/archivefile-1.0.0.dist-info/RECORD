@@ -1,0 +1,16 @@
+archivefile/__init__.py,sha256=q8uE2jg6mH48ziCzPNzGM3qvESNmEGaxh5JMbBfJXrE,465
+archivefile/_adapters/_base.py,sha256=QLQTJvnUCWbKHs3-LtgPDK26LlOpIf81twz96KD2sDo,4352
+archivefile/_adapters/_rar.py,sha256=4Eeo1xSHeC054IARJkiSP-qzzjJBJtHFFw2EhQ2Wibc,9796
+archivefile/_adapters/_sevenzip.py,sha256=K4izpRkZ00hv2jZQqqKT9Bp6n3VWcvP4pdZ7z3DUxrM,12936
+archivefile/_adapters/_tar.py,sha256=_PxaIAmiOEeDEETMUPt7hnRk9RFgEdRHxzP5osOKqUg,9591
+archivefile/_adapters/_zip.py,sha256=7uJdTxxiEKR67zoH-9hiRZoKy_fNqZMESEkcDBwUVoI,9671
+archivefile/_core.py,sha256=2znpCn2vDhpJ9ICaQhtGN-O8Rhyor8XzRM3uRL7sdVs,23609
+archivefile/_enums.py,sha256=ZfZlzQRdBiA0yvpnalCeVzQ7k2w1modWJqdLyaDZLlo,1680
+archivefile/_models.py,sha256=8SJENyfOWOqI4uBT7TLr2wqHnaJaveQDS7GeGKVoA3g,1519
+archivefile/_types.py,sha256=eQ46nmeBGIf8n26agSg7X10qdb7uGhIc0PnjBkvakmI,1571
+archivefile/_utils.py,sha256=sJraAmAE4QKyRHo2FxM9GVGdPxbduayR92apIknXdCU,1740
+archivefile/_version.py,sha256=h66N6artpPawVd-KtfChkqaT11cF2r012me6tWB4htw,519
+archivefile/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+archivefile-1.0.0.dist-info/METADATA,sha256=W-zsvG8rR2ldK4BbhkBC1P6hIufKED303XuVRFRcyJE,6098
+archivefile-1.0.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+archivefile-1.0.0.dist-info/RECORD,,
