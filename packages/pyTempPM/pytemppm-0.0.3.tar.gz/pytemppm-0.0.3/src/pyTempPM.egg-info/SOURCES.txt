@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+src/pyTempPM/__init__.py
+src/pyTempPM/main.py
+src/pyTempPM.egg-info/PKG-INFO
+src/pyTempPM.egg-info/SOURCES.txt
+src/pyTempPM.egg-info/dependency_links.txt
+src/pyTempPM.egg-info/requires.txt
+src/pyTempPM.egg-info/top_level.txt
