@@ -1,0 +1,14 @@
+LICENCE
+README.md
+setup.py
+to_erase.json
+cut_video/__init__.py
+cut_video/cut_video.py
+cut_video/f1.py
+tests/test_run.py
+wtai_dt.egg-info/PKG-INFO
+wtai_dt.egg-info/SOURCES.txt
+wtai_dt.egg-info/dependency_links.txt
+wtai_dt.egg-info/entry_points.txt
+wtai_dt.egg-info/requires.txt
+wtai_dt.egg-info/top_level.txt
