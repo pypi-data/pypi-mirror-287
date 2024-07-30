@@ -1,0 +1,9 @@
+openai==1.37.0
+google-generativeai==0.7.2
+
+[testing]
+pytest
+mypy
+flake8
+tox
+black
