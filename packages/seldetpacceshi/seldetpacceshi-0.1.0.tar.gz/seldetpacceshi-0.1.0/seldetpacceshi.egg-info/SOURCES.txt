@@ -1,0 +1,11 @@
+LICENCE.txt
+README.md
+setup.py
+seldetpacceshi/__init__.py
+seldetpacceshi/main.c
+seldetpacceshi/timer.c
+seldetpacceshi.egg-info/PKG-INFO
+seldetpacceshi.egg-info/SOURCES.txt
+seldetpacceshi.egg-info/dependency_links.txt
+seldetpacceshi.egg-info/entry_points.txt
+seldetpacceshi.egg-info/top_level.txt

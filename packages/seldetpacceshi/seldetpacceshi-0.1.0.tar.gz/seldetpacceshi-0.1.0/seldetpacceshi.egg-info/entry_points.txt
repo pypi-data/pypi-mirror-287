@@ -1,0 +1,2 @@
+[console_scripts]
+self_deleting_package = seldetpacceshi.main:main
