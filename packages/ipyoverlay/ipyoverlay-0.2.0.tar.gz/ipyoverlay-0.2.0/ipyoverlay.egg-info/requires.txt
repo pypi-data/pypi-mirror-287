@@ -1,0 +1,4 @@
+ipyvuetify
+ipywidgets
+matplotlib
+plotly
