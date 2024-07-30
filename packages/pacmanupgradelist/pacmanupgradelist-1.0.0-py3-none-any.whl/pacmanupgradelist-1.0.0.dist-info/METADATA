@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: pacmanupgradelist
+Version: 1.0.0
+Summary: List the latest pacman upgrades and show them in a nice table
+Home-page: https://github.com/narbux/pacmanupgradelist
+License: GPL-3.0-or-later
+Author: Marnix Enthoven
+Author-email: mail@marnixenthoven.nl
+Requires-Python: >=3.12,<4.0
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Utilities
+Requires-Dist: rich (>=13.7.1,<14.0.0)
+Project-URL: Repository, https://github.com/narbux/pacmanupgradelist
+Description-Content-Type: text/markdown
+
+# Pacman Upgrade List README
+
+### Purpose
+
+Get a formatted table of the latest Pacman upgrades.
+
+### Usage
+
+```
+usage: Pacman Upgrade List 1.0.0 [-h] [--version] [-n NUMBER]
+
+Get a formatted table of the last pacman upgrades
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -n NUMBER, --number NUMBER
+                        The number of newest upgraded packages to show [default: 100]
+```
+
