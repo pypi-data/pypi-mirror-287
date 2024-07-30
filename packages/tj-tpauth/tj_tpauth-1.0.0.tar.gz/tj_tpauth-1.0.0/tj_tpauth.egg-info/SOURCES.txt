@@ -1,0 +1,8 @@
+README.md
+setup.py
+tj_tpauth/__init__.py
+tj_tpauth/tj_tpauth.py
+tj_tpauth.egg-info/PKG-INFO
+tj_tpauth.egg-info/SOURCES.txt
+tj_tpauth.egg-info/dependency_links.txt
+tj_tpauth.egg-info/top_level.txt
