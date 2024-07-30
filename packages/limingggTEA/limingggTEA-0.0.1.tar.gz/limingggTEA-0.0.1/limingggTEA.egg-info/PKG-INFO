@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: limingggTEA
+Version: 0.0.1
+Summary: A simple package for https://app.tea.xyz/. Example tea-xyz1 - https://github.com/madest92/tea-xyz1 and tea-xyz2 - https://github.com/madest92/tea-xyz2
+Home-page: https://github.com/liminggg/tea
+Author: User
+Author-email: example@mail.com
+Project-URL: Homepage, https://github.com/liminggg/tea
+Project-URL: Source, https://github.com/liminggg/tea
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
