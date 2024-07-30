@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: prevail-operations
+Version: 0.1
+Requires-Dist: ratelimit ==2.2.1
+Requires-Dist: Requests ==2.32.3
+
