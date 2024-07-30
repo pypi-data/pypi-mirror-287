@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: django-admin-action-forms
+Version: 0.0.0.dev1
+Summary: Extension for the Django admin panel that allows passing additional parameters to actions by creating intermediate pages with forms.
+Project-URL: Repository, https://github.com/michalpokusa/django-admin-action-forms
+Keywords: django,admin,action,actions,form,forms,pass,intermediate,args,arguments,params,parameters
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: django>=3.2
