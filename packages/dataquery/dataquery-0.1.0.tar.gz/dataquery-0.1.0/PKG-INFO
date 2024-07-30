@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: dataquery
+Version: 0.1.0
+Summary: A package for simplified database operations with PostgreSQL and Pandas.
+Author-email: Praveen <praveen.nitap@gmail.com>
+Maintainer-email: Praveen <praveen.nitap@gmail.com>
+License: BSD 3-Clause License
+Project-URL: Homepage, https://github.com/praveen-uofg/dataquery
+Project-URL: Documentation, https://github.com/praveen-uofg/dataquery
+Project-URL: Repository, https://github.com/praveen-uofg/dataquery
+Keywords: database,SQL,PostgreSQL,pandas
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: pandas>=1.4.0
+Requires-Dist: psycopg2-binary>=2.9.3
+Requires-Dist: sqlalchemy>=1.4.31
