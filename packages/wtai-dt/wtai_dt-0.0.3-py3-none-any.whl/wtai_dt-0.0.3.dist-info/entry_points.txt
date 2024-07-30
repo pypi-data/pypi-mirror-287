@@ -1,0 +1,2 @@
+[console_scripts]
+wtai = wtai.main:main
