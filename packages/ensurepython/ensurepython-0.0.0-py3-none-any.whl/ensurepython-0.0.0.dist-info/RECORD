@@ -1,0 +1,10 @@
+ensurepython/__init__.py,sha256=KfZSYmMn-NjFwu6pA8GqpY3T23LEsGhsAphlxHgxK3M,198
+ensurepython/__main__.py,sha256=FCwG3Sp_UNSX8MZmSN0UGLnIcgRZkAlURhyenJBvt1Q,192
+ensurepython/cli.py,sha256=m0hZG44S3GQpeKav5c3esVX5BKhYl92AHdibUfTywRA,394
+ensurepython/py.typed,sha256=DtCsIDq6KOv2NOEdQjTbeMWJKRh6ZEL2E-6Mf1RLeMA,59
+ensurepython-0.0.0.dist-info/LICENSE,sha256=lL965OpoM7CFOnzB8fKN2FebNKMcnBYq64gl3sI-1dw,1072
+ensurepython-0.0.0.dist-info/METADATA,sha256=xyAPabhMz8EumwnDdnQX9IMpSuLcLZ1RarahT95IF3Q,1769
+ensurepython-0.0.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+ensurepython-0.0.0.dist-info/entry_points.txt,sha256=wohYXxMeipv-oSaHv0XoMC7BlMSQgU9Ckhyv3F8eBkE,54
+ensurepython-0.0.0.dist-info/top_level.txt,sha256=ghVxzZPVUZwOIMbBmXXNAz8-vrk0F_vp8mPsypFNz4c,13
+ensurepython-0.0.0.dist-info/RECORD,,
