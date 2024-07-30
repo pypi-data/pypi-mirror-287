@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: noxnet
+Version: 0.1.0
+Summary: Neural networks with Noxjax
+Author-email: Paul Wollenhaupt <paul.wollenhaupt@gmail.com>
+Project-URL: Homepage, https://github.com/pwolle/noxjax
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: jax>=0.4.26
+Requires-Dist: jaxlib>=0.4.26
+Requires-Dist: beartype>=0.18.5
+Requires-Dist: oryx>=0.2.7
+Requires-Dist: jaxtyping>=0.2.33
+Requires-Dist: noxjax>=0.1.2
+
+# Noxnet
+Neural network library based on [Noxjax](https://github.com/pwolle/noxjax), strongly inspired by [Equinox](https://github.com/patrick-kidger/equinox).
+
+## Installation
+```bash
+pip install noxnet
+```
+
+## TODO
+- [ ] Scan over layers
+- [ ] Conv layers

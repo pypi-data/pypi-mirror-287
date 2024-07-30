@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+setup.py
+noxnet/__init__.py
+noxnet/_activation.py
+noxnet/_attention.py
+noxnet/_combine.py
+noxnet/_linear.py
+noxnet/_norm.py
+noxnet/_typecheck.py
+noxnet/_utils.py
+noxnet.egg-info/PKG-INFO
+noxnet.egg-info/SOURCES.txt
+noxnet.egg-info/dependency_links.txt
+noxnet.egg-info/requires.txt
+noxnet.egg-info/top_level.txt
