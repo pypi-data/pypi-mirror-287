@@ -1,0 +1,21 @@
+from .._meta import _Meta
+
+from collections import OrderedDict
+
+class FreqMeta(_Meta):
+    __slots__ = "fields"
+
+    def __init__(self):
+        self.fields = OrderedDict((
+            ("SampleRate", None),
+            ("CenterFreq", None),
+        ))
+
+    def short(self) -> str:
+        return f"{self.fields['CenterFreq']}_{self.fields['SampleRate']}"
+
+
+def Construct(j: dict):
+    meta = FreqMeta()
+    meta.from_json(j)
+    return meta
