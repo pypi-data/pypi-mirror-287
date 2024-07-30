@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: robot_properties_fingers
+Version: 2.0.2
+Summary: URDF files and meshes of the (Tri-)Finger robots.
+Home-page: https://open-dynamic-robot-initiative.github.io/robot_properties_fingers/
+Maintainer: Felix Kloss
+Maintainer-email: felix.kloss@tue.mpg.de
+License: BSD-3-Clause
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: xacro
+Requires-Dist: pin
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
+Models of the (Tri-)Finger Robots
+=================================
+
+This package contains URDF and mesh files for the various Finger and TriFinger
+robots as well as some Python utils to work with the models.
+
+For each finger type there is a model for a single finger and one for the
+TriFinger which simply consists of three times the single finger.
+
+For more information, see the
+[documentation](https://open-dynamic-robot-initiative.github.io/robot_properties_fingers).
+
+![Screenshots of the different (Tri-)Finger models](doc/images/all_finger_types.jpg)
