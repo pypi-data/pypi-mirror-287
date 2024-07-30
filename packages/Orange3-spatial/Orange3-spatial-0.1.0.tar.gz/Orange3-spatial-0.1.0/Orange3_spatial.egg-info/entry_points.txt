@@ -1,0 +1,12 @@
+[orange.canvas.help]
+html-index = orangecontrib.spatial.widgets:WIDGET_HELP_PATH
+
+[orange.widgets]
+Spatial = orangecontrib.spatial.widgets
+
+[orange.widgets.tutorials]
+spatial_tutorials = orangecontrib.spatial.tutorials
+
+[orange3.addon]
+spatial = orangecontrib.spatial
+

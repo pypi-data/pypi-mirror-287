@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: Orange3-spatial
+Version: 0.1.0
+Summary: A collection of widgets that perform operations on the data given some x and y axes
+Home-page: UNKNOWN
+License: GPLv3+
+Keywords: orange3 add-on,spatial
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Orange3 Spatial
+===============
+
+A collection of spatial widgets.
+
+Features
+--------
+#### List of key features
+
+
