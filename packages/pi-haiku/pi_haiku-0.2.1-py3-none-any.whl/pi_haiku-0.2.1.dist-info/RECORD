@@ -1,0 +1,11 @@
+pi_haiku/__init__.py,sha256=TbNiMCcBPJ_0PQQEPrYhbN0M1E7BK6TJSFNRR8FUS6g,257
+pi_haiku/environment_detector.py,sha256=2-DH9H6eYUNY96dcDaPKy0Iochvc3nSOo0YNMVJ6J5U,4710
+pi_haiku/environment_utils.py,sha256=7nKbGJg8rQqWZ_WxZRIr5XDQaZfBLJK7T764fr7-ZM8,4312
+pi_haiku/haiku.py,sha256=El-oBacl-e0_2PJvJln61KGcc1EwNAZfu6oHABbWKuc,3039
+pi_haiku/models.py,sha256=ADO6OzlSRPwUqVHWSl5Ol1ya2-yHeC8ALGpg0AFjHrQ,5028
+pi_haiku/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pi_haiku/pyproject_modifier.py,sha256=SBdjRSR6B1TXxWwvMUaKwLAnd5P6rlEGs8OXYZ4HY40,13790
+pi_haiku/utils.py,sha256=eqasUBhg1Y9ZyJoV5oYdKGtplzmEdGirp2V2prynA60,5170
+pi_haiku-0.2.1.dist-info/METADATA,sha256=-83kE__f77agUqk7My9zlHbuNsZwYMMd5NKN4WsEHn0,1124
+pi_haiku-0.2.1.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+pi_haiku-0.2.1.dist-info/RECORD,,
