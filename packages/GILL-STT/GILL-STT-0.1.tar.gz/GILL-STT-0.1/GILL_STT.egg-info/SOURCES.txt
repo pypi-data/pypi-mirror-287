@@ -1,0 +1,6 @@
+setup.py
+GILL_STT.egg-info/PKG-INFO
+GILL_STT.egg-info/SOURCES.txt
+GILL_STT.egg-info/dependency_links.txt
+GILL_STT.egg-info/top_level.txt
+Gill_stt/__init__.py
