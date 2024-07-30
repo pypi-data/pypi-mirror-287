@@ -1,0 +1,9 @@
+README.md
+setup.py
+app_db_connector.egg-info/PKG-INFO
+app_db_connector.egg-info/SOURCES.txt
+app_db_connector.egg-info/dependency_links.txt
+app_db_connector.egg-info/requires.txt
+app_db_connector.egg-info/top_level.txt
+db_connector/__init__.py
+db_connector/connector.py
