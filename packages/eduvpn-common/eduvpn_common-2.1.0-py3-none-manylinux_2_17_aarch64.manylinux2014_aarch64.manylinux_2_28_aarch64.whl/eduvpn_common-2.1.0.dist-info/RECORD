@@ -1,0 +1,12 @@
+eduvpn_common-2.1.0.dist-info/METADATA,sha256=lQUIbkisvBsmULyHTGZwBM4NDApCtzZZ04QKn5TdaQ8,881
+eduvpn_common-2.1.0.dist-info/WHEEL,sha256=xaQtKH-KLUTxyIbS_69At56PX23CH5Ws3vMgX2dasyQ,207
+eduvpn_common-2.1.0.dist-info/RECORD,,
+eduvpn_common-2.1.0.dist-info/top_level.txt,sha256=Aup_HQ2pPUyxhJiCT4eGcUPXPusxrLYoQwiCHLG4fiY,14
+eduvpn_common/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+eduvpn_common/state.py,sha256=BvsJ66N6iVYuMy8fPtdxp5HPuraDPfzXbCQ0dG3LqSI,414
+eduvpn_common/loader.py,sha256=FE4vpJcA9iUNIhcUbrLJm8mKXCoK8GCfNpK2L4ji050,4123
+eduvpn_common/event.py,sha256=JOy3BllscCU_oVXTnbKhYE-XMS-Sy9n96Yo4tLKAWDw,4553
+eduvpn_common/__init__.py,sha256=Xybt2skBZamGMNlLuOX1IG-h4uIxqUDGAO8MIGWrJac,22
+eduvpn_common/types.py,sha256=SNRbn_1y43ifdSUJzl3VilXD__MTNxu_yY9EIlse0WE,4140
+eduvpn_common/main.py,sha256=ItRz90fO7qGlHxWHHHiAeAZaRvYxfMR_BsPOtFtpleM,13627
+eduvpn_common/lib/libeduvpn_common-2.1.0.so,sha256=CdCPmx7FBoIbkPjou1p5q-yx0S2OMTf2QCWk0wGAqGU,13375328
