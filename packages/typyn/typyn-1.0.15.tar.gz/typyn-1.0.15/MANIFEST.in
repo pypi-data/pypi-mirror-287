@@ -1,0 +1,4 @@
+include typyn/data/words/en-1000.txt
+include typyn/data/quotes/es-1000.txt
+include typyn/data/quotes/english.json
+include typyn/data/quotes/español.json
