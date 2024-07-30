@@ -1,0 +1,17 @@
+ipyoverlay/__init__.py,sha256=TO42jOxlv-GCLSCjAyPy562purWeRwPz51EnVgGWXz8,611
+ipyoverlay/connection.py,sha256=AlLQaNFtudKtCTDzMHxxkKrlbaZVawx1I-fcPp_YOs4,8677
+ipyoverlay/container.py,sha256=JjL8kLAvQBbywZ34w9akb6hBppwsvWuITgjaX39mfX4,17082
+ipyoverlay/utils.py,sha256=nbMTiarbF_debVpbF6dVwt_JpE0g8MKxzL29QJ_cCRw,9822
+ipyoverlay/widgets.py,sha256=YwoN1K6rB3GUnuB8G3VeloL_Fr5JQ4EJAi1-aVBJ4zg,15036
+ipyoverlay/vue/connection.vue,sha256=UpyzGHiZizmhQvA9oE28WB1xLFubqUKjLa9qfpcG2bU,10047
+ipyoverlay/vue/container.vue,sha256=bKPaFGUQEdGPqKZiLw2JKURH_kgN9dfTiwXuIkSbvXw,12804
+ipyoverlay/vue/context-menu-area.vue,sha256=l7NhYWaj5FXpeVNVtVGCYjUc0duKKoogQAwe2y71kyw,1774
+ipyoverlay/vue/context-menu.vue,sha256=3pD_lG2gyODqfbgQaAXYo-DkiN_OYumkWsBT3wWNNqk,4058
+ipyoverlay/vue/decorated-widget.vue,sha256=OH9i1I2o45MBFyLwwS6er4hpsyYWKL3eF9cO7793h1k,2978
+ipyoverlay/vue/popup-component.vue,sha256=CrSYO6I7q8KtH9X1YjrfrL-XWY8sB_UIfgnxXcwexQU,3275
+ipyoverlay/vue/rawwidget.vue,sha256=0LR26mT-YjkxmSYqJT7lel0AgszfRDAupmevQX9deRw,955
+ipyoverlay-0.2.0.dist-info/LICENSE,sha256=M5GqHh2xFsrmrHn8O1A9tg68lNkI8D1FerSiCPQ24YU,1524
+ipyoverlay-0.2.0.dist-info/METADATA,sha256=gBzRqlpdQfRSy6bbb7EuqMPAkzHl9YJmJBc1GEdTpyI,4672
+ipyoverlay-0.2.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+ipyoverlay-0.2.0.dist-info/top_level.txt,sha256=lLGoyqDvnJvGxj03u9I3V2GogPwqm_o8WqvvuUeuRXg,11
+ipyoverlay-0.2.0.dist-info/RECORD,,
