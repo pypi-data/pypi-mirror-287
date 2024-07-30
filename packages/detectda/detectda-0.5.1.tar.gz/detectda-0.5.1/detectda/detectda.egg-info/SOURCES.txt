@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+detectda/detectda.egg-info/PKG-INFO
+detectda/detectda.egg-info/SOURCES.txt
+detectda/detectda.egg-info/dependency_links.txt
+detectda/detectda.egg-info/entry_points.txt
+detectda/detectda.egg-info/requires.txt
+detectda/detectda.egg-info/top_level.txt
+detectda/tests/__init__.py
+detectda/tests/test_hlpr.py
+detectda/tests/test_imgs.py
+detectda/tests/test_imgs_plus.npy
+detectda/tests/test_plus.py
+detectda/tests/test_video.pkl
+detectda/tests/test_video.tif
+detectda/tests/test_video_vacuum.pkl
