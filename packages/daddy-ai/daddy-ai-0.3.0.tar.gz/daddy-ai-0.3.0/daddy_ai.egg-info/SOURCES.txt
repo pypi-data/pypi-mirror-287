@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+daddy_ai/__init__.py
+daddy_ai/deploy_master.py
+daddy_ai.egg-info/PKG-INFO
+daddy_ai.egg-info/SOURCES.txt
+daddy_ai.egg-info/dependency_links.txt
+daddy_ai.egg-info/top_level.txt
+tests/test_deploy_master.py
