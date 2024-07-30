@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+iAppFlyer/init.py
+iAppFlyer/main.py
+iAppFlyer.egg-info/PKG-INFO
+iAppFlyer.egg-info/SOURCES.txt
+iAppFlyer.egg-info/dependency_links.txt
+iAppFlyer.egg-info/entry_points.txt
+iAppFlyer.egg-info/not-zip-safe
+iAppFlyer.egg-info/requires.txt
+iAppFlyer.egg-info/top_level.txt
