@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/flatmed/__init__.py
+src/flatmed/flatmed.py
+src/flatmed.egg-info/PKG-INFO
+src/flatmed.egg-info/SOURCES.txt
+src/flatmed.egg-info/dependency_links.txt
+src/flatmed.egg-info/top_level.txt

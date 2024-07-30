@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flatmed"
+version = "0.0.1"
+authors = [{name = "Ray Griner", email = "rgriner_fwd@outlook.com"}]
+description = "A simple package for converting PubMed output (ie, the output from PubMed with all PubMed fields) into a flat file or pandas.DataFrame object. Simple functions are provided to merge the results of separate searches and automatically create variables indicating which search(es) a record was found in. Users can then add their own notes on the references by importing the flat file into a spreadsheet program of their choice and adding their notes in new columns."
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Healthcare Industry",
+]
+keywords = ["PubMed","parser"]
+
+[setuptools.options]
+packages = "find:"
+include = "flatmed"
+python_requires = ">=3.8"
