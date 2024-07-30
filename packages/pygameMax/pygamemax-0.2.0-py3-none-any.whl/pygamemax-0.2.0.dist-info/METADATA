@@ -1,0 +1,32 @@
+Metadata-Version: 2.3
+Name: pygameMax
+Version: 0.2.0
+Summary: First version ready for user accses, please email for any issues. Thanks :/
+Project-URL: Homepage, https://github.com/pypa/sampleproject
+Project-URL: Issues, https://github.com/pypa/sampleproject/issues
+Author-email: Sam Fertig <sfertig007@gmail.com>
+License-File: LICENCE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+version: 0.2.0
+    --Please note that to gain acsess to the main 'Pygame' modle please use the following:
+        -import pygameMax
+        -import pygameMax.scr
+        -pygameMax.scr.pygameMax
+
+         -[varible] = pygameMax.scr.pygameMax.pac.Pygame([WIDTH], [HEIGHT], [COLOR (siting or rgb value)])
+________________________________________
+
+This is the forst consumer ready version of the pygameMax modle. Please note that their may be bugs and / or issues.
+
+[
+    For more info, please reach the pygameMax docs using:
+
+    -pygameMax.scr.pygameMax.docs.overveiw()
+]
+
+Thanks, have fun using this modle!
