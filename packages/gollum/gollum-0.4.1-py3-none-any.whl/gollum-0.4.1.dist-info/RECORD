@@ -1,0 +1,13 @@
+gollum/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gollum/coolTLUSTY.py,sha256=Cjm3EaSD1UcJj3bVeFxaX71MZXIiN3WNo-HyIV4PpmQ,25845
+gollum/experimental.py,sha256=F_1IGqS9iN5KBpcpieMUZP2328fW36jvnvNTwSdr1I0,11777
+gollum/phoenix.py,sha256=RpVayZSsLuxyf780TnW67_DrkP9o5sARxywUZIMHSmc,22836
+gollum/precomputed_spectrum.py,sha256=9k7m2TQdjeFIJA0EhiW4Trt21W1SHnp5z9E2agPfpMs,15636
+gollum/sonora.py,sha256=wES3wOY6F9Q74fV7rvF4PF31P2XN1FqzJqXtZ9ViYjM,52725
+gollum/telluric.py,sha256=f1aHb_pW0a9IhSqeOaP65UmpCUrYZXUl8Sjn3FK_N5I,4648
+gollum/utilities.py,sha256=DSybFSH5lq9Jcpn4D4_fBVKTt35nwqZYxPkW0fbkniM,2518
+gollum-0.4.1.dist-info/LICENSE,sha256=8YfWf_eV_2RMQxPeqPuJiPGwJ-TJkOpvXm-FjiYwfbw,1062
+gollum-0.4.1.dist-info/METADATA,sha256=poni3DOoPWVMOEJv-pVXqCDio1mwnlSQzFnVEntAlV8,5545
+gollum-0.4.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+gollum-0.4.1.dist-info/top_level.txt,sha256=bGveUe0lcJZpocGYmb38Vqyqxb1ONynRqrZmanU772I,7
+gollum-0.4.1.dist-info/RECORD,,
