@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "web3pi-tunnel"
+version = "0.1"
+description = "Web3 Pi tunnel - a basic tcp reverse tunnel"
+authors = []
+license = "GNU GENERAL PUBLIC LICENSE Version 3"
+keywords = ["web3pi", "web3", "tcp", "tunnel", "ethereum", "proxy"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: POSIX :: Linux",
+]
+repository = "https://github.com/Web3-Pi/basic-tcp-tunnel"
+readme = "README.md"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+colorama = ">=0.4.6"
+upnpclient = ">=1.0.3"
+whatismyip = ">=2022.7.10"
+python-dotenv = ">=1.0.1"
+
+[tool.poetry.scripts]
+web3pi_tunnel_client = "web3pi_tunnel.client:main"
+web3pi_tunnel_server = "web3pi_tunnel.server:main"
