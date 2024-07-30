@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+robotmonitor.egg-info/PKG-INFO
+robotmonitor.egg-info/SOURCES.txt
+robotmonitor.egg-info/dependency_links.txt
+robotmonitor.egg-info/entry_points.txt
+robotmonitor.egg-info/requires.txt
+robotmonitor.egg-info/top_level.txt
+scripts/__init__.py
+scripts/elasticsearch_error_notifier.py
+scripts/slack.py
+tests/test_slack_bot.py
