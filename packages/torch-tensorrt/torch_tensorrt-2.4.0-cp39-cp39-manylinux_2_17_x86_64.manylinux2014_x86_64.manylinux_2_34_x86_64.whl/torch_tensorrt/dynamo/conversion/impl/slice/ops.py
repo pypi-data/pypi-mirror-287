@@ -1,0 +1,422 @@
+import math
+from typing import Optional, Sequence
+
+import numpy as np
+import tensorrt as trt
+from torch.fx.node import Target
+from torch_tensorrt.dynamo._SourceIR import SourceIR
+from torch_tensorrt.dynamo.conversion import impl
+from torch_tensorrt.dynamo.conversion._ConversionContext import ConversionContext
+from torch_tensorrt.dynamo.conversion.converter_utils import (
+    calculate_strides,
+    flatten_dims,
+    get_positive_dim,
+    get_trt_tensor,
+)
+from torch_tensorrt.dynamo.conversion.impl.cat import cat
+from torch_tensorrt.dynamo.conversion.impl.slice.base import slice
+from torch_tensorrt.fx.converters.converter_utils import (
+    has_dynamic_shape,
+    prepend_ones,
+    set_layer_name,
+)
+from torch_tensorrt.fx.types import Shape, TRTTensor
+
+
+def slice_op(  # TODO: This should be slice not whatever is in base
+    ctx: ConversionContext,
+    target: Target,
+    source_ir: Optional[SourceIR],
+    name: str,
+    input: TRTTensor,
+    dim: int,
+    start: Optional[int],
+    stop: Optional[int],
+    step: int,
+) -> TRTTensor:
+    # Special case for start being None
+    if start is None:
+        start = 0
+
+    # Special case for stop being None
+    if stop is None:
+        stop = input.shape[dim]
+
+    dim = get_positive_dim(dim, len(input.shape))
+    start = get_positive_dim(start, input.shape[dim])
+    stop = get_positive_dim(stop, input.shape[dim])
+
+    if has_dynamic_shape(input.shape):
+        # Check whether slice target dim is dynamic shape dim
+        assert input.shape[dim] != -1, "Can't slice on dynamic shape dimension!"
+
+    start_slice = [0] * len(input.shape)
+    start_slice[dim] = start
+    stride_slice = [1] * len(input.shape)
+    stride_slice[dim] = step
+    output_shape = list(input.shape)
+    output_shape[dim] = math.ceil((stop - start) / step)
+
+    return slice(
+        ctx, target, source_ir, name, input, start_slice, output_shape, stride_slice
+    )
+
+
+def expand(
+    ctx: ConversionContext,
+    target: Target,
+    source_ir: Optional[SourceIR],
+    name: str,
+    input_t: TRTTensor,
+    shape: Shape,
+) -> TRTTensor:
+    shape_rank = len(shape)
+    initial_tensor_rank = len(input_t.shape)
+    # If the rank of the input tensor is less than the shape's rank, pad with ones
+    if initial_tensor_rank < shape_rank:
+        input_t = prepend_ones(
+            ctx.net,
+            input_t,
+            name + "_expand_broadcast",
+            shape_rank - initial_tensor_rank,
+        )
+    # If the rank of the input tensor is more than the shape's rank, raise error
+    elif initial_tensor_rank > shape_rank:
+        raise RuntimeError(
+            f"expand called with {shape_rank}-dimensional shape on Tensor with {len(shape)} dimensions. "
+            "Cannot expand to shape with rank smaller than original tensor."
+        )
+
+    # After the above padding, the shape and tensor rank must be equal
+    assert len(input_t.shape) == shape_rank
+
+    # -1 denotes taking the shape from the original input tensor
+    shape = tuple(
+        [input_t.shape[i] if shape[i] == -1 else shape[i] for i in range(shape_rank)]
+    )
+
+    # Establish the desired output shape, strides, and starting indices
+    input_tensor_shape = tuple(input_t.shape)
+    start = tuple([0] * shape_rank)
+    stride = tuple(
+        [int(i == o) for i, o in zip(input_tensor_shape, shape)]
+    )  # stride == 1 if dimensions match, 0 otherwise
+
+    shape_ = shape
+    # Handle dynamic shapes case where shape has dynamic dimension
+    if any(isinstance(ele, TRTTensor) for ele in shape):
+        shape_ = cat(
+            ctx,
+            target,
+            source_ir,
+            name + "_shape_concat",
+            shape,
+            0,
+            cast_dtype=trt.int32,
+        )
+        start_tensor = cat(
+            ctx,
+            target,
+            source_ir,
+            name + "_start_concat",
+            start,
+            0,
+            cast_dtype=trt.int32,
+        )
+        stride_tensor = cat(
+            ctx,
+            target,
+            source_ir,
+            name + "_stride_concat",
+            stride,
+            0,
+            cast_dtype=trt.int32,
+        )
+        layer = ctx.net.add_slice(
+            input_t, start=trt.Dims(), shape=trt.Dims(), stride=trt.Dims()
+        )
+        layer.set_input(1, start_tensor)
+        layer.set_input(2, shape_)
+        layer.set_input(3, stride_tensor)
+    else:
+        layer = ctx.net.add_slice(input_t, start=start, shape=shape_, stride=stride)
+
+    set_layer_name(layer, target, name, source_ir)
+    return layer.get_output(0)
+
+
+def chunk(
+    ctx: ConversionContext,
+    target: Target,
+    source_ir: Optional[SourceIR],
+    name: str,
+    input: TRTTensor,
+    chunks: int,
+    dim: int,
+) -> TRTTensor:
+    if chunks <= 0:
+        raise RuntimeError(
+            f"chunk expects `chunks` to be greater than 0, got: {chunks}"
+        )
+
+    shape = input.shape
+    dim = get_positive_dim(dim, len(shape))
+
+    if dim >= len(shape):
+        raise RuntimeError(
+            f"chunk expects `dim` to be less than the length of input shape, got: {dim}"
+        )
+
+    dynamic_shape = has_dynamic_shape(input.shape)
+    if dynamic_shape > 0:
+        # Check whether slice target dim is dynamic shape dim
+        assert input.shape[dim] != -1, "Can't chunk on dynamic shape dimension!"
+
+    size_dim = shape[dim]
+    chunk_size = math.ceil(size_dim / chunks)
+    result = []
+    start = 0
+    end = min(start + chunk_size, size_dim)
+    cnt = 0
+
+    while start < end:
+        result.append(
+            slice_op(
+                ctx,
+                target,
+                source_ir,
+                f"{name}_slice_{cnt}",
+                input,
+                dim,
+                start,
+                end,
+                1,
+            )
+        )
+        start = end
+        end = min(start + chunk_size, size_dim)
+        cnt += 1
+
+    return result
+
+
+def cumsum(
+    ctx: ConversionContext,
+    target: Target,
+    source_ir: Optional[SourceIR],
+    name: str,
+    input: TRTTensor,
+    dim: int,
+) -> TRTTensor:
+    input_shape = input.shape
+    dim = get_positive_dim(dim, len(input_shape))
+    loop = ctx.net.add_loop()
+    axis = np.array(input_shape[dim])
+    trip_limit = get_trt_tensor(ctx, axis, f"{name}_trip_limit")
+    loop.add_trip_limit(trip_limit, trt.TripLimit.COUNT)
+    iterator = loop.add_iterator(input, dim, reverse=False)
+    data = iterator.get_output(0)
+    new_dims = tuple(data.shape)
+    zeros = np.zeros(new_dims)
+    zero_trttensor = get_trt_tensor(ctx, zeros, f"{name}_initial_value")
+
+    running_sum = loop.add_recurrence(zero_trttensor)
+    set_layer_name(running_sum, target, f"{name}_running_sum", source_ir)
+    running_sum_tensor = running_sum.get_output(0)
+
+    current_sum = impl.elementwise.add(
+        ctx,
+        target,
+        source_ir,
+        f"{name}_elementwise_add",
+        data,
+        running_sum_tensor,
+    )
+    running_sum.set_input(1, current_sum)
+
+    loop_output = loop.add_loop_output(current_sum, trt.LoopOutput.CONCATENATE, dim)
+    set_layer_name(loop_output, target, f"{name}_loop_output", source_ir)
+    loop_output.set_input(1, trip_limit)
+    return loop_output.get_output(0)
+
+
+def tile(
+    ctx: ConversionContext,
+    target: Target,
+    source_ir: Optional[SourceIR],
+    name: str,
+    input: TRTTensor,
+    dims: Sequence[int],
+) -> TRTTensor:
+    diff = len(dims) - len(input.shape)
+    if diff > 0:
+        # prepend 1 to input.shape
+        new_shape = (1,) * diff + tuple(input.shape)
+        input = impl.shuffle.reshape(
+            ctx, target, source_ir, f"{name}_prepend_input_shape", input, new_shape
+        )
+    elif diff < 0:
+        # prepend 1 to dims
+        dims = (1,) * -diff + tuple(dims)
+
+    shapes = [i * j for i, j in zip(input.shape, dims)]
+    starts = [0] * len(dims)
+    strides = [1] * len(dims)
+    layer = ctx.net.add_slice(input, tuple(starts), tuple(shapes), tuple(strides))
+    layer.mode = trt.SampleMode.WRAP
+    set_layer_name(layer, target, name)
+    return layer.get_output(0)
+
+
+def flip(
+    ctx: ConversionContext,
+    target: Target,
+    source_ir: Optional[SourceIR],
+    name: str,
+    input: TRTTensor,
+    dims: Sequence[int],
+) -> TRTTensor:
+    start_slice = []
+    output_shape = list(input.shape)
+    stride_slice = []
+
+    shape = input.shape
+    rank = len(shape)
+    dims = get_positive_dim(dims, rank)
+
+    for i in range(rank):
+        if i in dims:
+            start_slice.append(shape[i] - 1)
+            stride_slice.append(-1)
+        else:
+            start_slice.append(0)
+            stride_slice.append(1)
+
+    layer = ctx.net.add_slice(
+        input,
+        start=start_slice,
+        shape=output_shape,
+        stride=stride_slice,
+    )
+    set_layer_name(layer, target, name, source_ir)
+    return layer.get_output(0)
+
+
+def diagonal(
+    ctx: ConversionContext,
+    target: Target,
+    source_ir: Optional[SourceIR],
+    name: str,
+    input: TRTTensor,
+    offset: int,
+    dim1: int,
+    dim2: int,
+) -> TRTTensor:
+    """
+    This implementation is inspired by the reference implementation in PyTorch:
+    https://github.com/pytorch/pytorch/blob/082251e76b93b277ff2791d0e2b64934add34644/torch/_refs/__init__.py#L4255
+    """
+    input_shape = input.shape
+    num_dims = len(input_shape)
+
+    # Adjust dimensions to be positive and canonicalize
+    dim1 = get_positive_dim(dim1, num_dims)
+    dim2 = get_positive_dim(dim2, num_dims)
+
+    # Calculate the size of the diagonal
+    if offset >= 0:
+        diag_size = max(min(input_shape[dim1], input_shape[dim2] - offset), 0)
+    else:
+        diag_size = max(min(input_shape[dim1] + offset, input_shape[dim2]), 0)
+
+    if diag_size == 0:
+        raise ValueError("The size of the diagonal is non-positive.")
+
+    strides = calculate_strides(input_shape)
+
+    # Compute the storage offset
+    storage_offset = 0
+    if offset >= 0:
+        storage_offset += offset * strides[dim2]
+    else:
+        storage_offset -= offset * strides[dim1]
+
+    # Calculate new sizes and strides for as_strided
+    sizes = [s for i, s in enumerate(input_shape) if i not in (dim1, dim2)]
+    sizes.append(diag_size)
+
+    input_strides = [s for i, s in enumerate(strides) if i not in (dim1, dim2)]
+    new_stride = strides[dim1] + strides[dim2]
+    input_strides.append(new_stride)
+
+    # Use as_strided to get the diagonal elements
+    diagonal_output = as_strided(
+        ctx,
+        target,
+        source_ir,
+        f"{name}_as_strided",
+        input,
+        sizes,
+        input_strides,
+        storage_offset,
+    )
+
+    return diagonal_output
+
+
+def as_strided(
+    ctx: ConversionContext,
+    target: Target,
+    source_ir: Optional[SourceIR],
+    name: str,
+    input: TRTTensor,
+    size: Sequence[int],
+    stride: Sequence[int],
+    storage_offset: Optional[int],
+) -> TRTTensor:
+    # Ensure storage_offset is an integer before passing to nested
+    if storage_offset is None:
+        storage_offset = 0
+
+    flatten_shape = flatten_dims(input, 0, -1)
+    flatten_output = impl.shuffle.reshape(
+        ctx, target, source_ir, f"{name}_reshape_flatten_output", input, flatten_shape
+    )
+
+    indices = []
+
+    # Recursive function to compute indices for as_strided operation
+    def nested(
+        rank: int, size: Sequence[int], stride: Sequence[int], current: int, dim: int
+    ) -> None:
+        if (
+            dim == rank
+        ):  # If the current dimension equals the rank, append the computed index
+            indices.append(current)
+            return
+        for i in range(size[dim]):  # Recursively compute indices across dimensions
+            nested(
+                rank, size, stride, current + stride[dim] * i, dim + 1
+            )  # Calculate the index for the current dimension and recursively explore further dimensions
+
+    nested(len(size), size, stride, storage_offset, 0)
+
+    indices = np.array(indices, dtype=np.int32)
+
+    indices_tensor = get_trt_tensor(ctx, indices, f"{name}_indices")
+
+    # Use gather to reorder elements based on computed indices
+    gather_layer = ctx.net.add_gather(flatten_output, indices_tensor, axis=0)
+    gather_output = gather_layer.get_output(0)
+
+    # Reshape the gathered tensor to the desired size
+    reshape_output = impl.shuffle.reshape(
+        ctx,
+        target,
+        source_ir,
+        f"{name}_reshape_gather_output",
+        gather_output,
+        tuple(size),
+    )
+
+    return reshape_output
