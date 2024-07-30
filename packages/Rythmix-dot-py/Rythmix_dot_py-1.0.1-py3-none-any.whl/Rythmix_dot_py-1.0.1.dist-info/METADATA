@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: Rythmix-dot-py
+Version: 1.0.1
+Requires-Dist: youtube-search-python
+Requires-Dist: yt-dlp ==2024.7.25
+Requires-Dist: python-vlc ==3.0.20123
+
