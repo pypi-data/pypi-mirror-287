@@ -1,0 +1,5 @@
+numpy
+genpy
+
+[:sys_platform == "win32"]
+bagpy
