@@ -1,0 +1,5 @@
+poppy_py-0.2.0.dist-info/METADATA,sha256=zO87jaDf0miNsVCqABwHfaO2ZUnQR84cNRierpIWYlc,1857
+poppy_py-0.2.0.dist-info/WHEEL,sha256=pFkip4GCSjKMN5vn6Pkc9f9uVxGhOelzXmVFmYu4P0s,129
+poppy/__init__.py,sha256=hOsOR8ukwwGQHKe4nrstjtZ2nbnKyGbz4I6bBtz0jqk,103
+poppy/poppy.cpython-39-aarch64-linux-gnu.so,sha256=2JVyUY8eNqH3TrvLCnYhtHVaV6AQe-7Wz7uCP8rPY3Q,771392
+poppy_py-0.2.0.dist-info/RECORD,,
