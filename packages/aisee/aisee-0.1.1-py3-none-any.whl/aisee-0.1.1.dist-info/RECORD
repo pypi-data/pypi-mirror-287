@@ -1,0 +1,9 @@
+aisee/__init__.py,sha256=RFNH09rUx0olv-uQa2OzoxWateGlfIYoPF902hgmXgw,211
+aisee/custom_datasets.py,sha256=5ki_99N1Y-qnbN19r63ANo-2Z2iURBJzNXRt_IKIzhU,10779
+aisee/trainer.py,sha256=3kg3_Wmm9k-JQCuK0Xgw0CQEUlItV90oFTVE97NpkVc,15144
+aisee/utils.py,sha256=YAgzPa-eRQUvPvWj3iCMRY8nf07XbklVxgkc_WqW73k,6726
+aisee/vision_classifier.py,sha256=IMGQTHjUmcA0w-q4H5ncbpuW_myLyIy2Xhh1dxK-C4I,28022
+aisee-0.1.1.dist-info/LICENSE,sha256=euv91_3yP8AwOkBP4EAeEiupvwOKscnJHiDFlQOFIg8,1098
+aisee-0.1.1.dist-info/METADATA,sha256=S6OGxSDu5qIZQ6awVwIU_i-neYUiLMzPm5Ld-QU6aFA,5618
+aisee-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+aisee-0.1.1.dist-info/RECORD,,
