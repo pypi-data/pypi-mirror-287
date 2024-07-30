@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: airtable_pack
+Version: 0.0.1
+Summary: Python wrapper for Airtable Pack.
+Home-page: https://pypi.org/project/airtable_pack/
+Author: Andrea Soledad Guerra
+Project-URL: Source, https://github.com/AlejoPrietoDavalos/airtable_pack/
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyairtable >=2.3.3
+
+# Utilidades para PyAirtable.
