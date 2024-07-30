@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/my_snaps/InlineMenu.py
+src/my_snaps/MyUtils.py
+src/my_snaps/PowerWindow.py
+src/my_snaps/__init__.py
+src/my_snaps/bt_smart_balance.py
+src/my_snaps/main.py
+src/my_snaps/my_restore.py
+src/my_snaps.egg-info/PKG-INFO
+src/my_snaps.egg-info/SOURCES.txt
+src/my_snaps.egg-info/dependency_links.txt
+src/my_snaps.egg-info/entry_points.txt
+src/my_snaps.egg-info/top_level.txt
