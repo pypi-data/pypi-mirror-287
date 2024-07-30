@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: Peter Pentchev <roam@ringlet.net>
+# SPDX-License-Identifier: BSD-2-Clause
+
+hypothesis >= 6, < 7
+pytest >= 7, < 9
