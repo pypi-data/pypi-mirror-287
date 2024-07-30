@@ -1,0 +1,25 @@
+[project]
+name = "server"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Ulrik Sverdrup", email = "ulrik.sverdrup@gmail.com" }
+]
+dependencies = [
+    "papermill>=2.6.0",
+    "jupytext>=1.16.3",
+    "pyproject-local-kernel",
+]
+classifiers = [
+    "Private :: Do Not Upload",
+]
+
+[tool.rye]
+managed = true
+universal = true
+virtual = true
+dev-dependencies = []
+
+[tool.uv.workspace]
+[tool.uv.sources]
+pyproject-local-kernel = { path = "../../../../pyproject-local-kernel" }
