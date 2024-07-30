@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: status-check-runner
+Version: 0.1.0
+Summary: Status check runner
+Author: William Sawyer
+Author-email: william@situ.com.au
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: pydantic (>=2.8.2,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Status Check Runner
+
+Configure this tool with a `status-checks.json` configuration file in the root of your repository.
+Use the following schema to enable autocomplete:
+
+```json
+{
+    "$schema": "https://raw.githubusercontent.com/willsawyerrrr/status-check-runner/main/config-schema.json"
+}
+```
+
