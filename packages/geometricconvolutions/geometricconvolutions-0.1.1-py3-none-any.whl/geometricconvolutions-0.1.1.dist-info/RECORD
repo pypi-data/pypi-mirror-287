@@ -1,0 +1,11 @@
+geometricconvolutions/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+geometricconvolutions/data.py,sha256=qxnBAaR8gztXtDExxqCycw84mlBI2Ni30QM4L6OyFSU,9478
+geometricconvolutions/geometric.py,sha256=jdUE0-W-HoGcuknLZmJ3gLfhJZmcjrwKutMAY23687I,88077
+geometricconvolutions/ml.py,sha256=DResuQgHpOrUBQwOI0FBw_643kQgWmfu8F6QL0Cpf48,86040
+geometricconvolutions/models.py,sha256=qsSa1NUKCIrBN_ToCLyZyrxPdj0_yuVT8Cd9McLr4U8,26824
+geometricconvolutions/utils.py,sha256=tqXvLxl9XYzBk_1Ddvn6LaGgewJnWb_rqN2MRi2uDNI,9098
+geometricconvolutions-0.1.1.dist-info/LICENSE,sha256=zGuZp8DyPIbqlwJAm90xkzSdbgUEnLzCigxA7eMY6Fc,1070
+geometricconvolutions-0.1.1.dist-info/METADATA,sha256=J0ME3T0wDndiXnEsezEhXuZJwMO_NNwehJfYLnEozzs,11508
+geometricconvolutions-0.1.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+geometricconvolutions-0.1.1.dist-info/top_level.txt,sha256=jHHRVQpMhHvuQY2LCeIARK_zJ9HrX0EZa1IMf8jsUgs,22
+geometricconvolutions-0.1.1.dist-info/RECORD,,
