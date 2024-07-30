@@ -1,0 +1,6 @@
+README.md
+setup.py
+strangeints.egg-info/PKG-INFO
+strangeints.egg-info/SOURCES.txt
+strangeints.egg-info/dependency_links.txt
+strangeints.egg-info/top_level.txt

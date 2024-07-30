@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: strangeints
+Version: 0.1
+Summary: Converts a string of ranges to a list of ints
+Home-page: https://github.com/siriusarcturus/strangeints
+Author: Scott Smith
+Author-email: trinitite@protonmail.com
+License: MIT
