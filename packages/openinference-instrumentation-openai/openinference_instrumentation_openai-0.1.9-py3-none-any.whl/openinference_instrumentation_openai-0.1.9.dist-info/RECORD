@@ -1,0 +1,15 @@
+openinference/instrumentation/openai/__init__.py,sha256=NqgFMHFqm8XrZWUvtDcZ72aDEMwZlZ_jChxwXHyTrlg,2087
+openinference/instrumentation/openai/_request.py,sha256=uXhpcX8fYD72y7_fQknwSqUKaJU71cYSCNLC08nKrBA,18242
+openinference/instrumentation/openai/_request_attributes_extractor.py,sha256=IWpuy-hiITE0W-WVoq-iktr-Gy8VVy_DN4D7-SP_nMc,10217
+openinference/instrumentation/openai/_response_accumulator.py,sha256=kfSknTF0myt8OLmF8m6tVvt5XHH2-5H_QhqL7Oo2Jn8,9431
+openinference/instrumentation/openai/_response_attributes_extractor.py,sha256=fDo-c2lLLQB8UtVeSEhUu-FM2eBlhXnqKpHSsjyw7nk,12549
+openinference/instrumentation/openai/_stream.py,sha256=i0x_msIoCHel8ZzW1dPohZevepSOgMKQiBwj8QzgarI,6464
+openinference/instrumentation/openai/_utils.py,sha256=nxGkpy39-mw5rEQbavFUzQTv3AIqb3DB6gPT0X8amjQ,4855
+openinference/instrumentation/openai/_with_span.py,sha256=QTKqHbRpobDUvsiVR47QTkePE0zjM0PChF8VWXlQ2Dg,2553
+openinference/instrumentation/openai/package.py,sha256=vPx8vF8Za06KAcsYw9llAqC4HmPvVZGK9WRvcVnonVU,62
+openinference/instrumentation/openai/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+openinference/instrumentation/openai/version.py,sha256=XIaxbMbyiP-L3kguR1GhxirFblTXiHR1lMfDVITvHUI,22
+openinference_instrumentation_openai-0.1.9.dist-info/METADATA,sha256=hR-aVGIOMRf_8DZGXtkZ_NMqTuSLYe3HrZtTk4nwLuU,4813
+openinference_instrumentation_openai-0.1.9.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+openinference_instrumentation_openai-0.1.9.dist-info/licenses/LICENSE,sha256=Qd7mEYbriakf6dZkV8o1YKJfwuVxladksZj_3rcO53g,10870
+openinference_instrumentation_openai-0.1.9.dist-info/RECORD,,
