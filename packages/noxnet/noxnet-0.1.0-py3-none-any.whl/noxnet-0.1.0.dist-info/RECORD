@@ -1,0 +1,12 @@
+noxnet/__init__.py,sha256=5bB03ZBhkCvPFPXutdmLcLE5-AJg9O2DeZQKVo7-4fM,1280
+noxnet/_activation.py,sha256=hP23dc1kTKdTv2yZ-_8tGisCr29-XMX3iuFibVeF8PQ,5214
+noxnet/_attention.py,sha256=-tuWB1lGnbYjFtOQbTR9koknc_Ff21N9LKo-TuAxzfo,5182
+noxnet/_combine.py,sha256=JdZlgg7M6wGN3rQtkvS31tnen7hTqSQfOKX9HjcQcvg,2308
+noxnet/_linear.py,sha256=xD050tle7DR1fwp7f3XC1-1iz6Wr_PYYE9iCihT9V0M,5173
+noxnet/_norm.py,sha256=fVJThoAnWnRry3LMgn5L9q8gscqNi1gujbZbR4VpJI0,1397
+noxnet/_typecheck.py,sha256=4tGD6RMr51Y1K2C7iJtEykaf0TAoEGkOvV6uXIDV7ME,184
+noxnet/_utils.py,sha256=M8xZcw4vjoa8WQsDcLJPg-vnOM8R4L55jAYGdESI6ag,385
+noxnet-0.1.0.dist-info/METADATA,sha256=iD5ubUj9apzi5O2Ixn9LCGNpp5ELbukEIs5kIWlrTWY,805
+noxnet-0.1.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+noxnet-0.1.0.dist-info/top_level.txt,sha256=_U90UmHtXKR_2oLKef27sKyW0ULuwx729sjB60lYpTk,7
+noxnet-0.1.0.dist-info/RECORD,,
