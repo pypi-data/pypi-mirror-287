@@ -1,0 +1,307 @@
+import pathlib
+import time
+import tkinter
+from tkinter import filedialog
+
+
+from bubbling_editor.bus import Bus
+from bubbling_editor import helpers
+
+from bubbling_editor.misc import AddBubblePayload, Kind
+from bubbling_editor.bubbling_editor_image import BubblingEditorImage
+
+
+class TestabeGui:
+    def __init__(self, bus: Bus):
+        self.bus = bus
+        self.bus.register('gui', self)
+
+    def run(self):
+        pass
+
+    def enable_save_btn(self):
+        pass
+
+    def disable_save_btn(self):
+        pass
+
+    def enable_export_btn(self):
+        pass
+
+    def disable_export_btn(self):
+        pass
+
+    def enable_click_listener(self):
+        pass
+
+    def disable_click_listener(self):
+        pass
+
+    def enable_bubble_radius_slider(self):
+        pass
+
+    def disable_bubble_radius_slider(self):
+        pass
+
+    def load_image(self, path_to_image: pathlib.Path, bubbles: list) -> None:
+        pass
+
+    def redraw_image(self) -> None:
+        pass
+
+    def add_bubble(self, bubble: AddBubblePayload) -> None:
+        pass
+
+    def update_bubbles(self, bubbles: list[AddBubblePayload]) -> None:
+        pass
+
+
+class Gui(TestabeGui):
+    def __init__(self, bus: Bus):
+        super().__init__(bus=bus)
+        self.root: tkinter.Tk = None
+
+        self.image: BubblingEditorImage = None
+
+        self.forced_scale_var: tkinter.DoubleVar = None
+
+        self._temp_bubble_coords: list[int, int] = [0, 0]
+
+    def make_gui(self):
+        self.root = tkinter.Tk()
+        self.root.attributes('-zoomed', True)
+
+        self.root.columnconfigure(0, weight=1)
+        self.root.rowconfigure(0, weight=1)
+        self.root.rowconfigure(1, weight=95)
+
+        self.instruments_panel = tkinter.Frame(self.root, background='red')
+        self.instruments_panel.grid(row=0, column=0, sticky='ew')
+
+        self.canvas_panel = tkinter.Frame(self.root, background='green')
+        self.canvas_panel.grid(row=1, column=0, sticky='nesw')
+        self.canvas_panel.columnconfigure(0, weight=1)
+        self.canvas_panel.rowconfigure(0, weight=1)
+
+        self.canvas = tkinter.Canvas(self.canvas_panel, background='blue')
+        self.canvas.grid(row=0, column=0, sticky='nesw')
+
+        self.new_image_btn = tkinter.Button(
+            self.instruments_panel, text='NEW',
+            command=self._show_new_image_popup)
+        self.new_image_btn.grid(row=0, column=0, sticky='w')
+        self.root.bind('<Control-n>', lambda _: self._show_new_image_popup())
+
+
+        self.open_project_btn = tkinter.Button(
+            self.instruments_panel, text='OPEN',
+            command=self._show_open_project_popup)
+        self.open_project_btn.grid(row=0, column=1, sticky='w')
+        self.root.bind('<Control-o>', lambda _: self._show_open_project_popup())
+
+        self.save_project_btn = tkinter.Button(
+            self.instruments_panel, text='SAVE',
+            command=self._show_save_project_popup)
+        self.save_project_btn.grid(row=0, column=2, sticky='w')
+
+        self.export_image_btn = tkinter.Button(
+            self.instruments_panel, text='SAVE',
+            command=self._show_save_project_popup)
+        self.save_project_btn.grid(row=0, column=3, sticky='w')
+
+        self.bubble_radius_frame = tkinter.Frame(self.instruments_panel)
+        self.bubble_radius_var = tkinter.IntVar(value=0)
+        self.bubble_radius_label = tkinter.Label(self.bubble_radius_frame, textvariable=self.bubble_radius_var, width=5)
+        self.bubble_radius_slider = tkinter.Scale(self.bubble_radius_frame,
+                                                  from_=5, to=250, length=150, resolution=5, showvalue=False,
+                                                  orient='horizontal', variable=self.bubble_radius_var,
+                                                  state='disabled')
+
+        self.bubble_radius_frame.grid(row=0, column=4, sticky='nesw')
+        self.bubble_radius_frame.columnconfigure(0, weight=1)
+        self.bubble_radius_frame.rowconfigure(0, weight=1)
+        self.bubble_radius_frame.columnconfigure(1, weight=1)
+
+        self.bubble_radius_label.grid(column=0, row=0, sticky='nesw')
+        self.bubble_radius_slider.grid(column=1, row=0, sticky='ew')
+
+        self.undo_btn = tkinter.Button(
+            self.instruments_panel, text='UNDO',
+            command=self.bus.statechart.launch_undo_event)
+        self.undo_btn.grid(row=0, column=5, sticky='w')
+        self.root.bind('<Control-z>', lambda _: self.bus.statechart.launch_undo_event())
+
+        self.forced_scale_var = tkinter.DoubleVar(value=0)
+        self.forced_scale_frame = tkinter.Frame(self.instruments_panel)
+        self.forced_scale_frame.grid(row=0, column=6, sticky='nesw')
+        self.forced_scale_label = tkinter.Label(self.forced_scale_frame, text='Forced scale: ')
+        self.forced_scale_label.grid(column=0, row=0, sticky='w')
+        self.forced_scale_input = tkinter.Entry(self.forced_scale_frame, textvariable=self.forced_scale_var)
+        self.forced_scale_input.grid(column=1, row=0, sticky='w')
+        self.forced_scale_apply_btn = tkinter.Button(self.forced_scale_frame, text='APPLY', command=self.update_image_with_forced_scale)
+        self.forced_scale_apply_btn.grid(column=2, row=0, sticky='w')
+        self.forced_scale_apply_btn = tkinter.Button(self.forced_scale_frame, text='RESET', command=self.reset_forced_scale)
+        self.forced_scale_apply_btn.grid(column=3, row=0, sticky='w')
+
+        self.forced_scale_frame = tkinter.Button(self.instruments_panel, text='?', command=self._show_help_popup)
+        self.forced_scale_frame.grid(row=0, column=7, sticky='n')
+        self.root.bind('<F1>', lambda _: self._show_help_popup())
+
+        self.root.bind('<Configure>', lambda _: self.redraw_image())
+
+    def run(self) -> None:
+        self.make_gui()
+        self.disable_save_btn()
+        self.root.mainloop()
+
+    def enable_save_btn(self):
+        if hasattr(self, 'root') and self.root:
+            self.root.bind('<Control-s>', lambda _: self._show_save_project_popup())
+        if hasattr(self, 'save_image_btn'):
+            self.save_project_btn['state'] = 'normal'
+
+    def disable_save_btn(self):
+        if hasattr(self, 'root') and self.root:
+            self.root.unbind('<Control-s>')
+        if hasattr(self, 'save_image_btn'):
+            self.save_project_btn['state'] = 'disabled'
+
+    def enable_export_btn(self):
+        if hasattr(self, 'root') and self.root:
+            self.root.bind('<Control-e>', lambda _: self._show_export_image_popup())
+        if hasattr(self, 'export_image_btn'):
+            self.export_image_btn['state'] = 'normal'
+
+    def disable_export_btn(self):
+        if hasattr(self, 'root') and self.root:
+            self.root.unbind('<Control-e>')
+        if hasattr(self, 'export_image_btn'):
+            self.export_image_btn['state'] = 'disabled'
+
+    def enable_click_listener(self):
+        self.canvas.bind('<Button-1>', lambda e: self._on_canvas_click(e.x, e.y))
+        self.canvas.bind('<Button-3>', lambda e: self._on_canvas_click(e.x, e.y, counter=True))
+        self.canvas.bind('<Motion>', lambda e: self._draw_temp_bubble(e.x, e.y))
+
+    def disable_click_listener(self):
+        self.canvas.unbind('<Button-1>')
+        self.canvas.unbind('<Button-3>')
+        self.canvas.unbind('<Motion>')
+
+    def enable_bubble_radius_slider(self):
+        self.bubble_radius_slider['state'] = 'normal'
+        self.root.bind('<Button-4>', lambda _: self._update_bubble_size(delta_change=-5))
+        self.root.bind('<Button-5>', lambda _: self._update_bubble_size(delta_change=+5))
+
+    def disable_bubble_radius_slider(self):
+        self.bubble_radius_slider['state'] = 'disabled'
+        self.root.unbind('<Button-4>')
+        self.root.unbind('<Button-5>')
+
+    def _draw_temp_bubble(self, x: int = None, y: int = None) -> None:
+        if not self.image:
+            return
+
+        if x is None or y is None:
+            x, y = self._temp_bubble_coords
+
+        x, y = self.image.get_clamped_coords_on_image(x, y)
+        self._temp_bubble_coords = [x, y]
+
+        for bubble in self.canvas.gettags('#temp_bubble'):
+            self.canvas.delete(bubble)
+
+        radius = int(self.bubble_radius_var.get())
+        self.canvas.create_oval(x - radius, y - radius, x + radius, y + radius, fill='red', tags=('#temp_bubble',))
+
+    def _on_canvas_click(self, x, y, counter=False) -> None:
+        rel_x, rel_y, rel_radius = self.image.get_bubbles_coords_on_image(x, y, int(self.bubble_radius_var.get()))
+        kind = Kind.COUNTER if counter else Kind.REGULAR
+
+        bubble = AddBubblePayload(pos=[rel_x, rel_y], radius=rel_radius, kind=kind)
+
+        self.bus.statechart.launch_add_bubble_event(bubble)
+
+    def load_image(self, path_to_image: pathlib.Path, bubbles: list) -> None:
+        self.image = BubblingEditorImage(canvas=self.canvas, path_to_image=path_to_image, bubbles=bubbles)
+        self.redraw_image()
+
+    def redraw_image(self):
+        if self.image:
+            self.image.redraw_image()
+
+    def update_image_with_forced_scale(self):
+        if self.image:
+            forced_scale = None if float(self.forced_scale_var.get()) <= 0 else float(self.forced_scale_var.get())
+            self.image.set_forced_scale(forced_scale)
+
+    def reset_forced_scale(self):
+        self.forced_scale_var.set(0)
+        self.update_image_with_forced_scale()
+
+    def add_bubble(self, bubble: AddBubblePayload) -> None:
+        self.image.add_bubble(bubble)
+
+    def update_bubbles(self, bubbles: list[AddBubblePayload]) -> None:
+        self.image.update_bubbles(bubbles)
+
+    def _update_bubble_size(self, delta_change):
+        current_size = int(self.bubble_radius_var.get())
+        new_size = current_size + delta_change
+        self.bubble_radius_var.set(new_size)
+        self._draw_temp_bubble()
+
+    def _show_new_image_popup(self):
+        path_to_image = filedialog.askopenfilename(filetypes=[('Images', '.jpg .jpeg .png .gif')])
+        if path_to_image:
+            self.bus.statechart.launch_new_image_event(path_to_image)
+
+    def _show_open_project_popup(self):
+        path_to_image = filedialog.askopenfilename(filetypes=[('Bubbling Editor Metadata', '.bubbling')])
+        if path_to_image:
+            self.bus.statechart.launch_load_project_event(path_to_image)
+
+    def _show_save_project_popup(self):
+        path_to_image = filedialog.asksaveasfilename(filetypes=[('Bubbling Editor Metadata', '.bubbling')])
+        if path_to_image:
+            self.bus.statechart.launch_save_project_event(path_to_image)
+
+    def _show_export_image_popup(self):
+        path_to_image = filedialog.asksaveasfilename(filetypes=[('Image', '.png')])
+        if path_to_image:
+            self.bus.statechart.launch_export_image_event(path_to_image)
+
+    def _show_help_popup(self):
+        help_text = '''
+        <Control-o> - open project
+        <Control-s> - save project
+        <Control-n> - import image
+        <Left-click> - draw bubble
+        <Right-click> - draw counter bubble
+        <Mouse-wheel> - change bubble size
+        <Control-z> - remove last-bubble
+        <Control-e> - export project
+        
+        Typical workflow:
+        1. import image or open project
+        2. add bubbles
+        3. save project
+        4. export image
+        
+        Export project from command-line: bubbling-editor -p <path-to-project> -i <path-to-image>
+        '''
+        toplevel = tkinter.Toplevel(self.root)
+        toplevel.title('Help')
+        toplevel.bind('<Escape>', lambda _: toplevel.destroy())
+
+        toplevel.columnconfigure(0, weight=1)
+        toplevel.rowconfigure(0, weight=1)
+
+        help_label = tkinter.Label(toplevel, text=help_text, justify='left')
+        help_label.grid(row=0, column=0, sticky='nesw')
+
+        toplevel.grab_set()
+        self.root.wait_window(toplevel)
+
+
+
