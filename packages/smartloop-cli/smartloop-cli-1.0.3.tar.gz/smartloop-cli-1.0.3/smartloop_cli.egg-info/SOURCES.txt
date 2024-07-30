@@ -1,0 +1,17 @@
+LICENSE.txt
+README.md
+constants.py
+main.py
+setup.py
+apps/__init__.py
+apps/project.py
+services/__init__.py
+services/projects.py
+smartloop_cli.egg-info/PKG-INFO
+smartloop_cli.egg-info/SOURCES.txt
+smartloop_cli.egg-info/dependency_links.txt
+smartloop_cli.egg-info/entry_points.txt
+smartloop_cli.egg-info/requires.txt
+smartloop_cli.egg-info/top_level.txt
+utils/__init__.py
+utils/user_profile.py
