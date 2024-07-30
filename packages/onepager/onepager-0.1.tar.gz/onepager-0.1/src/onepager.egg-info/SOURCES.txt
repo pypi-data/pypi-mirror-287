@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/__init__.py
+src/onepager.py
+src/onepager.egg-info/PKG-INFO
+src/onepager.egg-info/SOURCES.txt
+src/onepager.egg-info/dependency_links.txt
+src/onepager.egg-info/entry_points.txt
+src/onepager.egg-info/requires.txt
+src/onepager.egg-info/top_level.txt
