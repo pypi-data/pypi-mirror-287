@@ -1,0 +1,69 @@
+[tool.poetry]
+name = "sovai"
+version = "0.1.12"
+description = "python for asset management"
+authors = ["Derek Snow <d.snow@outlook.com>"]
+license = "Proprietary License"
+readme = "README.md"
+
+
+include = ["sovai/**/*", "data/**/*"]
+exclude = [
+    "notebooks",
+    "notebooks/**/*",
+    "tests",
+    "tests/**/*",
+    "docs",
+    "docs/**/*",
+    ".github",
+    ".github/**/*",
+    ".venv",
+    ".venv/**/*",
+    "dist",
+    "dist/**/*",
+    "*.pyc",
+    "**/*.pyc",
+    "*.pyo",
+    "**/*.pyo",
+    "__pycache__",
+    "**/__pycache__",
+    ".ipynb_checkpoints",
+    "**/.ipynb_checkpoints",
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ipython = ">=7.0"
+mfles = ">=0.2"
+boto3 = ">=1.20"
+dash = ">=2.0"
+python-dateutil = ">=2.8"
+python-dotenv = ">=0.10"
+fastdtw = ">=0.3"
+great-tables = ">=0.9"
+halo = ">=0.0.30"
+ipywidgets = ">=7.0"
+joblib = ">=1.0"
+matplotlib = ">=3.0"
+numba = ">=0.50"
+numpy = ">=1.20"
+openai = ">=1.0"
+pandas = ">=1.0"
+plotly = ">=5.0"
+polars = "==0.20.30"
+pyarrow = ">=5.0"
+requests = ">=2.20"
+ruptures = ">=1.0"
+scipy = ">=1.0"
+shap = ">=0.40"
+skfolio = ">=0.3"
+scikit-learn = ">=1.0"
+statsforecast = ">=1.0"
+tensorly = ">=0.6"
+xgboost = ">=1.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
