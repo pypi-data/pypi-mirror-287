@@ -1,0 +1,10 @@
+LICENCE.txt
+README.md
+setup.py
+deloscri/__init__.py
+deloscri/rmlog.py
+deloscri.egg-info/PKG-INFO
+deloscri.egg-info/SOURCES.txt
+deloscri.egg-info/dependency_links.txt
+deloscri.egg-info/entry_points.txt
+deloscri.egg-info/top_level.txt
