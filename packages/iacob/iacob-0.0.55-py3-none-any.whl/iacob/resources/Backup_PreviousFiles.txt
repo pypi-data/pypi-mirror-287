@@ -1,0 +1,10 @@
+DataFiles
+C:/Users/Thibaud/Documents/Etude/Stage/tibo_features/ressources/Data/whole_brain_ROIs_cg.txt|DataNameFile
+C:/Users/Thibaud/Documents/Etude/Stage/tibo_features/ressources/Data/triplet.txt|DataFile
+C:/Users/Thibaud/Documents/Etude/Stage/tibo_features/ressources/Data/whole_brain_ROIs_cg2.txt|DataFile
+NameFiles
+C:/Users/Thibaud/Documents/Etude/Stage/tibo_features/ressources/Data/whole_brain_ROIs_cg2.txt|C:/Users/Thibaud/Documents/Etude/Stage/tibo_features/ressources/Data/whole_brain_ROIs_cg_name.txt
+FlutFiles
+C:/Users/Thibaud/Documents/Etude/Stage/tibo_features/ressources/Data/whole_brain_ROIs.flut
+ConfigFiles
+ProjectFiles
