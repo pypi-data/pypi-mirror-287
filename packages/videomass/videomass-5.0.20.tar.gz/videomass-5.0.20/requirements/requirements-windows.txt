@@ -1,0 +1,11 @@
+attrdict3
+numpy
+pillow
+pypubsub
+six
+wxpython
+requests
+yt-dlp
+
+# Requirements for Windows
+
