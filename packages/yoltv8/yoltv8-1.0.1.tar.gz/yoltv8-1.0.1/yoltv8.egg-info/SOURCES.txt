@@ -1,0 +1,10 @@
+license.txt
+setup.py
+yoltv8/__init__.py
+yoltv8/main.py
+yoltv8/yoltv8_hbb.py
+yoltv8/yoltv8_obb.py
+yoltv8.egg-info/PKG-INFO
+yoltv8.egg-info/SOURCES.txt
+yoltv8.egg-info/dependency_links.txt
+yoltv8.egg-info/top_level.txt
