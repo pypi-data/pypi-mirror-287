@@ -1,0 +1,10 @@
+scikit_landmark-0.0.5.dist-info/METADATA,sha256=W6P4-w0HdyVUrYaxxWvAbo6loTcSy3KguV85l5PaxHU,15772
+scikit_landmark-0.0.5.dist-info/WHEEL,sha256=JdLTWhc73oJ-lqTBYGgiVontr_vhzwzbpAOin_2bxTI,85
+scikit_landmark-0.0.5.dist-info/LICENSE,sha256=RFHQRsBvJI7DD8JNdaHWJ_fWAOhzkEO6h61tbHTwO9s,11549
+_maxmin.cp311-win_amd64.pyd,sha256=I6Neg3YwRdFCGxM_WC0Fm13gAbdYdUaT2Wg1ZNDsOmQ,164352
+_maxmin.cp311-win_amd64.lib,sha256=ZwdyRl_CRs3F4l6aY-MD9dn5-6spJ3dzmcR-G6FF8ck,1596
+landmark/__init__.py,sha256=FubHD2Ly4YY8L-CsSbcHXAhl-IJfQH7icSc9GKhXa5o,1030
+landmark/__version__.py,sha256=jhruC5tmYflyejKIoUSF1JektpVDmMBgf51c3qa4pJg,492
+landmark/datasets.py,sha256=yAbs_V-QoA83mL52mw9Hlat3FH5sVKYCet3fanqOZQA,1263
+landmark/k_center.py,sha256=c-BRArQS9tSh5XJyuR69Inh2N0hKgyNparX_omEMScA,4863
+scikit_landmark-0.0.5.dist-info/RECORD,,
