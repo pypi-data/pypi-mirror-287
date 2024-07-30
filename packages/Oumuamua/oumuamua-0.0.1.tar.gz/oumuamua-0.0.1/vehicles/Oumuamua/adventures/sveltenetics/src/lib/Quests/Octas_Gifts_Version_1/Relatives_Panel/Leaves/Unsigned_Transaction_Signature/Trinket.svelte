@@ -1,0 +1,152 @@
+
+
+
+
+<script>
+
+import { sign } from './sign'
+import { fiberize_signed_transaction } from '$lib/PTO/Transaction/Signed/Fiberize'
+import Net_Choices from '$lib/PTO/Nets/Choices.svelte'
+import { onMount, onDestroy } from 'svelte';
+
+
+
+import { 
+	refresh_truck, 
+	retrieve_truck, 
+	monitor_truck,
+	verify_land
+} from '$lib/Quests/Octas_Gifts_Version_1/Relatives_Panel/Logistics/Truck'
+let prepared = "no"
+let Truck_Monitor;
+let freight;
+onMount (async () => {
+	const Truck = retrieve_truck ()
+	freight = Truck.freight; 
+	
+	freight.current.land = "Unsigned_Transaction_Signature"
+	
+	Truck_Monitor = monitor_truck ((_freight) => {
+		freight = _freight;
+	})
+	
+	prepared = "yes"
+});
+onDestroy (() => {
+	Truck_Monitor.stop ()
+});
+
+let private_key_hexadecimal_string = ""
+
+
+const sign_the_transaction = async () => {
+	freight.Unsigned_Transaction_Signature.private_key_hexadecimal_string = private_key_hexadecimal_string
+	
+	const {
+		signed_transaction,
+		signed_transaction_hexadecimal_string
+	} = await sign ({
+		unsigned_tx_hexadecimal_string: freight.Unsigned_Transaction_Fields.hexadecimal_string,
+		private_key_hexadecimal_string
+	})
+	
+	freight.Unsigned_Transaction_Signature.Aptos_object_fiberized = fiberize_signed_transaction ({ signed_transaction })
+	freight.Unsigned_Transaction_Signature.hexadecimal_string = signed_transaction_hexadecimal_string
+	
+	freight.Unsigned_Transaction_Signature.signed = "yes"
+}
+
+
+</script>
+
+
+
+{#if prepared === "yes"}
+<div>
+	<div
+		style="
+			text-align: center;
+			padding: 0 1cm 1cm;
+		"
+	>
+		<header
+			style="
+				text-align: center;
+				font-size: 2em;
+				padding: 1cm 0;
+			"
+		>Unsigned Transaction Signature</header>
+		<p>The "Sign" button makes a signature of the unsigned transaction with the private key.</p>
+		
+		<div class="table-container">
+			<table class="table table-hover">
+				<tbody>
+					<tr>
+						<td>
+							<span style="font-size: 1.5em;">Private Key</span>
+							<textarea 
+								private_key
+							
+								bind:value={ private_key_hexadecimal_string }
+
+								
+								class="textarea"
+								style="min-height: 50px; padding: 10px"
+								type="text" 
+								placeholder=""
+							/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>		
+		
+		<div
+			style="margin: 10px 0; text-align: right"
+		>
+			<button 
+				sign
+			
+				on:click={ sign_the_transaction }
+				disabled={ freight.Unsigned_Transaction_Signature.hexadecimal_string.length >= 1 }
+
+				type="button" 
+				class="btn variant-filled"
+				style="padding-right: 64px; padding-left: 64px;"
+			>{ freight.Unsigned_Transaction_Signature.hexadecimal_string.length === 0 ? "Sign" : "Signed" }</button>
+		</div>
+		
+		<div>
+			{#if freight.Unsigned_Transaction_Signature.Aptos_object_fiberized.length === 0 }
+			<aside class="alert">
+				<div class="alert-message">
+					<p>The transaction is not signed.</p>
+				</div>
+			</aside>
+			{:else}
+			<p
+				style="
+					padding: 20px 0;
+				"
+			>This is the object likeness of the signed transaction.  The barcode likeness of this object is in the "ST barcode" panel.</p>
+			<div class="card variant-soft-primary p-4">
+				<p
+					signature
+					style="
+						box-sizing: border-box;
+						height: 100%; 
+						font-size: 1em;
+						white-space: break-spaces;
+						word-wrap: break-word;
+						text-align: left;
+						border-radius: 6px;
+					"
+				>
+{ freight.Unsigned_Transaction_Signature.Aptos_object_fiberized }
+				</p>
+			</div>
+			{/if}
+		</div>
+	</div>
+</div>
+{/if}
