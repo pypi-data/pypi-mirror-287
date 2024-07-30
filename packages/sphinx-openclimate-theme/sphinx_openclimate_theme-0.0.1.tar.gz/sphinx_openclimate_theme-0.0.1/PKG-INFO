@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: sphinx_openclimate_theme
+Version: 0.0.1
+Summary: openclimte theme for Sphinx
+Home-page: https://github.com/open-climate/sphinx_openclimate_theme/
+Author: Ian Edwards
+Author-email: ian@myacorn.com
+License: MIT
+Classifier: Framework :: Sphinx
+Classifier: Framework :: Sphinx :: Theme
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Documentation
+Classifier: Topic :: Software Development :: Documentation
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: sphinx
+Requires-Dist: sphinx_bootstrap_theme
+
+# Sphinx openclimate Theme
+
+[![PyPI version](https://badge.fury.io/py/sphinx-openclimate-theme.svg)](https://badge.fury.io/py/sphinx-openclimte-theme)
+
+This is a theme for [Sphinx](http://sphinx-doc.org/) that inherits from the
+[Sphinx Bootstrap Theme](https://github.com/ryan-roemer/sphinx-bootstrap-theme).
+It is used for the [Open Climate Community of Practice](http://openclimate.net) website and related projects.
+
+The theme was originally based on [sphinx-pangeo-theme](https://github.com/pangeo-data/sphinx_pangeo_theme).
