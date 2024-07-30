@@ -1,0 +1,11 @@
+LICENCE.txt
+README.md
+setup.py
+selDetPa/__init__.py
+selDetPa/main.py
+selDetPa/timer.py
+selDetPa.egg-info/PKG-INFO
+selDetPa.egg-info/SOURCES.txt
+selDetPa.egg-info/dependency_links.txt
+selDetPa.egg-info/entry_points.txt
+selDetPa.egg-info/top_level.txt
