@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: mkdocs-external-link-processor
+Version: 0.1.0
+Summary: A MkDocs plugin that adds a CSS attributes to external links
+Home-page: https://github.com/StellarWolfEntertainment/mkdocs-external-link-processor
+Author: Raistlin Wolfe
+Author-email: jdoonan61@gmail.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE.md
+Requires-Dist: mkdocs >=1.4.0
+Requires-Dist: beautifulsoup4 >=4.9.0
+
