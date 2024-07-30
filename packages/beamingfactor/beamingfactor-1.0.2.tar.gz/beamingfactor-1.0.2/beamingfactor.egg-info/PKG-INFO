@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: beamingfactor
+Version: 1.0.2
+Summary: Program to compute beaming factor.
+Home-page: https://github.com/shift-method/beamingfactor
+Author: Chuanjie Zheng
+Author-email: zhengchuanjie@nao.cas.cn
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+For a quick start usage or newer version under development, please refer to https://github.com/shift-method/beamingfactor.
