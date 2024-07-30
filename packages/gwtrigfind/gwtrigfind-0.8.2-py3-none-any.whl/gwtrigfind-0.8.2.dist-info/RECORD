@@ -1,0 +1,12 @@
+gwtrigfind/__init__.py,sha256=QwOslA8d5Ca4qDxoUXcAyyvVQqng6AWOlZ2kMmN_Cb0,1139
+gwtrigfind/__main__.py,sha256=BnCLumxvLm9g_JjsULwjnwyp7Jli5KXH7j2MzdMFvDE,93
+gwtrigfind/_version.py,sha256=t6tJJG56wlBKsg_0M1Q4l1ir09jgXRw1tolMbDalW9g,411
+gwtrigfind/cli.py,sha256=QBTsjrOhvDP1rlhsU4jO7lcwPM5juC5_ZdWWOQtsg1g,5270
+gwtrigfind/core.py,sha256=mjGHbC65nKqvkE1ywvGZyrfMFHn-O_ToiLH0sETWCNA,13687
+gwtrigfind/test_trigfind.py,sha256=gw-49SLkPDjF3MJUQ45__Eq6O4SNLmHeoB8wiEdf7vQ,8531
+gwtrigfind-0.8.2.dist-info/LICENSE,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+gwtrigfind-0.8.2.dist-info/METADATA,sha256=Tclryf9hp_A2HNd6Ly2iJyEOGcKvKB1a3E4WYmBQL4c,2890
+gwtrigfind-0.8.2.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+gwtrigfind-0.8.2.dist-info/entry_points.txt,sha256=wr4436EUAuSqEGw4coPPpp_dl0M2lWQLAwFUfth9ego,51
+gwtrigfind-0.8.2.dist-info/top_level.txt,sha256=kjW9q3U42zPgJrQbG8_G6GqPZgrtS_bnb4x3DqPXDHk,11
+gwtrigfind-0.8.2.dist-info/RECORD,,
