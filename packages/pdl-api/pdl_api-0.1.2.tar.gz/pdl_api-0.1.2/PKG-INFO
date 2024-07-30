@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pdl-api
+Version: 0.1.2
+Summary: 
+Author: leeparnell
+Author-email: 152523161+leeparnell@users.noreply.github.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: peopledatalabs (>=3.1.2,<4.0.0)
+Requires-Dist: pydantic-settings (>=2.3.4,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Project Name: PDL API
+
+
