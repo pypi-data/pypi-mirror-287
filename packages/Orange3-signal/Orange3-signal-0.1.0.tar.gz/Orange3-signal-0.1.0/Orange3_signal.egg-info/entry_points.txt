@@ -1,0 +1,12 @@
+[orange.canvas.help]
+html-index = orangecontrib.signal.widgets:WIDGET_HELP_PATH
+
+[orange.widgets]
+Signal = orangecontrib.signal.widgets
+
+[orange.widgets.tutorials]
+signal_tutorials = orangecontrib.signal.tutorials
+
+[orange3.addon]
+signal = orangecontrib.signal
+

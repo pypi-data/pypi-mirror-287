@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: Orange3-signal
+Version: 0.1.0
+Summary: A collection of signal processing widgets
+Home-page: UNKNOWN
+License: GPLv3+
+Keywords: orange3 add-on,signal
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Orange3 Signal
+==============
+
+A collection of signal processing widgets.
+
+Features
+--------
+#### List of key features
+
+
