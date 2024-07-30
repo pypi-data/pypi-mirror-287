@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+mkdocs_external_link_processor = mkdocs_external_link_processor.mkdocs_external_link_processor:MkdocsExternalLinkProcessor
