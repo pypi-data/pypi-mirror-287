@@ -1,0 +1,12 @@
+impro/__init__.py,sha256=S5NqyLvYauH_VnG1xxhj4K4ijauMOy1LZfCJC1ikK8w,161
+impro/depth.py,sha256=xu_j3ra02hOemr1m3PGLSmi-amoCE_b_A4nx1wAPbkc,5314
+impro/intelligence.py,sha256=ezBtVYeUm1EcYkbN_jRBxCPrXsz9nlucoYKmLq-0cGk,8827
+impro/monte_carlo (antigo).py,sha256=Zl3M4s3vQ-nf-_ed83vPm_RhcEzOErPA1Q0tQLhntwU,2125
+impro/monte_carlo.py,sha256=bfYVoHnOpa3PbI59zAhcuvRbQI9ukaPORHsvYtGpDwY,5671
+impro-0.0.3.dist-info/LICENSE,sha256=9rbGJUkg64CNeVUf4OnKvh8K6gHRoj0vYQu0HqmVNfM,1101
+impro-0.0.3.dist-info/LICENSE.rst,sha256=Cv1RfXWy5XG8qng8r9uIWubQyjqS9ePb3YwLp0Pd1C8,1101
+impro-0.0.3.dist-info/METADATA,sha256=4MVTfJuKOFEm2kaACU6POPeHuZTK0wlcP4N_TJTW65g,3181
+impro-0.0.3.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+impro-0.0.3.dist-info/entry_points.txt,sha256=wOWW2xZ4A-Xx3hc2Sbf9UMHlv15fIdNjQO3TkV_Of-Y,51
+impro-0.0.3.dist-info/top_level.txt,sha256=bemINmUC-XutP6_gx45yBdJBDDLRrDybdNZ3qrzQdS0,6
+impro-0.0.3.dist-info/RECORD,,
