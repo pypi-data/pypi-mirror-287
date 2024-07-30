@@ -1,0 +1,11 @@
+pubchemquery/__init__.py,sha256=TfMcc9jioXAMj-Lz3JCbYUhuPK7BkdfEPHK6QS3Bu68,339
+pubchemquery/app.py,sha256=ascg1W5LdMmuyT3_xgaA87PzDZ-oDKH7v_GJbsd4NK4,6078
+pubchemquery/docs/__init__.py,sha256=qsj8JDtkPfFitVgYOHgwA4fUG7FkgrPxseM2JU3eKGg,62
+pubchemquery/docs/api.py,sha256=_iMdatPtABD-pJQXVN_VVyR3kcVrij3zIrefeWr33RA,52406
+pubchemquery/docs/config.py,sha256=_ne6p2uEw0YGjYHPGJeTsQihIG4JHo7AnVwggfveSX0,117
+pubchemquery/docs/util.py,sha256=pvzPidEYXnz0jxHPTPCEFqiYAdzuSbiYB9LQhnS47Q8,2776
+PubChemQuery-1.0.0.dist-info/LICENSE,sha256=mkTQ0fPToCZZe49SyfVz-8dMw2p54cJGENuEMa2i3d4,1082
+PubChemQuery-1.0.0.dist-info/METADATA,sha256=ka9TeFujq8mM70szI4EzlHo3jMx8UT0pXPH0emCYOSM,4009
+PubChemQuery-1.0.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+PubChemQuery-1.0.0.dist-info/top_level.txt,sha256=9A-87g7B7UzqKKkeVKif-gmW7_GxikWsxZxqSH1nUrY,13
+PubChemQuery-1.0.0.dist-info/RECORD,,
