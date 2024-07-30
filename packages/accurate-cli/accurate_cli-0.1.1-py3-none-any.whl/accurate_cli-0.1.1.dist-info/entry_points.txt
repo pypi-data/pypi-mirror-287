@@ -1,0 +1,3 @@
+[console_scripts]
+accurate-cli=accurate_cli.main:app
+
