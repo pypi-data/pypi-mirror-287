@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta id="metaTagDescription" name="description" content="Consulte os resultados da sua busca por Jogador CBX." /><meta id="metaTagKeywords" name="keywords" /><title>
+	CBX - Resultados Busca de Jogadores
+</title><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" /><link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet" /><link href="/css/main.css?9" rel="stylesheet" type="text/css" /><link href="/css/jquery.toastmessage-min.css" rel="stylesheet" type="text/css" /><link href="/css/font-awesome.min.css" rel="stylesheet" /><link href="/css/select2.min.css?1" rel="stylesheet" /><link href="/css/form.css" rel="stylesheet" />
+
+    <script src="/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="/js/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.toastmessage-min.js" type="text/javascript"></script>
+    <script src="/js/scripts.js?2" type="text/javascript"></script>
+    <script src="/js/search.js?1" type="text/javascript"></script>
+    <script src="/js/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="/js/ga.js" type="text/javascript"></script>
+
+    <script src="/js/select2.min.js" type="text/javascript"></script>
+    <script src="/js/select2.remote.js" type="text/javascript"></script>
+
+    
+</head>
+<body>
+    <form method="post" action="./?nm=jonatan+rodrigues+da+silva&amp;id=&amp;fi=&amp;uf=" id="aspnetForm" class="container-page">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="47925376" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+
+        <!-- CONTAINER -->
+        <div id="container-main">
+
+            <!-- HEADER -->
+            <div id="header">
+                <img src="/images/cima01.png" id="header-top" />
+                <img src="/images/lat01.png" id="header-left" />
+                <div id="header-center">
+                    <img src="/images/header1.jpg" id="header-logo" usemap="#map" />
+                    <div id="header-menu">
+                        <ul>
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="/diretoria">Diretoria</a></li>
+                            <li><a href="/rating">Rating CBX</a></li>
+                            <li><a href="/downloads">Downloads</a></li>
+                            <li><a href="/cadastro">Cadastro Jogadores</a></li>
+                            <li><a href="/comunicados">Comunicados</a></li>
+                            <li><a href="/noticias">CBX News</a></li>
+                            <li><a href="/torneios">Torneios</a></li>
+                            <li><a href="/taxas">Emissão de Taxas</a></li>
+                            <li><a href="/links">Links</a></li>
+                            <li><a href="/fale-conosco">Fale Conosco</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="/images/lat02.png" id="header-right" />
+            </div>
+            <!-- END - HEADER -->
+
+            <!--- CONTENT -->
+            <div id="container-content">
+                <div id="container-content-left">
+                    
+    <h1 class="content-title">Buscar Jogadores</h1>
+    <div id="content-main">
+        
+        <div>
+	<table class="grid" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_gdvMain">
+		<caption>
+			Total de Jogadores encontrados: 1
+		</caption><tr>
+			<th scope="col" width="8%">ID CBX</th><th scope="col">Nome</th><th scope="col" width="5%">UF</th><th scope="col" width="8%">ID FIDE</th><th scope="col" width="13%">Data Pagto.</th><th scope="col" width="13%">Data Nasc.</th>
+		</tr><tr>
+			<td align="center"><a href="/jogador/81179">81179</a></td><td width="41%">Jonatan Rodrigues da Silva </td><td align="center">DF</td><td align="center">44749996</td><td align="center"><font color="Red"><b>Pendente</b></font></td><td align="center">12/12/1991</td>
+		</tr>
+	</table>
+</div>
+    </div>
+
+                </div>
+                <div id="container-content-right">
+                    <div id="ads-top">
+                        <div class='publicidade'><a href='/publicidade/8' target='_blank'><img src='/files/publicidade/8.jpg?0217' /></a></div>
+                    </div>
+
+                    <!-- Search Box -->
+                    <div id="search">
+
+                        <!--- Search Box - Jogadores -->
+                        <div class="search-box">
+                            <h3><i class="fa fa-search" aria-hidden="true"></i> Buscar Jogadores
+                                <span class="search-box-expand-control" data-value="0"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>                                
+                            </h3>
+                            <div class="search-box-container">
+                                <div class="search-box-line">
+                                    <div class="search-box-col">
+                                        <label>Nome:</label>
+                                        <input type="text" id="txtNomeJogador" style="width:150px;" maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="search-box-line">
+                                    <div class="search-box-col search-box-col1">
+                                        <label>ID CBX:</label>
+                                        <input type="text" id="txtIDCbxJogador" class="id_mask" style="width:35px;" maxlength="6" />
+                                    </div>
+                                    <div class="search-box-col search-box-col2">
+                                        <label>ID FIDE:</label>
+                                        <input type="text" id="txtIDFideJogador" class="id_mask" style="width:35px;" maxlength="7" />
+                                    </div>
+                                    <div class="search-box-col search-box-col3">
+                                        <label>UF:</label>
+                                        <select name="ctl00$cboUFJogador" id="cboUFJogador">
+	<option value=""></option>
+	<option value="AC">AC</option>
+	<option value="AL">AL</option>
+	<option value="AM">AM</option>
+	<option value="AP">AP</option>
+	<option value="AV">AV</option>
+	<option value="BA">BA</option>
+	<option value="CE">CE</option>
+	<option value="DF">DF</option>
+	<option value="ES">ES</option>
+	<option value="GO">GO</option>
+	<option value="MA">MA</option>
+	<option value="MG">MG</option>
+	<option value="MS">MS</option>
+	<option value="MT">MT</option>
+	<option value="PA">PA</option>
+	<option value="PB">PB</option>
+	<option value="PE">PE</option>
+	<option value="PI">PI</option>
+	<option value="PR">PR</option>
+	<option value="RJ">RJ</option>
+	<option value="RN">RN</option>
+	<option value="RO">RO</option>
+	<option value="RR">RR</option>
+	<option value="RS">RS</option>
+	<option value="SC">SC</option>
+	<option value="SE">SE</option>
+	<option value="SP">SP</option>
+	<option value="TO">TO</option>
+
+</select>
+                                    </div>
+                                </div>
+                                <div class="search-box-line search-box-button center">
+                                    <a href="#" id="btnSearchJogador"><img src="/images/bt_buscar2.png" /></a>
+                                </div>
+                                <div class="search-box-line search-box-links center">
+                                    <a href="/jogadores-isentos">Lista de Jogadores Isentos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--- FIM - Search Box - Jogadores -->
+
+                        <!--- Search Box - Árbitros -->
+                        <div class="search-box">
+                            <h3><i class="fa fa-search" aria-hidden="true"></i> Buscar Árbitros
+                                <span class="search-box-expand-control" data-value="0"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>                                
+                            </h3>
+                            <div class="search-box-container">
+                                <div class="search-box-line">
+                                    <div class="search-box-col4">
+                                        <label>Nome:</label>
+                                        <input type="text" id="txtNomeArbitro" style="width:95px;" maxlength="50" />
+                                    </div>
+                                    <div class="search-box-col search-box-col2">
+                                        <label>UF:</label>
+                                        <select name="ctl00$cboUFArbitro" id="cboUFArbitro">
+	<option value=""></option>
+	<option value="AC">AC</option>
+	<option value="AL">AL</option>
+	<option value="AM">AM</option>
+	<option value="AP">AP</option>
+	<option value="AV">AV</option>
+	<option value="BA">BA</option>
+	<option value="CE">CE</option>
+	<option value="DF">DF</option>
+	<option value="ES">ES</option>
+	<option value="GO">GO</option>
+	<option value="MA">MA</option>
+	<option value="MG">MG</option>
+	<option value="MS">MS</option>
+	<option value="MT">MT</option>
+	<option value="PA">PA</option>
+	<option value="PB">PB</option>
+	<option value="PE">PE</option>
+	<option value="PI">PI</option>
+	<option value="PR">PR</option>
+	<option value="RJ">RJ</option>
+	<option value="RN">RN</option>
+	<option value="RO">RO</option>
+	<option value="RR">RR</option>
+	<option value="RS">RS</option>
+	<option value="SC">SC</option>
+	<option value="SE">SE</option>
+	<option value="SP">SP</option>
+	<option value="TO">TO</option>
+
+</select>
+                                    </div>
+                                </div>
+                                <div class="search-box-line">
+                                    <div class="search-box-col search-box-col4">
+                                        <label>Categoria:</label>
+                                        <select name="ctl00$cboCategArbitro" id="cboCategArbitro">
+	<option value=""></option>
+	<option value="12">Auxiliar</option>
+	<option value="13">FIDE</option>
+	<option value="9">Internacional</option>
+	<option value="10">Nacional</option>
+	<option value="11">Regional</option>
+
+</select>
+                                    </div>
+                                    <div class="search-box-col search-box-col2 search-box-button" style="padding-top:20px;">
+                                        <a href="#" id="btnSearchArbitro"><img src="/images/bt_buscar2.png" /></a>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--- FIM - Search Box - Árbitros -->
+
+                        <!--- Search Box - Organizadores -->
+                        <div class="search-box">
+                            <h3><i class="fa fa-search" aria-hidden="true"></i> Buscar Organizadores
+                                <span class="search-box-expand-control" data-value="0"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>                                
+                            </h3>
+                            <div class="search-box-container">
+                                <div class="search-box-line">
+                                    <div class="search-box-col">
+                                        <label>Nome:</label>
+                                        <input type="text" id="txtNomeOrganizador" style="width:150px;" maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="search-box-line">
+                                    <div class="search-box-col search-box-col1">
+                                        <label>ID CBX:</label>
+                                        <input type="text" id="txtIDCbxOrganizador" class="id_mask" style="width:35px;" maxlength="6" />
+                                    </div>
+                                    <div class="search-box-col search-box-col2">
+                                        <label>UF:</label>
+                                        <select name="ctl00$cboUFOrganizador" id="cboUFOrganizador">
+	<option value=""></option>
+	<option value="AC">AC</option>
+	<option value="AL">AL</option>
+	<option value="AM">AM</option>
+	<option value="AP">AP</option>
+	<option value="AV">AV</option>
+	<option value="BA">BA</option>
+	<option value="CE">CE</option>
+	<option value="DF">DF</option>
+	<option value="ES">ES</option>
+	<option value="GO">GO</option>
+	<option value="MA">MA</option>
+	<option value="MG">MG</option>
+	<option value="MS">MS</option>
+	<option value="MT">MT</option>
+	<option value="PA">PA</option>
+	<option value="PB">PB</option>
+	<option value="PE">PE</option>
+	<option value="PI">PI</option>
+	<option value="PR">PR</option>
+	<option value="RJ">RJ</option>
+	<option value="RN">RN</option>
+	<option value="RO">RO</option>
+	<option value="RR">RR</option>
+	<option value="RS">RS</option>
+	<option value="SC">SC</option>
+	<option value="SE">SE</option>
+	<option value="SP">SP</option>
+	<option value="TO">TO</option>
+
+</select>
+                                    </div>
+                                    <div class="search-box-col search-box-col2 search-box-button" style="padding:20px 0 0 8px;">
+                                        <a href="#" id="btnSearchOrganizador"><img src="/images/bt_buscar2.png" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--- FIM - Search Box - Organizadores -->
+
+                        <!--- Search Box - Instrutores -->
+                        <div class="search-box">
+                            <h3><i class="fa fa-search" aria-hidden="true"></i> Buscar Instrutores
+                                <span class="search-box-expand-control" data-value="0"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>                                
+                            </h3>
+                            <div class="search-box-container">
+                                <div class="search-box-line">
+                                    <div class="search-box-col4">
+                                        <label>Nome:</label>
+                                        <input type="text" id="txtNomeInstrutor" style="width:95px;" maxlength="50" />
+                                    </div>
+                                    <div class="search-box-col search-box-col2">
+                                        <label>UF:</label>
+                                        <select name="ctl00$cboUFInstrutor" id="cboUFInstrutor">
+	<option value=""></option>
+	<option value="AC">AC</option>
+	<option value="AL">AL</option>
+	<option value="AM">AM</option>
+	<option value="AP">AP</option>
+	<option value="AV">AV</option>
+	<option value="BA">BA</option>
+	<option value="CE">CE</option>
+	<option value="DF">DF</option>
+	<option value="ES">ES</option>
+	<option value="GO">GO</option>
+	<option value="MA">MA</option>
+	<option value="MG">MG</option>
+	<option value="MS">MS</option>
+	<option value="MT">MT</option>
+	<option value="PA">PA</option>
+	<option value="PB">PB</option>
+	<option value="PE">PE</option>
+	<option value="PI">PI</option>
+	<option value="PR">PR</option>
+	<option value="RJ">RJ</option>
+	<option value="RN">RN</option>
+	<option value="RO">RO</option>
+	<option value="RR">RR</option>
+	<option value="RS">RS</option>
+	<option value="SC">SC</option>
+	<option value="SE">SE</option>
+	<option value="SP">SP</option>
+	<option value="TO">TO</option>
+
+</select>
+                                    </div>
+                                </div>
+                                <div class="search-box-line">
+                                    <div class="search-box-col search-box-col4">
+                                        <label>Categoria:</label>
+                                        <select name="ctl00$cboCategInstrutor" id="cboCategInstrutor">
+	<option value=""></option>
+	<option value="12">Auxiliar</option>
+	<option value="13">FIDE</option>
+	<option value="9">Internacional</option>
+	<option value="10">Nacional</option>
+	<option value="11">Regional</option>
+
+</select>
+                                    </div>
+                                    <div class="search-box-col search-box-col2 search-box-button" style="padding-top:20px;">
+                                        <a href="#" id="btnSearchInstrutor"><img src="/images/bt_buscar2.png" /></a>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--- FIM - Search Box - Instrutores -->
+
+                        <!--- Search Box - Treinadores -->
+                        <div class="search-box">
+                            <h3><i class="fa fa-search" aria-hidden="true"></i> Buscar Treinadores
+                                <span class="search-box-expand-control" data-value="0"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>                                
+                            </h3>
+                            <div class="search-box-container">
+                                <div class="search-box-line">
+                                    <div class="search-box-col4">
+                                        <label>Nome:</label>
+                                        <input type="text" id="txtNomeTreinador" style="width:95px;" maxlength="50" />
+                                    </div>
+                                    <div class="search-box-col search-box-col2">
+                                        <label>UF:</label>
+                                        <select name="ctl00$cboUFTreinador" id="cboUFTreinador">
+	<option value=""></option>
+	<option value="AC">AC</option>
+	<option value="AL">AL</option>
+	<option value="AM">AM</option>
+	<option value="AP">AP</option>
+	<option value="AV">AV</option>
+	<option value="BA">BA</option>
+	<option value="CE">CE</option>
+	<option value="DF">DF</option>
+	<option value="ES">ES</option>
+	<option value="GO">GO</option>
+	<option value="MA">MA</option>
+	<option value="MG">MG</option>
+	<option value="MS">MS</option>
+	<option value="MT">MT</option>
+	<option value="PA">PA</option>
+	<option value="PB">PB</option>
+	<option value="PE">PE</option>
+	<option value="PI">PI</option>
+	<option value="PR">PR</option>
+	<option value="RJ">RJ</option>
+	<option value="RN">RN</option>
+	<option value="RO">RO</option>
+	<option value="RR">RR</option>
+	<option value="RS">RS</option>
+	<option value="SC">SC</option>
+	<option value="SE">SE</option>
+	<option value="SP">SP</option>
+	<option value="TO">TO</option>
+
+</select>
+                                    </div>
+                                </div>
+                                <div class="search-box-line">
+                                    <div class="search-box-col search-box-col4">
+                                        <label>Categoria:</label>
+                                        <select name="ctl00$cboCategTreinador" id="cboCategTreinador">
+	<option value=""></option>
+	<option value="12">Auxiliar</option>
+	<option value="13">FIDE</option>
+	<option value="9">Internacional</option>
+	<option value="10">Nacional</option>
+	<option value="11">Regional</option>
+
+</select>
+                                    </div>
+                                    <div class="search-box-col search-box-col2 search-box-button" style="padding-top:20px;">
+                                        <a href="#" id="btnSearchTreinador"><img src="/images/bt_buscar2.png" /></a>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--- FIM - Search Box - Treinadores -->
+
+                    </div>
+                    <!--- FIM - Search Box-->
+
+                    <div id="ads-bottom">
+                        <div class='publicidade'><a href='/publicidade/3' target='_blank'><img src='/files/publicidade/3.jpg?0217' /></a></div><div class='publicidade'><a href='/publicidade/1' target='_blank'><img src='/files/publicidade/1.jpg?0217' /></a></div>
+                    </div>
+                </div>
+            </div>
+            <!-- END - CONTENT -->
+
+            <!-- FOOTER -->
+            <div id="footer">
+                <div id="footer-content">
+                    <div id="footer-content-bar">©CBX - Confederação Brasileira de Xadrez. Todos os direitos reservados.</div>
+                </div>
+                <img src="/images/baixo.png" id="footer-img" />
+            </div>
+            <!-- END - FOOTER -->
+
+        </div>
+        <!-- END - CONTAINER -->
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+//]]>
+</script>
+</form>
+    <map name="map">
+        <area shape="circle" coords="930, 17, 16" href="https://twitter.com/CBX_XADREZ" alt="Twitter" title="Twitter" target="_blank" />
+        <area shape="circle" coords="892, 16, 14" href="https://www.youtube.com/channel/UCJ0pXOSbGVlu_Z58_rvzdaQ/videos" alt="Youtube" title="Youtube" target="_blank" />
+        <area shape="circle" coords="852, 17, 15" href="https://www.facebook.com/ConfederacaoBrasileiradeXadrez/" alt="Facebook" title="Facebook" target="_blank" />
+        <area shape="rect" coords="9, 3, 220, 147" href="/home" alt="" />
+    </map>
+</body>
+</html>
