@@ -1,0 +1,4 @@
+gymnasium
+pettingzoo
+torch
+stable-baselines3
