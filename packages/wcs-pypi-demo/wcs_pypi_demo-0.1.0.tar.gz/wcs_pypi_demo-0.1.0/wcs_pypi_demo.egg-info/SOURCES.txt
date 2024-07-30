@@ -1,0 +1,8 @@
+setup.py
+wcs_pypi_demo/__init__.py
+wcs_pypi_demo.egg-info/PKG-INFO
+wcs_pypi_demo.egg-info/SOURCES.txt
+wcs_pypi_demo.egg-info/dependency_links.txt
+wcs_pypi_demo.egg-info/top_level.txt
+wcs_pypi_demo/middlewares/__init__.py
+wcs_pypi_demo/middlewares/middleware1.py
