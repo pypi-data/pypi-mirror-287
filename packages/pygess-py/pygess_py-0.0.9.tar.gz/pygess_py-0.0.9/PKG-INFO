@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pygess_py
+Version: 0.0.9
+Summary: Pygame Essentials
+Author: Abhijay 'CraftyRyte' Bidari
+Author-email: craftyryte2011@gmail.com
+License: The Unlicense
+Keywords: python,pygame,essentials
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Utilities
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pygame
+
+J
