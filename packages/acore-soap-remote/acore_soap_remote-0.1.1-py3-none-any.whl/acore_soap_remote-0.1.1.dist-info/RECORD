@@ -1,0 +1,17 @@
+acore_soap_remote/__init__.py,sha256=J7mn1cNNNR30DUV2OgoTHM5Pj0VKFu5MQIhkqvMrqu8,423
+acore_soap_remote/_version.py,sha256=3ngZz3_QoERdhI7hz4p3JzJ6Msem0N5631SEIjary1M,93
+acore_soap_remote/api.py,sha256=tqUHNKeEckprP7wEH3Z4IY-U5kQT6L3WV7lG8En6qMo,107
+acore_soap_remote/paths.py,sha256=Kk7PqFc060g-Lrq_0B1cYtcqw3l1rx2LmnRsLWfvupw,754
+acore_soap_remote/request.py,sha256=xpNzVEWDyz0Emr1BWb7K278LML5T9A439ndYtHS7HpU,8562
+acore_soap_remote/utils.py,sha256=fDPOblu4epJLMOHN-bZwUJX5tO4kac34DORV7pGmMsc,785
+acore_soap_remote/docs/__init__.py,sha256=f-E2GGaAOnea7U51BKWcRtFHZ6p2iPnvGoXR6VvBtGg,43
+acore_soap_remote/tests/__init__.py,sha256=2nfXkz9TigdtVWm0YAeP8qD83i0KvM74AWag9WJMw4Q,58
+acore_soap_remote/tests/helper.py,sha256=p_oZhY0NE1HTQ50ftj1y4sJ6nVOLxQrPwseOlX0AD4s,447
+acore_soap_remote/vendor/__init__.py,sha256=O9CT1B2F-cVB8elT0EoCJbgkcffjvlmqteqavs4giDg,25
+acore_soap_remote/vendor/pytest_cov_helper.py,sha256=nR-I6d8j0P1JQy6dxIiZtG9Gz0DkfJFpk6EPCCpfnm8,3572
+acore_soap_remote-0.1.1.dist-info/AUTHORS.rst,sha256=nHTveFzFQh1uHjbLOIj6LbooSLAAByNffYkdIMKP-Pc,670
+acore_soap_remote-0.1.1.dist-info/LICENSE.txt,sha256=wXtjIQ_NIKLIyj24Kp2BRLWG-P2gu06PNokgWNi5jNg,1128
+acore_soap_remote-0.1.1.dist-info/METADATA,sha256=Kmq5GIIStIkJ1Iu0ZTnqY1JzfQlSCA_pjJccy97FBBI,5427
+acore_soap_remote-0.1.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+acore_soap_remote-0.1.1.dist-info/top_level.txt,sha256=pLJTLz3I-syOZwP4WdHyKTU0_jWcYMbH6ZDkdFLbuY8,18
+acore_soap_remote-0.1.1.dist-info/RECORD,,
