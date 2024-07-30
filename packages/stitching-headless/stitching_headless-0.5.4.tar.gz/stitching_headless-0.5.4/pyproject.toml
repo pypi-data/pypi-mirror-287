@@ -1,0 +1,31 @@
+[project]
+name = "stitching-headless"
+version = "0.5.4"
+description = "Stitching module with opencv-python-headless"
+authors = [
+    { name = "Binh Phan", email = "ptbinh2003@gmail.com" }
+]
+dependencies = [
+    "largestinteriorrectangle",
+    "opencv-python-headless>=4.0.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+license = { text = "Apache License 2.0" }
+
+[project.urls]
+Homepage = "https://github.com/BinhPhan13/stitching-headless"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["stitching"]
