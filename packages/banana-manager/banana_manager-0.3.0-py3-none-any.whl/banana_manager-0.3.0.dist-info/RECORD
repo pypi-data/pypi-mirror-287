@@ -1,0 +1,17 @@
+banana/__init__.py,sha256=IcZUmN1yFfgxxHjhsYMGflyj64G3I9b57jiH04oRvLs,62
+banana/errors.py,sha256=Booy2zFYkcFvNDJPHUfnYxQtCoEWz6-8hq2HDoh70Xo,1571
+banana/layout.py,sha256=Klywrgh_3qSYqCanFHjaRuUuBDj6WdZ-kAW2oBe5jNw,783
+banana/main.py,sha256=rRsTbwM88zIwg3vY8rX1kyKHahEkGJ8ytEnUNXpL_XI,1618
+banana/models.py,sha256=3JWP0CfjPJ-DU8aqQ2402gloxS5VXb2MxXdHOrG93Ck,2263
+banana/utils.py,sha256=dwFVA90yhu60GxpvfmJFN0BjncSsgwSAePwq6RgFcEI,2530
+banana/assets/styles.css,sha256=lzZNfwTiHJzoY71GnFUrhLrmxOjQspAv1dN0wYuQFmM,2319
+banana/queries/__init__.py,sha256=h6A1J4fz0ZatKeyqR-cVk7HmpWF8Xc4vRm2j2sXgP68,160
+banana/queries/init_app.py,sha256=A0AJFvbuqykFkNyOkbJ9DbDoEjExGTkrnZPylOhuiKE,3446
+banana/queries/load_menu.py,sha256=REMaD6_4vD1quLQoaQDmNKdNRWcdphs4GjfNsLb74V8,2146
+banana/queries/load_table.py,sha256=l6EzJD7gT6P-SfdX-u4Gk1UyA3vUEfBzPSvivKhRqJU,6125
+banana/queries/update_cell.py,sha256=o-NC7L3IG9kd8ZP2uOBIpAA4127e9ZvoVRqDu_5ULQA,2778
+banana_manager-0.3.0.dist-info/LICENSE,sha256=qC7yua4470kT0lDMFwxJcCF4N4FShL6q8EzdLL-ibRQ,1093
+banana_manager-0.3.0.dist-info/METADATA,sha256=R1_ITsGv25TV407Ok-sx4CT9tsCCtcjJxKmKWCt5Cck,7328
+banana_manager-0.3.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+banana_manager-0.3.0.dist-info/top_level.txt,sha256=WoFIPZawvBWtGa9_WmYuFLJ1cp-8BVebGFE-f1UAFrE,7
+banana_manager-0.3.0.dist-info/RECORD,,
