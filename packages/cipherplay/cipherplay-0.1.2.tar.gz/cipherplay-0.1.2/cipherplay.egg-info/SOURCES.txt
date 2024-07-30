@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+cipherplay.egg-info/PKG-INFO
+cipherplay.egg-info/SOURCES.txt
+cipherplay.egg-info/dependency_links.txt
+cipherplay.egg-info/top_level.txt
