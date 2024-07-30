@@ -1,0 +1,5 @@
+firebase_admin
+fastapi
+google-auth
+python-dotenv
+kal-utils
