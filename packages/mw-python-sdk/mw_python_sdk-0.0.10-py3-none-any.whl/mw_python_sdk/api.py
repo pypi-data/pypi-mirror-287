@@ -1,0 +1,453 @@
+import hashlib
+import os
+import time
+from datetime import datetime
+from pathlib import Path
+from typing import BinaryIO, List, Optional, Union
+
+import boto3
+import requests
+
+from .dataset import Dataset, DatasetFile, UploadInfo
+import random
+import string
+
+HEYWHALE_SITE = os.getenv("HEYWHALE_HOST", "https://www.heywhale.com")
+HEYWHALE_DS_BUCKET = os.getenv("HEYWHALE_DS_BUCKET", "kesci")
+
+
+def parse_datetime(date_string: str) -> datetime:
+    """
+    Parse a datetime string into a datetime object.
+
+    :param date_string: The datetime string to parse.
+    :return: A datetime object.
+    """
+    return datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%fZ")
+
+
+def get_dataset(dataset_id: str, token: Optional[str] = None) -> Optional[Dataset]:
+    """
+    Fetches dataset details from Heywhale.
+
+    :param dataset_id: The ID of the dataset to fetch.
+    :param token: The token for authentication. If not provided, the function will use the 'MW_TOKEN' environment variable.
+    :return: A Dataset object with the dataset details.
+    :raises ValueError: If no token is provided and the 'MW_TOKEN' environment variable is not set.
+    """
+    if token is None:
+        token = os.getenv("MW_TOKEN")
+        if not token:
+            raise ValueError(
+                "No token provided and 'MW_TOKEN' environment variable is not set."
+            )
+
+    url = f"{HEYWHALE_SITE}/api/datasets/{dataset_id}"
+    headers = {
+        "x-kesci-token": token,
+        "x-kesci-resource": dataset_id,
+    }
+
+    response = requests.get(url, headers=headers, timeout=10)
+    if response.status_code == 200:
+        dataset_files = [
+            DatasetFile(file.get("_id"), file.get("Token"), file.get("Size"))
+            for file in response.json().get("Files")
+        ]
+        return Dataset(
+            _id=response.json().get("_id"),
+            title=response.json().get("Title"),
+            short_description=response.json().get("ShortDescription"),
+            folder_name=response.json().get("FolderName"),
+            files=dataset_files,
+            created_at=parse_datetime(response.json().get("CreateDate")),
+            updated_at=parse_datetime(response.json().get("UpdateDate")),
+        )
+    else:
+        response.raise_for_status()
+        return None
+
+
+def _update_dataset(id: str, files: List[DatasetFile], token: Optional[str] = None):
+    """
+    Updates the dataset with the given ID by adding or removing files.
+
+    :param id: The ID of the dataset to update.
+    :param files: A list of DatasetFile objects representing the files to add or remove.
+    :param token: The token for authentication. If not provided, the function will use the 'MW_TOKEN' environment variable.
+    :raises ValueError: If no token is provided and the 'MW_TOKEN' environment variable is not set.
+    """
+    if token is None:
+        token = os.getenv("MW_TOKEN")
+        if not token:
+            raise ValueError(
+                "No token provided and 'MW_TOKEN' environment variable is not set."
+            )
+    url = f"{HEYWHALE_SITE}/api/datasets/{id}/files"
+    headers = {"x-kesci-token": token, "x-kesci-resource": id}
+
+    response = requests.put(
+        url,
+        {
+            "Files": [file.key for file in files],
+        },
+        headers=headers,
+        timeout=10,
+    )
+    if response.status_code == 200:
+        return
+    else:
+        print(response.text)
+        response.raise_for_status()
+
+
+def _get_update_token(token: Optional[str] = None) -> Optional[UploadInfo]:
+    """
+    Retrieves the upload token for updating a dataset.
+
+    :param token: The token for authentication. If not provided, the function will use the 'MW_TOKEN' environment variable.
+    :return: An UploadInfo object containing the upload token details.
+    :raises ValueError: If no token is provided and the 'MW_TOKEN' environment variable is not set.
+    """
+    if token is None:
+        token = os.getenv("MW_TOKEN")
+        if not token:
+            raise ValueError(
+                "No token provided and 'MW_TOKEN' environment variable is not set."
+            )
+    url = f"{HEYWHALE_SITE}/api/dataset-upload-token"
+    headers = {"x-kesci-token": token}
+    response = requests.get(url, headers=headers, timeout=10)
+    if response.status_code == 200:
+        return UploadInfo(
+            endpoint=response.json().get("endpoint"),
+            ak=response.json().get("accessKeyId"),
+            sk=response.json().get("secretAccessKey"),
+            token=response.json().get("sessionToken"),
+            bucket=response.json().get("bucket"),
+            prefix_to_save=response.json().get("prefixToSave"),
+            region=response.json().get("region"),
+        )
+    else:
+        response.raise_for_status()
+        return None
+
+
+def generate_timestamped_string(revision: int) -> str:
+    """
+    Generates a timestamped string based on the current time and a revision number.
+
+    :param revision: The revision number.
+    :return: A timestamped string.
+    """
+    timestamp = int(time.time() * 1000)
+    result = f"{timestamp}_{revision}"
+    return result
+
+
+def upload_file(
+    path_or_fileobj: Union[str, Path, bytes, BinaryIO],
+    path_in_dataset: str,
+    id: str|Dataset,
+    overwrite: bool = False,
+    token: Optional[str] = None,
+):
+    """
+    Uploads a file to a dataset.
+
+    :param path_or_fileobj: The path or file object of the file to upload.
+    :param path_in_dataset: The path to save the file in the dataset.
+    :param id: The ID of the dataset.
+    :param overwrite: Whether to overwrite an existing file with the same path in the dataset.
+    :param token: The token for authentication. If not provided, the function will use the 'MW_TOKEN' environment variable.
+    :raises ValueError: If no token is provided and the 'MW_TOKEN' environment variable is not set.
+    """
+    if token is None:
+        token = os.getenv("MW_TOKEN")
+        if not token:
+            raise ValueError(
+                "No token provided and 'MW_TOKEN' environment variable is not set."
+            )
+    if isinstance(id, Dataset):
+        id = id._id
+    upload_info = _get_update_token(token)
+    session = boto3.Session(
+        aws_access_key_id=upload_info.ak,
+        aws_secret_access_key=upload_info.sk,
+        aws_session_token=upload_info.token,
+        region_name=upload_info.region,
+    )
+    s3 = session.client("s3", endpoint_url=upload_info.endpoint)
+
+    bucket_name = upload_info.bucket
+    prefix = upload_info.prefix_to_save
+    object_key = os.path.join(
+        upload_info.prefix_to_save, generate_timestamped_string(1), path_in_dataset
+    )
+    try:
+        if isinstance(path_or_fileobj, (str, Path)):
+            with open(path_or_fileobj, "rb") as file:
+                s3.put_object(Bucket=bucket_name, Key=object_key, Body=file)
+        else:
+            s3.put_object(Bucket=bucket_name, Key=object_key, Body=path_or_fileobj)
+    except Exception as e:
+        print(f"Error putting object '{object_key}' from bucket '{bucket_name}': {e}")
+    new_dataset_files: List[DatasetFile] = []
+    dataset = get_dataset(id, token)
+    if dataset is not None:
+        for file in dataset.files:
+            if _get_file_in_dataset(prefix, file.key) != path_in_dataset:
+                new_dataset_files.append(file)
+            elif not overwrite:
+                print("file exists, skip uploading")
+                return
+        new_dataset_files.append(DatasetFile("", object_key, 0))
+        _update_dataset(id, new_dataset_files, token)
+
+
+def _get_file_in_dataset(prefix: str, object_key: str) -> str:
+    """
+    Extracts the file path from the object key in a dataset.
+
+    :param prefix: The prefix of the object key.
+    :param object_key: The object key.
+    :return: The file path.
+    """
+    if object_key.startswith(prefix):
+        prefix_end_index = len(prefix)
+        next_slash_index = object_key.find("/", prefix_end_index)
+        file_path = object_key[next_slash_index + 1 :]
+        return file_path
+    else:
+        return ""
+
+
+def _init_cache(cache_dir: Optional[str | Path] = None) -> Path:
+    """
+    Initializes the cache directory for the MW SDK.
+
+    :param cache_dir: The path to the cache directory. If not provided, the default cache directory will be used.
+    :return: The path to the cache directory.
+    """
+    if cache_dir is None:
+        cache_dir = Path(os.getenv("MW_CACHE_DIR", "~/.cache/mw"))
+    if isinstance(cache_dir, str):
+        cache_dir = Path(cache_dir)
+    cache_dir.expanduser().mkdir(parents=True, exist_ok=True)
+    cache_dir.expanduser().joinpath("blobs").mkdir(exist_ok=True)
+    cache_dir.expanduser().joinpath("datasets").mkdir(exist_ok=True)
+    return cache_dir
+
+
+def _download_single_file(
+    download_url: str, id: str, filename: str, cache_dir: Path
+) -> Path:
+    """
+    Downloads a single file from a dataset.
+
+    :param download_url: The URL to download the file from.
+    :param id: The ID of the dataset.
+    :param filename: The name of the file.
+    :param cache_dir: The cache directory.
+    :return: The path to the downloaded file.
+    """
+    response = requests.get(download_url, stream=True, timeout=10)
+    total_size = int(response.headers.get("content-length", 0))
+    chunk_size = 4096
+    slk_path = (
+        Path(cache_dir)
+        .expanduser()
+        .joinpath("datasets")
+        .joinpath(id)
+        .joinpath("snapshots")
+        .joinpath("1")
+        .joinpath(filename)
+    )
+    if slk_path.exists():
+        return slk_path
+    file_path = (
+        Path(cache_dir).expanduser().joinpath("blobs").joinpath(filename + ".lock")
+    )
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    if file_path.exists():
+        pass
+    m = hashlib.md5()
+    with open(file_path, "wb") as file:
+        for chunk in response.iter_content(chunk_size=chunk_size):
+            m.update(chunk)
+            file.write(chunk)
+            # print("update")
+            # pbar.update(len(chunk))
+    etag = m.hexdigest()
+    # print(f"etag {etag}")
+    blob_path = file_path.rename(file_path.parent.joinpath(etag))
+    slk_path.parent.mkdir(parents=True, exist_ok=True)
+    slk_path.symlink_to(blob_path)
+    return slk_path
+
+
+def download_dir(
+    id: str,
+    cache_dir: Optional[str | Path] = None,
+    token: Optional[str] = None,
+) -> Path:
+    """Download a directory from the dataset.
+
+    Args:
+        id (str): The dataset id.
+
+    Returns:
+        str: The path to the downloaded directory.
+    """
+    if token is None:
+        token = os.getenv("MW_TOKEN")
+        if not token:
+            raise ValueError(
+                "No token provided and 'MW_TOKEN' environment variable is not set."
+            )
+    cache_dir = _init_cache(cache_dir)
+    url = f"{HEYWHALE_SITE}/api/datasets/{id}/downloadUrl"
+    headers = {
+        "x-kesci-token": token,
+    }
+    response = requests.get(url, headers=headers, timeout=10)
+    if response.status_code == 200:
+        files = response.json().get("files")
+        for file in files:
+            download_url = file.get("Url")
+            _download_single_file(
+                download_url, id, file.get("Name") + file.get("Ext"), cache_dir
+            )
+    else:
+        print(response.text)
+        response.raise_for_status()
+    dir = (
+        Path(cache_dir)
+        .expanduser()
+        .joinpath("datasets")
+        .joinpath(id)
+        .joinpath("snapshots")
+        .joinpath("1")
+    )
+    return dir
+
+
+def download_file(
+    id: str,
+    filename: str,
+    cache_dir: Optional[str | Path] = None,
+    token: Optional[str] = None,
+) -> Path:
+    """Download a file from the dataset.
+
+    Args:
+        id (str): The dataset id.
+        filename (str): The file name in the dataset.
+        cache_dir (Optional[str | Path], optional): The directory to cache the downloaded file. Defaults to None.
+        local_dir (Optional[str | Path], optional): The local directory to save the downloaded file. Defaults to None.
+
+    Returns:
+        str: The path to the downloaded file.
+    """
+    if token is None:
+        token = os.getenv("MW_TOKEN")
+        if not token:
+            raise ValueError(
+                "No token provided and 'MW_TOKEN' environment variable is not set."
+            )
+    cache_dir = _init_cache(cache_dir)
+    # dataset_detail = get_dataset(id)
+    url = f"{HEYWHALE_SITE}/api/datasets/{id}/downloadUrl"
+    headers = {
+        "x-kesci-token": token,
+    }
+    response = requests.get(url, headers=headers, timeout=10)
+    download_url: str = ""
+    if response.status_code == 200:
+        files = response.json().get("files")
+        for file in files:
+            if file.get("Name") + file.get("Ext") == filename:
+                download_url = file.get("Url")
+                break
+        else:
+            raise ValueError(f"File '{filename}' not found in dataset '{id}'.")
+    else:
+        print(response.text)
+        response.raise_for_status()
+    slk_path = _download_single_file(download_url, id, filename, cache_dir)
+    return slk_path
+
+
+def create_dataset(
+    title: str,
+    short_description: Optional[str] = None,
+    folder_name: Optional[str] = None,
+    token: Optional[str] = None,
+    enable_download: bool = True,
+) -> Dataset:
+    """Creates a empty dataset
+
+    Args:
+        title (str): The title of the dataset.
+        description (str): The description of the dataset.
+        folder_name (Optional[str]): The folder name of the dataset, could be empty.
+
+    Returns:
+        Dataset: the created dataset
+    """
+    if token is None:
+        token = os.getenv("MW_TOKEN")
+        if not token:
+            raise ValueError(
+                "No token provided and 'MW_TOKEN' environment variable is not set."
+            )
+    url = f"{HEYWHALE_SITE}/api/datasets"
+    headers = {
+        "x-kesci-token": token,
+    }
+    if folder_name is None:
+        folder_name = "".join(random.choices(string.ascii_lowercase, k=8))
+    if short_description is None:
+        short_description = title
+    upload_info = _get_update_token(token)
+    session = boto3.Session(
+        aws_access_key_id=upload_info.ak,
+        aws_secret_access_key=upload_info.sk,
+        aws_session_token=upload_info.token,
+        region_name=upload_info.region,
+    )
+    s3 = session.client("s3", endpoint_url=upload_info.endpoint)
+    bucket_name = upload_info.bucket
+    object_key = os.path.join(
+        upload_info.prefix_to_save, "I_am_a_fake_key_to_pass_the_validation")
+    # 不能创建空文件的数据集，所以上传一个占位文件来绕过检查。
+    s3.put_object(Bucket=bucket_name, Key=object_key, Body="I_am_a_fake_key_to_pass_the_validation")
+    
+    data = {
+            "Title": title,
+            "ShortDescription": short_description,
+            "FolderName": folder_name,
+            "EnableDownload": enable_download,
+            "Type": 0,
+            "Files": [object_key],
+        }
+
+    response = requests.post(
+        url,
+        json=data,
+        headers=headers,
+    )
+
+    if response.status_code == 200:
+        document = response.json().get("document")
+        return Dataset(
+            _id=document.get("_id"),
+            title=document.get("Title"),
+            short_description=document.get("ShortDescription"),
+            folder_name=document.get("FolderName"),
+            files=document.get("Files"), # empty actually
+            created_at=parse_datetime(document.get("CreateDate")),
+            updated_at=parse_datetime(document.get("UpdateDate")),
+        )
+    else:
+        response.raise_for_status()
