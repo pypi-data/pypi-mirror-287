@@ -1,0 +1,38 @@
+# Versioning tools for CI
+
+## project-version
+
+Example use in `.gitlab-cy.yml`:
+
+```yaml
+
+version:
+  image: docker.io/alikov/ci-version-tools:0.1.0.dev2
+  stage: .pre
+  script:
+    - project-version
+        --version-source-file ./VERSION
+        --git-version-tag-prefix v
+        --dev-identifier dev
+        --dev-nr "${CI_PIPELINE_IID:-0}"
+        ${CI_COMMIT_TAG:+--git-tag "$CI_COMMIT_TAG"} | tee version.env
+  artifacts:
+    reports:
+      dotenv:
+        - version.env
+
+.build-image:
+  stage: build
+  image: $BUILDAH_CI_IMAGE
+  script:
+    - IMAGE="${CI_REGISTRY_IMAGE}:${VERSION_SEMVER}"
+    - buildah build -t "$IMAGE" .
+    - buildah inspect "$IMAGE"
+    - buildah push "$IMAGE"
+    - buildah push "$IMAGE" "${CI_REGISTRY_IMAGE}:${VERSION_SEMVER_MAJOR}"
+    - buildah push "$IMAGE" "${CI_REGISTRY_IMAGE}:${VERSION_SEMVER_MINOR}"
+    - [ -z "$VERSION_IS_LATEST_RELEASE" ] || buildah push "$IMAGE" "${CI_REGISTRY_IMAGE}:latest"
+  needs:
+    - version
+
+```
