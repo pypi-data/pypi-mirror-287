@@ -1,0 +1,2 @@
+[console_scripts]
+marearts-myapp = run_myapp:main
