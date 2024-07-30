@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/_plibflacmodule.c
+src/plibflac/__init__.py
+src/plibflac/_decoder.py
+src/plibflac/_encoder.py
+src/plibflac.egg-info/PKG-INFO
+src/plibflac.egg-info/SOURCES.txt
+src/plibflac.egg-info/dependency_links.txt
+src/plibflac.egg-info/top_level.txt
+tests/test_decoder.py
+tests/test_encoder.py
+tests/test_lowlevel.py
+tests/data/100s.flac
