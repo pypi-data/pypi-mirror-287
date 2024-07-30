@@ -1,0 +1,2 @@
+[sphinx.html_themes]
+openclimate = sphinx_openclimate_theme
