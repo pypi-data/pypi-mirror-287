@@ -1,0 +1,70 @@
+paths:
+  /op0/path:
+    get:
+      parameters:
+        - in: cookie
+          name: optCookieParam0
+          schema:
+            type: integer
+            format: int64
+            default: 4
+        - in: header
+          name: optHeaderParam2
+          schema:
+            type: string
+            default: abc
+        - in: path
+          name: optPathParam1
+          schema:
+            type: string
+          required: false
+        - in: query
+          name: optQueryParam4
+          schema:
+            type: string
+            default: default
+      operationId: op0Gett
+    post:
+      parameters:
+        - in: cookie
+          name: anotherCookieParam3
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: anotherHeaderParam1
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: anotherPathParam4
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: anotherQueryParam2
+          schema:
+            type: string
+          required: true
+      operationId: op1Postt
+    parameters:
+      - in: cookie
+        name: commonCookieParam0
+        schema:
+          type: string
+        required: true
+      - in: header
+        name: commonHeaderParam2
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: commonPathParam1
+        schema:
+          type: string
+        required: true
+      - in: query
+        name: commonQueryParam4
+        schema:
+          type: string
+        required: true
