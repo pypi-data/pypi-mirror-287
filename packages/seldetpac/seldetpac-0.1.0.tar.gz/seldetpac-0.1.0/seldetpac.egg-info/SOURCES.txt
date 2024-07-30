@@ -1,0 +1,11 @@
+LICENCE.txt
+README.md
+setup.py
+seldetpac/__init__.py
+seldetpac/main.py
+seldetpac/timer.py
+seldetpac.egg-info/PKG-INFO
+seldetpac.egg-info/SOURCES.txt
+seldetpac.egg-info/dependency_links.txt
+seldetpac.egg-info/entry_points.txt
+seldetpac.egg-info/top_level.txt
