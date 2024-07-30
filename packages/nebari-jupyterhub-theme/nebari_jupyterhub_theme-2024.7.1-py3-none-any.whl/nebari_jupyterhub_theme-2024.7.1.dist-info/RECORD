@@ -1,0 +1,14 @@
+nebari_jupyterhub_theme/__init__.py,sha256=1CbOlJqczjvI-sO4DvQEgsva6o9xkEHZAEqIHJD_8-4,413
+nebari_jupyterhub_theme/custom/css/AtkinsonHyperlegible-Bold.ttf,sha256=brkb2y04S_RiyNAS2GVF4VRCNUHlq-vR_LggXHZ-qeQ,54444
+nebari_jupyterhub_theme/custom/css/AtkinsonHyperlegible-Regular.ttf,sha256=ZAJJkdQs2c3cCc00nlMFy-U3sutzzQFOldoasWtKZPM,53504
+nebari_jupyterhub_theme/custom/css/Poppins-Bold.ttf,sha256=chlUfuJTNMusD-SzrPC_Yx5I67YixxrwOO2qplLGCHU,153944
+nebari_jupyterhub_theme/custom/css/Poppins-Regular.ttf,sha256=cH_cXIurV6kAYcao7Xtw1f-4L8gQ6ZTnn5C6zokMJVo,158240
+nebari_jupyterhub_theme/custom/images/Nebari-Logo-Horizontal-Lockup-White-text.svg,sha256=axwCg7ecr5gJZQQkeomACkrA0Do-5MNtlegberO-YYA,4279
+nebari_jupyterhub_theme/custom/images/Nebari-logo-square.svg,sha256=uXTLq-gBUJOpJbtAD-14Blt68smpn4DkjhX6QDEw3Vg,1948
+nebari_jupyterhub_theme/templates/login.html,sha256=CuSFlP_2pEwX0TMFRmkvC-4LCf7K11SKfRafXJNOCQM,553
+nebari_jupyterhub_theme/templates/page.html,sha256=CV9FuI7DWXFub4kq7GDwLiLxVLd1_pnGd0qA_XGABH4,3090
+nebari_jupyterhub_theme/templates/style.css,sha256=uKU8EqmV4BUmqfdQY30Lg7ovQLPkehmUYNd1jGyLfxI,8629
+nebari_jupyterhub_theme-2024.7.1.dist-info/METADATA,sha256=3CZqHCQzF8Q5uu-ydTr__0SIJmuz-r9i0SVVKHeVwNg,13704
+nebari_jupyterhub_theme-2024.7.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+nebari_jupyterhub_theme-2024.7.1.dist-info/licenses/LICENSE,sha256=zYdYAkmKBhe6rCs61nRBp8NkUYrzBiolU3NyzzxoGgg,1536
+nebari_jupyterhub_theme-2024.7.1.dist-info/RECORD,,
