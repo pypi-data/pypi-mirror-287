@@ -1,0 +1,7 @@
+caen
+common
+dtacq
+gf
+keysight
+lecroy
+princeton_instruments

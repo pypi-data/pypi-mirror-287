@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: pygfdrivers
+Version: 0.1
+Description-Content-Type: text/markdown
+
+# gf_daq_drivers
+Custom GF Python drivers for Keysight, Teledyne LeCroy, CAEN and DtAcq devices
