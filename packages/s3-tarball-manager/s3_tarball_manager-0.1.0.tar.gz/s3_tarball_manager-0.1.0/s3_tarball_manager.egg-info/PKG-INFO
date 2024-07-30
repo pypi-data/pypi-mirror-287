@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: s3-tarball-manager
+Version: 0.1.0
+Summary: A Python library to manage tarballs in S3
+Home-page: https://github.com/LazYavuz53/s3-tarball-manager
+Author: Yavuz Kulaberoglu
+Author-email: yvauzkulaber53@hotmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: boto3

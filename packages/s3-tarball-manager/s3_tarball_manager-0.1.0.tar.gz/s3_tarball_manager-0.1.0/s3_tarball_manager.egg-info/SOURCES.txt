@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+s3_tarball_manager/__init__.py
+s3_tarball_manager/manager.py
+s3_tarball_manager.egg-info/PKG-INFO
+s3_tarball_manager.egg-info/SOURCES.txt
+s3_tarball_manager.egg-info/dependency_links.txt
+s3_tarball_manager.egg-info/requires.txt
+s3_tarball_manager.egg-info/top_level.txt
+tests/__init__.py
+tests/test_manager.py
