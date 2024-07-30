@@ -1,0 +1,5 @@
+FileOperator.py
+lsh_fileoperator.egg-info/PKG-INFO
+lsh_fileoperator.egg-info/SOURCES.txt
+lsh_fileoperator.egg-info/dependency_links.txt
+lsh_fileoperator.egg-info/top_level.txt
