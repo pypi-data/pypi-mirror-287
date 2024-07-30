@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "taresamplers"
+version = "0.0.1"
+authors = [
+  { name="Onur Babacan", email="onurbabacan@gmail.com" },
+]
+description = "Utility wrapper for torchaudio resamplers."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/babua/torchaudio-resamplers"
+Issues = "https://github.com/babua/torchaudio-resamplers/issues"
