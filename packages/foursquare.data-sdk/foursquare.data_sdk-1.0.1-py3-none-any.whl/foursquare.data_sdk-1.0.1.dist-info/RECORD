@@ -1,0 +1,17 @@
+foursquare/data_sdk/__init__.py,sha256=z6LSgHAKJDAhZwsk5G3bs8Pv1HbE9AmnS_AcubptHrw,83
+foursquare/data_sdk/__main__.py,sha256=1iapAB77EPgKPQhwckQdJwDqUtHTL8fJ5aG5jJmxExU,444
+foursquare/data_sdk/_query.py,sha256=HI8NUkpj4u1AaRJGm5PDCWqUSXwCDAXuPpZjmEcJW4A,12559
+foursquare/data_sdk/auth.py,sha256=0eP5Z7Goj5uqEOiXb3k2p7Mz0N31ZFPcQPrbFS0XEjo,6187
+foursquare/data_sdk/cli.py,sha256=tmQA_FbvtvXvPPKXuLdqMLZv47VQ_p-A_O9F7-DKPTM,22751
+foursquare/data_sdk/data_sdk.py,sha256=jak_9XcR6JMOPESsMIoZ-blPV0lZFZcZtT6U3wyABsk,53415
+foursquare/data_sdk/enums.py,sha256=SLMYGueh3UQlY1AyVsJG6S3Qk9XOJDDQ1-UQD9S4fz8,2847
+foursquare/data_sdk/environment.py,sha256=W7OYMyBXLAeRBUNHd6x1lhTJSv4g8MJPkdyBtkYLvAo,950
+foursquare/data_sdk/errors.py,sha256=1WJX4CSJBczC4WyWwGbEZJtG47nXmlLJ-pnm8XmmACQ,899
+foursquare/data_sdk/models.py,sha256=Agoul4o39Jn2m5Y_iPPWVUcz8lO03iRCZeZwUEzBgtY,10099
+foursquare/data_sdk/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+foursquare/data_sdk/types.py,sha256=gAftDBz6kdbArpheA4xCAX97-hGgyqQ-fEVLhP3kZaw,114
+foursquare/data_sdk/utils.py,sha256=ZDWJMNNUMmmwZwMb_vc4fBkVjYU2uTJoY6ehvX2I4ME,4173
+foursquare.data_sdk-1.0.1.dist-info/entry_points.txt,sha256=8MzMRH_rmZ_8zL8KQLnc1TcEv66Ncuwjn3mfcKEycAI,61
+foursquare.data_sdk-1.0.1.dist-info/WHEEL,sha256=DA86_h4QwwzGeRoz62o1svYt5kGEXpoUTuTtwzoTb30,83
+foursquare.data_sdk-1.0.1.dist-info/METADATA,sha256=NpnBKdizXZ7Mma2tA6FVWNPoCd2p_dSh6cMw7NTBeg4,1528
+foursquare.data_sdk-1.0.1.dist-info/RECORD,,
