@@ -1,0 +1,7 @@
+pyserial
+pymodbus
+unittest-xml-reporting
+
+[extra]
+PySimpleGUI~=4.60.5
+python-docx
