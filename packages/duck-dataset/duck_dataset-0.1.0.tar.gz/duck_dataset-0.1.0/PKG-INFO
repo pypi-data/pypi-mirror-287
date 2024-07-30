@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: duck-dataset
+Version: 0.1.0
+Summary: A thin wrapper for tool-spec created Duckdb datasets
+Author: Mirko Mälicke
+Author-email: mirko@hydrocode.de
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: duckdb (>=1.0.0,<2.0.0)
+Requires-Dist: pandas (>=2.2.2,<3.0.0)
+Requires-Dist: pydantic (>=2.0.0,<3.0.0)
+Requires-Dist: rioxarray (>=0.17.0,<0.18.0)
+Description-Content-Type: text/markdown
+
+# Duck Dataset
+
+This is still work in progress. Wrapper for duckdb databases that were created by the V-FOR-WaTer dataloader.
+This enables metadata detection and automatic aggregations.
