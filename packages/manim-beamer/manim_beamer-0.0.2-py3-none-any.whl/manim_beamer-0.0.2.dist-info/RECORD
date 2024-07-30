@@ -1,0 +1,10 @@
+manim_beamer/__init__.py,sha256=HvMDe_MCahV5mfHbVl0osmIrujFTuVhMMzUdKVi_fbg,132
+manim_beamer/bibtex.py,sha256=a3sreEFFbE-PTGpsrZ-OvU3HG64hNw_wnsiTeYW_yIo,5078
+manim_beamer/blocks.py,sha256=XXypkX_QW_2sj_llpishbcBoQdo8pt2m0kBxT62ygRA,7298
+manim_beamer/images.py,sha256=VgZULHj71JLRQBkoIgtfm6rq-8RuDFJv-M1bP6w32Ow,1911
+manim_beamer/lists.py,sha256=K8p3_ZwLO9se8XF5dZt29zomfe09M-oW_wQl-efk4l0,6060
+manim_beamer/slides.py,sha256=j3ydzy0qZUrexNrnEnS8K3HHtZkqognpRIWD7-COtlI,18378
+manim_beamer-0.0.2.dist-info/METADATA,sha256=naaLLWosDLW6xAUSuIxtKpQQJ87-0v5T3yhvyF_epto,2385
+manim_beamer-0.0.2.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+manim_beamer-0.0.2.dist-info/licenses/LICENSE,sha256=nEv94GEMDF4JYgNnlboBTgB45TB7sWCiInjGrHd8tvM,1078
+manim_beamer-0.0.2.dist-info/RECORD,,
