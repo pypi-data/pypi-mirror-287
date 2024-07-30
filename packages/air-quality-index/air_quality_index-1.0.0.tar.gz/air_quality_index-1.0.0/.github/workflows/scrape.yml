@@ -1,0 +1,46 @@
+name: Scrape
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'
+
+jobs:
+  scrape:
+    name: Scrape
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pipenv
+        run: pipx install pipenv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pipenv'
+
+      - id: make
+        name: Run scrape command
+        run: |
+          pipenv run python setup.py install
+          pipenv run airqualityindex air-quality > data/air-quality.geojson
+        env:
+          AIRNOW_KEYS: ${{ secrets.AIRNOW_KEYS }}
+        shell: bash
+
+      - name: Datestamp
+        run: date > data/timestamp.txt
+        shell: bash
+
+      - name: Commit results
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "actions@github.com"
+          git config pull.rebase false
+          git status
+          git pull origin $GITHUB_REF
+          git add ./data
+          git commit -m "Scrape" --author="palewire <palewire@users.noreply.github.com>" && git push || true
+        shell: bash
