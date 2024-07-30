@@ -1,0 +1,6 @@
+pep440_rs-0.6.4.dist-info/METADATA,sha256=XE1BxfOqZK-h01wjr5FPBOTuLnlcLANxkFX0lYtnS-M,2452
+pep440_rs-0.6.4.dist-info/WHEEL,sha256=KqGG27DpluHa7QZBzXqQK1eyv-Ikk5U0e2-p17kJwLI,90
+pep440_rs/__init__.py,sha256=d4AiF0jpCXHkWOQed8Ungi6MrWv4ZxtPOgRPlDcjrFE,556
+pep440_rs/__init__.pyi,sha256=IoTDsj0AarcjTuQ3YUCoETpq0hn3aNeNNy77nx3bHNo,1167
+pep440_rs/_pep440_rs.pyd,sha256=q08zCCYAqB62f4KdUmtlgE8BHWDlGMce4vJKgQE_ALw,346624
+pep440_rs-0.6.4.dist-info/RECORD,,
