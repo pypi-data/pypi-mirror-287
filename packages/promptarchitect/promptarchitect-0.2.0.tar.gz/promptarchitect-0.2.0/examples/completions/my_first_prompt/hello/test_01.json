@@ -1,0 +1,56 @@
+{
+    "test_id": "test_01",
+    "test_prompt": "Controleer of de titels in de lijst in \"normal casing\" zijn geschreven. Dit betekent dat alleen het eerste woord van de titel en eventuele eigennamen of acroniemen met een hoofdletter beginnen. Woorden na een dubbele punt hoeven geen hoofdletter te hebben, tenzij het eigen namen of acroniemen betreft. Antwoord met JA/NEE of alle titels correct zijn geschreven volgens dit principe. Indien NEE, leg uit waarom niet.",
+    "test_completion": "NEE\n\nHier is de uitleg:\n\n1. **\"AI Unpacked: MLOps, Models & Meaning\"** - \"Models\" en \"Meaning\" zouden met een kleine letter moeten beginnen, omdat ze geen eigennamen zijn en volgen op een dubbele punt.\n   \n2. **\"Decoding AI: Insights into MLOps and Explainable Intelligence\"** - \"Insights\" zou met een kleine letter moeten beginnen, om dezelfde reden als hierboven.\n\n3. **\"The Business of AI: Navigating MLOps and Large Language Models\"** - \"Navigating\" zou met een kleine letter moeten beginnen.\n\n4. **\"Empowering Decisions: The MLOps and Explainable AI Podcast\"** - \"The\" zou met een kleine letter moeten beginnen, omdat het geen eigenaam is en volgt op een dubbele punt.\n\n5. **\"AI in Action: Bridging Technology and Business with Explainable Models\"** - \"Bridging\" zou met een kleine letter moeten beginnen.\n\nDus, de titels zijn niet correct geschreven volgens de \"normal casing\" regels.",
+    "passed": false,
+    "completion": {
+        "system_role": "Je bent een prompt tester.",
+        "model": "gpt-4o-mini",
+        "parameters": {
+            "temperature": 0.2
+        },
+        "cost": 0.00017084999999999998,
+        "is_json": false,
+        "test_path": "",
+        "response_message": "NEE\n\nHier is de uitleg:\n\n1. **\"AI Unpacked: MLOps, Models & Meaning\"** - \"Models\" en \"Meaning\" zouden met een kleine letter moeten beginnen, omdat ze geen eigennamen zijn en volgen op een dubbele punt.\n   \n2. **\"Decoding AI: Insights into MLOps and Explainable Intelligence\"** - \"Insights\" zou met een kleine letter moeten beginnen, om dezelfde reden als hierboven.\n\n3. **\"The Business of AI: Navigating MLOps and Large Language Models\"** - \"Navigating\" zou met een kleine letter moeten beginnen.\n\n4. **\"Empowering Decisions: The MLOps and Explainable AI Podcast\"** - \"The\" zou met een kleine letter moeten beginnen, omdat het geen eigenaam is en volgt op een dubbele punt.\n\n5. **\"AI in Action: Bridging Technology and Business with Explainable Models\"** - \"Bridging\" zou met een kleine letter moeten beginnen.\n\nDus, de titels zijn niet correct geschreven volgens de \"normal casing\" regels.",
+        "latency": 3.915818416979164,
+        "completion_type": "OpenAICompletion"
+    },
+    "engineered_prompt": {
+        "prompt_file_path": "examples/prompts/my_first_prompt.prompt",
+        "output_path": "examples/completions/my_first_prompt/hello",
+        "input_file": "examples/tests/hello_world/hello.txt",
+        "input_text": "",
+        "latency": 3.6112229580176063,
+        "cost": 0.00010065,
+        "errors": {
+            "errors": [],
+            "duplicates": 0
+        },
+        "completion": {
+            "system_role": "You are a helpful assistant.",
+            "model": "gpt-4o-mini",
+            "parameters": {
+                "model": "gpt-4o-mini",
+                "prompt_version": "1.0",
+                "temperature": "0.9",
+                "input": "examples/inputs/hello_world/hello.txt",
+                "output": "examples/outputs/title.txt",
+                "topic": "examples/outputs/title",
+                "test_path": "examples/tests/hello_world"
+            },
+            "cost": 0.00010065,
+            "is_json": false,
+            "test_path": "",
+            "response_message": "Hier zijn vijf titels voor een AI-podcast die zich richt op MLOps, Explainable AI en Large Language Models, gericht op zakelijke professionals met een IT-achtergrond:\n\n1. **\"AI Unpacked: MLOps, Models & Meaning\"**\n2. **\"Decoding AI: Insights into MLOps and Explainable Intelligence\"**\n3. **\"The Business of AI: Navigating MLOps and Large Language Models\"**\n4. **\"Empowering Decisions: The MLOps and Explainable AI Podcast\"**\n5. **\"AI in Action: Bridging Technology and Business with Explainable Models\"**\n\nDeze titels zijn ontworpen om zowel de technische als de zakelijke aspecten van AI te benadrukken.",
+            "latency": 3.6112229580176063
+        },
+        "completion_type": "OpenAICompletion",
+        "response_message": "Hier zijn vijf titels voor een AI-podcast die zich richt op MLOps, Explainable AI en Large Language Models, gericht op zakelijke professionals met een IT-achtergrond:\n\n1. **\"AI Unpacked: MLOps, Models & Meaning\"**\n2. **\"Decoding AI: Insights into MLOps and Explainable Intelligence\"**\n3. **\"The Business of AI: Navigating MLOps and Large Language Models\"**\n4. **\"Empowering Decisions: The MLOps and Explainable AI Podcast\"**\n5. **\"AI in Action: Bridging Technology and Business with Explainable Models\"**\n\nDeze titels zijn ontworpen om zowel de technische als de zakelijke aspecten van AI te benadrukken."
+    },
+    "last_run": "2024-07-29 14:58:06",
+    "errors": {
+        "errors": [],
+        "duplicates": 0
+    }
+}
