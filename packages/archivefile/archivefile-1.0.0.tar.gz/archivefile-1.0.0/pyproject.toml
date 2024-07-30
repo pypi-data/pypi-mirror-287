@@ -1,0 +1,93 @@
+[tool.poetry]
+name = "archivefile"
+version = "1.0.0"
+description = "Unified interface for tar, zip, sevenzip, and rar files"
+authors = ["Ravencentric <me@ravencentric.cc>"]
+readme = "README.md"
+license = "Unlicense"
+packages = [{ include = "archivefile", from = "src" }]
+keywords = [
+    "archive",
+    "archivefile",
+    "zipfile",
+    "tarfile",
+    "sevenzip",
+    "rarfile",
+]
+homepage = "https://archivefile.ravencentric.cc"
+repository = "https://github.com/Ravencentric/archivefile"
+documentation = "https://archivefile.ravencentric.cc"
+classifiers = [
+    "License :: OSI Approved :: The Unlicense (Unlicense)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Archiving",
+    "Topic :: System :: Archiving :: Compression",
+    "Typing :: Typed",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+rarfile = ">=4.2"
+py7zr = ">=0.21.1"
+pydantic = ">=2.8.2"
+typing-extensions = ">=4.12.2"
+rich = { version = ">=13.7.1", optional = true }
+bigtree = { version = ">=0.19.3", optional = true }
+
+[tool.poetry.extras]
+bigtree = ["bigtree"]
+rich = ["rich"]
+all = ["bigtree", "rich"]
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.11.0"
+ruff = "^0.5.5"
+pytest = "^8.3.2"
+coverage = "^7.6.0"
+pre-commit = "^3.8.0"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs-material = "^9.5.30"
+mkdocstrings = { extras = ["python"], version = "^0.25.1" }
+mkdocs-autorefs = "^1.0.1"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+extend-select = ["I"]
+fixable = ["ALL"]
+
+[tool.mypy]
+strict = true
+pretty = true
+
+[[tool.mypy.overrides]]
+module = ["rarfile"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+filterwarnings = ["ignore::DeprecationWarning:tarfile"]
+
+[tool.coverage.run]
+omit = [
+    "src/archivefile/_version.py",
+    "tests/*",
+]
+
+[tool.coverage.report]
+exclude_also = [
+    "if TYPE_CHECKING:",         # Only used for type-hints
+    "raise NotImplementedError", # Can't test what's not implemented
+    "def print_table",           # Function pretty much calls another third party function
+    "def print_tree",            # Function pretty much calls another third party function
+    "def __repr__",              # For debugging
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
