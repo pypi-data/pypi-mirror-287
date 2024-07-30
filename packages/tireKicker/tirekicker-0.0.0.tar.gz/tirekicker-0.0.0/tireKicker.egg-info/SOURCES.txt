@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+tireKicker/__init__.py
+tireKicker/utils.py
+tireKicker.egg-info/PKG-INFO
+tireKicker.egg-info/SOURCES.txt
+tireKicker.egg-info/dependency_links.txt
+tireKicker.egg-info/requires.txt
+tireKicker.egg-info/top_level.txt

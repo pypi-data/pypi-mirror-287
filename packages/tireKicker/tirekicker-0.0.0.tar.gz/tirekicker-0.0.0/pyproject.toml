@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tireKicker"
+dynamic = ["version", "dependencies"]
+requires-python = ">= 3.12"
+authors = [
+    { name = "John Licato", email = "john@actualization.ai" },
+    { name = "Animesh Nighojkar" },
+    { name = "Joy Stevenson Boddu" },
+]
+description = "A tool for evaluating the performance of chatbots."
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["chatbot", "conversational AI", "NLP"]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: Web Environment",
+    "Intended Audience :: Information Technology",
+    "Natural Language :: English",
+    # NOTE: can add more than one
+    "Programming Language :: Python :: 3.12",
+    # "Programming Language :: Python :: 3.13",
+    "Topic :: Communications :: Chat",
+    "Topic :: Games/Entertainment :: Role-Playing",
+    "Topic :: Office/Business",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Other/Nonlisted Topic",
+]
+
+[tool.setuptools]
+packages = ["tireKicker"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[project.urls]
+Homepage = "https://actualization.ai"
+Repository = "https://github.com/Actualization-AI/tireKicker"
+Issues = "https://github.com/Actualization-AI/tireKicker/issues"
