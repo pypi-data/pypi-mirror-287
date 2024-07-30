@@ -1,0 +1,11 @@
+setup.py
+clspt/__init__.py
+clspt.egg-info/PKG-INFO
+clspt.egg-info/SOURCES.txt
+clspt.egg-info/dependency_links.txt
+clspt.egg-info/top_level.txt
+clspt/extensions/__init__.py
+clspt/extensions/failed_requests.py
+clspt/middlewares/__init__.py
+clspt/pipelines/__init__.py
+clspt/pipelines/pipeline_to_sql.py
