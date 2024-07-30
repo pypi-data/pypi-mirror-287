@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: stablediffusers
+Version: 0.1
+Summary: Stable Diffusion library.
+Home-page: https://github.com/jslegers/stablediffusers
+Author: John Slegers
+License: MIT
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: numba
+Requires-Dist: diffusers
+Requires-Dist: accelerate
+Requires-Dist: huggingface_hub
+Requires-Dist: diffusers
+Requires-Dist: transformers
+
+A convenience wrapper around the diffusers library for use with Stable Diffusion.

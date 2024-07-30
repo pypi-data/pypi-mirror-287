@@ -1,0 +1,7 @@
+torch
+numba
+diffusers
+accelerate
+huggingface_hub
+diffusers
+transformers

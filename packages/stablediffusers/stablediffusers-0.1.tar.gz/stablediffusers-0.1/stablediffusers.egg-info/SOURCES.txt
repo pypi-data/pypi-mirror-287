@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+stablediffusers/ComposableStableDiffusionXLPipeline.py
+stablediffusers/__init__.py
+stablediffusers.egg-info/PKG-INFO
+stablediffusers.egg-info/SOURCES.txt
+stablediffusers.egg-info/dependency_links.txt
+stablediffusers.egg-info/requires.txt
+stablediffusers.egg-info/top_level.txt
