@@ -1,0 +1,17 @@
+mtbp3Lab/__init__.py,sha256=gpzBIL966eB2DKdEU29CQ4bOdPYWwXF1zeYA7ai8IdA,224
+mtbp3Lab/data/test_lsr/testfolder1/testfile10,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mtbp3Lab/data/test_lsr/testfolder1/testfile11,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mtbp3Lab/data/test_lsr/testfolder1/testfile12,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mtbp3Lab/data/test_lsr/testfolder2/testfile20,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mtbp3Lab/data/test_lsr/testfolder2/testfile3,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mtbp3Lab/statlab/__init__.py,sha256=tWCF2WastP1PwTzFzvuMbSNdqmtluDV2xSbF63qeKKM,21
+mtbp3Lab/statlab/corr.py,sha256=qynyG4NZjEXFxfbjGQtaq2iA25Mfel4TCYL3HW2e_Zg,4617
+mtbp3Lab/statlab/kappa.py,sha256=7Kx8fymLBADa709ug-pI07cmKmZz9syi2YWC7yU4Q9E,14153
+mtbp3Lab/util/__init__.py,sha256=lLnfd86TWtcnJ2G9hwq55lrM6fDHiPTDral85UIaHyM,189
+mtbp3Lab/util/cdt.py,sha256=AiDbgRDc66xq55X_HVwsFeSUywzeYaVG1PDqmK0cGz8,14827
+mtbp3Lab/util/cdtg.py,sha256=JTFFJA-gXrOVdOkv0CxsCQE2LS1XoQ3Ni3YR6LKvpf0,17352
+mtbp3Lab/util/lsr.py,sha256=h_quT-SxuKpeRUSR2ZQ1werNuvHivNvzOR1sakrYXUg,11883
+mtbp3lab-0.1.1.dist-info/LICENSE,sha256=W6tWaP6lQAHSSUjl4SjXv1Ge3HPPc0CsPwJzih6lkWU,35107
+mtbp3lab-0.1.1.dist-info/METADATA,sha256=EUJkFH6SBWoHMAGTRJFY19_IBlni5GVlnpTfTOgnJis,2816
+mtbp3lab-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+mtbp3lab-0.1.1.dist-info/RECORD,,
