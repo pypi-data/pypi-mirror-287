@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: miqc_py
+Version: 0.0.1
+Summary: Python implementation of miQC method
+Author-email: Mark Keller <mark_keller@hms.harvard.edu>
+Project-URL: repository, https://github.com/keller-mark/miqc-py
+Keywords: single-cell,quality-control,scverse
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: anndata <0.11,>=0.7.8
+Requires-Dist: scanpy >=1.9.3
+Requires-Dist: stepmix ==2.2.1
+Provides-Extra: dev
+Requires-Dist: build ==0.1.0 ; extra == 'dev'
+Requires-Dist: pytest >=6.2.4 ; extra == 'dev'
+Requires-Dist: flake8 ==3.8.4 ; extra == 'dev'
+
+# miqc-py
+
+Python implementation of [miQC](https://github.com/greenelab/miQC) ([paper](https://doi.org/10.1371/journal.pcbi.1009290)).
+
+## Installation
+
+```sh
+pip install miqc_py
+```
+
+## Usage
+
+Usage follows the scverse API conventions.
+Parameter names follow the R implementation of `miQC`.
+
+```python
+import miqc_py
+
+# ...
+
+miqc_py.calculate_miqc(adata)
+miqc_py.filter_cells(adata)
+```
+
+### Plotting
+
+Optionally, we can plot the results with `altair` (not a dependency of `miqc_py` - may need to install first).
+
+```python
+import altair as alt
+
+alt.Chart(adata.obs).mark_circle().encode(
+    x="total_genes_by_counts:Q",
+    y="pct_counts_mito:Q",
+    color="prob_compromised:Q"
+)
+```
+
+
+## Development
+
+```sh
+conda env create -f environment.yml
+conda activate miqc-py
+```
+
+```sh
+jupyter lab
+```
