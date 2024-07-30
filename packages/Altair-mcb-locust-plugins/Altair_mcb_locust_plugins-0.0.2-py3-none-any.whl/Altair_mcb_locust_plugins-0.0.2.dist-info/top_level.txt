@@ -1,0 +1,5 @@
+locust_plugins/dashboards/locust-grafana
+locust_plugins/dashboards/locust-timescale
+locust_plugins/dashboards/screenshots
+locust_plugins/listeners
+locust_plugins/users
