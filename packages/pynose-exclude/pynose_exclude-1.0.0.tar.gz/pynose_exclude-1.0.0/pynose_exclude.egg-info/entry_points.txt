@@ -1,0 +1,2 @@
+[pynose.plugins]
+pynose_exclude = pynose_exclude:PynoseExclude
