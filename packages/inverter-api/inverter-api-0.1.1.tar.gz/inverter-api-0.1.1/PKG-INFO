@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: inverter_api
+Version: 0.1.1
+Summary: A standalone API to collect data from the Imeon Energy Inverters. Uses HTTP POST/GET.
+License: MIT
+Author-email: Rodrigue Lemaire <developpement@imeon-energy.com>
+Requires-Python: >=3.11
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+
+# Imeon Inverter Standalone API
