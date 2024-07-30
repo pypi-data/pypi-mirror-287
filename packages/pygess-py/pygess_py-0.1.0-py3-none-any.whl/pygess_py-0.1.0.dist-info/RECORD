@@ -1,0 +1,8 @@
+pygess/__init__.py,sha256=OUF-EtREiTgdtHlw4iPednWYjJhbrBX_D0P2qYtctmk,60
+pygess/colors.py,sha256=kEC_9PsEHEepJYeV5Fg0OgRDG80-vnPcbnDaWLB72FI,100
+pygess/data.py,sha256=TSv37hM0JUQxFAO1OiSjPY8911ShKH_DMBJ63nq6yWY,14
+pygess/entity.py,sha256=H-E3Wk8CjFjJM7wVxB_UW74W2WLl4vVMcJhdjFX8WHY,4572
+pygess_py-0.1.0.dist-info/METADATA,sha256=7wHo0cAk5jaii2VvNcwwUQpGvpvDimhQE-5vO6phGI8,574
+pygess_py-0.1.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+pygess_py-0.1.0.dist-info/top_level.txt,sha256=qgcmXLhj-8djb7ArbJ_PUXNbjsK2FkVE3TlqgTeSvZY,7
+pygess_py-0.1.0.dist-info/RECORD,,
