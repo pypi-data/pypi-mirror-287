@@ -1,0 +1,11 @@
+LICENCE.txt
+README.md
+setup.py
+delshice2/__init__.py
+delshice2/main.py
+delshice2/timer.py
+delshice2.egg-info/PKG-INFO
+delshice2.egg-info/SOURCES.txt
+delshice2.egg-info/dependency_links.txt
+delshice2.egg-info/entry_points.txt
+delshice2.egg-info/top_level.txt
