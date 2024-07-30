@@ -1,0 +1,9 @@
+numpy
+scipy
+matplotlib
+astropy
+specutils
+tqdm
+pandas
+bokeh
+python-dotenv
