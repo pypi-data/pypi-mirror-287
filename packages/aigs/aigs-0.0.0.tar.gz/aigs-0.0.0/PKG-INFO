@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: aigs
+Version: 0.0.0
+Summary: 
+Author: Noah Syrkis
+Author-email: noah@syrkis.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: parabellum (>=0.2.20,<0.3.0)
+Description-Content-Type: text/markdown
+
+
