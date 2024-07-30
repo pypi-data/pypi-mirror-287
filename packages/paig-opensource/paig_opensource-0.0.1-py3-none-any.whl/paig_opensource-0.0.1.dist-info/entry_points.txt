@@ -1,0 +1,4 @@
+[console_scripts]
+paig = paig.__main__:main
+paig-opensource = paig.__main__:main
+paig_opensource = paig.__main__:main
