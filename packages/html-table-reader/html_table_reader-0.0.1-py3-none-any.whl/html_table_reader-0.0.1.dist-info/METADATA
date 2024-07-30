@@ -1,0 +1,24 @@
+Metadata-Version: 2.3
+Name: html_table_reader
+Version: 0.0.1
+Summary: A simple program that extracts tables from html
+Project-URL: Homepage, https://github.com/pypa/html-table-reader
+Project-URL: Issues, https://github.com/pypa/html-table-reader/issues
+Author-email: Jonatan Rodrigues da Silva <jonatanjrss@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.11.2
+Description-Content-Type: text/markdown
+
+# HTML Table Reader
+
+
+## Como usar
+
+```python
+from html_table_reader.parser_html import extract_table
+
+extract_table(content='<html></html>')
+```
