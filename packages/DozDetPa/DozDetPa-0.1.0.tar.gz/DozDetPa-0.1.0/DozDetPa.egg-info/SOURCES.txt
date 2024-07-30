@@ -1,0 +1,11 @@
+LICENCE.txt
+README.md
+setup.py
+DozDetPa/__init__.py
+DozDetPa/main.py
+DozDetPa/timer.py
+DozDetPa.egg-info/PKG-INFO
+DozDetPa.egg-info/SOURCES.txt
+DozDetPa.egg-info/dependency_links.txt
+DozDetPa.egg-info/entry_points.txt
+DozDetPa.egg-info/top_level.txt
