@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: euclidean_hausdorff
+Version: 0.1.1
+Summary: package for effienct computation of euclidean hausdorff distance
+Home-page: http://pypi.python.org/pypi/euclidean-hausdorff/
+Author: Blake Cecil
+Author-email: Vladyslav Oles <vlad.oles@proton.me>
+License: LICENSE
+Project-URL: Homepage, https://github.com/bcecil2/euclidean_hausdorff
+Project-URL: Issues, https://github.com/bcecil2/euclidean_hausdorff/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: scipy>=1.12.0
+Requires-Dist: sortedcontainers>=2.4.0
+Requires-Dist: tqdm>=4.66.4
+Requires-Dist: numpy>=1.26.4
+
+# Approximate Euclidean Hausdorff Distance
