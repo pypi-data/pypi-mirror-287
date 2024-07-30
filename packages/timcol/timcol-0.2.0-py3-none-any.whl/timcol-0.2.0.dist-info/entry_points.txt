@@ -1,0 +1,2 @@
+[console_scripts]
+timcol = timcol.tool.main:main
