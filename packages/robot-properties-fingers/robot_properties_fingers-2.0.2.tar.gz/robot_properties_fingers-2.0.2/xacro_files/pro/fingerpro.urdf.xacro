@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<robot name="fingerpro" xmlns:xacro="https://ei.is.tuebingen.mpg.de/xacro">
+    <!--
+    Frames are defined such that they all align with the base frame when all
+    joints are at position zero.
+
+    In zero-configuration the origins of all joints are in one line.
+
+    In zero-configuration the origin of the base link is exactly above the
+    finger tip which should make it easy to place the finger in the world.
+    -->
+
+    <xacro:include filename="fingerpro_macro.xacro" />
+
+    <!--
+    Simply calling the "finger" macro (without passing any suffix) implies a call for single finger.
+    The parameters are automatically set inside the finger_macro file, to accomodate for single finger.
+    -->
+    <xacro:fingerpro />
+
+    <!--
+    Define the global base link and place the finger relative to it.
+    Note: Here I've used the center point of the center piece as the origin 
+    -->
+
+    <link name="base_link">
+        <!-- add inertial to suppress warning -->
+        <inertial>
+            <mass value="0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <link name="center_link">
+        <xacro:add_geometry
+            rpy="0 0 0"
+            xyz="0 0 0"
+            mesh_file="${center_link_mesh}"
+            mesh_scale="1."
+            material="fingerpro_shell"/>
+        <xacro:add_inertia
+            length_x="0.005"
+            length_y="0.005"
+            length_z="0.005"
+            mass="1"
+            com="0 0 0"/>
+    </link>
+
+    <joint name="base_to_center_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="center_link"/>
+        <origin xyz="0 0 0.29"/>
+    </joint>
+
+    <joint name="base_to_finger" type="fixed">
+        <parent link="center_link"/>
+        <child link="finger_base_link"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+</robot>

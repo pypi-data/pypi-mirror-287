@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<robot name="stage" xmlns:xacro="https://ei.is.tuebingen.mpg.de/xacro">
+
+    <xacro:include filename="macros.xacro" />
+
+    <material name="stage_material">
+        <color rgba="0.8 0.8 0.8 1.0" />
+    </material>
+
+    <!-- Meshes -->
+    <xacro:property name="mesh_dir" value="package://robot_properties_fingers/meshes"/>
+
+    <xacro:property name="stage_mesh" value="${mesh_dir}/Stage_simplified.stl"/>
+
+    <!-- add the "stage" -->
+    <link name="stage_link">
+        <xacro:add_geometry
+            rpy="0 0 0"
+            xyz="0 0 0"
+            mesh_file="${stage_mesh}"
+            material="stage_material" />
+        <xacro:add_inertia
+            length_x="0.3"
+            length_y="0.3"
+            length_z="0.05"
+            mass="1"
+            com="0 0 0"/>
+    </link>
+
+</robot>

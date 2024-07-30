@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<robot name="finger_with_stage"
+    xmlns:xacro="https://ei.is.tuebingen.mpg.de/xacro">
+
+    <xacro:include filename="finger.urdf.xacro" />
+    <xacro:include filename="stage.urdf.xacro" />
+
+    <!-- Place the stage relative to the global base link. -->
+
+    <joint name="base_to_stage" type="fixed">
+        <parent link="base_link"/>
+        <child link="stage_link"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+</robot>
