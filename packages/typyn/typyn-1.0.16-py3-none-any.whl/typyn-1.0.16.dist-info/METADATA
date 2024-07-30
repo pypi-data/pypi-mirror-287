@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: typyn
+Version: 1.0.16
+Summary: A terminal-based typing game built in Python
+Home-page: https://github.com/san-fernandez/typyn
+Author: Santiago Fernández
+Author-email: santifernandezok1@gmail.com
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Games/Entertainment
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typer
+Requires-Dist: windows-curses
+Requires-Dist: toml
+Requires-Dist: pyfiglet
+Requires-Dist: asciichartpy
+Requires-Dist: asciimatics
+
+# typyn
+
+Typyn is a terminal-based typing game built in Python.
+
+## Features
+
+- Improve your typing speed and accuracy with engaging gameplay.
+- Customizable difficulty levels to suit beginners and experts alike.
+- Score tracking to monitor your progress over time.
+- Beautiful and intuitive user interface.
+
+## Installation
+
+To install TyPyn, simply use pip:
+
+```bash
+pip install typyn
