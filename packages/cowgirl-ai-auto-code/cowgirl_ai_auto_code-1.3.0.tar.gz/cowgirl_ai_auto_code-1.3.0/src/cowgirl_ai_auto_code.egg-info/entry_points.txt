@@ -1,0 +1,5 @@
+[console_scripts]
+back_end = cli.back_end:main
+cowgirl-ai-auto-code = cli.main:main
+front_end = cli.front_end:main
+qa = cli.qa:main
