@@ -1,0 +1,1 @@
+This is a package created for testing purposes. Don't install it.
