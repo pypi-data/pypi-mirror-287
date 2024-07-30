@@ -1,0 +1,17 @@
+hyperstack/__init__.py,sha256=3P8-c8QZlfSvkh4CSUqXnMCkG3Vy5VRS9F2LZLmWPVc,2445
+hyperstack/api/__init__.py,sha256=lo6bjkHrDoW53tjHowQYuZWqqb5MCvGQ_9P7R00bYcU,268
+hyperstack/api/environments.py,sha256=rc0zloyj5bSi96jaPTNRvSE_seHlvH_Yt6ki40kTaN0,2006
+hyperstack/api/flavors.py,sha256=G-JTYUxUvqQMw0NfpVCZQ7RqhNplZYrp9yBv34glanE,1062
+hyperstack/api/images.py,sha256=xElJD183qUAPRG8o9w5VhkKzJ67a81CqZvndifKmTZc,1059
+hyperstack/api/network.py,sha256=jXp2vnzi6qZFG1lWMjCmuTAB3q5aNKzRLRfBdcj6DxM,1662
+hyperstack/api/profiles.py,sha256=j-Xhgdo2S9S20YybdiAXKldAwqJCxa13KTo7UlSs4Bo,2693
+hyperstack/api/regions.py,sha256=wTwUx1LkYrF8mdrI3husVBEtU85oFmSFl8bvO5NUTLA,1463
+hyperstack/api/stock.py,sha256=U2BohTcgPkVION-TMuYwIzkhP4ZtlE2AWE-Y7-bdwxY,176
+hyperstack/api/virtual_machines.py,sha256=1Qzpkdg0sEGcUBMjS56AUy1R7qJDzbPnSa1YxR2Ny64,3144
+hyperstack/api/volumes.py,sha256=L8yjl7ei3JD8nCCWXw03kYQyd3juzFBTukuodiitnwg,2038
+hyperstack/client.py,sha256=FJ3rhQY4eSxx7sYXqY6Ux7Qnupi7Sp7dAO9Lax12qGY,4332
+hyperstack/deploy.py,sha256=FCY0zpNrdU4mwiuP3S5Wy9IlXuF_0jyO1E3WtQd3ld8,5902
+hyperstack-0.2.4.dist-info/LICENSE,sha256=pBdoYiJZ7CLIvdAwRciEpwD6F4RPxA1yokkhSx_VPHQ,11338
+hyperstack-0.2.4.dist-info/METADATA,sha256=WRxw4xyT0jzUCHUREq_nCa0wlFqhq4jAXb9OKK4GSbY,3031
+hyperstack-0.2.4.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+hyperstack-0.2.4.dist-info/RECORD,,
