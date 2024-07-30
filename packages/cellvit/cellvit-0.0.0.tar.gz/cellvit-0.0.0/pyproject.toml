@@ -1,0 +1,7 @@
+[project]
+name = "cellvit"
+authors = [
+    {name = "Fabian Hoerst", email = "fabian.hoerst@uk-essen.de"},
+]
+version = "0.0.0"
+description = "Coming soon"
