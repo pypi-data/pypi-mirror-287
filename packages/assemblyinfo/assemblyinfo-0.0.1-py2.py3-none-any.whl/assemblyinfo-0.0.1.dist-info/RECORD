@@ -1,0 +1,15 @@
+assemblyinfo/__init__.py,sha256=F5q5p4P4iB2_hozjrUGOsCTzOwxpUE-n02YDDsxpyC4,436
+assemblyinfo/interface.py,sha256=eFd2frJNo8zSN5C50fRLnp8-IHU5WppF5Pi9suLvl00,687
+assemblyinfo/build/build.py,sha256=TFSYzc512DjM4t2MLoOot7la3KdQVjUvgNt4dZKKRzA,15255
+assemblyinfo/build/schema.py,sha256=fpS7vGhqM0hz19myCTAK4RiRslHRuQQkh9wfBCgy56k,2281
+assemblyinfo/core/__init__.py,sha256=S6b9sC9i43G-KeuCBexzQY6UB9FVKAB2y4ivg6j7SHY,1153
+assemblyinfo/core/acc.py,sha256=XJcH2ST05Nqv_c7EjBTjKlD1YILGtQPskqaYplcxtao,4156
+assemblyinfo/core/assembly.py,sha256=HgMyjrgSqiehKI7D2GCCrXXi5GGWgB9nXAGZlu1Poek,2560
+assemblyinfo/core/chrom.py,sha256=0BPuR1XPDvzFnli2mTC-cBLyTj9z7wODJLd9wo_cVmg,7580
+assemblyinfo/core/info.py,sha256=evhMw3xjzU0JgdsjYyySdjIrumpy2BNpQmKJqCz28E0,13039
+assemblyinfo/data/db.parquet,sha256=2w_q2-gqSROdyj9uryID2j00IFrc_8wqVpfa7fBXgsA,3700818
+assemblyinfo/data/init_db.tsv,sha256=v456Mw6rguKaNPFtNJGBHDuxXfwS_V9q8FGhzZvgGi4,3196
+assemblyinfo-0.0.1.dist-info/METADATA,sha256=E16y_SNeTQOvwuaeM2P4qothecLGHyYkdgRVGRmJNbQ,1666
+assemblyinfo-0.0.1.dist-info/WHEEL,sha256=fl6v0VwpzfGBVsGtkAkhILUlJxROXbA3HvRL6Fe3140,105
+assemblyinfo-0.0.1.dist-info/licenses/LICENSE,sha256=4rTfS4CRLsikyPuZVfMTNhUfBohNS8J3J2JFioksg3w,1084
+assemblyinfo-0.0.1.dist-info/RECORD,,
