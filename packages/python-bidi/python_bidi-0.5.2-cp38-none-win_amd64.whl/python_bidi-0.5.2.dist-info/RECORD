@@ -1,0 +1,11 @@
+python_bidi-0.5.2.dist-info/METADATA,sha256=IVQMuH2TQUD_C-iZtp2urPXn4aGk3YEvWYciV88s564,3844
+python_bidi-0.5.2.dist-info/WHEEL,sha256=-guPU4lo10KD1AzVI_4ZU9dzpXKpVXntHq12iPmG5yE,94
+python_bidi-0.5.2.dist-info/entry_points.txt,sha256=fKg6wpl-KCrSMw2G4Rqe9M0lejFXTQpa_J8NfynWdk4,35
+python_bidi-0.5.2.dist-info/license_files/LICENSE-THIRD-PARTY.yml,sha256=gkTdP-xXdGMpIswVk6H24ST_D8POAQ7odL7CZA7oOaU,2924
+python_bidi-0.5.2.dist-info/license_files/COPYING,sha256=Czg9WmPaZE9ijZnDOXbqZIftiaqlnwsyV5kt6sEXHms,35821
+python_bidi-0.5.2.dist-info/license_files/COPYING.LESSER,sha256=6n0EnHcF3BOvwgLdGOGCfzSE-CEv0_p7gvxKDDY0Msk,7816
+python_bidi-0.5.2.dist-info/license_files/AUTHORS.rst,sha256=-yDBjSBsqU_dPPvRVvXSy-cm12BWGEWJYTICsVbQg4E,303
+bidi/algorithm.py,sha256=Fz3fW5ZnpUKcSnJgivU9rQ8Svfz25tVHfseDFhbs5fA,1189
+bidi/__init__.py,sha256=xh7mN1gp8361W6Mdf6Cer2b4uEfMsRsPuunbvnSLzc4,2241
+bidi/bidi.cp38-win_amd64.pyd,sha256=5QupgW6P7mCUOV6MNi2dNHL-Madewmn-nYzcGvzcoSY,268288
+python_bidi-0.5.2.dist-info/RECORD,,
