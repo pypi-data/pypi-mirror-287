@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hatch-pyz"
+dynamic = ["version"]
+description = "Hatch plugin for building python zip applications"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["hatch", "pyz", "plugin"]
+authors = [{ name = "Daniel Copley", email = "djcopley@proton.me" }]
+classifiers = [
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Framework :: Hatch",
+]
+dependencies = ["hatchling"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.entry-points.hatch]
+pyz = "hatch_pyz.hooks"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build]
+sources = ["src"]
+
+[project.urls]
+Homepage = "https://github.com/djcopley/hatch-pyz"
+Repository = "https://github.com/djcopley/hatch-pyz.git"
+Issues = "https://github.com/djcopley/hatch-pyz/issues"
