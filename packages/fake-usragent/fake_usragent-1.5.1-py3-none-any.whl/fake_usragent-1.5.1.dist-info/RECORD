@@ -1,0 +1,12 @@
+fake_useragent/__init__.py,sha256=1KcgVkKe2MZQxNGRRB4gVZG83lIPchaHgzITBcFiIxI,182
+fake_useragent/errors.py,sha256=ds-R7AepfhJf-2CEu82p2VdKXx95UGieR-_EXc_1_VI,99
+fake_useragent/fake.py,sha256=aNnxY-aqQI5G0RAd3n7oBZvNaIikRFj3qPp4IqUqKiU,8536
+fake_useragent/log.py,sha256=y182BcMTIwvHHyS3gn5ZrgQuTGSNwKhD9imeQ6KJK10,56
+fake_useragent/settings.py,sha256=rQMFmQUhPnELkojQVflu7sdsois5dUJLVNeSx5g1qpY,440
+fake_useragent/utils.py,sha256=jsM5Vuo-ELUlcXJ7gPh2d5cIaob_Fq63qX_ULFGxh6A,1806
+fake_usragent-1.5.1.dist-info/AUTHORS,sha256=7ZoYrS4VpDRpPKmDJBMBYY-JzoUayI3uJAmYjzC9B1I,408
+fake_usragent-1.5.1.dist-info/LICENSE,sha256=_Ztic_IrfCnbxRYLgA-IJLdM8Ej4njmhG1wjwQ9G1pI,11350
+fake_usragent-1.5.1.dist-info/METADATA,sha256=1Igk7Lr5MikDzWvrz4nT7ZeVlb62tePb0R6u1Ccbt7g,15124
+fake_usragent-1.5.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+fake_usragent-1.5.1.dist-info/top_level.txt,sha256=E3UkMtxIGd_XibNEcmO_SqpBojSyHGs8XViImlALu-E,15
+fake_usragent-1.5.1.dist-info/RECORD,,
