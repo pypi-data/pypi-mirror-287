@@ -1,0 +1,4 @@
+.idea
+venv
+*.code-workspace
+.aider*

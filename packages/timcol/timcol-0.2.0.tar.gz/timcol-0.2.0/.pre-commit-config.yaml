@@ -1,0 +1,33 @@
+repos:
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.5.5
+  hooks:
+  - id: ruff
+    args:
+    - --fix
+  - id: ruff-format
+- repo: https://github.com/pecigonzalo/pre-commit-shfmt
+  hooks:
+  - id: shell-fmt
+    args:
+    - -i
+    - '2'
+  - id: shell-fmt-go
+  rev: v2.2.0
+- repo: https://github.com/shellcheck-py/shellcheck-py
+  rev: v0.10.0.1
+  hooks:
+  - id: shellcheck
+- repo: https://github.com/RobertCraigie/pyright-python
+  rev: v1.1.373
+  hooks:
+  - id: pyright
+- repo: https://github.com/rhysd/actionlint
+  rev: v1.7.1
+  hooks:
+  - id: actionlint
+- repo: https://github.com/python-jsonschema/check-jsonschema
+  rev: 0.29.1
+  hooks:
+  - id: check-github-workflows
+  - id: check-github-actions
