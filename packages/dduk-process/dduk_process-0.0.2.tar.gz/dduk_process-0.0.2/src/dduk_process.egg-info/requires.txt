@@ -1,0 +1,5 @@
+dduk-core
+psutil
+
+[:platform_system == "Windows"]
+pywin32
