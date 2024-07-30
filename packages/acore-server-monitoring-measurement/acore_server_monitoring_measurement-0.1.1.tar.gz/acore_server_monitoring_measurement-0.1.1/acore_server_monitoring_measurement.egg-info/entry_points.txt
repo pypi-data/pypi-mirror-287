@@ -1,0 +1,2 @@
+[console_scripts]
+acorelocalmetry = acore_server_monitoring_measurement.cli.main:run

@@ -1,0 +1,128 @@
+Metadata-Version: 2.1
+Name: acore_server_monitoring_measurement
+Version: 0.1.1
+Summary: Capture Azerothcore server monitoring measurement data.
+Home-page: https://github.com/MacHu-GWU/acore_server_monitoring_measurement-project
+Download-URL: https://pypi.python.org/pypi/acore_server_monitoring_measurement/0.1.1#downloads
+Author: Sanhe Hu
+Author-email: husanhe@gmail.com
+Maintainer: Sanhe Hu
+Maintainer-email: husanhe@email.com
+License: MIT
+Platform: Windows
+Platform: MacOS
+Platform: Unix
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.8
+License-File: LICENSE.txt
+License-File: AUTHORS.rst
+Requires-Dist: boto3<2.0.0,>=1.33.0
+Requires-Dist: acore_soap<1.0.0,>=0.2.1
+Requires-Dist: acore_server_monitoring_core<1.0.0,>=0.1.2
+Requires-Dist: acore_server_metadata<2.0.0,>=1.1.1
+Requires-Dist: psutil<6.0.0,>=5.9.8
+Requires-Dist: fire<1.0.0,>=0.5.0
+Provides-Extra: tests
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: pytest-cov; extra == "tests"
+Provides-Extra: docs
+Requires-Dist: Sphinx==5.3.0; extra == "docs"
+Requires-Dist: sphinx-jinja==2.0.2; extra == "docs"
+Requires-Dist: sphinx-copybutton==0.5.1; extra == "docs"
+Requires-Dist: sphinx-design==0.5.0; extra == "docs"
+Requires-Dist: furo==2023.03.27; extra == "docs"
+Requires-Dist: nbsphinx==0.8.12; extra == "docs"
+Requires-Dist: rstobj==1.2.1; extra == "docs"
+Requires-Dist: pygments==2.15.1; extra == "docs"
+Requires-Dist: ipython==8.10.0; extra == "docs"
+Requires-Dist: docfly==2.0.3; extra == "docs"
+
+
+.. image:: https://readthedocs.org/projects/acore-server-monitoring-measurement/badge/?version=latest
+    :target: https://acore-server-monitoring-measurement.readthedocs.io/en/latest/
+    :alt: Documentation Status
+
+.. image:: https://github.com/MacHu-GWU/acore_server_monitoring_measurement-project/actions/workflows/main.yml/badge.svg
+    :target: https://github.com/MacHu-GWU/acore_server_monitoring_measurement-project/actions?query=workflow:CI
+
+.. image:: https://codecov.io/gh/MacHu-GWU/acore_server_monitoring_measurement-project/branch/main/graph/badge.svg
+    :target: https://codecov.io/gh/MacHu-GWU/acore_server_monitoring_measurement-project
+
+.. image:: https://img.shields.io/pypi/v/acore-server-monitoring-measurement.svg
+    :target: https://pypi.python.org/pypi/acore-server-monitoring-measurement
+
+.. image:: https://img.shields.io/pypi/l/acore-server-monitoring-measurement.svg
+    :target: https://pypi.python.org/pypi/acore-server-monitoring-measurement
+
+.. image:: https://img.shields.io/pypi/pyversions/acore-server-monitoring-measurement.svg
+    :target: https://pypi.python.org/pypi/acore-server-monitoring-measurement
+
+.. image:: https://img.shields.io/badge/Release_History!--None.svg?style=social
+    :target: https://github.com/MacHu-GWU/acore_server_monitoring_measurement-project/blob/main/release-history.rst
+
+.. image:: https://img.shields.io/badge/STAR_Me_on_GitHub!--None.svg?style=social
+    :target: https://github.com/MacHu-GWU/acore_server_monitoring_measurement-project
+
+------
+
+.. image:: https://img.shields.io/badge/Link-Document-blue.svg
+    :target: https://acore-server-monitoring-measurement.readthedocs.io/en/latest/
+
+.. image:: https://img.shields.io/badge/Link-API-blue.svg
+    :target: https://acore-server-monitoring-measurement.readthedocs.io/en/latest/py-modindex.html
+
+.. image:: https://img.shields.io/badge/Link-Install-blue.svg
+    :target: `install`_
+
+.. image:: https://img.shields.io/badge/Link-GitHub-blue.svg
+    :target: https://github.com/MacHu-GWU/acore_server_monitoring_measurement-project
+
+.. image:: https://img.shields.io/badge/Link-Submit_Issue-blue.svg
+    :target: https://github.com/MacHu-GWU/acore_server_monitoring_measurement-project/issues
+
+.. image:: https://img.shields.io/badge/Link-Request_Feature-blue.svg
+    :target: https://github.com/MacHu-GWU/acore_server_monitoring_measurement-project/issues
+
+.. image:: https://img.shields.io/badge/Link-Download-blue.svg
+    :target: https://pypi.org/pypi/acore-server-monitoring-measurement#files
+
+
+Welcome to ``acore_server_monitoring_measurement`` Documentation
+==============================================================================
+.. image:: https://acore-server-monitoring-measurement.readthedocs.io/en/latest/_static/acore_server_monitoring_measurement-logo.png
+    :target: https://acore-server-monitoring-measurement.readthedocs.io/en/latest/
+
+这个 Python 库提供了对服务器监控数据的采集功能. 它有两种模式:
+
+- telemetry: 遥测. 可以从任何地方采集监控数据. 通常是把采集监控数据的代码放在 Lambda Function 上, 然后每 5 分钟运行一次既可.
+- localmetry: 本地监控数据采集, 需要将这个库安装在 EC2 游戏服务器 上, 然后的用 GNU Screen 将一个每 5 分钟采集一次数据的脚本放在后台运行既可实现监控数据的采集.
+
+
+.. _install:
+
+Install
+------------------------------------------------------------------------------
+``acore_server_monitoring_measurement`` is released on PyPI, so all you need is to:
+
+.. code-block:: console
+
+    $ pip install acore-server-monitoring-measurement
+
+To upgrade to latest version:
+
+.. code-block:: console
+
+    $ pip install --upgrade acore-server-monitoring-measurement
