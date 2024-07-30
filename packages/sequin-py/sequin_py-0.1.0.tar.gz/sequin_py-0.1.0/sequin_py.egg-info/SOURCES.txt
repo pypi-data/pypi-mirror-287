@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+sequin/__init__.py
+sequin/client.py
+sequin_py.egg-info/PKG-INFO
+sequin_py.egg-info/SOURCES.txt
+sequin_py.egg-info/dependency_links.txt
+sequin_py.egg-info/requires.txt
+sequin_py.egg-info/top_level.txt
+tests/test_client.py
