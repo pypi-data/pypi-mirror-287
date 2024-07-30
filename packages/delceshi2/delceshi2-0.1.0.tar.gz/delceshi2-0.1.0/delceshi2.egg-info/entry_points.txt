@@ -1,0 +1,2 @@
+[console_scripts]
+delceshi2 = delceshi2.main:main

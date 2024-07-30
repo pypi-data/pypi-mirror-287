@@ -1,0 +1,14 @@
+LICENCE.txt
+MANIFEST.in
+README.md
+setup.py
+delceshi2/__init__.py
+delceshi2/main.c
+delceshi2/main.pyx
+delceshi2/timer.c
+delceshi2/timer.pyx
+delceshi2.egg-info/PKG-INFO
+delceshi2.egg-info/SOURCES.txt
+delceshi2.egg-info/dependency_links.txt
+delceshi2.egg-info/entry_points.txt
+delceshi2.egg-info/top_level.txt
