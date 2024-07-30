@@ -1,0 +1,2 @@
+[console_scripts]
+rythmix = Rythmix_dot_py:main
