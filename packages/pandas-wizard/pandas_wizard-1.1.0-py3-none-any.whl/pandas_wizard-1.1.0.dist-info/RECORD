@@ -1,0 +1,11 @@
+pandaswizard/__init__.py,sha256=ye8btFUwvuXyARaOIOfR0sMJFpAsmaomGXxN0_Zc_L8,1012
+pandaswizard/aggregate.py,sha256=B87jsUxOdaChKqpNO8l1SdqB3bFqZKxs9Bu_QbosdiY,12408
+pandaswizard/window.py,sha256=wTM3d9hfYtIQrrM31MNtYPs4kb66jsJtQiIls5R5ySo,4136
+pandaswizard/wrappers.py,sha256=J_3lighNsvyATWsNkNWjQ7of5CCIRwpRlf5OI46gKKA,4911
+pandaswizard/functions/__init__.py,sha256=PSSZm7hSagQrICiwusYAruhHH3RL8YDc7jb09ADSJ9k,476
+pandaswizard/functions/collate.py,sha256=4pxRqs9IadSQmcg5Ryp5NSW4c2vs97txZb1kPwWZJzY,2407
+pandas_wizard-1.1.0.dist-info/LICENSE,sha256=2nIpTHZB4ZYJUCrbDPteL5EpIKy1QnXfkDMOfrNa0fg,1095
+pandas_wizard-1.1.0.dist-info/METADATA,sha256=p6MxtCRhwRfxY75OMFP4Pf42eIxWygAHGrhuOtjCzis,6270
+pandas_wizard-1.1.0.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+pandas_wizard-1.1.0.dist-info/top_level.txt,sha256=ogzCzst0BhSFvmtNOuA1C3VzrJq5JRqdsjXKlTt8hnE,13
+pandas_wizard-1.1.0.dist-info/RECORD,,
