@@ -1,0 +1,6 @@
+curl_fetch2py/__init__.py,sha256=e3ttblnl5R2Bji12tsKoHZqojREd95WUZ7pkUPOIZsk,59
+curl_fetch2py/api.py,sha256=ts9Wn5Kr5IhJg8PJ5lygRB6uRwWhHgJ9OiLiQJMXGds,7925
+curl_fetch2py-0.1.dist-info/METADATA,sha256=jh_5bBp3vycEh-V8X1PtXoU_OlGliEjv-BOF76hRVek,4034
+curl_fetch2py-0.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+curl_fetch2py-0.1.dist-info/top_level.txt,sha256=wmi4nY4F40GJexcXERtzWZ7amN1qLXyPPLrNJieo664,14
+curl_fetch2py-0.1.dist-info/RECORD,,
