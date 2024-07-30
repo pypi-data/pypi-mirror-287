@@ -1,0 +1,9 @@
+grad_cache_con_learning/__init__.py,sha256=cXa_UM9T7qc0ZLo-Z36I9B-V3lFUeXh2OyNckVH3CoI,80
+grad_cache_con_learning/context_managers.py,sha256=I8-Nt4pc_0hbLs7zy2cNDfdZFhjZ1gBZAuRmU2uIeI8,698
+grad_cache_con_learning/grad_cache.py,sha256=GrETB9TUnv3x4CJ9GmfWluWBrnMtqXELH-2Zhy-moiY,5994
+grad_cache_con_learning/losses.py,sha256=bDbk8RT1lhF8R6lB5PwW8zuOhjSQ3NKrBlHtagfhW7Y,8942
+grad_cache_con_learning-1.0.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+grad_cache_con_learning-1.0.0.dist-info/METADATA,sha256=sVMxZ8hx9OOYsUzYQwGKYemxWmWrfg5ExGmjXZoaPl8,5800
+grad_cache_con_learning-1.0.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+grad_cache_con_learning-1.0.0.dist-info/top_level.txt,sha256=9r4INRmY8vSUgbmilAYBrGBMIfiSw-OmalqSsCXjmg8,24
+grad_cache_con_learning-1.0.0.dist-info/RECORD,,
