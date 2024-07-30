@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: s1290166-learn
+Version: 0.1.0
+Summary: This software is being developed by Hiroyuki Matushima
+Home-page: https://github.com/uda/PAMI
+Author: Hiroyuki Matushima
+Author-email: hiroyuki0228n@gmail.com
+License: GPLv3
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+Provides-Extra: gpu
+Provides-Extra: spark
+Provides-Extra: dev
+Provides-Extra: all
+License-File: LICENSE.txt
+
+UNKNOWN
+
