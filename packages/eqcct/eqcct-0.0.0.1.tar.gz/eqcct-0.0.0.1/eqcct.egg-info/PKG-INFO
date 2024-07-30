@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: eqcct
+Version: 0.0.0.1
+Summary: EQCCT package is a production-ready EarthQuake detection and phase-picking method using the Compact Convolutional Transformer
+Home-page: https://github.com/chenyk1990/eqcct
+Author: eqcct developing team
+Author-email: chenyk2016@gmail.com
+License: MIT License
+Keywords: seismology,earthquake seismology,exploration seismology,array seismology,science,engineering,artificial intelligence,deep learning
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Requires-Python: ==3.7.16
+Provides-Extra: docs
+License-File: LICENSE
+
+Source code: https://github.com/chenyk1990/eqcct
