@@ -1,0 +1,12 @@
+LICENSE
+README.md
+msi.py
+pyproject.toml
+mcptool/__init__.py
+mcptool/__main__.py
+mcptool_py.egg-info/PKG-INFO
+mcptool_py.egg-info/SOURCES.txt
+mcptool_py.egg-info/dependency_links.txt
+mcptool_py.egg-info/entry_points.txt
+mcptool_py.egg-info/requires.txt
+mcptool_py.egg-info/top_level.txt
