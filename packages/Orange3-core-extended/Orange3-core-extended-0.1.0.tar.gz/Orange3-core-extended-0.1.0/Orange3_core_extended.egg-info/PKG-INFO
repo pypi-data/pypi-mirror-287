@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: Orange3-core-extended
+Version: 0.1.0
+Summary: A collection of widgets that expand the functionality of Orange3 base widgets
+Home-page: UNKNOWN
+License: GPLv3+
+Keywords: orange3 add-on,core-extended
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Orange3 Core Extended
+=====================
+
+A collection of widgets that expand the functionality of Orange3 widgets.
+
+Features
+--------
+#### List of key features
+
+
