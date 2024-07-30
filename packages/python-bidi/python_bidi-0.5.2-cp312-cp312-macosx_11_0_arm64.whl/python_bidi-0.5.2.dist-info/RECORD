@@ -1,0 +1,11 @@
+python_bidi-0.5.2.dist-info/METADATA,sha256=lT_cwIzrtQhb92wJFFYRBgamPOprEY4ZK0zjsC9ERVQ,3741
+python_bidi-0.5.2.dist-info/WHEEL,sha256=b1dgqR9GJBT8bsiih-7Y55_-sPGc5MG-sUXj3y2MXf0,104
+python_bidi-0.5.2.dist-info/entry_points.txt,sha256=fKg6wpl-KCrSMw2G4Rqe9M0lejFXTQpa_J8NfynWdk4,35
+python_bidi-0.5.2.dist-info/license_files/LICENSE-THIRD-PARTY.yml,sha256=m_-vgR_Q4LJD9heQvHOHN5piHdhk5h_pSqeR1DHuYU8,2846
+python_bidi-0.5.2.dist-info/license_files/COPYING,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+python_bidi-0.5.2.dist-info/license_files/COPYING.LESSER,sha256=2n6rt7r999OuXp8iOqW9we7ORaxWncIbOwN1ILRGR2g,7651
+python_bidi-0.5.2.dist-info/license_files/AUTHORS.rst,sha256=Cspar754vp3YEr_AjPCDdnolqwtlXuc3O1rwTmv1O9o,282
+bidi/algorithm.py,sha256=HzEyANSF10VP8z8eUoznoF160H3X4IW-x-5Xo5QY2JI,1145
+bidi/__init__.py,sha256=wvDnj-v4bs-15SbBnr-Yvp0s27qdYVnYol6RRnWUOMo,2157
+bidi/bidi.cpython-312-darwin.so,sha256=eCCGEvKMWrDvXzpXWeqIz4I19VkNVqPdHW2XalQ7BMo,514336
+python_bidi-0.5.2.dist-info/RECORD,,
