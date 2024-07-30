@@ -1,0 +1,5 @@
+deepops
+jinja2
+netaddr>=0.10.1
+net-inventorylib>=2.1.1
+pyyaml
