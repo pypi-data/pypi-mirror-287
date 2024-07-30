@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+include source_code/*.so
+include source_code/*.py
+include source_code/__init__.py
