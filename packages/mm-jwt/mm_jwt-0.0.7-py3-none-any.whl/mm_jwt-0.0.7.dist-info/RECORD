@@ -1,0 +1,16 @@
+mm_jwt/admin.py,sha256=p6xop1PuuDG2Uwv3G_aRfldxOfBzTRfMaoZmORVkqyU,66
+mm_jwt/apps.py,sha256=MyiDauQCwbOqL1UpEXsB_QylvfzHYdkY7YjDCMp0oGY,150
+mm_jwt/models.py,sha256=Co0cGJA9hoPSTMF1KkNzPbNdmQkUqpR0CqkD7PsIsGU,4427
+mm_jwt/permissions.py,sha256=sSDWb6ZTnWzEacnTvdDtXDW9rNy3P8A4ZP5UUCR9oGc,274
+mm_jwt/tests.py,sha256=2uDafv3Ns6f7Vy1ekUtgYxCZEi1KRyesZDTAFhYcX-E,63
+mm_jwt/urls.py,sha256=gsHJMBT6R_teIWz1AYLknjUo1E2UZLhUIJW7sfUSb3c,72
+mm_jwt/utils.py,sha256=vN0DadXnpJ7tnRmrSRErBoY95fDlk2vgFRDFh5-1TEI,727
+mm_jwt/views.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mm_jwt/migrations/0001_initial.py,sha256=dk2Gl_MTWa-lmL1nRxkyI6BuR_UpMXRxjKC44UO9a-Y,957
+mm_jwt/migrations/0002_alter_customtoken_expire_date_and_more.py,sha256=yqCgoYorCkMv0ib3skik2EMAf_vXIJX6rrpdNOn7P9c,671
+mm_jwt/migrations/0003_customtoken_created_at_alter_customtoken_expire_date.py,sha256=qkvt0YP7Ji3kOKjPwYhSob9BZ-ygy-wBRL-F6LKSsbM,771
+mm_jwt/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mm_jwt-0.0.7.dist-info/METADATA,sha256=nvHVyBnmxx2qSd2HHvlKPuNPfkf4mFU_D6HC_G-b37E,539
+mm_jwt-0.0.7.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+mm_jwt-0.0.7.dist-info/top_level.txt,sha256=YrXE9nwW1bXpKdMaiBRLQhJndz354YYkWD8afshEhkY,25
+mm_jwt-0.0.7.dist-info/RECORD,,
