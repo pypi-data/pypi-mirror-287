@@ -1,0 +1,7 @@
+include README.md
+include main.py
+include pyproject.toml
+include license.pyx
+exclude *.c
+include *.so
+include *.pyd
