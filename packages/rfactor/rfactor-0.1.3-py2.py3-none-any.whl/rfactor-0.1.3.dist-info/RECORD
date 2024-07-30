@@ -1,0 +1,12 @@
+rfactor/__init__.py,sha256=5TbGVEuSX-ot0yTlW_9tGicL5GFjAveJonowlif6UxM,1143
+rfactor/process.py,sha256=9HvhV5ys2meLF6YhMEvolFDZR0UGMRBYUYXNsE68is0,19785
+rfactor/rfactor.py,sha256=6B4Iu2ZjA9rsH9ZkCsaHro3V9LwHuMbzIHlEuv9SLX8,17433
+rfactor/valid.py,sha256=io-KF0V5QPR_-2pxj7k-iRxD8jEMwDQa-Qhu9kyp-3g,3728
+rfactor/matlab/core.m,sha256=7NzSw5e0cwnt-HqPoXsaUUQvEl0EYWdlXsYFRDmNhqk,7657
+rfactor/matlab/main.m,sha256=VDIZUpYLiBXcTB4KR9Fuo_De2g_hgHI4n7JAL2oQ0Sw,1021
+rfactor-0.1.3.dist-info/AUTHORS.rst,sha256=ZVAMIIQ4u-cpTexdCXJHYH_HqApcmAufqS4WRTAcqxk,206
+rfactor-0.1.3.dist-info/LICENSE,sha256=kByKcR04quNgzIQUkUybAOpfZQEChWIW2ZZnQsdUZLE,7454
+rfactor-0.1.3.dist-info/METADATA,sha256=d1U1lx8LKNlLuQIjEDtrBNJwd79fnBw6OwnZ9zVWDVI,5915
+rfactor-0.1.3.dist-info/WHEEL,sha256=XRxW4r1PNiVhMpP4bT9oWtu3HyndxpJ84SkubFgzp_Y,109
+rfactor-0.1.3.dist-info/top_level.txt,sha256=FKLwsREHZPSJWD0YyDs_9ipWiU0nSLDFzkh6bwEpsyA,8
+rfactor-0.1.3.dist-info/RECORD,,
