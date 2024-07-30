@@ -1,0 +1,16 @@
+geopandas
+hydra-core
+mmap_ninja
+numpy<2.0
+pyarrow
+pydantic
+pydantic-settings
+pyogrio
+rasterio
+requests
+scikit-learn
+torch>=2.0
+typer[all]
+types-requests
+bs4
+selenium
