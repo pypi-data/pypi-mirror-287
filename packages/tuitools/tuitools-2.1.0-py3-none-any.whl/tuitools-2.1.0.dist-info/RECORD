@@ -1,0 +1,16 @@
+tuitools/__init__.py,sha256=Lt6TIU811u51Lu_6eHFE4brge0vJt5nhUfyh05MvucU,398
+tuitools/aligntext.py,sha256=RwSfcCjvzyMVc0nKdTpq5QdPoEtmJtYAktgezW5kRas,467
+tuitools/cmd_run.py,sha256=TKitwXhnHtbtV8rgVecmYUCEA3bnOk-RT3T5hoamGBI,1099
+tuitools/fileoperation_assistance.py,sha256=7HE5Jzd3NVOLo8BMuG9At34PSIppdkEWFDs9HbwvBcc,590
+tuitools/formattime.py,sha256=fYgSqLaMQ3TVy8kcjjs-xl0UU0I0u5AeiCeYKYxHrH4,194
+tuitools/loading_animation.py,sha256=D5GrSCcjIBhMc-SRdN5hGL7KnzSSz2856pIHfQuF0Vc,1518
+tuitools/progressbar.py,sha256=ZcTnmeg6kmInKgz1RsTzp3ICDP4N-NevYxR0n9HvWVI,1319
+tuitools/systemresource_get.py,sha256=hFMADQn_zjnrLGz2JgU66fkFR87B6dj4R2KIlgP1wJk,1380
+tuitools/wordcolor.py,sha256=PCZvfYFRTtTChXTHDTv7m6V1JIMoZRIHBIQnIP3ohDU,366
+tuitools/wordcolor_backgrandcolor.py,sha256=UvR6dbINKfDoc9Q1-AHjlrKjphwdTVTEtOVVI3BGUUs,367
+tuitools/wordstyle.py,sha256=1J4_slieax1sNEPSjiVk8rK6V7uDZP_i5fendvuLHiQ,248
+tuitools/xml_parameter_test_examples.py,sha256=uBq9kxWIzfOl3g4EjNUrLMvzjqvcRSby6pcBk05PKAo,525
+tuitools-2.1.0.dist-info/METADATA,sha256=2LHHpVMGiVj_A3PUKztomXTscUMiHtWys-shE_7MTN0,1291
+tuitools-2.1.0.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+tuitools-2.1.0.dist-info/top_level.txt,sha256=ki97HL2JJ8uVXb4R-n-huX-e46w7fqKvVdrlzWKY4jo,9
+tuitools-2.1.0.dist-info/RECORD,,
