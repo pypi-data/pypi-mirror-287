@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: societyai
+Version: 0.1.3
+Summary: Utilities for working with Society AI Hub
+Home-page: https://docs.societyai.com
+Author: Hezi Aharon
+Author-email: hezi@societyai.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE.txt
+Requires-Dist: tqdm
+
+# societyai
+
+This Python package provides utilities for working with Society AI Hub.
+
+## Installation
+
+You can install the package using pip:
+
+```sh
+pip install societyai
