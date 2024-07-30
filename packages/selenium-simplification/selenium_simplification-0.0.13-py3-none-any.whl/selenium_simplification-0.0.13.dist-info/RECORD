@@ -1,0 +1,9 @@
+selenium_simplification/__init__.py,sha256=wHYs6dHR2iFP4osfF4zS3hE0_eXeh3bSOOf9H2SMmOA,402
+selenium_simplification/Chrome/SeleniumChrome.py,sha256=Bq2kdyLw9KwOHcO7zAsm6vjCpbr7wjBXXWRyQNaQzhQ,76525
+selenium_simplification/Firefox/SeleniumFirefox.py,sha256=SmVBGl-fOC_jTLnnDhTWUkcFvpo6dtzq5tNZQxipMzM,59883
+selenium_simplification/UndetectedChrome/UndetectedSeleniumChrome.py,sha256=WTYoxg6mjcxObwupgXF7Hk5Pbuagm6ACJ3J8UpnEMVE,69525
+selenium_simplification-0.0.13.dist-info/LICENSE,sha256=9HsmUbkMFZDTY_7eyGX6_7F-jwhNF1PxA_6J37d5YPA,1095
+selenium_simplification-0.0.13.dist-info/METADATA,sha256=RflxNEWddluji5z653FvSvm-UguHF2Ok9X_9-7y_EDw,2545
+selenium_simplification-0.0.13.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+selenium_simplification-0.0.13.dist-info/top_level.txt,sha256=h36fv8DnPPqHXotfI-qIwOwoktPam98YO6FX5k6AUUw,24
+selenium_simplification-0.0.13.dist-info/RECORD,,
