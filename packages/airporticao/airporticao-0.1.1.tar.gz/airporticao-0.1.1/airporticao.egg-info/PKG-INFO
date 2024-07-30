@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: airporticao
+Version: 0.1.1
+Summary: get details about an airport by its ICAO code
+Home-page: https://github.com/rtphokie/airporticao.git
+Author: Tony Rice
+Author-email: 05hosts_crew@icloud.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: requests-cache
+Requires-Dist: timezonefinder
+Requires-Dist: bs4
