@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+scrapy_nodriver/__init__.py
+scrapy_nodriver/_utils.py
+scrapy_nodriver/handler.py
+scrapy_nodriver/page.py
+scrapy_nodriver.egg-info/PKG-INFO
+scrapy_nodriver.egg-info/SOURCES.txt
+scrapy_nodriver.egg-info/dependency_links.txt
+scrapy_nodriver.egg-info/requires.txt
+scrapy_nodriver.egg-info/top_level.txt
