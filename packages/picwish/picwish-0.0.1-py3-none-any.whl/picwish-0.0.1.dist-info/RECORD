@@ -1,0 +1,9 @@
+picwish/__init__.py,sha256=BxR_Bk1vfPqnT1TR_NxpDwlm_B-mnrfhrcedBvpGTis,231
+picwish/errors.py,sha256=stqTaw0sg3h7aT43nEDdQ-PD1vOXTvLS0qpdJdD06pE,41
+picwish/main.py,sha256=he_Wr4yJ3LViy89wtAakMl_kfdXXG0qSNrOyaXbcOjg,5589
+picwish/signature.py,sha256=KVVadlu9ItNtiNmgU-XqJgYQx2HSC5hs8cesUocrWA0,1567
+picwish-0.0.1.dist-info/LICENSE,sha256=IQW5jsziFSuvUiM6oR1KZyKbgj97wwIU7BGL3Vwr6ZY,1081
+picwish-0.0.1.dist-info/METADATA,sha256=EHm7-Us9IcTpn6ecaTnkkOUyrX1Ff0vznXpkdZRh24I,877
+picwish-0.0.1.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+picwish-0.0.1.dist-info/top_level.txt,sha256=LEwaa9lGsUTZWPMqb2v14amRSCZ6EuwFrc2XjFXYXPU,8
+picwish-0.0.1.dist-info/RECORD,,
