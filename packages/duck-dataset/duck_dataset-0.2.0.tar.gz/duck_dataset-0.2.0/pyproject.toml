@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "duck-dataset"
+version = "0.2.0"
+description = "A thin wrapper for tool-spec created Duckdb datasets"
+authors = ["Mirko Mälicke <mirko@hydrocode.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+duckdb = "^1.0.0"
+pydantic = "^2.0.0"
+pandas = "^2.2.2"
+rioxarray = "^0.17.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
