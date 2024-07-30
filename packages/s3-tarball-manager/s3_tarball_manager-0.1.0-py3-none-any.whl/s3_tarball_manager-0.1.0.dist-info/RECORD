@@ -1,0 +1,9 @@
+s3_tarball_manager/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+s3_tarball_manager/manager.py,sha256=Toh3_VMTQtHNihui4SyxpvFt5zOJoqEvmz1nLMGuNus,5967
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_manager.py,sha256=kRBV1qNKyY0ocJvCmjih4tZnmwldLDyuofRb2RcyF_s,3050
+s3_tarball_manager-0.1.0.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+s3_tarball_manager-0.1.0.dist-info/METADATA,sha256=5viANJSmZkBFGKv6d0ckjYg_pgQcubUCdenxbgHAICI,493
+s3_tarball_manager-0.1.0.dist-info/WHEEL,sha256=mguMlWGMX-VHnMpKOjjQidIo1ssRlCFu4a4mBpz1s2M,91
+s3_tarball_manager-0.1.0.dist-info/top_level.txt,sha256=YP3EL6j8MqcwvlPjl26S8NQf4cCUPkM5tbOnDPUrugY,25
+s3_tarball_manager-0.1.0.dist-info/RECORD,,
