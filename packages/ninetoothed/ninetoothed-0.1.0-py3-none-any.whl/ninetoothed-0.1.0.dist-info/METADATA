@@ -1,0 +1,19 @@
+Metadata-Version: 2.3
+Name: ninetoothed
+Version: 0.1.0
+Summary: A domain-specific language based on Triton but providing higher-level abstraction.
+Project-URL: Homepage, https://github.com/InfiniTensor/ninetoothed
+Project-URL: Issues, https://github.com/InfiniTensor/ninetoothed/issues
+Author-email: Jiacheng Huang <huangjiacheng0709@outlook.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Nine-Toothed
+
+A domain-specific language based on Triton but providing higher-level abstraction.
+
+**Read this in other languages: [English](README.md), [简体中文](docs/README.zh.md).**
