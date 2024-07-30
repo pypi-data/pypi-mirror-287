@@ -1,0 +1,8 @@
+MANIFEST.in
+setup.py
+ptessentials/__init__.py
+ptessentials.egg-info/PKG-INFO
+ptessentials.egg-info/SOURCES.txt
+ptessentials.egg-info/dependency_links.txt
+ptessentials.egg-info/requires.txt
+ptessentials.egg-info/top_level.txt

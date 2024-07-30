@@ -1,0 +1,7 @@
+aanft>=0.1.2
+funkmodel>=0.1.1
+funktgtools>=0.1.15
+pyntelope
+waxfetcher
+waxnftdispatcher==0.3.5
+waxtion>=0.1.5
