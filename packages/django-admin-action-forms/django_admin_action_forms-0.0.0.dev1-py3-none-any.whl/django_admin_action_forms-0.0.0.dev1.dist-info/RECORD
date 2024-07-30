@@ -1,0 +1,15 @@
+django_admin_action_forms/__init__.py,sha256=FV5X1BF0JcImc5yPa727bBKQ1g7DM1KalJ4U-ytncHk,71
+django_admin_action_forms/apps.py,sha256=qyayUVoKVW7ZcluZvZzJ8yE5wOLNhMh6HHvR9N8XAew,179
+django_admin_action_forms/decorators.py,sha256=-ogFXc0PDKx0QtMhgUC-sTvRGLS3j22bGdIUkN3XMWQ,3753
+django_admin_action_forms/forms.py,sha256=GEDtfZ4CpFzpn8M6vFcrW5nU91WClTmsG4ncbVLZf2c,3867
+django_admin_action_forms/urls.py,sha256=BL50wGkBitGkRpTN9Tgv7KQjA7i_pIqTssdbWPO1fAI,244
+django_admin_action_forms/views.py,sha256=PaFSAQIGYcY-J1Km5zDhnJjyQplheVC2L8W889TQW3I,4767
+django_admin_action_forms/widgets.py,sha256=7v6j3ybBEiLIvYHuUKsXFndpc-OsR5oEX6pPV6yE65Q,3979
+django_admin_action_forms/static/django_admin_action_forms/css/action_form.css,sha256=2hvdoAB5xDgkzu9tYN_w5PG2K-a3ES-wEF7650yMnwg,541
+django_admin_action_forms/static/django_admin_action_forms/js/action_form_autocomplete.js,sha256=1I-Ka3Jdo4ltk2zLPXZ0Uo2hDRbYuvvZArlJ2CHzb-4,1421
+django_admin_action_forms/templates/admin/django_admin_action_forms/action_form.html,sha256=bp68zE2FYz6ChgVD1hMz0833hOrNf8xmFiPghJx_1PM,2475
+django_admin_action_forms-0.0.0.dev1.dist-info/LICENSE,sha256=Nc-__ouW_wQud-iikOzzh0NPH1wUMOLJRzebUHhAkik,1071
+django_admin_action_forms-0.0.0.dev1.dist-info/METADATA,sha256=My67oFWAhIi7M0VOCk_u57lvi6uHu_ymEDY8eq12oyQ,490
+django_admin_action_forms-0.0.0.dev1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+django_admin_action_forms-0.0.0.dev1.dist-info/top_level.txt,sha256=ueasjwxlTCplb2-_RUywDUGzHjQK1hGnWPn2_4wqriI,26
+django_admin_action_forms-0.0.0.dev1.dist-info/RECORD,,
