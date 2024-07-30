@@ -1,0 +1,13 @@
+LICENSE
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+csvrm/__init__.py
+csvrm/exceptions.py
+csvrm/fields.py
+csvrm/models.py
+csvrm.egg-info/PKG-INFO
+csvrm.egg-info/SOURCES.txt
+csvrm.egg-info/dependency_links.txt
+csvrm.egg-info/top_level.txt
