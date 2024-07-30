@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: bera_centerlines
+Version: 2024.7.0
+Summary: extract centerlines from polygons
+Home-page: https://github.com/ungarj/label_centerlines
+Author: Joachim Ungar
+Author-email: joachim.ungar@gmail.com
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: GIS
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+License-File: LICENSE.rst
+Requires-Dist: click
+Requires-Dist: Fiona >=1.7.0
+Requires-Dist: networkx >=2.1
+Requires-Dist: scipy >=0.17
+Requires-Dist: Shapely >=1.5
+Requires-Dist: tqdm
+Requires-Dist: networkit >=11.0
+
