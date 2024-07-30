@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: setuptools-test-command-stub
+Version: 0.1.0
+Summary: Patches setuptools.command.test with mock
+Home-page: https://github.com/gtors/setuptools-test-command-stub
+License: MIT
+Author: Andrey Torsunov
+Author-email: andrey.torsunov@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Project-URL: Repository, https://github.com/gtors/setuptools-test-command-stub
+Description-Content-Type: text/markdown
+
+# Stub for setuptools.command.test
+
+So, you are facing with project installation issue after setuptools upgrading?
+You are in the right place.
+
+## Usage
+
+Add that dependency first in the list of the dependencies in you pyproject.toml
+```console
+setuptools-test-command-stub = '0.1.0'
+```
+And than lock your dependencies with `poetry lock`. Whats all!
+
+
+## How it works? 
+
+It's just patches `setuptools.command.test` with `unittest.mock.MagicMock`. 
+
