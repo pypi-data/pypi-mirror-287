@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "generator_cucumber"
+authors = [
+    {name = "Dmitry Shibikin", email = "dmitry.shibikin@yandex.ru"}
+]
+description = "Generation gitlab/github <=  .feature file"
+readme = "README_PY.md"
+license = {file = "LICENSE"}
+keywords= ["python",  "cucmber", "generator"]
+classifiers = [
+    'Programming Language :: Python :: 3.8',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: OS Independent'
+]
+requires-python = ">=3.8"
+version = "0.0.16"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+Repository = "https://gitlab.com/python_lib/generator_cucumber"
+Homepage = "https://gitlab.com/python_lib/generator_cucumber"
+Documentation = "https://bdd-generator.readthedocs.io/ru/latest/"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+exclude = ["docs*", "tests*", "example"]
