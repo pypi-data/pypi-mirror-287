@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: integra-bridge
+Version: 0.0.3
+Summary: Library allows you to build and connect external processors & connectors to Seventech Integra product
+License: MIT
+Author: Seventech
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: fastapi (>=0.111.0,<0.112.0)
+Requires-Dist: httpx (>=0.27.0,<0.28.0)
+Requires-Dist: orjson (>=3.10.6,<4.0.0)
+Requires-Dist: pydantic-settings (>=2.3.1,<3.0.0)
+Description-Content-Type: text/markdown
+
+### **Базовый пример реализации**
+Устанавливаем библиотеку
+````bash
+pip install integra-bridge
+````
+
