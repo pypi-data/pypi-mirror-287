@@ -1,0 +1,9 @@
+README.md
+setup.py
+sizescan.py
+sizescan.egg-info/PKG-INFO
+sizescan.egg-info/SOURCES.txt
+sizescan.egg-info/dependency_links.txt
+sizescan.egg-info/entry_points.txt
+sizescan.egg-info/requires.txt
+sizescan.egg-info/top_level.txt
