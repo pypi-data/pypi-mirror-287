@@ -1,0 +1,14 @@
+single_bot/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+single_bot/bot.py,sha256=vJrnS3p7Oatfg4X6Zqtl3JbDPLpCcZk1Wqcjlb5zNWo,1636
+single_bot/bot_factory.py,sha256=LMjHQd9HKLpFRdEElW8sfBxsMKEN6RWb9u8v3-h4JJQ,723
+single_bot/data_types.py,sha256=59wu-WbBc-xTsSPKvNdM0OLVe3LY2dWaxMSLcvV3OAM,744
+single_bot/environment.py,sha256=2huhozOjb_jpc0-cFg7537qsx9RyiehsDjcEQmZyF8U,149
+single_bot/message_storage.py,sha256=R8LP_451JY61qmaedVhk-j3PQd8_Gx0dDut1kacjals,224
+single_bot/messengers.py,sha256=rdu99lBmJW5Hv_PbGPQ4x_CxTFSYiYeBR4S9HXUQ_Z0,4284
+single_bot/user_id_storage.py,sha256=NIvKcqUomZzDTfulp-WABKJP05kAVJIF7aj9WrYCGi8,2011
+single_bot/user_state.py,sha256=uWr9CiSnppjqaW5FOrEXKuhQln5oNAXN8M0MPneAAbM,5686
+single_bot/user_state_storage.py,sha256=AFrg39GJtmNqzcjIZ3mcB7o6bbsccr5Qbpsi7DP4Buw,681
+single_bot-0.1.2.dist-info/METADATA,sha256=bApc4Ext2OxlI7LUwcIe9SH7HuMCFrIjvpBhBtP-p4k,4233
+single_bot-0.1.2.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+single_bot-0.1.2.dist-info/top_level.txt,sha256=VXGDok8P-9bTRg6GwthSEdqi931xrpezxWw_sRXOdBI,11
+single_bot-0.1.2.dist-info/RECORD,,
