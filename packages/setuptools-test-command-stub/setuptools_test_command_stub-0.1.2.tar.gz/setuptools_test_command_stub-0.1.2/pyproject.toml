@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "setuptools-test-command-stub"
+version = "0.1.2"
+description = "Patches setuptools.command.test with mock"
+authors = ["Andrey Torsunov <andrey.torsunov@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/gtors/setuptools-test-command-stub"
+repository = "https://github.com/gtors/setuptools-test-command-stub"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+]
+include = ["setuptools_test_command_stub.pth"]
+
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
