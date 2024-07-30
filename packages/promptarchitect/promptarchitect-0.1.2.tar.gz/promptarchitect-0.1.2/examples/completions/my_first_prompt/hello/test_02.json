@@ -1,0 +1,52 @@
+{
+    "test_id": "test_02",
+    "test_prompt": "COUNT(LINES) == 5",
+    "test_completion": "NEE, COUNT(LINES) is niet gelijk 5, maar 9",
+    "passed": false,
+    "completion": {
+        "system_role": "Calculate the number of lines, words, characters, or sentences in the prompt. No LLM is used for this.",
+        "model": "calculated",
+        "parameters": {},
+        "response_message": "NEE, COUNT(LINES) is niet gelijk 5, maar 9",
+        "latency": 1.5249999705702066e-05,
+        "cost": 0.0,
+        "completion_type": "CalculatedCompletion"
+    },
+    "engineered_prompt": {
+        "prompt_file_path": "examples/prompts/my_first_prompt.prompt",
+        "output_path": "examples/completions/my_first_prompt/hello",
+        "input_file": "examples/tests/hello_world/hello.txt",
+        "input_text": "",
+        "latency": 3.6112229580176063,
+        "cost": 0.00010065,
+        "errors": {
+            "errors": [],
+            "duplicates": 0
+        },
+        "completion": {
+            "system_role": "You are a helpful assistant.",
+            "model": "gpt-4o-mini",
+            "parameters": {
+                "model": "gpt-4o-mini",
+                "prompt_version": "1.0",
+                "temperature": "0.9",
+                "input": "examples/inputs/hello_world/hello.txt",
+                "output": "examples/outputs/title.txt",
+                "topic": "examples/outputs/title",
+                "test_path": "examples/tests/hello_world"
+            },
+            "cost": 0.00010065,
+            "is_json": false,
+            "test_path": "",
+            "response_message": "Hier zijn vijf titels voor een AI-podcast die zich richt op MLOps, Explainable AI en Large Language Models, gericht op zakelijke professionals met een IT-achtergrond:\n\n1. **\"AI Unpacked: MLOps, Models & Meaning\"**\n2. **\"Decoding AI: Insights into MLOps and Explainable Intelligence\"**\n3. **\"The Business of AI: Navigating MLOps and Large Language Models\"**\n4. **\"Empowering Decisions: The MLOps and Explainable AI Podcast\"**\n5. **\"AI in Action: Bridging Technology and Business with Explainable Models\"**\n\nDeze titels zijn ontworpen om zowel de technische als de zakelijke aspecten van AI te benadrukken.",
+            "latency": 3.6112229580176063
+        },
+        "completion_type": "OpenAICompletion",
+        "response_message": "Hier zijn vijf titels voor een AI-podcast die zich richt op MLOps, Explainable AI en Large Language Models, gericht op zakelijke professionals met een IT-achtergrond:\n\n1. **\"AI Unpacked: MLOps, Models & Meaning\"**\n2. **\"Decoding AI: Insights into MLOps and Explainable Intelligence\"**\n3. **\"The Business of AI: Navigating MLOps and Large Language Models\"**\n4. **\"Empowering Decisions: The MLOps and Explainable AI Podcast\"**\n5. **\"AI in Action: Bridging Technology and Business with Explainable Models\"**\n\nDeze titels zijn ontworpen om zowel de technische als de zakelijke aspecten van AI te benadrukken."
+    },
+    "last_run": "2024-07-29 14:58:06",
+    "errors": {
+        "errors": [],
+        "duplicates": 0
+    }
+}

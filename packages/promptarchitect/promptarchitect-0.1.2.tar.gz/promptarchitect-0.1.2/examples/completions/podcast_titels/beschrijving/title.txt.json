@@ -1,0 +1,32 @@
+{
+    "prompt_file_path": "examples/prompts/podcast_titels.prompt",
+    "output_path": "examples/completions/podcast_titels/beschrijving",
+    "input_file": "examples/tests/podcast_titels/beschrijving.txt",
+    "input_text": "",
+    "latency": 3.6943562920205295,
+    "cost": 0.00010905,
+    "errors": {
+        "errors": [],
+        "duplicates": 0
+    },
+    "completion": {
+        "system_role": "You are a helpful assistant.",
+        "model": "gpt-4o-mini",
+        "parameters": {
+            "model": "gpt-4o-mini",
+            "prompt_version": "1.0",
+            "temperature": "0.9",
+            "input": "examples/inputs/podcast_titels/beschrijving.txt",
+            "output": "title.txt",
+            "topic": "title",
+            "test_path": "examples/tests/podcast_titels"
+        },
+        "cost": 0.00010905,
+        "is_json": false,
+        "test_path": "",
+        "response_message": "Hier zijn vijf titels voor een AI-podcast gericht op zakelijke professionals met een IT-achtergrond:\n\n1. **\"De AI-Agenda: MLOps, Transparantie en de Toekomst van Taalmodellen\"**\n2. **\"Inzichten in AI: MLOps en de Kracht van Uitlegbaarheid\"**\n3. **\"AI in Actie: Navigeren door MLOps en Large Language Models\"**\n4. **\"Van Data naar Beslissingen: De Sleutels tot Succesvolle AI-implementatie\"**\n5. **\"De AI-Revolutie: MLOps, Uitlegbaarheid en Innovatie met Taalmodellen\"**\n\nDeze titels weerspiegelen de belangrijkste onderwerpen en zijn aantrekkelijk voor een zakelijk publiek.",
+        "latency": 3.6943562920205295
+    },
+    "completion_type": "OpenAICompletion",
+    "response_message": "Hier zijn vijf titels voor een AI-podcast gericht op zakelijke professionals met een IT-achtergrond:\n\n1. **\"De AI-Agenda: MLOps, Transparantie en de Toekomst van Taalmodellen\"**\n2. **\"Inzichten in AI: MLOps en de Kracht van Uitlegbaarheid\"**\n3. **\"AI in Actie: Navigeren door MLOps en Large Language Models\"**\n4. **\"Van Data naar Beslissingen: De Sleutels tot Succesvolle AI-implementatie\"**\n5. **\"De AI-Revolutie: MLOps, Uitlegbaarheid en Innovatie met Taalmodellen\"**\n\nDeze titels weerspiegelen de belangrijkste onderwerpen en zijn aantrekkelijk voor een zakelijk publiek."
+}
