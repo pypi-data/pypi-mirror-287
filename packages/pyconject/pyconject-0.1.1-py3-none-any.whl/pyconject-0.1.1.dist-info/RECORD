@@ -1,0 +1,10 @@
+pyconject/__init__.py,sha256=jZ5uWOiyV1Hb9rhNyo3bAgfWmHx8_xkueUWpcUrkz_w,21
+pyconject/context.py,sha256=VxEhVUsYH-8pqOv8lQFnb6_C5tDz61TUbt8pEbZMnIA,3438
+pyconject/pyconject.py,sha256=1V6zib-O2UZTOmGbVtps7cs_vI3L91jkjFzpc-3RcXE,614
+pyconject/registry.py,sha256=dNHA3FE4j5Qxszznfv8P6ofBgw_NdyVFFhfmgLUj8R4,9496
+pyconject/utils.py,sha256=yPHXcruzs-YHMv4n1nPLfrpVhTQS7hwSn9g7vBN8smA,3019
+pyconject-0.1.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pyconject-0.1.1.dist-info/METADATA,sha256=MaYd-LlKDCJkRNEKpG70NWPs30Ll2715bVuNuK2I6GQ,3458
+pyconject-0.1.1.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+pyconject-0.1.1.dist-info/top_level.txt,sha256=Sf5QUG_n58eUh4UbQ2ykqx6h8Mh81tx7RrsFAqhKXHg,10
+pyconject-0.1.1.dist-info/RECORD,,
