@@ -1,0 +1,3 @@
+[console_scripts]
+import_module_checker = module_import_checker.cli:main
+
