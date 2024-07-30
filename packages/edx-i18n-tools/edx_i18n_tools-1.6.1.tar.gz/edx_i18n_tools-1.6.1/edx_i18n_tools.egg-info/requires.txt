@@ -1,0 +1,5 @@
+pyYaml
+path
+Django
+lxml[html_clean]
+polib
