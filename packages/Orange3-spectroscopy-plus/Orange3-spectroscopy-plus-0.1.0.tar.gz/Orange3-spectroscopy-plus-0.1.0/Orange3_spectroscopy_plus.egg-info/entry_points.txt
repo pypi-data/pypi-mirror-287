@@ -1,0 +1,12 @@
+[orange.canvas.help]
+html-index = orangecontrib.spectroscopy_plus.widgets:WIDGET_HELP_PATH
+
+[orange.widgets]
+Spectroscopy Plus = orangecontrib.spectroscopy_plus.widgets
+
+[orange.widgets.tutorials]
+spectroscopy_plus_tutorials = orangecontrib.spectroscopy_plus.tutorials
+
+[orange3.addon]
+spectroscopy-plus = orangecontrib.spectroscopy_plus
+
