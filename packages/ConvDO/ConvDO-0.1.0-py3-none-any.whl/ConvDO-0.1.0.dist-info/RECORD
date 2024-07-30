@@ -1,0 +1,16 @@
+ConvDO/__init__.py,sha256=c8_M_AIFkyiG6Efh6nirMpFA7lzyPYGgXN9jrQUO22M,151
+ConvDO/_operator_deprecated.py,sha256=griwSUYxhukngrRfZ_ozRsecQIeoOBzHQVt85OQIU8U,13888
+ConvDO/boundaries.py,sha256=-zKbliIZh9xaRcASxATM7UQzA6o7fidA8L1xonqRrow,10459
+ConvDO/conv_operators.py,sha256=ryRwnWTjMYYIURhWloX1QlYdOZYDwn8VZjUMg0Os4MQ,12861
+ConvDO/domain.py,sha256=yvgFhhHrmiPfDVjyXgp9DFC0H5wIDVGEmewqluPEAcU,8810
+ConvDO/faces.py,sha256=bxcuDCg31mF1FsJxFKdvGvs1QY2zmJNHuHNbuwur86M,1205
+ConvDO/helpers.py,sha256=JrGSPISmnOGUr75TPn90rAtIvuzP7WY8yG6-qEeiJ5w,362
+ConvDO/meta_type.py,sha256=UlO6DC-eQ4hfdGXv0QOsZsDGG7XPcJwfsYc0ZHNPV4I,4068
+ConvDO/obstacles.py,sha256=Ap9T63E743zWcaDch1xih7FVPplnNwsGvRkl296zfgs,16443
+ConvDO/operations.py,sha256=FRkq3GCpsqFOQsd-UQSTAVU8U7U1WjQbqp3ywErae1Q,14611
+ConvDO/schemes.py,sha256=7v_c7AlXJqQ0qHRKJjTjai52d-7-ueOQ_phrN9makYU,1171
+ConvDO-0.1.0.dist-info/LICENSE,sha256=yNaeEzJYzLRX_OMJaeM1xusk3QVao9yxNNxw-jI6q3A,1067
+ConvDO-0.1.0.dist-info/METADATA,sha256=_wz9E5MshNapF1TKSY_qdr7JO-NJy6VHlx_ZEHZhwWo,2172
+ConvDO-0.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+ConvDO-0.1.0.dist-info/top_level.txt,sha256=47HINz1uuzkZqKyI9woGADpfGy1VgysL58wB01YeS4k,7
+ConvDO-0.1.0.dist-info/RECORD,,
