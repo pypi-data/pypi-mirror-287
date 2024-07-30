@@ -1,0 +1,10 @@
+uv-0.2.31.dist-info/METADATA,sha256=okB43KhxL4CPBXa4JhxeWqtZ2a9jRDldmBqgxaY4ePE,36581
+uv-0.2.31.dist-info/WHEEL,sha256=NMbDSkIDyn4iJuXWMnno_LQxkDcSnqE3KYHfBOa_Qag,89
+uv-0.2.31.dist-info/license_files/LICENSE-APACHE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
+uv-0.2.31.dist-info/license_files/LICENSE-MIT,sha256=F5Z0Cpu8QWyblXwXhrSo0b9WmYXQxd1LwLjVLJZwbiI,1077
+uv/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+uv/__init__.py,sha256=sMzkLRfCHpfif3oeGGeeqTmGLTYVSgqtwDn4foXBSfY,1071
+uv/__main__.py,sha256=KpQzYxynHumchP1HpZVMkrQ2ezhueQah5hKZKNpgrA4,1055
+uv-0.2.31.data/scripts/uv.exe,sha256=k36cD0I4h_oq6X-8von7CmId7lqiq_WOCHNQMFdp_K0,26042880
+uv-0.2.31.data/scripts/uvx.exe,sha256=SNHS7b--hamiBmFzkmJPW8M2Y9n9G8rhMCi_mNN-yCA,303616
+uv-0.2.31.dist-info/RECORD,,
