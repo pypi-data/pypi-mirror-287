@@ -1,0 +1,48 @@
+import os
+import sys
+from pathlib import Path
+
+from PyQt5 import QtWidgets
+
+sys.path.append(str(Path(__file__).parent.parent))
+from src.View.MainWindow_View import MainWindowView
+
+import pyqtgraph as pg
+
+def run_app():
+
+    pg.setConfigOptions(antialias=True)
+
+    version = "0.0.3"
+    release_date = "2024-07-18"
+
+    start_message = f"""
+    --------------------------------------------------------------
+    pyIACOB v{version} : {release_date}
+
+    Authors :
+    - frederic.andersson@univ-tours.fr
+    - enzo.creuzet@univ-tours.fr
+    - thibaud.scribe@univ-tours.fr
+    --------------------------------------------------------------
+    """
+
+    print(start_message)
+
+    # -------------- Start ---------------
+
+    app = QtWidgets.QApplication(sys.argv)
+
+    mainwindow = MainWindowView()
+    mainwindow.show()
+
+    # Load and apply the QSS file
+    resources_dir = Path(__file__).parent.parent / 'resources'
+    with open(os.path.join(resources_dir, "Style_Application.qss"), 'r') as file:
+        stylesheet = file.read()
+        app.setStyleSheet(stylesheet)
+
+    sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    run_app()
