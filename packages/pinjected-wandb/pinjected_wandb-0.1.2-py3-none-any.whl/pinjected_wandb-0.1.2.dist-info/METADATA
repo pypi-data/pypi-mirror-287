@@ -1,0 +1,13 @@
+Metadata-Version: 2.3
+Name: pinjected-wandb
+Version: 0.1.2
+Summary: Add your description here
+Author-email: proboscis <nameissoap@gmail.com>
+Requires-Python: >=3.10
+Requires-Dist: pinjected
+Requires-Dist: wandb
+Description-Content-Type: text/markdown
+
+# pinjected-wandb
+
+Describe your project here.
