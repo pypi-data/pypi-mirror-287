@@ -1,0 +1,7 @@
+include README.md
+include run_myapp.py
+include myapp.pyx
+include requirements.txt
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.c
