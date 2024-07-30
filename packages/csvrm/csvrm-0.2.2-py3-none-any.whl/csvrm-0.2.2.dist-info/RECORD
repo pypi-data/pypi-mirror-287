@@ -1,0 +1,10 @@
+csvrm/__init__.py,sha256=PLHo2n47qfqzvRr2_BMQ_K77uQao_wrjy0dtvgiAUcM,67
+csvrm/exceptions.py,sha256=zpCq0s24SgpqTphubR8R-oYhMIDxiYAQmbH-4zx9KBI,145
+csvrm/fields.py,sha256=pEVdFrsrkn9SpwergQen7nOeeQjmUsX6CYHM8cVUibY,3097
+csvrm/models.py,sha256=d26xc0D7cZnkXk9BNdcZOie4O7QArPx3ptz2sYAly0g,5963
+csvrm-0.2.2.dist-info/LICENSE,sha256=uBx7hKNRDzWBxBOe_8eIGK1Byxt8XBYfcEaXMbfzB10,1063
+csvrm-0.2.2.dist-info/LICENSE.txt,sha256=YLSMN_vblR90h6WBuf3ESExikkk0umEc7cpqwo7x_JE,1069
+csvrm-0.2.2.dist-info/METADATA,sha256=r3i7jW-PhcBIkzbujZ6FpDslvTzdpW24pVzFuWz2YMk,2012
+csvrm-0.2.2.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+csvrm-0.2.2.dist-info/top_level.txt,sha256=n6j3EIG9rMwQvlLp7DGAG78Q_UurMw0bq1cpIMxKHsg,6
+csvrm-0.2.2.dist-info/RECORD,,
