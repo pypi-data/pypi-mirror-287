@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: dict2dataclass
+Version: 0.1.0
+Summary: Convert dicts into dataclasses. Supports lists, dicts and unions.
+Home-page: https://github.com/quantumsheep/dict2dataclass
+License: Apache-2.0
+Author: Nathanael DEMACON
+Author-email: quantumsheep@users.noreply.github.com
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
+
+# Dict 2 Dataclass
+
+This is a simple python script that converts a dictionary to a class. It is useful when you want to access the dictionary values as class attributes.
+
+## Usage
+
+```python
+from dict2dataclass import FromDict
+from dataclasses import dataclass
+
+@dataclass
+class Address(FromDict):
+    street: str
+    city: str
+    state: str
+
+@dataclass
+class Person(FromDict):
+    name: str
+    age: int
+    address: Address
+
+data = {
+    "name": "John Doe",
+    "age": 30,
+    "address": {
+        "street": "123 Main St",
+        "city": "Springfield",
+        "state": "IL"
+    }
+}
+
+person = Person.from_dict(data)
+print(person.name) # John Doe
+```
+
