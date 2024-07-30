@@ -1,0 +1,9 @@
+README.md
+setup.py
+open_weather_easy/__init__.py
+open_weather_easy/main.py
+open_weather_easy.egg-info/PKG-INFO
+open_weather_easy.egg-info/SOURCES.txt
+open_weather_easy.egg-info/dependency_links.txt
+open_weather_easy.egg-info/requires.txt
+open_weather_easy.egg-info/top_level.txt
