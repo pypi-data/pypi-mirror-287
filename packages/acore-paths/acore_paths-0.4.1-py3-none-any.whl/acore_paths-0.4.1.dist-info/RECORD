@@ -1,0 +1,16 @@
+acore_paths/__init__.py,sha256=gz8uTrQ9IOSp5pO8Zqgsvczy0eSwY33yCcZj7siyF08,429
+acore_paths/_version.py,sha256=R29hkJYuCu3ltCRbIHyS0ka1__-jcD-_dl4rRumtnyM,93
+acore_paths/acore_paths.py,sha256=7UuBiu1P_KxerS8oV7kYnBNDLFkQaFEb0jpPVTH8euE,6166
+acore_paths/api.py,sha256=53r6q4v8wSSNVVM2vdwXCrJVC4evGrMach7fdGrQ5Gw,1393
+acore_paths/paths.py,sha256=97S8BLeL_V7rmEA-I0RmMZCJ8p1lZseMiorow53W4C8,642
+acore_paths/docs/__init__.py,sha256=f-E2GGaAOnea7U51BKWcRtFHZ6p2iPnvGoXR6VvBtGg,43
+acore_paths/tests/__init__.py,sha256=2nfXkz9TigdtVWm0YAeP8qD83i0KvM74AWag9WJMw4Q,58
+acore_paths/tests/helper.py,sha256=p_oZhY0NE1HTQ50ftj1y4sJ6nVOLxQrPwseOlX0AD4s,447
+acore_paths/vendor/__init__.py,sha256=O9CT1B2F-cVB8elT0EoCJbgkcffjvlmqteqavs4giDg,25
+acore_paths/vendor/pytest_cov_helper.py,sha256=nR-I6d8j0P1JQy6dxIiZtG9Gz0DkfJFpk6EPCCpfnm8,3572
+acore_paths-0.4.1.dist-info/AUTHORS.rst,sha256=nHTveFzFQh1uHjbLOIj6LbooSLAAByNffYkdIMKP-Pc,670
+acore_paths-0.4.1.dist-info/LICENSE.txt,sha256=pfe-AObCPBGP8LLUcyDw-_4j6KDYxsmymPS_oiBI0iw,1122
+acore_paths-0.4.1.dist-info/METADATA,sha256=XuvlPLV7zbLDLp4KR8cKNRQi7RgzEaNMYxGTvtRMtBo,5301
+acore_paths-0.4.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+acore_paths-0.4.1.dist-info/top_level.txt,sha256=wu8a0dsTDh2VsqX7uBMrDrCq-lvSe_6BVt1MkSGBXTA,12
+acore_paths-0.4.1.dist-info/RECORD,,
