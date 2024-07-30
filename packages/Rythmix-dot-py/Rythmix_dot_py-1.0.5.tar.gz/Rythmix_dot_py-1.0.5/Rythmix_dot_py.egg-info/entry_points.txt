@@ -1,0 +1,3 @@
+[console_scripts]
+rythmix = Rythmix_dot_py:main
+rythmix_setup_vlc = Rythmix_dot_py:install_vlc
