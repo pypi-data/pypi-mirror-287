@@ -1,0 +1,5 @@
+[console_scripts]
+cjudge-create = cjudge:cli_create
+cjudge-info = cjudge:cli_info
+cjudge-submit = cjudge:cli_submit
+cjudge-test = cjudge:cli_test
