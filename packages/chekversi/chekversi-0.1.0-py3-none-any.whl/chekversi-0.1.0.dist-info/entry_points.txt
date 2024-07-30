@@ -1,0 +1,2 @@
+[console_scripts]
+run-commands = chekversi.main:execute_com
