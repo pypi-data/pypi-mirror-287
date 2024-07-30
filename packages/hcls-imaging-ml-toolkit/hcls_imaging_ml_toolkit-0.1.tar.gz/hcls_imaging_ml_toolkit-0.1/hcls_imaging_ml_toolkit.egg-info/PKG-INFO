@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: hcls_imaging_ml_toolkit
+Version: 0.1
+Summary: Toolkit for deploying ML models on GCP leveraging Google Cloud Healthcare API.
+Home-page: https://github.com/GoogleCloudPlatform/healthcare
+Author: Google
+Author-email: noreply@google.com
+License: Apache 2.0
+Requires-Python: >=3
+Requires-Dist: attrs
+Requires-Dist: google-auth
+Requires-Dist: retrying
+Requires-Dist: typing
+Requires-Dist: httplib2
+Requires-Dist: requests-toolbelt
+Requires-Dist: six
+Requires-Dist: urllib3
+Requires-Dist: google-auth-httplib2
+Requires-Dist: google-api-python-client
+Requires-Dist: tensorflow
+Requires-Dist: google-api-core
+Requires-Dist: google-cloud-pubsub
+Requires-Dist: absl-py
+Requires-Dist: numpy
+Requires-Dist: mock
+Requires-Dist: grpcio
+Requires-Dist: tensorflow-serving-api
+Requires-Dist: frozendict
