@@ -1,0 +1,6 @@
+db_connector/__init__.py,sha256=IQXCXsqI8ZAKWLYqykcUSiSZ1BZkfIL7qhTJf3isRXw,44
+db_connector/connector.py,sha256=G8SQvG0LlLavEA1thB9Gis3eVtGrX6lAmNNAAEu6lAU,3234
+app_db_connector-0.1.dist-info/METADATA,sha256=NMXYTGxEscCCDXzLjpNPCK1Us7V__Rx_dd-YeTG2Y2c,638
+app_db_connector-0.1.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+app_db_connector-0.1.dist-info/top_level.txt,sha256=BJHRQeCUjCq0AtFysWaTdcyUUYzyrznqzJRwnmIwcm0,13
+app_db_connector-0.1.dist-info/RECORD,,
