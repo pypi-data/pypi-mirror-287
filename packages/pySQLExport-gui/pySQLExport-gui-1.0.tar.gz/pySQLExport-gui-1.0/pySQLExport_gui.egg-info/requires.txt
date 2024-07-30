@@ -1,0 +1,7 @@
+PyQt6
+mysql-connector-python
+pandas
+psycopg2-binary
+fastparquet
+numpy
+tables
