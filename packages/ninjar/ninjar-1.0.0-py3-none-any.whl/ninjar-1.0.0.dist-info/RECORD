@@ -1,0 +1,12 @@
+ninjar/__init__.py,sha256=oFjDX9_yvoIhBvRWqVvIt0SmTscmTp6WyDlQHc6XaXw,787
+ninjar/cmds.py,sha256=YdG6Qmf0tU8vpOAkkwINzO7-EYisnlNNquXzuPtDF3Q,3118
+ninjar/expr.py,sha256=w_-QyHO9vtsoJtVeVqj9WHJ5fct2rREdNs70HQYNxAM,4081
+ninjar/main.py,sha256=7bhFhvL-REeCdxVJ2vqU6Y-sKDxSq7pNV7dOemIbyX4,19186
+ninjar/ninja.py,sha256=_4Jcrui2Iecslf8fueNgK0ekZXKgogYo5cVosO4_O84,11837
+ninjar/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ninjar/shell.py,sha256=6DstAgNNktzAW8Jxs6dEXocK7FJzEsd8ov1ZOOJTYf4,2080
+ninjar/writeln.py,sha256=rBEq-XsfvaaX4QLVtv4m0QeiG8Ga_8GeOURw6r1di7M,2019
+ninjar-1.0.0.dist-info/METADATA,sha256=CVOi5fNKG3rm4I-e1iNS4gH9gp1WhTHOYsPqzaTe3kM,6447
+ninjar-1.0.0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+ninjar-1.0.0.dist-info/licenses/LICENSE,sha256=QM_gIfjco6-2Rg-_69_5Pn-XE-_Hmsuesj0VKN3NHQk,1700
+ninjar-1.0.0.dist-info/RECORD,,
