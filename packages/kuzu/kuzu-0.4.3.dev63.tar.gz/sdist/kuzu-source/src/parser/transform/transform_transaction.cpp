@@ -1,0 +1,29 @@
+#include "common/assert.h"
+#include "parser/transaction_statement.h"
+#include "parser/transformer.h"
+
+using namespace kuzu::transaction;
+using namespace kuzu::common;
+
+namespace kuzu {
+namespace parser {
+
+std::unique_ptr<Statement> Transformer::transformTransaction(
+    CypherParser::KU_TransactionContext& ctx) {
+    if (ctx.TRANSACTION()) {
+        if (ctx.READ()) {
+            return std::make_unique<TransactionStatement>(TransactionAction::BEGIN_READ);
+        }
+        return std::make_unique<TransactionStatement>(TransactionAction::BEGIN_WRITE);
+    }
+    if (ctx.COMMIT()) {
+        return std::make_unique<TransactionStatement>(TransactionAction::COMMIT);
+    }
+    if (ctx.ROLLBACK()) {
+        return std::make_unique<TransactionStatement>(TransactionAction::ROLLBACK);
+    }
+    KU_UNREACHABLE;
+}
+
+} // namespace parser
+} // namespace kuzu
