@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include source_code/*.so
+global-exclude *.py[cod]
+global-exclude *.pyx
+global-exclude *.c
+global-exclude __pycache__
