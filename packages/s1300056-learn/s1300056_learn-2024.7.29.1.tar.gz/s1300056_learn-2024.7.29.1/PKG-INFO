@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: s1300056_learn
+Version: 2024.7.29.1
+Summary: This is description
+Home-page: https://github.com/YATTAmanre/s1300056_learn
+Author: SUZUKI Haruto
+Author-email: s1300056@u-aizu.ac.jp
+License: GPLv3
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Requires-Dist: pami
+Requires-Dist: statistics
+Requires-Dist: visualization
+
+# s1300056_learn
