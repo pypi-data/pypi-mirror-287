@@ -1,0 +1,15 @@
+pds.registry_client-0.2.0-py3.9-nspkg.pth,sha256=PqPGr0E-zd0D3PjwzpH7sXgDt5v1fss03RiirCh2haU,452
+pds/aossrequestsigner/VERSION.txt,sha256=H5MN0fEzwfl6lP46y42zQ3LPTAH_2ys_9Mpy-UlBIek,6
+pds/aossrequestsigner/__init__.py,sha256=oB-a_pXrth5Yg9FDnxDhLrk5bLElh3iYwQP2fWWAFS8,161
+pds/aossrequestsigner/credentials.py,sha256=SCSQIlPjwl4hO_8cAp5DwvfVz515URn6pDtbUDMmzsk,1830
+pds/aossrequestsigner/run.py,sha256=3Gm3jFnjpSvwEPVboXzZjFCcMh8mu2QdYERTsqlgFK4,4961
+pds/aossrequestsigner/utils.py,sha256=AABVkHFllF01nG_Tbmza9MdtL_IA4b7n6zri_AcpJdM,1328
+pds.registry_client-0.2.0.dist-info/LICENSE.md,sha256=I4cMw8I4OUfV82OqlPoHL8mpCv7xErwIkwhXLFIFiKs,10487
+pds.registry_client-0.2.0.dist-info/METADATA,sha256=98TfhmaiQ1ARbdOD233KrhYiaj5jNMWJMrCBMU_M_cI,12934
+pds.registry_client-0.2.0.dist-info/NOTICE.txt,sha256=JbZTWAOH0ry1Bg7KqY1v1tU7mTJsp8yqYSUPrVvlfEw,1665
+pds.registry_client-0.2.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+pds.registry_client-0.2.0.dist-info/entry_points.txt,sha256=XnWxXdYi8WrjzdezUIdv_viItt0Axyb5ge5-1-glaLk,71
+pds.registry_client-0.2.0.dist-info/namespace_packages.txt,sha256=5SacHJznU3B9RSALhTt0yjidG0EmPyBMNQgoU-bxvo4,4
+pds.registry_client-0.2.0.dist-info/top_level.txt,sha256=5SacHJznU3B9RSALhTt0yjidG0EmPyBMNQgoU-bxvo4,4
+pds.registry_client-0.2.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+pds.registry_client-0.2.0.dist-info/RECORD,,
