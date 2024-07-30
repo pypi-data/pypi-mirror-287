@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: mem_agent
+Version: 0.0.1
+Summary: 一个用来自主操控记忆内存的智能体
+Author: whoiswennie
+Author-email: 3287305464@qq.com
+Keywords: python,AI Agent,LLM,memory
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+Requires-Dist: qdrant-client==1.9.1
+
+
+# Mem_Agent
+
+## *install*
+``` pip install mem_agent```
