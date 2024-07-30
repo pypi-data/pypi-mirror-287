@@ -1,0 +1,10 @@
+markdown
+pandas
+pyhull
+opencv-python
+scipy
+scikit-image
+glob2
+
+[test]
+pytest
