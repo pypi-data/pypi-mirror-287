@@ -1,0 +1,2 @@
+[gui_scripts]
+ziyy = ziyy:__main__
