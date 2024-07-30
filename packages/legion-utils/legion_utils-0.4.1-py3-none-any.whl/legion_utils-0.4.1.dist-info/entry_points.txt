@@ -1,0 +1,3 @@
+[console_scripts]
+princeps=legion_utils.princeps.princeps:cli
+
