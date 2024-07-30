@@ -1,0 +1,15 @@
+rwkv6_keras_operator/__init__.py,sha256=07bT-i0C5NI2SHqRXlju1eRu3MehgWyXsycLdG0Yvko,2553
+rwkv6_keras_operator/jax_rwkv_kernel.py,sha256=1ZIbs1ELC0AaEONswlmcY75rUHdV22iSnoNqz-YmQBo,25386
+rwkv6_keras_operator/ops_rwkv_kernel.py,sha256=wb_PsFW2U8Qv9nhEO8kLRLctOpVTZuHO2KD_kHypZM4,2972
+rwkv6_keras_operator/torch_rwkv_kernel.py,sha256=MTLRQek7owd-rPUWFeUfC-McRb4M_t-D9Pkwj4Mis9o,9688
+rwkv6_keras_operator/jax_kernel/gpu_ops.cpp,sha256=oM13TCQi2GMIf3f-Z39WOL8M_8GmGI_Kdhiq3Y2keJw,1643
+rwkv6_keras_operator/jax_kernel/kernel_helpers.h,sha256=epwsW8OUIOvrlNuW3BAmAbgB8n8CKOFEYafBxQy3ptw,2209
+rwkv6_keras_operator/jax_kernel/kernels.h,sha256=KYJiWmmig0Wh-zpiWV96J_be8jlyc38Ztd1iqNoqVFI,1501
+rwkv6_keras_operator/jax_kernel/pybind11_kernel_helpers.h,sha256=CMQclcyHaDL65v7dEBOYqNNQcV332fFXmVNe-F23mJo,1526
+rwkv6_keras_operator/jax_kernel/rwkv_kernels.cu,sha256=t6Q8_M63eSlyOqcwYiGfI0HvlvQ_z0okBR4JNKqW5n0,20810
+rwkv6_keras_operator/torch_kernel/wkv6_cuda.cu,sha256=tfRbMQBkl_LT7EVaJ6KoWYcQ902ApCrS6zkjXldFZXY,12770
+rwkv6_keras_operator/torch_kernel/wkv6_op.cpp,sha256=cyCTiF--4SQiDJu7Dy_NuEhSe1vyki6JS4I2rsvT714,6659
+rwkv6_keras_operator-1.0.5.dist-info/METADATA,sha256=6rDGQoBF64rJWlXromxKRD53e4TyF45lkLT2u1HGNGQ,10726
+rwkv6_keras_operator-1.0.5.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+rwkv6_keras_operator-1.0.5.dist-info/licenses/LICENSE,sha256=f7r22OlX4DwHdQkfvnI8PMUdaPixkVT35MqFY5wr6HY,1091
+rwkv6_keras_operator-1.0.5.dist-info/RECORD,,
