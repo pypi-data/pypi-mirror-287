@@ -1,0 +1,3 @@
+[console_scripts]
+pdfsim = main:main
+
