@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "Mekanism"
+version = "1.0"
+authors = [
+ { name="DwZZd", email="pppgame61@gmail.com" },
+]
+description = "Mekanism json-typed async-db by DwZZd"
+readme = "README.md"
+requires-python = ">=3.10.0"
+classifiers = [
+   "Programming Language :: Python :: 3",
+   "License :: OSI Approved :: MIT License",
+   "Operating System :: OS Independent",
+]
+[project.urls]
+Homepage = "https://github.com/DwZZd/Mekanism"
