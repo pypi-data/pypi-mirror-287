@@ -1,0 +1,11 @@
+wayfire/__init__.py,sha256=mKtN6lPjkcvHUbGk7kRPmRQ-5RgnH0fPqGjuLdVG2D0,19
+wayfire/ipc.py,sha256=nGkM5pdiubvTVaTue9kAqIjU9tsudW48LbZfYYW1jpk,13339
+wayfire/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wayfire/core/template.py,sha256=jRVQtyVTU5jsaoOIOF0dAmGIy68zR9g_s2Hlm5OQ_uo,445
+wayfire/extra/ipc_utils.py,sha256=dDFCaJUbgrq5nyqhTY5dVBbd62pNmEK5Oh2z5o58BNo,23610
+wayfire/extra/stipc.py,sha256=gmTE8smSIcbQUt9S8KO3N__W05JvE_-_hwtBPUDkSMw,6342
+wayfire/extra/wpe.py,sha256=ZdVvcQbK1_0WuPkqfiV2rNnl9BJrH9HmBTJv1aONvxM,2097
+wayfire-2.0.dist-info/METADATA,sha256=r1DDU7CNUVmvFyvf75a16rzUXRKt8rf_8dAaF00yYU4,1224
+wayfire-2.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+wayfire-2.0.dist-info/top_level.txt,sha256=R0WqmJ-V1SikUDeRM_YpsUkhWwY1wfl2UlhlHjaH4V4,8
+wayfire-2.0.dist-info/RECORD,,
