@@ -1,0 +1,7 @@
+sqla_async_orm_queries/__init__.py,sha256=tbaxdfAeYcdChz-J2sr0WpF8Z3W7OrwTpts603SmBaM,107
+sqla_async_orm_queries/context.py,sha256=lDY920nPNX4H4N71ihBLy5JrIg5tHWLRK5m2VmR3TdQ,319
+sqla_async_orm_queries/models.py,sha256=R9RA00MY3nGjj0N2t7pgjYasQvIaDxdML7OyFAxnLGU,13477
+sqla_async_orm_queries-1.2.0.dist-info/LICENCE.md,sha256=NDVEUL7SQ_zI_lvv32zjT9bG_Z7UPDbZK4zvBLWTjF8,1070
+sqla_async_orm_queries-1.2.0.dist-info/METADATA,sha256=fSGD2DUhOh8fxeNYI-CBjVfK86md464CjKWYACts7yE,3709
+sqla_async_orm_queries-1.2.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+sqla_async_orm_queries-1.2.0.dist-info/RECORD,,
