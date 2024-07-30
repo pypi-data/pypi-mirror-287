@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: wtai_dt
+Version: 0.0.5
+Summary: wind turbine ai and digital twin
+Home-page: https://github.com/importimport/wtai-dt
+Author: hnust
+Author-email: 2538134102@qq.com
+License: MIT
+Keywords: python,moviepy,cut video
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: moviepy
+
+## 介绍
