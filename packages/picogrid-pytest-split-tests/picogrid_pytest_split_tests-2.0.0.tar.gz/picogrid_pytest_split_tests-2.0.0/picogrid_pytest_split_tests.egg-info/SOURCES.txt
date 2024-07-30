@@ -1,0 +1,13 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+picogrid_pytest_split_tests.egg-info/PKG-INFO
+picogrid_pytest_split_tests.egg-info/SOURCES.txt
+picogrid_pytest_split_tests.egg-info/dependency_links.txt
+picogrid_pytest_split_tests.egg-info/entry_points.txt
+picogrid_pytest_split_tests.egg-info/requires.txt
+picogrid_pytest_split_tests.egg-info/top_level.txt
+pytest_split_tests/__init__.py
+tests/test_groups.py
+tests/test_pytest.py
