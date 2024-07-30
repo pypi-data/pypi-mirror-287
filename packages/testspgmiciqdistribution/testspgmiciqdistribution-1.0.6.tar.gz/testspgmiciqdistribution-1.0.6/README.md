@@ -1,0 +1,173 @@
+# SPGMI CIQ Python Library
+
+The Python Software Development Kit (SDK) makes REST API integration into your Python environment easier, allowing less technical and experienced Python users to start utilizing REST APIs sooner.
+
+S&P Capital API clients can now access these SDKs to integrate end-of-day and time-series Financial and Market data such as Income Sheet, Balance Sheets, pricing, and dividend information data points from the S&P Capital IQ API into their Python workflows.
+
+ The SDK seamlessly integrates with pandas DataFrames, providing a Jupyter-friendly environment and a simpler, optimized data analysis experience.
+
+## Features
+
+Integrate high-quality data with your systems, portals, and business applications, including:
+1. Analysts looking to receive income statement, balance sheet, and cash flow values for backtesting models.
+2. Basic automation of desktop/Excel-based modeling when the Excel template reaches its limit.
+3. Time-series pricing and market data values as well as dividend information.
+
+## Benefits
+1. Output generated in a reusable/extendible object such as a DataFrame, facilitating easy data processing and analysis.
+2. Ease of authentication, request, and response handling.
+3. Ability to use proxy objects for enhanced network communication.
+
+
+## Installation
+
+Thank you for your interest in our library on PYPI. Please be aware that the version of the library available here is a placeholder/dummy version intended for demonstration purposes only.
+
+To obtain an actual version of the Python SDK library for installation or further support, please visit the [S&P Global Support Center](https://www.support.marketplace.spglobal.com/en/delivery-resources#sec6). Note that login credentials must be created on the support center to access the content.
+
+Our team will be happy to assist you and provide guidance based on your needs.
+
+## Setting up the library
+Using the below code, you can make the necessary imports and set up the required instances to use the Python library.
+
+```sh
+from IPython.core.display_functions import display
+from spgmi_api_sdk.authentication.services import SDKAuthenticateServices
+from spgmi_api_sdk.financials.services import SDKFinancialServices
+from spgmi_api_sdk.marketdata.services import SDKMarketDataServices
+
+#Required Instances
+auth = SDKAuthenticateServices()
+fs= SDKFinancialServices()
+mds = SDKMarketDataServices()
+```
+## Authentication Service
+These functions provide a seamless authentication process to securely access API services. Included are the methods for obtaining and refreshing access tokens while ensuring all API requests are properly authorized.
+
+### get_token()
+```sh
+username = "--username--"    #Replace with actual username
+password = "--password--"    #Replace with actual password
+token_response = auth.get_token(username, password)
+bearer_token = token_response.get("access_token")
+```
+### get_refresh_token()
+```sh
+refresh_token_response=auth.get_refresh_token("--refresh_token--")
+refresh_bearer_token = refresh_token_response.get("access_token")
+```
+## Fetching Financial Data
+Our financial data service provides a number of functionalities enabling you to retrieve point-in-time and historical financial data including income statements, balance sheets, cash flow statements, and other financial metrics essential for comprehensive financial analysis. 
+
+Use the following functions from the SDKFinancialServices class.
+
+Note: All SDKFinancialServices functions will accept a maximum of 10 identifiers.
+
+### 1. get_income_statement_pit
+Fetches income statement data for a given point in time.
+```sh
+response = fs.get_income_statement_pit(token=bearer_token, identifiers=["I_US5949181045","2588173","EG1320"],properties={"asOfDate": "12/31/2020", "currencyId": "USD","currencyConversionModeId": "HISTORICAL"})
+display(response)
+```
+
+### 2. get_income_statement_historical
+Fetches historical income statement data.
+```sh
+response = fs.get_income_statement_historical(token=bearer_token, identifiers=["GV012141","MSFT:NasdaqGS"], properties={"periodType":"IQ_FQ-4"})
+display(response)
+```
+
+### 3. get_balance_sheet_pit
+Fetches balance sheet data for a given point in time.
+```sh
+response = fs.get_balance_sheet_pit(token=bearer_token, identifiers=["RX309198","MMM:"], properties={"asOfDate": "12/31/2020", "currencyId": "USD","currencyConversionModeId": "HISTORICAL"})
+display(response)
+```
+### 4. get_balance_sheet_historical
+Fetches historical balance sheet data.
+```sh
+response = fs.get_balance_sheet_historical(token=bearer_token, identifiers=["I_US5949181045","2588173"], properties={"periodType":"IQ_FQ-2"})
+display(response)
+```
+
+### 5. get_cash_flow_pit
+Fetches cash flow data for a given point in time.
+```sh
+response = fs.get_cash_flow_pit(token=bearer_token, identifiers=["2588173","EG1320"], properties={"asOfDate": "12/31/2020", "currencyId": "USD","currencyConversionModeId": "HISTORICAL"})
+display(response)
+```
+
+### 6. get_cash_flow_historical
+Fetches historical cash flow data.
+```sh
+response = fs.get_cash_flow_historical(token=bearer_token, identifiers=["MSFT:NasdaqGS","DB649496569"], properties={"asOfDate": "12/31/2020", "currencyId": "USD","currencyConversionModeId": "HISTORICAL"})
+display(response)
+```
+
+### 7. get_financials_pit
+Fetches financial data (income statement, balance sheet, cash flow) for a given point in time based on specified mnemonics. This function will accept a maximum of 10 mnemonics.
+```sh
+response = fs.get_financials_pit(token=bearer_token, identifiers=["I_US5949181045","2588173","EG1320","CSP_594918104","IQT2630413","GV012141","MSFT:NasdaqGS","DB649496569","RX309198"], mnemonics=["IQ_CASH_INVEST_NAME_AP"], properties={"asOfDate": "12/31/2020", "currencyId": "USD","currencyConversionModeId": "HISTORICAL"})
+display(response)
+```
+### 8. get_financials_historical
+Fetches historical financial data based on specified mnemonics. This function will accept a maximum of 10 mnemonics.
+```sh
+response = fs.get_financials_historical(token=bearer_token, identifiers=["I_US5949181045","2588173","EG1320","CSP_594918104","IQT2630413","GV012141","MSFT:NasdaqGS","DB649496569","RX309198"], mnemonics=["IQ_CASH_INVEST_NAME_AP"], properties={"asOfDate": "12/31/2020", "currencyId": "USD","currencyConversionModeId": "HISTORICAL"})
+display(response)
+```
+
+## Fetching MarketData
+Our market data service provides several functionalities enabling you to access end-of-day and time-series market data, including stock prices, trading volumes, dividend information, and other market-related information crucial for analysis and decision-making.
+
+Use the following functions from the SDKMarketDataServices class.
+
+Note: All SDKMarketDataServices functions will accept a maximum of 10 identifiers.
+
+### 1. get_pricing_info_pit
+Fetches pricing information for a given point in time.
+```sh
+response = mds.get_pricing_info_pit(token=bearer_token, identifiers=["I_US5949181045","2588173","EG1320","CSP_594918104","IQT2630413"], properties={}) 
+display(response)
+```
+
+### 2. get_pricing_info_time_series
+Fetches historical pricing information over a specified time period. 
+```sh
+response = mds.get_pricing_info_time_series(token=bearer_token, identifiers=["CSP_594918104","IQT2630413","GV012141","MSFT:NasdaqGS","DB649496569","RX309198","MMM:"], properties={}) 
+display(response)
+```
+
+### 3. get_dividend_info_pit
+Fetches dividend information for a given point in time. 
+```sh
+response = mds.get_dividend_info_pit(token=bearer_token, identifiers=["CSP_594918104","IQT2630413","GV012141","MSFT:NasdaqGS"], properties={}) 
+display(response)
+```
+
+### 4. get_dividend_info_time_series
+Fetches historical dividend information over a specified time period 
+```sh
+response = mds.get_dividend_info_time_series(token=bearer_token, identifiers=["GV012141","MSFT:NasdaqGS","DB649496569","RX309198","MMM:"], properties={}) 
+display(response)
+```
+
+### 5. get_market_info_pit
+Fetches market information for a given point in time. 
+```sh
+response = mds.get_market_info_pit(token=bearer_token, identifiers=["IQT2630413","GV012141","MSFT:NasdaqGS","DB649496569","RX309198"], properties={}) 
+display(response)
+```
+### 6. get_market_info_time_series
+Fetches historical market information over a specified time period.
+```sh 
+response = mds.get_market_info_time_series(token=bearer_token, identifiers=["AAPL:"], properties={}) 
+display(response)
+```
+
+## Additional Resources
+For more information on our Python SDK, please visit the [S&P Global Support Center](https://www.support.marketplace.spglobal.com/en/delivery-resources#sec6). This resource requires you to create login credentials.
+
+On the support center, you can download the Python SDK and obtain additional resources, including a detailed CIQ Python SDK User Guide, to support your use of this offering.
+
+
