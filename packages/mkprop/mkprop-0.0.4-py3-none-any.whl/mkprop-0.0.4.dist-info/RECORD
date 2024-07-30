@@ -1,0 +1,10 @@
+mkprop/CFMKprop.py,sha256=aUzKEYPFdPdxIZcOEW6Flk8rsF0IDX4qiyOv2pgLPHY,12612
+mkprop/KS.py,sha256=Hzqvgz8daKLnvBc0FjvxyHWh9fdCT5NUtVVd-T8N67s,4232
+mkprop/Krylovprop.py,sha256=Feq_X2niIyzj0UFel5s9WA5Lv4Nd68tSoYoc0JOZhws,8544
+mkprop/KrylovpropSAI.py,sha256=IQlUUKE4lDsoBXySrCYjWU2o5bPvZzrnx6bzs7OP6fc,8822
+mkprop/__init__.py,sha256=xwP6Uzku6mtJ4wNbPMJ-GzZD5BHQr0UneHsl-0qWIIA,125
+mkprop/smallexpimv.py,sha256=dv9YrKdeMTnBH-xKXH9GjzNx79aV1JXj8pT8RWAMFOk,873
+mkprop-0.0.4.dist-info/METADATA,sha256=iHSfr1mVV0JczdcWkNl5G5azJ0r6G4o8EQjsJTeBwqk,1060
+mkprop-0.0.4.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+mkprop-0.0.4.dist-info/licenses/LICENSE,sha256=5Ez2dO9r6hlg5MAQh-NHFpNHFtlvsJlmu0Se2f-nQRw,1501
+mkprop-0.0.4.dist-info/RECORD,,
