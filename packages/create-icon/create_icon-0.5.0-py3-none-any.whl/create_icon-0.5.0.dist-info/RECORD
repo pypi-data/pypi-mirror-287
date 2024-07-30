@@ -1,0 +1,12 @@
+create_icon/__init__.py,sha256=NotXXVWS2UhSqAofhEL0JAxrwyO0s5WsI7xjzmMWrMA,90948
+create_icon/create_icon.py,sha256=NotXXVWS2UhSqAofhEL0JAxrwyO0s5WsI7xjzmMWrMA,90948
+create_icon/Examples/AddIcontoTitlebar.py,sha256=iNq81nMWkZTS2sATn0M4-uukyqdTFlYNYk93FBkDctk,519
+create_icon/Examples/CreateIconfile.py,sha256=PenbQBfexV_rgEviZzD03XCX24yMqI9dcGbgjpnnWu0,564
+create_icon/tests/AddIcontoTitlebar.py,sha256=BWOUrL14WlC1i1WBiVoEmd2dFvlnLDMA-1X7Gw0Ixek,517
+create_icon-0.5.0.dist-info/LICENSE,sha256=oQZm6RkPIPTbNv8MRBEchX0A2X8DDEMAbcPOh80flJY,1071
+create_icon-0.5.0.dist-info/LICENSE.md,sha256=XOS9XUQzJxVn16pFYyameDGbRjo9rkgSINWFZTeVsUc,1137
+create_icon-0.5.0.dist-info/LICENSE.txt,sha256=anErzpg0qHwe-WIZrpM_4JHGKAcaBB2kz6tPEwQTFkM,1073
+create_icon-0.5.0.dist-info/METADATA,sha256=3RISLVIE3xo16otsj5tIHTv79zUcemu-p8dOceM1mPs,3344
+create_icon-0.5.0.dist-info/WHEEL,sha256=y4mX-SOX4fYIkonsAGA5N0Oy-8_gI4FXw5HNI1xqvWg,91
+create_icon-0.5.0.dist-info/top_level.txt,sha256=cdw18gdhWMFK0NfZ9BzuRWVr-si-vsVesoT6Y__O8Dk,12
+create_icon-0.5.0.dist-info/RECORD,,
