@@ -1,0 +1,17 @@
+name: "infer"
+backend: "paddle"
+max_batch_size: 1
+
+input [
+]
+
+output [
+]
+
+instance_group [ 
+  { 
+    count: 1
+    kind: KIND_GPU
+    gpus: [0]
+  }
+]

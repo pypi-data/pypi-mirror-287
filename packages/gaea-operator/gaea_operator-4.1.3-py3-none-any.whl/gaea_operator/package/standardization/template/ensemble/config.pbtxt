@@ -1,0 +1,71 @@
+name: "ensemble"
+platform: "ensemble"
+max_batch_size: 1
+
+input [
+  {
+    name: "skill_input_image_0"
+    data_type: TYPE_UINT8
+    dims: [ -1, -1, 3 ]
+  },
+  {
+    name: "skill_input_meta_json"
+    data_type: TYPE_UINT8
+    dims: [-1]
+  }
+]
+
+output [
+  {
+    name: "skill_out_json"
+    data_type: TYPE_UINT8
+    dims: [-1]
+  }
+]
+
+ensemble_scheduling {
+  step [
+    {
+      model_name: "pre"
+      model_version: -1
+      input_map {
+        key: "skill_input_image"
+        value: "skill_input_image_0"
+      }
+      output_map {
+        key: "preprocessed_image"
+        value: "preprocessed_image"
+      }
+    },
+    {
+      model_name: "infer"
+      model_version: -1
+
+      input_map {
+        key: "image"
+        value: "preprocessed_image"
+      }
+      input_map {
+        key: "image_shape"
+        value: "image_shape"
+      }
+      output_map {
+        key: "linear_13.tmp_1"
+        value: "waimai"
+      }
+    },
+    {
+      model_name: "post"
+      model_version: -1
+      input_map {
+        key: "meta_json"
+        value: "skill_input_meta_json"
+      }
+
+      output_map {
+        key: "skill_json"
+        value: "skill_out_json"
+      }
+    }
+  ]
+}

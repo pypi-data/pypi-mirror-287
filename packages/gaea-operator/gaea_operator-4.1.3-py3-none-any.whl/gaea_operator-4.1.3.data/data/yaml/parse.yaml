@@ -1,0 +1,39 @@
+sstart_extra_cmd: --pinned-memory-pool-byte-size=2147483648 --cuda-memory-pool-byte-size=0:2147483648
+version: 1.0
+outputs:
+- model_name: ensemble
+  fields_map:
+  - field_name: 人头和车牌检测
+    model_name: test
+    model_type: detection
+    model_cn_name: modelout.0.detection
+    threshold: 0.1
+    categories:
+    - id: '1'
+      name: 人头
+    - id: '2'
+      name: 车牌
+  - field_name: 人头属性分类
+    model_name: test
+    model_type: obj_classification
+    model_cn_name: modelout.2.obj_classification
+    categories:
+    - id: '0'
+      name: 纯人头
+    - id: '1'
+      name: 帽子
+    - id: '2'
+      name: 头盔
+    - id: '3'
+      name: 遮挡
+  - field_name: 非机动车是否载人
+    model_name: test
+    model_type: image_classification
+    model_cn_name: modelout.3.image_classification
+    categories:
+    - id: '0'
+      name: 不载人
+    - id: '1'
+      name: 载人
+    - id: '2'
+      name: 不确定

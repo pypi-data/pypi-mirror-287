@@ -1,0 +1,26 @@
+name: "post"
+backend: "python"
+
+max_batch_size: 1
+input [
+  {
+    name: "meta_json"
+    data_type: TYPE_UINT8
+    dims: [ -1 ]
+  }
+]
+
+output [
+{
+    name: "skill_json"
+    data_type: TYPE_UINT8
+    dims: [ -1 ]
+  }
+]
+
+instance_group [
+  { 
+    count: 1
+    kind: KIND_CPU 
+  }
+]
