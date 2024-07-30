@@ -1,0 +1,8 @@
+README.md
+setup.py
+rsyslog_client_assistant/__init__.py
+rsyslog_client_assistant/rsyslog_client_assistant.py
+rsyslog_client_assistant.egg-info/PKG-INFO
+rsyslog_client_assistant.egg-info/SOURCES.txt
+rsyslog_client_assistant.egg-info/dependency_links.txt
+rsyslog_client_assistant.egg-info/top_level.txt
