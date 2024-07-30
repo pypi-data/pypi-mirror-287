@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+matbii/__init__.py
+matbii/__main__.py
+matbii/_const.py
+matbii.egg-info/PKG-INFO
+matbii.egg-info/SOURCES.txt
+matbii.egg-info/dependency_links.txt
+matbii.egg-info/requires.txt
+matbii.egg-info/top_level.txt
+test/test_configuration.py
+test/test_stub.py
