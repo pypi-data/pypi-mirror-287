@@ -1,0 +1,225 @@
+Metadata-Version: 2.1
+Name: isoai
+Version: 0.0.3
+Summary: Compress, Trace and Deploy Your Models with Iso!
+Home-page: https://github.com/iso-ai/isosdk
+Author: Jazmia Henry
+Author-email: isojaz@isoai.co
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch (>=1.7.1)
+
+# Iso AI
+**Unlock the Value of GenAI with Iso!** 
+# isoai Package Documentation
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Installation](#installation)
+3. [Modules](#modules)
+    - [isobits](#isobits)
+        - [GPT_bitnet](#gpt_bitnet)
+        - [torch_bitnet](#torch_bitnet)
+        - [replace_linear_layers](#replace_linear_layers)
+        - [LLama_bitnet](#llama_bitnet)
+        - [MoE_bitnet](#moe_bitnet)
+    - [isodeploy](#isodeploy)
+        - [containerize](#containerize)
+        - [oscontainerization](#oscontainerization)
+    - [isotrace](#isotrace)
+4. [Usage Examples](#usage-examples)
+    - [Replacing Linear Layers with TorchBitNet](#replacing-linear-layers-with-torchbitnet)
+    - [Using BitNetLLAMA](#using-bitnetllama)
+    - [Using MoE Transformer](#using-moe-transformer)
+    - [Containerizing Your Model](#containerizing-your-model)
+    - [Containerizing with OS Detection](#containerizing-with-os-detection)
+    - [Tracing Variables](#tracing-variables)
+5. [Contributing](#contributing)
+6. [Support](#support)
+7. [License](#license)
+8. [Acknowledgments](#acknowledgments)
+
+## Overview
+The `isoai` package is designed to facilitate the integration, transformation, deployment, and tracing of AI models. It provides a suite of tools that make it easy to work with different types of neural network architectures and deploy them in a containerized environment.
+
+## Installation
+To install the `isoai` package, use the following command:
+```bash
+pip install isoai
+```
+
+## Modules
+
+### isobits
+
+#### GPT_bitnet
+The `GPT_bitnet` module contains implementations of transformers using the BitNet architecture.
+
+- **Transformer**: Main transformer class.
+- **TransformerBlock**: Individual transformer block class.
+
+#### torch_bitnet
+The `torch_bitnet` module provides implementations for RMSNorm and TorchBitNet layers.
+
+- **RMSNorm**: Root Mean Square Layer Normalization.
+- **TorchBitNet**: Implementation of BitNet layers using PyTorch.
+
+#### replace_linear_layers
+The `replace_linear_layers` module provides functionality to replace traditional linear layers in a model with TorchBitNet layers.
+
+- **replace_linears_with_torchbitnet**: Function to replace linear layers with TorchBitNet layers.
+
+#### LLama_bitnet
+The `LLama_bitnet` module includes the BitNetLLAMA model, which leverages the BitNet architecture.
+
+- **BitNetLLAMA**: Implementation of the LLAMA model using BitNet.
+
+#### MoE_bitnet
+The `MoE_bitnet` module implements the Mixture of Experts (MoE) architecture using BitNet.
+
+- **MoETransformer**: Transformer model with MoE.
+- **MoETransformerBlock**: Individual MoE transformer block.
+
+### isodeploy
+
+#### containerize
+The `containerize` module helps in containerizing models into Docker containers.
+
+- **Containerize**: Main class for containerizing models.
+
+#### oscontainerization
+The `oscontainerization` module extends containerization functionality with automatic OS detection.
+
+- **OSContainerize**: Class for containerizing models with OS detection.
+
+### isotrace
+
+The `isotrace` module provides tools for tracing and logging variables within the code.
+
+- **Autotrace**: Class for automatic tracing and logging of variables.
+
+## Usage Examples
+
+### Replacing Linear Layers with TorchBitNet
+```python
+import torch
+from isoai.isobits.GPT_bitnet import Transformer
+from isoai.isobits.replace_linear_layers import replace_linears_with_torchbitnet
+
+class ModelArgs:
+    def __init__(self):
+        self.vocab_size = 30522
+        self.dim = 768
+        self.n_heads = 12
+        self.n_kv_heads = 12
+        self.max_seq_len = 512
+        self.norm_eps = 1e-5
+        self.multiple_of = 64
+        self.ffn_dim_multiplier = 4
+        self.n_layers = 12
+        self.max_batch_size = 32
+
+args = ModelArgs()
+tokens = torch.randint(0, args.vocab_size, (2, args.max_seq_len))
+transformer = Transformer(args)
+output = transformer(tokens, start_pos=0)
+print("Original Transformer Description: ", transformer)
+replace_linears_with_torchbitnet(transformer, norm_dim=10)
+print("Bitnet Transformer Description: ", transformer)
+```
+
+### Using BitNetLLAMA
+```python
+import torch
+from isoai.isobits.LLama_bitnet import BitNetLLAMA
+
+class ModelArgs:
+    def __init__(self):
+        self.vocab_size = 30522
+        self.dim = 768
+        self.n_heads = 12
+        self.n_kv_heads = 12
+        self.max_seq_len = 512
+        self.norm_eps = 1e-5
+        self.multiple_of = 64
+        self.ffn_dim_multiplier = 4
+        self.max_batch_size = 32
+        self.n_layers = 12
+
+args = ModelArgs()
+tokens = torch.randint(0, args.vocab_size, (2, args.max_seq_len))
+bitnet_llama = BitNetLLAMA(args)
+output = bitnet_llama(tokens, start_pos=0)
+print(output.shape)
+```
+
+### Using MoE Transformer
+```python
+import torch
+from isoai.isobits.MoE_bitnet import MoETransformer
+
+class ModelArgs:
+    def __init__(self):
+        self.vocab_size = 30522
+        self.dim = 768
+        self.n_heads = 12
+        self.n_kv_heads = 12
+        self.max_seq_len = 512
+        self.norm_eps = 1e-5
+        self.multiple_of = 64
+        self.ffn_dim_multiplier = 4
+        self.max_batch_size = 32
+        self.n_layers = 12
+        self.num_experts = 4  # Number of experts in MoE layers
+
+args = ModelArgs()
+tokens = torch.randint(0, args.vocab_size, (2, args.max_seq_len))
+moe_transformer = MoETransformer(args)
+output = moe_transformer(tokens, start_pos=0)
+print(output.shape)
+```
+
+### Containerizing Your Model
+```python
+from isoai.isodeploy.containerize import Containerize
+
+model_path = "isoai"
+output_path = "Dockerfile"
+
+containerize = Containerize(model_path)
+containerize.run(output_path)
+```
+
+### Containerizing with OS Detection
+```python
+from isoai.isodeploy.oscontainerization import OSContainerize
+
+model_path = "isoai"
+output_path = "Dockerfile"
+
+containerize = OSContainerize(model_path)
+containerize.run(output_path)
+```
+
+### Tracing Variables
+```python
+from isoai.isotrace.autotrace import Autotrace
+
+search_path = "isoai"
+output_file = "output.json"
+
+autotrace = Autotrace(search_path)
+autotrace.run(output_file)
+```
+
+
+
+
+
