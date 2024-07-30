@@ -1,0 +1,16 @@
+jax_cuda12_plugin/_blas.so,sha256=1Wr9WDrMd09QWZ7e3_np7pjpdv9Fh4g8sBwH5SPKi-s,4249488
+jax_cuda12_plugin/_linalg.so,sha256=qyIhfQ8Q075ste51gpLWMwimz2q_SyWrW2DUc0bhfoc,4273600
+jax_cuda12_plugin/_mosaic_gpu_ext.so,sha256=aw1d-u3Z19Mjbu3hi0lq3xZTVUasUZXb4IhE7jkpD3k,4051464
+jax_cuda12_plugin/_prng.so,sha256=wUy37zOpEEEXVu_IvDrKYo_Myc5GqJRn--W9fOZRgB8,4145336
+jax_cuda12_plugin/_rnn.so,sha256=lNyipNWlFnbC9gqRKqRg7JP1p4ViR5bBDikllXKBbv8,4175624
+jax_cuda12_plugin/_solver.so,sha256=D06h7gGdL6JLGNI97ioWFsYzzw82YxulSTCd6_8AvUw,4401840
+jax_cuda12_plugin/_sparse.so,sha256=b1VMvch5Akb2Aq7klvFRiQA7VMLpvgNCHcWKHOXYZfQ,4259624
+jax_cuda12_plugin/_triton.so,sha256=AzKObyWo5ygin1AW-3UU3EoOI1A5kgV0bJRwVKOX7rw,5692824
+jax_cuda12_plugin/_versions.so,sha256=IAUI1gRUrSCXDvUMJk3aCHmkX3gLL_q8MSaB0PJ2ino,4643760
+jax_cuda12_plugin/cuda_plugin_extension.so,sha256=4S4N7AtLfrLlP0wyIWfXfBzU6g8_SpkvAIOusnENaIE,6418480
+jax_cuda12_plugin/libmosaic_gpu_runtime.so,sha256=jfIkSRLVRqIeoXlVknwNHRrHU5R2CDny1Y9eQA1GdfI,4371976
+jax_cuda12_plugin/version.py,sha256=vWhr15Zyt8Omg9MelpYbDx-0l7oJqN0SWD2qGIkr3f4,5939
+jax_cuda12_plugin-0.4.31.dist-info/METADATA,sha256=mz7hw4G3zemr06WLKzthrEqTuDvn7Gr-FWtCB61GSgo,1237
+jax_cuda12_plugin-0.4.31.dist-info/WHEEL,sha256=XcXIRX2bPo-EGCFnthMC441x8LAB1n06gaqRMpx0fSU,113
+jax_cuda12_plugin-0.4.31.dist-info/top_level.txt,sha256=q0KYxCqZshNahCPNxIjf91yVn84pR5YYEIruFNSX_Vg,18
+jax_cuda12_plugin-0.4.31.dist-info/RECORD,,
