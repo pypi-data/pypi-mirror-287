@@ -1,0 +1,25 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.poetry]
+authors = ["leeparnell <152523161+leeparnell@users.noreply.github.com>"]
+description = ""
+name = "pi-haiku"
+packages = [{from = "src", include = "pi_haiku"}]
+readme = "README.md"
+version = "0.2.1"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.1"
+toml = "^0.10.2"
+toml-sort = "^0.23.1"
+types-toml = "^0.10.8.20240310"
+
+[tool.tomlsort]
+all = true
+in_place = true
+overrides."tool.poetry.dependencies".first = ["python"]
