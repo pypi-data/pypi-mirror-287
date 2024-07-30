@@ -1,0 +1,12 @@
+DEFINED_PHASES=-
+DESCRIPTION=stub ebuild with incomplete python support
+EAPI=8
+HOMEPAGE=https://pkgcraft.pkgcraft
+INHERIT=python-r1
+IUSE=python_targets_python3_8
+LICENSE=MIT
+RDEPEND=python_targets_python3_8? ( dev-lang/python:3.8 )
+REQUIRED_USE=|| ( python_targets_python3_8 )
+SLOT=1
+_eclasses_=python-r1	71fd19faeb439e121356c156c6d6f3e2
+_md5_=f0e97f7db9fdfcde11e43c9ac202a78a

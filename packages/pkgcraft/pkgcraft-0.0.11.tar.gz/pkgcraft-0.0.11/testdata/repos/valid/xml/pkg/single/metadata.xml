@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>a.person@email.com</email>
+		<name>A Person</name>
+	</maintainer>
+	<use>
+		<flag name="flag">flag desc</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">pkgcraft/pkgcraft</remote-id>
+		<bugs-to>https://github.com/pkgcraft/pkgcraft/issues</bugs-to>
+		<changelog> </changelog>
+		<doc> https://github.com/pkgcraft/pkgcraft  </doc>
+		<maintainer status="active">
+			<name>upstream</name>
+		</maintainer>
+	</upstream>
+	<longdescription>
+		A wrapped
+		sentence.
+		Another sentence.
+
+		New paragraph.
+	</longdescription>
+	<slots>
+		<slot name="*">slot description</slot>
+		<subslots>subslot description</subslots>
+	</slots>
+	<stabilize-allarches/>
+</pkgmetadata>

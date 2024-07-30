@@ -1,0 +1,5 @@
+DEFINED_PHASES=-
+DESCRIPTION=ebuild with minimal metadata
+EAPI=8
+SLOT=1
+_md5_=8b1e2ba0a532dfbdc5e7cfeb3c5736da

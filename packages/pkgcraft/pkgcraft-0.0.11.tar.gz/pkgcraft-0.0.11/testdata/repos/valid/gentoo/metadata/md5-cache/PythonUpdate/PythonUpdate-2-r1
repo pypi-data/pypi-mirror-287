@@ -1,0 +1,12 @@
+BDEPEND=stub/python-dep:1[python_targets_python3_8]
+DEFINED_PHASES=-
+DEPEND=python_targets_python3_8? ( dev-lang/python:3.8 )
+DESCRIPTION=Ebuild with no available python updates due to deps
+EAPI=8
+HOMEPAGE=https://pkgcraft.pkgcraft
+INHERIT=python-any-r1
+IUSE=python_targets_python3_8
+LICENSE=MIT
+SLOT=0
+_eclasses_=python-any-r1	71fd19faeb439e121356c156c6d6f3e2
+_md5_=c150be2b60f56eefb181618f1a2b6d7b

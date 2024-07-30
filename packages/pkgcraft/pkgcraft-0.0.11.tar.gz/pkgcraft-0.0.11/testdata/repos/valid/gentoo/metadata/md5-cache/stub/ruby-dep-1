@@ -1,0 +1,12 @@
+DEFINED_PHASES=-
+DEPEND=ruby_targets_ruby31? ( dev-lang/ruby:3.1 )
+DESCRIPTION=stub ebuild with incomplete ruby support
+EAPI=8
+HOMEPAGE=https://pkgcraft.pkgcraft
+INHERIT=ruby-ng
+IUSE=ruby_targets_ruby31
+LICENSE=MIT
+REQUIRED_USE=|| ( ruby_targets_ruby31 )
+SLOT=1
+_eclasses_=ruby-ng	b73b3f18d94282f3fac1512be98c2300
+_md5_=39045a171d31167c584015dba1929d10

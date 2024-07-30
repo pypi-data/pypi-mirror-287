@@ -1,0 +1,12 @@
+DEFINED_PHASES=-
+DESCRIPTION=Ebuild with no available python updates due to deps
+EAPI=8
+HOMEPAGE=https://pkgcraft.pkgcraft
+INHERIT=python-r1
+IUSE=python_targets_python3_8 python_targets_python3_9
+LICENSE=MIT
+RDEPEND=python_targets_python3_8? ( dev-lang/python:3.8 ) python_targets_python3_9? ( dev-lang/python:3.9 ) stub/python-dep:1[python_targets_python3_8,python_targets_python3_9]
+REQUIRED_USE=|| ( python_targets_python3_8 python_targets_python3_9 )
+SLOT=0
+_eclasses_=python-r1	71fd19faeb439e121356c156c6d6f3e2
+_md5_=fae6c1eaf14ebcf22407efed14936f56

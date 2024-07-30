@@ -1,0 +1,12 @@
+DEFINED_PHASES=-
+DESCRIPTION=Ebuild with potential python updates
+EAPI=8
+HOMEPAGE=https://pkgcraft.pkgcraft
+INHERIT=python-r1
+IUSE=python_targets_python3_9 python_targets_python3_8 python_targets_python3_10
+LICENSE=MIT
+RDEPEND=python_targets_python3_9? ( dev-lang/python:3.9 ) python_targets_python3_8? ( dev-lang/python:3.8 ) python_targets_python3_10? ( dev-lang/python:3.10 ) stub/python-dep:0[python_targets_python3_9,python_targets_python3_8,python_targets_python3_10]
+REQUIRED_USE=|| ( python_targets_python3_9 python_targets_python3_8 python_targets_python3_10 )
+SLOT=0
+_eclasses_=python-r1	71fd19faeb439e121356c156c6d6f3e2
+_md5_=04d45fa2840c434db50b632075e8055b
