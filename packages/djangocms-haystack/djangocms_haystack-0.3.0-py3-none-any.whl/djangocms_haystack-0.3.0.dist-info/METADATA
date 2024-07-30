@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: djangocms-haystack
+Version: 0.3.0
+Summary: aldryn-search inspired Haystack index for djangoCMS projects
+Author: Filip Weidemann
+Author-email: filip.weidemann@lfda.de
+Requires-Python: >=3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: django-cms (>=4.1.2,<4.2.0)
+Requires-Dist: django-haystack (>=3.3.0,<3.4.0)
+Requires-Dist: nh3 (>=0.2.18,<0.3.0)
+Requires-Dist: whoosh (>=2.7.4,<2.8.0)
+Description-Content-Type: text/markdown
+
+# djangocms-search – Ready to use Haystack index for djangoCMS
+
