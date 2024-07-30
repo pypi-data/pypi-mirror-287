@@ -1,0 +1,9 @@
+atlus/__about__.py,sha256=Fs7wclAtJ2v8-YvoTdAtThsw1F8Mf23FAnfN2XcN59Y,61
+atlus/__init__.py,sha256=NzltrLPGvaoFTi6a4BfgFNjnSQOl-DmtRTf5bBZ4RSQ,1001
+atlus/atlus.py,sha256=-Z0hVi5tY4ckUuKyPqfCWwfTidx3O7f1tTWItxPGZ4k,13887
+atlus/objects.py,sha256=x7OnajWqLjAO2G9soP-Ge4QvTg1OajlfO807bcUf9lQ,1458
+atlus/resources.py,sha256=rr0mfZAAUSjEwIOhHrOricr7FcevGw642YK4HCeihn0,10123
+atlus-0.2.2.dist-info/METADATA,sha256=HQhYcd3zU7MYAMytL4NPnCU95uhFBIZGIKH4gLV1E_s,3407
+atlus-0.2.2.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+atlus-0.2.2.dist-info/licenses/LICENSE.txt,sha256=b5WOl3a6Gti3d3gAPHP7TybGNScqVDGytjXwwzLIauU,1064
+atlus-0.2.2.dist-info/RECORD,,
