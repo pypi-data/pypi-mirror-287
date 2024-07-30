@@ -1,0 +1,115 @@
+Metadata-Version: 2.1
+Name: thabit
+Version: 0.2.1
+Summary: Thabit: evaluate multiple LLMs on your data
+Home-page: https://github.com/thabit-ai/thabit
+Author: Oras Al-Kubaisi
+Author-email: code@oras.me
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp==3.9.5
+Requires-Dist: aiosignal==1.3.1
+Requires-Dist: annotated-types==0.7.0
+Requires-Dist: anyio==4.4.0
+Requires-Dist: async-timeout==4.0.3
+Requires-Dist: attrs==23.2.0
+Requires-Dist: black==24.4.2
+Requires-Dist: blinker==1.8.2
+Requires-Dist: build==1.2.1
+Requires-Dist: certifi==2024.7.4
+Requires-Dist: click==8.1.7
+Requires-Dist: colorama==0.4.6
+Requires-Dist: distro==1.9.0
+Requires-Dist: exceptiongroup==1.2.2
+Requires-Dist: Flask==3.0.3
+Requires-Dist: frozenlist==1.4.1
+Requires-Dist: fuzzywuzzy==0.18.0
+Requires-Dist: h11==0.14.0
+Requires-Dist: httpcore==1.0.5
+Requires-Dist: httpx==0.27.0
+Requires-Dist: idna==3.7
+Requires-Dist: importlib_metadata==8.2.0
+Requires-Dist: iniconfig==2.0.0
+Requires-Dist: itsdangerous==2.2.0
+Requires-Dist: Jinja2==3.1.4
+Requires-Dist: Levenshtein==0.25.1
+Requires-Dist: loguru==0.7.2
+Requires-Dist: markdown-it-py==3.0.0
+Requires-Dist: MarkupSafe==2.1.5
+Requires-Dist: mdurl==0.1.2
+Requires-Dist: multidict==6.0.5
+Requires-Dist: mypy-extensions==1.0.0
+Requires-Dist: numpy==1.24.4
+Requires-Dist: openai==1.37.0
+Requires-Dist: packaging==24.1
+Requires-Dist: pandas==2.0.3
+Requires-Dist: pathspec==0.12.1
+Requires-Dist: platformdirs==4.2.2
+Requires-Dist: pluggy==1.5.0
+Requires-Dist: pydantic==2.8.2
+Requires-Dist: pydantic_core==2.20.1
+Requires-Dist: Pygments==2.18.0
+Requires-Dist: pyproject_hooks==1.1.0
+Requires-Dist: pytest==8.3.2
+Requires-Dist: python-dateutil==2.9.0.post0
+Requires-Dist: python-dotenv==1.0.1
+Requires-Dist: python-Levenshtein==0.25.1
+Requires-Dist: pytz==2024.1
+Requires-Dist: rapidfuzz==3.9.4
+Requires-Dist: rich==13.7.1
+Requires-Dist: six==1.16.0
+Requires-Dist: sniffio==1.3.1
+Requires-Dist: tabulate==0.9.0
+Requires-Dist: terminaltables==3.1.10
+Requires-Dist: terminaltables3==4.0.0
+Requires-Dist: tomli==2.0.1
+Requires-Dist: tqdm==4.66.4
+Requires-Dist: typing_extensions==4.12.2
+Requires-Dist: tzdata==2024.1
+Requires-Dist: Werkzeug==3.0.3
+Requires-Dist: yarl==1.9.4
+Requires-Dist: zipp==3.19.2
+
+# Thabit
+
+Evaluate multiple LLM models with the same data to determine which one is better for your use case.
+
+## How to run
+
+```shell
+pip3 install thabit
+```
+
+## Test
+
+```shell
+pytest tests
+```
+
+## Build
+
+```shell
+pip3 install -e .
+```
+
+## Contribute
+
+## Docs
+
+## TODO:
+
+- Validate the input dataset.
+- UI for adding/editing config.
+- Visulaise Output (using UI).
+- Run eval per dataset (add folders for dataset and for evals).
+  This is to simplify visualising results later using the UI.
+
+  ```
+  root
+  ├── datasets
+  │ └── a
+  └── evals
+    └── a
+  ```
