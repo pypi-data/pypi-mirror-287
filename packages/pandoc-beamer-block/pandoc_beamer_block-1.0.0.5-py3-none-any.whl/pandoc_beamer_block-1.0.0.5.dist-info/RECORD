@@ -1,0 +1,7 @@
+pandoc_beamer_block/__init__.py,sha256=x7j93-l76FdMsK4BMAovYWfVkT3KYCAkp2-7J65__Ww,122
+pandoc_beamer_block/_main.py,sha256=Ya6ATZXTPzi0JyoxY2In2H--1m8E-KaD4JQug5JmJUM,3679
+pandoc_beamer_block-1.0.0.5.dist-info/LICENSE,sha256=Y22q2Cbb_FjHleK8yc9xM7w_AZOHnJs8OT2h9ntWRzI,1521
+pandoc_beamer_block-1.0.0.5.dist-info/METADATA,sha256=dQIESDYsqRNoIhTWTjW-qVbEUHzlFLudXuWSltErV0U,23574
+pandoc_beamer_block-1.0.0.5.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+pandoc_beamer_block-1.0.0.5.dist-info/entry_points.txt,sha256=s42-pv_IX9sZ0RVvFmDKHgBuyogymABEo074q_20aJA,64
+pandoc_beamer_block-1.0.0.5.dist-info/RECORD,,
