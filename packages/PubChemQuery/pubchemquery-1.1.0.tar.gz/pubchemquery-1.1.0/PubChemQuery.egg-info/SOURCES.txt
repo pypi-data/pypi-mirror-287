@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+PubChemQuery.egg-info/PKG-INFO
+PubChemQuery.egg-info/SOURCES.txt
+PubChemQuery.egg-info/dependency_links.txt
+PubChemQuery.egg-info/requires.txt
+PubChemQuery.egg-info/top_level.txt
+pubchemquery/__init__.py
+pubchemquery/app.py
+pubchemquery/docs/__init__.py
+pubchemquery/docs/api.py
+pubchemquery/docs/config.py
+pubchemquery/docs/util.py
