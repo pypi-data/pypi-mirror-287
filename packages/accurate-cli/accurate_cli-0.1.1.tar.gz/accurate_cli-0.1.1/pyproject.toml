@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "accurate-cli"
+version = "0.1.1"
+description = ""
+authors = ["Mattia Consani <mattia.consani@epfl.ch>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+accurate-cli = "accurate_cli.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = {extras = ["all"], version = "^0.12.3"}
+pyserial = "^3.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
