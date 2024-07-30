@@ -1,0 +1,8 @@
+nubela_api/__init__.py,sha256=oh_UiJxxTn4nF4ioqTVFnidAQdvR5IMK7Kv_wSfsiAU,311
+nubela_api/models/profile.py,sha256=WpOQOV4XdQaD5I3yDyygUX-6GYM_pTndEH7TsKDFCf4,12934
+nubela_api/models/response.py,sha256=UKcNEqbZ-Th1VnWjD88LMjXTKb5eC_7-mZXWY57VUAk,2300
+nubela_api/person_api.py,sha256=dCRt4ba0p99KcRccGDFK1qOACt8XfLCgBZ9sUfsQa3E,3159
+nubela_api/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nubela_api-0.2.0.dist-info/METADATA,sha256=vAKoaWvRvHpr6cDZgPbHdi1KspS7RT5no7ShGXtX4AM,2689
+nubela_api-0.2.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+nubela_api-0.2.0.dist-info/RECORD,,
