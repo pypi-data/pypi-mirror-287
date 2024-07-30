@@ -1,0 +1,10 @@
+README.md
+setup.py
+resume_parser/__init__.py
+resume_parser/openai_api.py
+resume_parser_ai.egg-info/PKG-INFO
+resume_parser_ai.egg-info/SOURCES.txt
+resume_parser_ai.egg-info/dependency_links.txt
+resume_parser_ai.egg-info/entry_points.txt
+resume_parser_ai.egg-info/requires.txt
+resume_parser_ai.egg-info/top_level.txt
