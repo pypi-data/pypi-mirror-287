@@ -1,0 +1,13 @@
+clamnibs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clamnibs/base.py,sha256=vOajoeL8_INMmUuTZGXrv5MkTfmC54lfGEle3OECcAw,7656
+clamnibs/beamformer.py,sha256=sXsMif-unlpdGGkTzKti-wnQ1sAXcrwqPKfNxqq8LSQ,11105
+clamnibs/misc.py,sha256=THYQ9GjbhkY9ncBLoFYP9rfa1r77VMVTFedw96ll-co,8025
+clamnibs/sensor.py,sha256=sDVN9Y0OFvxh8y0i-vypHorC16W2ozt2GEwWfT26FwM,7769
+clamnibs/source.py,sha256=uG8ZcYYYXzZ_m5q4AG_D-V9lPCR3N6GIGAcMd6BLbRI,15976
+clamnibs/stats.py,sha256=-nBiFF3uWxoVRN37Xt09jA5HHxeag0b2aD0sh-29dR0,31478
+clamnibs/viz.py,sha256=fiEjQUKGBAJXqnQog9HHjoBU4EPlflH0W4JG-2dEl0M,4295
+clamnibs-0.1.6.dist-info/LICENSE,sha256=y4xOqU087ioJvFAum_RUMUNTRs2m9yDR-jBYS223nVQ,1093
+clamnibs-0.1.6.dist-info/METADATA,sha256=Qmt5bTOcXyBDbRP8S8zX-fN20c-TPdchGKMGokGDQio,1056
+clamnibs-0.1.6.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+clamnibs-0.1.6.dist-info/top_level.txt,sha256=ytEKZROWgy7DkWKyrkQCsgDrDo89qh7GfaXWCzqgTQM,9
+clamnibs-0.1.6.dist-info/RECORD,,
