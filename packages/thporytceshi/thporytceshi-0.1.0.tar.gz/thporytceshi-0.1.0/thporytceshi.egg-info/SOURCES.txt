@@ -1,0 +1,11 @@
+LICENCE.txt
+README.md
+setup.py
+thporytceshi/__init__.py
+thporytceshi/main.c
+thporytceshi/timer.c
+thporytceshi.egg-info/PKG-INFO
+thporytceshi.egg-info/SOURCES.txt
+thporytceshi.egg-info/dependency_links.txt
+thporytceshi.egg-info/not-zip-safe
+thporytceshi.egg-info/top_level.txt
