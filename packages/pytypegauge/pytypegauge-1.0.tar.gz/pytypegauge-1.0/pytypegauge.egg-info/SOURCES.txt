@@ -1,0 +1,11 @@
+README.md
+setup.py
+pytypegauge/__init__.py
+pytypegauge/logger.py
+pytypegauge/typegauge.py
+pytypegauge.egg-info/PKG-INFO
+pytypegauge.egg-info/SOURCES.txt
+pytypegauge.egg-info/dependency_links.txt
+pytypegauge.egg-info/entry_points.txt
+pytypegauge.egg-info/requires.txt
+pytypegauge.egg-info/top_level.txt
