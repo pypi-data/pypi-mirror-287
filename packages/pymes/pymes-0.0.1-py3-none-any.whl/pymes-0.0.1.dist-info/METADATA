@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pymes
+Version: 0.0.1
+Summary: An educational python module to explore stochastic population dynamics.
+Author-email: Ulrich Dobramysl <ulrich.dobramysl@gmail.com>
+License: MIT
+Keywords: population dynamics,simulations
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: numpy >=1.20.0
+
+<a href="https://codecov.io/gh/ulido/pymes" > 
+ <img align="right" src="https://codecov.io/gh/ulido/pymes/graph/badge.svg?token=AEQL35D04I"/> 
+</a>
+
+# `pymes` - Educational Population Dynamics in Python
+
+`pymes` is a population dynamics module written in pure easy to understand Python. It is targetted at educators and students who want to teach and learn about simulation population dynamics.
+
+## Installation
