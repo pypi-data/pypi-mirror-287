@@ -1,0 +1,6 @@
+[console_scripts]
+enrichments-shell=datasette_enrichments_shell:main
+
+[datasette]
+enrichments_shell=datasette_enrichments_shell
+
