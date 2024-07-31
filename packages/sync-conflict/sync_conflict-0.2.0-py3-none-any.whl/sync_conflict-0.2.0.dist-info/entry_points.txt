@@ -1,0 +1,2 @@
+[console_scripts]
+sync_conflict = sync_conflict.commands:cli
