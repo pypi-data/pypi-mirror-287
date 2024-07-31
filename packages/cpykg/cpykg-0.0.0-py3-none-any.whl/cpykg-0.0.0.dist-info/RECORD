@@ -1,0 +1,9 @@
+cpykg/__init__.py,sha256=fefVClihkpvQZYCAzFHsVj-3Nsq-T-NjNWxZvjPowgo,74
+cpykg/module1.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cpykg/setup.py,sha256=C--0_z7cca6CelQS_-WD4JXHZbrz89kPah75gRBhn58,375
+cpykg/utils.py,sha256=8z5fWM9pP5Gup0TW2li0m10wR8jN6ZnTtMAEQfBFFu4,1114
+cpykg-0.0.0.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cpykg-0.0.0.dist-info/METADATA,sha256=-u9ddt8hrJT26q16kjmf8dFZCtNi9epPFKpZjhQSiTs,72
+cpykg-0.0.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+cpykg-0.0.0.dist-info/top_level.txt,sha256=pyOYTGdRqPVveQDxAAVju4Xk7bKn2i9PBDRo5HyvZBw,6
+cpykg-0.0.0.dist-info/RECORD,,
