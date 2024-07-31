@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/__init__.py
+src/pyrealsense_multi/__init__.py
+src/pyrealsense_multi/align_frames.py
+src/pyrealsense_multi/record_sync.py
+src/pyrealsense_multi.egg-info/PKG-INFO
+src/pyrealsense_multi.egg-info/SOURCES.txt
+src/pyrealsense_multi.egg-info/dependency_links.txt
+src/pyrealsense_multi.egg-info/top_level.txt
