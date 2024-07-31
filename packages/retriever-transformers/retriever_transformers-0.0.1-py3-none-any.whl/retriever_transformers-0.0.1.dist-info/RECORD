@@ -1,0 +1,12 @@
+__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+models/DualBertEncoder.py,sha256=G6XrhPp71JDbODuvjO2IyS_1QTFxDIgw6SucVcuiKfM,848
+models/SingleBertEmbedder.py,sha256=vIeDJXh7OOFCkJ5A3zF_NpQF4sdtXvXYMOLFUPfZkjs,514
+models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+retrievers/BertEmbedderRetriever.py,sha256=e0kIJh1GmpdzoDWejbM73OTuJCahY6L6fbS3O32sEEg,3934
+retrievers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+retrievers/embedder.py,sha256=_6CjCu3JmoK0vkhMam4yghIBWYdraz-Wjhzz8jzHZNk,127
+retrievers/retriever.py,sha256=kt067P6t0in6OS3qvd9HF6RXjyE19Oz7UwJKGOp9Cyw,395
+retriever_transformers-0.0.1.dist-info/METADATA,sha256=AxLPAyPvSUdvjxzQ-QK2vdMsbqP0lnZIKKmlWm1s3vY,168
+retriever_transformers-0.0.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+retriever_transformers-0.0.1.dist-info/top_level.txt,sha256=3GY5TjyR7e4RKVltxsVYpIhhoIt_PUNRG16MFrqIp-M,27
+retriever_transformers-0.0.1.dist-info/RECORD,,
