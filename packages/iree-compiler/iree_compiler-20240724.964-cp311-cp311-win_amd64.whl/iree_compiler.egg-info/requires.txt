@@ -1,0 +1,6 @@
+numpy
+PyYAML
+sympy
+
+[onnx]
+onnx>=1.16.0
