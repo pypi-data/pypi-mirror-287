@@ -1,0 +1,570 @@
+Metadata-Version: 2.1
+Name: dvinci_api
+Version: 0.9.4
+Summary: Package for interacting with the Dvinci RestAPI
+Author: Hendrik Siemens
+Author-email: Hendrik Siemens <hendrik.siemens@takko.de>
+License: MIT
+Project-URL: homepage, https://dvinci.thor-systems.de
+Project-URL: repository, https://github.com/SiemensHalske/dvinci_api
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest >=7.0 ; extra == 'dev'
+
+# dvinci_api
+
+## Table of Contents
+
+-   [dvinci_api](#dvinci_api)
+    -   [Table of Contents](#table-of-contents)
+    -   [Overview](#overview)
+        -   [Features](#features)
+    -   [Getting Started](#getting-started)
+    -   [Installation](#installation)
+    -   [Usage](#usage)
+        -   [Authentication](#authentication)
+        -   [Job Publications](#job-publications)
+            -   [Get All Job Publications](#get-all-job-publications)
+        -   [Get Job Publication by ID](#get-job-publication-by-id)
+            -   [Retrieve a specific job publication by its ID](#retrieve-a-specific-job-publication-by-its-id)
+        -   [Locations](#locations)
+            -   [Get All Locations](#get-all-locations)
+        -   [Get Location by ID](#get-location-by-id)
+            -   [Retrieve a specific location by its ID](#retrieve-a-specific-location-by-its-id)
+        -   [Organizational Units](#organizational-units)
+            -   [Get All Organizational Units](#get-all-organizational-units)
+        -   [Get Organizational Unit by ID](#get-organizational-unit-by-id)
+            -   [Retrieve a specific organizational unit by its ID](#retrieve-a-specific-organizational-unit-by-its-id)
+    -   [API Endpoints](#api-endpoints)
+        -   [Job Publications](#job-publications-1)
+            -   [Get All Job Publications](#get-all-job-publications-1)
+            -   [Get Job Publication by ID](#get-job-publication-by-id-1)
+        -   [Job Publication Channels](#job-publication-channels)
+            -   [Get All Job Publication Channels](#get-all-job-publication-channels)
+            -   [Get Job Publication Channel by ID](#get-job-publication-channel-by-id)
+    -   [Contributing](#contributing)
+        -   [Development](#development)
+    -   [License](#license)
+    -   [Contact Information](#contact-information)
+
+## Overview
+
+The `dvinci_api` package provides a Python interface for interacting with the Dvinci RestAPI. It allows developers to easily connect to the API, perform CRUD operations, and manage various resources related to job publications, locations, organizational units, and more.
+
+### Features
+
+-   **Job Publications**: Create, retrieve, update, and delete job publications.
+-   **Locations**: Access and manage location information.
+-   **Organizational Units**: Manage organizational units and their details.
+-   **User Management**: Handle users and user groups within the system.
+-   **Authentication**: Simplified authentication process using API tokens.
+
+## Getting Started
+
+Before using the package, you need to obtain an API token from the Dvinci platform. The token is used to authenticate your requests and access the API endpoints. You can generate an API token by following these steps:
+
+1. **Log in to Dvinci**: Go to the Dvinci platform and log in to your account.
+2. **Generate API Token**: Navigate to the user settings and search for your API user. Generate a new API token and copy it to your clipboard.
+3. **Use the Token**: When making requests to the API, include the API token in the `Authorization` header.
+
+```python
+# To be edited...
+```
+
+## Installation
+
+Install the package using `pip`:
+
+```bash
+pip install dvinci_api
+```
+
+## Usage
+
+This section provides detailed examples of how to use the `dvinci_api` package for various operations. Below are some common use cases to help you get started.
+
+### Authentication
+
+Before making any API calls, you need to authenticate using your Dvinci API credentials.
+
+```python
+from dvinci_api.core.auth import DvinciAuth
+
+# Set up authentication
+auth = DvinciAuth(user="your_username", token="your_api_token")
+```
+
+### Job Publications
+
+#### Get All Job Publications
+
+Retrieve all job publications.
+
+```python
+from dvinci_api.endpoints.job_publications import JobPublicationsAPI
+
+# Create an API client
+client = JobPublicationsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all job publications
+publications = client.get_job_publications()
+print(publications)
+```
+
+### Get Job Publication by ID
+
+#### Retrieve a specific job publication by its ID
+
+```python
+# Get a job publication by ID
+publication_id = "12345"
+publication = client.get_job_publication_by_id(publication_id)
+print(publication)
+```
+
+### Locations
+
+#### Get All Locations
+
+Retrieve all locations.
+
+```python
+Code kopieren
+from dvinci_api.endpoints.locations import LocationsAPI
+
+# Create an API client for locations
+locations_client = LocationsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all locations
+locations = locations_client.get_locations()
+print(locations)
+```
+
+### Get Location by ID
+
+#### Retrieve a specific location by its ID
+
+```python
+# Get a location by ID
+location_id = "1159"
+location = locations_client.get_location_by_id(location_id)
+print(location)
+```
+
+### Organizational Units
+
+#### Get All Organizational Units
+
+Retrieve all organizational units.
+
+```python
+from dvinci_api.endpoints.org_units import OrgUnitsAPI
+
+# Create an API client for organizational units
+
+org_units_client = OrgUnitsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all organizational units
+
+org_units = org_units_client.get_org_units()
+print(org_units)
+```
+
+### Get Organizational Unit by ID
+
+#### Retrieve a specific organizational unit by its ID
+
+````python
+# Get an organizational unit by ID
+
+org_unit_id = "5678"
+org_unit = org_units_client.get_org_unit_by_id(org_unit_id)
+print(org_unit)
+Users and User Groups
+Get All Users
+Retrieve all users.
+
+```python
+from dvinci_api.endpoints.users import UsersAPI
+
+# Create an API client for users
+
+users_client = UsersAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all users
+
+users = users_client.get_users()
+print(users)
+````
+
+Get User by ID
+Retrieve a specific user by their ID.
+
+````python
+#### Get a user by ID
+
+user_id = "7890"
+user = users_client.get_user_by_id(user_id)
+print(user)
+return 1
+
+These examples cover some of the basic functionalities of the dvinci_api package. For more detailed information and advanced usage, please refer to the full documentation.
+
+## Authentication
+
+To use the `dvinci_api` package, you need to authenticate with the Dvinci API using your username and API token.
+
+```python
+from dvinci_api.core.auth import DvinciAuth
+
+# Set up authentication
+auth = DvinciAuth(user="your_username", token="your_api_token")
+````
+
+## API Endpoints
+
+### Job Publications
+
+#### Get All Job Publications
+
+Retrieve all job publications.
+
+```python
+Code kopieren
+from dvinci_api.endpoints.job_publications import JobPublicationsAPI
+
+### Create an API client
+
+client = JobPublicationsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all job publications from the API
+
+publications = client.get_job_publications()
+print(publications)
+```
+
+#### Get Job Publication by ID
+
+Retrieve a specific job publication by its ID.
+
+```python
+# Get a job publication by ID
+
+publication_id = "12345"
+publication = client.get_job_publication_by_id(publication_id)
+print(publication)
+```
+
+### Job Publication Channels
+
+#### Get All Job Publication Channels
+
+Retrieve all job publication channels.
+
+```python
+from dvinci_api.endpoints.job_publication_channels import JobPublicationChannelsAPI
+
+# Create an API client for job publication channels
+
+channels_client = JobPublicationChannelsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all job publication channels
+
+channels = channels_client.get_job_publication_channels()
+print(channels)
+```
+
+#### Get Job Publication Channel by ID
+
+Retrieve a specific job publication channel by its ID.
+
+```python
+
+# Get a job publication channel by ID
+
+channel_id = "channel_id"
+channel = channels_client.get_channel_by_id(channel_id)
+print(channel)
+```
+
+Job Publication Placements
+Get All Job Publication Placements
+Retrieve all job publication placements.
+
+```python
+from dvinci_api.endpoints.job_publication_placements import JobPublicationPlacementsAPI
+
+# Create an API client for job publication placements
+placements_client = JobPublicationPlacementsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all job publication placements
+placements = placements_client.get_job_publication_placements()
+print(placements)
+```
+
+Get Job Publication Placement by ID
+Retrieve a specific job publication placement by its ID.
+
+```python
+# Get a job publication placement by ID
+placement_id = "placement_id"
+placement = placements_client.get_job_publication_placement_by_id(placement_id)
+print(placement)
+```
+
+Locations
+Get All Locations
+Retrieve all locations.
+
+```python
+from dvinci_api.endpoints.locations import LocationsAPI
+
+# Create an API client for locations
+locations_client = LocationsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all locations
+locations = locations_client.get_locations()
+print(locations)
+```
+
+Get Location by ID
+Retrieve a specific location by its ID.
+
+```python
+# Get a location by ID
+location_id = "1159"
+location = locations_client.get_location_by_id(location_id)
+print(location)
+```
+
+Onboardings
+Get All Onboardings
+Retrieve all onboardings.
+
+```python
+from dvinci_api.endpoints.onboardings import OnboardingsAPI
+
+# Create an API client for onboardings
+onboardings_client = OnboardingsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all onboardings
+onboardings = onboardings_client.get_onboardings()
+print(onboardings)
+```
+
+Get Onboarding by ID
+Retrieve a specific onboarding by its ID.
+
+```python
+# Get an onboarding by ID
+onboarding_id = "onboarding_id"
+onboarding = onboardings_client.get_onboarding_by_id(onboarding_id)
+print(onboarding)
+```
+
+Organizational Units
+Get All Organizational Units
+Retrieve all organizational units.
+
+```python
+from dvinci_api.endpoints.org_units import OrgUnitsAPI
+
+# Create an API client for organizational units
+org_units_client = OrgUnitsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all organizational units
+org_units = org_units_client.get_org_units()
+print(org_units)
+```
+
+Get Organizational Unit by ID
+Retrieve a specific organizational unit by its ID.
+
+```python
+# Get an organizational unit by ID
+org_unit_id = "5678"
+org_unit = org_units_client.get_org_unit_by_id(org_unit_id)
+print(org_unit)
+```
+
+Persons
+Get All Persons
+Retrieve all persons.
+
+```python
+from dvinci_api.endpoints.persons import PersonsAPI
+
+# Create an API client for persons
+persons_client = PersonsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all persons
+persons = persons_client.get_persons()
+print(persons)
+```
+
+Get Person by ID
+Retrieve a specific person by their ID.
+
+```python
+
+# Get a person by ID
+person_id = "person_id"
+person = persons_client.get_person_by_id(person_id)
+print(person)
+```
+
+User Groups
+Get All User Groups
+Retrieve all user groups.
+
+```python
+from dvinci_api.endpoints.user_groups import UserGroupsAPI
+
+# Create an API client for user groups
+user_groups_client = UserGroupsAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all user groups
+user_groups = user_groups_client.get_user_groups()
+print(user_groups)
+```
+
+Get User Group by ID
+Retrieve a specific user group by its ID.
+
+```python
+# Get a user group by ID
+
+user_group_id = "user_group_id"
+user_group = user_groups_client.get_user_group_by_id(user_group_id)
+print(user_group)
+```
+
+Users
+Get All Users
+Retrieve all users.
+
+```python
+from dvinci_api.endpoints.users import UsersAPI
+
+# Create an API client for users
+
+users_client = UsersAPI(base_url="https://job.dvinci.com/restApi", auth=auth)
+
+# Get all users
+
+users = users_client.get_users()
+print(users)
+```
+
+Get User by ID
+Retrieve a specific user by their ID.
+
+```python
+# Get a user by ID
+
+user_id = "7890"
+user = users_client.get_user_by_id(user_id)
+print(user)
+```
+
+Error Handling
+The dvinci_api package provides custom exceptions for handling various errors that may occur during API requests.
+
+API Exception
+Handle API request errors.
+
+```python
+from dvinci_api.exceptions.api_exceptions import ApiException
+
+try:
+response = client.get_job_publications()
+except ApiException as e:
+print(f"API error occurred: {e}")
+```
+
+Authentication Exception
+Handle authentication errors.
+
+```python
+from dvinci_api.exceptions.auth_exceptions import AuthException
+
+try:
+auth = DvinciAuth(user="your_username", token="your_api_token")
+except AuthException as e:
+print(f"Authentication error occurred: {e}")
+```
+
+Testing
+To run the tests for the dvinci_api package, use the pytest framework. Ensure all dependencies are installed and the package is correctly set up.
+
+```bash
+# Run all tests
+pytest
+```
+
+This will discover and execute all the test cases defined in the tests directory. You can also run specific tests or test files by specifying the test file or test case name.
+
+```bash
+# Run specific test file
+pytest tests/test_job_publications.py
+
+# or
+
+pytest tests/test_locations.py
+```
+
+## Contributing
+
+I welcome any feedback, ideas, and suggestions for improving the project. If you have found a bug, want to propose a new feature, or have suggestions for improvements, please follow these steps:
+
+1. **Create an Issue**: Open an [Issue](https://github.com/SiemensHalske/dvinci_api/issues) on GitHub to describe the problem or proposed enhancement.
+2. **Discussion**: Let's discuss the issue to ensure we have a clear understanding of what needs to be changed.
+3. **Pull Request**: Fork the repository, make the desired changes, and open a Pull Request. Please describe the changes in detail and link to the relevant issue if applicable.
+
+### Development
+
+To set up the development environment:
+
+1. **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/SiemensHalske/dvinci_api.git
+    ```
+
+2. **Navigate to the project directory**:
+
+    ```bash
+    cd dvinci_api
+    ```
+
+3. **Create a virtual environment**:
+
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
+    ```
+
+4. **Install the dependencies**:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+Feel free to reach out if you have any questions or need further assistance. Happy coding!
+
+## License
+
+For license information, see [LICENSE](LICENSE).
+
+## Contact Information
+
+For questions or support, please contact [hendrik.siemens@takko.de](mailto:hendrik.siemens@takko.de).
