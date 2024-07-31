@@ -1,0 +1,5 @@
+pyproject.toml
+amazingpy.egg-info/PKG-INFO
+amazingpy.egg-info/SOURCES.txt
+amazingpy.egg-info/dependency_links.txt
+amazingpy.egg-info/top_level.txt
