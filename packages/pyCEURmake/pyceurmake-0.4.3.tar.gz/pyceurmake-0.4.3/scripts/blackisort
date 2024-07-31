@@ -1,0 +1,4 @@
+#!/bin/bash
+# WF 2024-01-10
+ruff format
+ruff check --fix

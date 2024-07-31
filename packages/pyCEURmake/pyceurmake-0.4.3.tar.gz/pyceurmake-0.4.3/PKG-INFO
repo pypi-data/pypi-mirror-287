@@ -1,0 +1,67 @@
+Metadata-Version: 2.3
+Name: pyCEURmake
+Version: 0.4.3
+Dynamic: Summary
+Project-URL: Home, https://github.com/WolfgangFahl/py-sidif
+Project-URL: Documentation, https://wiki.bitplan.com/index.php/Py-sidif
+Project-URL: Source, https://github.com/WolfgangFahl/py-sidif
+Author-email: Tim Holzheim <tim.holzheim@rwth-aachen.de>, Wolfgang Fahl <wf@bitplan.com>
+Maintainer-email: Wolfgang Fahl <wf@bitplan.com>, Tim Holzheim <tim.holzheim@rwth-aachen.de>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Requires-Dist: beautifulsoup4>=4.11.2
+Requires-Dist: geograpy3>=0.2.7
+Requires-Dist: lxml-html-clean
+Requires-Dist: lxml>=5.2.0
+Requires-Dist: neo4j
+Requires-Dist: ngwidgets>=0.16.4
+Requires-Dist: py-3rdparty-mediawiki>=0.9.3
+Requires-Dist: py-ez-wikidata>=0.1.5
+Requires-Dist: pylodstorage>=0.11.6
+Requires-Dist: pyparsing>=3.0.9
+Requires-Dist: requests
+Requires-Dist: spacy
+Requires-Dist: sqlmodel>=0.0.16
+Requires-Dist: tabulate
+Requires-Dist: tqdm
+Requires-Dist: wdgrid>=0.1.0
+Requires-Dist: xmltodict>=0.13.0
+Provides-Extra: test
+Requires-Dist: mypy; extra == 'test'
+Requires-Dist: pytest; extra == 'test'
+Requires-Dist: pytest-cov; extra == 'test'
+Requires-Dist: ruff; extra == 'test'
+Requires-Dist: tox; extra == 'test'
+Description-Content-Type: text/markdown
+
+# pyCEURmake
+
+CEUR make python implementation for https://ceur-ws.org/
+
+[![Join the discussion at https://github.com/WolfgangFahl/pyCEURMake/discussions](https://img.shields.io/github/discussions/WolfgangFahl/pyCEURMake)](https://github.com/WolfgangFahl/pyCEURMake/discussions)
+[![pypi](https://img.shields.io/pypi/pyversions/pyCEURmake)](https://pypi.org/project/pyCEURmake/)
+[![Github Actions Build](https://github.com/WolfgangFahl/pyCEURmake/actions/workflows/build.yml/badge.svg)](https://github.com/WolfgangFahl/pyCEURmake/actions/workflows/build.yml)
+[![PyPI Status](https://img.shields.io/pypi/v/pyCEURmake.svg)](https://pypi.python.org/pypi/pyCEURmake/)
+[![GitHub issues](https://img.shields.io/github/issues/WolfgangFahl/pyCEURmake.svg)](https://github.com/WolfgangFahl/pyCEURmake/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/WolfgangFahl/pyCEURmake.svg)](https://github.com/WolfgangFahl/pyCEURmake/issues/?q=is%3Aissue+is%3Aclosed)
+[![API Docs](https://img.shields.io/badge/API-Documentation-blue)](https://WolfgangFahl.github.io/pyCEURmake/)
+:[![License](https://img.shields.io/github/license/WolfgangFahl/pyCEURmake.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
+## Docs and Tutorials
+[Wiki](https://wiki.bitplan.com/index.php/PyCEURmake)
+
+## Demos
+[CEUR-Volume Browser at RWTH Aachen i5](http://cvb.wikidata.dbis.rwth-aachen.de/)

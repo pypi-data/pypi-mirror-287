@@ -1,0 +1,203 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyCEURmake"
+authors = [
+  {name = "Tim Holzheim", email = "tim.holzheim@rwth-aachen.de"},
+  {name = "Wolfgang Fahl", email = "wf@bitplan.com"}
+
+]
+maintainers = [
+  { name = "Wolfgang Fahl", email = "wf@bitplan.com" },
+  { name = "Tim Holzheim", email = "tim.holzheim@rwth-aachen.de" },
+]
+readme = "README.md"
+license= "Apache-2.0"
+dependencies = [
+    # https://pypi.org/project/fastapi/
+    # pin fastapi, httpcore and starlette as long as we use justpy
+    #	'fastapi==0.95.0',
+    # 	'starlette==0.26.1',
+    # 	'httpcore==0.15.0',
+    # https://pypi.org/project/geograpy3/
+    'geograpy3>=0.2.7',
+    #https://github.com/martinblech/xmltodict
+    'xmltodict>=0.13.0',
+    # https://pypi.org/project/pylodstorage/
+    'pylodstorage>=0.11.6',
+    # https://github.com/pyparsing/pyparsing
+    'pyparsing>=3.0.9',
+    # https://pypi.org/project/beautifulsoup4/
+    'BeautifulSoup4>=4.11.2',
+    # https://pypi.org/project/lxml/
+    'lxml>=5.2.0',
+    'lxml_html_clean',
+    # https://pypi.org/project/pyGenericSpreadSheet/
+    #'pyGenericSpreadSheet>=0.2.4',
+    # https://pypi.org/project/py-ez-wikidata/
+    'py-ez-wikidata>=0.1.5',
+    # https://pypi.org/project/py-3rdparty-mediawiki/
+    'py-3rdparty-mediawiki>=0.9.3',
+    # https://github.com/tqdm/tqdm
+    'tqdm',
+    # https://pypi.org/project/neo4j/
+    'neo4j',
+    # https://github.com/WolfgangFahl/nicegui_widgets
+    'ngwidgets>=0.16.4',
+    # https://pypi.org/project/sqlmodel/
+    'sqlmodel>=0.0.16',
+    # https://pypi.org/project/wdgrid/
+    'wdgrid>=0.1.0',
+    "requests",
+    "tabulate",
+    "spacy"
+]
+
+requires-python = ">=3.10"
+classifiers=[
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License"
+    ]
+dynamic = ["version", "description"]
+[tool.hatch.version]
+path = "ceurws/__init__.py"
+
+[project.urls]
+Home = "https://github.com/WolfgangFahl/py-sidif"
+Documentation = "https://wiki.bitplan.com/index.php/Py-sidif"
+Source = "https://github.com/WolfgangFahl/py-sidif"
+
+[project.optional-dependencies]
+test = [
+    "tox",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "mypy"
+]
+
+[tool.hatch.build.targets.wheel]
+only-include = ["ceurws"]
+
+[tool.hatch.build.targets.wheel.sources]
+"ngwidgets" = "ceurws"
+
+[project.scripts]
+ceur-ws = "ceurws.ceur_ws_web_cmd:main"
+
+
+[tool.ruff]
+# Set the maximum line length to 79.
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+ignore = [
+    # if-else-block-instead-of-if-exp
+    "SIM108"
+]
+# Allow fix for all enabled rules (when `--fix`) is provided.
+#fixable = ["ALL"]
+
+[tool.ruff.format]
+# Like Black, automatically detect the appropriate line ending
+line-ending = "auto"
+
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    env_list = lint, type, py{310,311,312}
+    minversion = 4.15.0
+
+    [testenv]
+    description = run the tests with pytest
+    passenv =
+        GITHUB_*
+        CI
+    package = wheel
+    wheel_build_env = .pkg
+    allowlist_externals =
+        scripts/*
+        coverage
+    deps =
+        pytest>=6
+        pytest-cov
+        httpx
+    commands =
+        pytest --junitxml=report.xml {tty:--color=yes} {posargs}
+
+    [testenv:coverage]
+    description = run terst coverage
+    passenv =
+        GITHUB_*
+        CI
+    deps =
+        .[test]
+    commands =
+        pytest --cov --cov-append {tty:--color=yes} {posargs}
+        coverage xml
+
+    [testenv:format]
+    description = install ruff and format the project code
+    passenv =
+        GITHUB_*
+        CI
+    deps =
+        ruff
+    commands =
+        ruff format
+
+    [testenv:lint]
+    description = run linters
+    passenv =
+        GITHUB_*
+        CI
+    skip_install = true
+    deps =
+        ruff
+    commands =
+        ruff check --fix
+
+    [testenv:type]
+    description = run type checks
+    passenv =
+        GITHUB_*
+        CI
+    deps =
+        mypy>=1.1
+    commands =
+        mypy  {posargs:ceurws}
+"""
+[tool.mypy]
+follow_imports = "skip"
+strict_optional = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["yaml","dateutil.parser", "dateutil", "tabulate", "requests"]
+ignore_missing_imports = true
