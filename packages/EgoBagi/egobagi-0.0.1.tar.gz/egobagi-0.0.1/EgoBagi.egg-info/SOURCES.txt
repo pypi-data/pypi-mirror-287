@@ -1,0 +1,5 @@
+setup.py
+EgoBagi.egg-info/PKG-INFO
+EgoBagi.egg-info/SOURCES.txt
+EgoBagi.egg-info/dependency_links.txt
+EgoBagi.egg-info/top_level.txt
