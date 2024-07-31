@@ -1,0 +1,3 @@
+
+class NGOHub:
+    pass
