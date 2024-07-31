@@ -1,0 +1,22 @@
+# Use an official Debian runtime as a parent image
+FROM debian:stable-slim
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy the current directory contents into the container at /usr/src/app
+COPY . .
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3-dev \
+    python3-pip \
+    clang \
+    && pip install cython
+
+# Build the Cython module
+RUN python setup.py build_ext --inplace
+
+# Command to keep the container running for inspection (optional)
+CMD ["tail", "-f", "/dev/null"]
