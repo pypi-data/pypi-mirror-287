@@ -1,0 +1,3 @@
+[console_scripts]
+vcf2maf_lite=vcf2maf_lite.vcf2maf_lite:main
+
