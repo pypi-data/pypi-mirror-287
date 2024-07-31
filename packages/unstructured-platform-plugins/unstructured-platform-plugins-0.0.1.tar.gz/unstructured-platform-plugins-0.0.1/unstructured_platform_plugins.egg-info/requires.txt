@@ -1,0 +1,6 @@
+fastapi
+unstructured
+click
+uvicorn
+requests
+click
