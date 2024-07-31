@@ -1,0 +1,14 @@
+ometa/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ometa/boot.py,sha256=ou4MJ_vDqc2C6uXvZnl7J4QcMs-RdjRF22LjNEkLgio,33591
+ometa/builder.py,sha256=vEpapBwMdObU5fHLHx9NuYi-dCNGGhhrbQ6IhKleCCE,9266
+ometa/grammar.py,sha256=F35mJzxOAxj7p-uVues_ZXZw2cGSXO2T4swr-c3WfPw,11465
+ometa/runtime.py,sha256=OGxq1G_ca5pFfuWYbgBTmZOxBXZD2F7GKfTmxbEIK-Y,16894
+ometa/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ometa/test/test_builder.py,sha256=s-sCyu2yLCprgcaMy0g7dDZ5NVAvvOyURRbeCIFGPQc,12995
+ometa/test/test_ometa.py,sha256=pFfcTD2lFoPUfBxZR_hNlfYYVdd_bsH9ZEqDtK51thU,31400
+ometa/test/test_runtime.py,sha256=cZX2SHYdyXnB9b5WEpW7BLI0SSxx550UeH15bi3FBFs,7574
+python_ometa-0.0.1.dist-info/LICENSE,sha256=lv8HB3C-gShf6mTL2SiKL8Mq6jeawr1Sxgy0mM7k0VY,1097
+python_ometa-0.0.1.dist-info/METADATA,sha256=60wPgBDP8KKCUFgjOiDdFBuZjgLKjYb6XUN5ygjHHHY,768
+python_ometa-0.0.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+python_ometa-0.0.1.dist-info/top_level.txt,sha256=752BKZvPW6FsXWyiEVUHjXN2h9N9oaWdI68vht0Es68,6
+python_ometa-0.0.1.dist-info/RECORD,,
