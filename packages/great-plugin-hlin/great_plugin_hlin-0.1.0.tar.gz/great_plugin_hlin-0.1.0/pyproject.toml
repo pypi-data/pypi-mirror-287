@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "great-plugin-hlin"
+version = "0.1.0"
+description = ""
+authors = ["Henry Lin <henry.lin@neo4j.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+nodestream = "^0.12.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."nodestream.plugins"]
+projects = "great_plugin.plugin"
