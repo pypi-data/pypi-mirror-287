@@ -1,0 +1,8 @@
+mailcom/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mailcom/inout.py,sha256=x19XI0_1X7bQQuA7iUcEj46VQu67Zbua54kvo2qeb7I,2780
+mailcom/parse.py,sha256=2A7je6VX25hEiD5VRTAZ9QjGJQgLF15P72tMvs1-PO0,4523
+mailcom/test/test_parse.py,sha256=ywGsY_oGIWNCulDv3sXFF40IPRGGCf-kPwczMFP8tZs,381
+mailcom-0.0.1.dist-info/METADATA,sha256=JuN48HU2SQQ6pPSy4hKMsqTw_G3v5hel71rjQ0V6qPk,1544
+mailcom-0.0.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+mailcom-0.0.1.dist-info/licenses/LICENSE,sha256=iWS8fPqDBx6MYKVcepgq3DWOdlR8Nuq7WIUxBNk6jww,1068
+mailcom-0.0.1.dist-info/RECORD,,
