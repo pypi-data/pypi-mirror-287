@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: cliqestimspp
+Version: 0.1.1
+Summary: A package for generating network files
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# Network Generator
+
+A tool for generating network files from sequence data.
+
+## Installation
+
+You can install this package via pip:
+
+```bash
+pip install cliqestimsp

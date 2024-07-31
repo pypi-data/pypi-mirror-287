@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.py
+cliqestimsp/__init__.py
+cliqestimsp/networkcli.c
+cliqestimspp.egg-info/PKG-INFO
+cliqestimspp.egg-info/SOURCES.txt
+cliqestimspp.egg-info/dependency_links.txt
+cliqestimspp.egg-info/top_level.txt
