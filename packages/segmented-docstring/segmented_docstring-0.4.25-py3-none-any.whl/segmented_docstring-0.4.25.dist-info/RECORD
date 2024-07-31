@@ -1,0 +1,8 @@
+segmented_docstring/__init__.py,sha256=VVqbSt2HOc4_18Y-MzyhTk_V2g6-Xk4Y-qkzfBMyRfg,388
+segmented_docstring/cli.py,sha256=xzACVr3g3Uv9e25Lu7-BfzgjxTZRufxQN-IM04UQQqI,5979
+segmented_docstring/combiner.py,sha256=FkPW72Tyi-TIX87r_E2qY0P1a3m-Of5OJYkYsEz2Idc,5259
+segmented_docstring/config.py,sha256=jlHlPE3IPQF6TVUJaUP8h2ttm0nWCgZ0rbqMzvDUikk,2282
+segmented_docstring/splitter.py,sha256=2HzdeAsQS02IX9n7zSSAg3t7uNjcr2X_-T1BaOYen94,4653
+segmented_docstring-0.4.25.dist-info/METADATA,sha256=igZPeFqJnvxum2_1Uy1LGh1wjKl-g6EJbf2btfxsWZ0,3771
+segmented_docstring-0.4.25.dist-info/WHEEL,sha256=KGYbc1zXlYddvwxnNty23BeaKzh7YuoSIvIMO4jEhvw,87
+segmented_docstring-0.4.25.dist-info/RECORD,,
