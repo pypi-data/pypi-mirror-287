@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: backtesting-package
+Version: 0.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: plotly
+Requires-Dist: statsmodels
+Requires-Dist: tqdm
+Requires-Dist: yfinance
+
+UNKNOWN
+
+
