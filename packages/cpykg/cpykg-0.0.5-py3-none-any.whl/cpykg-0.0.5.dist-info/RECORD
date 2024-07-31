@@ -1,0 +1,12 @@
+cpykg/__init__.py,sha256=bJ557loRG8q1IgaZLLHoEEyKSfsC_qLflNuBonWvbls,48
+cpykg/module.py,sha256=tq1v18FBGZvhmPikuS-dSfM87k1jXa2-eVi5xy-VCVE,60
+cpykg/utils.py,sha256=Gz7NZJ8s6-bEoaSCP7-d7yVPI2IGubNlFSesPy_tP7w,582
+cpykg/data/AISecKG.csv,sha256=-IGncZsf6srfoq5S0yskbqx0eF4JvuiRR5nFfw-kArM,24071
+cpykg/data/MetaQA_KG.csv,sha256=yNX2k59K8fsqZqoyoNUA9-4JyvupofzNUb1yDrqr1cY,6056644
+cpykg/data/R25KG_rare.csv,sha256=A8ksDho8bj_AtBOMCzTGuahpKHiLn7QAvFGAxcbqlBs,71383680
+cpykg/data/SDKG_Dis11.csv,sha256=ZZG375eoVlXgN73LOSDzPffb-zexeXOli-k-PP1iMIE,11021467
+cpykg-0.0.5.dist-info/LICENSE,sha256=zTuZxcLuV5bDgcH_kWBOShcAKaKlgjTarl36ECUTBCA,1057
+cpykg-0.0.5.dist-info/METADATA,sha256=qTmEvndaNteEhHBX_xL1X9h_GZcizSsuHdUQgc-I5jQ,369
+cpykg-0.0.5.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+cpykg-0.0.5.dist-info/top_level.txt,sha256=pyOYTGdRqPVveQDxAAVju4Xk7bKn2i9PBDRo5HyvZBw,6
+cpykg-0.0.5.dist-info/RECORD,,
