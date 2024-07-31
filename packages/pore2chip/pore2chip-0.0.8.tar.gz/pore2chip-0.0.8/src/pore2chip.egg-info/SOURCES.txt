@@ -1,0 +1,16 @@
+LICENSE.md
+README.md
+pyproject.toml
+requirements.txt
+src/pore2chip/__init__.py
+src/pore2chip/coordination.py
+src/pore2chip/export.py
+src/pore2chip/filter_im.py
+src/pore2chip/generate.py
+src/pore2chip/io.py
+src/pore2chip/metrics.py
+src/pore2chip.egg-info/PKG-INFO
+src/pore2chip.egg-info/SOURCES.txt
+src/pore2chip.egg-info/dependency_links.txt
+src/pore2chip.egg-info/requires.txt
+src/pore2chip.egg-info/top_level.txt
