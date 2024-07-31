@@ -1,0 +1,42 @@
+{
+	"title": "PyGSP2: Graph Signal Processing in Python",
+	"description": "The PyGSP2 facilitates a wide variety of operations on graphs, like computing their Fourier basis, filtering or interpolating signals, plotting graphs, signals, and filters.",
+	"upload_type": "software",
+	"license": "BSD-3-Clause",
+	"access_right": "open",
+	"creators": [
+		{
+			"name": "Alejandro Weinstein",
+			"affiliation": "UTFSM",
+			"orcid": "0000-0003-1486-7003"
+		},
+		{
+			"name": "Lucas Cortés",
+			"affiliation": "UTFSM, Lanek",
+			"orcid": "0009-0005-0234-2770"
+		},
+		{
+			"name": "Julio Rodiño",
+			"affiliation": "Brain Dynamics Laboratory",
+			"orcid": "0000-0002-8916-6810"
+
+		},
+		{
+			"name": "Camilo Jara",
+			"affiliation": "FONDECYT REGULAR 1231132 grant, ANILLO ACT210053",
+			"orcid": "0009-0008-9445-5423"
+		}
+	],
+	"related_identifiers": [
+		{
+			"scheme": "url",
+			"identifier": "https://github.com/gsp-eeg/pygsp2",
+			"relation": "isSupplementTo"
+		},
+		{
+			"scheme": "doi",
+			"identifier": "10.5281/zenodo.13122921",
+			"relation": "isPartOf"
+		}
+	]
+}
