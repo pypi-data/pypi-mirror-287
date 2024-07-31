@@ -1,0 +1,4 @@
+include ntfyme/config.toml
+recursive-include ntfyme/cmd *
+recursive-include ntfyme/utils *
+recursive-include ntfyme/manager *

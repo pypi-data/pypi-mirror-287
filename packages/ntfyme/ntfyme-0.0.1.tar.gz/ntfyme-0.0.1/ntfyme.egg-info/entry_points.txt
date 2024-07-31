@@ -1,0 +1,2 @@
+[console_scripts]
+ntfyme = ntfyme.main:main

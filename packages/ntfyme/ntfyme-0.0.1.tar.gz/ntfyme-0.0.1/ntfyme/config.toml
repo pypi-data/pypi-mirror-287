@@ -1,0 +1,41 @@
+# This file contains all the important configurations for ntfyme. Please configure carefully. Read the docs for setup instructions
+[ntfyme]
+terminal_print = "on" # (on/off) printing the output, errors, etc. in the terminal as the process gets terminated.
+log_pager = "cat" # (cat/less/more/bat, etc) the pager for the log file. Make sure these are supported in your system.
+success_subject = "Process Terminated: Success" # Subject message for a successful message.
+error_subject = "Process Terminated: Error" # Subject message for an error message.
+
+[suspend]
+# Terminating processed with no output for a while(suspended) and sending such notification.
+timeout = 300 # minimum wait time in seconds before the process is considered suspended.
+check_interval = 30 # interval time in seconds to check if the process is suspended.
+iterations = 10 # number of iterations to check if the process is suspended.
+# Thus the total time of wait after which process will be terminated = timeout + check_interval * iterations
+
+[mail]
+# Note that enabling mail will require you to enter you ntfyme_key everytime you run the program.
+enabled = "off" 
+mail_id = ""
+password =  "" 
+
+[telegram]
+# Note that the token and chat_id will not be encrypted.
+enabled = "off"
+token = ""
+chat_id = ""
+
+# For Local Notifications. Linux will use notify-send command, MacOS will use osascript.
+[local]
+# Local notification for MacOS/Linux/Windows
+enabled = "on"
+
+[local_macos]
+# You can choose sounds from the list {Basso, Blow, Bottle, Frog, Funk, Glass, Hero, Morse, Ping, Pop, 
+#Purr, Sosumi, Submarine, Tink} which are present in the system.
+success_sound = "Glass" # Sound for a successful message.
+error_sound = "Basso" # Sound for an error message.
+
+[local_windows]
+# Local notification time for windows (NOT WSL)
+timeout = 5 # Timeout time
+
