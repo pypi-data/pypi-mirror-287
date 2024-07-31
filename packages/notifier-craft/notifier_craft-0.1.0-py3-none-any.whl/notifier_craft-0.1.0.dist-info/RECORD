@@ -1,0 +1,13 @@
+notifiercraft/__init__.py,sha256=R92gYnHxIOpcy6ZpOp55DxPWcYFhsC4GbvAcDgCdK-I,151
+notifiercraft/asyncio/__init__.py,sha256=Us54CWtvv3gZgAo2Z0B6jq_iz_TCwyA4SYgJLoAYH3I,93
+notifiercraft/asyncio/async_client.py,sha256=IrdW_jvZxYQ_Y6CH74S_6veKq1OaQnon6j38tNrRRCE,1416
+notifiercraft/client.py,sha256=Wgkf4O8PKsWhW91z2o2oHqzQraV1uiYF6rezE04_bTQ,1506
+notifiercraft/error/__init__.py,sha256=NYjxN5cFsVrKnDEW3GnUxCUePNuwbDfiTAIQevrsXiQ,60
+notifiercraft/error/unsupported_sender_type.py,sha256=q_J1AXJsoS4-h7URuln9QOF3ufrrhuDCvj7tzr83jjc,107
+notifiercraft/sender/__init__.py,sha256=8JxipacJmAZm54jj7NGnOvRft1RweWmvxuL1yWuAdJM,85
+notifiercraft/sender/email.py,sha256=RxL0KUX1vc_kZfnz6-wNbw-aL2655BXAtEQnW-ocmM4,1573
+notifiercraft/sender/telegram.py,sha256=ICEJVVK-EV1-UVNaX_xuWpc4dy2tv2qmanZdRprqvwI,861
+notifier_craft-0.1.0.dist-info/LICENSE,sha256=1rNEedi0XnQQfiYwZrcPNN5QQSOT6Dqtu05ZLR0-LnE,1086
+notifier_craft-0.1.0.dist-info/METADATA,sha256=WujQPburJ_ieTnW3M3uKhlSF4PhaaYMinQIOxJaQ_R8,4995
+notifier_craft-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+notifier_craft-0.1.0.dist-info/RECORD,,
