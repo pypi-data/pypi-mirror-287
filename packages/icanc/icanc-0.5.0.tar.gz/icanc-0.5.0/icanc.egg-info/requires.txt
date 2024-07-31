@@ -1,0 +1,5 @@
+click==8.*
+pyperclip==1.*
+watchdog==4.*
+tomli_w==1.*
+keyring==25.*
