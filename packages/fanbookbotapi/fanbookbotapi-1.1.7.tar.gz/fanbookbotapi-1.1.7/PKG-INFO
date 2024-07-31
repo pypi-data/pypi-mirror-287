@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: fanbookbotapi
+Version: 1.1.7
+Summary: fb bot api
+Home-page: https://github.com/
+Author: wangdage
+Author-email: fanbookwdg1122@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# 开始使用
+
+这里使用getme做示例
+
+```python
+import fanbookbotapi
+
+print(fanbookbotapi.getme('123').text)
+```
+
+# 支持的api
+
+- getme(token='bot token')
