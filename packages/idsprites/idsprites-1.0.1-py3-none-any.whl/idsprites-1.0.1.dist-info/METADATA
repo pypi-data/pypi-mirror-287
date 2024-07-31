@@ -1,0 +1,61 @@
+Metadata-Version: 2.3
+Name: idsprites
+Version: 1.0.1
+Summary: Easily generate simple continual learning benchmarks.
+Author-email: Sebastian Dziadzio <dziadzio@hey.com>
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: imageio>=2.13.0
+Requires-Dist: matplotlib>=3.8.2
+Requires-Dist: numba>=0.58.1
+Requires-Dist: numpy>=1.26.2
+Requires-Dist: omegaconf>=2.3.0
+Requires-Dist: opencv-python>=4.8.1
+Requires-Dist: scikit-learn>=1.3.2
+Requires-Dist: scipy>=1.11.4
+Requires-Dist: torch>=2.1.2
+Requires-Dist: tqdm>=4.66.1
+Description-Content-Type: text/markdown
+
+# ♾ Infinite dSprites
+
+Easily generate simple continual learning benchmarks. Inspired by [dSprites](https://github.com/google-deepmind/dsprites-dataset).
+
+![A grid of 2D shapes undergoing rotation, translation, and scaling.](img/shapes.gif)
+
+## Install
+
+Install the package from PyPI:
+
+```bash
+python -m pip install idsprites
+```
+
+Verify the installation:
+
+```bash
+python -c "import idsprites"
+```
+
+## Usage
+
+See the [examples](examples) directory for notebooks demonstrating how to use the package.
+
+## Contribute
+
+Clone the repo:
+
+```bash
+git clone git@github.com:sbdzdz/idsprites.git
+cd idsprites
+```
+
+It's a good idea to install the package in interactive mode inside a virtual environment:
+
+```bash
+python -m virtualenv venv
+source venv/bin/activate
+
+python -m pip install -r requirements.txt
+python -m pip install -e .
+```
