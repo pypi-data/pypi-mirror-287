@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CrackNuts"
+description = "A library for nut cracker device."
+dynamic = ["version"]
+requires-python = ">=3.12"
+readme = "README.md"
+authors = [
+    { name = "Dingzb", email = "dingzibiao@gmail.com" }
+]
+maintainers = [
+    { name = "Dingzb", email = "dingzibiao@gmail.com" }
+]
+dependencies = [
+    "numpy >= 2.0.1",
+    "pandas >= 2.2.2"
+]
+
+[project.optional-dependencies]
+
+test = [
+    'pytest'
+]
+
+marimo = [
+    'marimo'
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "cracknuts.__version__" }
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+
+[tool.pdm]
