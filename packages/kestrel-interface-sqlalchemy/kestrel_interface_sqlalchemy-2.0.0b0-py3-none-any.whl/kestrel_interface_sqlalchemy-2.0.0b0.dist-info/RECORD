@@ -1,0 +1,8 @@
+kestrel_interface_sqlalchemy/__init__.py,sha256=WrVa-4VE0pNp71ZCWSV7wqni4unM_OGoWf7DTph_Tgw,71
+kestrel_interface_sqlalchemy/config.py,sha256=Ek9HnQPIBDRkdH4ljsW1WPcyhHjXfJ_GfSy3JRqTQZ0,2009
+kestrel_interface_sqlalchemy/interface.py,sha256=scmrNozqptkFnHLmI6aLbzR1YYFyYT00b9B_hS5_3XM,11050
+kestrel_interface_sqlalchemy/translator.py,sha256=nSNn43vUR0axMKOW_NHk5_8oBsV97mgV7qIXpplqXj8,1832
+kestrel_interface_sqlalchemy-2.0.0b0.dist-info/METADATA,sha256=EyZJ_-tS-1Fdlaj27XxQjEUVOKMqZQ3ik0QGLl7lK18,12628
+kestrel_interface_sqlalchemy-2.0.0b0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+kestrel_interface_sqlalchemy-2.0.0b0.dist-info/top_level.txt,sha256=vOlTYHRTiXcUbdTzelcDJQQHMMyV3W9Id_-RLU8S3pE,29
+kestrel_interface_sqlalchemy-2.0.0b0.dist-info/RECORD,,
