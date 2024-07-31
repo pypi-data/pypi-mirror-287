@@ -1,0 +1,5 @@
+pandas
+tqdm
+plotly
+numpy
+yfinance
