@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: QRCraft
+Version: 0.1
+Summary: A simple QR code generator package
+Home-page: https://google.com
+Author: Birb The Developer
+Author-email: supercraft.store@gmail.co,
+License: MIT
+License-File: LICENSE
+Requires-Dist: numpy
+
