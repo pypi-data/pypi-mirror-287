@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: torch-genai
+Version: 0.0.1.dev1
+Summary: GenAI
+Home-page: https://github.com/yourusername/gen-ai
+Author: Fuheng
+Author-email: wufuheng@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: torch >=2.0.0
+Requires-Dist: torchvision
+Requires-Dist: pytorch-lightning
+Requires-Dist: wandb
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: jsonargparse
+Provides-Extra: dev
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+
+# GAN Framework
+
+
+## Generator
+
+Generator must have:
+
+```python
+    def forward(self, x, return_q=True):
+        """x - images [NCHW]
+        return_q - if True, return `r` (recons images [NCHW]),
+        and optional `vqres` (quantized info)
+        """
+        ...
+        return r, vqres if return_q else r
+```
+
+VQRes has definition:
+```python
+VQRes = namedtuple('VQRes', [
+    'quantized',
+    'indices',
+    'entro_mean',
+    'mean_entro',
+    'entro_loss',
+    'commit_loss',
+    'cdbook_loss'
+])
+```
+
+## Discriminator
+
+
