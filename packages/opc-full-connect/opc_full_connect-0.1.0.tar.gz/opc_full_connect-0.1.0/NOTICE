@@ -1,0 +1,13 @@
+# NOTICE
+
+## Third-Party Libraries
+
+This project uses the `asyncua` and `opcua` libraries, which are licensed under the GNU Lesser General Public License v3 or later (LGPLv3+). 
+
+- **asyncua**: You can find the LGPLv3+ license and the source code for `asyncua` at [asyncua GitHub repository](https://github.com/FreeOpcUa/opcua-asyncio). 
+
+This project is licensed under the MIT License. However, please note that the use of `asyncua` requires compliance with its LGPLv3+ terms.
+
+- **opcua**: You can find the LGPLv3+ liicense and the source code for `opcua` at [opcua GitHub repository](https://github.com/FreeOpcUa/python-opcua).
+
+If you have modified `asyncua` itself, these modifications are provided under LGPLv3+. For more details, refer to the source code provided with this project.

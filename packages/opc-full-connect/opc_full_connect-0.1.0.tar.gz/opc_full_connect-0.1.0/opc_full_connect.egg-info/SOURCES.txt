@@ -1,0 +1,12 @@
+LICENSE
+NOTICE
+README.md
+setup.py
+opc_full_connect/__init__.py
+opc_full_connect/certificate_creation.py
+opc_full_connect/opcua_access.py
+opc_full_connect.egg-info/PKG-INFO
+opc_full_connect.egg-info/SOURCES.txt
+opc_full_connect.egg-info/dependency_links.txt
+opc_full_connect.egg-info/requires.txt
+opc_full_connect.egg-info/top_level.txt
