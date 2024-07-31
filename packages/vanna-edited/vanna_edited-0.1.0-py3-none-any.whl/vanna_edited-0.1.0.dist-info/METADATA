@@ -1,0 +1,98 @@
+Metadata-Version: 2.1
+Name: vanna-edited
+Version: 0.1.0
+Summary: An edited vanna package
+Home-page: https://github.com/hassantfaily/vanna
+Author: Hassan Tfaily
+Author-email: hassantfaily@icloud.com
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: psycopg2
+Requires-Dist: pgvector
+Requires-Dist: sentence-transformers
+Requires-Dist: vanna
+Provides-Extra: all
+Requires-Dist: psycopg2-binary ; extra == 'all'
+Requires-Dist: db-dtypes ; extra == 'all'
+Requires-Dist: PyMySQL ; extra == 'all'
+Requires-Dist: google-cloud-bigquery ; extra == 'all'
+Requires-Dist: snowflake-connector-python ; extra == 'all'
+Requires-Dist: duckdb ; extra == 'all'
+Requires-Dist: openai ; extra == 'all'
+Requires-Dist: mistralai ; extra == 'all'
+Requires-Dist: chromadb ; extra == 'all'
+Requires-Dist: anthropic ; extra == 'all'
+Requires-Dist: zhipuai ; extra == 'all'
+Requires-Dist: marqo ; extra == 'all'
+Requires-Dist: google-generativeai ; extra == 'all'
+Requires-Dist: google-cloud-aiplatform ; extra == 'all'
+Requires-Dist: qdrant-client ; extra == 'all'
+Requires-Dist: fastembed ; extra == 'all'
+Requires-Dist: ollama ; extra == 'all'
+Requires-Dist: httpx ; extra == 'all'
+Requires-Dist: opensearch-py ; extra == 'all'
+Requires-Dist: opensearch-dsl ; extra == 'all'
+Requires-Dist: transformers ; extra == 'all'
+Requires-Dist: pinecone-client ; extra == 'all'
+Requires-Dist: pymilvus[model] ; extra == 'all'
+Requires-Dist: weaviate-client ; extra == 'all'
+Provides-Extra: anthropic
+Requires-Dist: anthropic ; extra == 'anthropic'
+Provides-Extra: bedrock
+Requires-Dist: boto3 ; extra == 'bedrock'
+Requires-Dist: botocore ; extra == 'bedrock'
+Provides-Extra: bigquery
+Requires-Dist: google-cloud-bigquery ; extra == 'bigquery'
+Provides-Extra: chromadb
+Requires-Dist: chromadb ; extra == 'chromadb'
+Provides-Extra: clickhouse
+Requires-Dist: clickhouse-connect ; extra == 'clickhouse'
+Provides-Extra: duckdb
+Requires-Dist: duckdb ; extra == 'duckdb'
+Provides-Extra: gemini
+Requires-Dist: google-generativeai ; extra == 'gemini'
+Provides-Extra: google
+Requires-Dist: google-generativeai ; extra == 'google'
+Requires-Dist: google-cloud-aiplatform ; extra == 'google'
+Provides-Extra: hf
+Requires-Dist: transformers ; extra == 'hf'
+Provides-Extra: marqo
+Requires-Dist: marqo ; extra == 'marqo'
+Provides-Extra: milvus
+Requires-Dist: pymilvus[model] ; extra == 'milvus'
+Provides-Extra: mistralai
+Requires-Dist: mistralai ; extra == 'mistralai'
+Provides-Extra: mysql
+Requires-Dist: PyMySQL ; extra == 'mysql'
+Provides-Extra: ollama
+Requires-Dist: ollama ; extra == 'ollama'
+Requires-Dist: httpx ; extra == 'ollama'
+Provides-Extra: openai
+Requires-Dist: openai ; extra == 'openai'
+Provides-Extra: opensearch
+Requires-Dist: opensearch-py ; extra == 'opensearch'
+Requires-Dist: opensearch-dsl ; extra == 'opensearch'
+Provides-Extra: pinecone
+Requires-Dist: pinecone-client ; extra == 'pinecone'
+Requires-Dist: fastembed ; extra == 'pinecone'
+Provides-Extra: postgres
+Requires-Dist: psycopg2-binary ; extra == 'postgres'
+Requires-Dist: db-dtypes ; extra == 'postgres'
+Provides-Extra: qdrant
+Requires-Dist: qdrant-client ; extra == 'qdrant'
+Requires-Dist: fastembed ; extra == 'qdrant'
+Provides-Extra: snowflake
+Requires-Dist: snowflake-connector-python ; extra == 'snowflake'
+Provides-Extra: test
+Requires-Dist: tox ; extra == 'test'
+Provides-Extra: vllm
+Requires-Dist: vllm ; extra == 'vllm'
+Provides-Extra: weaviate
+Requires-Dist: weaviate-client ; extra == 'weaviate'
+Provides-Extra: zhipuai
+Requires-Dist: zhipuai ; extra == 'zhipuai'
+
+Vanna is an MIT-licensed open-source Python RAG (Retrieval-Augmented Generation) framework for SQL generation and related functionality.
