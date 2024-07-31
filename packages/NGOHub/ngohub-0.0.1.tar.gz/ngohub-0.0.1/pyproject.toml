@@ -1,0 +1,23 @@
+[project]
+name = "NGOHub"
+version = "0.0.1"
+description = "Python client for NGOHub.ro"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Typing :: Typed",
+]
+requires-python = ">=3.11"
+
+[project.urls]
+Homepage = "https://github.com/code4romania/pyngohub/"
+Issues = "https://github.com/code4romania/pyngohub/issues"
+
+[build-system]
+requires = ["setuptools>=72.1"]
+build-backend = "setuptools.build_meta"
