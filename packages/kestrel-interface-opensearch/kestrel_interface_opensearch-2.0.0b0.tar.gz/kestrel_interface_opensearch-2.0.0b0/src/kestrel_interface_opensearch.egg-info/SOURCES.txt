@@ -1,0 +1,13 @@
+README.rst
+pyproject.toml
+src/kestrel_interface_opensearch/__init__.py
+src/kestrel_interface_opensearch/config.py
+src/kestrel_interface_opensearch/interface.py
+src/kestrel_interface_opensearch/ossql.py
+src/kestrel_interface_opensearch.egg-info/PKG-INFO
+src/kestrel_interface_opensearch.egg-info/SOURCES.txt
+src/kestrel_interface_opensearch.egg-info/dependency_links.txt
+src/kestrel_interface_opensearch.egg-info/requires.txt
+src/kestrel_interface_opensearch.egg-info/top_level.txt
+tests/test_config.py
+tests/test_ossql.py
