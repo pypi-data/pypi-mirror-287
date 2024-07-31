@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: drone-flightplan
+Version: 0.1.0
+Summary: Generates an optimized flight plan for drones to conduct precise and efficient aerial mapping
+Author-Email: Niraj Adhikari <nrjadkry@gmail.com>
+License: AGPL-3.0-only
+Requires-Python: >=3.10
+Requires-Dist: geojson>=3.1.0
+Requires-Dist: shapely>=2.0.5
+Requires-Dist: pyproj>=3.6.1
+Description-Content-Type: text/markdown
+
+# Flight Plan Generator for Drones
