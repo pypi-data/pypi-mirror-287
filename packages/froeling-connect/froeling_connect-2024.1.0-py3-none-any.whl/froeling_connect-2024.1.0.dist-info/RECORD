@@ -1,0 +1,16 @@
+froeling/__init__.py,sha256=bMFVG6xhCTLoHetktZT-ZAet6k03BsjpWL7KynNtCjE,489
+froeling/client.py,sha256=p1tfqmgXJSh51OwIXY_mjPBQ-cmGK0Yzp24lT8hB6tc,4165
+froeling/endpoints.py,sha256=-w_vnie_R1BsSC_w1hbTn2_9Vvr9XEyvMIMon8PQryM,1403
+froeling/exceptions.py,sha256=PWwKzUv04dKyTIh-w5qjwVli35_wvaQf3ClDzxz2WpE,794
+froeling/session.py,sha256=B6KrCONhVYxzofStHrtwth1_Owr9s3uhJW3gp8MZJmU,3944
+froeling/datamodels/__init__.py,sha256=hPIbq31n6ZyVp5EqnOk8oVf4TLjmq23jesi0he7zE4k,188
+froeling/datamodels/component.py,sha256=8zmGDd7rNKFM9Vu13VYV8Qt1C5yPhfgu2tUkYm3iyxI,4119
+froeling/datamodels/facility.py,sha256=u0PFpII3ELynmpzPBVMc-dLoXuh18dEarj8IBn2R53k,2248
+froeling/datamodels/generics.py,sha256=W6lAK5vtkvmQIEVi6fgPebR3yyaOWk_vK1khGk7Uk6c,1596
+froeling/datamodels/notifications.py,sha256=vxcgSntMD6nGOMiz9de9o8T37JS39hKm8etkiG3zjHs,3274
+froeling/datamodels/userdata.py,sha256=IGbvPIO90yfREi2k5pMY2PtYFbQprvZBe8ismdfHLEk,1041
+froeling_connect-2024.1.0.dist-info/LICENSE.txt,sha256=QoHHaJkA6yWTwoa8M0L1-mQaSGq1TWYA6qFVj6Z7gfI,11511
+froeling_connect-2024.1.0.dist-info/METADATA,sha256=Q5hSK8FflmXfHCwvsdRlWVuFoY0tPliRVSe4_s6zCN8,15087
+froeling_connect-2024.1.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+froeling_connect-2024.1.0.dist-info/top_level.txt,sha256=YR1z2xSW6LDO4iq4k3zFlTbhhPfPmo_F8tfDZVTcHzk,9
+froeling_connect-2024.1.0.dist-info/RECORD,,
