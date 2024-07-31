@@ -1,0 +1,3 @@
+[nodestream.plugins]
+projects=great_plugin.plugin
+
