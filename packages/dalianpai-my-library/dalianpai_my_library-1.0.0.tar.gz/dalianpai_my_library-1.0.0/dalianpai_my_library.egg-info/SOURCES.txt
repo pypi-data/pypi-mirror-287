@@ -1,0 +1,7 @@
+setup.py
+dalianpai_my_library.egg-info/PKG-INFO
+dalianpai_my_library.egg-info/SOURCES.txt
+dalianpai_my_library.egg-info/dependency_links.txt
+dalianpai_my_library.egg-info/top_level.txt
+wgr-test/__init__.py
+wgr-test/my_module.py
