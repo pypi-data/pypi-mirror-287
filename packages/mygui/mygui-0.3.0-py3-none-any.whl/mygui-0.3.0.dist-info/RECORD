@@ -1,0 +1,12 @@
+mygui/__init__.py,sha256=OfCbOIlBA5QcJGh_5z2zdkmZXuq-FSqYzfjCeJ3UcLw,913
+mygui/Examples/LgridExamples.py,sha256=MHTqljDNE8iXRtB__tMU5LDoJgieew27kVoY8aTRGNU,806
+mygui/Examples/MYGUI-egrid.py,sha256=7RxbGt9qLNJ72mKuzyy-emjOPCn6_BpGNFibb1TmPyQ,671
+mygui/Examples/MYGUI-lgrid.py,sha256=FWMaTQeuUbV-NcGz5b7iRqHW0_8r_P_45Itg5on6IJg,740
+mygui/Examples/testmygui.py,sha256=ar8DvBl5oX48Bsxm7JMmR2O4MH-DJJgDVCNw1Up-0K0,301
+mygui/test/lgridegridtest.py,sha256=GGZpD93AvjliXf0a96SgLQ6Ep9nQauoQFU4Ux0idVlU,866
+mygui/test/testmygui.py,sha256=5537rZk22u_e2JhiSADwE7gWbDPk5nxYVkMUNr509TY,268
+mygui-0.3.0.dist-info/LICENSE.md,sha256=4JPR_8V-b90R2MW5rEvyq4c95c25G0FjTXMf1QzcaDo,1143
+mygui-0.3.0.dist-info/METADATA,sha256=alW7mOUiHJ3cxR3_h_HjW33-B2aAYVFIJCkYchf07g8,1363
+mygui-0.3.0.dist-info/WHEEL,sha256=y4mX-SOX4fYIkonsAGA5N0Oy-8_gI4FXw5HNI1xqvWg,91
+mygui-0.3.0.dist-info/top_level.txt,sha256=LX6-EDEuGgehgaUTqswo6ij3nWrg1Ur5rR7vZOaQSJI,6
+mygui-0.3.0.dist-info/RECORD,,
