@@ -1,0 +1,1 @@
+from .dependency import resolve_handler_dependencies
