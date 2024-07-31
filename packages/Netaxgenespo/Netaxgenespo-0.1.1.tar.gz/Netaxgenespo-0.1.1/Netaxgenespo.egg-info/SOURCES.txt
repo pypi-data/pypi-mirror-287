@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.py
+Netaxgenespo/__init__.py
+Netaxgenespo/network.c
+Netaxgenespo.egg-info/PKG-INFO
+Netaxgenespo.egg-info/SOURCES.txt
+Netaxgenespo.egg-info/dependency_links.txt
+Netaxgenespo.egg-info/top_level.txt
