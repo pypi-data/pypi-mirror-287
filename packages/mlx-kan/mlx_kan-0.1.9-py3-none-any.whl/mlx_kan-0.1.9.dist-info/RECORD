@@ -1,0 +1,12 @@
+kan/__init__.py,sha256=KxMETg7llSOacy6P7S_U817Kp6iw9Gug7jB5xFwqcr8,452
+kan/kan.py,sha256=0OzsTx6xQaHe9OtL7BXymjEJrTFxn0HCtiXxTQvajuE,9492
+kan/version.py,sha256=248SFgOW8tTzDpyY6euJ1BwIHMa4uimdKSyc2FGEEZE,21
+quick_scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+quick_scripts/mnist.py,sha256=i0xKkSt1nGeIzoQOGo9CSjqKrjE_WfmsTTZupI1wxkI,2687
+quick_scripts/quick_train.py,sha256=YGKLoKtZw7Zcg1T3-X1TGQHLz_h3OXvEc1Kqw4gPhCk,6834
+quick_scripts/utils.py,sha256=rHZ4Kye3ncPpVqW5n1Zxrd0Kg-vJOJpBssCKbD0V_14,1201
+mlx_kan-0.1.9.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+mlx_kan-0.1.9.dist-info/METADATA,sha256=3_ZHsLV-GfG6mgXGSGR4gntqJWxMHwlQkX9a5wg5qmQ,9488
+mlx_kan-0.1.9.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+mlx_kan-0.1.9.dist-info/top_level.txt,sha256=rjsXb5EZ3vwxzaUL1ZgNswLtKQDrkZf4kbQ_wTd-1vM,18
+mlx_kan-0.1.9.dist-info/RECORD,,
