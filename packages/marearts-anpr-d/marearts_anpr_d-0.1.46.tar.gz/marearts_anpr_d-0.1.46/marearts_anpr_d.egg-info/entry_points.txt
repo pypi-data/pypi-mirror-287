@@ -1,0 +1,2 @@
+[console_scripts]
+crypto_mng = marearts_anpr_d.main:main
