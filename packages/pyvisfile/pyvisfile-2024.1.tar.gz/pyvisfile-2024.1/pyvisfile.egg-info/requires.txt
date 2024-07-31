@@ -1,0 +1,12 @@
+numpy
+pytools>=2022.1
+
+[doc]
+furo
+sphinx>=4
+sphinx-copybutton
+
+[test]
+mypy
+pytest
+ruff
