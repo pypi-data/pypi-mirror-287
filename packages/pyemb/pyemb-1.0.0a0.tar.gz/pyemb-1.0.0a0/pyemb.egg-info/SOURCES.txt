@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+pyemb.egg-info/PKG-INFO
+pyemb.egg-info/SOURCES.txt
+pyemb.egg-info/dependency_links.txt
+pyemb.egg-info/requires.txt
+pyemb.egg-info/top_level.txt
