@@ -1,0 +1,3 @@
+[console_scripts]
+nmwifi=nmwifi._cli:cli
+
