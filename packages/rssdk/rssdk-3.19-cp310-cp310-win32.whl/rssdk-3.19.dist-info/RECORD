@@ -1,0 +1,11 @@
+rssdk/__init__.py,sha256=P-sqx6B9pEunbjwwxu7lL0wmKxkcyBcz9Otp9PE0LbI,369
+rssdk/drv.dll,sha256=vZpJVFgJNML7rGMkLmvDJQExzIYuACnx4yXZwGJToeo,64912
+rssdk/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rssdk/rssdk.cp310-win32.pyd,sha256=Vffd4q2covVhG_17q7swqpMh2-grLK1YmvJ3PDoGD_E,244224
+rssdk/rssdk.pyi,sha256=Y5Z2AYLVG2zCAnsI3obHVZDa9vM3aYkkvEuQjydqk1Q,3217
+rssdk-3.19.dist-info/LICENSE,sha256=Qv2ilebwoUtMJnRsZwRy729xS5JZQzLauJ0tQzkAkTA,1088
+rssdk-3.19.dist-info/LICENSE-3RD-PARTY.txt,sha256=kvoLBqqvJhxVTB43jWIJ0dK38LAJ8r9by2I2Manh3_8,4637
+rssdk-3.19.dist-info/METADATA,sha256=RoD-VtN1CHriHla2hhI-k_3GKXLINtfxvEZEtgILt3o,5847
+rssdk-3.19.dist-info/WHEEL,sha256=alY7hT6F3vmhcmL_iZGJD2X3hWc-8Y3OXCJmNU5zYpQ,97
+rssdk-3.19.dist-info/top_level.txt,sha256=CKISofHSTJF6Am95ZU6MDQI2o0MVCfP6EGdDo4ogxcc,6
+rssdk-3.19.dist-info/RECORD,,
