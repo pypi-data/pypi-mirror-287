@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "blackbox-decoder"
+version = "0.3.0"
+description = "The blackbox is a loggging system used within our autonomous drone system. The decoder is a tool to help decode the logs from their hex format into a human readable format."
+authors = ["Cole Rottenberg <Cole.rottenberg@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+bitstring = "^4.2.3"
+pyqt6 = "^6.7.1"
+matplotlib = "^3.9.1"
+pandas = "^2.2.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+
+black = "^24.4.2"
+flake8 = "^7.1.0"
+numba = "^0.60.0"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+blackbox-decoder = "blackbox_decoder.app:main"
+
+[tool.poetry.extras]
+dev = ["pytest", "black", "flake8"]
+
+[tool.black]
+line-length = 88
+
+[tool.flake8]
+max-line-length = 88
