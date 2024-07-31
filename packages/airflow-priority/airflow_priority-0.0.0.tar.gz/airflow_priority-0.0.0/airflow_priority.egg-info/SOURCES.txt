@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+airflow_priority.egg-info/PKG-INFO
+airflow_priority.egg-info/SOURCES.txt
+airflow_priority.egg-info/dependency_links.txt
+airflow_priority.egg-info/top_level.txt
