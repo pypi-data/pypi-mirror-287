@@ -1,0 +1,10 @@
+manubot_ai_editor/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+manubot_ai_editor/editor.py,sha256=_EbIqAk-nmGsSJYQi1nbiGVMCslvyrevsmGYFu8J-Y8,20164
+manubot_ai_editor/env_vars.py,sha256=dTHgg_O_QMZvDyxxvSr21TuDCrR8XK2GFDir4103PxE,3604
+manubot_ai_editor/models.py,sha256=u4jF0u7m6vLvKzyzSiDJK9GyevSZKigBxZ0hvtztW60,23861
+manubot_ai_editor/prompt_config.py,sha256=ScBiRsyxmsESFO7BkgynsAB4SDEGx3aVei89_O-bQwY,8408
+manubot_ai_editor/utils.py,sha256=rSODK6rqcMRESyMO2rrvdw0QatCiif7DHrac9RaqogE,1466
+manubot_ai_editor-0.5.2.dist-info/METADATA,sha256=wqzHGYQW7pCumuBzx1WnrbVX5A_86J2WYgco3kIrVKk,8203
+manubot_ai_editor-0.5.2.dist-info/WHEEL,sha256=rWxmBtp7hEUqVLOnTaDOPpR-cZpCDkzhhcBce-Zyd5k,91
+manubot_ai_editor-0.5.2.dist-info/top_level.txt,sha256=0E5HcVpiHlhsowZ0Ui4SSheL7TjExPQLQZG6j1fCPo0,19
+manubot_ai_editor-0.5.2.dist-info/RECORD,,
