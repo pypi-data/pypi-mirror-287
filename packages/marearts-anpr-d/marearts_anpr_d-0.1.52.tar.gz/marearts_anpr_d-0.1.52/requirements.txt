@@ -1,0 +1,8 @@
+cython>=0.29.21
+numpy
+pandas
+opencv-python
+onnxruntime
+requests 
+imageio
+
