@@ -1,0 +1,5 @@
+Click
+lazy_property
+numpy
+scipy>=1.0
+spglib>=1.14
