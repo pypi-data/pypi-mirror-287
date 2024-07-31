@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: environmental-biophysics
+Version: 0.0.1
+Summary: Add your description here
+Author: Gustavo Camargo
+Requires-Python: ~=3.12
+Requires-Dist: numpy~=2.0.1
+Description-Content-Type: text/markdown
+
+# environmental-biophysics
+
+Describe your project here.
