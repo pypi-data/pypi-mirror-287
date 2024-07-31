@@ -1,0 +1,14 @@
+typyn/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+typyn/main.py,sha256=8e3vRZ1sYebpwgoz0do2qXjoB3k1Ncb2TRxBLK6Gznw,10661
+typyn/data/quotes/english.json,sha256=5M9ah2oFKoOKG5b6n_z6AiT0DVaRTwncvBkczMRlqh8,1419
+typyn/data/quotes/español.json,sha256=0LFvuSpng193BSYHd4pJx3DUq6CcJSGf0HQfAODRMbo,1545
+typyn/data/words/en-1000.txt,sha256=uNcaAdeLsQUIwHHi_1yiryGUkPSkHhVgchtZttjb9pQ,7520
+typyn/data/words/es-1000.txt,sha256=156nnIXkUW_OyobsjEC-B0gv5PnFEIg1ADBkKbc0ASc,8191
+typyn/resources/intro_animation.py,sha256=mnIC0kY_C84oieEOJ6YoDkxEdpi93X6_o-Z29J5-EME,959
+typyn/user_data/player_data.json,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+typyn-1.0.17.dist-info/LICENSE,sha256=Y_Q8Uy52Nqa5LVvoFX1WDCmS1oOVeqifMwtcQdPr18c,1097
+typyn-1.0.17.dist-info/METADATA,sha256=ZE_tEpe5Wu45taJuNc08K9lOfsx_C47kyGcfDLRtMqA,4027
+typyn-1.0.17.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+typyn-1.0.17.dist-info/entry_points.txt,sha256=Yy1XsovmWb2xyAwjmHaoijfaOtx_oWS_ICTSxDB0PRs,226
+typyn-1.0.17.dist-info/top_level.txt,sha256=233KFDCeovpu-V0BtoWZ7sgzEI-cC-LPuYTQ4o7dWtU,6
+typyn-1.0.17.dist-info/RECORD,,
