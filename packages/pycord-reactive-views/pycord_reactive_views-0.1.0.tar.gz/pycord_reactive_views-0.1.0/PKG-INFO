@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pycord-reactive-views
+Version: 0.1.0
+Summary: A py-cord extention for easy creation of reactive views
+Author-Email: Paillat-dev <me@paillat.dev>
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Project-URL: Source, https://github.com/Paillat-dev/pycord-reactive-views
+Requires-Python: >=3.11
+Requires-Dist: py-cord>=2.6.0
+Description-Content-Type: text/markdown
+
+# pycord-reactive-views

@@ -1,0 +1,81 @@
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[project]
+name = "pycord-reactive-views"
+authors = [
+    { name = "Paillat-dev", email = "me@paillat.dev" },
+]
+description = "A py-cord extention for easy creation of reactive views"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "py-cord>=2.6.0",
+]
+version = "0.1.0"
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+Source = "https://github.com/Paillat-dev/pycord-reactive-views"
+
+[project.module]
+name = "pycord_reactive_views"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+select = [
+    "E",
+    "F",
+    "I",
+    "N",
+    "W",
+    "B",
+    "C",
+    "D",
+]
+ignore = [
+    "D100",
+    "D104",
+    "D107",
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = [
+    "F401",
+]
+
+[tool.basedpyright]
+include = [
+    "src",
+]
+exclude = [
+    "**/__pycache__",
+]
+venv = "env311"
+pythonVersion = "3.11"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "basedpyright>=1.15.0",
+    "ruff>=0.5.5",
+]
