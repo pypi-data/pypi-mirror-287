@@ -1,0 +1,84 @@
+Metadata-Version: 2.1
+Name: llama-cmdline
+Version: 0.0.1rc1
+Summary: Llama CLI
+Home-page: https://github.com/meta-llama/llama-toolchain
+Author: Meta Llama
+Author-email: llama-oss@meta.com
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: accelerate
+Requires-Dist: black==24.4.2
+Requires-Dist: blobfile
+Requires-Dist: codeshield
+Requires-Dist: fairscale
+Requires-Dist: fastapi
+Requires-Dist: fire
+Requires-Dist: flake8
+Requires-Dist: httpx
+Requires-Dist: huggingface-hub
+Requires-Dist: hydra-core
+Requires-Dist: hydra-zen
+Requires-Dist: json-strong-typing
+Requires-Dist: llama-models
+Requires-Dist: matplotlib
+Requires-Dist: omegaconf
+Requires-Dist: pandas
+Requires-Dist: Pillow
+Requires-Dist: pre-commit
+Requires-Dist: pydantic==1.10.13
+Requires-Dist: pydantic_core==2.18.2
+Requires-Dist: python-dotenv
+Requires-Dist: python-openapi
+Requires-Dist: requests
+Requires-Dist: tiktoken
+Requires-Dist: torch
+Requires-Dist: transformers
+Requires-Dist: ufmt==2.7.0
+Requires-Dist: usort==1.0.8
+Requires-Dist: uvicorn
+Requires-Dist: zmq
+
+# llama-toolchain
+
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/llama-toolchain)](https://pypi.org/project/llama-toolchain/)
+[![Discord](https://img.shields.io/discord/1257833999603335178)](https://discord.gg/TZAAYNVtrU)
+
+This repo contains the API specifications for various components of the Llama Stack as well implementations for some of those APIs like model inference.
+
+The Llama Stack consists of toolchain-apis and agentic-apis. This repo contains the toolchain-apis.
+
+## Installation
+
+You can install this repository as a [package](https://pypi.org/project/llama-toolchain/) with `pip install llama-toolchain`
+
+If you want to install from source:
+
+```bash
+mkdir -p ~/local
+cd ~/local
+git clone git@github.com:meta-llama/llama-toolchain.git
+
+conda create -n toolchain python=3.10
+conda activate toolchain
+
+cd llama-toolchain
+pip install -e .
+```
+
+## The Llama CLI
+
+The `llama` CLI makes it easy to configure and run the Llama toolchain. Read the [CLI reference](docs/cli_reference.md) for details.
+
+## Appendix: Running FP8
+
+If you want to run FP8, you need the `fbgemm-gpu` package which requires `torch >= 2.4.0` (currently only in nightly, but releasing shortly...)
+
+```bash
+ENV=fp8_env
+conda create -n $ENV python=3.10
+conda activate $ENV
+
+pip3 install -r fp8_requirements.txt
+```
