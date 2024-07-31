@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: aiostep
+Version: 0.1.0
+Summary: A Python library to handle steps in aiogram framework.
+Home-page: https://github.com/NasrollahYusefi/aiostep/
+Author: Nasrollah Yusefi
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: cachebox
+
