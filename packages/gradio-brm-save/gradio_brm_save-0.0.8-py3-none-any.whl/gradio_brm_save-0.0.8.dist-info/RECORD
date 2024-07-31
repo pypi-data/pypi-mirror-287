@@ -1,0 +1,10 @@
+gradio_brm_save/__init__.py,sha256=tg1rZ3GjL2GwqlQvIHF2LGvYFDAZQ8gjl1K_Q5BNRyU,56
+gradio_brm_save/brm_save.py,sha256=M6f81oalGCwbzrHa_8J9iP_lenTH8KoFieLCxZC6riQ,5544
+gradio_brm_save/brm_save.pyi,sha256=BVeK0VYRjUYInwrnlSMbqzd0mP5GfJjO4KEXSKJDIfY,20913
+gradio_brm_save/templates/component/index.js,sha256=3_ZGEmO2JuqEIjjsX1-fD9BKYbPbEr-YdhifcA6B7Ks,63750
+gradio_brm_save/templates/component/style.css,sha256=erOFsCFT58hlwhAVeWzDn3Bp4wWQAWOMcwmG2DGtCfU,12923
+gradio_brm_save/templates/example/index.js,sha256=OS9nWHtrMBcPa-vuGta3RE8gDLSp0_43pHlFTZPPASA,2315
+gradio_brm_save/templates/example/style.css,sha256=-DHk5asz3SWFNLQlCnYuMN4b4gTf_srMmlu5x_xU_Pw,147
+gradio_brm_save-0.0.8.dist-info/METADATA,sha256=n6LxIPp8U4lJ57x3j6jiJx6Q5IU9qTXih704M9i8bQU,9334
+gradio_brm_save-0.0.8.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+gradio_brm_save-0.0.8.dist-info/RECORD,,
