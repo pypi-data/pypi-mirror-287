@@ -1,0 +1,8 @@
+bosing-2.2.0.dist-info/METADATA,sha256=M6QTIGOYoiewrb86n1seFOAJdc9ZZV2dlvHv5pFLXtA,2490
+bosing-2.2.0.dist-info/WHEEL,sha256=lOkaVIIgR9D8xiU5f65t2xWRXCkama0A_xD6vB1ybG0,91
+bosing-2.2.0.dist-info/license_files/LICENSE.txt,sha256=-Ro5BDEJjV6OSTHLzRk9DwQTkRlDSyhdBnzT0egd2mo,1089
+bosing/__init__.py,sha256=uO5jwbTKRJdZ4gQczagPElHITy1VTmPoVGte0ia65uU,107
+bosing/__init__.pyi,sha256=drW0eAZw1SXyLmM6pnrhhkM0Juyi44suNf8RmVV6dqI,12064
+bosing/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bosing/bosing.cp312-win32.pyd,sha256=QYdrEzuuS6r3EDw3-d9-rwEIBs0QB5DH7HyjsDNP9Kc,896000
+bosing-2.2.0.dist-info/RECORD,,
