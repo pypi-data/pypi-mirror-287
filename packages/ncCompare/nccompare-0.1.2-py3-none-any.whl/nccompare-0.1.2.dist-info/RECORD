@@ -1,0 +1,15 @@
+nccompare/__init__.py,sha256=gm-fz99vBPrhfmQOSMpk-ecco7rQ8LsD88xBSHdXhKw,169
+nccompare/conf/__init__.py,sha256=5XaSXJrCaiZbg66sUInG0OF92KAzhzdmCnhbvx34R_U,115
+nccompare/conf/global_settings.py,sha256=xbZ7ZKsqJCEoxoT8Y2cxk46DVxEigOoKjcjVNcLzVO4,397
+nccompare/core/__init__.py,sha256=yvvqDHvRO_9h_xffyY9NLN0VjFxBaIy_ipi4K81AqBU,231
+nccompare/core/main.py,sha256=lx_I1uy4yjKA7N8DiyNpHE2zkZpk5W5x8X2LqqOWK44,13462
+nccompare/management/__init__.py,sha256=pLGkGXEsuqkxwglWQa4NcaTRYiT27cg61iRMAFF7vow,207
+nccompare/management/cli.py,sha256=paUxkOmC4zKY-aTxa8wEN6Nyg2-urw8lvjKzDic4QRs,2155
+nccompare/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nccompare/utils/log.py,sha256=9ePBu3XMn7xPRrhhKZoaWNn8XXIsb3JL-BVx1fPXa-0,1693
+nccompare/utils/module_loading.py,sha256=CuYuqsBmSu9eh47gbDz1iyJlhETkg1-DYTDB3UEOX_o,1066
+nccompare-0.1.2.dist-info/LICENSE,sha256=JUwE8RH5vabW1Sxv57h3n6VzVxTcHjds1GxenC_cSJ8,1072
+nccompare-0.1.2.dist-info/METADATA,sha256=GRan0MRY2GXpWmF8cQl8e8Tvjiu_OgmDVZNowf-BkX4,1363
+nccompare-0.1.2.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+nccompare-0.1.2.dist-info/entry_points.txt,sha256=IrCgoa2r8W8lQfPCRS6tb-B1S1FEeRb7tjhGAdiZelQ,81
+nccompare-0.1.2.dist-info/RECORD,,
