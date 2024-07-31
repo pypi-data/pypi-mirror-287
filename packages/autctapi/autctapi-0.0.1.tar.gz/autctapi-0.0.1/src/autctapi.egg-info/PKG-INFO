@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: autctapi
+Version: 0.0.1
+Summary: Autct websocket API client in Python
+Author-email: AdamISZ <no@example.com>
+Project-URL: repository, https://github.com/AdamISZ/autct-api.git
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: websockets
+
+### autct-api
+
+This will contain detailed information on how to make API calls from Python to an autct server to:
+
+* prove
+
+* verify
+
+* createkeys
+
