@@ -1,0 +1,7 @@
+pybcf-1.2.0.dist-info/RECORD,,
+pybcf-1.2.0.dist-info/WHEEL,sha256=C-4zUM2rD8q6VopLitchJzxYZKq5Qkk0cvwlSqxscUk,107
+pybcf-1.2.0.dist-info/top_level.txt,sha256=pLb1O4a8hp36X7AX-LkXELphf8eFeRBqAlVd7mEbzZo,6
+pybcf-1.2.0.dist-info/LICENSE.txt,sha256=9JeQlGDD-y7UmozsEBRQ62CRTWs99mPPnvL3uZftjyw,1053
+pybcf-1.2.0.dist-info/METADATA,sha256=lr0IshBYsVTzO9c7y5vqaYXOoZVXmNv8mBwGxY7_JqQ,1574
+pybcf/__init__.py,sha256=fHTvF_z2IsildxFqQSiwb49aFa1Rx4TDuQTIcJJhwR8,127
+pybcf/reader.cpython-38-darwin.so,sha256=jQQcoeWSzU1jjbenPRRt_GTCCp7J9Q04lvXGUvM6HOI,433336
