@@ -1,0 +1,188 @@
+# "*" is for entity/event projection mapping besides a single field
+
+
+time: timestamp
+
+
+# https://schema.ocsf.io/1.1.0/objects/file
+file:
+    "*": file.*
+    name: file:name
+    size: file:size
+    accessed_time: file:accessed
+    created_time: file:created
+    modified_time: file:modified
+    # This "hashes" notation comes from jmespath (filter projection)
+    # Disable for now: it's much easier to use the ECS notation in this case
+    #
+    #hashes[?algorithm_id == 1]:
+    #    value: file:hashes.MD5
+    #hashes[?algorithm_id == 2]:
+    #    value: "file:hashes.'SHA-1'"
+    #hashes[?algorithm_id == 3]:
+    #    value: "file:hashes.'SHA-256'"
+    #hashes[?algorithm_id == 4]:
+    #    value: "file:hashes.'SHA-512'"
+    #hashes[?algorithm_id == 5]:
+    #    value: file:hashes.SSDEEP
+    #hashes[?algorithm_id == 6]:
+    #    value: file:hashes.TLSH
+    #hashes[*]:
+    #    value:
+    #      - file:hashes.MD5
+    #      - "file:hashes.'SHA-1'"
+    #      - "file:hashes.'SHA-256'"
+    #      - "file:hashes.'SHA-512'"
+    #      - file:hashes.SSDEEP
+    #      - file:hashes.TLSH
+
+
+# https://schema.ocsf.io/1.1.0/objects/group
+# group:
+#     domain:
+#     name:
+#     uid:
+
+
+# https://schema.ocsf.io/1.1.0/objects/process
+process: &process
+    "*": process.*
+    cmd_line: process:command_line
+    name: process:name
+    pid: process:pid
+    uid: process:x_unique_id
+    file:
+        "*": process:binary_ref.*
+        name: process:binary_ref.name
+        parent_folder: process:binary_ref.parent_directory_ref.path
+        # This "hashes" notation comes from jmespath (filter projection)
+        # It's much easier to use the ECS notation in this case
+        hashes[?algorithm_id == 1]:
+            value: process:binary_ref.hashes.MD5
+        hashes[?algorithm_id == 2]:
+            value: process:binary_ref.hashes.'SHA-1'
+        hashes[?algorithm_id == 3]:
+            value: process:binary_ref.hashes.'SHA-256'
+        hashes[?algorithm_id == 4]:
+            value: process:binary_ref.hashes.'SHA-512'
+        hashes[?algorithm_id == 5]:
+            value: process:binary_ref.hashes.SSDEEP
+        hashes[?algorithm_id == 6]:
+            value: process:binary_ref.hashes.TLSH
+        hashes[*]:
+            value:
+              - process:binary_ref.hashes.MD5
+              - process:binary_ref.hashes.'SHA-1'
+              - process:binary_ref.hashes.'SHA-256'
+              - process:binary_ref.hashes.'SHA-512'
+              - process:binary_ref.hashes.SSDEEP
+              - process:binary_ref.hashes.TLSH
+    parent_process:
+        "*": process:parent_ref.*
+        cmd_line: process:parent_ref.command_line
+        name: process:parent_ref.name
+        pid: process:parent_ref.pid
+        uid: process:parent_ref.x_unique_id
+        file:
+            "*": process:parent_ref.binary_ref.*
+            name: process:parent_ref.binary_ref.name
+            parent_folder: process:parent_ref.binary_ref.parent_directory_ref.path
+
+
+# https://schema.ocsf.io/1.1.0/objects/endpoint
+device:
+    "*": ipv4-addr.*
+    ip: ipv4-addr:value
+
+
+# https://schema.ocsf.io/1.1.0/objects/network_traffic
+traffic: &network_traffic
+    #TODO: bytes: sum of byte counts?
+    bytes_in: network-traffic:dst_byte_count
+    bytes_out: network-traffic:src_byte_count
+    #TODO: packets: sum of packet counts?
+    packets_in: network-traffic:dst_packets
+    packets_out: network-traffic:src_packets
+
+
+src_endpoint: &src_endpoint
+    "*": network-traffic:src_ref.*
+    ip: network-traffic:src_ref.value
+    port: network-traffic:src_port
+
+
+dst_endpoint: &dst_endpoint
+    "*": network-traffic:dst_ref.*
+    ip: network-traffic:dst_ref.value
+    port: network-traffic:dst_port
+
+
+#network_endpoint:
+#    ip:
+#        - ipv4-addr:value
+#        - network-traffic:src_ref.value
+#        - network-traffic:dst_ref.value
+
+
+# https://schema.ocsf.io/1.1.0/objects/network_connection_info
+# connection_info:
+#     direction:
+#     protocol_num:
+#     protocol_name:
+#     protocol_ver:
+#     protocol_ver_id:
+
+
+# https://schema.ocsf.io/1.1.0/objects/certificate
+certificate:
+    "*": x509-certificate.*
+    expiration_time: x509-certificate:validity_not_after
+    created_time: x509-certificate:validity_not_before
+    serial_number: x509-certificate:serial_number
+    fingerprints[*]:
+        algorithm: x509-certificate:signature_algorithm
+    version: x509-certificate:version_number
+    issuer: x509-certificate:issuer
+    subject: x509-certificate:subject
+    #uid:
+
+
+# https://schema.ocsf.io/1.1.0/objects/user
+user: &user
+    "*": user-account.*
+    full_name: user-account:display_name
+    name: user-account:account_login
+    type: user-account:account_type
+    uid: user-account:user_id
+
+
+# https://schema.ocsf.io/1.2.0/objects/win/reg_key?extensions=win
+reg_key:
+    "*": windows-registry-key.*
+    path: windows-registry-key.key
+
+
+# https://schema.ocsf.io/1.2.0/objects/win/reg_value?extensions=win
+reg_value:
+    path: windows-registry-key.value.data
+
+
+# To simplify mapping, we do not cover parent process in actor.process
+# - This semantic only appear in Process Activity [1007], please use `process.parent_process` to specify in this case
+# - This works in Activity besides Process Activity [1007]
+actor:
+    process: *process
+    user: *user
+
+
+# https://schema.ocsf.io/1.1.0/classes/network_activity
+# Network Activity [4001] Class
+network_activity:
+    "*": network-traffic.*
+    src_endpoint: *src_endpoint
+    dst_endpoint: *dst_endpoint
+    traffic: *network_traffic
+
+
+event:
+    "*": x-oca-event.*
