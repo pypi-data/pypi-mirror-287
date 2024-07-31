@@ -1,0 +1,12 @@
+kpcommons/Footnote.py,sha256=txfbm8eKJH4onlRdVvkW21oRukIpsCaq2pKSe0njpWk,4165
+kpcommons/Util.py,sha256=adDJNAzt2b7BBU0sxZe6YhhMr7-zkKO_1b6XO_p3xyc,1762
+kpcommons/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+kpcommons/chunker/BaseChunker.py,sha256=q6hFJxF9u3mPRsfvydQcOam99S0Muv-lTGBsoKSOhfQ,210
+kpcommons/chunker/Chunk.py,sha256=ZBJsx3XjaO9HXsQencbhSVVgFrTfqc8WxSu8jDHb3do,102
+kpcommons/chunker/SentenceChunker.py,sha256=e4BFT8VOGt4AnM422kKdNcWzUdHtZDuAK-lU2wndZUE,4137
+kpcommons/chunker/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+KPCommons-0.0.5.dist-info/LICENSE,sha256=2XGfmLQQM24FOv9_D226g41KF66I4hcaTQzrCgCZ4Wg,11347
+KPCommons-0.0.5.dist-info/METADATA,sha256=ZCaHfj26Xh2n-Xr-gqV4PF4C1Smyeb_7cQ7cfAPuA2s,15159
+KPCommons-0.0.5.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+KPCommons-0.0.5.dist-info/top_level.txt,sha256=rEsMdfb1k58tz2tKNwZ4RYe7jaFtdePwZic38LKsl9c,10
+KPCommons-0.0.5.dist-info/RECORD,,
