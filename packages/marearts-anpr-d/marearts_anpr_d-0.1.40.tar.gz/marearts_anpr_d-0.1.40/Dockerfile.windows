@@ -1,0 +1,9 @@
+#Dockerfile.windows
+ARG PYTHON_VERSION=3.10
+FROM python:${PYTHON_VERSION}-windowsservercore
+WORKDIR /app
+COPY . .
+RUN pip install --upgrade pip && \
+    pip install cython numpy
+RUN python setup.py build_ext --inplace
+CMD python -c "import shutil; import os; [shutil.copy(f, '/output') for f in os.listdir() if f.endswith('.pyd')]"
