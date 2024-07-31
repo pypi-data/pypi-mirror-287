@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+sdk_license_client/__init__.py
+sdk_license_client/client.cpython-39-darwin.so
+sdk_license_client.egg-info/PKG-INFO
+sdk_license_client.egg-info/SOURCES.txt
+sdk_license_client.egg-info/dependency_links.txt
+sdk_license_client.egg-info/top_level.txt
+sdk_license_client/protobuf/__init__.py
