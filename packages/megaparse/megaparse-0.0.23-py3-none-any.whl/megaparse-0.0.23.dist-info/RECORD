@@ -1,0 +1,12 @@
+megaparse/CHANGELOG.md,sha256=RXU-po5moPiSD1FIci5J0gHUKhvJy9Sc7tu4MHMg5EY,2318
+megaparse/Converter.py,sha256=Kzq-qFRLdJj6GeyycMjWPD48oHyBbwm1m2XBhNW-mv8,14627
+megaparse/__init__.py,sha256=8QSntYwoKX9rV_PZfr_JCTdhEG9LmXuYdDvklvZ98O4,58
+megaparse/markdown_processor.py,sha256=mM8-fOmvPRO1n9WStPT9aaGJtK8SUqiUSBL2nbwE-OE,6887
+megaparse/multimodal_convertor/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+megaparse/multimodal_convertor/megaparse_vision.py,sha256=XdBU6kBqP8VN5az-cdXiJjr09x-2jRAIYugesc46FPU,7788
+megaparse/unstructured_convertor.py,sha256=2d818MLO_4gNaoSDEYx9jGU54pL-z8vUv_oFL8CK5as,6453
+megaparse/utils.py,sha256=U4uE0TaHjmt76k6461s2Krg1vXWE5vMu_xWnWWaSSbc,1639
+megaparse-0.0.23.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+megaparse-0.0.23.dist-info/METADATA,sha256=os2RdiwXCEgQf7uJsE0AdL3mo-1loj4Tc6hvx-ex_mI,4426
+megaparse-0.0.23.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+megaparse-0.0.23.dist-info/RECORD,,
