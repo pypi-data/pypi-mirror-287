@@ -1,0 +1,5 @@
+pyproject.toml
+mariko.egg-info/PKG-INFO
+mariko.egg-info/SOURCES.txt
+mariko.egg-info/dependency_links.txt
+mariko.egg-info/top_level.txt
