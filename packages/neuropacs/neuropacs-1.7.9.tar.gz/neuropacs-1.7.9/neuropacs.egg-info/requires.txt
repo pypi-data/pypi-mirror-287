@@ -1,0 +1,7 @@
+cryptography==41.0.1
+pycryptodome==3.20.0
+requests==2.31.0
+rsa==4.9
+urllib3==1.26.6
+zipp==3.17.0
+tqdm==4.66.1
