@@ -1,0 +1,93 @@
+# Python alist proxy and monitor.
+
+## 安装
+
+你可以从 [pypi](https://pypi.org/project/alist_proxy/) 安装
+
+```console
+pip install -U alist_proxy
+```
+
+## 用法
+
+### 作为模块使用
+
+```python
+>>> import alist_proxy
+>>> help(alist_proxy)
+Help on package alist_proxy:
+
+NAME
+    alist_proxy - # encoding: utf-8
+
+PACKAGE CONTENTS
+    __main__
+
+FUNCTIONS
+    make_application(base_url: str = 'http://localhost:5244', collect: None | collections.abc.Callable[[dict], typing.Any] = None, project: None | collections.abc.Callable[[dict], typing.Any] = None, methods: list[str] = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'CONNECT', 'OPTIONS', 'TRACE', 'PATCH', 'MKCOL', 'COPY', 'MOVE', 'PROPFIND', 'PROPPATCH', 'LOCK', 'UNLOCK', 'REPORT', 'ACL']) -> blacksheep.server.application.Application
+        创建一个 blacksheep 应用，用于反向代理 alist，并持续收集每个请求事件的消息
+        
+        :param base_url: alist 的 base_url
+        :param collect: 调用以收集 alist 请求事件的消息（在 project 调用之后），如果为 None，则输出到日志
+        :param project: 调用以对请求事件的消息进行映射处理，如果结果为 None，则丢弃此消息
+        :param methods: 需要监听的 HTTP 方法集
+        
+        :return: 一个 blacksheep 应用，你可以二次扩展，并用 uvicorn 运行
+    
+    make_application_with_fs_event_stream(alist_token: str, base_url: str = 'http://localhost:5244', redis_host: str = 'localhost', redis_port: int = 6379, redis_key: str = 'alist:fs')
+        只收集和文件系统操作有关的事件，存储到 redis streams，并且可以通过 websocket 拉取
+        
+        :param alist_token: alist 的 token，用来追踪后台任务列表（若不提供，则不追踪任务列表）
+        :param base_url: alist 的 base_url
+        :param redis_host: redis 服务所在的主机
+        :param redis_port: redis 服务的端口
+        :param redis_key: redis streams 的键名
+        
+        :return: 一个 blacksheep 应用，你可以二次扩展，并用 uvicorn 运行
+    
+    make_application_with_fs_events(alist_token: str, base_url: str = 'http://localhost:5244', collect: None | collections.abc.Callable[[dict], typing.Any] = None) -> blacksheep.server.application.Application
+        只收集和文件系统操作有关的事件
+        
+        :param alist_token: alist 的 token，用来追踪后台任务列表（若不提供，则不追踪任务列表）
+        :param base_url: alist 的 base_url
+        :param collect: 调用以收集 alist 请求事件的消息（在 project 调用之后），如果为 None，则输出到日志
+        
+        :return: 一个 blacksheep 应用，你可以二次扩展，并用 uvicorn 运行
+
+DATA
+    __all__ = ['make_application', 'make_application_with_fs_events', 'make_application_with_fs_event_stream']
+
+VERSION
+    (0, 0, 1)
+
+AUTHOR
+    ChenyangGao <https://chenyanggao.github.io>
+```
+
+### 命令行使用
+
+```console
+$ alist_proxy -h
+usage: [-h] [-H HOST] [-p PORT] [-b BASE_URL] [-t TOKEN] [-nr] [-rh REDIS_HOST] [-rp REDIS_PORT] [-rk REDIS_KEY] [-d] [-v]
+
+		🌍🚢 alist 网络代理抓包 🕷️🕸️
+
+options:
+  -h, --help            show this help message and exit
+  -H HOST, --host HOST  ip 或 hostname，默认值：'0.0.0.0'
+  -p PORT, --port PORT  端口号，默认值：5245
+  -b BASE_URL, --base-url BASE_URL
+                        被代理的 alist 服务的 base_url，默认值：'http://localhost:5244'
+  -t TOKEN, --token TOKEN
+                        alist 的 token，用来追踪后台任务列表（若不提供，则不追踪任务列表）
+  -nr, --no-redis       不使用 redis，直接输出到控制台，主要用于调试
+  -rh REDIS_HOST, --redis-host REDIS_HOST
+                        redis 服务所在的主机，默认值: '0.0.0.0'
+  -rp REDIS_PORT, --redis-port REDIS_PORT
+                        redis 服务的端口，默认值: 5245
+  -rk REDIS_KEY, --redis-key REDIS_KEY
+                        redis streams 的键名，默认值: 'alist:fs'
+  -d, --debug           启用 debug 模式（会输出更详细的信息）
+  -v, --version         输出版本号
+```
+
