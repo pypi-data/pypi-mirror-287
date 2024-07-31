@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.py
+src/llmcxt/__init__.py
+src/llmcxt/cli.py
+src/llmcxt.egg-info/PKG-INFO
+src/llmcxt.egg-info/SOURCES.txt
+src/llmcxt.egg-info/dependency_links.txt
+src/llmcxt.egg-info/entry_points.txt
+src/llmcxt.egg-info/requires.txt
+src/llmcxt.egg-info/top_level.txt
+tests/test_llmcxt.py
