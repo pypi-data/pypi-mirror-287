@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: fytok
+Version: 0.5.2
+Summary: Tokamak integrated modeling and analysis toolkit.
+Author-email: Zhi YU <yuzhi@ipp.ac.cn>
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: spdm
