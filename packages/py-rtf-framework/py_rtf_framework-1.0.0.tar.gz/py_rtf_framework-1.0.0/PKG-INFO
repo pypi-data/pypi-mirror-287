@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: py_rtf_framework
+Version: 1.0.0
+Home-page: 
+Author: liupeng
+Author-email: 895876294@qq.com
+License: Apache
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyyaml>=6.0.1
+
+py_framework
