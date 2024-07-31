@@ -1,0 +1,10 @@
+LICENSE
+setup.py
+QRCraft/__init__.py
+QRCraft/qr.py
+QRCraft.egg-info/PKG-INFO
+QRCraft.egg-info/SOURCES.txt
+QRCraft.egg-info/dependency_links.txt
+QRCraft.egg-info/requires.txt
+QRCraft.egg-info/top_level.txt
+tests/test_qr.py
