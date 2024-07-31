@@ -1,0 +1,3 @@
+[console_scripts]
+subsnitch=subsnitch.__main__:main
+
