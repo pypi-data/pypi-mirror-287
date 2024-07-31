@@ -1,0 +1,86 @@
+Metadata-Version: 2.1
+Name: ons-mkdocs-theme
+Version: 0.1.4
+Summary: ONS MkDocs theme
+Home-page: https://github.com/ONSdigital/ons-mkdocs-theme
+Author: Keilan Evans
+Author-email: Keilan Evans <keilan.evans@ons.gov.uk>
+License: Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to
+        deal in the Software without restriction, including without limitation the
+        rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+        sell copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in
+        all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+        FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+        IN THE SOFTWARE.
+        
+Project-URL: Documentation, https://improved-barnacle-2kpo16w.pages.github.io/
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: MkDocs
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Documentation
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mkdocs>=1.6
+Requires-Dist: mkdocs-material>=9.5
+
+<p align="center">
+    <img src=".github/assets/logo.svg" width="320px">
+</p>
+
+# MkDocs ONS Theme
+
+This is an Office for National Statistics (ONS) branded theme that can be used in conjunction with MkDocs.
+
+The purpose of this theme is to give users a way of generating styled documentation.
+
+This theme leans heavily on the Material for MkDocs that was created by Martin Donath. His original files can be accessed [here](https://github.com/squidfunk/mkdocs-material).
+
+## Getting Started
+
+ONS Theme for MkDocs is a powerful documentation framework on top of [MkDocs], a static site generator for project documentation. If you're familiar with Python, you can install ONS Theme for MkDocs with `pip`, the Python package manager.
+
+[MkDocs]: https://www.mkdocs.org
+
+### Installation
+
+#### With PIP
+
+ONS Theme for MkDocs is published as a Python package and can be installed with `pip`, ideally by using a [virtual environment]. Open up a terminal and install ONS Theme for MkDocs with:
+
+```sh
+pip install ons-theme-for-mkdocs
+```
+
+This will automatically install compatible versions of all dependencies: [MkDocs], Markdown, Pygments, and Python Markdown Extensions.
+
+!!! tip  
+If you don't have prior experience with Python, we recommend reading [Using Python's pip to Manage Your Projects' Dependencies], which is a really good introduction on the mechanics of Python package management and helps you troubleshoot if you run into errors.
+
+#### With Git
+
+ONS Theme for MkDocs can be directly used from GitHub by cloning the repository into a subfolder of your project root which might be useful if you want to use the very latest version:
+
+```sh
+git clone https://github.com/ONSdigital/ons-theme-for-mkdocs
+```
+
+Next, install the theme and its dependencies with:
+
+```sh
+pip install -e ons-theme-for-mkdocs
+```
