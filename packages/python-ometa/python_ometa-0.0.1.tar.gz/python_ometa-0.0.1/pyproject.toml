@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-ometa"
+version = "0.0.1"
+description = "Pattern-matching language based on OMeta for Python 3"
+readme = "README"
+authors = [
+  {name = "hugobessa", email = "hugo@vinta.com.br"},
+  {name = "wbond", email = "will@wbond.net"},
+]
+license = { text = "MIT License" }
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ometa"]
