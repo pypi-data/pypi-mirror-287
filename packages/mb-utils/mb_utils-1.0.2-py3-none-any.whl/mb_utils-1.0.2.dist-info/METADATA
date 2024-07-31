@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: mb_utils
+Version: 1.0.2
+Summary: Extra mb python utilities
+Author: ['Malav Bateriwala']
+Requires-Python: >=3.8
+
