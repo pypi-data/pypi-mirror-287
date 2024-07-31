@@ -1,0 +1,9 @@
+SpiderNet/__init__.py,sha256=XgDka9hE-x8GjQYqsOmjb37XxcqaGyFmGFdB78K5Pps,64
+SpiderNet/conn.py,sha256=wpAeUZvKVgLk3i3H7sYfK467N07hZCgfsYv0CNsfcoQ,2544
+SpiderNet/data_types/__init__.py,sha256=dTjR7B0Uvd6OGF4Xz8cPUpRW1Mvg-zF6fH46licHzBo,44
+SpiderNet/data_types/d_types.py,sha256=BGUc6UELunFBPyOR-5bhxMilUbesxpU2R08IsPlq3As,3931
+SpiderNet/data_types/loops.py,sha256=ym02qeCfg_6X4saHsHza6W-yLw49D_t-YhkyfVXw0Xw,1361
+SpiderNet-1.3.dist-info/METADATA,sha256=9JY4PTgU38ANfcWMNhoHA4Ixbjx2_2495lONqS6Tew0,5007
+SpiderNet-1.3.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+SpiderNet-1.3.dist-info/top_level.txt,sha256=Jro25SPAsKeabtuI9qm09uKiuQbPk6lMP7gwUPrRR7A,10
+SpiderNet-1.3.dist-info/RECORD,,
