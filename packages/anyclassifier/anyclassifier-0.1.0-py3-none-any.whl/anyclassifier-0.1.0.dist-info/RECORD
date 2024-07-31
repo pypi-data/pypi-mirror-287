@@ -1,0 +1,15 @@
+anyclassifier/__init__.py,sha256=mbq4M5jfYWxWRYym6dAUq2LLHOSdcL00hEgd4q0zwmo,50
+anyclassifier/main.py,sha256=xYVZirMdt1dGdHN5L4rF3_KA3RHQX6gUlYWT1tUcmnI,3252
+anyclassifier/utils.py,sha256=qtkqS6-iNGl9xhkWDzmch2qV_IN4rko4ARTSLoFY3O8,192
+anyclassifier/annotation/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+anyclassifier/annotation/annotator.py,sha256=NIs5W7zxVdkjwq-pg6XBhcgMcDj7Zd9fOGbqchS_gsw,3170
+anyclassifier/annotation/prompt.py,sha256=1JAV4MDQq1J4WZtlXkWTtaZR6stildah2GaOs_FimWo,1772
+anyclassifier/fasttext_wrapper/__init__.py,sha256=sB7it6PlZdSG9WeucvAUA4kUrMAKJHku_rgEYerKFqs,467
+anyclassifier/fasttext_wrapper/config.py,sha256=6fm2q-t2QGOisTQPYYziqjuLRNRnIrGnPb485PRSaOE,1055
+anyclassifier/fasttext_wrapper/model.py,sha256=vVKYRIpzCTdAKbyjv3pibZiqGCUJ5HDVbco-6L1YOZU,3780
+anyclassifier/fasttext_wrapper/trainer.py,sha256=PJkdo9zhRLcVMzWpo0_S1IM2wZCgxWn02v92kx12McQ,8926
+anyclassifier/fasttext_wrapper/utils.py,sha256=gk9yoAbuwIKEOnNeTSKZ1E8KapYRm3g6ZLVxFTlKOD4,88
+anyclassifier-0.1.0.dist-info/METADATA,sha256=rlonkjZ7EmlT8u_H9H-R2z9WWotXd5iSL0zC57hr1vY,5611
+anyclassifier-0.1.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+anyclassifier-0.1.0.dist-info/top_level.txt,sha256=KWbR9U8uIWY_fC0z4ALGK5qU5PGHjc565BZltXyWxOA,14
+anyclassifier-0.1.0.dist-info/RECORD,,
