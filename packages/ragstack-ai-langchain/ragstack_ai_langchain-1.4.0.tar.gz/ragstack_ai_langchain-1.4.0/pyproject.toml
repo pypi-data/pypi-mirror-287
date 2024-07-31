@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "ragstack-ai-langchain"
+version = "1.4.0"
+description = "DataStax RAGStack Langchain"
+license = "BUSL-1.1"
+authors = ["DataStax"]
+readme = "README.md"
+repository = "https://github.com/datastax/ragstack-ai"
+documentation = "https://docs.datastax.com/en/ragstack"
+packages = [{ include = "ragstack_langchain" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+astrapy = "^1"
+cassio = "~0.1.4"
+unstructured = "0.14.5"
+ragstack-ai-colbert = { version = "1.0.6", optional = true }
+ragstack-ai-knowledge-store = { version = "0.2.1", optional = true }
+
+# langchain
+langchain = "0.2.10"
+langchain-core = "0.2.22"
+langchain-community = "0.2.9"
+langchain-astradb = "0.3.3"
+langchain-openai = "0.1.8"
+langchain-google-genai = { version = "1.0.6", optional = true }
+langchain-google-vertexai = { version = "1.0.5", optional = true }
+langchain-nvidia-ai-endpoints = { version = "0.1.1", optional = true }
+
+[tool.poetry.extras]
+colbert = ["ragstack-ai-colbert"]
+knowledge-store = ["ragstack-ai-knowledge-store"]
+
+google = ["langchain-google-genai", "langchain-google-vertexai"]
+nvidia = ["langchain-nvidia-ai-endpoints"]
+
+[tool.poetry.group.test.dependencies]
+ragstack-ai-tests-utils = { path = "../tests-utils", develop = true }
+ragstack-ai-colbert = { path = "../colbert", develop = true }
+ragstack-ai-knowledge-store = { path = "../knowledge-store", develop = true }
+pytest-asyncio = "^0.23.6"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.11.0"
+
+[tool.mypy]
+strict = true
+warn_unreachable = true
+pretty = true
+show_error_codes = true
+show_error_context = true
+
+[[tool.mypy.overrides]]
+module = "transformers.*,cassandra.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
