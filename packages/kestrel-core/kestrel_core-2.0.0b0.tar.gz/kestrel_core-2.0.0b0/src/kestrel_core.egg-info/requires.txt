@@ -1,0 +1,14 @@
+typeguard>=4.3.0
+pyyaml>=6.0.1
+lark>=1.1.9
+pandas>=2.0.3
+pyarrow>=17.0.0
+mashumaro>=3.13.1
+networkx>=3.1
+SQLAlchemy>=2.0.31
+
+[dev]
+black
+
+[test]
+pytest
