@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: rbyte
+Version: 0.0.1
+Summary: Multimodal datasets for spatial intelligence
+Home-page: https://github.com/yaak-ai/rbyte
+Author: Yaak
+Author-email: rbyte@yaak.ai
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# rbyte
+Multimodal datasets for spatial intelligence
