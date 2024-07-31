@@ -1,0 +1,11 @@
+README.md
+setup.py
+SpiderNet/__init__.py
+SpiderNet/conn.py
+SpiderNet.egg-info/PKG-INFO
+SpiderNet.egg-info/SOURCES.txt
+SpiderNet.egg-info/dependency_links.txt
+SpiderNet.egg-info/top_level.txt
+SpiderNet/data_types/__init__.py
+SpiderNet/data_types/d_types.py
+SpiderNet/data_types/loops.py
