@@ -1,0 +1,17 @@
+README.md
+setup.cfg
+setup.py
+Codable.egg-info/PKG-INFO
+Codable.egg-info/SOURCES.txt
+Codable.egg-info/dependency_links.txt
+Codable.egg-info/requires.txt
+Codable.egg-info/top_level.txt
+codable/__init__.py
+codable/serialization.py
+codable.egg-info/PKG-INFO
+codable.egg-info/SOURCES.txt
+codable.egg-info/dependency_links.txt
+codable.egg-info/requires.txt
+codable.egg-info/top_level.txt
+tests/__init__.py
+tests/test_coding_containers.py
