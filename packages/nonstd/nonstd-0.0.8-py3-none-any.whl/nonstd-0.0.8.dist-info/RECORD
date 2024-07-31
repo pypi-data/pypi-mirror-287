@@ -1,0 +1,10 @@
+nonstd/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nonstd/derivative.py,sha256=GRuT50c7qfMe6vOPjKosvg-349EwOOax8KIBaN48Qoo,1119
+nonstd/logging.py,sha256=7jOsHOI7SFama3WSJJo7Nc_r-m2fBFJiM2FfUDZvmT8,1207
+nonstd/representation.py,sha256=6WmAkUc09wcVZNlEYmurLsVladjD5kK034Ph5vpTMsA,4285
+nonstd/sequence.py,sha256=fcxBq1nSUudtVoMAphG2wkea4EzDcrIcnYumBmKPcW4,12222
+nonstd/sequence_math.py,sha256=nfGj4VwzhTgJD1NSEE4ksrScWNelaoZxR1zehNdkShc,1685
+nonstd/timer.py,sha256=_pd1qnDzkwQI9mYA3DSWaXIKg5-NAVzESxsr1InK744,357
+nonstd-0.0.8.dist-info/METADATA,sha256=VTGfAGTYni1V6uXGkrDEa_w92s0QSFn9kfBj1ufRqnw,809
+nonstd-0.0.8.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+nonstd-0.0.8.dist-info/RECORD,,
