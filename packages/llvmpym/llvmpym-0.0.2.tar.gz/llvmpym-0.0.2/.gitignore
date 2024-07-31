@@ -1,0 +1,15 @@
+/.venv
+/dist
+/build
+/llvm-build
+/wheelhouse
+
+/pyrightconfig.json
+
+.env
+
+__pycache__
+
+*.egg-info
+.vscode
+.vs
