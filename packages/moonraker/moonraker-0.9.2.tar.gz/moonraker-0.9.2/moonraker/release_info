@@ -1,0 +1,28 @@
+{
+    "project_name": "moonraker",
+    "package_name": "moonraker",
+    "urls": {
+        "homepage": "https://github.com/Arksine/moonraker",
+        "repository": "https://github.com/Arksine/moonraker",
+        "documentation": "https://moonraker.readthedocs.io",
+        "changelog": "https://moonraker.readthedocs.io/en/latest/changelog/"
+    },
+    "package_version": "0.9.2",
+    "git_version": "v0.9.2-0-gb40751b",
+    "commit_sha": "b40751ba9d7f05e7da81636e3e4a5735ef85bb27",
+    "build_time": "2024-07-30T20:36:14+00:00",
+    "system_dependencies": {
+        "debian": [
+            "python3-virtualenv",
+            "python3-dev",
+            "libopenjp2-7",
+            "libsodium-dev",
+            "zlib1g-dev",
+            "libjpeg-dev",
+            "packagekit",
+            "wireless-tools",
+            "curl",
+            "build-essential"
+        ]
+    }
+}
