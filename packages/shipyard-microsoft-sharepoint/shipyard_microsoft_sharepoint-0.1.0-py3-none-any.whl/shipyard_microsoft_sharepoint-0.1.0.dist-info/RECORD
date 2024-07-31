@@ -1,0 +1,11 @@
+shipyard_microsoft_sharepoint/__init__.py,sha256=WmZ4KmbSTRZDXDY_VndE98WWB_onIsm7TbmKHWmbHH4,70
+shipyard_microsoft_sharepoint/cli/authtest.py,sha256=gRs-EsguHSsCGtgYf7rPE5-2U7A3_sFoBCHfEIE29fA,478
+shipyard_microsoft_sharepoint/cli/download.py,sha256=_hIGwe6bNbyjm55h_Up2aVudlrtmwhJM_KSdxSWvgIY,4255
+shipyard_microsoft_sharepoint/cli/move.py,sha256=EUs64bUdp5Oo4HzesrWHp2bmLyj-rjFXAYtDHK72HNI,3795
+shipyard_microsoft_sharepoint/cli/remove.py,sha256=S0ScaoquOxYJsQsYpapJ8miq6XpLBjZTeSq6hKTQ0V0,3114
+shipyard_microsoft_sharepoint/cli/upload.py,sha256=2nJKrbIeKhzTc7zDR9RIZVUmCrPHWvJan18s_Y9YUiQ,4145
+shipyard_microsoft_sharepoint/errs.py,sha256=VrhuqkdMzozX3x0JL-hemHzse3P5uiilW6YXbJOjwnc,364
+shipyard_microsoft_sharepoint/sharepoint.py,sha256=gaAQScSNU_IXWJ0dVY0p8L_e-1vBfRAvkPV9o5amyOw,13062
+shipyard_microsoft_sharepoint-0.1.0.dist-info/METADATA,sha256=EY5MeTPm3-Tz4Qq07aqclibNqXn3c7Wer9qgqpPJOKQ,628
+shipyard_microsoft_sharepoint-0.1.0.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+shipyard_microsoft_sharepoint-0.1.0.dist-info/RECORD,,
