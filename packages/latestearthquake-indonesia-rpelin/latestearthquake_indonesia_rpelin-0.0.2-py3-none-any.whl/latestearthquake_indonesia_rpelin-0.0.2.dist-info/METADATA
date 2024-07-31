@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: latestearthquake-indonesia-rpelin
+Version: 0.0.2
+Summary: This package will detect the latest earthquakes from BMKG Indonesia
+Author-email: Ruri Pelinandang <ruri.pelinandang@gmail.com>
+Project-URL: Homepage, https://github.com/rpelin-creative/latest-indonesian-earthquake
+Project-URL: Issues, https://github.com/rpelin-creative/latest-indonesian-earthquake/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# latest-indonesian-earthquake
+This package will detect the latest earthquakes from BMKG Indonesia
+
+## HOW IT WORK ?
+This package will scrape from [BMKG](https://www.bmkg.go.id)
+
+This package will use BeautifulSoup4 and Request, which generates json ready to use in web and mobile applications.
+
+
+
+## Author
+Ruri Pelinandang
