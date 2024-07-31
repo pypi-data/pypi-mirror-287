@@ -1,0 +1,11 @@
+neuropacs/__init__.py,sha256=LqlcIlgQs6WVU6kf5aQ4cw9o0C31ecRn0U4gNomdjzs,207
+neuropacs/ex.py,sha256=AOMu5MUCBDEjz1oiKQRTuqGYkuacd3tNvOUIZkBaHrg,1219
+neuropacs/sdk.py,sha256=oaTaXFHRqCfbGTsVnJErPj6lMTRNLPAe_cOJuWSlb9o,29918
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_utils.py,sha256=DdtXwSWGWAnRWoXpom-LIr1BW1oi6oFZzb9bk81AojU,1952
+tests/tests.py,sha256=hXDKAR9tz39sTVaGf13-nYEOOoaXobuPdlh1NM_e7Fs,3632
+neuropacs-1.7.9.dist-info/LICENSE,sha256=s83REKCnvvTaaNPbVIFvf_wyF-cZ0-uOK3Z1Eg96HIM,1061
+neuropacs-1.7.9.dist-info/METADATA,sha256=iJa3feckyVPAsLe2Cqlfy4JKScaEOGJYMXdokI-qb-4,2412
+neuropacs-1.7.9.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+neuropacs-1.7.9.dist-info/top_level.txt,sha256=k0x69WCeZ1UBgGhQLlbtqK59Y1EoO0ISd06IzqY8XM8,16
+neuropacs-1.7.9.dist-info/RECORD,,
