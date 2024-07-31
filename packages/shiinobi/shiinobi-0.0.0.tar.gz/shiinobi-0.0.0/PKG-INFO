@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: shiinobi
+Version: 0.0.0
+Summary: 
+Author: baseplate-admin
+Author-email: 61817579+baseplate-admin@users.noreply.github.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: redis[hiredis] (>=5.0.8,<6.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: requests-cache (>=1.2.1,<2.0.0)
+Requires-Dist: requests-ratelimiter (>=0.7.0,<0.8.0)
+Requires-Dist: selectolax (>=0.3.21,<0.4.0)
+Description-Content-Type: text/markdown
+
+
