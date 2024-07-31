@@ -1,0 +1,14 @@
+MANIFEST.in
+pyproject.toml
+setup.cfg
+src/serpapi_client/__init__.py
+src/serpapi_client/exception.py
+src/serpapi_client/fix.py
+src/serpapi_client.egg-info/PKG-INFO
+src/serpapi_client.egg-info/SOURCES.txt
+src/serpapi_client.egg-info/dependency_links.txt
+src/serpapi_client.egg-info/entry_points.txt
+src/serpapi_client.egg-info/requires.txt
+src/serpapi_client.egg-info/top_level.txt
+src/serpapi_client/google/__init__.py
+src/serpapi_client/google/client.py
