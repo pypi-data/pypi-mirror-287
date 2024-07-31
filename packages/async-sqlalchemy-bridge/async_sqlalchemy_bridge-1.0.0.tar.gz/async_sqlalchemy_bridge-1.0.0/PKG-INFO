@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: async-sqlalchemy-bridge
+Version: 1.0.0
+Summary: The async library for easy connect to postgres database
+Author: MSNLP
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: asyncpg<=1.0.0,>=0.29.0
+Requires-Dist: greenlet<=4.0.0,>=3.0.3
+Requires-Dist: pydantic<=3.0.0,>=2.6.1
+Requires-Dist: SQLAlchemy<=3.0.0,>=2.0.27
+
+Database lib Async
+===
+Обертка над SqlAlchemy для успешного асинхронного взаимодействия с базой данных
+
+<h3>Параметры</h3>
+
+| Наименование | Обязательность | Тип                 | Пример                                                                                          |
+|--------------|----------------|---------------------|-------------------------------------------------------------------------------------------------|
+| props        | да             | AbstractEngineProps | EngineProps.initialize("postgresql+asyncpg://test:test@localhost:5432/test", "example_project") |
+
+<h3>Методы класса</h3>
+
+| Наименование             | Что делает                                                                                         | Принимаемые параметры | Возвращаемый объект                |
+|--------------------------|----------------------------------------------------------------------------------------------------|-----------------------|------------------------------------|
+| get_dep_session          | Возвращает сессию для работы с БД. Используется в Dependency                                       | -                     | AsyncSession                       |
+| get_session              | Возвращает сессию для работы с БД                                                                  | -                     | AsyncGenerator[AsyncSession, None] |
+| init_echo_compiled_query | Инициализирует логгирование скомпилированных запросов к БД. Лучше, чем использовать echo в engin'e | log: Optional[Logger] | -                                  |
+
+<h3>Атрибуты класса</h3>
+
+| Наименование        | Возвращаемый объект                |
+|---------------------|------------------------------------|
+| async_session_maker | AsyncGenerator[AsyncSession, None] |
+| engine              | AsyncEngine                        |
+
+<h3>Example</h3>
+
+```python
+import logging
+import asyncio
+
+from fastapi import FastAPI, Depends
+from sqlalchemy import Integer, String, MetaData
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import Mapped, mapped_column, declarative_base
+
+from async_sqlalchemy_bridge import AsyncDataBase, EngineProps, CrudRepository
+
+Base = declarative_base(metadata=MetaData(schema="public"))
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - [%(levelname)s] - %(name)s - (%(filename)s).%(funcName)s(%(lineno)d) - %(message)s",
+    datefmt='%H:%M:%S',
+)
+
+logger = logging.getLogger(__name__)
+
+
+class User(Base):
+    __tablename__ = "users"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True, comment="Идентификатор записи")
+    first_name: Mapped[str] = mapped_column(String(30), comment="Имя", nullable=False)
+    last_name: Mapped[str] = mapped_column(String(50), comment="Фамилия", nullable=False)
+
+
+class Repo(CrudRepository):
+    _table = User
+
+
+def init_db() -> AsyncDataBase:
+    props = EngineProps.initialize("postgresql+asyncpg://test:test@localhost:5432/test", "example_project")
+    db = AsyncDataBase(props)
+    db.init_echo_compiled_query(logger)
+    return db
+
+
+async def create_tables(db: AsyncDataBase) -> None:
+    async with db.engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all, checkfirst=True)
+
+
+async def main():
+    db: AsyncDataBase = init_db()
+    await create_tables(db)
+    async with db.get_session() as session:
+        repo = Repo(session)
+        user = User(
+            first_name="Ivan",
+            last_name="Ivanov"
+        )
+        await repo.create(user)
+        await session.commit()
+
+
+def some_fastapi():
+    app = FastAPI()
+    db: AsyncDataBase = init_db()
+
+    @app.put("/add")
+    async def root(first_name: str, last_name: str, session: AsyncSession = Depends(db.get_dep_session)) -> int:
+        repo = Repo(session)
+        user = User(
+            first_name=first_name,
+            last_name=last_name
+        )
+        await repo.create(user)
+        await session.commit()
+        return user.id
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
