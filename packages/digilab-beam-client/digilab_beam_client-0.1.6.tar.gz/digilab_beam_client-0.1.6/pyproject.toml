@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "digilab-beam-client"
+version = "0.1.6"
+description = ""
+authors = ["JWSchaefer <joe.w.schaefer@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+numpy = ">=1.26"
+requests = "^2.32.3"
+typeguard = "^4.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
