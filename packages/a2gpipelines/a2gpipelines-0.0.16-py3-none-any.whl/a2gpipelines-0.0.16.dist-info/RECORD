@@ -1,0 +1,8 @@
+a2ginputstream/__init__.py,sha256=bcgnwgIDoXE_C1kvi4xX_mRiJDKcybAla_liC0Frl98,4049
+a2ginputstream/cloud_inputstream.py,sha256=2W_m4vNsNR8Z6K5nK1RBcYwYoX5juAJSug99zWoCN8A,6823
+a2ginputstream/inputstream.py,sha256=WDnMR-_s71eBcoaD2e1rJggJjA8ZHAizdQMmOsJxoQc,5866
+a2ginputstream/local_inputstream.py,sha256=xRPEunqix6dj8uKVCDu1HHkGZUXEwSjaOoCuQpDYkIU,15280
+a2gpipelines-0.0.16.dist-info/METADATA,sha256=_u811bHsdA_ckHZK-zVIWZXXq4iRl8tfb2GHAVsFy0Q,334
+a2gpipelines-0.0.16.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+a2gpipelines-0.0.16.dist-info/top_level.txt,sha256=5yAuxn_XHb6RfjDaACcCzvneVN7WdQx9iE8n2axMs6g,15
+a2gpipelines-0.0.16.dist-info/RECORD,,
