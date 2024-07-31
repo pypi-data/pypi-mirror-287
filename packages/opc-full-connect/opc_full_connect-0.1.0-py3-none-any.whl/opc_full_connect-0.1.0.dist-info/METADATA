@@ -1,0 +1,128 @@
+Metadata-Version: 2.1
+Name: opc_full_connect
+Version: 0.1.0
+Summary: A Python library for connecting to OPC UA servers with OpenSSL support.
+Home-page: https://github.com/Zmeypp/opcua_access
+Author: Zmeypp
+Author-email: lmayel@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
+Requires-Dist: asyncua ==1.1.0
+Requires-Dist: opcua ==0.98.13
+
+# OPC UA Client Library
+
+## Overview
+
+This library provides functionality for connecting to OPC UA servers. It requires OpenSSL for cryptographic operations.
+
+**Note:** This library has been tested only on Windows.
+
+## Prerequisites
+
+Before using this library, you need to install OpenSSL and set up your project directory as follows:
+
+```
+root/
+â”œâ”€â”€ openssl/
+â”‚ â””â”€â”€ bin/openssl.exe
+â””â”€â”€ main.py
+```
+
+
+
+### Installing OpenSSL on Windows
+
+1. Download the OpenSSL installer for Windows from [the official OpenSSL website](https://www.openssl.org/).
+2. Install OpenSSL and ensure that `openssl.exe` is placed in the `openssl/bin/` directory of your project.
+3. Ensure that your `openssl` directory is properly set up according to the structure mentioned above.
+
+## Usage
+
+To use this library, you need to set up your `main.py` file as follows:
+
+```python
+import asyncio
+from opc_full_connect import create_cert, OPCUAClient
+
+async def main():
+
+    create_cert("certificates", "cert", "pk", "cert")
+
+    opc_url = "your_url"
+    opc_username = "username"
+    opc_password = "password"
+    opc_policy = "policy"
+    opc_mode = "mode"
+    opc_certificate_path = "cert_path"
+    opc_private_key_path = "pk_path"
+    opc_application_uri = "urn:freeopcua:client"
+
+    # Create an instance of OPCUAClient
+    client_instance = OPCUAClient(opc_url,
+                                  opc_policy,
+                                  opc_mode,
+                                  opc_certificate_path,
+                                  opc_private_key_path,
+                                  opc_username,
+                                  opc_password,
+                                  opc_application_uri
+                                )
+
+    # Connect to the OPC UA server
+    await client_instance.connect_to_opc()
+
+    # ID of the node to retrieve the value from
+    node_id = "ns=2;s=2"
+
+    # Retrieve the value of the node
+    try:
+        node_value = await client_instance.get_node_value(node_id)
+        print(f"Value of node {node_id}: {node_value}")
+    except Exception as e:
+        print(f"Error retrieving node value: {e}")
+
+# Run the main asynchronous function
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### License
+This library is licensed under the MIT License. Please refer to the LICENSE file for more details.
+
+### Support
+For issues or questions, please open an issue on GitHub.
+
+### Acknowledgements
+This library uses OpenSSL for cryptographic functions. Please refer to the OpenSSL website for more information.
+
+
+### Key Points Covered
+
+1. **Project Structure**:
+   - Clearly describes the required directory structure and where `openssl.exe` should be located.
+
+2. **OpenSSL Installation**:
+   - Provides instructions to install OpenSSL on Windows and place it in the correct directory.
+
+3. **Usage Instructions**:
+   - Includes a complete example of how to use the library with comments and print statements in English.
+
+4. **License**:
+   - Specifies the licensing terms under which the library is distributed.
+
+5. **Support**:
+   - Provides information on how users can get help or report issues.
+
+6. **Acknowledgements**:
+   - Credits OpenSSL for its role in the library's functionality.
+
+Feel free to adjust the README content based on specific details about your project or any additional information you wish to include.
