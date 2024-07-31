@@ -1,0 +1,15 @@
+cigsegy/__init__.py,sha256=iFuQyJOnZhvlsYYyo6-01KyzOS14905PO4sNh2kyzyU,1722
+cigsegy/cigsegy.cp311-win_amd64.pyd,sha256=11fZZzrapzP6xZp-1tkPNAt3_PylhCFsas_tNlYR_rE,454656
+cigsegy/cigsegy.pyi,sha256=Ej5j7GjhAxeE97_tZmeUCSuersEYnD9qK67zvH1AQ74,22434
+cigsegy/deprecated.py,sha256=Nge6LB_BH5y-4IbLPLBsk-B8RVyhQcJ7WUIzvjlE2Lk,1228
+cigsegy/plot.py,sha256=Pw7gw8fh2Wi3BZM3Bc10FpPw34hL9VMdCmCH0it1UNI,6087
+cigsegy/segynp.py,sha256=vEEtujz_fQH1joN2gheuvkjOO_ZXChhiFBcx9jcwoGY,6272
+cigsegy/setup.py,sha256=yMaUXqa_lveiaH5K-w7LpvMeXB3hqbjOPLXM4QkEfdg,801
+cigsegy/tools.py,sha256=sGAnp0jqICatE8kPdWnaMpFj4_tkQgoozaWpqtc_NjY,22158
+cigsegy/utils.py,sha256=EjTn71XNcjwhM1i-ZOfKFg73hhoMwfkyrbnr2_trDaM,16394
+cigsegy/version.py,sha256=4zcMWrTDQ1Aeix-vwUV-zfqTEbLKGH9_Tr7wYNkhwYE,48
+cigsegy-1.1.7.dist-info/LICENSE,sha256=5gtn8QyVakXKPqLLq0CbwclPQEfny2J1AHtj0C2kOQM,1089
+cigsegy-1.1.7.dist-info/METADATA,sha256=mLifuug3-jdcY78clKSBTUZwpQwKxTgxBcvORtkhkaI,7270
+cigsegy-1.1.7.dist-info/WHEEL,sha256=nSybvzWlmdJnHiUQSY-d7V1ycwEVUTqXiTvr2eshg44,102
+cigsegy-1.1.7.dist-info/top_level.txt,sha256=2khDol8GSbIWElmNPHeWd9HqtIwaAcQj_MBb-IgLTmI,8
+cigsegy-1.1.7.dist-info/RECORD,,
