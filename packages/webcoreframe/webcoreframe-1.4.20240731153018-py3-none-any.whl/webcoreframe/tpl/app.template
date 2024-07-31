@@ -1,0 +1,72 @@
+import re
+import os
+
+import flask_cors
+from flask import Flask, redirect, url_for
+from webcoreframe.utils.helper import trueReturn, load_model
+
+
+def init_project(app: Flask):
+    uploads_folder = app.config.get("UPLOADS_FOLDER", "uploads")
+    log_folder = app.config.get("LOG_FOLDER", "logs")
+    from webcoreframe.utils.helper import mkdirs
+    mkdirs(uploads_folder)
+    mkdirs(log_folder)
+
+
+def auto_init_depends(rule_pattern, template, *args, **kwds):
+    """自动导入数据库&接口依赖"""
+    pattern = re.compile(rule_pattern)
+    abs_path = os.path.dirname(os.path.abspath(__file__))
+    for __dir in os.listdir(abs_path):
+        if os.path.isdir(os.path.join(abs_path, __dir)) and pattern.match(__dir):
+            # print(__dir, os.path.isdir(os.path.join(abs_path, __dir)), os.path.join(abs_path, __dir))
+            load_model(template.format(__dir))(*args, **kwds)
+
+
+def auto_init(app: Flask):
+    from webcoreframe.application import engine
+    # 初始化数据库
+    # auto_init_depends("请自行填写", "#project-name#.{}.models.init_db", engine)
+    # 初始化API
+    # auto_init_depends("请自行填写", "#project-name#.{}.urls.init_app", app)
+
+
+def create_app(config):
+    app = Flask(__name__)
+    app.config.from_object(config)
+    flask_cors.CORS(app)
+
+    # 初始化项目文件夹
+    init_project(app)
+
+    # 初始化webcoreframe
+    from webcoreframe import init_app as init_webcoreframe
+    init_webcoreframe(app)
+
+    # 初始化项目的数据库模型&初始化项目API
+    auto_init(app)
+
+    # 初始化webcoreframe提供的后台API(若您不需要可以注释掉)
+    from webcoreframe.contrib import init_contrib
+    init_contrib(app)
+
+    from webcoreframe.plugins.limiter_helper import limiter
+    api_prefix = app.config.get("API_PREFIX", "/api/v1")
+
+    @app.get(f"{api_prefix}/ping", endpoint="ping")
+    @limiter.exempt
+    def ping():
+        return trueReturn("pong")
+
+    if app.config.get("MODE") == "develop":
+        @app.get("/", endpoint="index")
+        @limiter.exempt
+        def index():
+            return redirect(url_for("admin.welcome"))
+
+    # 注册定时器
+    from webcoreframe.plugins.timer_helper import scheduler
+    scheduler.start()
+
+    return app
