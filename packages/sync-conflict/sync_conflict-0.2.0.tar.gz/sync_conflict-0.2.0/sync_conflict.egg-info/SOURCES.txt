@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+sync_conflict/__init__.py
+sync_conflict/commands.py
+sync_conflict/utils.py
+sync_conflict.egg-info/PKG-INFO
+sync_conflict.egg-info/SOURCES.txt
+sync_conflict.egg-info/dependency_links.txt
+sync_conflict.egg-info/entry_points.txt
+sync_conflict.egg-info/requires.txt
+sync_conflict.egg-info/top_level.txt
