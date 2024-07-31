@@ -1,0 +1,3 @@
+[console_scripts]
+rotafy=rotafy.cli:cli
+
