@@ -1,0 +1,107 @@
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry]
+name = "pg-purepy"
+version = "0.11.1"
+description = "A pure-Python anyio-based PostgreSQL adapter."
+authors = ["Lura Skye <fuyukai@proton.me>"]
+license = "LGPL-3.0-or-later"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Topic :: Database",
+    "Topic :: Database :: Front-Ends",
+    "Operating System :: OS Independent",
+]
+readme = "README.rst"
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+scramp = ">=1.4.4"
+attrs = ">=23.2.0"
+python-dateutil = ">=2.9.0.post0"
+anyio = ">=4.3.0"
+structlog = ">=24.1.0"
+whenever = ">=0.5.1"
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "<8.0"  # damn, this released *yesterday*
+sphinx-inline-tabs = ">=2023.4.21"
+sphinx-autodoc-typehints = ">=2.0.1"
+sphinxcontrib-jquery = ">=4.1"
+sphinx-rtd-theme = ">=2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.1.1"
+trio = ">=0.25.0"
+isort = ">=5.13.2"
+pytest-cov = ">=5.0.0"
+ruff = ">=0.3.7"
+ujson = ">=5.9.0"
+pyright = ">=1.1.358"
+
+[tool.poetry.extras]
+docs = ["Sphinx", "sphinxcontrib-trio", "sphinx-autodoc-typehints", "sphinx-rtd-theme",
+    "sphinx-inline-tabs"]
+
+[tool.pytest.ini_options]
+log_cli_level = "5"
+log_cli = false
+addopts = "--cov --cov-report=html"
+
+[tool.coverage.run]
+branch = true
+source = ["pg_purepy"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "raise UnknownMessageError",  # this only happens if the postgresql server breaks
+    "pragma: no cover"  # default behaviour...
+]
+
+[tool.ruff]
+target-version = "py312"
+respect-gitignore = true
+# fix = true
+src = ["src/pg_purepy"]
+line-length = 100
+output-format = "full"
+
+[tool.ruff.lint]
+select = [
+  "RUF",
+  "F",
+  "E",
+  "W",
+  "I",
+  "UP",
+  "B",
+  "YTT",
+  "ASYNC",
+  "PYI",
+  "SIM",
+  "RET",
+  "PERF",
+]
+ignore = [
+    "W291",
+    "W293",
+    "E266"
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.pyright]
+pythonVersion = "3.12"
+include = ["src"]
+typeCheckingMode = "strict"
+
+reportImplicitOverride = "warning"
+reportUnusedVariable = false
+reportIncompatibleVariableOverride = false
+reportPrivateUsage = false
+
+[tool.poetry-dynamic-versioning]
+enable = false
