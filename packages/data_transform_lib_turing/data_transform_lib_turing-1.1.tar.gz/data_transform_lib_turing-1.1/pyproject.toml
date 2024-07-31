@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "data_transform_lib_turing"
+version = "1.1"
+description = "3 functions for data transformation"
+authors = ["Lukas Miliauskas"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.packages]]
+include = "data_transformation_library"
+from = "src"
