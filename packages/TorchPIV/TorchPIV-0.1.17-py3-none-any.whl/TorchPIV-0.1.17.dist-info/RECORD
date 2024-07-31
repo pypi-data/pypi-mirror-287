@@ -1,0 +1,14 @@
+torchPIV/ControlsWidgets.py,sha256=owiWRTnoIVB8y07LzLIjfIWZxJ7XO7gxZZ-ieCCjE9c,17828
+torchPIV/PIVbackend.py,sha256=68kqdhLqnPxrvIyonSOaseuLjZGIEUqjPmCU4qF6nqY,31874
+torchPIV/PIVwidgets.py,sha256=8NldT4_1dYAwic7jcZF1wqwKgP5bbcw_Jdl7nKTGfCw,11894
+torchPIV/PlotterFunctions.py,sha256=q1xqf4aF2urJyvtiDm7yfDxpDsnasCWtMuR-Td2aWEs,5515
+torchPIV/__init__.py,sha256=k0DG_0WgkOs7N17HPHtujIdsaKczp9-cnvMMl5-uXzs,84
+torchPIV/mainWindow.py,sha256=HIlcxsnCb0oHdVrVApgEsMMOLsDkzGSZkpze0HI4kt4,9264
+torchPIV/settings.json,sha256=Lg-Omr6BeiKuwcWpWIS3SQoLzgHScSziSEW1sFjrQuc,398
+torchPIV/watchman.py,sha256=w4U_1qhIhKaYzKzkcKOlnjkSOxQ4xSIUU8V-0BGlc2Y,606
+torchPIV/workers.py,sha256=Y4zZFPL26nabz9i-WIIWFHhaIRDjehkZ6eWxmqTko84,6858
+TorchPIV-0.1.17.dist-info/LICENCE.txt,sha256=lVK0Wyti66GLZddaIGX22DqQBtQNk3FezfWz54y08o4,1090
+TorchPIV-0.1.17.dist-info/METADATA,sha256=JCmQ7625hrsmL9QunWcB2Y9qcS6RA4BoiXBCTd7OKtI,3684
+TorchPIV-0.1.17.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+TorchPIV-0.1.17.dist-info/top_level.txt,sha256=OSxfzDgYs14AsV6l6IEuTsuvJ9IwPeZDih1NWuKiBtE,9
+TorchPIV-0.1.17.dist-info/RECORD,,
