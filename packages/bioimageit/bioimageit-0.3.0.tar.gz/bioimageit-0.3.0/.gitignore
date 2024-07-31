@@ -1,0 +1,13 @@
+# pixi environments
+.pixi
+*.egg-info
+*.pyc
+**/.DS_Store
+.vscode/
+__pycache__/
+micromamba/
+PyFlow/Configs/
+*.ini
+*.log
+build/
+dist/
