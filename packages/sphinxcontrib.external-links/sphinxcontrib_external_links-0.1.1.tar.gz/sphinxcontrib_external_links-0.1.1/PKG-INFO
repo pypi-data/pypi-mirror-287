@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: sphinxcontrib.external-links
+Version: 0.1.1
+Summary: Sphinx extension for easily adding reusable external links.
+Home-page: https://github.com/ITProKyle/sphinxcontrib.external-links
+License: Apache-2.0
+Keywords: documentation,extension,sphinx
+Author: Kyle Finley
+Author-email: kyle@finley.sh
+Requires-Python: >=3.9,<4.0
+Classifier: Framework :: Sphinx :: Extension
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Documentation :: Sphinx
+Classifier: Topic :: Software Development :: Documentation
+Requires-Dist: sphinx (>=7.2,<9)
+Project-URL: Documentation, https://sphinxcontribexternal-links.readthedocs.io/
+Project-URL: Repository, https://github.com/ITProKyle/sphinxcontrib.external-links
+Project-URL: bugs, https://github.com/ITProKyle/sphinxcontrib.external-links/issues
+Project-URL: changelog, https://github.com/ITProKyle/sphinxcontrib.external-links/releases
+Project-URL: issues, https://github.com/ITProKyle/sphinxcontrib.external-links/issues
+Description-Content-Type: text/markdown
+
+# sphinxcontrib.external-links
+
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![renovate](https://img.shields.io/badge/enabled-brightgreen?logo=renovatebot&logoColor=%2373afae&label=renovate)](https://developer.mend.io/)
+
+Sphinx extension for easily adding reusable external links.
+
+## Features
+
+- default list of commonly used external links
+- user configurable links
+- check documentation for hardcoded links that can be replaced
+- compatible with the Sphinx's `linkcheck` builder to check link integrity
+- global [substitutions](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#substitutions)
+
+## Usage
+
+```python
+external_links = {
+    "Google": "https://google.com",  # matches ":link:`google`", ":link:`Google`", etc
+}
+external_links_substitutions = {
+    "dict": ":class:`dict`",
+}
+```
+
+```rst
+Provide a link to :link:`Google` to :link:`google.com <google>`.
+This thing is a |dict|.
+```
+
