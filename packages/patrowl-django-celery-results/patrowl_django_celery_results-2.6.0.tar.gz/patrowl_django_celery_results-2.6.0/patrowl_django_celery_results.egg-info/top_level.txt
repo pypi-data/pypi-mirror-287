@@ -1,0 +1,1 @@
+patrowl_django_celery_results
