@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "deserial"
+version = "0.1.1"
+description = ""
+authors = ["Bohdan Vanieiev <warchantua@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+coloredlogs = "^15.0.1"
+dataclass-factory = "^2.16"
+pyyaml = "^6.0.1"
+pyserial = "^3.5"
+
+
+[tool.poetry.scripts]
+deserial = "deserial.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
