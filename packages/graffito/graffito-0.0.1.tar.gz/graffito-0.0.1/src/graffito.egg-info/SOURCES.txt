@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/graffito/__init__.py
+src/graffito/tags.py
+src/graffito.egg-info/PKG-INFO
+src/graffito.egg-info/SOURCES.txt
+src/graffito.egg-info/dependency_links.txt
+src/graffito.egg-info/top_level.txt
