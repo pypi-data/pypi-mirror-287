@@ -1,0 +1,61 @@
+[project]
+name = "desc-bpz"
+description = "Python3 version of BPZ used in DESC"
+license = {file = "LICENSE"}
+readme = "README.md"
+authors = [
+    {name = "Noel Benitez, Dan Coe, Will Hartley, Sam Schmidt, Joe Zuntz, LSST DESC PZWG", email = "samuel.j.schmidt@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+]
+dynamic = ["version"]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy<2.0",
+    "scipy",
+    "pandas>=1.1",
+    "h5py",
+]
+
+[project.urls]
+"Source Code" = "https://github.com/LSSTDESC/DESC_BPZ"
+
+# On a mac, install optional dependencies with `pip install '.[dev]'` (include the single quotes)
+[project.optional-dependencies]
+dev = [
+    "pre-commit", # Used to run checks before finalizing a git commit
+    "pytest",
+    "pytest-cov", # Used to report total code coverage
+]
+
+[build-system]
+requires = [
+    "setuptools>=62", # Used to build and package the Python project
+    "setuptools_scm>=6.2", # Gets release version from git. Makes it available programmatically
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "src/desc_bpz/_version.py"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+[tool.setuptools.package-data]
+"*" = ["*.h5", "*.yaml", "*.columns", "*.pars"]
+"desc_bpz.data_files.SED" = ["*.sed", "*.list"]
+"desc_bpz.data_files.AB" = ["*.AB"]
+"desc_bpz.data_files.FILTER" = ["*.res"]
+"desc_bpz.scripts" = ["*.columns", "*.pars"]
+
+
+[tool.coverage.run]
+omit=["src/desc_bpz/_version.py"]
