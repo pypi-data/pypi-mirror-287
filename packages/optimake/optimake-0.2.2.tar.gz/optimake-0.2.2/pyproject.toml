@@ -1,0 +1,45 @@
+[project]
+name = "optimake"
+description = "Tools for making OPTIMADE APIs from raw structural data."
+readme = "README.md"
+version = "0.2.2"
+requires-python = ">=3.10"
+
+dependencies = [
+    "pydantic~=2.2",
+    "optimade[server,ase]~=1.1",
+    "pyyaml~=6.0",
+    "pymatgen>=2023.9",
+    "pandas~=2.1",
+    "pybtex~=0.24",
+    "tqdm~=4.65",
+    "requests~=2.31",
+    "numpy~=1.26",
+    "click~=8.1"
+]
+
+[project.optional-dependencies]
+tests = ["pytest~=7.4", "pytest-cov~=4.0"]
+dev = ["black", "ruff", "pre-commit", "mypy", "isort", "types-all"]
+
+[tool.ruff]
+select = ["E", "F", "I", "W", "Q"]
+ignore = ["E501", "E402"]
+fixable = ["A", "B", "C", "D", "E", "F", "I"]
+unfixable = []
+target-version = "py311"
+per-file-ignores = {}
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.mypy]
+plugins = "pydantic.mypy"
+ignore_missing_imports = true
+follow_imports = "skip"
+
+[tool.isort]
+known_first_party = "optimake"
+profile = "black"
+
+[project.scripts]
+optimake = "optimake.cli:cli"
