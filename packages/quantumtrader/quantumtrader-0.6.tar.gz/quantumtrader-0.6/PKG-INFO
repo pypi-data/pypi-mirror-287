@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: quantumtrader
+Version: 0.6
+Summary: 一个基于freqtrade的量化交易策略系统
+Home-page: https://gitee.com/yu-chiu/quantum_trader
+Author: YUCHIU
+Author-email: yu.chiu@foxmail.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Office/Business :: Financial
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# quantum-trader(仅供个人学习)
+
+
+## 量化交易策略系统
+
+
+
+### 主要特点
+
+
+
+### 关于quantumtrader_ta指标库
+
+
+
+### 如何使用
+
+1. **安装依赖**：
+2. **下载与配置**
+3. **编写策略**：
+4. **回测与交易**：
+
+### 贡献与反馈
+
+
+
+### 许可证
+
