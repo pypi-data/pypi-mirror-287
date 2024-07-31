@@ -1,0 +1,6 @@
+absl-py>=0.8.0
+grpcio>=1.0.0
+
+[test]
+grpcio-testing>=1.0.0
+pytest
