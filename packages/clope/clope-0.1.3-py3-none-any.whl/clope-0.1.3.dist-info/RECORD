@@ -1,0 +1,15 @@
+clope/__init__.py,sha256=FP4VGMe3K9t4aMOsZlAK_g6FSlPpM5WnuYFgolhrdzM,21
+clope/clope.py,sha256=CT75h11FslbbD6CnQoyJgaH9PiVtrOd0vxy3WBBPYJ4,316
+clope/snow/__init__.py,sha256=XbXecxzh8R9GKCM_0tu40NmCqqnEctzLIbKA_cTPPVE,8
+clope/snow/connection_handling.py,sha256=ax_VYysEgVXkYny-BCinIsYjd5dMc3sGhcfQC0JJJZY,936
+clope/snow/dates.py,sha256=_lufQtn0lDa1LlT0f6ARMCI4sPyMj4PSxUeUTp8KTvI,3399
+clope/snow/dimensions.py,sha256=9dvCrB2vALhtF1GDfZ7zIJe5-vpYCcM1dmCPwLC0RBQ,9382
+clope/snow/facts.py,sha256=_Ngn9s_ND6acrhKH2UniJYXC3ReB5-8FtF1OoiT-RqE,27933
+clope/snow/functions.py,sha256=xrIsPvQ2ApAeBDFSZ6FuY_m-pxsAclSfxgouQ_g3UUw,273
+clope/spotlight/__init__.py,sha256=XbXecxzh8R9GKCM_0tu40NmCqqnEctzLIbKA_cTPPVE,8
+clope/spotlight/spotlight.py,sha256=gpuf5YyEAuGfB4Q6XxcknkCqHLI1CaFaX2RjxXx70Ao,3355
+clope-0.1.3.dist-info/LICENSE,sha256=awOCsWJ58m_2kBQwBUGWejVqZm6wuRtCL2hi9rfa0X4,1211
+clope-0.1.3.dist-info/METADATA,sha256=PxdVaHnBUrsSnRfIjkNYcM55ltfM_nsThw2MOnWTe9c,6802
+clope-0.1.3.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+clope-0.1.3.dist-info/top_level.txt,sha256=LKV4NxqY2vYDOiOKNTAr2bNnvkAYE2X2bx-Oe0vD50I,6
+clope-0.1.3.dist-info/RECORD,,
