@@ -1,0 +1,8 @@
+typer
+toml
+pyfiglet
+asciichartpy
+asciimatics
+
+[:platform_system == "Windows"]
+windows-curses

@@ -1,0 +1,7 @@
+[console_scripts]
+typyn = typyn.main:app
+typyn-delete-saves = typyn.main:delete_saves
+typyn-help = typyn.main:help
+typyn-run = typyn.main:run
+typyn-show-languages = typyn.main:show_languages
+typyn-version = typyn.main:version
