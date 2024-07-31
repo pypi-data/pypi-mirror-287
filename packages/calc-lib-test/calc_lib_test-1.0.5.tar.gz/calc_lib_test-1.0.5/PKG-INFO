@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: calc-lib-test
+Version: 1.0.5
+Summary: Test calculator
+License: ISC
+Author: roxxorzzz
+Author-email: 109853408+roxxorzzz@users.noreply.github.com
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Description-Content-Type: text/markdown
+
+calc_lib
+========
+
+Библиотека для сложения двух чисел.
+
+Пример использования:
+
+>>> from calc_lib import add
+>>> add(1, 2)
+3
