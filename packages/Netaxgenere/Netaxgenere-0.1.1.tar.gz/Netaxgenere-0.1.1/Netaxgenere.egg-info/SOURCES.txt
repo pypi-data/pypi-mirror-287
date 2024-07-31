@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.py
+Netaxgenere/__init__.py
+Netaxgenere/network.c
+Netaxgenere.egg-info/PKG-INFO
+Netaxgenere.egg-info/SOURCES.txt
+Netaxgenere.egg-info/dependency_links.txt
+Netaxgenere.egg-info/top_level.txt
