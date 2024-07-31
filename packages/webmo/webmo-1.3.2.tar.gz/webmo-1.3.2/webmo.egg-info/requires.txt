@@ -1,0 +1,12 @@
+requests
+websockets
+
+[gui]
+questionary
+ipywidgets
+
+[spectrum]
+numpy
+
+[util]
+PubChemPy
