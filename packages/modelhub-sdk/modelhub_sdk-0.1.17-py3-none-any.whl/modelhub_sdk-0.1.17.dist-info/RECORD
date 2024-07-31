@@ -1,0 +1,17 @@
+modelhub/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+modelhub/client.py,sha256=76MmyPv5wxPrHk8ml0prxFC7LPsxoRlt-ezWhEZLOHk,7028
+modelhub/decorators.py,sha256=uAW0z_ZFkZRjdqUxjESEN5Uw968j-ht5yZ4elCJ8X2k,107
+modelhub/models.py,sha256=JY9CX4dTUqNAH97hHhLxZTiC-_pJLlCbBkOdD5Zy1LM,745
+modelhub/pipelines.py,sha256=CC3S-001x6uS3eNTim7BooV3pJEnPw1Xv0--BIVwKDQ,3331
+modelhub/utils.py,sha256=MIK388EZTnia8ccnlLrr6hEU86OOHTOLOoZyAl9gLpI,1052
+recipe_project/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+recipe_project/main.py,sha256=T54Rkc9pa4Z02yVbIZxEcU942BsHaw6sjFNTfJ1X6oQ,620
+recipe_project/steps/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+recipe_project/steps/evaluate.py,sha256=ZS1xaBkoioeDMfDQU7uHLYFs5214LKBqAwtC2Nf046w,134
+recipe_project/steps/preprocess.py,sha256=E8G_64s1Sk2_Lt-SSjCYsiL2o9zRR7hElrxOlQq7lc4,2772
+recipe_project/steps/train.py,sha256=NIfOdO-jwHiw1UNSv5as5fBqHdviHpfiIeOSZs2ACX4,1857
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+modelhub_sdk-0.1.17.dist-info/METADATA,sha256=P8KbnxsdkrYLQ1Xmy9HS8mKMSewb8O4-o-C6-CGSr88,735
+modelhub_sdk-0.1.17.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+modelhub_sdk-0.1.17.dist-info/top_level.txt,sha256=4bh_WyJlRxRHGH2f22Nqnr9rKv_ptaYvvscKyWEfouo,30
+modelhub_sdk-0.1.17.dist-info/RECORD,,
