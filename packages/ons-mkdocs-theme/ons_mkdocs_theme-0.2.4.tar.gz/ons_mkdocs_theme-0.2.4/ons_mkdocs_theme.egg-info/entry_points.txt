@@ -1,0 +1,2 @@
+[mkdocs.themes]
+ons-mkdocs-theme = ons_mkdocs_theme
