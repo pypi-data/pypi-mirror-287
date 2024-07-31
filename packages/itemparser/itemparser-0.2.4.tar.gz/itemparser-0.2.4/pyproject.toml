@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "itemparser"
+version = "0.2.4"
+description = "parser for item"
+authors = ["miclon <jcnd@163.com>"]
+readme = "README.md"
+packages = [
+    { include = 'itemparser', from = 'src' }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+parsel = "^1.8.1"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
