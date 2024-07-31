@@ -1,0 +1,26 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <NotificaPagamentoDebitoResponse xmlns="http://schemi.informatica.maggioli.it/ws/pagopa/Notify"/>
+        <CodiceIPA>{{codice_ipa}}</CodiceIPA>
+        <IDOperazione>{{pagamento_id}}</IDOperazione>
+        <DataRisposta>{{today}}</DataRisposta>
+        <EsitoOperazione>OK</EsitoOperazione>
+        <DatiDettaglioRisposta><![CDATA[
+        <RispostaNotificaPagamentoDebito xmlns="http://schemi.informatica.maggioli.it/operations/jcgpagopa/notify/1_0">
+            <Esito>
+                <Esito>ERROR</Esito>
+                <Messaggio>Errore nella ricerca del debito</Messaggio>
+            </Esito>
+        </RispostaNotificaPagamentoDebito>
+        ]]></DatiDettaglioRisposta>
+        <Messaggi>
+            <Messaggio>
+                <Codice> ERROR </Codice>
+                <Descrizione> Errore nella ricerca del debito </Descrizione>
+            </Messaggio>
+        </Messaggi>
+    </soapenv:Body>
+</soapenv:Envelope>
