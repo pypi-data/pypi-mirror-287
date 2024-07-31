@@ -1,0 +1,6 @@
+vcf2maf_lite/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vcf2maf_lite/vcf2maf_lite.py,sha256=X8Z3ieAMjv52t999tWKmGQ3Z08lIEZWGW9GiKF8gslY,64448
+vcf2maf_lite-0.1.0.dist-info/METADATA,sha256=BrtdB8qTJf6ODsRUihr0W4XZ9AdBj2I6Lhlvouoe1ZQ,4537
+vcf2maf_lite-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+vcf2maf_lite-0.1.0.dist-info/entry_points.txt,sha256=EV1rzFpHsYsbKrMvOiUpGRPIABn3PccM5doesZ897V4,59
+vcf2maf_lite-0.1.0.dist-info/RECORD,,

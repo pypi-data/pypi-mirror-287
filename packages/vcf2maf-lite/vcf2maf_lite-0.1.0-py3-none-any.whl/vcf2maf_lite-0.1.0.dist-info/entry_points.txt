@@ -1,0 +1,3 @@
+[console_scripts]
+test_vcf=vcf2maf_lite.vcf2maf_lite:main
+
