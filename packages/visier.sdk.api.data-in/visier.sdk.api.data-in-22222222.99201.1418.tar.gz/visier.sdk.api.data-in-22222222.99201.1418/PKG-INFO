@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: visier.sdk.api.data-in
+Version: 22222222.99201.1418
+Summary: Visier Data In APIs
+Home-page: UNKNOWN
+Author: OpenAPI Generator community
+Author-email: team@openapitools.org
+License: Apache License, Version 2.0
+Keywords: OpenAPI,OpenAPI-Generator,Visier Data In APIs
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+
+    Visier APIs for sending data to Visier and running data load jobs.
+    
+
