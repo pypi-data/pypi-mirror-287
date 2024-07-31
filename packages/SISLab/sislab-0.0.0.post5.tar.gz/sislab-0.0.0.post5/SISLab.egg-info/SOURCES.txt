@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+SISLab.egg-info/PKG-INFO
+SISLab.egg-info/SOURCES.txt
+SISLab.egg-info/dependency_links.txt
+SISLab.egg-info/requires.txt
+SISLab.egg-info/top_level.txt
