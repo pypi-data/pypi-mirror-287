@@ -1,0 +1,8 @@
+fastapi_and_caching/__init__.py,sha256=CJwSVFOG7V2nFFjKkVo2RU-1ViORhGXzXOvh8m3WcN4,65
+fastapi_and_caching/backends/__init__.py,sha256=5ay_iiip_LR0oPznt_LjKAGpFDWMnnI2UqQh4sgbuuA,63
+fastapi_and_caching/backends/base.py,sha256=PP5KZ41_R35JepcG0IapisBPgZle5rxEV0puahzYZGw,1214
+fastapi_and_caching/backends/redis.py,sha256=2T-0qpD2xbgAE1vf87f9fAujCLIBvLkdj6_zgLVvmxU,8874
+fastapi_and_caching-0.0.11.dist-info/LICENSE,sha256=DedvScP9cET7NjSwdMT1eTVTGdfeOqIma8JoHOwkDoY,1076
+fastapi_and_caching-0.0.11.dist-info/METADATA,sha256=I2g8cf_15d_7zZEcJXGGQgnVWvMkmBuD3HzQEn2Ie8k,5118
+fastapi_and_caching-0.0.11.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+fastapi_and_caching-0.0.11.dist-info/RECORD,,
