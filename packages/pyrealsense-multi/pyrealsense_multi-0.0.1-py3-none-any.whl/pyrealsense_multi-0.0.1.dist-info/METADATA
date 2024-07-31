@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: pyrealsense_multi
+Version: 0.0.1
+Summary: A small package for multiple Intel RealSense cameras
+Author-email: Puzzle Puzhe Li <609788969@qq.com>
+Project-URL: Homepage, https://github.com/BMI-Free/multi_camera_recording
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+## Install
+```shell
+pip install multi-camera-recording
+```
+
+## Quick use
+Start recording and then align frames
+```python
+from multi-camera-recording.record_sync import start_recording
+from multi-camera-recording.align_frames import FrameAligner
+
+path = start_recording()
+fa = FrameAligner(path=path)
+fa.align_frames()
+```    
