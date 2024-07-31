@@ -1,0 +1,11 @@
+pyvisq/__init__.py,sha256=BqI98-Bl6OOdxhbx5TPWuTxNcq1EA0nIbfY67ZmKHsU,65
+pyvisq/fractional_sls.py,sha256=h4-wa2j3I8YdrvBNkDJ9_bPMm1MCCwENblHuBLJllyI,2896
+pyvisq/model.py,sha256=lDjN9H3zxSA8sDkEN90gBtJF0loq0xpeOpl5p6aDlFw,2630
+pyvisq/sls.py,sha256=DElGF8EFPsOK3rbDmEIs5I4pgXrO5RD2gCn7Ac8Q7ro,1401
+pyvisq/utils/__init__.py,sha256=nzX2vixf0jgvDnApDOmvAabXlkaJSNPkbMk5WX2O5SU,22
+pyvisq/utils/mittag_leffler.py,sha256=6XG0ZYN44knENk8X3RkkfXihh9o-akfcmpJ4BOY9qSk,959
+pyvisq/utils/ml_internal.py,sha256=TBYXy5z8w2yn6glHCU66BUvy_3867e-F9bTF-7bFFHQ,8686
+pyvisq/utils/utils.py,sha256=PkEpxo-CCko4lCZdX9NmgQKX6BvhfbiQp28RaZ4KbYc,745
+pyvisq-0.1.0.dist-info/METADATA,sha256=l3CHHkrJULslaO-LDcsLatAd0h6Mc93u5APNE9wTD5c,784
+pyvisq-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+pyvisq-0.1.0.dist-info/RECORD,,

@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: pyvisq
+Version: 0.1.0
+Summary: Analytical solutions of viscoelastic models.
+Home-page: https://github.com/HoseynAAmiri
+License: MIT
+Author: Hoseyn Amiri
+Author-email: aamirihoseyn@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: scikit-learn (>=1.5.1,<2.0.0)
+Project-URL: Documentation, https://www.youtube.com/@hoseynamiri
+Project-URL: Repository, https://github.com/HoseynAAmiri/pyvisq
+Description-Content-Type: text/markdown
+
+# pyvisq
+Analytical solutions of viscoelastic models.
+An open-source package to model/visualize viscoelastic responses.
+
