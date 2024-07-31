@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/mcpython.egg-info/PKG-INFO
+src/mcpython.egg-info/SOURCES.txt
+src/mcpython.egg-info/dependency_links.txt
+src/mcpython.egg-info/top_level.txt
+src/minecraft/__init__.py
+src/minecraft/example.py
