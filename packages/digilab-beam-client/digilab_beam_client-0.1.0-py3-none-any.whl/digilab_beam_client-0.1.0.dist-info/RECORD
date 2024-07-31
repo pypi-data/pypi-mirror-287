@@ -1,0 +1,7 @@
+digilab_beam_client/__init__.py,sha256=n7K5ysQQdA5IG1ybZFmm7fYdE8dexqzYPTwRW22JvFI,99
+digilab_beam_client/_constant.py,sha256=s5EAAp_D4fdJkm5D68VGMO-dlzHL5-ZhfKucJoF1rCQ,151
+digilab_beam_client/_evaluate.py,sha256=yRpF9aJlO33tg4S4IaZ75nMYMxLVOyJSRSa0wLVNwhk,482
+digilab_beam_client/_get_mesh.py,sha256=2uHyinGL1HuIEDt5fNssfV8HHGXRy-mRGL-S3IRhpY0,393
+digilab_beam_client-0.1.0.dist-info/METADATA,sha256=qL2SrDIaCmpjYyehNBdyVYH9n9TLcCFughfo1m4Jd1Y,423
+digilab_beam_client-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+digilab_beam_client-0.1.0.dist-info/RECORD,,
