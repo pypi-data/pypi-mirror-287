@@ -1,0 +1,11 @@
+chromo_map/__init__.py,sha256=KkT_VYJzqTGcjjR8Q-1laYDo3Go6ibEPopi_JUxvHXY,69
+chromo_map/color.py,sha256=efdNWHJ_5PJoXlFzjk7nc7uxDdxhpxyORrelBGIkIuA,18138
+chromo_map/data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chromo_map/data/mpl_cat_names.json,sha256=xL430QOY896HuqIPzDy-CTRBEFn2u1jtHkkjLTrISPA,1848
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_color.py,sha256=mcEJUef1JsnmPDTXL4gZWEqXLdYvL0bYBbvaKpGkV9E,14570
+chromo_map-0.1.12.dist-info/LICENSE,sha256=6rlwymmQ3oDfTe4P7kWbfoA8YLA8lKO98dTLY2OKP3I,1067
+chromo_map-0.1.12.dist-info/METADATA,sha256=KfL36jqpIhaD1jMC8_IkpxKqzkZuYCxzLLMVlVFE7z0,2117
+chromo_map-0.1.12.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+chromo_map-0.1.12.dist-info/top_level.txt,sha256=eVuueVvu5otv9jFvXgOsLeqkCiWGsIskn0CWxfw21Kw,17
+chromo_map-0.1.12.dist-info/RECORD,,
