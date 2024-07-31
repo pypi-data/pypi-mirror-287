@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpretzelai_server=self.webpackChunkpretzelai_server||[]).push([[509],{509:(e,r,t)=>{t.r(r),t.d(r,{default:()=>s});const s={id:"pretzelai-server:plugin",description:"Pretzel's Server Extension",autoStart:!0,activate:e=>{console.log("JupyterLab extension pretzelai-server is activated!")}}}}]);
