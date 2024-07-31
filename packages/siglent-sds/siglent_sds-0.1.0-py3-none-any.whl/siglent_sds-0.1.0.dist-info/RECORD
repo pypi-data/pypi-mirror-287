@@ -1,0 +1,12 @@
+siglent_sds/__init__.py,sha256=_WWbYe7SDKu-ZAOCmvqXQMSHUOBnYNU_PPAljSTwv4M,88
+siglent_sds/base.py,sha256=Wp9FD3rFwuFtJlrDxMej5b5glBt7uk0P-3nITG5AztE,64858
+siglent_sds/examples/__init__.py,sha256=yQMec4tVICB1soUq_iep4-IdbJU5p7K8vdMjj38j7bM,100
+siglent_sds/examples/sds_plot.py,sha256=fm-nbifHbzB6RlSMjXby6RVq7sxS3x7UWG4PbEJQ7Tc,7117
+siglent_sds/examples/sds_plot.ui,sha256=yYDFpj6Tq2z3gFpF_2fOo8EDjuLYtHoBJnAYYhbiJgQ,10966
+siglent_sds/examples/sds_repl.py,sha256=RWpe5y094ZLxxeaZyElsNy79EppuHOIdyyBvbGA5-Tg,1227
+siglent_sds/socket.py,sha256=E84LrubdROXnsiuohUrJFQ1n1LrwVfMyeUODvs973P8,1966
+siglent_sds/utils.py,sha256=H5F9SRk9c-wR8PDeK2U1tBqhYNEBLwpzLKhoMo1Mn8s,3129
+siglent_sds-0.1.0.dist-info/LICENSE,sha256=fhYrXiQQaxZFlFnExGqyWhrKBjx3rko4Cq-k4hKMgkY,35143
+siglent_sds-0.1.0.dist-info/METADATA,sha256=-7DgywkIp66sMRULKA7HDUWi-BkycR83-e4tmi5UnOo,1745
+siglent_sds-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+siglent_sds-0.1.0.dist-info/RECORD,,
