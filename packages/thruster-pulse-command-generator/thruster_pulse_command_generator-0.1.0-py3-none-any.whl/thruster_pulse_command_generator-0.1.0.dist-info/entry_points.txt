@@ -1,0 +1,3 @@
+[console_scripts]
+thruster-pulse-command-generator=thruster_pulse_command_generator._cli:main
+
