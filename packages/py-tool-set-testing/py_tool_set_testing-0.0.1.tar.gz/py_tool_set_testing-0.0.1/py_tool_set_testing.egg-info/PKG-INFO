@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: py-tool-set-testing
+Version: 0.0.1
+Summary: A simple library with some useful functions
+Home-page: https://github.com/abhinavkumar2369/py-tool-kit
+Author: Abhinav Kumar
+Author-email: abhinavkumar2369@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## Overview
+A Simple python library with function related to 
+- String
+- List
+- Dictionary
