@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keyfactor-command-sdk"
+version = "11.0.0a1"
+description = "SDK in Python for Command 11.x Web APIs."
+authors = [{ name = "Keyfactor Inc.", email = "no-reply@keyfactor.com" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+keywords = ["keyfactor", "sdk", "api"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "requests",
+    "httpx",
+    "oauthlib",
+    "attrs",
+    "python-dateutil"
+]
+
+[project.urls]
+Homepage = "https://github.com/Keyfactor/command-11-python-client-sdk"
+Repository = "https://github.com/Keyfactor/command-11-python-client-sdk"
+Documentation = "https://github.com/Keyfactor/command-11-python-client-sdk#readme"
