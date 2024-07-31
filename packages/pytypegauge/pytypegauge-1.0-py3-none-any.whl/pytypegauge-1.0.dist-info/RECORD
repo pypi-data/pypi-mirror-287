@@ -1,0 +1,9 @@
+pytypegauge/__init__.py,sha256=i351nc8z6F6RPDzEtdQeV-VHzGwVwj3T6lUzgc06Imc,466
+pytypegauge/logger.py,sha256=zWscOqIXajn4D_MUASa4F608teDkyYR_Hihe6hORRIo,622
+pytypegauge/typegauge.py,sha256=9atPWKGOkEq2afgij9XWjrc4uRsCO_kShIhkbLwanCo,18452
+pytypegauge-1.0.dist-info/LICENCE.md,sha256=aJIqxeYa0JdpJjF2FEKpkyhWLdFoDD5o5bb7M41AbP4,1073
+pytypegauge-1.0.dist-info/METADATA,sha256=yWz5Ya7GcIDM9gQlZF8hnETs3WLp3JV7jYtkcrymi1k,5997
+pytypegauge-1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+pytypegauge-1.0.dist-info/entry_points.txt,sha256=CCOqYComASBlJi3L--2A_jH5DoC4nUjsh5UKeS_zXVQ,58
+pytypegauge-1.0.dist-info/top_level.txt,sha256=pkM_ThefR2hZQTcdpgb8I9k1KNvT0QfWD029r8hx4Po,12
+pytypegauge-1.0.dist-info/RECORD,,
