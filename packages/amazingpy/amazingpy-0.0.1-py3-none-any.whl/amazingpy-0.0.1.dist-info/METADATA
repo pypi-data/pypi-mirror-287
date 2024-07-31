@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: amazingpy
+Version: 0.0.1
+Summary: cool text
+Author-email: Example Author <xgh0ustxdz@gmail.com>
+Project-URL: Homepage, https://github.com/Xghostxoffx/amazingpy
+Project-URL: Issues, https://github.com/Xghostxoffx/amazingpy/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
