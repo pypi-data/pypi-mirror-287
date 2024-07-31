@@ -1,0 +1,6 @@
+README.md
+COPASI/__init__.py
+python_copasi.egg-info/PKG-INFO
+python_copasi.egg-info/SOURCES.txt
+python_copasi.egg-info/dependency_links.txt
+python_copasi.egg-info/top_level.txt
