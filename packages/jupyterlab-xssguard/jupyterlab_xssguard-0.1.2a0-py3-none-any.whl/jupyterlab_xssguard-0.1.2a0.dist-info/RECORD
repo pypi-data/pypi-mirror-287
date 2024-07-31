@@ -1,0 +1,13 @@
+jupyterlab_xssguard/__init__.py,sha256=dRNp9zD4lS06Iu-iKfME1sedAfFEGsFwP8kxP0hmQFs,596
+jupyterlab_xssguard/_version.py,sha256=sMazN5b4ZcGDMt439uP9bXTQeT6lxaPtImads4lWrnw,177
+jupyterlab_xssguard-0.1.2a0.data/data/share/jupyter/labextensions/jupyterlab_xssguard/package.json,sha256=FYL8R6cU2QPDZRmgv07Ld6-AVYVFkO2_j8gDvKNP0e8,5788
+jupyterlab_xssguard-0.1.2a0.data/data/share/jupyter/labextensions/jupyterlab_xssguard/static/323.b2cad86397d9e3cd5818.js,sha256=ssrYY5fZ481YGA7Vamy-6RFXGNA5M6vTSegk1FJBkJs,2194
+jupyterlab_xssguard-0.1.2a0.data/data/share/jupyter/labextensions/jupyterlab_xssguard/static/728.32aad2d06e7f67bda55d.js,sha256=MqrS0G5_Z72lXTHi0uaLXTdepdwY9XLHz9lEzrBhehE,4016
+jupyterlab_xssguard-0.1.2a0.data/data/share/jupyter/labextensions/jupyterlab_xssguard/static/remoteEntry.461de166f02d8c88011a.js,sha256=Rh3hZvAtjIgBGo-GOU8qP9W5RcjrSdBq0TeYT66aKMI,6460
+jupyterlab_xssguard-0.1.2a0.data/data/share/jupyter/labextensions/jupyterlab_xssguard/static/style.js,sha256=NKN6E1I-V2FNQhYdM0bB3vT7GAYpBQJiIqpwT-1O334,162
+jupyterlab_xssguard-0.1.2a0.data/data/share/jupyter/labextensions/jupyterlab_xssguard/static/third-party-licenses.json,sha256=W6N2sSD7tQihMqQk64F9xMd1Flfr2KO97esAiHUOYdM,2453
+jupyterlab_xssguard-0.1.2a0.data/data/share/jupyter/labextensions/jupyterlab_xssguard/install.json,sha256=MoF2kQTaN8Zfv6z5sLy4LFmxmzk3BplQZVOxlAS8gL8,199
+jupyterlab_xssguard-0.1.2a0.dist-info/METADATA,sha256=6L3hqaCq1nfJrzIErYZVj77a0BMZFsF0kpFNeo4gBk4,17235
+jupyterlab_xssguard-0.1.2a0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+jupyterlab_xssguard-0.1.2a0.dist-info/licenses/LICENSE,sha256=tAkwu8-AdEyGxGoSvJ2gVmQdcicWw3j1ZZueVV74M-E,11357
+jupyterlab_xssguard-0.1.2a0.dist-info/RECORD,,
