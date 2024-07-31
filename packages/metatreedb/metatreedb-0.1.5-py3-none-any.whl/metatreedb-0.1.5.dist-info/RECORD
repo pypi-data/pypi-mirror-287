@@ -1,0 +1,11 @@
+metatree/__init__.py,sha256=mZ2GmSbsTfIjiaCiB8lJkvqDDWpkCZ4w6L6_fN0kkZw,30
+metatree/io_handler.py,sha256=E4PxKAhI_o9yTFrTlrOoDuMJpWu-YMfqatVeqXyn7Pk,3782
+metatree/metatree.py,sha256=lhAowfUenZ9Muhu5jaOpF7BImHpeUv9ErSGRnK0mHL8,9409
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/simple_http_server.py,sha256=ol4MGyClpCQEipQKurYldln0XL1M-eCZ2G55QiGfLVc,807
+tests/test_metatree.py,sha256=CLBN182nj6MvBhAswdFDPONYkaZH8l8bsk1UJd3MTPs,3582
+metatreedb-0.1.5.dist-info/LICENSE,sha256=EwPwv8kFv4yhWczIQSot8XGbyKrTj1ER2bCHvgbBghk,1062
+metatreedb-0.1.5.dist-info/METADATA,sha256=vt2YFBOJRzDQFQjh356O3Ej3QamcxF9frhGiSwO8DMM,2933
+metatreedb-0.1.5.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+metatreedb-0.1.5.dist-info/top_level.txt,sha256=mQIEwobrU6RxYk22rIRajUUbxUNVBP9pYl98iZKj3dw,15
+metatreedb-0.1.5.dist-info/RECORD,,
