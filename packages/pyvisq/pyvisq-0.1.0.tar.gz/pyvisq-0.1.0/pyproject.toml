@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "pyvisq"
+version = "0.1.0"
+description = "Analytical solutions of viscoelastic models."
+authors = ["Hoseyn Amiri <aamirihoseyn@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+documentation = "https://www.youtube.com/@hoseynamiri"
+repository = "https://github.com/HoseynAAmiri/pyvisq"
+homepage = "https://github.com/HoseynAAmiri"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scikit-learn = "^1.5.1"
+
+[tool.poetry.dev-dependencies]
+sympy = "1.11.1"
+matplotlib = "^3.9.1"
+pypdf2 = "^3.0.1"
+pymoo = "^0.6.1.3"
+pyrtz2 = "^1.4.1"
+dash = "^2.17.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
