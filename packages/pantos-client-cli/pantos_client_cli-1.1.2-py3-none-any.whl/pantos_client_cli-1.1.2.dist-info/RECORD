@@ -1,0 +1,14 @@
+pantos/cli/__init__.py,sha256=JCLzhBB4U8_VY00obBePFdy85PXXVTLJV3YlOlCEcUg,77
+pantos/cli/__main__.py,sha256=MOrrhcq7axTjXtha9F70l_JnK7fzPk5vT_m4E0gQBig,15874
+pantos/cli/application.py,sha256=AvPulcE2o-kNLej4Mk_hzMizJFUiNa26_bwnnRdBo3E,418
+pantos/cli/configuration.py,sha256=hFare0OhEdylPQMuD2-uokFXif8EDMqWM-Di5uXb-HA,2629
+pantos/cli/exceptions.py,sha256=7tEq3wGZ3_c9OLRjzdhTxrKVB0i56JVKbWFI9zQTOa8,227
+pantos/client-cli.env,sha256=YqXniDY2DRp4Gc8_W9exwpKkiBYZVL09TfjjXPcrCqo,991
+pantos/client-cli.yml,sha256=GuJe_HIqb7rsDp772hC21zySiqrlUxCEmT6hGb0xowY,1851
+pantos/client-library.env,sha256=D-SRWAqckWJ98m2kd73LRbZ3QmrQ4NVDpS9jVz8S0yQ,3829
+pantos/client-library.yml,sha256=pOl-Bsfy6ZdCo7wjzi9U71UgfUj7jgc_gbDUWUhY8T8,12700
+pantos_client_cli-1.1.2.dist-info/LICENSE.md,sha256=ixuiBLtpoK3iv89l7ylKkg9rs2GzF9ukPH7ynZYzK5s,35148
+pantos_client_cli-1.1.2.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+pantos_client_cli-1.1.2.dist-info/entry_points.txt,sha256=OeYC-WxXEa9HkMqkYBK5EEnCbAaPsVnbqOTc49G1gwc,55
+pantos_client_cli-1.1.2.dist-info/RECORD,,
+pantos_client_cli-1.1.2.dist-info/METADATA,sha256=EZx8qKeYb6sx-ISpnJRz5J5jNBsdI7_e2Nu53ymssmM,11204

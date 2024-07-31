@@ -1,0 +1,3 @@
+[console_scripts]
+pantos-cli=pantos.cli.__main__:main
+
