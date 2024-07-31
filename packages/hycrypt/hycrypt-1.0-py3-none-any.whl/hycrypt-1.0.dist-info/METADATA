@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: hycrypt
+Version: 1.0
+Summary: Hybrid cryptosystem for python
+Author-email: Sira Pornsiriprasert <code@psira.me>
+License: NOTICE The images under the 'images' folder are licensed under a different term, refer to the LICENSE file in that folder.
+        
+        Copyright 2024 Sira Pornsiriprasert
+        
+        Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+Project-URL: Homepage, https://pypi.org/project/hycrypt/
+Project-URL: Documentation, https://hycrypt.psira.me
+Project-URL: Repository, https://gitlab.com/hycrypt/hycrypt
+Project-URL: Issues, https://gitlab.com/hycrypt/hycrypt/-/issues
+Project-URL: Changelog, https://gitlab.com/hycrypt/hycrypt/-/blob/main/CHANGELOG
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Security :: Cryptography
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cryptography
+
+# hycrypt
+## Hybrid cryptosystem for python
+
+![image info](./images/hybrid_cs_with_password.png)
+
+## Quick Start
+
+For more flexible use:
+```python
+plaintext = b"secret"
+ciphertext, public_key = hycrypt.encrypt_with_password(plaintext, password=b"password1")
+
+decrypted_message = hycrypt.decrypt_with_password(ciphertext, password=b"password1")
+assert decrypted_message == plaintext
+
+new_plaintext = b"my new secret"
+new_ciphertext = hycrypt.encrypt_with_public_key(previous_data=ciphertext, plaintext=new_plaintext, public_key=public_key)
+
+new_decrypted_message = hycrypt.decrypt_with_password(new_ciphertext, password=b"password1")
+assert new_decrypted_message == new_plaintext
+```
+
+To install hycrypt using pip:
+```
+pip install hycrypt
+```
+
+## How It Works
