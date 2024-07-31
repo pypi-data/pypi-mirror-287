@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+pitanga/__init__.py
+pitanga.egg-info/PKG-INFO
+pitanga.egg-info/SOURCES.txt
+pitanga.egg-info/dependency_links.txt
+pitanga.egg-info/requires.txt
+pitanga.egg-info/top_level.txt
+pitanga/config/__init__.py
+pitanga/config/settings.py
+pitanga/database/__init__.py
+pitanga/database/operations.py
