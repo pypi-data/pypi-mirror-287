@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+flexitools/__init__.py
+flexitools/flexitools.py
+flexitools.egg-info/PKG-INFO
+flexitools.egg-info/SOURCES.txt
+flexitools.egg-info/dependency_links.txt
+flexitools.egg-info/top_level.txt
