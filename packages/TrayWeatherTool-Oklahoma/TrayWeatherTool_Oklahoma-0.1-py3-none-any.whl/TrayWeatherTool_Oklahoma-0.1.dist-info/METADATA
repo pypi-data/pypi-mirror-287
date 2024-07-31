@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: TrayWeatherTool-Oklahoma
+Version: 0.1
+Summary: Runs in the system tray, recording and reporting Oklahoma temperatures and storm status
+Home-page: https://github.com/Myoldmopar/TrayWeatherTool
+Author: Edwin Lee
+License: ModifiedBSD
+Keywords: Solar Angles,Building Simulation,Whole Building Energy Simulation,Heat Transfer,Modeling
+Platform: Linux (Tested on Ubuntu)
+Platform: MacOSX
+Platform: Windows
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+Requires-Dist: matplotlib
+Requires-Dist: requests
+Requires-Dist: pygobject
+Requires-Dist: pyperclip
+Requires-Dist: pillow
+Requires-Dist: solar-angles >=0.26
+
+# Tray Weather Tool - Oklahoma Edition
+
+A little utility that can show the temperature and storm status in Oklahoma, currently for Ubuntu machines.
