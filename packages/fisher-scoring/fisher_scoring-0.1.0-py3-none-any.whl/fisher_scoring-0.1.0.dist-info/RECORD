@@ -1,0 +1,9 @@
+fisher_scoring/.DS_Store,sha256=FN4nIYEC8U87_iL9bTd0Tj-sJSwT30ov4pIuX--_dw4,6148
+fisher_scoring/__init__.py,sha256=R7FO1Cyack4zb2Np8Z14Ct8avEYiKBUuEKh4p-ZUgJA,366
+fisher_scoring/fisher_scoring_focal.py,sha256=8Jyf8a8Wuiyz4q2Z5adl8WbK0z5qgoArZmi0zn8X8ac,7571
+fisher_scoring/fisher_scoring_logistic.py,sha256=x-es0JxTi0WDmjtF8e-SLLXuGXe2yKo4fKPfzfQo84I,14458
+fisher_scoring/fisher_scoring_multinomial.py,sha256=Sox5Dody7bTF-9pe4GlqBzhCxVW1sk6E7n6le_KQfmo,7699
+fisher_scoring-0.1.0.dist-info/LICENSE.md,sha256=ZfMT1y9tQaI-b8MLsOCNfVxTe7B7Q_lOsam59fPeC3g,1073
+fisher_scoring-0.1.0.dist-info/METADATA,sha256=Sk33-1Oe96b_PjV_opjAxs_NTBtGxnaNvT2pAgpPv3g,4746
+fisher_scoring-0.1.0.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+fisher_scoring-0.1.0.dist-info/RECORD,,
