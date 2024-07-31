@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: dshield-parser
+Version: 0.1.0
+Summary: This program has utilities to download, parse and enrich DSHield honeypot data
+Home-page: https://github.com/jslagrew/dshield-parser
+Author: Jesse La Grew
+Author-email: jlagrew.github@proton.me
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >3.6
+
+UNKNOWN
+
