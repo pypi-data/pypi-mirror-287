@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "niceguicrud"
+version = "0.1.6"
+description = "Edit your pydantic models with a nice GUI - CRUD Create Update Replace Delete"
+authors = ["Dronakurl <tbo73oij5@mozmail.com>"]
+readme = "README.md"
+license = "MIT"
+package-mode = true
+
+[tool.poetry.dependencies]
+python = "^3.10"
+nicegui = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-asyncio = "*"
+pre-commit = "*"
+
+[tool.pytest.ini_options]
+addopts = [
+  "--import-mode=importlib",
+  "-ra -q",
+  "--disable-warnings",
+  "--ignore=.archiv",
+  "--ignore=scripts",
+]
+asyncio_mode = "auto"
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+exclude = ["**/__init__.py"]
+
+[tool.basedpyright]
+include = ["**/*.py"]
+exclude = ["**/__pycache__", ".archiv/**"]
+ignore = ["**/__init__.py"]
+pythonVersion = "3.12"
+pythonPlatform = "Linux"
+reportUnusedImport = false
+
+[tool.black]
+line-length = 100
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
