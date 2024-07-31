@@ -1,0 +1,3 @@
+[console_scripts]
+startproject=startproject.main:app
+
