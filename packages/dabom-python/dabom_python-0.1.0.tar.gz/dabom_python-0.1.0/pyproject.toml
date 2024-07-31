@@ -1,0 +1,17 @@
+[project]
+name = "dabom-python"
+version = "0.1.0"
+authors = [
+  { name="Atlas Yang", email="atlas.yang3598@gmail.com" },
+]
+description = "Python SDK for Dabom Search API"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://dabomai.com"
