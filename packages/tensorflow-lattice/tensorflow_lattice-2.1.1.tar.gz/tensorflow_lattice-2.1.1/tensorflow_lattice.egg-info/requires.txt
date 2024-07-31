@@ -1,0 +1,11 @@
+absl-py
+graphviz
+matplotlib
+numpy
+pandas
+scikit-learn
+six
+tf-keras
+
+[tensorflow]
+tensorflow>=1.15
