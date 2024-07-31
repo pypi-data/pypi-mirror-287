@@ -1,0 +1,4 @@
+Django>=4.2.10
+artd-modules>=1.0.5
+django-admin>=2.0.2
+pillow>=10.2.0
