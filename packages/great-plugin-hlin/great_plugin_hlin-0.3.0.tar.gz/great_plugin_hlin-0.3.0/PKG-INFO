@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: great-plugin-hlin
+Version: 0.3.0
+Summary: 
+Author: Henry Lin
+Author-email: henry.lin@neo4j.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: nodestream (>=0.12.4,<0.13.0)
+Description-Content-Type: text/markdown
+
+
