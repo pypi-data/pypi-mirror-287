@@ -1,0 +1,13 @@
+touchpy-0.10.0.data/purelib/touchpy/TouchEngine.dll,sha256=ayG6VucPmNnqoQXEI-Jx8GbXrXy9ZOohOzc92yS_AoQ,680448
+touchpy-0.10.0.data/purelib/touchpy/__init__.py,sha256=pb_mMOfBPjKSys-aBMJmM1NwSRAefI5wj9nzpJ2FCaU,50
+touchpy-0.10.0.data/purelib/touchpy/cudart64_110.dll,sha256=ulwvtSbE7kuyGM6z-l6L_eic5HTzhxH9zOgCVJv5_G8,526848
+touchpy-0.10.0.data/purelib/touchpy/fmt.dll,sha256=6NIp3qmCHt7dYroT0eZ-tztbHQ8UawFVtt0a_GyrwK8,141312
+touchpy-0.10.0.data/purelib/touchpy/spdlog.dll,sha256=f9HfBAFKv44D4GQlDSVnU31Lqj7szCcARiHEBA0ew60,258048
+touchpy-0.10.0.data/purelib/touchpy/touchpy.cp310-win_amd64.pyd,sha256=If_JoXU6Pw0vCD0d2Pjq6EQa9pzeqfj5TDVzGBb0Qzo,1548800
+touchpy-0.10.0.data/purelib/touchpy/touchpy.cp311-win_amd64.pyd,sha256=BubdLYJYt7f0totvRtLQ7V1Tvj2P9H27a5xfkNj_9-Q,1548288
+touchpy-0.10.0.data/purelib/touchpy/touchpy.cp39-win_amd64.pyd,sha256=7dRTetuV6QvLh1Tzz4jHmraATSzfjq2vJPOxku7lQ9A,1549824
+touchpy-0.10.0.dist-info/LICENSE.md,sha256=hOLI09pkzB6drfx7e44-gFG-f_H5zpQK2TTQvJ6XlXc,4695
+touchpy-0.10.0.dist-info/METADATA,sha256=GQckIHvPr2VXxI90sgE-VnuLklm4cUbk7lngQZP5ly0,6576
+touchpy-0.10.0.dist-info/WHEEL,sha256=lO6CqtLHCAi38X3Es1a4R1lAjZFvN010IMRCFo2S7Mc,102
+touchpy-0.10.0.dist-info/top_level.txt,sha256=2qhA-9fhvTft0uwFSM_ZJ9gjQI6opCpG_R_otx9OfaM,8
+touchpy-0.10.0.dist-info/RECORD,,
