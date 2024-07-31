@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "fastapi-and-caching"
+version = "0.0.11"
+description = "Easily use caching in FastAPI!"
+authors = ["Saeid Noormohammadi <heysaeid92@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/heysaeid/fastapi-and-caching"
+repository = "https://github.com/heysaeid/fastapi-and-caching"
+documentation = "https://github.com/heysaeid/fastapi-and-caching"
+keywords = ["fastapi", "fastapi caching", "fastapi and caching"]
+
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = "*"
+redis = ">=4.5.0"
+
+[tool.poetry.group.dev.dependencies]
+fastapi = "*"
+redis = ">=4.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
