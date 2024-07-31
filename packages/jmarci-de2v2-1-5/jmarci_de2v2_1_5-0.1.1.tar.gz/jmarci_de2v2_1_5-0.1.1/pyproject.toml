@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "jmarci-de2v2-1-5"
+version = "0.1.1"
+description = "Data Transformation Library"
+authors = ["Julius <j.marciulynas@gmail.com>"]
+readme = "README.md"
+packages = [{include = "functions"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
