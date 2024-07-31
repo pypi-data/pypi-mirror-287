@@ -1,0 +1,12 @@
+[project]
+name = "s3_site_wenia_devops-w"
+version = "0.0.1"
+authors = [{ name = "Miguel Rodas", email = "miarodas@wenia.com" }]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]

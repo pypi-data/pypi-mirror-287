@@ -1,0 +1,6 @@
+pyproject.toml
+s3_site.py
+s3_site_wenia_devops_w.egg-info/PKG-INFO
+s3_site_wenia_devops_w.egg-info/SOURCES.txt
+s3_site_wenia_devops_w.egg-info/dependency_links.txt
+s3_site_wenia_devops_w.egg-info/top_level.txt
