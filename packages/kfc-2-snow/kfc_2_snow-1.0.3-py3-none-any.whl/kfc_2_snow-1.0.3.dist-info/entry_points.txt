@@ -1,0 +1,3 @@
+[console_scripts]
+kfc2snow=kfc_2_snow.cli:cli
+
