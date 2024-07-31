@@ -1,0 +1,12 @@
+pore2chip/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pore2chip/coordination.py,sha256=nc_g9QCfY3WVjw9SiGIt_eSNR0JvxEYPlD-hkWclYdQ,1642
+pore2chip/export.py,sha256=uCrZ8f9ZNMvK62bgHBq-kMa-bJW8svdDJv0SgUVn9zE,15768
+pore2chip/filter_im.py,sha256=IMxKRCZlEy5-McSBqGIYjioEu_wSygbV-dRGQyl9X84,12059
+pore2chip/generate.py,sha256=KM8lYxSwmnjDIsw79md9zuFrZgvNgRk4VE28dsrtQNg,6933
+pore2chip/io.py,sha256=8Z9p5Ktmt6e8AYmOfPrvFlo9nggpchaMhlPfZq1_g6Q,5908
+pore2chip/metrics.py,sha256=Zv3OROFuXs1P7Ri_vjzrc7Mg-T8ZTqO4AtLrq_DF13s,4442
+pore2chip-0.0.8.dist-info/LICENSE.md,sha256=n5uYNfzhwdouV75ijFykRdENYnFN2GC1DYT_mBzNliY,3274
+pore2chip-0.0.8.dist-info/METADATA,sha256=KDnxCnjAYl8C4H5UuZyMLtxudBshW8ibYBPlw4BuHQI,13582
+pore2chip-0.0.8.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+pore2chip-0.0.8.dist-info/top_level.txt,sha256=k_AL0K5q5Nq1FXT7LihIslhRwgltKk4x_wdN_1qFwxQ,10
+pore2chip-0.0.8.dist-info/RECORD,,
