@@ -1,0 +1,7 @@
+ormagic/__init__.py,sha256=XvAe2yARCD8tz9J8hkxRenJIyMHHasAOGt-7CBOy4h8,51
+ormagic/models.py,sha256=CMjxdE2kWJVpNbStsq5BZ-CoJMcCCRs-bE49ejZ1Lyc,10822
+ormagic/sql_utils.py,sha256=YTg9z-r-gXLRV6WsBa0DEWuwRyOfb4XaeMxk6Xih3E4,959
+ormagic-0.6.0.dist-info/LICENSE,sha256=Tz4OfUG4JVx390QqWBeY1wNwrJVwzYLniAlREGtkFtc,1068
+ormagic-0.6.0.dist-info/METADATA,sha256=hUIVj-lTBevn6MX6drQeslKzt7PykBRLXq_hRrPifp8,8481
+ormagic-0.6.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+ormagic-0.6.0.dist-info/RECORD,,
