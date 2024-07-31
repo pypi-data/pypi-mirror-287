@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+packagePepe/__init__.py
+packagePepe/cpp_functions.cpp
+packagePepe/wrapper.py
+packagePepe.egg-info/PKG-INFO
+packagePepe.egg-info/SOURCES.txt
+packagePepe.egg-info/dependency_links.txt
+packagePepe.egg-info/top_level.txt
