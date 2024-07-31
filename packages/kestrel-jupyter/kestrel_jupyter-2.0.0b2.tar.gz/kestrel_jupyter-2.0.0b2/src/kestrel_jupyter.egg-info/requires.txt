@@ -1,0 +1,14 @@
+kestrel_core==2.0.0b
+kestrel_interface_opensearch==2.0.0b
+kestrel_interface_sqlalchemy==2.0.0b
+kestrel_tool==2.0.0b
+jupyterlab-server
+jupyterlab
+jupyter_client
+nbclassic
+sqlparse==0.5.1
+pygments==2.18.0
+matplotlib==3.9.1
+
+[test]
+pytest
