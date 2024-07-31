@@ -1,0 +1,7 @@
+itemparser/__init__.py,sha256=kmQgcUcRnK81mBvLIuAn89e2myv0uuZAesEtUJgCSNc,136
+itemparser/field.py,sha256=h-sZyviPa4sbPvi1Vicg3Gww0eXPuFN5NzAsD5l4Jy0,1490
+itemparser/parser.py,sha256=MvA0om1-oU98KWBcqARxLED256YV4sq7r1BQfBvV-5w,3228
+itemparser/processor.py,sha256=kCt8rbAailFjeBdpdYm3immMzefgDi8J0aHeldkOBrs,3794
+itemparser-0.2.4.dist-info/METADATA,sha256=cKNqipHy-DyPdw7RFkx6L6EsqOWmPSkbexoSNBIfb7U,543
+itemparser-0.2.4.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+itemparser-0.2.4.dist-info/RECORD,,
