@@ -1,0 +1,9 @@
+aiohttp
+yarl
+xmltodict
+
+[:python_version < "3.11"]
+tomli
+
+[:python_version < "3.9"]
+importlib-resources
