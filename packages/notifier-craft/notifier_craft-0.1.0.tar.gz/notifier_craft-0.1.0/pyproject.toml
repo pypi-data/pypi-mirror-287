@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "notifier-craft"
+version = "0.1.0"
+description = "Async/sync library for sending notifications"
+license = "MIT"
+authors = ["marakhd <marakin09@mail.ru>"]
+readme = "README.md"
+keywords = ["notify, notifycraft, notify-craft, notifications, marakhd"]
+repository = "https://github.com/marakhd/notifier-craft"
+packages = [
+    {include = "notifiercraft"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytelegrambotapi = "^4.21.0"
+aiogram = "^3.10.0"
+
+
+#[tool.poetry.scripts]
+#app = "module:fn"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
