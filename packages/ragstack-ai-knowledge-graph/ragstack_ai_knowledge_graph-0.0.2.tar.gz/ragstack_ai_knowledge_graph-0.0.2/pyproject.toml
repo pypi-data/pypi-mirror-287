@@ -1,0 +1,135 @@
+[tool.poetry]
+name = "ragstack-ai-knowledge-graph"
+version = "0.0.2"
+description = "DataStax RAGStack Knowledge Graph"
+license = "BUSL-1.1"
+authors = ["DataStax"]
+readme = "README.md"
+repository = "https://github.com/datastax/ragstack-ai"
+documentation = "https://docs.datastax.com/en/ragstack"
+packages = [{ include = "ragstack_knowledge_graph" }]
+include = [
+    { path = "knowledge_graph/prompt_templates/*.md", format = ["sdist", "wheel"] }
+]
+
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+langchain = "^0.1.14"
+langchain-community = "^0.0.31"
+langchain-openai = "^0.1.1"
+langchain-experimental = "^0.0.56"
+cassio = "^0.1.5"
+graphviz = "^0.20.3"
+pydantic-yaml = "^1.3.0"
+pyyaml = "^6.0.1"
+
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^1.0.1"
+ipykernel = "^6.29.4"
+ruff = "^0.5.0"
+testcontainers = "~3.7.1"
+requests = "^2.32.2"
+pytest = "^8.1.1"
+pytest-asyncio = "^0.23.6"
+pytest-dotenv = "^0.5.2"
+pytest-rerunfailures = "^14.0"
+mypy = "^1.10.1"
+types-pyyaml = "^6.0.1"
+pydantic = "^2.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+strict = true
+warn_unreachable = true
+pretty = true
+show_error_codes = true
+show_error_context = true
+
+[[tool.mypy.overrides]]
+module = "testcontainers.*,cassandra.*,graphviz.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+pydocstyle.convention = "google"
+ignore = [
+    "COM812", # Messes with the formatter
+    "D100", # Do we want to activate (docstring in module) ?
+    "D104", # Do we want to activate (docstring in package) ?
+    "D105", # Do we want to activate (docstring in magic method) ?
+    "D107", # Do we want to activate (docstring in __init__) ?
+    "ERA", # Do we want to activate (no commented code) ?
+    "ISC001", # Messes with the formatter
+    "PERF203", # Incorrect detection
+    "PLR09", # TODO: do we enforce these ones (complexity) ?
+    "TRY003", # A bit too strict ?
+    "TD002", # We know the TODOs authors with git. Activate anyway ?
+    "TD003", # Do we want to activate (TODOs with issue reference) ?
+]
+
+select = [
+    "A",
+    "ARG",
+    "ASYNC",
+    "B",
+    "BLE",
+    "C4",
+    "COM",
+    "D",
+    "DTZ",
+    "E",
+    "EXE",
+    "F",
+    "FLY",
+    "FURB",
+    "G",
+    "I",
+    "ICN",
+    "INP",
+    "INT",
+    "ISC",
+    "LOG",
+    "N",
+    "NPY",
+    "PD",
+    "PERF",
+    "PGH",
+    "PIE",
+    "PL",
+    "PT",
+    "PYI",
+    "Q",
+    "RET",
+    "RSE",
+    "RUF",
+    "S",
+    "SIM",
+    "SLF",
+    "SLOT",
+    "T10",
+    "T20",
+    "TCH",
+    "TD",
+    "TID",
+    "TRY",
+    "UP",
+    "W",
+    "YTT",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "D",
+    "S101",
+    "T20",
+]
