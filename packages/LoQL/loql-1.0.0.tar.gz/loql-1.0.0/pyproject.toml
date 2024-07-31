@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "LoQL"
+version = "1.0.0"
+description = "Terminal based SQL client for local data"
+authors = ["Danny Boland <danny@boland.dev>"]
+homepage = "https://github.com/dannyboland/loql"
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Database",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+textual = {extras = ["syntax"], version = "^0.73.0"}
+duckdb = "^1.0"
+pandas = {version = "^2.2"}
+pyarrow = {version = "^17.0"}
+xlrd = {version = "^2.0.1"}
+openpyxl = {version = "^3.1.5"}
+
+[tool.poetry.dev-dependencies]
+mypy = "^1.11"
+black = "^24.4.2"
+pytest = "^8.2.2"
+pylint = "^3.2.5"
+pytest-mock = "^3.14.0"
+pytest-asyncio = "^0.23.8"
+coverage = "^7.6.0"
+tox = "^4.16.0"
+
+[tool.poetry.group.dev.dependencies]
+tox-poetry-installer = "^1.0.0b1"
+textual-dev = "^1.5.1"
+coverage = "^7.6.0"
+flake8 = "^7.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+loql = "loql.cli:run"
