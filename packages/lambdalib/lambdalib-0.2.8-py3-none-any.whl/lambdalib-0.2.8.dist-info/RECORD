@@ -1,0 +1,9 @@
+lambdalib/__init__.py,sha256=Z0TpWK7wRbr1CsptskX6Bw-PLUooUf9vVx0i2lo6S_s,4251
+lambdalib/_common.py,sha256=NYaG7s_yy8ETGFGm-Zo7sO0H4Nt11vGRISgZLoC7OJ8,344
+lambdalib/utils/__init__.py,sha256=DijheV5ccbOQUdq2FPMA7yfGifm8aa-80Rhj6C8smWM,1557
+lambdalib/utils/templates/la_spmemory.v,sha256=IcnOJENKLkLltryGYSxW4t_vknkj7CMqF7h2KVtRS5E,4690
+lambdalib-0.2.8.dist-info/LICENSE,sha256=n9r7yPMjAZiBCZjjf2D4pPmD4G_MDycskVpWvRAaD4A,1077
+lambdalib-0.2.8.dist-info/METADATA,sha256=muGO1sxTkDiro6bzdHX4CUig-UkLCay608iTtbUF0oI,3225
+lambdalib-0.2.8.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+lambdalib-0.2.8.dist-info/top_level.txt,sha256=X4SCIlr2QszKxOJXqfNhb6l_ywBZBpazEnZERWWFIG0,10
+lambdalib-0.2.8.dist-info/RECORD,,
