@@ -1,0 +1,4 @@
+[console_scripts]
+tabcli=tab_manager.cli:cli
+tabmgr=tab_manager.main:fast_api
+

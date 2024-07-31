@@ -1,0 +1,14 @@
+tab_manager/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tab_manager/cli/__init__.py,sha256=L1d-ZXQFMyztxojgYyoquiINtXWlQoesrDtdLs36bDQ,4542
+tab_manager/dependencies.py,sha256=-ltofglOzy5Fm_HK2L0PHrLyAqx9RKJYOqvAzpLTmao,719
+tab_manager/exc.py,sha256=lvp-SVVqHEYCmRmeYPEyOivF7bodn6LW8yaDBJcaYyA,134
+tab_manager/logger.py,sha256=msBiVfNZKv3n0NGOXYZY1R-rHwI4PARK4PJ_j9mDQD4,2448
+tab_manager/main.py,sha256=41oIDk81Pu94g2dyiTwaP8r2a2HgUrFiu3-tqgB6Tw4,228
+tab_manager/schema.py,sha256=-d3APi67BFT5DF72BQ_u61YF99HS7EUYWOwhpQC_nJM,2918
+tab_manager/state.py,sha256=bg4bxKmjZH0DC3P5jwUk26kgPC97-eyaQncOD7WchDo,375
+tab_manager/utils.py,sha256=B0IaM3lFXlNRgiMOb_DFXQNa6i5x3DzRw2hjR_PAaEc,176
+tab_manager/ws.py,sha256=jPEYnA7bdFoy0xgKiZIlVmYhrraDHbJ7ZMpmEMFgrtU,6787
+tab_manager-0.1.5.dist-info/METADATA,sha256=l4_oL7kl1BfXxKrUNm5KFFQ7xRpmDes_EX09Nf5nrpQ,791
+tab_manager-0.1.5.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+tab_manager-0.1.5.dist-info/entry_points.txt,sha256=O88kNOgfoNNoEu2G7T-DK7o8_JMBC743OFqj1ZsPYf8,79
+tab_manager-0.1.5.dist-info/RECORD,,
