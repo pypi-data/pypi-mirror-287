@@ -1,0 +1,9 @@
+matplotlib
+numpy==1.26.3
+imageio==2.33.1
+opencv_python
+pandas
+PyQt5
+scipy
+watchdog
+torch
