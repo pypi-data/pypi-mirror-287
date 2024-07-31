@@ -1,0 +1,27 @@
+Metadata-Version: 2.3
+Name: gameEZ
+Version: 0.0.1
+Summary: please email for any issues. Thanks :/
+Author-email: Sam Fertig <sfertig007@gmail.com>
+License-File: LICENCE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+version: 0.0.1
+    --Please note that to gain acsess to the main 'Pygame' modle please use the following:
+
+        -import gameEZ
+        -import gameEZ.scr
+        -import gameEZ.scr.gameEZ as win
+        -[varible] = win.pac.Pygame([WIDTH], [HEIGHT], [COLOR (siting or rgb value)])
+________________________________________
+
+This is the First consumer ready version of the pygameMax modle. Please note that their may be bugs and / or issues.
+
+
+PLease note:
+
+*pygamePro documents are comming soon!*

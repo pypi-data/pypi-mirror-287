@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "gameEZ"
+version = "0.0.1"
+authors = [
+  { name="Sam Fertig", email="sfertig007@gmail.com" },
+]
+description = "please email for any issues. Thanks :/"
+readme = "README.md"
+License = "LICENSE"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
