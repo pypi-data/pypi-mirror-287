@@ -1,0 +1,11 @@
+attribute_standardizer/__init__.py,sha256=AkAHMtZO3ZfLkEIP_yLA_tu0i_1aIWk8hvYGYv9ecVw,54
+attribute_standardizer/_version.py,sha256=rnObPjuBcEStqSO0S6gsdS_ot8ITOQjVj_-P1LUUYpg,22
+attribute_standardizer/attribute_standardizer.py,sha256=c54cbpdZq8Nn83agog-ijU59_uaKKyoBFX0xV_Y3pvo,4787
+attribute_standardizer/const.py,sha256=rwjAbY4W0WgVUgdjf4akh5Mzx2o_6Ol0_gofLonUI2Y,485
+attribute_standardizer/model.py,sha256=nVaBPZT3GbTmJ-E4iLShnFUVoWjYqAnp9QiqdSUijO8,3645
+attribute_standardizer/utils.py,sha256=Xl88j7PGcmz637aHP-J-f3RN5Dk5y1CKIJkXUXakokE,6953
+attribute_standardizer-0.1.1.dist-info/LICENSE.txt,sha256=YDPf4vpo5DLhqlZHItgoBSU1sdIA2CRlYaROJyldw5Q,1269
+attribute_standardizer-0.1.1.dist-info/METADATA,sha256=qAZ-FvmZuvpclreotvaEA8e3ljAgz-D0WegUL1ZO160,1499
+attribute_standardizer-0.1.1.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+attribute_standardizer-0.1.1.dist-info/top_level.txt,sha256=a3sU40RFJbD8CSxpWddGBvU0_YK9KFwPyMKa8UFWIak,23
+attribute_standardizer-0.1.1.dist-info/RECORD,,
