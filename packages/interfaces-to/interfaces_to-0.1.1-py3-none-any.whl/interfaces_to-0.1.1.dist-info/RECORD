@@ -1,0 +1,9 @@
+interfaces_to/__init__.py,sha256=6GRl-RZvmk_9jUm-Z1fONoCx4BGNCBzmv-vlBIFr-wM,121
+interfaces_to/bases.py,sha256=JDoXTw21nmoZdWXeOsExpx92bp-YgsbGdyT08K9kXmE,264
+interfaces_to/tools/openai.py,sha256=5e-g3k-x_dSc7NETOuc7ZpuViYwwT-kClfUKAs2wozg,2974
+interfaces_to/tools/slack.py,sha256=3rfhmYFx0OcLPPq5NNO3Zxmqj9WHJKwBn_vTmpvitiE,3941
+interfaces_to/utils.py,sha256=BVu0beIqcQO5nXPQG0jcrdGaU2F0Dn0lCoM2N1JIsgQ,2067
+interfaces_to-0.1.1.dist-info/LICENSE,sha256=basW1hzsyRhx7ZCivJMcWJhxDWCIjaRaa6h1uQS95eI,1068
+interfaces_to-0.1.1.dist-info/METADATA,sha256=SpmSMJSdZKywb7U-7Ot172jaudaY4FupxFvVgHxL8uA,8047
+interfaces_to-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+interfaces_to-0.1.1.dist-info/RECORD,,
