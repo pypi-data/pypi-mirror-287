@@ -1,0 +1,14 @@
+cartopy
+cf_xarray
+check-manifest
+nbsphinx
+netcdf4
+pandas
+pooch
+pytest
+pytest-cov
+pytest-xdist
+scipy
+sphinx
+twine
+xarray
