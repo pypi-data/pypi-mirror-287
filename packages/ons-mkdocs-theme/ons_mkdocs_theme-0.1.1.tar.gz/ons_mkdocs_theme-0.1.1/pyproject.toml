@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ons-mkdocs-theme"
+version = "0.1.1"
+description = "ONS MkDocs theme"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    {name = "Keilan Evans", email = "keilan.evans@ons.gov.uk"},
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: MkDocs",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Topic :: Documentation",
+]
+dependencies = [
+    "mkdocs >= 1.6",
+    "mkdocs-material >= 9.5",
+]
+
+[project.urls]
+Documentation = "https://improved-barnacle-2kpo16w.pages.github.io/"
+Source = "https://github.com/ONSdigital/ons-mkdocs-theme"
+
+[project.entry-points."mkdocs.themes"]
+ons-mkdocs-theme = "src"
