@@ -1,0 +1,11 @@
+include README.md
+include requirements.txt
+recursive-include config *
+recursive-include dataset *
+recursive-include evaluation *
+recursive-include exceptions *
+recursive-include font *
+recursive-include test *
+recursive-include utils *
+recursive-include visualize *
+recursive-include watermark *
