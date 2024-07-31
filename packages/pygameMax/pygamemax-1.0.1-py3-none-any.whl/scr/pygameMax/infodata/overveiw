@@ -1,0 +1,3 @@
+to acsess basic pygameMax data sheet:
+    [varible] = pygameMax.scr.pygameMax.pac.dataSheets.()
+    [varible].basicHelp()
