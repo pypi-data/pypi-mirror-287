@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: plotly-agent
+Version: 0.1.1
+Summary: Visualize your data with langchain and plotly as a plotly agent
+Home-page: https://github.com/LucasMLago/plotly-agent
+Author: Lucas Lago
+Author-email: lukemartinslagonit@gmail.com
+License: MIT License
+Keywords: plotly agent
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: langchain>=0.2.11
+Requires-Dist: plotly>=5.23.0
+Requires-Dist: pandas>=2.2.2
+Requires-Dist: nbformat>=5.10.4
+
+# plotly-agent
+
+A library to create interactive charts with Plotly and Langchain through an data visualization agent.
+
+# Installation
+
+```bash
+pip install plotly_agent
+```
+
+# Example
+
+Libraries:
+
+```bash
+from plotly_agent import extract_python_code
+from plotly_agent.evaluate.judge_text import judge
+from plotly_agent import create_plotly_agent
+```
+
+Execution code:
+
+```bash
+# judge if a input deserve a data visualization
+judgment = judge(text=prompt, openai_api_key=OPENAI_API_KEY)
+
+if judgment:
+        llm = ChatOpenAI(
+            openai_api_key=OPENAI_API_KEY,
+            # gpt-4-turbo had a better perform than gpt-4o and gpt-4o-mini
+            model_name='gpt-4-turbo',
+            temperature=0.0
+        )
+
+        plotly_agent = create_plotly_agent(llm=llm, max_interations=8, verbose=True)
+        plotly_response = plotly_agent.invoke({'input': prompt})
+        
+        # Get python code from llm reponse
+        fig_code = extract_python_code(plotly_response['output'])
+        fig_dict = {"fig": Figure}
+        exec(fig_code, fig_dict)
+        
+        # Returns a plottable figure
+        fig = fig_dict.get("fig", None)
+```
