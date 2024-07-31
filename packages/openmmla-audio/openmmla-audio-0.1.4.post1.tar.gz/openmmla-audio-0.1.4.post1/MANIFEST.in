@@ -1,0 +1,8 @@
+include *.md
+include LICENSE
+include *.txt
+include *.py
+recursive-exclude tests *
+recursive-include openmmla_audio/silero-vad/files *.json
+recursive-include openmmla_audio/silero-vad/files *.jit
+recursive-include openmmla_audio/silero-vad/files *.onnx
