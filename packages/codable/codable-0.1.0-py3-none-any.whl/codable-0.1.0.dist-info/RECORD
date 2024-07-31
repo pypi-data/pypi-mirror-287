@@ -1,0 +1,9 @@
+codable/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+codable/json.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+codable/serialization.py,sha256=mragJ9APx9MGvO0GQ1gP9Y0wKXVUcf3pne0Tg_jBGd8,6941
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_coding_containers.py,sha256=idMA_JrvjSHXiPlUnRILTwguC3h5bu0Asbraf-VcZLE,5669
+codable-0.1.0.dist-info/METADATA,sha256=HtAy-6fXRjVESUMLPOf54np2GVJhlNZPC3AZxDk3mr4,1484
+codable-0.1.0.dist-info/WHEEL,sha256=Rp8gFpivVLXx-k3U95ozHnQw8yDcPxmhOpn_Gx8d5nc,91
+codable-0.1.0.dist-info/top_level.txt,sha256=qi2ed4L2cCkwjnh-H6OFiSRT1lNJzOVtutiXf8jPM3A,14
+codable-0.1.0.dist-info/RECORD,,
