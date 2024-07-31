@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "thruster-pulse-command-generator"
+version = "0.1.0"
+description = ""
+authors = ["meoragiusiano <meora.giusiano@stellar-exploration.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+thruster-pulse-command-generator = 'thruster_pulse_command_generator._cli:main'
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.2"
+openpyxl = "^3.1.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
