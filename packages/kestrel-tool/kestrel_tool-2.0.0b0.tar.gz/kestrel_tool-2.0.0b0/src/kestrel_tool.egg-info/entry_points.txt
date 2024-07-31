@@ -1,0 +1,2 @@
+[console_scripts]
+kestrel-tool = kestrel_tool.main:app
