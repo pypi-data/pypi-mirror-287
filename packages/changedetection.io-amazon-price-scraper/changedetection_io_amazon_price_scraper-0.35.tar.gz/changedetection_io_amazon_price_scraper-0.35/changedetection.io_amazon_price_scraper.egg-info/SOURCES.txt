@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+cdio_amazon_restock_price_scraper/__init__.py
+cdio_amazon_restock_price_scraper/plugin.py
+changedetection.io_amazon_price_scraper.egg-info/PKG-INFO
+changedetection.io_amazon_price_scraper.egg-info/SOURCES.txt
+changedetection.io_amazon_price_scraper.egg-info/dependency_links.txt
+changedetection.io_amazon_price_scraper.egg-info/entry_points.txt
+changedetection.io_amazon_price_scraper.egg-info/requires.txt
+changedetection.io_amazon_price_scraper.egg-info/top_level.txt
