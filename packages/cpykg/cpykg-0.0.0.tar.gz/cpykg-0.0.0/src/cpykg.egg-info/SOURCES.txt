@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/cpykg/__init__.py
+src/cpykg/module1.py
+src/cpykg/setup.py
+src/cpykg/utils.py
+src/cpykg.egg-info/PKG-INFO
+src/cpykg.egg-info/SOURCES.txt
+src/cpykg.egg-info/dependency_links.txt
+src/cpykg.egg-info/top_level.txt
