@@ -1,0 +1,145 @@
+# Versioning tools for CI
+
+## project-version
+
+Provides version environment variables to CI builds.
+
+<details>
+<summary>Example output</summary>
+
+```
+$ cat VERSION
+0.2.7
+
+$ project-version --version-source-file VERSION --dev-nr 12345 env-vars
+VERSION_SEMVER=0.2.7-dev.12345
+VERSION_SEMVER_MAJOR=0
+VERSION_SEMVER_MINOR=0.2
+VERSION_IS_PRE_RELEASE=1
+
+$ project-version --version-source-file VERSION --dev-nr 12345 --git-tag v0.2.7 env-vars
+VERSION_SEMVER=0.2.7
+VERSION_SEMVER_MAJOR=0
+VERSION_SEMVER_MINOR=0.2
+VERSION_IS_RELEASE=1
+VERSION_IS_LATEST_RELEASE=1
+
+$ git checkout v0.2.6
+Note: switching to 'v0.2.6'.
+
+$ cat VERSION
+0.2.6
+
+$ project-version --version-source-file VERSION --dev-nr 12345 --git-tag v0.2.6 env-vars
+VERSION_SEMVER=0.2.6
+VERSION_SEMVER_MAJOR=0
+VERSION_SEMVER_MINOR=0.2
+VERSION_IS_RELEASE=1
+
+$ project-version --version-source-file VERSION --dev-nr 12345 --git-tag v9.9.9 env-vars
+ERROR:ci_version_tools.project:Version 0.2.7 in the version source does not match the version 9.9.9 in the Git tag
+
+$ echo $?
+1
+```
+
+</details>
+
+Example application in `.gitlab-cy.yml`:
+
+```yaml
+version:
+  image: docker.io/alikov/ci-version-tools:0.1.0
+  stage: .pre
+  script:
+    - project-version
+        --version-source-file ./VERSION
+        --git-version-tag-prefix v
+        --dev-identifier dev
+        --dev-nr "${CI_PIPELINE_IID:-0}"
+        ${CI_COMMIT_TAG:+--git-tag "$CI_COMMIT_TAG"}
+        env-vars | tee version.env
+  artifacts:
+    reports:
+      dotenv:
+        - version.env
+
+.build-image:
+  stage: build
+  image: $BUILDAH_CI_IMAGE
+  script:
+    - IMAGE="${CI_REGISTRY_IMAGE}:${VERSION_SEMVER}"
+    - buildah build -t "$IMAGE" .
+    - buildah push "$IMAGE"
+    - '[ -z "$VERSION_IS_RELEASE" ]
+        || buildah push "$IMAGE" "${CI_REGISTRY_IMAGE}:${VERSION_SEMVER_MAJOR}"'
+    - '[ -z "$VERSION_IS_RELEASE" ]
+        || buildah push "$IMAGE" "${CI_REGISTRY_IMAGE}:${VERSION_SEMVER_MINOR}"'
+    - '[ -z "$VERSION_IS_LATEST_RELEASE" ]
+        || buildah push "$IMAGE" "${CI_REGISTRY_IMAGE}:latest"'
+  needs:
+    - version
+
+```
+
+## version-env-vars
+
+Parses environment variables containing semantic versions into major/minor variants.
+
+<details>
+<summary>Example output</summary>
+
+```
+$ export ALPINE_VERSION=3.20.2
+$ export TERRAFORM_VERSION=1.9.3
+$ version-env-vars parse ALPINE_VERSION TERRAFORM_VERSION
+ALPINE_VERSION_MAJOR=3
+ALPINE_VERSION_MINOR=3.20
+TERRAFORM_VERSION_MAJOR=1
+TERRAFORM_VERSION_MINOR=1.9
+```
+
+</details>
+
+Example application in `.gitlab-cy.yml`:
+
+```yaml
+variables:
+  ALPINE_VERSION: "3.20.2"
+  TERRAFORM_VERSION: "1.9.3"
+
+tool-versions:
+  image: docker.io/alikov/ci-version-tools:0.1.0
+  stage: .pre
+  script:
+    - version-env-vars parse ALPINE_VERSION TERRAFORM_VERSION | tee tool-versions.env
+  artifacts:
+    reports:
+      dotenv:
+        - tool-versions.env
+
+.build-image:
+  stage: build
+  image: $BUILDAH_CI_IMAGE
+  script:
+    - IMAGE="${CI_REGISTRY_IMAGE}:${VERSION_SEMVER}"
+    - buildah build
+        --build-arg "BASE_IMAGE=alpine:${ALPINE_VERSION}"
+        --build-arg "DOWNLOAD_TERRAFORM_VERSION=${TERRAFORM_VERSION}"
+        -t "$IMAGE"
+        .
+    - buildah inspect "$IMAGE"
+    - buildah push "$IMAGE"
+    - '[ -z "$VERSION_IS_RELEASE" ]
+        || buildah push "$IMAGE" "${CI_REGISTRY_IMAGE}:alpine-${ALPINE_VERSION_MINOR}"'
+    - '[ -z "$VERSION_IS_RELEASE" ]
+        || buildah push "$IMAGE" "${CI_REGISTRY_IMAGE}:terraform-${TERRAFORM_VERSION_MINOR}"'
+  needs:
+    - version
+    - tool-versions
+
+```
+
+## Developing
+
+See [DEVELOPING.md](DEVELOPING.md) for local development setup instructions.
