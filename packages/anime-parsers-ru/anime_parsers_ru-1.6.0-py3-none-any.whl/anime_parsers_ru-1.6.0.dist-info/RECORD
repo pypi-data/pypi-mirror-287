@@ -1,0 +1,15 @@
+tests.py,sha256=H-nLcEf_J8RBSR6wL3DRiHSQmgKCZxbH89vmO0LRlKE,31992
+anime_parsers_ru/__init__.py,sha256=kQFwIc43ae5NEfztAzPcRW9nzRwDBmZ2xRNsqz7Uz-g,274
+anime_parsers_ru/errors.py,sha256=PDxgrAVM9Ti9yONDYawQpoOvBdKLPFZVkVeL-ohZ3vo,1570
+anime_parsers_ru/internal_tools.py,sha256=8VW7DA_FpZs_n1nxoUmAw2B8QD46bs26urHk3o7ZRoE,1679
+anime_parsers_ru/parser_aniboom.py,sha256=36zn3cvkUP4jexpTchb8PigxyIXv5EIVU7JlUk_g8O0,29096
+anime_parsers_ru/parser_jutsu.py,sha256=trhpgppFq8U0PivmWXO9BQgl-VrTIsN3u1llMulvyvU,9361
+anime_parsers_ru/parser_kodik.py,sha256=6gvyeBVT3jHXX0ZNWS3G5J430UzLdM1V2m5EsXjGe74,21446
+anime_parsers_ru/parser_kodik_async.py,sha256=Nc50t9VJvaYq8DT8eA0yFo79YFjLTUNtyf2lowtoqmU,22593
+anime_parsers_ru/parser_shikimori.py,sha256=7Nenu5T_6_hI32gcGz9aaqkvN2hCI7U9MY9bmcJiCxU,38601
+anime_parsers_ru/parser_shikimori_async.py,sha256=q3QVNT_4SL3Lft-WtDNKLgIaOgvDreaxNhmoY4z9ECk,38789
+anime_parsers_ru-1.6.0.dist-info/LICENSE,sha256=-LtbFvSoVrhNNyWBBytm65_WE6qzo69fRI7l0lcjUmI,1096
+anime_parsers_ru-1.6.0.dist-info/METADATA,sha256=vSxM0PGIuKC2ZNjQyS8yAhalwnopD1QtLGOvl0LIyEY,30863
+anime_parsers_ru-1.6.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+anime_parsers_ru-1.6.0.dist-info/top_level.txt,sha256=DplVmKJOdrm7jdPJXcs4SN824ZEoVThTKMOUKoPIrK8,23
+anime_parsers_ru-1.6.0.dist-info/RECORD,,
