@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: genrat-netce
+Version: 0.1
+License-File: LICENCE.txt
+Requires-Dist: Cython
+
