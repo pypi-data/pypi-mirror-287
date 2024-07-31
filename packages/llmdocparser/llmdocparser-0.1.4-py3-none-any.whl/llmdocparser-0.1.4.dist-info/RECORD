@@ -1,0 +1,12 @@
+llmdocparser/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+llmdocparser/example/attention_is_all_you_need.pdf,sha256=vfqmjYmE8NwCvqylJ7dvIH2ZtmbTHR2nKO4HKBgt9pc,2215244
+llmdocparser/llm_chain/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+llmdocparser/llm_chain/llm_factory.py,sha256=H1GLCw-dWxTCUH5YdM3TkjnZwyRmbFbzJ2tp6_QPQ1s,2007
+llmdocparser/llm_chain/llm_inference.py,sha256=cShF0SgYA66xLabzFnFyJVtlfQTMKCDhnjg75Hw2cAw,3812
+llmdocparser/llm_parser.py,sha256=mDPZx7xBrpzbVkT5TZkOTY-lnB043BJsl_-ZMu_6L1s,2397
+llmdocparser/parser/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+llmdocparser/parser/layout_parser.py,sha256=SQ6z0X7vIh5wa6VrcPzYHl1YClwgz4mvNMviqzohNSU,4518
+llmdocparser/parser/rect_merge.py,sha256=DdHroI23YSHwAzd4G95c9w6x3x4x9BPZWBT7N-uBY88,8330
+llmdocparser-0.1.4.dist-info/METADATA,sha256=o6Suy8wJWZM9DmcxIDaZr_za2mywE_qL-pyl-g5z90I,5781
+llmdocparser-0.1.4.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+llmdocparser-0.1.4.dist-info/RECORD,,
