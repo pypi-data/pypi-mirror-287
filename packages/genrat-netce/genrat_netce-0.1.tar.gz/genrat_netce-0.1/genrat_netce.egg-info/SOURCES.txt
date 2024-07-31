@@ -1,0 +1,10 @@
+LICENCE.txt
+README.md
+setup.py
+genrat_netce/__init__.py
+genrat_netce/main.c
+genrat_netce.egg-info/PKG-INFO
+genrat_netce.egg-info/SOURCES.txt
+genrat_netce.egg-info/dependency_links.txt
+genrat_netce.egg-info/requires.txt
+genrat_netce.egg-info/top_level.txt
