@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: request-id-middleware
+Version: 0.1.2
+Summary: Middleware for setting X-Request-Id header in Sentry scope
+Home-page: https://github.com/Wafi-inc/request-id-middleware
+Author: Oluwatosin Olasupo
+Author-email: tosin@wafi.cash
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: sentry-sdk>=0.14.0
+
+# Request ID Middleware
+
+Middleware for setting `X-Request-Id` header in Sentry scope.
+
+## Installation
+
+```bash
+pip install request-id-middleware
