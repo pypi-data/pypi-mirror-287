@@ -1,0 +1,13 @@
+rustitude-0.10.0.dist-info/METADATA,sha256=5n7Ukme3BblqtrTGzSikbVwrdnaAuAtpNDSgY25RlJg,12825
+rustitude-0.10.0.dist-info/WHEEL,sha256=WkLApM3bJl0tbWH2EVvvu4cI-fiRf1XciJDCwljbeDg,102
+rustitude-0.10.0.dist-info/license_files/LICENSE,sha256=-RwZpdYs1Zhhk3g09OG-7Zd3apeIL-vjpDMZbOGjnS8,1507
+rustitude/__init__.pyi,sha256=BqnlaCtq-rYAIxGIYq04LjHQ84AHEoPGsbhJz6MrzcA,23294
+rustitude/__init__.py,sha256=nun65N4Qmw8tDoqacUYuF4qEWQzJaFvwAHAaVW3Z15I,7265
+rustitude/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rustitude/gluex/harmonics.pyi,sha256=cLWfy-UY5rT8N4pE1Xy-4H4PQJMg60CvVASmQfdtzss,9492
+rustitude/gluex/__init__.pyi,sha256=giSZWBm7zHrXkQFnM3WyBuzsu7xaS9XH_APO0i6PG50,681
+rustitude/gluex/sdmes.pyi,sha256=PNw6s73Zr93pnkQ6YnQ5HS3aLtzqrmRhsj-q5ShU8RA,963
+rustitude/gluex/resonances.pyi,sha256=X-GClg0EWm5vtXFwYTusRac7UpfSgcMh4Hz9u_kFmSo,2726
+rustitude/gluex/dalitz.pyi,sha256=Kep_Id35HoZXBiZ9o_SPWJm4udnauhDdtgrW9TUkJAM,428
+rustitude/_rustitude.abi3.so,sha256=foducjPb36U39zTt4wS1_gXmGVTqnDnE-oaoFhhGxh8,5653040
+rustitude-0.10.0.dist-info/RECORD,,
