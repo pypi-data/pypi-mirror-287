@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: linshenghua
+Version: 0.1.4
+Summary: some modles for python user---moudles:[file_utils, db_utils]--- for example: file_utils: import file_utils or from file_utils import *
+Author: linshenghua
+Author-email: 780141734@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
