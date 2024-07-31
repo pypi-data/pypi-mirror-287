@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: verysimplemodule987654321
+Version: 0.0.1
+Summary: A very simple module
+Author: Rob McInerney
+Author-email: rob@robmcinerney.com
+Keywords: python,first package
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+
+A very simple module that does nothing
