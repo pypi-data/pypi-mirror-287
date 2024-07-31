@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.py
+dp_table/__init__.py
+dp_table.egg-info/PKG-INFO
+dp_table.egg-info/SOURCES.txt
+dp_table.egg-info/dependency_links.txt
+dp_table.egg-info/requires.txt
+dp_table.egg-info/top_level.txt
+dp_table/frontend/build/asset-manifest.json
+dp_table/frontend/build/bootstrap.min.css
+dp_table/frontend/build/index.html
+dp_table/frontend/build/static/css/main.59363d86.css
+dp_table/frontend/build/static/css/main.59363d86.css.map
+dp_table/frontend/build/static/js/main.6bdc8b0a.js
+dp_table/frontend/build/static/js/main.6bdc8b0a.js.LICENSE.txt
+dp_table/frontend/build/static/js/main.6bdc8b0a.js.map
