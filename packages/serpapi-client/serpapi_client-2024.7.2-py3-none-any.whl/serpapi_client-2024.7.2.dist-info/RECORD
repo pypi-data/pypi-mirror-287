@@ -1,0 +1,10 @@
+serpapi_client/__init__.py,sha256=hspm0rAkTQxrkpkz60eK82-X1Pu4Hw6lFl5UQ3PDAEg,179
+serpapi_client/exception.py,sha256=yqLJB0FV5PBIaItCGLlmxqedcO2yzmffQxS_JekunjE,40
+serpapi_client/fix.py,sha256=gZoPT8P6JV686fH46A15HTaXyksW4v8RZCc3PBooXXU,151
+serpapi_client/google/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+serpapi_client/google/client.py,sha256=r-O1eLLboc7WZdHlcKxh3pmh_7AndD4C7KhARo8q2QQ,46757
+serpapi_client-2024.7.2.dist-info/METADATA,sha256=FXubaf9cJKFyLF81CphnAlK3oeUz8QPHpDRWGWaAShg,230
+serpapi_client-2024.7.2.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+serpapi_client-2024.7.2.dist-info/entry_points.txt,sha256=qExJT8ElvBijIblh2NL7CI5LKcBIrwWML3iPNM7d0Pk,73
+serpapi_client-2024.7.2.dist-info/top_level.txt,sha256=zuJYv2noANirYswtCuMiGOz0sDQKqo2VAM0TW46ijZE,15
+serpapi_client-2024.7.2.dist-info/RECORD,,
