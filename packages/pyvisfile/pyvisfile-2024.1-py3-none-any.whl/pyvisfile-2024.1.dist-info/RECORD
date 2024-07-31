@@ -1,0 +1,10 @@
+pyvisfile/__init__.py,sha256=sqvfaHv2JcJ4oNzPkG4Z19Xtn6rlL3qfIXvQrjj4q9g,409
+pyvisfile/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyvisfile/vtk/__init__.py,sha256=pf3NU1uSNczik9xkZB8ZyJXPcOJ23AShthZ0U_SHsi8,30742
+pyvisfile/vtk/vtk_ordering.py,sha256=Fjz3l52MGmw1YUEiD9qiMvQSXhMjJQ5GgkjzEFrfxtA,14036
+pyvisfile/xdmf/__init__.py,sha256=OgS8h4vZ2KowK1SRH3H9PSb-NwrcT6hXOgak_rHdzek,33817
+pyvisfile-2024.1.dist-info/LICENSE,sha256=Qp7fWBhtq0vOSfZcMr7LlFoAj6DiFQ3cVYFkr0DFlUs,1066
+pyvisfile-2024.1.dist-info/METADATA,sha256=qi0OTzTcyu_Y5WDjJBBcSUWlLokQz2xQ3IICgXdFDNc,3145
+pyvisfile-2024.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+pyvisfile-2024.1.dist-info/top_level.txt,sha256=rAm8qqhpV1Yh2wiLrCw6r03KMO4dHf7FBSduIkQYxuo,10
+pyvisfile-2024.1.dist-info/RECORD,,
