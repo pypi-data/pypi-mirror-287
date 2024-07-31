@@ -1,0 +1,16 @@
+bin/Clock.py,sha256=4lmaRSmTPgj9EOd1fxOsHbQYA17fgIuS7fQtHKLXPR4,7591
+bin/Log.py,sha256=YXwgEkWW77pdmsHU4WkVb_fguxDzhHSw9-oJSny1apA,2354
+bin/Parameters.py,sha256=RLXN0Ek7nSa65K-5Nppt6PMTpz405_aR9U_u8wLvfv0,28961
+bin/Primer.py,sha256=2WBxstbRiBED9a4k21Y42IbiHoR0AAK55QNqPRsqwBM,4933
+bin/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bin/getCandidateKmers.py,sha256=JDB6lrnp8dgMi-bodiYPsgM38cq0ljOofziyLAz4_MA,18691
+bin/getPrimerPairs.py,sha256=RxZy1N8CeSHQNJpoqIeR6Mumx_0uI-RFX8kTJDefpMA,20148
+bin/main.py,sha256=3Z8TSAQwVJn7Sx8atcBFAFto0p9-y3ZDo6ZL4NHGmy0,14243
+bin/removeOutgroupPrimers.py,sha256=Ek6VGtyoCQ15yzYtlCkhic0GLsoqSo1qq-nzg05339s,11251
+bin/validatePrimers.py,sha256=1upb0OGMjXndh8P75Ul-UTb0dYPF-2w089sL1r1tI5U,5327
+primerforge-1.3.2.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+primerforge-1.3.2.dist-info/METADATA,sha256=hhxS-c7LDiBABslc5RTdB5dpfpqidxgvV1JZRSpZ11o,16995
+primerforge-1.3.2.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+primerforge-1.3.2.dist-info/entry_points.txt,sha256=Q5TCV_psuTdvO-UVW2vNjsv7IVuH89DRkxQTpKr8Mz8,46
+primerforge-1.3.2.dist-info/top_level.txt,sha256=R96X4WkWzS2JXVjmQGzznHrsb0spoRTVPx0dimUsYls,4
+primerforge-1.3.2.dist-info/RECORD,,
