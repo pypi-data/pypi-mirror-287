@@ -1,0 +1,85 @@
+Python Doc overveiw of all functions:
+___________________________________________
+Initalize the function:
+    def __init__(WIDTH, HEIGHT, color):
+
+    this function will take the width, and height for the screen. Along with the default bakground color.
+
+Screen:
+
+    def screen():
+
+    THis is to be called every time you whant to render the next frame of the window, or used to update the screen.
+
+Object functions:
+
+    an object is handled os a pygame Rect (square / rectangle).
+
+    def create_object(name, x, y, width, height, color):
+        This will take all inputs needed for a pygame Rect, anong with a name so you can pick it out through all others.
+
+    def key_move(name, speed):
+        this will move an objects with the WASD and/or arrow keys. it will only move the object with the name given. It will be moved by the speed that is also given.
+
+    def move(name, x, y):
+        This will move the object[name] to the x, y positioin given.
+
+    def collide(object1, object2): --(nanes of each object)
+        Will return True or False if objects are colliding.
+
+    def position(object):
+        Returnes the position of the object given as an x, y tuple.
+
+    def remove_object(name):
+        will remove the object and all data with it.
+
+Image functions:
+
+    def create_image(name, image_file, x, y):
+        Like objects this will create a image that will render on the screen.
+
+    def image_pos(name):
+        will return a x, y tuple of the image position
+
+Mouse functions:
+
+    def mouse_X():
+        returns mouse x position.
+    
+    def mouse_Y():
+        returns mouse Y position.
+
+    def mouse_pos():
+        returns mouse positioin as a tuple.
+
+    def click():
+        will return True or False if the mouse was down durring the current frame.
+
+Text:
+
+    def render_text(text, x, y, color):
+        will create a line of the text input on the screen. Currently can only render one line of text.
+
+File Functions:
+
+    def read(file_name):
+        will return the data in a file.
+
+    def write(file_name, text):
+        will write the text to the file.
+
+    def append(file_name, text):
+        will apend a new line of data to the file.
+
+Other:
+
+    def clear_screen(key):
+        will clear all text, objects, and images, key = "YES".
+
+    def pressed_keys():
+        will return a pygame list of the keys pressed, 
+        you must use this to acsess if the key was pressed:
+        if [varible].pressed_keys()[pygame_K.*key*]:
+            pass
+
+    
