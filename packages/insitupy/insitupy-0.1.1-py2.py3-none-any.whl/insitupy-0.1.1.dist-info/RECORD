@@ -1,0 +1,14 @@
+insitupy/__init__.py,sha256=0MvzNxL52CoKQ_HhUrA5rdSVKndNNONVEsaJ3l9wXXg,123
+insitupy/cli.py,sha256=kndE1O9g6C1suFAPwBDeaIs3cc3RaFXvuRhMPbSD8QA,439
+insitupy/campaigns/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+insitupy/campaigns/campaign.py,sha256=ORfTqtbLvUmgOTtL5pdDMw79r1ho0ft6XLIURE3CW3A,13735
+insitupy/campaigns/metadata.py,sha256=Tc4HjjJogbfsNoroEeGlfkUm3w0G1yd-vlVNky8ejHA,16990
+insitupy/campaigns/strings.py,sha256=OeBIeXecl8xEsmhM8VE6bayiErxZtGN06po9thHYiW4,6225
+insitupy/campaigns/variables.py,sha256=8sNoKRRF4z87VDZnJ_pXfAWrPAnMy-bjepOKZ_HK6CA,9611
+insitupy-0.1.1.dist-info/AUTHORS.rst,sha256=uwVEMH3SwMLjdeiP1_EwkjFYyRgVklkMuZIxoM9FU58,153
+insitupy-0.1.1.dist-info/LICENSE,sha256=1lp7U6ngLGHYAq7HgVg7vt43k6K73KTTi3uFWKvqE78,1071
+insitupy-0.1.1.dist-info/METADATA,sha256=yoOfOxYYH2h8PASMPdW4G8aAgwC1N3TwewhPTNsR4bU,2096
+insitupy-0.1.1.dist-info/WHEEL,sha256=XRxW4r1PNiVhMpP4bT9oWtu3HyndxpJ84SkubFgzp_Y,109
+insitupy-0.1.1.dist-info/entry_points.txt,sha256=zjs1s7HKO0c269YBUqbH4NRHmkKnfhugrZTFgxh8xdU,47
+insitupy-0.1.1.dist-info/top_level.txt,sha256=RmBdlxmvfetW-Irx_Cf3HgDTPpQk4tAdUYZ5FtrcuYo,9
+insitupy-0.1.1.dist-info/RECORD,,
