@@ -1,0 +1,13 @@
+imgcorr/__init__.py,sha256=FMj02kPx5_4v0LS5s7jWaJYqrOvVdPiIFA8iUCcEEpo,4331
+imgcorr/corruptions.py,sha256=UGYv0Gs0RU59Tz88Ufw8dR62nT77Ym1tpaqgk9KR030,19751
+imgcorr/frost/frost1.png,sha256=_5-QeGC9eoNdRZ4y-dWIBit_Ye4mc0PMciK1Z1OhR1U,1199930
+imgcorr/frost/frost2.png,sha256=_iEaibM2mZwgeoUs4FgY1FRdC1fFvq3YJLTMnZqbYTc,299002
+imgcorr/frost/frost3.png,sha256=LQ1QtKm7IT84sCTvd2hzG7g8wI0vJrV2a7wWfN-g5QQ,299002
+imgcorr/frost/frost4.jpg,sha256=P4uRyhqfpxZ7Cedz2lP1rmDQof2I8Cp4P24yinKIf24,36734
+imgcorr/frost/frost5.jpg,sha256=X8ahnfSkKbpoq9zI-KQnjUyfgcnMr9LJKrDIz4mS69I,155150
+imgcorr/frost/frost6.jpg,sha256=H5Ky9IQIdICFto3YHYFu8jn0LO8wKcJdBB_LZ2D7TyU,90185
+imgcorr-1.1.3.dist-info/LICENSE,sha256=HrhfyXIkWY2tGFK11kg7vPCqhgh5DcxleloqdhrpyMY,11558
+imgcorr-1.1.3.dist-info/METADATA,sha256=j_yKq1L9WgIuwbszw8XZg7ZDUQ6Hczg9tbMaWelLHwk,3452
+imgcorr-1.1.3.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+imgcorr-1.1.3.dist-info/top_level.txt,sha256=AoiX5ZOU-wUAMcRlmXO5BqgdVHpugO8xiXPcfYM5TfE,8
+imgcorr-1.1.3.dist-info/RECORD,,
