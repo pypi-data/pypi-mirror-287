@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.py
+cliqestimrie/__init__.py
+cliqestimrie/clinetwork.c
+cliqestimrie.egg-info/PKG-INFO
+cliqestimrie.egg-info/SOURCES.txt
+cliqestimrie.egg-info/dependency_links.txt
+cliqestimrie.egg-info/top_level.txt
