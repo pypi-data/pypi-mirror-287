@@ -1,0 +1,14 @@
+vpmobil/Vertretungsplan.py,sha256=qaDOFO39uuZmwC1ZVrnrxNWeUlWY4Lu3bGLUUGEp48I,3563
+vpmobil/VpDay.py,sha256=gKmkV_cxJz3ruWRCW9znvrEx1jb-VQrX35agXtpHV9I,23470
+vpmobil/__init__.py,sha256=GmftrI6N0981fDlGMv5_mKQXozxg9pQL8VvWDlAoYsU,1535
+vpmobil/exceptions.py,sha256=lj-fe046EkOpTQw3zeWiNxJYX5i7EdkD1AutdEmwV20,1853
+vpmobil/fetcher.py,sha256=Nrz4rjtahNNJ4isZuTrjF8JeOf2KjTDzLc0CDyLmZJg,4405
+vpmobil/io.py,sha256=r2OCdfOtMt6HV0mX8ZbQVFiNSMCT7l5xchDMrjKSu1A,1396
+vpmobil/lib.py,sha256=RHDaZCiJi02JEecpA-NYRTnATuathF1O0WYzEjUKtXs,450
+vpmobil/parser.py,sha256=DKWdAc2L6uYxTbRDCE9klbeCKSRhn2srKA8exnH_hfo,21153
+vpmobil/workflow.py,sha256=Z2ew-_Jsv6uPsD1hyGPO4X_8cnBDARnomdNrBWizNTI,1139
+vpmobil-0.4.dist-info/LICENSE,sha256=IwGE9guuL-ryRPEKi6wFPI_zOhg7zDZbTYuHbSt_SAk,35823
+vpmobil-0.4.dist-info/METADATA,sha256=k86juFbE7CUmZAQ-ZRGkQqUNO4BPZedfIWb-RYaPStc,2641
+vpmobil-0.4.dist-info/WHEEL,sha256=y4mX-SOX4fYIkonsAGA5N0Oy-8_gI4FXw5HNI1xqvWg,91
+vpmobil-0.4.dist-info/top_level.txt,sha256=Iuv-H_TAH0UsP5SZ6-vPkunZf2WjrlE4D2paXQ0cngA,8
+vpmobil-0.4.dist-info/RECORD,,
