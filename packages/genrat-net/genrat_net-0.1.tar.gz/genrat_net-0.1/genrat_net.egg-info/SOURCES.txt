@@ -1,0 +1,9 @@
+LICENCE.txt
+README.md
+setup.py
+genrat_net/__init__.py
+genrat_net/main.c
+genrat_net.egg-info/PKG-INFO
+genrat_net.egg-info/SOURCES.txt
+genrat_net.egg-info/dependency_links.txt
+genrat_net.egg-info/top_level.txt
