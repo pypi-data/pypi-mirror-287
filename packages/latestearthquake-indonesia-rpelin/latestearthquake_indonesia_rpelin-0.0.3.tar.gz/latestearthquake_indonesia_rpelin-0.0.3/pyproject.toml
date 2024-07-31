@@ -1,0 +1,19 @@
+[project]
+name = "latestearthquake-indonesia-rpelin"
+version = "0.0.3"
+authors = [
+  { name="Ruri Pelinandang", email="ruri.pelinandang@gmail.com" },
+]
+description = "This package will detect the latest earthquakes from BMKG Indonesia"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+]
+
+[project.urls]
+Homepage = "https://github.com/rpelin-creative/latest-indonesian-earthquake"
+Issues = "https://github.com/rpelin-creative/latest-indonesian-earthquake/issues"
