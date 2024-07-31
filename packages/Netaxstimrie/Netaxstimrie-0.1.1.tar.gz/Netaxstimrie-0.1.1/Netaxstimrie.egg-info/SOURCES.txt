@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.py
+Netaxstimrie/__init__.py
+Netaxstimrie/netnetwork.c
+Netaxstimrie.egg-info/PKG-INFO
+Netaxstimrie.egg-info/SOURCES.txt
+Netaxstimrie.egg-info/dependency_links.txt
+Netaxstimrie.egg-info/top_level.txt
