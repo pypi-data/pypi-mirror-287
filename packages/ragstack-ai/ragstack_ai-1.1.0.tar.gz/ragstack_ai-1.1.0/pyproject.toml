@@ -1,0 +1,156 @@
+[tool.poetry]
+name = "ragstack-ai"
+version = "1.1.0"
+description = "DataStax RAGStack"
+license = "BUSL-1.1"
+authors = ["DataStax"]
+readme = "PACKAGE_README.md"
+repository = "https://github.com/datastax/ragstack-ai"
+documentation = "https://docs.datastax.com/en/ragstack"
+packages = [{ include = "ragstack" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+ragstack-ai-langchain = { version = "1.4.0", extras = ["colbert", "google", "nvidia"] }
+ragstack-ai-llamaindex = { version = "1.0.8", extras = ["colbert", "google", "azure", "bedrock"] }
+ragstack-ai-colbert = "1.0.6"
+
+[tool.poetry.group.test.dependencies]
+ragstack-ai-langchain = { path = "libs/langchain", develop = true, extras = ["colbert", "google", "nvidia"] }
+ragstack-ai-llamaindex = { path = "libs/llamaindex", develop = true, extras = ["colbert", "google", "azure", "bedrock"] }
+ragstack-ai-colbert = { path = "libs/colbert", develop = true }
+
+pytest = "^7.3.0"
+
+[tool.poetry.group.lint.dependencies]
+ruff = "^0.5.0"
+yamllint = "^1.34.0"
+
+[tool.poetry.group.notebooks.dependencies]
+nbmake = "*"
+astrapy = "*"
+
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+[tool.mypy]
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+follow_imports = "normal"
+ignore_missing_imports = true
+no_implicit_reexport = true
+show_error_codes = true
+show_error_context = true
+strict_equality = true
+strict_optional = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unused_ignores = true
+
+[tool.ruff]
+extend-include = ["*.ipynb"]
+
+[tool.ruff.lint]
+pydocstyle.convention = "google"
+ignore = [
+    "COM812", # Messes with the formatter
+    "D100", # Do we want to activate (docstring in module) ?
+    "D104", # Do we want to activate (docstring in package) ?
+    "D105", # Do we want to activate (docstring in magic method) ?
+    "D107", # Do we want to activate (docstring in __init__) ?
+    "ERA", # Do we want to activate (no commented code) ?
+    "ISC001", # Messes with the formatter
+    "PERF203", # Incorrect detection
+    "PLR09", # TODO: do we enforce these ones (complexity) ?
+    "TRY003", # A bit too strict ?
+    "TD002", # We know the TODOs authors with git. Activate anyway ?
+    "TD003", # Do we want to activate (TODOs with issue reference) ?
+]
+
+select = [
+    "A",
+    "ARG",
+    "ASYNC",
+    "B",
+    "BLE",
+    "C4",
+    "COM",
+    "D",
+    "DTZ",
+    "E",
+    "EXE",
+    "F",
+    "FA",
+    "FLY",
+    "FURB",
+    "G",
+    "I",
+    "ICN",
+    "INP",
+    "INT",
+    "ISC",
+    "LOG",
+    "N",
+    "NPY",
+    "PD",
+    "PERF",
+    "PGH",
+    "PIE",
+    "PL",
+    "PT",
+    "PYI",
+    "Q",
+    "RET",
+    "RSE",
+    "RUF",
+    "S",
+    "SIM",
+    "SLF",
+    "SLOT",
+    "T10",
+    "T20",
+    "TCH",
+    "TD",
+    "TID",
+    "TRY",
+    "UP",
+    "W",
+    "YTT",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"libs/langchain/*" = [
+    "UP006", # Incompatible with Pydantic v1
+    "UP007", # Incompatible with Pydantic v1
+]
+"libs/ragulate/{colbert,open_ai}_chunk_size_and_k.py" = [
+    "D103",
+    "INP001",
+    "T201",
+]
+"libs/colbert/tests/unit_tests/baseline_tensors.py" = [
+    "E501", # Generated file
+]
+"**/{examples,notebooks,tests,e2e-tests,tests-utils}/*" = [
+    "D",
+    "S101",
+    "T20",
+]
+"scripts/*" = [
+    "D",
+    "T20",
+]
+"docker/examples/*" = [
+    "INP001",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
