@@ -1,0 +1,11 @@
+marearts_anpr_d/__init__.py,sha256=1gc4Y-hkMEhfTpaCVdP1XY1k0GdtatlRTIxilWGJjao,77
+marearts_anpr_d/_version.py,sha256=H7_XEdcrsGpo2K4IO_APhPn7oH870y-Gu-5n41Le4X4,413
+marearts_anpr_d/main.py,sha256=6Qd7mAv5it0TayT82Wr8PQjQJLpdiyVS0PQZoRk7JmE,211
+marearts_anpr_d/onnx_anpr_d.py,sha256=23x3QKS41rWw4Y5eTDru0Uvm14WfYaObGZAGzDMHXT8,5736
+marearts_anpr_d/onnx_utils.py,sha256=BJeZ3G-BxBVoewpqbfJFaFiWRgkAoufS8yA2xmnReQY,4547
+marearts_anpr_d-0.1.49.dist-info/LICENSE,sha256=4OwAmIVSmLAHpO07MJm46w8FYLJLaLWWMBLOoflOauY,106
+marearts_anpr_d-0.1.49.dist-info/METADATA,sha256=mhAOTTkrr-eh_G1G4mhazGwQMzAw2lgIOz6bzvORNj4,1219
+marearts_anpr_d-0.1.49.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+marearts_anpr_d-0.1.49.dist-info/entry_points.txt,sha256=tyQbEWiPcpkZxcI4i06JeSVEFt_x1QpgM0CkOBPLJH4,57
+marearts_anpr_d-0.1.49.dist-info/top_level.txt,sha256=AEIw-V02IPjEzWvBRvzKhKehzemFM2njrYxw4ASNLmE,16
+marearts_anpr_d-0.1.49.dist-info/RECORD,,

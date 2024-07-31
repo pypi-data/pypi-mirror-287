@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: marearts-anpr-d
+Version: 0.1.49
+Summary: marearts anpr detector
+Home-page: https://github.com/yourusername/marearts-anpr-d
+Author: marearts
+Author-email: marearts <hello@marearts.com>
+License: ## License
+        
+        This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+        
+Project-URL: Homepage, https://github.com/yourusername/marearts-anpr-d
+Project-URL: Bug Tracker, https://github.com/yourusername/marearts-anpr-d/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Provides-Extra: dev
+Requires-Dist: cython ; extra == 'dev'
+Requires-Dist: setuptools-scm[toml] ; extra == 'dev'
+
+# README.md
+# marearts-anpr-d
+
+A brief description of your package and what it does.
+
+## Installation
+
+You can install the package using pip:
+
+```
+pip install marearts-anpr-d
+```
+
+## Usage
+
+Here's a quick example of how to use the package:
+
+```python
+from marearts_anpr_d import encryption, decryption
+
+print(encryption(1))
+print(decryption(1))
+```
