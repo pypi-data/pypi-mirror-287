@@ -1,0 +1,5 @@
+numpy>=1.21
+ndindex>=1.4
+msgpack
+numexpr
+py-cpuinfo
