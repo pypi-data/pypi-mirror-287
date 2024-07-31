@@ -1,0 +1,14 @@
+ratchada_utils/__init__.py,sha256=ST4Ae0wnDIwkD62FRWSTJgIT2--_nRQtTiL0uzTSEiM,242
+ratchada_utils/evaluator/__init__.py,sha256=bDgoHm0YELWgh93ZzKrDIpBMDQG5Ki5UPzAlxngKec8,741
+ratchada_utils/evaluator/evaluate_utils.py,sha256=b5_Z2nQCfnAWaXB20nDkLgqmNIVSYFMfudkPYXc6Vxs,12171
+ratchada_utils/processor/__init__.py,sha256=b1t-d75DsJYKU-d9fx8URbQc35VPK_WuWangjar790o,631
+ratchada_utils/processor/basic.py,sha256=SHe_fYbWZzI0KHT1rTlKndrRTZMxuQGJPfbQnb6ieIE,2846
+ratchada_utils/processor/english.json,sha256=sh_4VqBNJGjNRvOUZZq_E8cm8SrsjK1Wx6Ml1qagNwM,56129
+ratchada_utils/processor/english.py,sha256=RTjLa1-0sTWYf9nMlok4h1Nb9Ua23b5hgsouME_LlO0,22767
+ratchada_utils/processor/postfix.py,sha256=xMu4qnaAy8LCYfDQwVKKNKlL7ZppKUIm8xv96mEF9zE,1964
+ratchada_utils/processor/process.py,sha256=BuGkCNt4k7o-f-0mVGLATbfmFuMEx_fcfS94ENiJBew,2136
+ratchada_utils-2.2.6.dist-info/LICENSE,sha256=1_2VkGETp4htVcmHtWYgj0a_-qZ_Tzozl9YkdHtMYcw,1092
+ratchada_utils-2.2.6.dist-info/METADATA,sha256=6_DTUYIJKJKMtH6z1aI-0KoHLmNIYnlGnmHjU_qddVY,3768
+ratchada_utils-2.2.6.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+ratchada_utils-2.2.6.dist-info/top_level.txt,sha256=gcKlJELUW_rhWzmyWvZ9GJbQwFGyHaYeRhTOtY7xJ6s,15
+ratchada_utils-2.2.6.dist-info/RECORD,,
