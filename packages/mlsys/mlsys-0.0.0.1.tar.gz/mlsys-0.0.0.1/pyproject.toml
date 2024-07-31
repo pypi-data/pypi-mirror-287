@@ -1,0 +1,62 @@
+#
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "mlsys"
+
+#authors = [
+#    {name = "Grigori Fursin", email = "gfursin@cknowledge.org"}
+#]
+
+description = "TBD"
+
+requires-python = ">=3.8"
+
+dependencies = [
+    "pyyaml",
+    "requests",
+    "setuptools"
+]
+
+keywords = [
+    "mlsys"
+]
+
+license = {text = "TBD"}
+
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+    "Topic :: Software Development",
+    "Topic :: System",
+    "Topic :: Scientific/Engineering",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dynamic = ["readme", "version"]
+
+[project.urls]
+#Homepage = ""
+#Source = ""
+
+[tool.setuptools]
+zip-safe = false
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mlsys", "mlsys.*"]
+exclude = ["docs", "docs.*", "tests", "tests.*"]
+
+[tool.setuptools.dynamic]
+readme = {file = "README.md", content-type = "text/markdown"}
+version = {attr = "mlsys.__version__"}
