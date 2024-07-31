@@ -1,0 +1,8 @@
+jquant-0.1.0b14.dist-info/METADATA,sha256=msIyhmi5pIwbvy8Z0tTRJmw5zj3NRrnxWdi_IofZmDM,355
+jquant-0.1.0b14.dist-info/WHEEL,sha256=rSwsxJWe3vzyR5HCwjWXQruDgschpei4h_giTm0dJVE,90
+jquant/__init__.py,sha256=Y1jvP4S3E2EV5_pn5t09jSVOsXwuL7S0U0AsqcWOOVc,827
+jquant/client.py,sha256=6XfXCUdz-Y2p7GCUoTxxdVFAhhxFfDYU15oEuI0O4WM,21708
+jquant/platform_pb2.py,sha256=3jmm7-NcFXH0mqg8a3lemtpPZCWDH2nhLeMG3iAS_ZA,23095
+jquant/platform_pb2.pyi,sha256=rEmVYY2sn9vzl6H6svRtGUoUHqwK6I0Z-IizRMtQnlI,32682
+jquant/platform_pb2_grpc.py,sha256=sOjWnokinrh_2muXGJGSZ1l1LY3EuTKUciSAqyEYh0w,28612
+jquant-0.1.0b14.dist-info/RECORD,,
