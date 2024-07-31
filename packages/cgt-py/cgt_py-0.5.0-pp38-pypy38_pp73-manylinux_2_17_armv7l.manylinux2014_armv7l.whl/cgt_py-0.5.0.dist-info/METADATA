@@ -1,0 +1,24 @@
+Metadata-Version: 2.3
+Name: cgt-py
+Version: 0.5.0
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Summary: Python bindings for Rust `cgt` package
+Keywords: cgt
+Home-Page: https://github.com/t4ccer/cgt-tools
+Author: Tomasz Maciosowski <t4ccer@gmail.com>
+Author-email: Tomasz Maciosowski <t4ccer@gmail.com>
+License: AGPL-3.0
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Source Code, https://github.com/t4ccer/cgt-tools
+
+# Development
+
+Open python shell with access to `cgt-py` package.
+
+```
+$ make repl
+```
+
