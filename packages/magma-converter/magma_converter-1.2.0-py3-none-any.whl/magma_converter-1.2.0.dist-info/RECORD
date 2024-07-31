@@ -1,0 +1,11 @@
+magma_converter/__init__.py,sha256=mUV3IFsaYEYZNK_Z8nhlaFILjCPoGt6fqxS6-cblolk,429
+magma_converter/convert.py,sha256=O9xO6RgnqEerkYa05EbPqokTl2BJTBF6d4DpDkrrG3g,10371
+magma_converter/database.py,sha256=QfF2wTbVe0HGqQG4mjq1V7pt513LPe-LF8g0FTdvvTI,5423
+magma_converter/new_trace.py,sha256=mB4ZPy9b-xEoJRtvDqLTBzEy9wi_8jgfCl8CaohVSEo,2815
+magma_converter/plot.py,sha256=isjrsrODVqWBl_f0qvFaFPwbc9G03ftZvu_j9b_pxk0,2512
+magma_converter/sds.py,sha256=5Spvrue8UoLvF2YmPnccfExBFuQmk7OxyAmQgESwZd8,7088
+magma_converter/utilities.py,sha256=3d736e_qT7uB6YAd7Vy57tBjZowYdlJeaiLvPVnLesg,4617
+magma_converter-1.2.0.dist-info/LICENSE,sha256=pE1O25Tsk65Je-IPi1aWBUnI9S4T2wgabc-qYqe4xuM,1084
+magma_converter-1.2.0.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+magma_converter-1.2.0.dist-info/METADATA,sha256=MYfgfks_JnlIhD40QIJYuJgN_rigrNYr3HJfbUYPaYI,3729
+magma_converter-1.2.0.dist-info/RECORD,,
