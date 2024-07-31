@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "kfc-2-snow"
+version = "0.1.0"
+description = ""
+authors = ["sbailey <1661003+spbsoluble@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "*"
+requests = "*"
+keyfactor-command-sdk = ">=11.0.0 <12.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+kfc2snow = "kfc_2_snow.cli:cli"
