@@ -1,0 +1,2 @@
+[pymodaq.instruments]
+MozzaSpectro = pymodaq_plugins_MozzaSpectro
