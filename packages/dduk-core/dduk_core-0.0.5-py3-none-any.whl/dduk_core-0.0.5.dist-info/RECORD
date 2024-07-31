@@ -1,0 +1,14 @@
+dduk/__init__.py,sha256=DmwSjoUDTt2qiktUr9P0nmha6QNl_qXrAAqQNpCW5_E,548
+dduk/__main__.py,sha256=8if2V6vgJnnyHkn4deyPyZOdZWkVUOFlaebwtkPow5A,771
+dduk/core/__init__.py,sha256=DmwSjoUDTt2qiktUr9P0nmha6QNl_qXrAAqQNpCW5_E,548
+dduk/core/__main__.py,sha256=u70ATmJ1Io94tEQkJqgDdq71yHU1lmy6KYH-d7acE8k,560
+dduk/core/platform.py,sha256=rq1Wc9adCWnY4PSvsG96V3ZZcn8kJhmTjXxPDIooNXA,1220
+dduk/utils/__init__.py,sha256=vcSatFX6bXeRz-mQogucO5j69lKwbYy3jgbRgtIjQdk,697
+dduk/utils/jsonutil.py,sha256=9mjRqKCydcEfkIi2R7Rr1sMqkNhH4ICCozytWEEEvk4,2167
+dduk/utils/moduleutil.py,sha256=9asqLlHOUxvQxl2ZDLlSjsE6-4TfX0hclSpikJTCoig,6764
+dduk/utils/strutil.py,sha256=QmYbUQ8N0KWDACwx_wjzxGaiBleTVJue41H6gPBiVQg,3206
+dduk_core-0.0.5.dist-info/LICENSE,sha256=AU8OrUcHYBTd6RuKzW0BQx6bM2ALTnqc8vRQwMcRIW0,1087
+dduk_core-0.0.5.dist-info/METADATA,sha256=Ij7-Gt6zA1CW2I8YUfkt-xrmmBys_ADLJ4g_R21p6M8,481
+dduk_core-0.0.5.dist-info/WHEEL,sha256=Wyh-_nZ0DJYolHNn1_hMa4lM7uDedD_RGVwbmTjyItk,91
+dduk_core-0.0.5.dist-info/top_level.txt,sha256=9323yfNKXRVJxK6FKltPICtDJ0iQpbBE54kOEHJSsCU,5
+dduk_core-0.0.5.dist-info/RECORD,,
