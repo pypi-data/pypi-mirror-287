@@ -1,0 +1,2 @@
+[console_scripts]
+virtualhome-eval = virtualhome_eval.cli:main
