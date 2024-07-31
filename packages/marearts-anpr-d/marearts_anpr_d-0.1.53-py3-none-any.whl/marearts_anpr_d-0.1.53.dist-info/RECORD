@@ -1,0 +1,13 @@
+marearts_anpr/__init__.py,sha256=Cicvl1EM24q-FK3b9hIVyvi5ULwI-q2qTqbPikYp-8E,266
+marearts_anpr/_version.py,sha256=bPb2Oc5wemZHZQ36bFj8MSRaDTXfjYMCh-GfQfIz_eE,413
+marearts_anpr/anpr_d.py,sha256=OzP4QYm5VfGIPFEVBBt4GAOCBIZfS3I_1xdTR36PGgg,5139
+marearts_anpr/crypto_mng.cpython-311-aarch64-linux-gnu.so,sha256=tuL9euOf_99GW4zBhsvLPbPsDoH1Be5kVOdjqsR6wos,578176
+marearts_anpr/crypto_mng.cpython-311-darwin.so,sha256=uO6Mzq9_i7b1TgINDHKs5ss3-Ifu2nX_dCVr2v1tLZs,103040
+marearts_anpr/main.py,sha256=_i7kGOOdAiAvnBeVwsLJIgFpVNPETdGN42JN8j_bIxg,212
+marearts_anpr/utils.py,sha256=bIIwcA3O4pE0LOGeXBAT-3rpjld7ufrWTmBtGMUxsmI,4745
+marearts_anpr_d-0.1.53.dist-info/LICENSE,sha256=4OwAmIVSmLAHpO07MJm46w8FYLJLaLWWMBLOoflOauY,106
+marearts_anpr_d-0.1.53.dist-info/METADATA,sha256=iAMqqu2kV_V-02CxTRUVAPqfWLeGCixxHJCIlgyBthc,1217
+marearts_anpr_d-0.1.53.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+marearts_anpr_d-0.1.53.dist-info/entry_points.txt,sha256=_MmTxNC1jZDhzKN8CNZLWKKzzOCM1WXZJESLdUsG1nw,55
+marearts_anpr_d-0.1.53.dist-info/top_level.txt,sha256=DX3y7nst7V7YBYS7dHQIIZxROhrheWGRsl2aCOLErEA,14
+marearts_anpr_d-0.1.53.dist-info/RECORD,,
