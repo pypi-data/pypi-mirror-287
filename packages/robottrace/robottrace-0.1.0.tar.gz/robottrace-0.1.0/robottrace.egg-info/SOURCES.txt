@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+robottrace.egg-info/PKG-INFO
+robottrace.egg-info/SOURCES.txt
+robottrace.egg-info/dependency_links.txt
+robottrace.egg-info/entry_points.txt
+robottrace.egg-info/requires.txt
+robottrace.egg-info/top_level.txt
