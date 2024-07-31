@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/OneArgo.py
+src/OneArgoSettings.py
+src/__init__.py
+src/oneargopy.egg-info/PKG-INFO
+src/oneargopy.egg-info/SOURCES.txt
+src/oneargopy.egg-info/dependency_links.txt
+src/oneargopy.egg-info/top_level.txt
+tests/test_oneargopy.py
