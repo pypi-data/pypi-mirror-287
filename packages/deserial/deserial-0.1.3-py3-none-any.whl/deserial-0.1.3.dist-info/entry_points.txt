@@ -1,0 +1,3 @@
+[console_scripts]
+deserial=deserial.__main__:main
+
