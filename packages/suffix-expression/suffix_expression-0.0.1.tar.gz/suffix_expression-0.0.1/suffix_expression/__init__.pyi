@@ -1,0 +1,9 @@
+class Expression(object):
+    def __init__(self,expression:str)->None:
+        self.expression = expression
+    def __str__(self)->str:...
+class Suffix_expression(object):
+    @staticmethod
+    def generate_postfix(affix_expression:str|bytes|Expression)->Expression:...
+    @staticmethod
+    def calculate_postfix(postfix:str|bytes|Expression)->int:...
