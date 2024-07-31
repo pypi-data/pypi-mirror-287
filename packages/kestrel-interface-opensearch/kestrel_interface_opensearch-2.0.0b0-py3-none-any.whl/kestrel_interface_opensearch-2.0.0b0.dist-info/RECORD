@@ -1,0 +1,8 @@
+kestrel_interface_opensearch/__init__.py,sha256=tAaAaxGXK79xI8a07V7BtxOTj-Vc4nPAxBDKfn6engw,71
+kestrel_interface_opensearch/config.py,sha256=Wc1ygwlwb8w0s7GsCUhC0-A8dVqjvtdDIbi8eqCMs1k,2011
+kestrel_interface_opensearch/interface.py,sha256=13I-KlI_mmRWhC7bUy_gpF94OtWekUvC4oBEkQ4rJAA,8585
+kestrel_interface_opensearch/ossql.py,sha256=Td5uE95ceh_bXkpJqgG7BMN1cy-RkjTuSbWV8wj7Yc8,7768
+kestrel_interface_opensearch-2.0.0b0.dist-info/METADATA,sha256=LZzihBrTPYRdX1mCpQg9A2UhkFMJUGXp9JqIdA2NJd4,12665
+kestrel_interface_opensearch-2.0.0b0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+kestrel_interface_opensearch-2.0.0b0.dist-info/top_level.txt,sha256=uwyZsOO_lB_i0lSAxJ0UcwJUcAxgHcoCjLYXMMQQu48,29
+kestrel_interface_opensearch-2.0.0b0.dist-info/RECORD,,
