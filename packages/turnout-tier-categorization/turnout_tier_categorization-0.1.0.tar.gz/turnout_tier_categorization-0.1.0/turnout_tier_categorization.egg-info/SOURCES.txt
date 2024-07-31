@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+my_python_package_dcjw/__init__.py
+my_python_package_dcjw/analytics.py
+tests/__init__.py
+tests/test_analytics.py
+turnout_tier_categorization.egg-info/PKG-INFO
+turnout_tier_categorization.egg-info/SOURCES.txt
+turnout_tier_categorization.egg-info/dependency_links.txt
+turnout_tier_categorization.egg-info/requires.txt
+turnout_tier_categorization.egg-info/top_level.txt
