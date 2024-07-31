@@ -1,0 +1,6 @@
+/ResearchTools.egg-info/*
+*.pyc
+*.nbc
+*.nbi
+/build/*
+/dist/*
