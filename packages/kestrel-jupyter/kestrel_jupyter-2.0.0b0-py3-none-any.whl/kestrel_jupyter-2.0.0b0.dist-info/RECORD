@@ -1,0 +1,16 @@
+kestrel_ipython/__init__.py,sha256=h2DgxPoZsWKCxMU_iNtHHwQzXQJ3sF89tn_XuWfYtzo,29
+kestrel_ipython/magic.py,sha256=hZfA-4CeKarjhknny1mS1Qk3moI3DYpQXm886WXAEso,1959
+kestrel_jupyter_kernel/__init__.py,sha256=tH195XWS_7t1-eG5nwq_yF5e4uOrBJdrp34MAflkg5Y,56
+kestrel_jupyter_kernel/__main__.py,sha256=Q1uGzvbhFUxdML0idl1R5YFJQyy_xKRD7npt8NW_CvA,181
+kestrel_jupyter_kernel/config.py,sha256=5W8ClPs7CKsrK0T8XL_01HHv61zcz_cWqywSuTzpm78,30
+kestrel_jupyter_kernel/display.py,sha256=CxRrjvDdubOHfqD1QtidW-BEMLaOx-Cnx0AFzTxHJ5M,3248
+kestrel_jupyter_kernel/kernel.py,sha256=DFqxMtEw5KNKSbLQ63VGZs8MVjuecjC5bMliOoHxjPM,2048
+kestrel_jupyter_kernel/setup.py,sha256=3XYM3JK4t89pnf6DdC_bsEDzYU921ckor5cZXlm4sLU,1660
+kestrel_jupyter_kernel/codemirror/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+kestrel_jupyter_kernel/codemirror/kestrel_template.js,sha256=tgwrp-NNdpUY3CtZ60VQWy9MJMUFceyTwC0KMF8PjuQ,3996
+kestrel_jupyter_kernel/codemirror/setup.py,sha256=YjyH6cCOuw0hiYa_uvidp23EqHtn7MJAtkMf1Mu16dc,1734
+kestrel_jupyter-2.0.0b0.dist-info/METADATA,sha256=7vCKfQZomwjR_9ddGGaM4z3WVthsUNqsoKziXA1PcEM,12858
+kestrel_jupyter-2.0.0b0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+kestrel_jupyter-2.0.0b0.dist-info/entry_points.txt,sha256=4oQwzxgL1vFoWK3Y2DbRWaiRMQQBYsLW2sMCdHBH8VQ,75
+kestrel_jupyter-2.0.0b0.dist-info/top_level.txt,sha256=N4iijX2Pmfs3w_i0vHTBSgsoaVGwj4YhUZemuma40n0,39
+kestrel_jupyter-2.0.0b0.dist-info/RECORD,,
