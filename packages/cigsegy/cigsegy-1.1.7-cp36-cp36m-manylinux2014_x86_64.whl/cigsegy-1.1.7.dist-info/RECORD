@@ -1,0 +1,15 @@
+cigsegy-1.1.7.data/purelib/cigsegy/__init__.py,sha256=iFuQyJOnZhvlsYYyo6-01KyzOS14905PO4sNh2kyzyU,1722
+cigsegy-1.1.7.data/purelib/cigsegy/cigsegy.cpython-36m-x86_64-linux-gnu.so,sha256=4OfjFFAk2-kxk6jSWvotwzwHfAQoxkJyhQ-ugbEQel0,646424
+cigsegy-1.1.7.data/purelib/cigsegy/cigsegy.pyi,sha256=Ej5j7GjhAxeE97_tZmeUCSuersEYnD9qK67zvH1AQ74,22434
+cigsegy-1.1.7.data/purelib/cigsegy/deprecated.py,sha256=Nge6LB_BH5y-4IbLPLBsk-B8RVyhQcJ7WUIzvjlE2Lk,1228
+cigsegy-1.1.7.data/purelib/cigsegy/plot.py,sha256=Pw7gw8fh2Wi3BZM3Bc10FpPw34hL9VMdCmCH0it1UNI,6087
+cigsegy-1.1.7.data/purelib/cigsegy/segynp.py,sha256=vEEtujz_fQH1joN2gheuvkjOO_ZXChhiFBcx9jcwoGY,6272
+cigsegy-1.1.7.data/purelib/cigsegy/setup.py,sha256=yMaUXqa_lveiaH5K-w7LpvMeXB3hqbjOPLXM4QkEfdg,801
+cigsegy-1.1.7.data/purelib/cigsegy/tools.py,sha256=sGAnp0jqICatE8kPdWnaMpFj4_tkQgoozaWpqtc_NjY,22158
+cigsegy-1.1.7.data/purelib/cigsegy/utils.py,sha256=EjTn71XNcjwhM1i-ZOfKFg73hhoMwfkyrbnr2_trDaM,16394
+cigsegy-1.1.7.data/purelib/cigsegy/version.py,sha256=mEVy_5c0w4oD2t-b3-8Kvbn7X91s8TR4A8eB5WB3RVM,79
+cigsegy-1.1.7.dist-info/LICENSE,sha256=5gtn8QyVakXKPqLLq0CbwclPQEfny2J1AHtj0C2kOQM,1089
+cigsegy-1.1.7.dist-info/METADATA,sha256=Q41BbYU025a7eu4L-YxG3iGYp5vFuocwr0x5G3nzSUk,7103
+cigsegy-1.1.7.dist-info/WHEEL,sha256=KDdWf3ZhYQfpUsmL4e8Y1MYFgvqyIyp2j7DqDOHxoMM,104
+cigsegy-1.1.7.dist-info/top_level.txt,sha256=2khDol8GSbIWElmNPHeWd9HqtIwaAcQj_MBb-IgLTmI,8
+cigsegy-1.1.7.dist-info/RECORD,,
