@@ -1,0 +1,6 @@
+README.md
+setup.py
+youngzug_shared.egg-info/PKG-INFO
+youngzug_shared.egg-info/SOURCES.txt
+youngzug_shared.egg-info/dependency_links.txt
+youngzug_shared.egg-info/top_level.txt
