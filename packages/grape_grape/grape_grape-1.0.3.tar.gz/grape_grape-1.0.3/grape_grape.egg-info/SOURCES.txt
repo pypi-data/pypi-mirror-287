@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+grape_grape/__init__.py
+grape_grape/grape.py
+grape_grape.egg-info/PKG-INFO
+grape_grape.egg-info/SOURCES.txt
+grape_grape.egg-info/dependency_links.txt
+grape_grape.egg-info/requires.txt
+grape_grape.egg-info/top_level.txt
