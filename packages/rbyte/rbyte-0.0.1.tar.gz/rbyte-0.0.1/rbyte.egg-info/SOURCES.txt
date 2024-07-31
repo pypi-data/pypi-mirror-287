@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+rbyte/__init__.py
+rbyte.egg-info/PKG-INFO
+rbyte.egg-info/SOURCES.txt
+rbyte.egg-info/dependency_links.txt
+rbyte.egg-info/top_level.txt
