@@ -1,0 +1,4 @@
+2023-12-22 14-44-45 - INFO - Coverage.<module>: logger created
+2023-12-22 14-44-45 - INFO - Coverage.CoverageHandler.__init__: created handler logger
+2023-12-22 14-44-46 - DEBUG - Coverage.CoverageHandler.source_read: new sourcefile docGeneration
+2023-12-22 14-44-46 - DEBUG - Coverage.CoverageHandler.source_read: new sourcefile index
