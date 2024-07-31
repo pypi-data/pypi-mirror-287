@@ -1,0 +1,9 @@
+README.md
+setup.py
+NWS/NWS.py
+NWS/__init__.py
+NWS.egg-info/PKG-INFO
+NWS.egg-info/SOURCES.txt
+NWS.egg-info/dependency_links.txt
+NWS.egg-info/requires.txt
+NWS.egg-info/top_level.txt
