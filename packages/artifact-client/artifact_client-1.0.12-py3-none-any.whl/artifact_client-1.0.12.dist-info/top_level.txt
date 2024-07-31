@@ -1,0 +1,5 @@
+artifact_client
+artifact_client,packageVersion=1
+models
+openapi_client
+tests
