@@ -1,0 +1,7 @@
+README.md
+setup.py
+sri_package.egg-info/PKG-INFO
+sri_package.egg-info/SOURCES.txt
+sri_package.egg-info/dependency_links.txt
+sri_package.egg-info/entry_points.txt
+sri_package.egg-info/top_level.txt
