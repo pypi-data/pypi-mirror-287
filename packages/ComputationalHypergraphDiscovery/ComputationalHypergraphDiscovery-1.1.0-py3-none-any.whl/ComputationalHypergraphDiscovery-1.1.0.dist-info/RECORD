@@ -1,0 +1,12 @@
+ComputationalHypergraphDiscovery/_GraphDiscoveryMain.py,sha256=66Q8lpqE8_syxGsl5wMMuEt8A-uO6WSWLu2KEXkcMwE,32973
+ComputationalHypergraphDiscovery/__init__.py,sha256=JJzOAbo42tfzsNZg9d1-vkDZV5ueA4FHC0UWX8lRBIA,681
+ComputationalHypergraphDiscovery/decision.py,sha256=3eLQMU4mLm99kHXkioSKAWaqIf7829dYQbAXGmsfqFI,13174
+ComputationalHypergraphDiscovery/util.py,sha256=O9-FN3hSTzI7PiLWIxPyrh0_jlF-CxMfY4ZU3erevJM,7402
+ComputationalHypergraphDiscovery/Modes/__init__.py,sha256=WS2Eu9uPiwsnKdwq2QJHS5pyo98TI3EwNHiA-vW0pko,661
+ComputationalHypergraphDiscovery/Modes/container.py,sha256=mrY0wTNHUv2cwRtGFfkUwBampJvS22I9IXdrBUF0sOw,22098
+ComputationalHypergraphDiscovery/Modes/kernels.py,sha256=3ezEW4ce4jWyYXtjom0-JKSIv6zE7pSAhaPmnDz7h1U,13481
+ComputationalHypergraphDiscovery-1.1.0.dist-info/LICENSE,sha256=Aalvzq6Gb6YszBXEqqCqaFn9Sbp5J7DSNa8Pwnp67AA,11368
+ComputationalHypergraphDiscovery-1.1.0.dist-info/METADATA,sha256=5pPk9y-LGTRtbnnaS-EfzexRGvtspVo3rWeDhNB1WjI,17676
+ComputationalHypergraphDiscovery-1.1.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+ComputationalHypergraphDiscovery-1.1.0.dist-info/top_level.txt,sha256=5SdCL0A5ky2La_84bpuLBpqFh-j0gyCExZ-XClv7yqw,33
+ComputationalHypergraphDiscovery-1.1.0.dist-info/RECORD,,
