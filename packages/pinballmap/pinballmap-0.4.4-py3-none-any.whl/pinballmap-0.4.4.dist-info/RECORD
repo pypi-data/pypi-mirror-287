@@ -1,0 +1,14 @@
+pinballmap/__init__.py,sha256=IKEqk3qThhCO-yJhK1SD9qQrfgdAewdnZ_XqmskHUeY,79
+pinballmap/__main__.py,sha256=SxYY7Y8pBP9AW5P_G2AJBGoqZgaoj1dD7z4jLpoA-vU,43
+pinballmap/auth.py,sha256=KVN9e98z_AWyvf5nR8mgaHLpTXLI-_tH3llf1Db8Eb0,916
+pinballmap/cli.py,sha256=ouiqbZX8944xq78bTaq81nCGl2g8VTbT1UMjPmW0SsM,4351
+pinballmap/client.py,sha256=hxu9R5AHGCP-FDwQprymRYNsQbGtSPZAx4BR2kr8IoU,21078
+pinballmap/constants.py,sha256=en1LChcSoWzTkYnszD6f1dqCFTKTVIKM8RTpCi7-6p0,136
+pinballmap/exceptions.py,sha256=GZApxGaYabEUJxprPx928zqQLnhVys70_XEHZpfQ4SQ,111
+pinballmap/name_matching.py,sha256=4ohWcNO0ilqZ8GBsNSOKJRuXsz8IFI7lYbtE6IuQ_Ww,1183
+pinballmap/utilities.py,sha256=TLuBCBiAP9R5o38nZK0j-VTphUSLRTOthT4EBxUNMQ8,940
+pinballmap-0.4.4.dist-info/LICENSE.txt,sha256=0beFsgJzcIsWxbZuiRaxUZm56DRWx6e9MWBbt4v_RMo,1056
+pinballmap-0.4.4.dist-info/METADATA,sha256=mhHJSLuvoh1xeDLfy5z77FlxAAsZum8gc-CGN-f9YBw,10597
+pinballmap-0.4.4.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+pinballmap-0.4.4.dist-info/entry_points.txt,sha256=xmMm3miL0pMhoQ3kl9pCEe55GWA1glqrXOlqVrUQ8jk,49
+pinballmap-0.4.4.dist-info/RECORD,,
