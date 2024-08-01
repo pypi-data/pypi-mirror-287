@@ -1,0 +1,9 @@
+crosstab/__init__.py,sha256=heYNaPjW_JdKUm8egS3qNDKZtl3QRpnuVhcomYOqyPQ,225
+crosstab/_version.py,sha256=sd1n-4DqfXKk0IBuy8VmlVd4OTVnWtUk8FB5aefdrmo,319
+crosstab/crosstab.py,sha256=Eu3QThu6djonJPcxGllNJM5A0ZguJGPy2NQj0_NbR-Q,23750
+crosstab-0.0.2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+crosstab-0.0.2.dist-info/METADATA,sha256=ysTXtA5FElt_eYqnAdQ2rejlyA0Spn5suuq7PuHlGCs,42582
+crosstab-0.0.2.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+crosstab-0.0.2.dist-info/entry_points.txt,sha256=y43YssNozar5bvpM9hq2-WsEuMsCeK_Wq68Y8ywI-tI,51
+crosstab-0.0.2.dist-info/top_level.txt,sha256=mdIpKbZOSEvrBnxRG3odJZZaGf-CBam63pe6cOTbNew,9
+crosstab-0.0.2.dist-info/RECORD,,
