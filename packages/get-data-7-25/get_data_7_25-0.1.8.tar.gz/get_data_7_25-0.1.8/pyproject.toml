@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "get_data_7_25"
+version = "0.1.8"
+description = "A project to gather and process book data from various sources"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+dependencies = [
+    "aiohttp==3.9.5",
+    "beautifulsoup4==4.12.3",
+    "requests==2.32.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "twine",
+]
+
+[project.scripts]
+get_data_7_25 = "get_data_7_25.main:main_get"
+
+[project.urls]
+Homepage = "https://yourproject.com"
+Repository = "https://github.com/yourusername/get_data_7_25"

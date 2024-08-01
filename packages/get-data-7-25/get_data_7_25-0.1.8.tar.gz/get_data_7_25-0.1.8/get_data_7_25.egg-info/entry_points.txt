@@ -1,0 +1,2 @@
+[console_scripts]
+get_data_7_25 = get_data_7_25.main:main_get

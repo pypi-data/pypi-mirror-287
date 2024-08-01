@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+get_data_7_25/main.py
+get_data_7_25.egg-info/PKG-INFO
+get_data_7_25.egg-info/SOURCES.txt
+get_data_7_25.egg-info/dependency_links.txt
+get_data_7_25.egg-info/entry_points.txt
+get_data_7_25.egg-info/requires.txt
+get_data_7_25.egg-info/top_level.txt
+get_data_7_25/api/__init__.py
+get_data_7_25/api/get_api.py
+get_data_7_25/book/get_book.py
+get_data_7_25/book/bunko/get_bunko.py
+get_data_7_25/book/tankoubon/get_tankoubon.py
