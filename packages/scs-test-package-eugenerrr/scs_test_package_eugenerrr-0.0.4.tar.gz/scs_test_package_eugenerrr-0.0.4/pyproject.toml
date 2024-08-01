@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scs_test_package_eugenerrr"
+version = "0.0.4"
+description = "The Pattern Matching for Python you always dreamed of"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+[project.urls]
+Repository="https://github.com/DiceDB/dice.git"
