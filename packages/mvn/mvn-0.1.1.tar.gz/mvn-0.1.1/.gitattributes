@@ -1,0 +1,1 @@
+mvn/_version.py export-subst
