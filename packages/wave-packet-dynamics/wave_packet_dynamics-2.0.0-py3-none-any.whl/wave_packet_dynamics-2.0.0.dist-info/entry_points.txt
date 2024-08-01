@@ -1,0 +1,3 @@
+[console_scripts]
+wpd = wave_packet_dynamics.cli:cli
+

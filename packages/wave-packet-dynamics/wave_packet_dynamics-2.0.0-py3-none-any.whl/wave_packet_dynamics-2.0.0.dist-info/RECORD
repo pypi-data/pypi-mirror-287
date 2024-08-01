@@ -1,0 +1,15 @@
+wave_packet_dynamics-2.0.0.dist-info/METADATA,sha256=hjJ_rarNSZNUcS-yGhcZNH19o-IBVCyISQVrbeRe6N0,2570
+wave_packet_dynamics-2.0.0.dist-info/WHEEL,sha256=rSwsxJWe3vzyR5HCwjWXQruDgschpei4h_giTm0dJVE,90
+wave_packet_dynamics-2.0.0.dist-info/entry_points.txt,sha256=n8f2VgqVg0NkkqejfzGt1kUhPz8tTf2ytL-Ksr1ZJVA,54
+wave_packet_dynamics/__init__.py,sha256=Jo_iKm_Zq8mNT_aSPTu934Xxch9RiTpPJD_p9ZCV0nE,786
+wave_packet_dynamics/__main__.py,sha256=CJbEuo8x4LEDEWH2FDsg-cA2HLs12XqvqGtfeG8kh-w,107
+wave_packet_dynamics/cli.py,sha256=Xo971ZweJz4KkPfV33ZSNW_yoER9BSGbdi7n0rl_YUc,3117
+wave_packet_dynamics/grid.py,sha256=9HIEiHuIMAgfq86rR5GPsifN_9MfVNzR39He3o5T26c,1205
+wave_packet_dynamics/operators.py,sha256=xO1-WGsyHC80nVbYt7xjPVo2oaTO5Vol3_7315STXss,4776
+wave_packet_dynamics/particles.py,sha256=N2IBl9-bEpB_HE0jZVBMHzLWm9arN4sfW4SI2MnFLA0,719
+wave_packet_dynamics/potential.py,sha256=nnAfaUg4vrECHo5AogSazO63YboAo_ZrIr_1Io-RFNM,3164
+wave_packet_dynamics/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wave_packet_dynamics/simulation.py,sha256=t4luvWzeZiZzpOWVfF1T_vr-YCSJe-0mvwUixUEURgE,7449
+wave_packet_dynamics/visualization.py,sha256=xkL7DkkUNapIq_G52pCNmHfhYba5974tydDUFG2SvPI,8188
+wave_packet_dynamics/wave_function.py,sha256=QdPjZzwnMLfPEF6vgV7Sn3URzlvuXjuKz5-TtlGxWkA,1778
+wave_packet_dynamics-2.0.0.dist-info/RECORD,,
