@@ -1,0 +1,3 @@
+[nornir.plugins.runners]
+cachedThreaded=nornir_nuts.runners:CachedThreadedRunner
+
