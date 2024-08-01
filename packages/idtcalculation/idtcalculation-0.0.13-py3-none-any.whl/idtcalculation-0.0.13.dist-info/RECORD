@@ -1,0 +1,10 @@
+IDT_lib/IDT_calculation.py,sha256=Sp85jzkBlz-ddrWf1s4m1CP8DoEehx5hT_ENTWCOl4o,12665
+IDT_lib/__init__.py,sha256=svPnM9bK7ntoIItm2ybEpR5_wjc4FhFPHR6JcGe5VA0,22
+IDT_lib/species.py,sha256=1i3VJa6SRuwAp3CtlHXUmP7oGTd86QcVEFZD_fFReZA,5268
+IDT_lib/thermo_real.py,sha256=vYFxSmdY5yGN6R_W9KHwWCEvXFJOw1RTg-cbJpQe-fo,3300
+IDT_lib/thermo_structure.py,sha256=Hnqs2jt8QiitfPvOXvtFrBjiPp47rvlMdg1bU5dwHGg,2659
+IDT_lib/virial_structure.py,sha256=3BZFXG25nKS5ZXYxE0e2AVpFlWVsTD93LK65JaBqHGc,6021
+idtcalculation-0.0.13.dist-info/METADATA,sha256=zpzxZ6ULEQNJ4N6FAE1SbP3BstX3H1CqiiGCHcHwFxI,623
+idtcalculation-0.0.13.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+idtcalculation-0.0.13.dist-info/top_level.txt,sha256=4sti7bRBGod8VqRQlZMdSvw63lBVjH-kyqAHH2ZKVIY,8
+idtcalculation-0.0.13.dist-info/RECORD,,
