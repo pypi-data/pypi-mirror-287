@@ -1,0 +1,13 @@
+ezoff/__init__.py,sha256=xXVXijf8qh5i-ZUIBTcGcdJ6aoij9L-3J6gYLX4WgtY,22
+ezoff/assets.py,sha256=hYT5GbMvyYiczeTEsupwq3VJduM_DWuDKBro_izB1K0,16312
+ezoff/auth.py,sha256=W4X234ek-C_CJnn8UUc2WGVIWpF5mPwjrZUr8430pd8,813
+ezoff/ezoff.py,sha256=XSsUtK2meXhxiRdNt2-Q2UMltCMvBbIc9So8RPgjj1M,191
+ezoff/groups.py,sha256=kFDRKNtKYv7FJKimFDgnzNNdqqyewOoT50rt9NjrGmw,1898
+ezoff/locations.py,sha256=RmJDdpTDIF2UinGpSgiahCQ_7R3gkjkMo1c8MjWSY3w,10565
+ezoff/members.py,sha256=R2Vd43rKL__vjRHufJSkeOMGlXCRDW2O21QeZ7SnQ-A,11872
+ezoff/workorders.py,sha256=pEpVy8fxoKLpFw7RFfloF9iZ8HEdLj5IdNWEP78hWUA,13814
+ezoff-0.1.0.dist-info/LICENSE,sha256=KrPIO2Ij3T_47dfpfngKzpC4EXohIZMsHauG0R4M-kM,1234
+ezoff-0.1.0.dist-info/METADATA,sha256=On0_SOnPazM4Gb8VcAK7EzpwPHz8Le7ExidARCk8h3A,2018
+ezoff-0.1.0.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+ezoff-0.1.0.dist-info/top_level.txt,sha256=oQr6xAOnDtgVP7u7k1GY6y0yZDGHshU97RG20r_1TD4,6
+ezoff-0.1.0.dist-info/RECORD,,
