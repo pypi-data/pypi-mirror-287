@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: harbinger
+Version: 0.1.1
+Summary: The Decepticon ship that carries weapons of mass destruction.
+Author: Ravencentric
+Author-email: me@ravencentric.cc
+Requires-Python: >=3.10
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: cyclopts (>=2.9.4,<3.0.0)
+Requires-Dist: loguru (>=0.7.2,<0.8.0)
+Requires-Dist: typing-extensions (>=4.12.2,<5.0.0)
+Description-Content-Type: text/markdown
+
+# Harbinger
+The Decepticon ship that carries weapons of mass destruction.
+
+![](https://tfwiki.net/mediawiki/images2/0/0a/Harbingerschematics.jpg)
+
+# Available Weapons
+- `flac` - Reference FLAC wrapper with concurrent encoding and support for more codecs via FFmpeg.
+- `opus` - Opusenc wrapper with concurrent encoding, automatic bitrate selection, and support for more codecs via FFmpeg.
+
+# Installation
+
+You can use either `pipx` (recommended) or `pip` to install it.
+
+```shell
+pip install harbinger
+```
+
+# Docs
+Simply run `harbinger <tool> --help` to get the tool specific documentation.
