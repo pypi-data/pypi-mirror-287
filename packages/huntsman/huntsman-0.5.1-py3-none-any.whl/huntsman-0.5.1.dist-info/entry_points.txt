@@ -1,0 +1,2 @@
+[console_scripts]
+huntsman = huntsman.__main__:main
