@@ -1,0 +1,5 @@
+llmgen/__init__.py,sha256=gi9CvojbrnVR9pbiMBZML2n80Gn4ehHOQJmgfaZP-g0,203
+llmgen/_openai.py,sha256=Qs9JqE5bYtixtKDOprtU4SMGZdrgCdEwvb0i1cREDiQ,7316
+llmgen-0.1.1.dist-info/METADATA,sha256=ws268KBDMKo1oaBg27ReUVe6HJlwsevMw9PWUVvxZWQ,2082
+llmgen-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+llmgen-0.1.1.dist-info/RECORD,,
