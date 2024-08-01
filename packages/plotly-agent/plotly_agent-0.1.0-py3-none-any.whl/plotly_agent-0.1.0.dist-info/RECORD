@@ -1,0 +1,10 @@
+plotly_agent/__init__.py,sha256=7v-7UQXI4a1yCglhiiOI_v9jxSqB7ud6li0AN5nglAU,140
+plotly_agent/agent.py,sha256=LQNTOfiAuABee6MwsBceWAiBAZj_Shmam-x5qVpidQc,593
+plotly_agent/evaluate/__init__.py,sha256=b0CkQJg21lYvcf0-tQlEKV2Iml-txDq-BQ2cAK7sD2M,52
+plotly_agent/evaluate/judge_text.py,sha256=IfmKWJ4A-I9zM-MPMZ5VP7A1at6zE7s8se-bIPR-U08,869
+plotly_agent/extract.py,sha256=-ySYmrvgkiJ19tXLB9sxiHnMxOaEA4UObRjEY5PGSWM,180
+plotly_agent/toolkit.py,sha256=jjlYIT3dKdHj0-uLm5GS-aCcnWIHYYkevCtgiYmevZg,4854
+plotly_agent-0.1.0.dist-info/LICENSE,sha256=xhqszzStDDvUGeK9zikAz9wmvThS_sHGJWpY_LBdET4,1095
+plotly_agent-0.1.0.dist-info/METADATA,sha256=mZYNpIY1EkNrPvPSX_4Y8juHWgexK4lNmbnO8gJdmH0,1819
+plotly_agent-0.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+plotly_agent-0.1.0.dist-info/RECORD,,
