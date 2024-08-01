@@ -1,0 +1,10 @@
+chatinterface/__init__.py,sha256=vHsg3lqnLiXS6uAVttsKZt2sjiKpo_RViFY_lLiZb0Y,388
+chatinterface/api.py,sha256=7L-7MLedeuIoocgr4CRHZxa7xVQoZz9hYtIQoQvEuIA,1840
+chatinterface/commands.py,sha256=9LvBwrYbNLJIV2EC2WPv2tL1lpeSoDYDWjzMWRYNKyw,4720
+chatinterface/helpers.py,sha256=rHsiU6EM2AUd2B3V9fpQgG_kvadtFheJbU0e-yc4hSs,3450
+chatinterface/interface.py,sha256=c6XMkUHlfl2zf055YB5kjcqOgpSAlEfbvHdrqVZXTjs,6527
+chatinterface-0.0.7.dist-info/LICENSE,sha256=qiBHloe60qhHSeDXb_HX3_6DSZofXoREAqRReGj_Vtk,1062
+chatinterface-0.0.7.dist-info/METADATA,sha256=oJQ7cSd6KYp4KJ2r28HVafIL20KHw7v_-XEe0CTfQAU,376
+chatinterface-0.0.7.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+chatinterface-0.0.7.dist-info/top_level.txt,sha256=mQlpqSliATxRSMDoLCivvCkblv_nHhcQIngtfPJD63M,14
+chatinterface-0.0.7.dist-info/RECORD,,
