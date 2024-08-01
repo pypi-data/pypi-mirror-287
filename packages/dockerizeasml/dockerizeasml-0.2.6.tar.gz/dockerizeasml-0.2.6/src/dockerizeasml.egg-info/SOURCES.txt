@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+src/dockerizeasml/__init__.py
+src/dockerizeasml/dockerizer.py
+src/dockerizeasml.egg-info/PKG-INFO
+src/dockerizeasml.egg-info/SOURCES.txt
+src/dockerizeasml.egg-info/dependency_links.txt
+src/dockerizeasml.egg-info/entry_points.txt
+src/dockerizeasml.egg-info/top_level.txt
+tests/test_dockerizer.py
