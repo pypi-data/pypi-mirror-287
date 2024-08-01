@@ -1,0 +1,8 @@
+mkdocs_plugins/__init__.py,sha256=cmyljXSYJc2apAf9ZfXlT_JIivMfgXZphs8u5Jc-Fa4,49
+mkdocs_plugins/task_collector.py,sha256=AJx1YHAFo33FAG59oscHUjAgHiF1CRyuW5vvKjnr7bU,2596
+mkdocs_task_collector-0.1.13.dist-info/LICENSE,sha256=ZLZ35snWod65oU5-1PT20Q6cXNaSAOVr1mIo35q9z54,1069
+mkdocs_task_collector-0.1.13.dist-info/METADATA,sha256=hmCmIRB-j6q9QHcguPi-5U4aaQDXUqYQYM2k4VgJIn8,5300
+mkdocs_task_collector-0.1.13.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+mkdocs_task_collector-0.1.13.dist-info/entry_points.txt,sha256=ksVz_0Q_9jiojv3kjPSVwqFTFupya9TTdyPFh4PCW10,84
+mkdocs_task_collector-0.1.13.dist-info/top_level.txt,sha256=yOUhH745tiUMJlwOftMN6tJksOV01fny-G7-OLxOecg,15
+mkdocs_task_collector-0.1.13.dist-info/RECORD,,
