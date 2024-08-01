@@ -1,0 +1,15 @@
+matplotlib
+numpy
+
+[dev]
+pytest
+
+[full]
+eyck[sam]
+
+[sam]
+pysam
+
+[test]
+pytest
+ruff
