@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "aiostipy"
+version = "0.0.0"
+description = "A python framework build on top of aiohttp with a Nestjs like architecture"
+authors = ["Agustin Arce <agustinarceprincich@gmail.com>"]
+license = "Apache 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "^3.9.5"
+typing-extensions = "^4.12.2"
+pytest-aiohttp = "^1.0.5"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+pytest-sugar = "^1.0.0"
+click = "^8.1.7"
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
