@@ -1,0 +1,15 @@
+numpy==1.26.4
+magicgui
+qtpy
+scikit-image
+torch
+torchvision
+fft-conv-pytorch
+
+[testing]
+tox
+pytest
+pytest-cov
+pytest-qt
+napari
+pyqt5
