@@ -1,0 +1,7 @@
+dev_lxc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dev_lxc/cmd.py,sha256=WYlRjVhHRmLbZ_5t98Y1Hmpx_Y8C1J1LrmSbDEeNhVw,10539
+dev_lxc-0.1.0.dist-info/LICENSE,sha256=tsCkAF-T_BKfuX7OyD9BjgogNTzU1wkD6nuBJxgbkiI,1069
+dev_lxc-0.1.0.dist-info/METADATA,sha256=o5VoZXU6WeMJCF7WkYWyWFkOe5IE3k3r342RqXQIw6g,2673
+dev_lxc-0.1.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+dev_lxc-0.1.0.dist-info/entry_points.txt,sha256=kkGPEP7PNQAXhPyR2_xgJGPRIJHdVpSkBEq1cqCjb9k,44
+dev_lxc-0.1.0.dist-info/RECORD,,
