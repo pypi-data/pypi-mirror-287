@@ -1,0 +1,15 @@
+napari_pymeshlab/__init__.py,sha256=U5nXmwFOXBESIqj2DHn2qoLho8kzxyW3NAJ-zfljjhQ,511
+napari_pymeshlab/_reader.py,sha256=2mz02IsTZxq2glpId922uAnbmhI-LPEhG6CnUqEgc8Q,2156
+napari_pymeshlab/_sample_data.py,sha256=JUkqQ_KYN3CNoTdw_6_hrEiUUC_uRX4lghxrwj-J1oQ,16965
+napari_pymeshlab/_widget.py,sha256=iAeO_0OSXRSnWz8dbMqcOFvdDcy5CWBHci00WVxLc3M,8691
+napari_pymeshlab/_writer.py,sha256=TWZ2cEGxRFqK9xs_rNsua5vcs_K43plorVWsIgUkIsQ,1307
+napari_pymeshlab/napari.yaml,sha256=lVYP_qpTQcneoWoM-fMaHF29-QNkx3L2Wsvh0w6Dnxc,3909
+napari_pymeshlab/_tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+napari_pymeshlab/_tests/test_functions.py,sha256=QukQwUjIvOR5CNLjOHqV5MDFqZuCpPSDCZPnL_qcmfU,1085
+napari_pymeshlab/_tests/test_reader.py,sha256=g7WUBBEFrmX0VHEhTwr1xtONcfdow3mNH543X-Uc80Y,1091
+napari_pymeshlab-0.0.6.dist-info/LICENSE,sha256=ixuiBLtpoK3iv89l7ylKkg9rs2GzF9ukPH7ynZYzK5s,35148
+napari_pymeshlab-0.0.6.dist-info/METADATA,sha256=A8BNa19utZYzq-ZTnR9MZmWjCCGx4TPULaKAK45VHgg,5081
+napari_pymeshlab-0.0.6.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+napari_pymeshlab-0.0.6.dist-info/entry_points.txt,sha256=N0P-8NgVT-JD7SxPwx6zaHkNmILOYhjQKILNKWkEVIE,66
+napari_pymeshlab-0.0.6.dist-info/top_level.txt,sha256=9zMugpxvfouCy1-Uk-LXZYq964vEKoVWw2EAyhKAHWk,17
+napari_pymeshlab-0.0.6.dist-info/RECORD,,
