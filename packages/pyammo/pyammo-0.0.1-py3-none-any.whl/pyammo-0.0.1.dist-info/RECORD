@@ -1,0 +1,13 @@
+pyammo/__init__.py,sha256=9sHRHZhJ0dEonsWszOQUuHzhPLNCAlT5Ow2aIC-tLO8,94
+pyammo/characters/__init__.py,sha256=OC01zRvZZfrzH7DRibkJAOV4EcisakUsP7dsl8gDcUM,66
+pyammo/characters/characters.py,sha256=N9LGiUOcOU5fPIfQ3kCOz7He9IF2g5z5y0IJU_1OReY,4791
+pyammo/characters/elemental_powers.py,sha256=E4G3zdoqPgAj9NMk-nnpoSggHaZ-gh0PwVAaU9M-y_w,207
+pyammo/characters/positions.py,sha256=LAxCOW4swyS52WKg34-a0Jwa3PSIEHMUCn4RaCPfgCw,177
+pyammo/characters/possesions.py,sha256=9gLXeeA3wcgoGP5pxY67qEZxz8orlRdLJPRpdL93ZYI,1871
+pyammo/characters/skills.py,sha256=R91AuCw6p3aALrY89b90Iac0lGt3ul3SfVyXSxoX5mQ,195
+pyammo/characters/skins.py,sha256=SJlEoVTAsFYqTbApbdVdfmJ_qrxgpn0wbZ65awp3zvU,162
+pyammo/client.py,sha256=wH6mKPw6N_qDSoLm3G6ED6TcxJzUf-_DukIvO3yUqWo,2698
+pyammo-0.0.1.dist-info/LICENSE,sha256=Xfy5pAEi8ZPPlL3Hodp0_Ls7_Hax-vQuOviTdJYFbj8,478
+pyammo-0.0.1.dist-info/METADATA,sha256=kITttqltYjwCN9EqLPPGs-sbbn0IiEi9KkZoaJRjAGU,482
+pyammo-0.0.1.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+pyammo-0.0.1.dist-info/RECORD,,
