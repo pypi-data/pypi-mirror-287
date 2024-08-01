@@ -1,0 +1,26 @@
+[project]
+name = "ash-dendro"
+version = "0.0.5"
+authors = [
+  { name="Aemilia Urban", email="urbanovni@natur.cuni.cz" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["feed", "reader", "tutorial"]
+dependencies = [
+    'tomli; python_version < "3.13"',
+]
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
