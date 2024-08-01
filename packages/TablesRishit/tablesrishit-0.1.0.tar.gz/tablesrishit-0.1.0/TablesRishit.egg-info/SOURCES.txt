@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+TablesRishit.egg-info/PKG-INFO
+TablesRishit.egg-info/SOURCES.txt
+TablesRishit.egg-info/dependency_links.txt
+TablesRishit.egg-info/top_level.txt

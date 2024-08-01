@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: TablesRishit
+Version: 0.1.0
+Summary: A module for creating tables.
+Home-page: https://github.com/yourusername/TablesRishit
+Author: Rishit
+Author-email: dhimanrishit215@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# TablesRishit
+
+`TablesRishit` is a Python module for creating and formatting tables with custom padding and alignment.
+
+## Installation
+
+You can install the module using pip:
+
+```bash
+pip install TablesRishit
