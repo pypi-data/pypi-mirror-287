@@ -1,0 +1,3 @@
+[certbot.plugins]
+dns-myracloud=certbot_dns_myracloud.myracloud:Authenticator
+
