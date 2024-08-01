@@ -1,0 +1,285 @@
+groups:
+- neurodata_type_def: Indicator
+  neurodata_type_inc: Device
+  doc: Extends Device to hold metadata on the Indicator.
+  attributes:
+  - name: label
+    dtype: text
+    doc: Indicator standard notation.
+  - name: injection_location
+    dtype: text
+    doc: Injection brain region name.
+    required: false
+  - name: injection_coordinates_in_mm
+    dtype: float
+    shape:
+    - 3
+    doc: Indicator injection location in stereotactic coordinates (AP, ML, DV) mm
+      relative to Bregma.
+    required: false
+- neurodata_type_def: OpticalFiber
+  neurodata_type_inc: Device
+  doc: Extends Device to hold metadata on the Optical Fiber.
+  attributes:
+  - name: model
+    dtype: text
+    doc: Model of optical fiber.
+    required: false
+  - name: numerical_aperture
+    dtype: float
+    doc: Numerical aperture, e.g., 0.39 NA.
+    required: false
+  - name: core_diameter_in_um
+    dtype: float
+    doc: Core diameter in micrometers.
+    required: false
+- neurodata_type_def: ExcitationSource
+  neurodata_type_inc: Device
+  doc: Extends Device to hold metadata on the Excitation Source.
+  attributes:
+  - name: model
+    dtype: text
+    doc: Model of excitation source device.
+    required: false
+  - name: illumination_type
+    dtype: text
+    doc: Illumination type, e.g., laser or LED.
+  - name: excitation_wavelength_in_nm
+    dtype: float
+    doc: Excitation wavelength of the stimulation light (nanometers).
+- neurodata_type_def: Photodetector
+  neurodata_type_inc: Device
+  doc: Extends Device to hold metadata on the Photodetector.
+  attributes:
+  - name: model
+    dtype: text
+    doc: Model of photodetector device.
+    required: false
+  - name: detector_type
+    dtype: text
+    doc: Technology used to detect the light, e.g., PMT or photodiode.
+  - name: detected_wavelength_in_nm
+    dtype: float
+    doc: Wavelength detected by photodetector.
+  - name: gain
+    dtype: float
+    doc: Gain on the photodetector.
+    required: false
+- neurodata_type_def: DichroicMirror
+  neurodata_type_inc: Device
+  doc: Extends Device to hold a Dichroic Mirror.
+  attributes:
+  - name: cut_on_wavelength_in_nm
+    dtype: float
+    doc: Wavelength at which the mirror starts to transmit light more than reflect.
+    required: false
+  - name: cut_off_wavelength_in_nm
+    dtype: float
+    doc: Wavelength at which transmission shifts back to reflection,for mirrors with
+      complex transmission spectra.
+    required: false
+  - name: reflection_band_in_nm
+    dtype: float
+    shape:
+    - 2
+    doc: The range of wavelengths that are primarily reflected.The start and end wavelengths
+      needs to be specified.
+    required: false
+  - name: transmission_band_in_nm
+    dtype: float
+    shape:
+    - 2
+    doc: The range of wavelengths that are primarily transmitted.The start and end
+      wavelengths needs to be specified.
+    required: false
+  - name: angle_of_incidence_in_degrees
+    dtype: float
+    doc: Intended angle at which light strikes the mirror.
+    required: false
+  - name: model
+    dtype: text
+    doc: Model of the dichroic mirror.
+    required: false
+- neurodata_type_def: BandOpticalFilter
+  neurodata_type_inc: Device
+  doc: Extends Device to hold a Band Optical Filter (Bandpass or Bandstop).
+  attributes:
+  - name: center_wavelength_in_nm
+    dtype: float
+    doc: The midpoint of the band of wavelengths that the filter transmits or blocks.
+  - name: bandwidth_in_nm
+    dtype: float
+    doc: The width of the wavelength range that the filter transmits or blocks (full
+      width at half maximum).
+  - name: filter_type
+    dtype: text
+    doc: Type of filter (e.g., 'Bandpass', 'Bandstop').
+  - name: model
+    dtype: text
+    doc: Model of the optical filter.
+    required: false
+- neurodata_type_def: EdgeOpticalFilter
+  neurodata_type_inc: Device
+  doc: Extends Device to hold an Edge Optical Filter (Longpass or Shortpass).
+  attributes:
+  - name: cut_wavelength_in_nm
+    dtype: float
+    doc: The wavelength at which the filter transmits half as much as its peak transmission.
+  - name: filter_type
+    dtype: text
+    doc: Type of filter (e.g., 'Longpass', 'Shortpass').
+  - name: slope_in_percent_cut_wavelength
+    dtype: float
+    doc: The steepness of the transition from high blocking to high transmission (or
+      vice versa). Specified as a percentage of the cut wavelength.
+    required: false
+  - name: slope_starting_transmission_in_percent
+    dtype: float
+    doc: The percent transmission that defines the starting point for the slope (e.g.
+      10%).
+    required: false
+  - name: slope_ending_transmission_in_percent
+    dtype: float
+    doc: The percent transmission that defines the ending point for the slope (e.g.
+      80%).
+    required: false
+  - name: model
+    dtype: text
+    doc: Model of the optical filter.
+    required: false
+- neurodata_type_def: FiberPhotometryTable
+  neurodata_type_inc: DynamicTable
+  doc: Extends DynamicTable to hold metadata on the Fiber Photometry system.
+  datasets:
+  - name: location
+    neurodata_type_inc: VectorData
+    dtype: text
+    shape:
+    - null
+    doc: Location of fiber.
+  - name: coordinates
+    neurodata_type_inc: VectorData
+    dtype: float
+    shape:
+    - null
+    - 3
+    doc: Fiber placement in stereotactic coordinates (AP, ML, DV) mm relative to Bregma.
+    quantity: '?'
+    attributes:
+    - name: unit
+      dtype: text
+      value: millimeters
+      doc: coordinates unit
+  - name: indicator
+    neurodata_type_inc: VectorData
+    dtype:
+      target_type: Device
+      reftype: object
+    shape:
+    - null
+    doc: Link to the indicator object.
+  - name: notes
+    neurodata_type_inc: VectorData
+    dtype: text
+    shape:
+    - null
+    doc: Description of system.
+    quantity: '?'
+  - name: optical_fiber
+    neurodata_type_inc: VectorData
+    dtype:
+      target_type: Device
+      reftype: object
+    shape:
+    - null
+    doc: Link to the optical fiber device.
+  - name: excitation_source
+    neurodata_type_inc: VectorData
+    dtype:
+      target_type: Device
+      reftype: object
+    shape:
+    - null
+    doc: Link to the excitation source device.
+  - name: commanded_voltage_series
+    neurodata_type_inc: VectorData
+    dtype:
+      target_type: TimeSeries
+      reftype: object
+    shape:
+    - null
+    doc: Link to the commanded voltage series.
+    quantity: '?'
+  - name: photodetector
+    neurodata_type_inc: VectorData
+    dtype:
+      target_type: Device
+      reftype: object
+    shape:
+    - null
+    doc: Link to the photodetector device.
+  - name: dichroic_mirror
+    neurodata_type_inc: VectorData
+    dtype:
+      target_type: Device
+      reftype: object
+    shape:
+    - null
+    doc: Link to the dichroic mirror device.
+  - name: emission_filter
+    neurodata_type_inc: VectorData
+    dtype:
+      target_type: Device
+      reftype: object
+    shape:
+    - null
+    doc: Link to the emission filter device.
+    quantity: '?'
+  - name: excitation_filter
+    neurodata_type_inc: VectorData
+    dtype:
+      target_type: Device
+      reftype: object
+    shape:
+    - null
+    doc: Link to the excitation filter device.
+    quantity: '?'
+- neurodata_type_def: FiberPhotometry
+  neurodata_type_inc: LabMetaData
+  doc: Extends LabMetaData to hold all Fiber Photometry metadata.
+  groups:
+  - neurodata_type_inc: FiberPhotometryTable
+    doc: The table containing the metadata on the Fiber Photometry system.
+- neurodata_type_def: FiberPhotometryResponseSeries
+  neurodata_type_inc: TimeSeries
+  doc: Extends TimeSeries to hold Fiber Photometry data.
+  datasets:
+  - name: data
+    shape:
+    - - null
+    - - null
+      - null
+    doc: The data values. May be 1D or 2D. The first dimension must be time.The optional
+      second dimension refers to the fiber that record the series.
+  - name: fiber_photometry_table_region
+    neurodata_type_inc: DynamicTableRegion
+    doc: References row(s) of FiberPhotometryTable.
+    quantity: '?'
+- neurodata_type_def: CommandedVoltageSeries
+  neurodata_type_inc: TimeSeries
+  doc: Extends TimeSeries to hold a Commanded Voltage
+  datasets:
+  - name: data
+    dtype: float
+    shape:
+    - null
+    doc: Voltages (length number timesteps) in unit volts.
+  - name: frequency
+    dtype: float
+    doc: Voltage frequency in unit hertz.
+    quantity: '?'
+    attributes:
+    - name: unit
+      dtype: text
+      value: hertz
+      doc: frequency unit
