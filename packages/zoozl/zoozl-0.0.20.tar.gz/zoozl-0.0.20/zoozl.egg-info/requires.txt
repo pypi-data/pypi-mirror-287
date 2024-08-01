@@ -1,0 +1,3 @@
+rapidfuzz==2.11.1
+membank>=0.4.1
+chatinterface>0.0.1

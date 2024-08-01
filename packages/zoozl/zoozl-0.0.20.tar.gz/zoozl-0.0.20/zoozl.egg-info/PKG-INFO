@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: zoozl
+Version: 0.0.20
+Summary: Zoozl services for chatbots
+Home-page: https://github.com/Kolumbs/zoozl
+Author: Juris Kaminskis
+Author-email: juris@kolumbs.net
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rapidfuzz==2.11.1
+Requires-Dist: membank>=0.4.1
+Requires-Dist: chatinterface>0.0.1
+
+# zoozl
+
+Server for chatbot services over websocket.
+
+## Usage
+
+```bash
+python -m zoozl 1601 --conf chatbot.toml
+```
+where `1601` is the port number and `chatbot.toml` is optional configuration file.
