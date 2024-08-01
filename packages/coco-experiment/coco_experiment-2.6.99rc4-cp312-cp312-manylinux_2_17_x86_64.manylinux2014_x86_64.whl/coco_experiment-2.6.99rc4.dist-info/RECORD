@@ -1,0 +1,16 @@
+coco_experiment-2.6.99rc4.dist-info/RECORD,,
+coco_experiment-2.6.99rc4.dist-info/WHEEL,sha256=3kl6A45eSyE5JSahRrEmKMwp_kGk5NpuqX0WHIJWabQ,151
+coco_experiment-2.6.99rc4.dist-info/LICENSE,sha256=B7GjSqkl86ZPyH4ZLWto2FG-sHX1PjNpj0N0a90iwTs,1599
+coco_experiment-2.6.99rc4.dist-info/top_level.txt,sha256=D8m6jFkhtNlUk1W7DaZEMku_bTzJW7s0Z9WlJ3KZRJ4,7
+coco_experiment-2.6.99rc4.dist-info/METADATA,sha256=RdjBNlijC0OF8_Nw49D1dtGokNNJGDxWngXKZpVmk48,2824
+cocoex/_version.py,sha256=MYAglnx0eabSYeRw3qjX9LvgNLWQ_GtUOTB4vMkj8-g,114
+cocoex/interface.pyx,sha256=WhlOBJaE1RbZzubUvUQrJHTwRYXKsLYRiFnrU9OM6tg,39484
+cocoex/coco.h,sha256=fz3ReMnp9_Vtkz6ZoNWGiEZ6laFllLvfldWieO92aiE,22063
+cocoex/function.pyx,sha256=vFlfbbN9qvL4ZyVQ5MWaHYgg-yWEAu9ZFn2rgHnpxKY,4449
+cocoex/solvers.py,sha256=5Rz8728O556jMs5K918ODXYu13-d9TxFMN8P6oGl-3A,1244
+cocoex/coco.c,sha256=-zUdxNFbsCGV80eDoQXWNFV6ftvhJeM5UKEe650o_sM,1160759
+cocoex/interface.cpython-312-x86_64-linux-gnu.so,sha256=-eaWEbQzFT1BOiT4MoRS3s9vMtheREbryCdQloKAEjg,4784104
+cocoex/utilities.py,sha256=viHAjeFidcgxtDtsIhlRriPTzrbp72VXeJuJ8p4TBEI,41218
+cocoex/function.cpython-312-x86_64-linux-gnu.so,sha256=YrwILsK9VD-ox2IQ8WqE1mXs1EZkAamQ0jbwmh9wXt0,4092016
+cocoex/exceptions.py,sha256=Zo5UxZpk2w_M_2IfjkZiS7zvga1RvLAjepsf2RPM1yw,793
+cocoex/__init__.py,sha256=V4RLMViOmBIuUGLDOmg93FuAdwmxhuvwiG6R3-JwwLo,22584
