@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+recursive-include visionlit *
+recursive-include tests *
+recursive-include examples *
+exclude visionlit/utils/utils.py
+exclude visionlit/main.py
+prune __pycache__
