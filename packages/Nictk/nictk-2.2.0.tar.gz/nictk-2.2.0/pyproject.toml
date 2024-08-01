@@ -1,0 +1,25 @@
+[project]
+name = "Nictk"
+version = "2.2.0"
+authors = [
+  { name="Nicola Cassetta", email="ncassetta@tiscali.it" }
+]
+description = "An easy to use GUI for Python"
+keywords = ["GUI", "tkinter", "graphic :: interface"]
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ncassetta/Nictk"
+"Documentation" = "https://ncassetta.github.io/Nictk/docs/html/"
+
+[build-system]
+requires = [
+    "setuptools>=61.0"
+]
+build-backend = "setuptools.build_meta"

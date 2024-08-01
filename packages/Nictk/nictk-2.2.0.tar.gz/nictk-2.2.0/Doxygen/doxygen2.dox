@@ -1,0 +1,515 @@
+/// \page ATTRIBUTES Widgets properties
+///
+/// Widgets attributes are a real nuisance in **tkinter**: there are dozens of options, and each widget accepts only a subset of them, making it difficult to remember their name and meaning (even the documentation is not always complete). I tried to semplify this situation, renaming some option in a way easier to remember, and introducing new functions to set some of them. 
+///
+/// ## Setting and getting option values
+///
+/// In **tkinter** you can use the config() method (or its alias configure()) to set the value of an option and the getc() method to get it. In Nictk I kept the Nictk.Misc.config() method (while configure() was removed) to set the values and renamed getc() into Nictk.Misc.get_config() (Misc is a general class inherited both by containers and internal widgets).
+///
+/// The Nictk.Widget.config() method has this signature:
+///
+/// \code{.py}
+/// def config(self, cnf=None, **kw):
+/// \endcode
+///
+/// and you can usually call it with any number of keyword arguments, for example:
+///
+/// \code{.py}
+/// >>> import Nictk as Ntk
+/// >>> lab = Ntk.Label(None, 0, 0, 100, 20)
+/// >>> lab.config(anchor="ne", relief="solid", justify="left")
+/// \endcode
+///
+/// The Nictk.Widget.get_config() has:
+///
+/// \code{.py}
+/// def get_config(self, key):
+/// \endcode
+///
+/// where _key_ is the name of the requested option value (as a string), for example:
+///
+/// \code{.py}
+/// >>> .  .  .
+/// >>> lab.get_config("anchor")
+/// 'ne'
+/// \endcode
+///
+/// A common tedious situation is the need to repeat the same settings on a large number of widgets (this led to the introduction of **ttk** with its  themed widgets). In Nictk I introduced the Nictk.Container.config_children() method. When creating a container (a window or a frame) you can call this method before adding child widgets, and all of them will inherit the options set in the method. Examples of the use of this method are in many example files.
+///
+/// This is an (incomplete) list of the most useful options, however in the **tkinter** docstrings there is always a list of **all** accepted options.
+///
+/// \note All Nictk constants in capital letters correspond to the same string in lowercase; so, for example, CENTER = "center" etc. You may want to put a \code from Nictk.constants import * \endcode statement to type them without the module prefix.
+/// 
+/// ## Colors ##
+///
+/// You can set many color for widgets; a color can be indicated:
+/// + by a string <b>"#RRGGBB"</b> where **RR**, **GG**, **BB** are the hexadecimal values for Red, Green, Blue;
+/// + by his name (also as a string) in the following <a href="http://www.science.smith.edu/dftwiki/index.php/File:TkInterColorCharts.png" target="_blank">table of colors</a>.
+///
+/// These are the color attributes (with the widgets which accept them): in %Nictk they has been renamed for a better coherence, but, if you want, you can continue to use the old names.
+///
+/// <table>
+///   <tr >
+///     <th>New %Nictk name</th>
+///     <th>Old tkinter name</th>
+///     <th>Meaning</th>
+///     <th>Applies to</th>
+///   </tr><tr>
+///     <td>abcolor</td>
+///     <td>activebackground</td>
+///     <td>Active background: the color of the background when the widget is in active state (the mouse is over it) This property seems to be OS dependent: it doesn't work for some widgets</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Label, Nictk.Menu, Nictk.Radiobutton, Nictk.Scale, Nictk.Scrollbar, Nictk.Spinbox</td>
+///   </tr><tr>
+///     <td>afcolor</td>
+///     <td>activeforeground</td>
+///     <td>Active foreground: see above</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Label, Nictk.Menu, Nictk.Radiobutton</td>
+///   </tr><tr>
+///     <td>bcolor</td>
+///     <td>background, bg</td>
+///     <td>The background color when the widget is in normal state</td>
+///     <td>All widgets</td>
+///   </tr><tr>
+///     <td>dbcolor</td>
+///     <td>disabledbackground</td>
+///     <td>Disabled background: the color of the background when the widget is in disabled state</td>
+///     <td>Nictk.Entry</td>
+///   </tr><tr>
+///     <td>dfcolor</td>
+///     <td>disabledforeground</td>
+///     <td>Disabled foreground: the color of the text when the widget is in disabled state</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Label, Nictk.Menu, Nictk.Radiobutton, Nictk.Spinbox</td>
+///   </tr><tr>
+///     <td>fcolor</td>
+///     <td>foreground, fg</td>
+///     <td>Foreground: the color of the text when the widget is in normal state</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Entry, Nictk.Label, Nictk.Listbox, Nictk.Menu, Nictk.Radiobutton, Nictk.Scale, Nictk.Spinbox, Nictk.Text</td>
+///   </tr><tr>
+///     <td>hbcolor</td>
+///     <td>highlightbackground</td>
+///     <td>Highlight background: the background color when the text is highlighted</td>
+///     <td>All widgets, except Nictk.Menu</td>
+///   </tr><tr>
+///     <td>hfcolor</td>
+///     <td>highlightcolor</td>
+///     <td>Highlight foreground: the color of the text when it is highlighted</td>
+///     <td>All widgets, except Nictk.Menu</td>
+///   </tr><tr>
+///     <td>rbcolor</td>
+///     <td>readonlybackground</td>
+///     <td>Readonly background: the background color when the widget is in readonly state</td>
+///     <td>Nictk.Spinbox</td>
+///   </tr><tr>
+///     <td>sbcolor</td>
+///     <td>selectbackground</td>
+///     <td>Select background: the background color of a selected text</td>
+///     <td>Nictk.Canvas, Nictk.Entry, Nictk.Listbox, Nictk.Spinbox, Nictk.Text</td>
+///   </tr><tr>
+///     <td>sfcolor</td>
+///     <td>selectforeground</td>
+///     <td>Select foreground: the text color when it is selected</td>
+///     <td>Nictk.Canvas, Nictk.Entry, Nictk.Listbox, Nictk.Spinbox, Nictk.Text</td>
+///   </tr><tr>
+///     <td>tcolor</td>
+///     <td>throughcolor</td>
+///     <td>Through color: the color of the guide where the cursor slides</td></td>
+///     <td>Nictk.Scale, Nictk.Scrollbar</td>
+///   </tr>
+/// </table>
+///
+///
+/// ## Other common attributes ##
+///
+/// These are other attributes common to many widgets and widely used:
+///
+/// <table>
+///   <tr >
+///     <th>New %Nictk name</th>
+///     <th>Old tkinter name</th>
+///     <th>Meaning</th>
+///     <th>Applies to</th>
+///   </tr><tr>
+///     <td>anchor</td>
+///     <td></td>
+///     <td>The text position inside the widget, you can choose between **N, E, NW, SE, S, SW, W, NE, CENTER**</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Label, Nictk.Radiobutton</td>
+///   </tr><tr>
+///     <td>borderwidth</td>
+///     <td>borderwidth, bd</td>
+///     <td>The depth of the border in pixels: default is 2 for common widgets and 0 for frames (no border). Some shapes are not drawn well if it is 1</td>
+///     <td>All widgets</td>
+///   </tr><tr>
+///     <td>cursor</td>
+///     <td></td>
+///     <td>The cursor shape when the mouse is over the widget. See <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/cursors.html" target="_blank">here</a> for a list of shapes</td>
+///     <td>All widgets</td>
+///   </tr><tr>
+///     <td>font</td>
+///     <td></td>
+///     <td>You can indicate a font for widget text. See <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/fonts.html" target="_blank">here</a> for a complete reference about fonts </td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Entry, Nictk.Label, Nictk.Listbox, Nictk.Menu, Nictk.Radiobutton, Nictk.Scale, Nictk.Spinbox, Nictk.Text</td>
+///   </tr><tr>
+///     <td>justify</td>
+///     <td></td>
+///     <td>This option is for widgets which allow multiline text: you can choose between **LEFT, RIGHT, CENTER**</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Entry, Nictk.Label, Nictk.Radiobutton, Nictk.Spinbox</td>
+///   </tr><tr>
+///     <td>relief</td>
+///     <td></td>
+///     <td>The border shape of the widget. You can choose between **SUNKEN, FLAT, RAISED, GROOVE, RIDGE, SOLID** (see <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/relief.html">here</a>)</td>
+///     <td>All widgets</td>
+///   </tr><tr>
+///     <td>takefocus</td>
+///     <td></td>
+///     <td>Enables (with 1) or disabes (0) the widget focus when the widget is clicked or when you press the TAB key</td>
+///     <td>All widgets</td>
+///   </tr>
+///   </tr><tr>
+///     <td>hborder</td>
+///     <td>highlightthickness</td>
+///     <td>Enables (with 1) or disabes (0) the dotted rectangle around the text when the widget has the focus</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Entry, Nictk.Label, Nictk.Listbox, Nictk.Radiobutton, Nictk.Spinbox, Nictk.Text</td>
+///   </tr>
+/// </table>
+///
+/// You can see an example of the use of these attributes in the file \ref WidgetOptions.py.
+///
+///
+/// ## Changed widget options ##
+///
+/// The use of these widgets is changed in Nictk with respect to **tkinter**:
+///
+/// <table>
+///   <tr >
+///     <th>Name</th>
+///     <th>Meaning</th>
+///     <th>Applies to</th>
+///   </tr><tr>
+///     <td>height, width</td>
+///     <td>These are disabled in %Nictk. You must give the widgets dimensions in their constructor. If you want to change them after the construction use the Nictk.Widget.resize() method.</td>
+///     <td></td>
+///   </tr><tr>
+///     <td>command</td>
+///     <td>This associates some widget event (as clicking a button or pressing RETURN in an entry) with a callback. In %Nictk it has been enhanced and you can also associate a value to this; moreover you can do this in the constructor and so you need to use this option only if you want to set the callback after the widget creation. For details see \ref EVENTS.</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Combobox, Nictk.Entry, Nictk.Listbox, Nictk.Menu, Nictk.Radiobutton, Nictk.Scale, Nictk.Spinbox</td>
+///   </tr><tr>
+///     <td>state</td>
+///     <td>This can switch between <b>"normal"</b> and <b>"disabled"</b> state. In %Nictk is simpler to use Nictk.Widget.activate() and Nictk.Widget.deactivate() methods. The Nictk.Spinbox widget has a third option <b>"readonly"</b>, which you can set with the Nictk.Spinbox.mode() method</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Combobox, Nictk.Entry, Nictk.Label, Nictk.Listbox, Nictk.Menu, Nictk.Radiobutton, Nictk.Scale, Nictk.Spinbox</td>
+///   </tr><tr>
+///     <td>text</td>
+///     <td>You can use this to set the text of some widget, but is simpler to use the Nictk.Widget.set_content() and Nictk.Widget.get_content() methods</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Label, Nictk.Radiobutton</td>
+///   </tr><tr>
+///     <td>variable</td>
+///     <td>In many widgets you can associate a tk.Variable object to the widget directly in the constructor. If you want to change the variable after the widget has been created you can use the Nictk.Checkbutton.set_variable() and Nictk.Radiobutton.set_variable() methods</td>
+///     <td>Nictk.Checkbutton, Nictk.Radiobutton</td>
+///   </tr><tr>
+///     <td>wraplength</td>
+///     <td>This is the text wrap length in widgets which allow multiline text. %Nictk sets automatically this value (even if the widget is resized). So you can only indicate 0 (text not wrapped) or non zero (default: automatic wrap).</td>
+///     <td>Nictk.Button, Nictk.Checkbutton, Nictk.Label, Nictk.Radiobutton</td>
+///   </tr>
+/// </table>
+///
+///
+/// ## The widget content ##
+///
+/// Some widget (as Nictk.Entry) can hold a text as their content, other (as Nictk.Label) can hold a text or an image. Moreover, many of them allows the user to associate a tkinter.Variable object (see \ref VARIABLES). This is done in **tkinter** by mean of the properties _text_, _image_, _textvariable_ and _variable_.
+///
+/// In Nictk I tried to simplify widget content management in this way: in many widget constructors there is a _content_ option in which the user can specify different content types (a string, a tkinter.StringVar, an image ...). The constructor sets it, and then you can use the Nictk.Widget.set_content() and Nictk.Widget.get_content() methods, which simplify setting and getting these options and usually make it unnecessary to use config() for them. There is also a Nictk.Widget.init_content() method: this is automatically called by the constructor when you specify the _content_ option, and is needed only if you want to change the widget content type (i.e. to change, for example, from a string to an image).
+
+
+
+/// \page WIDGET_INFO Getting widget informations
+///
+/// As said in the previous section, you can query many widget properties with the Nictk.Misc.get_config() method.
+///
+/// ## The get_winfo() method ##
+///
+/// For other properties **tkinter** has a long list of _winfo_... methods (one for every property we want to know). I reorganized them in one method Nictk.Misc.get_winfo() which, similarly to Nictk.Misc.get_config(), accepts the property as a string. For a list of all accepted options see the example file \ref winfo.py.
+/// For the meaning of various **tkinter** winfo_... methods you can see <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/universal.html" target="_blank">this page</a>, which elencates all **tkinter** general methods common to all widgets.
+///
+/// \anchor dimensions
+///  ## Retrieving widgets dimensions ##
+///
+/// In **tkinter** we can use the functions winfo_x (), winfo_y () etc. to find the dimensions of a widget, but these often create confusion, because they return the correct values only when the widget has been placed by the geometry manager.
+///
+/// In Nictk I left the general _winfo_... pattern only for methods getting widget dimensions, adding some new methods. These have been rewritten to always report the exact value, expressed in pixels. These are the methods (they all belong to the clas Nictk.Misc, inerithed by windows and internal widgets):
+///
+/// <table>
+///   <tr>
+///     <th>winfo_...() method</th>
+///     <th>get_winfo() method</th>
+///     <th>Returns</th>
+///     <th>Notes</th>
+///   </tr><tr>
+///     <td>winfo_bx()</td>
+///     <td></td>
+///     <td>The bounding box topleft corner x</td>
+///     <td rowspan="4">These are the dimensions of the bounding box of the widget (before applying the pad to it). They are used by the library when packing widgets (i.e. the bounding boxes, not the real widgets, are packed).</td>
+///   </tr><tr>
+///     <td>winfo_by()</td>
+///     <td></td>
+///     <td>The bounding box topleft corner y</td>
+///   </tr><tr>
+///     <td>winfo_bwidth(), winfo_bw()</td>
+///     <td></td>
+///     <td>The bounding box width</td>
+///   </tr><tr>
+///     <td>winfo_bheight(), winfo_bh()</td>
+///     <td></td>
+///     <td>The bounding box height</td>
+///   </tr><tr>
+///     <td>winfo_x()</td>
+///     <td>get_winfo("x")</td>
+///     <td>The widget topleft corner x</td>
+///     <td rowspan="4">These are the real widget dimensions, after applying the pad to the bounding box.</td>
+///   </tr><tr>
+///     <td>winfo_y()</td>
+///     <td>get_winfo("y")</td>
+///     <td>The widget topleft corner y</td>
+///   </tr><tr>
+///     <td>winfo_width(), winfo_w()</td>
+///     <td>get_winfo("width")</td>
+///     <td>The widget width</td>
+///   </tr><tr>
+///     <td>winfo_height(), winfo_h()</td>
+///     <td>get_winfo("height")</td>
+///     <td>The widget height</td>
+///   </tr><tr>
+///     <td>winfo_bpad()</td>
+///     <td></td>
+///     <td>A tuple with the four pad values (E-N-W-S) for the widget int its bounding box</td>
+///     <td></td>
+///   </tr>
+/// </table>
+/// You can also see the \ref winfo.py file for an example of the use of these methods.
+
+
+
+
+/// \page EVENTS Events and callbacks
+///
+/// In **tkinter** we have two ways to connect a callback to a widget event:
+/// + The **bind()** method, which allows the user to freely bind an event generated by the widget to a callback function. 
+/// + The **command** option of the config() method which allows to bind a predefined event (the click for a button, the return for an Entry, ecc) to a callback function This can be used also in the widget constructor.
+///
+/// The two methods differ: with _bind()_ the callback gets a tkinter.Event as parameter, i.e. an object with various informations on what is happened, while with _command_ the callback gets no parameter. So **tkinter** suggest to write for the callbacks the signature:
+/// \code{.py}
+/// def callback(event=None):
+/// \endcode
+///
+/// If you are not familiar with **tkinter** events, I suggest the following documentation:
+/// + <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/event-types.html" target="_blank">Event types</a>
+/// + <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/event-handlers.html" target="_blank">Event class attributes</a>
+/// + <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/binding-levels.html" target="_blank">The **bind()**, **bind_class()** and **bind_all()** methods</a>
+/// - <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/event-sequences.html" target="_blank">How to specify the event to bind</a>
+///
+/// In Nictk I made these changes:
+/// + Both the _bind()_ method and the _command_ option pass a **tkinter.Event** object to the callback. In the case of the _command_ the event is a <b>\<\<VirtualEvent>></b> and has only the following attributes:
+///   + .widget
+///   + .x
+///   + .y
+///   + .value (see below)
+/// + I added the _command_ option to some other widgets: this is a list of the widgets which support it (in the constructor and in the config() method):
+///   + Nictk.Button (when the button is pressed)
+///   + Nictk.Checkbutton (when the button changes its state)
+///   + Nictk.Combobox (when an item is selected)
+///   + Nictk.Entry (when Return is pressed)
+///   + Nictk.Listbox (when an item is selected)
+///   + Nictk.Radiobutton (when the button is selected)
+///   + Nictk.Scale (when the scale index changes)
+///   + Nictk.Scrollbar (when the scrollbar is moved)
+///   + Nictk.Spinbox (when an item is selected, with arrow buttons or with Return)
+/// + For the _command_ option you have the following choices:
+///   + command = _callback_ this only binds the callback to the event
+///   + command = (_callback_, _value_) setting a tuple callback - value the Event passed to the callback will contain the given value in the .value attribute (otherwise this will be set to None)
+///
+/// ## The callback signature ##
+///
+/// So in Nictk a callback will always receive the _event_ parameter. His signature should be
+/// \code{.py}
+/// def callback(event):
+/// \endcode
+/// for a non member function or
+/// \code{.py}
+/// def callback(self, event):
+/// \endcode
+/// for a class member called within the class (this can be useful when subclassing a Nictk widget)
+///
+/// Examples of these procedures are in all example files.
+///
+/// ## Events and disabled widgets ##
+///
+/// Another strange behavior of **tkinter** is the following: when you bind an event to a widget and disable the widget the event will be ignored only if it was bound with the _command_ option, while if it was bound with the _bind()_ method the disabled widget will continue to respond to the event.
+/// In Nictk I changed this (since version 2.1.0), so that disabled widgets don't respond to events regardless of the method with which they were bound.
+
+
+
+/// \page VARIABLES Variable objects
+///
+/// Tkinter has special objects called control variables. They all inherit from the **tkinter.Variable** class (they are **tkinter.IntVar, tkinter.DoubleVar, tkinter.StringVar** and **tkinter.BooleanVar**) and behave like normal Python variables (we can write and read their value with the **set()** and **get()** methods), but they have some additional features:
+///
+/// For more details on these objects you can see the <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/control-variables.html" target="_blank">anzeljg reference</a>.
+///
+/// This is a summary of how these variables are treated in Nictk:
+///
+/// <table>
+///   <tr>
+///     <th>Widget</th>
+///     <th>Notes</th>
+///     <th>Writing and reading</th>
+///   </tr><tr>
+///     <td>Nictk.Button, Nictk.Label</td>
+///     <td>You can set a **StringVar** in the _content_ parameter of its constructor; this is shown as the widget label, and the widget will be updated if the variable changes.</td>
+///     <td>You can set or get the value both with the Nictk.Widget.set_content() and Nictk.Widget.get_content methods, or with the variable **set()** and **get()** methods</td>
+///   </tr><tr>
+///     <td>Nictk.Checkbutton</td>
+///     <td>You have two parameters in the constructor: in _content_ you can set a **StringVar** which will control the button label, in _variable_ you can set a variable of any kind and its values corrisponding to the on and off state.</td>
+///     <td>You can set and get the button label with the Nictk.Widget.set_content() and Nictk.Widget.get_content methods, and the button state (on/off) with Nictk.Checkbutton.set_value() and Nictk.Checkbutton.get_value() methods. Moreover you can use the variable **set()** and **get()** methods</td>
+///   </tr><tr>
+///     <td>Nictk.Entry</td>
+///     <td>You can set a **StringVar** in the _variable_ parameter of its constructor; this will hold the entry text.</td>
+///     <td>As above.</td>
+///   </tr><tr>
+///     <td>Nictk.Combobox, Nictk.Spinbox</td>
+///     <td>You can set a **StringVar** in the _variable_ parameter of its constructor; this will hold the selected item (numbers are converted into strings).</td>
+///     <td>As above</td>
+///   </tr><tr>
+///     <td>Nictk.Radiobutton</td>
+///     <td>You must assign all buttons of the same mutually exclusive group the same variable (of any type), giving each button a different value (in the constructor parameter _variable_. Pressing a button will assign the variable the value associated with the button, and turn off all the other buttons in the group.</td>
+///     <td>There are no widget methods, you must use the variable **set()** and **get()** methods</td>
+///   </tr><tr>
+///     <td>Nictk.Scale</td>
+///     <td>You can set a **IntVar** or **DoubleVar**  in the _variable_ parameter of its constructor; this will hold the widget selected value.</td>
+///     <td>You can set and get the selected value with Nictk.Scale.set_value() and Nictk.Scale.get_value(), or can use the variables **set()** and **get()** methods</td>
+///   </tr>
+
+/// </table>
+
+
+
+/// \page DIALOGS Dialog boxes
+///
+/// In **tkinter** there are some functions to open the standard system dialog boxes, grouped in some submodules which you must import if you want to use them. In Nictk (since version 2.1.1) I imported the function names with <i>from ... import ...</i>, so you can use them prepending only the Nictk prefix. For compatibility with older versions you can still call them with older prefixes (this will be dropped in future versions).
+///
+/// \code{.py}
+/// Nictk.showerror(message="File not found")    # or
+/// Nictk.mb.showerror(message="File not found") # DEPRECATED
+/// Nictk.askopenfilename()                      # or
+/// Nictk.fd.askopenfilename()                   # DEPRECATED
+/// Nictk.askcolor()                             # or
+/// Nictk.cc.askcolor()                          # DEPRECATED
+/// \endcode
+///
+/// For an example of their use see the file \ref Dialogs.py.
+///
+/// ## Dialog boxes in tkinter.messagebox ##
+///
+/// All these functions share the same paradigm:
+///
+/// <center>_functionname(title=None, message=None, **options)_</center>
+/// where:
+/// + _title_ is the dialog box title;
+/// + _message_ is the text in the body of the dialog box;
+/// + the _options_ parameters allow the user to choose the dialog box icon, number and type of buttons and default button (but this is usually unneeded if you use a predefined function). For a reference see <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/dialogs.html" target="_blank">here</a>.
+///
+/// Here is a list of them with their name in Nictk. 
+///
+/// <table>
+///   <tr>
+///     <th>Function</th>
+///     <th>Notes</th>
+///     <th>Returns</th>
+///   </tr><tr>
+///     <td>Nictk.askokcancel</td>
+///     <td>Opens a dialog box with tho buttons "Ok", "Cancel".</td>
+///     <td>**True** for "Ok" and **False** for "Cancel".</td>
+///   </tr><tr>
+///     <td>Nictk.askquestion</td>
+///     <td>Opens a dialog box with two buttons "Yes", "No".</td>
+///     <td>"yes" or "no" (aliased by YES, NO).</td>
+///   </tr><tr>
+///     <td>Nictk.askretrycancel</td>
+///     <td>Opens a dialog box with two buttons "Retry", "Cancel".</td>
+///     <td>**True** for "Retry" and **False** for "Cancel".</td>
+///   </tr><tr>
+///     <td>Nictk.askyesno</td>
+///     <td>Same of askquestion.</td>
+///     <td>**True** for "Yes" and **False** for "No".</td>
+///   </tr><tr>
+///     <td>Nictk.askyesnocancel</td>
+///     <td>Opens a dialog box with three buttons "Yes", "No", "Cancel".</td>
+///     <td>**True** for "Yes", **False** for "No", None for "Cancel".</td>
+///   </tr><tr>
+///     <td>Nictk.showerror</td>
+///     <td>Opens a dialog box with an error icon and only the button "Ok".</td>
+///     <td>Always "ok" (aliased by OK).</td>
+///   </tr><tr>
+///     <td>Nictk.showinfo</td>
+///     <td>Opens a dialog box with an info icon and only the button "Ok".</td>
+///     <td>As above.</td>
+///   </tr><tr>
+///     <td>Nictk.showwarning</td>
+///     <td>Opens a dialog box with a warning icon and only the button "Ok".</td>
+///     <td>As above.</td>
+///   </tr>
+/// </table>
+///
+/// ## Dialog boxes in tkinter.filedialog ##
+///
+/// All these functions share the same paradigm:
+///
+/// <center>_functionname(**options)_</center>
+/// 
+/// For the _options_ parameters see <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/dialogs.html" target="_blank">here</a>.
+///
+/// Here is a list of them with their name in Nictk.
+///
+/// <table>
+///   <tr>
+///     <th>Function</th>
+///     <th>Notes</th>
+///     <th>Returns</th>
+///   </tr><tr>
+///     <td>Nictk.askopenfilename</td>
+///     <td>Opens the file dialog "Open file" where you can choose a file.</td>
+///     <td>The complete path of the chosen file, or an empty string if you press "Cancel".</td>
+///   </tr><tr>
+///     <td>Nictk.asksaveasfilename</td>
+///     <td>Opens the file dialog "Save as file" where you can choose a file.</td>
+///     <td>The complete path of the chosen file, or an empty string if you press "Cancel".</td>
+///   </tr><tr>
+///     <td>Nictk.askopenfilenames</td>
+///     <td>Opens the file dialog "Open file" where you can choose multiple files.</td>
+///     <td>A list with complete paths of the chosen files, or an empty list if you press "Cancel".</td>
+///   </tr><tr>
+///     <td>Nictk.askdirectory</td>
+///     <td>Opens the file dialog "Open file" where you can choose a directory.</td>
+///     <td>The complete path of the chosen directory, or an empty string if you press "Cancel".</td>
+///   </tr>
+/// </table>
+///
+/// ## Dialog boxes in tkinter.colorchooser ##
+///
+/// There is only one:
+///
+/// <center>_askcolor(color=None, **options)_</center>
+/// where:
+/// + _color_ is the initially chosen color;
+/// + for the _options_ parameters see  <a href="https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/dialogs.html" target="_blank">here</a>.
+///
+/// <table>
+///   <tr>
+///     <th>Function</th>
+///     <th>Notes</th>
+///     <th>Returns</th>
+///   </tr><tr>
+///     <td>Nictk.askcolor</td>
+///     <td>Opens a color chooser file dialog.</td>
+///     <td>A duple, with in the first element three integers R, G, B, in the second a **tkinter** Color object, or (None, None) if you press "Cancel"</td>
+///   </tr>
+/// </table>
+///
+
+
