@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: lume-py
+Version: 0.1.0
+Summary: A description of your SDK
+Home-page: https://github.com/yourusername/your-repo
+Author: Lume SDK
+Author-email: your.email@example.com
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: python >=3.10
+Requires-Dist: httpx >=0.27.0
+Requires-Dist: pydantic >=2.8.2
+
+# python-sdk
+
+# My SDK
+
+A Python SDK for interacting with Lume.
+
+## Installation
+<!-- 
+```bash
+pip install lume-py -->
