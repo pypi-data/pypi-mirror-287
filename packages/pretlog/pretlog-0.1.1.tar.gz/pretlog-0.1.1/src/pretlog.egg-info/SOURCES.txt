@@ -1,0 +1,11 @@
+COPYING
+LICENSE
+README.md
+pyproject.toml
+src/pretlog/__init__.py
+src/pretlog/col.py
+src/pretlog.egg-info/PKG-INFO
+src/pretlog.egg-info/SOURCES.txt
+src/pretlog.egg-info/dependency_links.txt
+src/pretlog.egg-info/requires.txt
+src/pretlog.egg-info/top_level.txt
