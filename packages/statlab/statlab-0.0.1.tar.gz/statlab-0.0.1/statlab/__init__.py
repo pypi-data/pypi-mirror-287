@@ -1,0 +1,1 @@
+# from . import ord # this line would allow users to write "import statlab; statlab.ord.TreeOrdinalClassifier(base_clf)" instead of "import statlab.ord; statlab.ord.TreeOrdinalClassifier(base_clf)"
