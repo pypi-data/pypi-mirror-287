@@ -1,0 +1,7 @@
+README.md
+setup.py
+django_alerts_cdn.egg-info/PKG-INFO
+django_alerts_cdn.egg-info/SOURCES.txt
+django_alerts_cdn.egg-info/dependency_links.txt
+django_alerts_cdn.egg-info/top_level.txt
+tests/test_alerts.py
