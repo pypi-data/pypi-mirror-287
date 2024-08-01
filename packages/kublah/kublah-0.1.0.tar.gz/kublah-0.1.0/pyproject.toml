@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "kublah"
+version = "0.1.0"
+description = "kublah is a command line tool kit that generates kubernetes commands based on your nature language request."
+authors = ["Jingkai <jingkai@hey.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openai = "^1.23.2"
+pyyaml = "^6.0.1"
+jinja2 = "^3.1.3"
+instructor = "^1.3.4"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+kublah = "kublah.main:main"
