@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=60", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unduckify"
+version = "0.1.0"
+description = "Utility to extract duckify payloads from a memory dump."
+readme = "README.md"
+license = { file = "LICENSE.txt" }
+keywords = ["avr", "radare2", "badusb", "reversing", "r2pipe"]
+authors = [ { name = "0xlibris" } ]
+dependencies = [
+  "r2pipe"
+]
+
+[project.urls]
+Homepage = "https://0xlibris.net/posts/reversing_badusb_3/"
+
+[project.scripts]
+unduckify = "unduckify.unduckify:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"unduckify.library.win" = ["*.json"]
+"unduckify.library.mac" = ["*.json"]
