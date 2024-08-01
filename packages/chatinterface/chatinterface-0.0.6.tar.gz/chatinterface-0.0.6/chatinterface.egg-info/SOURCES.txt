@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+chatinterface/__init__.py
+chatinterface/api.py
+chatinterface/commands.py
+chatinterface/helpers.py
+chatinterface/interface.py
+chatinterface.egg-info/PKG-INFO
+chatinterface.egg-info/SOURCES.txt
+chatinterface.egg-info/dependency_links.txt
+chatinterface.egg-info/requires.txt
+chatinterface.egg-info/top_level.txt
