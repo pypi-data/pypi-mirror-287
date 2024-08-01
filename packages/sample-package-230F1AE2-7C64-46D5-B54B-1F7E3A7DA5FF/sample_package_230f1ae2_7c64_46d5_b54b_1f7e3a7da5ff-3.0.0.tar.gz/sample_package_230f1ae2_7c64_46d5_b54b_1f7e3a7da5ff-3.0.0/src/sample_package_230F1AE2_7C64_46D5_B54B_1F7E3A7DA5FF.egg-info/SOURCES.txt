@@ -1,0 +1,9 @@
+LICENSE.txt
+pyproject.toml
+src/sample-package-230F1AE2-7C64-46D5-B54B-1F7E3A7DA5FF/__init__.py
+src/sample-package-230F1AE2-7C64-46D5-B54B-1F7E3A7DA5FF/simple.py
+src/sample_package_230F1AE2_7C64_46D5_B54B_1F7E3A7DA5FF.egg-info/PKG-INFO
+src/sample_package_230F1AE2_7C64_46D5_B54B_1F7E3A7DA5FF.egg-info/SOURCES.txt
+src/sample_package_230F1AE2_7C64_46D5_B54B_1F7E3A7DA5FF.egg-info/dependency_links.txt
+src/sample_package_230F1AE2_7C64_46D5_B54B_1F7E3A7DA5FF.egg-info/requires.txt
+src/sample_package_230F1AE2_7C64_46D5_B54B_1F7E3A7DA5FF.egg-info/top_level.txt
