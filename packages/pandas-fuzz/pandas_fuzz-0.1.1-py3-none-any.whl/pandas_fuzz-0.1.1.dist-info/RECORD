@@ -1,0 +1,6 @@
+pandas_fuzz/__init__.py,sha256=RFqAk_drE_fS7h-qnr5vlGRI4HS0nHacmNnWL_ayj1Y,689
+pandas_fuzz/pdfuzz.py,sha256=aVgKjm8s_pHwSY2nInjpvjZIvXZWkIasxm8jZA-BU70,1855
+pandas_fuzz-0.1.1.dist-info/LICENSE,sha256=Ht_pJ-L8m2lTUYYUJK3BKAef0sGTcaITzbPtGy4qZxk,1074
+pandas_fuzz-0.1.1.dist-info/METADATA,sha256=ntCE7_MeaoRHzoMJzd7wBsTYYI8fjbJok4laAApnOkI,3730
+pandas_fuzz-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+pandas_fuzz-0.1.1.dist-info/RECORD,,
