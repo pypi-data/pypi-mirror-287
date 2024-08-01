@@ -1,0 +1,11 @@
+ndx_fiber_photometry/spec/ndx-fiber-photometry.extensions.yaml,sha256=tC4EuTolfO-v3_GlrK-zCSmbRBRpibFxPX_epW8dO1o,8335
+ndx_fiber_photometry/spec/ndx-fiber-photometry.namespace.yaml,sha256=_EZen4V_sM759WkeyiibV0wg0kR2GWrvUqq-n4In0rA,655
+ndx_fiber_photometry/__init__.py,sha256=drgV77dnTzuusRQI8se_yHRgySUIX5H3-y8icYQzGWw,2212
+ndx_fiber_photometry/fiber_photometry.py,sha256=tHBc98uqJ4gomZ_YMTiK9TMGBOnQsmko9TAMHqZgdpU,734
+ndx_fiber_photometry/widgets/README.md,sha256=9sqJiKCBrz6xdJc78tK5dY1F0yYkvKyKUGwF2UoH9Tc,312
+ndx_fiber_photometry/widgets/__init__.py,sha256=PJWqKN68PsTbRlKbmmBhCCrp6aMpKp3k8Uc_eqK4G2E,335
+ndx_fiber_photometry/widgets/tetrode_series_widget.py,sha256=m84O-W881-itbt42ayNnZXRbglPBTH5IRiPozgYJt20,1950
+ndx_fiber_photometry-0.1.0.dist-info/METADATA,sha256=H8cH6cvr6EqMpl0qa0S_UQ5V0uh7iDpX7nxOMEKoNIw,14178
+ndx_fiber_photometry-0.1.0.dist-info/WHEEL,sha256=fl6v0VwpzfGBVsGtkAkhILUlJxROXbA3HvRL6Fe3140,105
+ndx_fiber_photometry-0.1.0.dist-info/licenses/LICENSE.txt,sha256=cjRa_b0vK18DAG6rJKa64w0cNUZO6p2Rmcd8zRqOjbY,1569
+ndx_fiber_photometry-0.1.0.dist-info/RECORD,,
