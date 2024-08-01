@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+magicpickle/__init__.py
+magicpickle/magicpickle.py
+magicpickle.egg-info/PKG-INFO
+magicpickle.egg-info/SOURCES.txt
+magicpickle.egg-info/dependency_links.txt
+magicpickle.egg-info/requires.txt
+magicpickle.egg-info/top_level.txt
