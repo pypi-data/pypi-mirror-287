@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: Sqlite3_EasyCtrl
+Version: 0.0.1
+Summary: 一个可以更方便的操作SQLite数据的Python库
+Home-page: https://github.com/xingchentye/Python-Sqlite3-EasyCtrl
+Author: xingchen
+Author-email: xingchenawa@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## PythonSqliteEasyCtrl
+
+PythonSqliteEasyCtrl是一个将数据库操作语句封装成操作类的库，它可以使操作Sqlite3数据库更加方便。
+
+PythonSqliteEasyCtrl还支持数据库信息加密功能
+
+该库目前为[`ToolDelta`](https://github.com/ToolDelta/ToolDelta)服务
