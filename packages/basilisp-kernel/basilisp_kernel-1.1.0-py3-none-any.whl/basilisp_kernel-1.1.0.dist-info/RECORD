@@ -1,0 +1,8 @@
+basilisp_kernel/__init__.py,sha256=vSnovJ8tXpyhZsvWUXEiCQzvxo43IdCQueJlWs9wXtA,93
+basilisp_kernel/__main__.py,sha256=dyttsY2mqaqSGWQp9EUbcHD8dlD7rTbwfKiCIvKzXt8,131
+basilisp_kernel/kernel.py,sha256=7zAgntDoj7ByMUVV1y7hzhoCU19lrVnNaMpMRx4hCx0,3036
+basilisp_kernel-1.1.0.data/data/share/jupyter/kernels/basilisp/kernel.json,sha256=2jj0lcmtB0diB9Lpc-YrJ3RMCB8SB9QnK51shh1sv9g,123
+basilisp_kernel-1.1.0.dist-info/METADATA,sha256=x5d9G8VJC_89MUIZC35B3XlPYcwQLvi-Uxugr3yrleA,3787
+basilisp_kernel-1.1.0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+basilisp_kernel-1.1.0.dist-info/licenses/LICENSE,sha256=iHnKwx1qJa6IAYBWnqTYDKmyTqnnOnO1YEqXEfF0Sik,1528
+basilisp_kernel-1.1.0.dist-info/RECORD,,
