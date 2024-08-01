@@ -1,0 +1,15 @@
+model/KANamav1.py,sha256=5cntaDT2kd5d-9AtVRouotzDgu4igjVt5PPbsmifesw,8167
+model/KANamav2.py,sha256=0Vgrsvbbl2NhX0kLN3cAYQt0dhIK-Q8FaOn2TzRQkkk,6935
+model/KANamav3.py,sha256=tJFukrrJMfeEWFigdhowNx_Y2Du8ePlQjoI30hQZ5gs,7467
+model/KANamav4.py,sha256=e06nRBhyCv3ShDsMuIQeCJ_vZ_Tk-2W0T40KCgM7Dv8,7467
+model/MLP.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+model/__init__.py,sha256=iigSxqeD2gR1Ro1PHr95w3BCr2lTDhUkZ_pXagibSds,512
+model/args.py,sha256=W0-tvQFrBYLSXg_n6K-MrONNnlnuRuqEkEUA3od335c,915
+model/kan.py,sha256=xhR6N0kZcH5GJ_1EgXlKtPzMQ5-pAGd4izmQurbWFmg,10319
+model/utils.py,sha256=lv_p2T3pDEBFF8d3uGQ8T6hmOSARxDb_trvwN3155iU,2711
+model/version.py,sha256=RGkblCFNnJQeup-PjQtgit_KVSJH8hx9sqo_tUZ8KBE,21
+KANama-1.9.0.dist-info/LICENSE,sha256=1TDM6vJHcSxpq_v5WdJSXuPnKKDxbANMoi3btjwB7dg,1074
+KANama-1.9.0.dist-info/METADATA,sha256=yeJyt_9x7C50FjmAkxdmHPjK2HLrGlP_gBMh5nuRyVo,452
+KANama-1.9.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+KANama-1.9.0.dist-info/top_level.txt,sha256=mK1hol42g7at8kdLAbvhwn3mqtLOOoD_QUD-RzwU5pE,6
+KANama-1.9.0.dist-info/RECORD,,
