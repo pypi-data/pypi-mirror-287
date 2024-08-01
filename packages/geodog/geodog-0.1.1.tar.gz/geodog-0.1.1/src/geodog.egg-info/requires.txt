@@ -1,0 +1,8 @@
+opencv-python
+numpy
+pillow
+geopandas
+shapely
+rasterio
+scikit-learn
+tqdm

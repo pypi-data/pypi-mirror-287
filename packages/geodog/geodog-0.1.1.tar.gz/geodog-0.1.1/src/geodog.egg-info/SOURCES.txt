@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.cfg
+src/geodog.egg-info/PKG-INFO
+src/geodog.egg-info/SOURCES.txt
+src/geodog.egg-info/dependency_links.txt
+src/geodog.egg-info/entry_points.txt
+src/geodog.egg-info/requires.txt
+src/geodog.egg-info/top_level.txt
