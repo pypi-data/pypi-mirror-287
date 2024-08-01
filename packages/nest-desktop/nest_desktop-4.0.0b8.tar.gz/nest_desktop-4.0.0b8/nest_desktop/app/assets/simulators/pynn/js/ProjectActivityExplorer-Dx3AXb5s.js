@@ -1,0 +1,1 @@
+import{_ as e}from"../../../js/ActivityChartGraph-DuHoTVsX.js";import{d as a,cX as o,N as c,o as p,n as s}from"../../../js/index-DCXcuAJz.js";const h=a({__name:"ProjectActivityExplorer",setup(n){const t=o(),r=c(()=>t.state.project.activityGraph);return(i,_)=>(p(),s(e,{graph:r.value.activityChartGraph},null,8,["graph"]))}});export{h as default};
