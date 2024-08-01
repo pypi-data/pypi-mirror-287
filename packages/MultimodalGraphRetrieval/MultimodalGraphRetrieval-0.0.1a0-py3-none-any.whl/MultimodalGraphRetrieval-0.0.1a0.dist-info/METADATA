@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: MultimodalGraphRetrieval
+Version: 0.0.1a0
+Summary: Multimodal Graph retrieval
+Home-page: https://github.com/jayavibhavnk/MultimodalGraphRetrieval
+Author: JVNK
+Author-email: jaya11vibhav@gmail.com
+Classifier: Development Status :: 3 - Alpha
+Description-Content-Type: text/markdown
+Requires-Dist: langchain
+Requires-Dist: sentence-transformers
+Requires-Dist: langchain-community
+Requires-Dist: pypdf2 ==3.0.0
+Requires-Dist: pypdf
+Requires-Dist: pymupdf
+
+
+# Example Usage
+
+```python
+from multimodal_rag import MultimodalRAG
+
+# Initialize MultimodalRAG instance
+mm_rag = MultimodalRAG(pdf_directory="/path/to/pdf_directory", output_directory="/path/to/output_directory")
+
+# Preprocess documents
+mm_rag.preprocess(directory="/path/to/pdf_directory", use_multiprocessing=True)
+
+# Perform a multimodal query
+query = "example query text"
+search_results, result_paths = mm_rag.multimodal_query(query, k=5)
+
+# Display results
+print("Search Results:", search_results)
+print("Result Paths:", result_paths)
+```
