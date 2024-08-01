@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: PN_DTW_FE
+Version: 0.1.0
+Summary: A package for gene expression analysis
+Home-page: https://github.com/yourusername/PN_DTW_FE
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: fastdtw
+
+# PN_DTW_FE
+
+A package for gene expression analysis.
+
+## Installation
+
+```sh
+pip install PN_DTW_FE

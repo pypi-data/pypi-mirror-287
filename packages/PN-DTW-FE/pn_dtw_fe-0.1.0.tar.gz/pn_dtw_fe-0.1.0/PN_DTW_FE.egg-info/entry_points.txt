@@ -1,0 +1,2 @@
+[console_scripts]
+PN_DTW_FE = PN_DTW_FE.main:main
