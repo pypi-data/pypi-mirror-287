@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+SRT2LRC/__init__.py
+SRT2LRC/srt_lrc_converter.py
+SRT2LRC.egg-info/PKG-INFO
+SRT2LRC.egg-info/SOURCES.txt
+SRT2LRC.egg-info/dependency_links.txt
+SRT2LRC.egg-info/top_level.txt
