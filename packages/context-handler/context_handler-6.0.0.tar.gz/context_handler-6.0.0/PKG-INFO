@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: context-handler
+Version: 6.0.0
+Summary: 
+Author: Gustavo Correa
+Author-email: self.gustavocorrea@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: lazy-fields (>=1.0.1,<2.0.0)
+Requires-Dist: typing-extensions (>=4.12.2,<5.0.0)
