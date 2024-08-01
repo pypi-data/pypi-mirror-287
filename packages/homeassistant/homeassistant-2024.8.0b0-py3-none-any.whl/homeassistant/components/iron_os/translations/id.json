@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Perangkat sudah dikonfigurasi",
+            "no_devices_found": "Tidak ada perangkat yang ditemukan di jaringan"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "address": "Perangkat"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "operating_mode": {
+                "state": {
+                    "idle": "Siaga"
+                }
+            }
+        }
+    }
+}
