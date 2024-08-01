@@ -1,0 +1,50 @@
+# Include the license file
+include LICENSE
+
+# Include the README file
+include README.md
+
+# Include the requirements file
+include requirements.txt
+
+# Include the setup.py file
+include setup.py
+
+# Include all Python files in the app directory
+recursive-include app *.py
+
+# Include any JSON files (like ai-plugin.json) in the app directory
+recursive-include app *.json
+
+# Include any YAML files (like openapi.yaml) in the app directory
+recursive-include app *.yaml *.yml
+
+# Include the Dockerfile and docker-compose.yml
+include Dockerfile
+include docker-compose.yml
+
+# Exclude all .pyc files
+global-exclude *.pyc
+
+# Exclude all pycache directories
+global-exclude __pycache__
+
+# Exclude the tests directory
+prune tests
+
+# Exclude any virtual environment directories
+prune venv
+prune .env
+prune .venv
+
+# Exclude version control directories
+prune .git
+prune .github
+
+# Exclude IDE specific directories
+prune .vscode
+prune .idea
+
+# Exclude the build and dist directories
+prune build
+prune dist

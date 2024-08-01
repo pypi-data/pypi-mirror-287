@@ -1,0 +1,17 @@
+Dockerfile
+MANIFEST.in
+README.md
+docker-compose.yml
+requirements.txt
+setup.py
+app/__init__.py
+app/api.py
+app/app.py
+app/main.py
+app/ai_modules.egg-info/PKG-INFO
+app/ai_modules.egg-info/SOURCES.txt
+app/ai_modules.egg-info/dependency_links.txt
+app/ai_modules.egg-info/requires.txt
+app/ai_modules.egg-info/top_level.txt
+app/models/__init__.py
+app/models/models.py

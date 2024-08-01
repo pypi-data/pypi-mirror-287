@@ -1,0 +1,8 @@
+# requirements.txt
+fastapi
+pydantic
+uvicorn
+pytest
+flake8
+black
+requests
