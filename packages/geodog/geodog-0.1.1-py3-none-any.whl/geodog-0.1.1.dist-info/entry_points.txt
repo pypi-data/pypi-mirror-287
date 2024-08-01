@@ -1,0 +1,8 @@
+[console_scripts]
+blueconverter = geodog.blueconverter:main
+boxcutter = geodog.boxcutter:main
+color-remapper = geodog.color_remapper:main
+colorchecker = geodog.colorchecker:main
+image-to-points = geodog.image_to_points:main
+image-to-polygon = geodog.image_to_polygon:main
+image-to-shapefile = geodog.image_to_shapefile:main
