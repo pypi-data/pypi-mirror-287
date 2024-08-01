@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pyMPPost
+Version: 0.0.1
+Summary: Post MCNP-Polimi Simulation Processing
+Author-email: John Cashy <jtcashy@umich.edu>, Ricardo Lopez <rlopezle@umich.edu>
+License: MIT License
+Requires-Python: >=3.9.0
+Description-Content-Type: text/markdown
+Requires-Dist: Cython >=3.0.10
+Requires-Dist: numpy >=1.26.2
+Requires-Dist: pandas >=2.1.3
+Requires-Dist: dask[complete] >=2024.5.0
+Requires-Dist: toml
+
