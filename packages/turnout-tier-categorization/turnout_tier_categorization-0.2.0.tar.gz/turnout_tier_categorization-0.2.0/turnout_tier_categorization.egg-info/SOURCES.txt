@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+analytics/__init__.py
+analytics/turnout_tier_categorization.py
+tests/__init__.py
+tests/test_turnout_tier_categorization.py
+turnout_tier_categorization.egg-info/PKG-INFO
+turnout_tier_categorization.egg-info/SOURCES.txt
+turnout_tier_categorization.egg-info/dependency_links.txt
+turnout_tier_categorization.egg-info/requires.txt
+turnout_tier_categorization.egg-info/top_level.txt
