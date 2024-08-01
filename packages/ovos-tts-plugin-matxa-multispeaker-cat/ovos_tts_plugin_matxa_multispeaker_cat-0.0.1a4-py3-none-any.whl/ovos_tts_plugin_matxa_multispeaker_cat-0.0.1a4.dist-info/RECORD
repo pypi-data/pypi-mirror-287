@@ -1,0 +1,12 @@
+ovos_tts_plugin_matxa_multispeaker_cat/__init__.py,sha256=MQBuhf2HUqcZSnYG8pyX7Au-NXK8xxRch4RHIsG06UU,3863
+ovos_tts_plugin_matxa_multispeaker_cat/cleaners.py,sha256=9KQMAlppqPqcp9AXvn5d4qMKFMfPeYVpwqSeEWWsv9o,5483
+ovos_tts_plugin_matxa_multispeaker_cat/text.py,sha256=xzvU6Y0q5phv1Opw6qQzFgfpjHKt9FAXiZ8wFIjg6AQ,1823
+ovos_tts_plugin_matxa_multispeaker_cat/tts.py,sha256=jtlgJ_5lU158tcR-uDIjNb5_EYeYEYDZl-fvouJ8tq4,6810
+ovos_tts_plugin_matxa_multispeaker_cat/version.py,sha256=tN-GRMsE58DoMy5IhUH1BfQdSjrxTF4p9GMaVvYuz3k,177
+ovos_tts_plugin_matxa_multispeaker_cat-0.0.1a4.dist-info/LICENSE,sha256=Tu7uLIJNXIqD0iZ3wpowWsAnSQIxnzqbLZ3TxTWRyHw,11349
+ovos_tts_plugin_matxa_multispeaker_cat-0.0.1a4.dist-info/METADATA,sha256=8unJcIzhpsJO2b9Csh-QKYrQK3njWHYKO38Drwz9_s4,1182
+ovos_tts_plugin_matxa_multispeaker_cat-0.0.1a4.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+ovos_tts_plugin_matxa_multispeaker_cat-0.0.1a4.dist-info/entry_points.txt,sha256=Na1fK51HkM97nCvKqINJD1giXwjzU3lX6cSnh2VuSvw,124
+ovos_tts_plugin_matxa_multispeaker_cat-0.0.1a4.dist-info/top_level.txt,sha256=UkHyyBmbSVa_V0k2mjsXhD81snsS5-BLo-oC3uiaR1M,39
+ovos_tts_plugin_matxa_multispeaker_cat-0.0.1a4.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+ovos_tts_plugin_matxa_multispeaker_cat-0.0.1a4.dist-info/RECORD,,
