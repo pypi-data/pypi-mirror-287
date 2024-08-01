@@ -1,0 +1,163 @@
+Metadata-Version: 2.1
+Name: salbpone
+Version: 24.7.5
+Summary: Simple Assembly Line Balancing Problem (SALBP-1) solver
+Author: Oleh Oleinikov
+Author-email: Oleh Oleinikov <oleh.oleynikov@gmail.com>
+License: GNU GPL v3
+Project-URL: Homepage, https://github.com/OlehOleinikov/salbone
+Project-URL: Documentation, https://salbpone.readthedocs.io
+Keywords: assembly line balancing,SALBP-1,optimization,linear programming,operations research,workstation assignment,combinatorial optimization
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: Ukrainian
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Requires-Python: >=3.10
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: PuLP~=2.8.0
+Requires-Dist: loguru~=0.7.2
+Requires-Dist: networkx~=3.3
+Requires-Dist: pyvis~=0.3.2
+Requires-Dist: numpy~=2.0.0
+Provides-Extra: dev
+Requires-Dist: jupyter; extra == "dev"
+Requires-Dist: sphinx; extra == "dev"
+Requires-Dist: sphinx_rtd_theme; extra == "dev"
+Requires-Dist: sphinx-copybutton; extra == "dev"
+Requires-Dist: sphinx-toggleprompt; extra == "dev"
+Requires-Dist: sphinx-automodapi; extra == "dev"
+Requires-Dist: readthedocs-sphinx-search; extra == "dev"
+Requires-Dist: recommonmark; extra == "dev"
+
+
+SALBP-1 solver
+======================
+
+.. image:: https://img.shields.io/badge/Документація-Read%20the%20Docs-magenta
+   :target: https://salbpone.readthedocs.io/en/latest/
+   :alt: Документація
+
+.. image:: https://img.shields.io/badge/PyPI-сайт-blue
+   :target: https://pypi.org/project/salbpone/
+   :alt: Сторінка Python index
+
+.. image:: https://img.shields.io/badge/GitHub-репозиторій-cyan
+   :target: https://github.com/OlehOleinikov/salbpone
+   :alt: Репозиторій проєкту
+
+
+- `Документація <https://salbone.readthedocs.io/en/latest/>`_ (посібник користувача та первинний код)
+- `Приклад <https://salbone.readthedocs.io/en/latest/handbook.html>`_ використання
+- `Математична модель <https://salbone.readthedocs.io/en/latest/mathmodel.html>`_
+- `Сторінка <https://pypi.org/project/salbpone/>`_ Python index.
+- `Репозиторій  <https://github.com/OlehOleinikov/salbpone>`_ проєкту.
+
+.. code-block:: shell
+
+    pip install salbpone
+
+TL;DR
+----------------
+
+Solution of a linear programming problem with integer constraints and the sequence of operations according to
+the precedence constraint graph for optimizing the number of workstations (a.k.a. Assembly Line Balancing
+Problem (SALBP-1)).
+
+.. image:: images/graph.png
+   :align: center
+   :alt: Procedure graph
+
+
+The project examines approaches to formulating the mathematical model and constraints, methods for finding the
+optimal solution, and the implementation of the proposed algorithms using a personal computer. The program
+listing can be used to solve similar problems.
+do
+
+Типова умова
+--------------
+``T (час циклу) =10``
+
+.. list-table::
+   :header-rows: 1
+
+   * - Номер операції
+     - Безпосередньо попередні операції
+     - Тривалість операції
+   * - 1
+     - немає
+     - 5
+   * - 2
+     - немає
+     - 6
+   * - 3
+     - 1
+     - 2
+   * - 4
+     - 2, 3
+     - 5
+   * - 5
+     - 1, 2
+     - 4
+   * - 6
+     - 4
+     - 3
+
+
+Вхідні дані формуються змінними:
+
+.. code-block:: python
+
+    t = [5, 6, 2, 5, 4, 3],
+    procedure_graph = {1: [],
+                      2: [],
+                      3: [1],
+                      4: [2, 3],
+                      5: [1, 2],
+                      6: [4]},
+    cycle_time = 10
+
+
+**SALBP-1 (Simple Assembly Line Balancing Problem Type 1)** є класичним завданням оптимізації у виробничих системах. Основне завдання полягає в тому, щоб розподілити набір операцій на мінімальну кількість робочих станцій при фіксованому часі циклу. Це допомагає зменшити витрати, покращити ефективність та продуктивність виробничого процесу. Програма вирішує цю задачу шляхом побудови математичної моделі, що враховує всі необхідні обмеження і вимоги.
+
+
+Вирішення задачі
+------------------------------
+
+
+.. code-block:: python
+
+    s = SolverSALBP(operations_costs=t,
+                    cycle_time=cycle_time,
+                    precedence_graph=procedure_graph,
+                    verbose=False)
+
+
+
+
+.. code-block:: shell
+
+    SUCCESS | Знайдено оптимальне рішення
+
+    SUCCESS | Матриця призначення:
+    SUCCESS | t01: |   | + |   |   |   |
+    SUCCESS | t02: | + |   |   |   |   |
+    SUCCESS | t03: |   |   | + |   |   |
+    SUCCESS | t04: |   |   | + |   |   |
+    SUCCESS | t05: |   | + |   |   |   |
+    SUCCESS | t06: |   |   | + |   |   |
+
+    SUCCESS | Завантаження станцій:
+    SUCCESS | Станція J1: 6
+    SUCCESS | Станція J2: 9
+    SUCCESS | Станція J3: 10
+    SUCCESS | Станція J4: 0
+    SUCCESS | Станція J5: 0
+    SUCCESS | Станція J6: 0
+
+    SUCCESS | Увімкнені станції: 3
+
