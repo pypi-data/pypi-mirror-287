@@ -1,0 +1,17 @@
+{
+    "__type__": "task",
+    "input_fields": {
+        "document": "str",
+        "document_type": "str"
+    },
+    "reference_fields": {
+        "summary": "str"
+    },
+    "prediction_type": "str",
+    "metrics": [
+        "metrics.rouge"
+    ],
+    "defaults": {
+        "document_type": "document"
+    }
+}
