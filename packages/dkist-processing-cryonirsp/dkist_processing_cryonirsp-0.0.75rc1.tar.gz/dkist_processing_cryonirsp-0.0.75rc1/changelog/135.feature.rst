@@ -1,0 +1,1 @@
+This change corrects the CryoNIRSP SP helioprojective and equatorial spatial coordinates and writes these to the Level 1 headers.
