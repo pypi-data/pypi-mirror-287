@@ -1,0 +1,4 @@
+rapidfuzz==2.11.1
+membank>=0.4.1
+chatbot>=0.0.5
+chatbot_fifa_extension>=0.0.3
