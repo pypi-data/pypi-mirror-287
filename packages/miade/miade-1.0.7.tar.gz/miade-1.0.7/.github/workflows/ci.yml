@@ -1,0 +1,40 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+      - dev
+
+jobs:
+  Test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: install python3
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+      - name: install dependencies
+        run: |
+          python -m pip install pip==24.0
+          pip install pytest
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install ./
+          pip list
+      - name: download model
+        run: |
+          python -m spacy download en_core_web_md
+          pip install https://huggingface.co/kormilitzin/en_core_med7_lg/resolve/main/en_core_med7_lg-any-py3-none-any.whl
+      - name: run pytest
+        run: pytest ./tests/*
+      - name: install ruff
+        run: pip install ruff
+      - name: ruff format
+        run: |
+          ruff format
+          ruff check --fix
+        continue-on-error: true
