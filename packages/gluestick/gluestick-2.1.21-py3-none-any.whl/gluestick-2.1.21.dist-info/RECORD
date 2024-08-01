@@ -1,0 +1,9 @@
+gluestick/__init__.py,sha256=zJS1sjZ50TvXS6pNFXUCgqPNbDJtObBI_lioseLLNms,149
+gluestick/etl_utils.py,sha256=q3fitC_Pv1CSHWBJYcA-Vrj6qJkFBdl_9OJfSO3XlbQ,22112
+gluestick/pandas_utils.py,sha256=i5mhv2nrgsHSzaADVQAHttakn3uElW0-xke0FeTCdH8,10364
+gluestick/singer.py,sha256=2ynBYRU4N2pG2D8jXs6hREE9KdNn8tk69DwMoP4m9t8,8284
+gluestick-2.1.21.dist-info/LICENSE,sha256=s52urzB_j3kqfKgj3j-pBA6Dw_s_WeGPQ75Srxnx6e0,1047
+gluestick-2.1.21.dist-info/METADATA,sha256=U970qH8bgIW2WCeLmoWgoYHXRs6qSJ2Ez6NxP6-inVA,1314
+gluestick-2.1.21.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+gluestick-2.1.21.dist-info/top_level.txt,sha256=REGKc5tTKvN3NQ6RDd8_7Nm6GzI6_d86rzROPmSONlc,10
+gluestick-2.1.21.dist-info/RECORD,,
