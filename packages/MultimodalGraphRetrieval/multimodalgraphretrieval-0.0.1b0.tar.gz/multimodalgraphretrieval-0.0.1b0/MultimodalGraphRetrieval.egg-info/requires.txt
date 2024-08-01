@@ -1,0 +1,6 @@
+langchain
+sentence_transformers
+langchain-community
+pypdf2==3.0.0
+pypdf
+pymupdf
