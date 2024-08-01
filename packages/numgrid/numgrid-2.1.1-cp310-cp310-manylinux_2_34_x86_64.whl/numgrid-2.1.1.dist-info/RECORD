@@ -1,0 +1,5 @@
+numgrid-2.1.1.dist-info/METADATA,sha256=jYXv2zGW1GZDHYfkjFh0qU0rTl2l6fnvPm8n0sUPEp8,10207
+numgrid-2.1.1.dist-info/WHEEL,sha256=XHIMMqKJPYbs2zltNx-HQCDNw6UNwwpHlE65RNjWPdE,108
+numgrid/__init__.py,sha256=G_rdjRGppSZR9-1XyF-XwWs6pZ3udDW9DWaMxu9qea0,111
+numgrid/numgrid.cpython-310-x86_64-linux-gnu.so,sha256=6dmFpMNsqQB_Ntx7f0PoRKpU2Fzdv4u6l-la712GNvc,4244744
+numgrid-2.1.1.dist-info/RECORD,,
