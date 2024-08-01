@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=66.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["gerabaldi", "gerabaldi.models", "gerabaldi.math", "gerabaldi.cookbook"]
+
+[project]
+name = "gerabaldi"
+dynamic = ["version", "dependencies"]
+authors = [
+  { name="Ian Hill", email="ianrmhill@gmail.com" },
+]
+description = "A temporal simulator for probabilistic degradation and failure processes with a focus on integrated circuit wear-out "
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Intended Audience :: Science/Research",
+    "Development Status :: 3 - Alpha",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "gerabaldi.__version__"}
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+"Homepage" = "https://github.com/ianrmhill/gerabaldi"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+lint.select = ["ALL"]
+lint.ignore = ["C90", "D", "I", "ANN", "EM", "PLR", "TCH", "FBT", "PTH", "T20",
+    "ARG001", "ARG002", "F403", "F405", "E741", "PD008", "RET505", "SIM114", "TRY003", "RUF013", "ISC001", "COM812"]
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "SLF001"]
+"demos/*" = ["INP001"]
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "single"
+[tool.ruff.format]
+quote-style = "single"
+skip-magic-trailing-comma = true
