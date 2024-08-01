@@ -1,0 +1,12 @@
+get_data_7_25/main.py,sha256=56fb-XkuKoodQ5Q58H81tRbOuHF_Y5ib1jrcIh3aTDE,1639
+get_data_7_25/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+get_data_7_25/api/get_api.py,sha256=tAepsQ0wuYapdAGZj9bMGW0diEtpoI7RbZ2P2XzRHMY,3078
+get_data_7_25/book/get_book.py,sha256=d22zUnABRWrTyfxw0JlDGiuKYaJfUv1oIKfvFpkKVXU,248
+get_data_7_25/book/bunko/get_bunko.py,sha256=zU8IkJPZ1ibXoDJygCNnmrUW6ddfDc-IRSTp8PFBYRk,264
+get_data_7_25/book/tankoubon/get_tankoubon.py,sha256=mICSTVfg0oRFNvj6j3mqOPpMg3pR7HvHZLtFFW8lhaE,284
+get_data_7_25-0.1.8.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+get_data_7_25-0.1.8.dist-info/METADATA,sha256=KDGJ-4z3-55PGhbabdfuIJmKIjoe6m3I5dW7ek-LQNE,594
+get_data_7_25-0.1.8.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+get_data_7_25-0.1.8.dist-info/entry_points.txt,sha256=0tpa80nt0cyZOURM5QUXBKA9YY--MT7aFn_bkSHGNLY,62
+get_data_7_25-0.1.8.dist-info/top_level.txt,sha256=1Du-GX0Y1lvqCSXHW5F1FJUsCF7Xi6bIQbPj7x7HCdY,14
+get_data_7_25-0.1.8.dist-info/RECORD,,

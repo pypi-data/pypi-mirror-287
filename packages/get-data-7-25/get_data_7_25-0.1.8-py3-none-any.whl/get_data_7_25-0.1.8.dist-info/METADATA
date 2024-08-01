@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: get_data_7_25
+Version: 0.1.8
+Summary: A project to gather and process book data from various sources
+Author-email: Your Name <your.email@example.com>
+License: MIT
+Project-URL: Homepage, https://yourproject.com
+Project-URL: Repository, https://github.com/yourusername/get_data_7_25
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp ==3.9.5
+Requires-Dist: beautifulsoup4 ==4.12.3
+Requires-Dist: requests ==2.32.3
+Provides-Extra: dev
+Requires-Dist: build ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+
