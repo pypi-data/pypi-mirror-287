@@ -1,0 +1,3 @@
+[console_scripts]
+harbinger=harbinger.__main__:app
+
