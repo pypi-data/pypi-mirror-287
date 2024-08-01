@@ -1,0 +1,13 @@
+Cargo.toml
+MANIFEST.in
+README.md
+pyproject.toml
+python/gridr.egg-info/PKG-INFO
+python/gridr.egg-info/SOURCES.txt
+python/gridr.egg-info/dependency_links.txt
+python/gridr.egg-info/requires.txt
+python/gridr.egg-info/top_level.txt
+python/mylib/__init__.py
+rust/lib.rs
+rust/lib_core.rs
+rust/lib_py.rs

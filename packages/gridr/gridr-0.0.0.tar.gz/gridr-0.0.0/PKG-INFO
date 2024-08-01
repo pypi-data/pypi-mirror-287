@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: gridr
+Version: 0.0.0
+Summary: Geometric and Radiometric Image Data Resampling
+Author-email: Arnaud Kelbert <arnaud.kelbert@cnes.fr>
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Rust
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: Apache Software License
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.24.4
+
+# GRIDR - Geometric and Radiometric Image Data Resampling
+A python/rust library for image resampling. In progress...

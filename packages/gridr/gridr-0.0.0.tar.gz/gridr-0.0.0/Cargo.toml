@@ -1,0 +1,35 @@
+# Cargo.toml
+[package]
+name = "pyo3-cookie-cutter"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+extension-module = ["pyo3/extension-module"]
+default = []
+
+[dependencies]
+pyo3 = { version = "0.21.2", features = ["extension-module", "experimental-declarative-modules"]}
+#pyo3 = "^0.22.0"
+#pyo3 = "*"
+numpy = "0.21.0"
+ndarray = { version = "0.15.6", features = ["approx", "rayon"] }
+#ndarray = "^0.15.6"
+#numpy = "^0.21.0"
+#numpy = "*"
+
+#rand = "0.8.5" # Specific for this example
+#ordered-float = "2.10.0" # Specific for this example
+
+[build-dependencies]
+pyo3-build-config = "0.22.0"
+
+[lib]
+name = "_mylib"  # private module to be nested into Python package,
+               # needs to match the name of the function with the `[#pymodule]` attribute
+path = "rust/lib.rs"
+crate-type = ["cdylib"]  # required for shared library for Python to import from.
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# See also PyO3 docs on writing Cargo.toml files at https://pyo3.rs
+
