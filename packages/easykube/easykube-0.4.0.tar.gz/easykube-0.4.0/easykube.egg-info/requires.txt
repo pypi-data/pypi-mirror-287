@@ -1,0 +1,5 @@
+httpx
+pyyaml
+
+[socks]
+socksio==1.*
