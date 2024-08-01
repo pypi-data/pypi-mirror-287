@@ -1,0 +1,11 @@
+snbackup/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+snbackup/__main__.py,sha256=3iAq5FyQo7BSOM4veklrgaiE9z1z2raKpwL7DQhAcYw,157
+snbackup/backup.py,sha256=ZwdzC5fJcl_A1q2-xPcrK2xiuN_lu8m56DR5odZZDqw,6460
+snbackup/notes.py,sha256=g_xlsWx13DXMT6y0JN5trIrdp_FMzFVz3XrDP4peP_w,2699
+snbackup/utilities.py,sha256=aI6QEhtTQLSWY5IFw-ZlaDw0Q8L3LRkikLK6XhBIs40,1673
+snbackup-1.1.0.dist-info/LICENSE,sha256=PnM-4pzKlSA9JG1m9Mntu8TkayIhoQFmlZBSOXeNVfY,11344
+snbackup-1.1.0.dist-info/METADATA,sha256=zeWlr8_S1DZqKD9d-5VzmhScrqFWKp0np0Eq37B-N3E,4109
+snbackup-1.1.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+snbackup-1.1.0.dist-info/entry_points.txt,sha256=SkCdcW5yAiTBD2As7IOoK4dmy-gMA2aNkHx6Tsven0k,52
+snbackup-1.1.0.dist-info/top_level.txt,sha256=RRGeediwcoMrayUDtPKNiU8IiZb1HPlhjs57tbkvYOA,9
+snbackup-1.1.0.dist-info/RECORD,,
