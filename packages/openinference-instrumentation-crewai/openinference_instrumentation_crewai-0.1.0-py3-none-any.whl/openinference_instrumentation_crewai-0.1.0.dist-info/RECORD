@@ -1,0 +1,7 @@
+openinference/instrumentation/crewai/__init__.py,sha256=1NWUiK7gwXRLwFvfkLf6Upug02qRcyLVGw2tWKi3ZD4,2719
+openinference/instrumentation/crewai/_wrappers.py,sha256=ukBu6UXL_-pDIiYKncU-ZRG355_TRGqL3fCUZ9I26Fs,9923
+openinference/instrumentation/crewai/version.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+openinference_instrumentation_crewai-0.1.0.dist-info/METADATA,sha256=uk7XjSLqhggQnSCQ6250OWQfZRgTwlqIRXhIarKiUaY,5499
+openinference_instrumentation_crewai-0.1.0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+openinference_instrumentation_crewai-0.1.0.dist-info/licenses/LICENSE,sha256=vbYZydngUVsXsIBUvMGdKz3LjiQn5Mv9cRceRxOPU20,10840
+openinference_instrumentation_crewai-0.1.0.dist-info/RECORD,,
