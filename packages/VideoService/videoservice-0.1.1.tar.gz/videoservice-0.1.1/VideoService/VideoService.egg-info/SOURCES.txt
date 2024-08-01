@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+VideoService/VideoService.egg-info/PKG-INFO
+VideoService/VideoService.egg-info/SOURCES.txt
+VideoService/VideoService.egg-info/dependency_links.txt
+VideoService/VideoService.egg-info/requires.txt
+VideoService/VideoService.egg-info/top_level.txt
