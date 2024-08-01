@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: bangla_keyword_extractor
+Version: 0.0.12
+Summary: Bangla keyword extraction library which extracts keywords from text or list of texts
+Home-page: https://github.com/PolygonTechnology-xyz/bangla-keyword-extractor
+Author: Kabin Hasan
+Author-email: Kabin Hasan <kanchon@polygontech.xyz>
+Project-URL: Homepage, https://github.com/PolygonTechnology-xyz/bangla-keyword-extractor
+Project-URL: Issues, https://github.com/PolygonTechnology-xyz/bangla-keyword-extractor/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10.12
+Description-Content-Type: text/markdown
+Requires-Dist: rake-nltk==1.0.6
+Requires-Dist: sbnltk==2.0.2
+Requires-Dist: tqdm==4.66.4
+
+# bangla-keyword-extractor
