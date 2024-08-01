@@ -1,0 +1,15 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+src/nbkits/__init__.py
+src/nbkits/_version.py
+src/nbkits/display.py
+src/nbkits/xlstyler.py
+src/nbkits.egg-info/PKG-INFO
+src/nbkits.egg-info/SOURCES.txt
+src/nbkits.egg-info/dependency_links.txt
+src/nbkits.egg-info/requires.txt
+src/nbkits.egg-info/top_level.txt
+tests/__init__.py
+tests/test_excel.py
