@@ -1,0 +1,4 @@
+[console_scripts]
+build-shyft=scripts.build:build_shyft
+shyft=labelsmith.shyft.Shyft:main
+
