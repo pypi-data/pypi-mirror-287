@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: chatinterface
+Version: 0.0.6
+Summary: Chatbot implementation
+Home-page: https://github.com/Kolumbs/chatbot
+Author: Juris Kaminskis
+Author-email: juris@kolumbs.net
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rapidfuzz >=2.11.1
+Requires-Dist: membank >=0.4.1
+
+# chatbot
+Chatbot implementation
