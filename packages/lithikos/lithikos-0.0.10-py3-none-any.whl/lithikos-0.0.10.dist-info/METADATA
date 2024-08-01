@@ -1,0 +1,86 @@
+Metadata-Version: 2.1
+Name: lithikos
+Version: 0.0.10
+Summary: A package supporting analysis of stone tools.
+Author-email: Graham James Addis <graham@addis.org.uk>, James Hicks <james.hicks@arch.ox.ac.uk>
+Project-URL: Homepage, https://gitlab.com/lithikos/lithikos
+Project-URL: Issues, https://gitlab.com/lithikos/lithikos/issues
+Classifier: Development Status :: 1 - Planning
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: scipy ==1.11.1
+Requires-Dist: matplotlib ==3.7.2
+Requires-Dist: vedo ==2024.5.1
+Requires-Dist: vtk ==9.2.6
+Requires-Dist: treelib ==1.7.0
+Requires-Dist: pandas ==2.0.3
+Requires-Dist: tqdm ==4.66.1
+Requires-Dist: pyyaml ==6.0.1
+Requires-Dist: trimesh ==4.1.0
+Requires-Dist: filelock ==3.13.1
+Requires-Dist: jinja2 ==3.1.4
+
+# Stone Tool Symmetry Analyser
+
+Lithikos is an open-source morphometry which calculates volumetric data for the artefact model and a radially symmetrical reference.
+
+This application was initally written for the analysis of bilateral and bifacial symmetry of 3D models of paleolithic stone tools.
+Various options are available for artefact alighment. Once aligned and oriented, the model is divided into a number of slices along the legth of the model in order to analyze the morphology of each model before fitting the largest possible known-symmetrical reference (Endo-Sym) within the topological boundary of each artefact model.
+The measurements from the generated reference mesh can then be used, in conjunction with the original mesh, to determine coefficients of asymmetry etc.
+
+## Motivation
+
+There have been a number of 2D approaches to the analysis of bilateral symmetry in Acheulean handaxes: a radial qualification approach (Marathe, 1980), a radial quantification approach (Wynn & Tierson, 1990), the Continuous Symmetry Measure (Saragusti et al., 1998), a mental folding method (McNabb et al., 2004), the Index of Symmetry measure (Lycett et al., 2008) and the Index of Deviation of Symmetry by Feizi et al. (2018, 2020). The most popular analysis of bilateral symmetry has been the Flip Test and its Asymmetry Index (Couzens, 2013; Hardaker & Dunn, 2005; Keen et al. 2006; Lee, 2016; Putt et al., 2014; Shipton, 2018; Underhill, 2007; White & Foulds, 2018). To simultaneously quantify both bilateral and bifacial handaxe symmetry, Li et al. (2016, 2018) introduced a novel correlative approach based on analyzing the volumes of opposing halves of bifurcated 3D models of handaxes, but without any reference to a known symmetrical min. As an alternative to the unreferenced volumetric approach by Li et al., this application and the resulting *Coefficents of Symmetry* offer a 3-dimensional analysis of symmetry referencing a known symmetrical min.
+
+## Installation and Setup
+
+To install the applicastion,
+
+```bash
+pip install lithikos
+```
+
+## Quickstart Code Example
+
+```bash
+lithikos my_handaxe.obj
+```
+
+which is equivalent to
+
+```bash
+lithikos my_handaxe.obj --orientation-method Tip2CoM --analysis-method Endo-Sym --slice-count 100 --point-count 36 --tip-spacing 0.001 --butt-spacing 0.001
+```
+
+Based on the above command Lithikos will produce the following files in the output directory
+
+```text
+output/my_handaxe
+output/my_handaxe/quadrants
+output/my_handaxe/quadrants/my_handaxe_T2C-QIII_DL.obj
+output/my_handaxe/quadrants/my_handaxe_T2C-QII_DR.obj
+output/my_handaxe/quadrants/my_handaxe_T2C-QIV_VL.obj
+output/my_handaxe/quadrants/my_handaxe_T2C-QI_VR.obj
+output/my_handaxe/my_handaxe_T2C_3D-model.obj
+output/my_handaxe/my_handaxe_T2C_endo-sym_s0100-p0036_ts0.001-bs0.001.obj
+output/my_handaxe/my_handaxe_T2C_endo-sym_s0100-p0036_ts0.001-bs0.001_out.html
+output/my_handaxe/my_handaxe_T2C_endo-sym_s0100-p0036_ts0.001-bs0.001_out.txt
+```
+
+Two csv files will also be produced
+
+```text
+reference_data.csv
+volume_data.csv
+```
+
+## Usage Reference
+
+Roe (1964, 1968) measured a small set of planar metrics and analyzed a large body of Acheulean bifaces gathered from 38 sites in Southern Britain to document the variability in size, shape, and refinement of whole assemblages or groups of assemblages. He employed five ratios based on seven linear (planar) measurements (in millimeters) and the weight (in ounces) of an artefact. The planar measurements included length (tip to butt in plan view), breadth (maximum from side to side in plan view), and thickness (maximum in profile view).
+
+## Recommended citation
+
+## Other Related Tools
