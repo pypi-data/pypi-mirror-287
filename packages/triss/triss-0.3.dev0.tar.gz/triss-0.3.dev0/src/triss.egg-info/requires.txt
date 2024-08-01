@@ -1,0 +1,7 @@
+
+[qrcode]
+pillow>=10.4.0
+
+[test]
+pytest>=8.2.1
+hypothesis>=6.102.4
