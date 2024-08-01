@@ -1,0 +1,14 @@
+total_segments: 2
+segments:
+  0:
+    type: info
+    intro: Today's Quote of the Day from Wikiquote
+    content: |
+      The quote of the day changes every day. Check back tomorrow for a different quote! It's possible that non-ascii characters were fetched from wikiquote, in which case they
+      were either substituted with the closest ascii equivalent or replaced with '***'. Also, some quotes may be excessively long and may not display properly. Feel free to skip them,
+      for now.
+  1:
+    type: drill
+    intro: Today's Quote of the Day from Wikiquote
+    content: |
+      It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends. --J. K. Rowling
