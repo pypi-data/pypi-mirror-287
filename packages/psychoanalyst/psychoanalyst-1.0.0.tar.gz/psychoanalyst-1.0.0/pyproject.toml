@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "psychoanalyst"
+version = "1.0.0"
+description = "Proyecto para análisis de exámenes psicológicos"
+authors = ["Ignacio de la Torre Arias <ignaciodlta@gmail.com>"]
+maintainers = ["Ignacio de la Torre Arias <ignaciodlta@gmail.com>"]
+readme = "README.md"
+license = "Proprietary"
+
+[tool.poetry.scripts]
+# gui scripts are not supported before build change to console
+# Then follow this steps after build
+# 1. Go to dist/
+# 2. Change .whl for .zip
+# 3. Unzip and enter the .dist-info folder
+# 4. On 'entry_points.txt' change 'console_scripts' for 'gui_scripts'
+# 5. Save changes, zip and change .zip for .whl
+psychoanalyst = { reference = 'psychoanalyst.__main__:main', type = 'console' }
+
+[tool.poetry.dependencies]
+python = "~3.12"
+pandas = "^2.2.2"
+dearpygui = "^1.11.1"
+matplotlib = "^3.9.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
