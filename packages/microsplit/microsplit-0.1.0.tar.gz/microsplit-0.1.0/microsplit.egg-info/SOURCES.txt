@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+microsplit/__init__.py
+microsplit/main.py
+microsplit.egg-info/PKG-INFO
+microsplit.egg-info/SOURCES.txt
+microsplit.egg-info/dependency_links.txt
+microsplit.egg-info/entry_points.txt
+microsplit.egg-info/requires.txt
+microsplit.egg-info/top_level.txt

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "microsplit"
+version = "0.1.0"
+description = "First tool to treat Micro-C data. Before using Microsplit, you need to perform an initial alignment of reads using Bowtie2 with the `--local-very-sensitive` mode and the `-xeq` option to obtain explicit CIGAR strings. After, Microsplit analyse CIGAR score and fragments reads to make new pairs. The cutting site accuracy is really fine. Sensibility is 0,92 and specifity 0,71"
+readme = "README.md"
+authors = [
+    { name="Samir Bertache", email="samir.bertache.djenadi@gmail.com" }
+]
+license = { file="LICENSE" }
+dependencies = [
+    "pysam==0.22.1",
+]
+keywords = ["bioinformatics", "DNA", "FASTQ", "BAM", "restriction enzyme"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.scripts]
+microsplit = "microsplit.main:main_cli"
+
+[tool.setuptools]
+packages = ["microsplit"]
