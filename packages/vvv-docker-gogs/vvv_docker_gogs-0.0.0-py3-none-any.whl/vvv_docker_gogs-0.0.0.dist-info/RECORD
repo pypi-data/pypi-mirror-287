@@ -1,0 +1,6 @@
+vvv_docker_gogs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vvv_docker_gogs/gogs.tar.xz,sha256=hoO2MAZzubEPNNzRpEzV40MulPITjdPgGjPLu6bYnAs,35849452
+vvv_docker_gogs-0.0.0.dist-info/METADATA,sha256=s2-WYgt3rBq4stctCzngRipr0XhHqMLxM3gZFXjmFHw,179
+vvv_docker_gogs-0.0.0.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+vvv_docker_gogs-0.0.0.dist-info/top_level.txt,sha256=Ai--yA_V6pJVOs2N6vL4Bn--31JNhoDwy0Hrsx98nR8,16
+vvv_docker_gogs-0.0.0.dist-info/RECORD,,
