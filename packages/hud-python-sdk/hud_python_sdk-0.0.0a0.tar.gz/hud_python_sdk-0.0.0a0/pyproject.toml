@@ -1,0 +1,12 @@
+[project]
+name = "hud-python-sdk"
+version = "0.0.0a0"
+authors = [
+  { name="Hud", email="support@hud.io" },
+]
+description = "Hud package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
