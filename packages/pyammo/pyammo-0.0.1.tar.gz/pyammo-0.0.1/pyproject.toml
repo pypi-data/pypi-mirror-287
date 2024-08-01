@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "pyammo"
+version = "0.0.1"
+description = "A python library for the Artifacts MMO."
+authors = ["Joaquín Barotto <joaquinbarotto@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.32.3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
