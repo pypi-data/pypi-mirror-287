@@ -1,0 +1,11 @@
+LICENCE
+MANIFEST.in
+README.md
+setup.py
+wealthguru/__init__.py
+wealthguru/main.py
+wealthguru.egg-info/PKG-INFO
+wealthguru.egg-info/SOURCES.txt
+wealthguru.egg-info/dependency_links.txt
+wealthguru.egg-info/requires.txt
+wealthguru.egg-info/top_level.txt
