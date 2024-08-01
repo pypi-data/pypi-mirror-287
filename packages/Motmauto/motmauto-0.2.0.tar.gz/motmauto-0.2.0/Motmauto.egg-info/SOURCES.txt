@@ -1,0 +1,7 @@
+README.txt
+setup.py
+Motmauto.egg-info/PKG-INFO
+Motmauto.egg-info/SOURCES.txt
+Motmauto.egg-info/dependency_links.txt
+Motmauto.egg-info/requires.txt
+Motmauto.egg-info/top_level.txt
