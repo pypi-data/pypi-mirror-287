@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: durakgame
+Version: 1.0.1
+Summary: A simple Durak card game simulator
+Author-email: Artem Ibragimov <artem.ibragimov1602@gmail.com>
+License-File: LICENCE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# Durak
+
+A simple implementation of the Russian's [Durak](https://en.wikipedia.org/wiki/Durak) card game.
