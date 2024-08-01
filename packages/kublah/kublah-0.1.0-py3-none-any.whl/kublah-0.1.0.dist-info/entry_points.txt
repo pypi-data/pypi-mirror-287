@@ -1,0 +1,3 @@
+[console_scripts]
+kublah=kublah.main:main
+
