@@ -1,0 +1,71 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry]
+name = "probullstats"
+version = "0.2.0"
+description = "An engine to pull data from the ProBullStats API."
+authors = ["Guy Hoozdis <GuyHoozdis@users.noreply.github.com>"]
+readme = "README.rst"
+packages = [{include = "probullstats", from = "src"}]
+
+
+[[tool.poetry.source]]
+name = "testpypi"
+url = "https://test.pypi.org/legacy/"
+priority = "explicit"
+
+
+[tool.poetry.scripts]
+probullstats = "probullstats.console:cli"
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+argparse = "^1.4.0"
+loguru = "^0.7.2"
+
+
+[tool.poetry.group.dev.dependencies]
+ipython = "*"
+ipdb = "^0.13.13"
+
+
+[tool.poetry.group.test.dependencies]
+testtools = "^2.7.2"
+coverage = {extras = ["toml"], version = "^7.6.0"}
+mypy = "^1.11.0"
+ruff = "^0.5.4"
+behave = "^1.2.6"
+xdoctest = "^1.1.5"
+pygments = "^2.18.0"
+
+
+[tool.poetry.group.nox.dependencies]
+nox = "^2024.4.15"
+
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.4.7"
+furo = "^2024.7.18"
+sphinx-autodoc-typehints = "^2.2.3"
+
+
+[tool.poetry.group.release]
+optional = true
+
+[tool.poetry.group.release.dependencies]
+python-semantic-release = "^9.8.6"
+
+[tool.semantic_release]
+version_toml = [
+  "pyproject.toml:tool.poetry.version",
+]
+branch = "main"
+changelog_file = "CHANGELOG.md"
+build_command = "pip install poetry && poetry build"
