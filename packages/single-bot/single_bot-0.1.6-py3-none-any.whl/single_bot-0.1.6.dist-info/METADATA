@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: single-bot
+Version: 0.1.6
+Summary: Omnichannel state-based chatbot framework
+Author: Nikita Karfidov
+Author-email: krfdv.ai@gmail.com
+License: AGPL-3.0
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Description-Content-Type: text/markdown
+Requires-Dist: aiogram
+Requires-Dist: sqlitedict
+Requires-Dist: python-dotenv
+
+Чатбот созданный для Single Bot - это набор связанных функций(нод), принимающих на вход обьект UserState и вызывающие методы этого же обьекта UserState.
+
+Для запуска чатбота - передать первую ноду в BotFactory и вызвать метод .start() указав нужные платформы.
+
+Все данные, которые чатбот производит в процессе работы сохранаются в папке data в корне проекта. Для миграции - сохранить и перенести эту папку.
+
+**Для создания бота:**
+Указать необходимые ключи в .env файле
+Для телеграма это: TELEGRAM_TOKEN
+```
+from single_bot.bot_factory import BotFactory
+from nodes import first_node
+import asyncio
+
+
+async def main():
+    await BotFactory(first_node=first_node).start("telegram")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+**Методы UserState для нод:**
+- **get_request** - Получить запрос пользователя.
+- **send_message(text:str="", streaming:bool)** - отправка сообщения пользователю. Установив значения параметра streaming=True можно создать стриминг токенов пользователю. После стриминга необходимо отправить пустое сообщение со streaming=False
+
+**Методы для работы с переменными пользователя**:
+- **set_value(key:str, value)**
+- **get_value(key) -> value|None**
+
+**Методы связывания нод**
+- **set_next_node** - Указание ноды, которая должна выполниться сразу после завершения этой, не дожидаясь ввода пользователя.
+- **add_button** - Добавляет кнопку пользователю. Кнопка - текст, при вводе которого пользователь будет переходить на указанную в методе add_button - ноду. Отображение кнопок реализовано в подходящих интерфейсах.
+- **set_input_field** - Указывает, в какую ноду передать пользователя, если его ввод отличен от кнопок.
+
+
+
+**Пример ноды:**
+```
+from single_bot.user_state import UserState
+
+async def first_node(state:UserState):
+	user_message = state.get_request()["text"]
+	for letter in user_message:
+		state.send_message(letter, streaming=True)
+	state.send_message() # Для завершения стриминга
+	state.set_input_field(second_node) # при любом вводе от пользователя, он отправиться в second_node
+```
+
+**Особенности нод:**
+- В ноде обязательно следует указывать input_field. Отсутствие приведёт к ошибкам.
+- На данный момент отсутсвует какая либо проверка нод. Ошибки в нодах приведут к выводу из строя всего бота. Также ошибки в нодах почему то не всегда выдают ошибки в консоль. Бот просто останавливается.
+- Связи между нодами не проверяются. Убедитесь в том, что все ноды перетекают в другие ноды при любом вводе пользователя.
+
+На данный момент есть только поддержка telegram и командной строки. Однако добавить другие мессенджеры по аналоги в дальнейшем не составит труда.
