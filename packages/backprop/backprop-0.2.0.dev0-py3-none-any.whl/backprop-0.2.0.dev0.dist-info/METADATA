@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: backprop
+Version: 0.2.0.dev0
+Summary: A package for easily creating and hosting AI model APIs
+Home-page: https://github.com/backprop-ai/backprop
+Author: Backprop
+Author-email: hello@backprop.co
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: pydantic
+Requires-Dist: python-multipart
+Requires-Dist: python-jose[cryptography]
+Requires-Dist: passlib[bcrypt]
+Requires-Dist: click
+
+TODO
