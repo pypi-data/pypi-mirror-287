@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: pstats_extender
+Version: 0.1.2
+Summary: Designed to save pstats log to folder.
+Home-page: https://github.com/GrafLearnt/pstats_extender
+License: GNU
+Keywords: pstats,profiler
+Author: Kostiantyn Shmyhelskyi
+Author-email: graflearnt@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Debuggers
+Project-URL: Documentation, https://github.com/GrafLearnt/pstats_extender/blob/main/README.md
+Description-Content-Type: text/markdown
+
+# Abstract
+Designed to save pstats log to folder...
+# Install
+```bash
+    pip3 install git+https://github.com/GrafLearnt/pstats_extender.git
+```
+# Usage
+```python
+import pstats_extender
+
+
+@pstats_extender.profile()
+def some_function():
+    ...
+```
+## or
+```python
+import pstats_extender
+
+
+with pstats_extender.profile(
+    sortby=pstats_extenter.SortKey.CUMULATIVE, directory="../pstats"
+):
+    # your code here
+```
+## or
+```python
+import pstats_extender
+
+
+with pstats_extender.profile():
+    # your code here
+```
+
+
+## License
+
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
+
