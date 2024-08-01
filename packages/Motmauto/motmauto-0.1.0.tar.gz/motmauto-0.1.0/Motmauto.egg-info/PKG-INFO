@@ -1,0 +1,80 @@
+Metadata-Version: 2.1
+Name: Motmauto
+Version: 0.1.0
+Summary: Refer to Readme
+Home-page: https://github.com/MweinbergUmass/Masters_Thesis.git
+Author: Max Weinberg
+Author-email: mweinberg@umass.edu
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: absl-py==2.1.0
+Requires-Dist: astunparse==1.6.3
+Requires-Dist: certifi==2024.6.2
+Requires-Dist: charset-normalizer==3.3.2
+Requires-Dist: distlib==0.3.8
+Requires-Dist: flatbuffers==24.3.25
+Requires-Dist: gast==0.5.4
+Requires-Dist: google-pasta==0.2.0
+Requires-Dist: grpcio==1.64.1
+Requires-Dist: h5py==3.11.0
+Requires-Dist: idna==3.7
+Requires-Dist: joblib==1.4.2
+Requires-Dist: keras==3.3.3
+Requires-Dist: libclang==18.1.1
+Requires-Dist: Markdown==3.6
+Requires-Dist: markdown-it-py==3.0.0
+Requires-Dist: MarkupSafe==2.1.5
+Requires-Dist: mdurl==0.1.2
+Requires-Dist: ml-dtypes==0.3.2
+Requires-Dist: namex==0.0.8
+Requires-Dist: numpy==1.26.4
+Requires-Dist: opt-einsum==3.3.0
+Requires-Dist: optree==0.11.0
+Requires-Dist: packaging==24.0
+Requires-Dist: protobuf==4.25.3
+Requires-Dist: pyaml==24.4.0
+Requires-Dist: Pygments==2.18.0
+Requires-Dist: PyYAML==6.0.1
+Requires-Dist: requests==2.32.3
+Requires-Dist: rich==13.7.1
+Requires-Dist: scikit-learn==1.5.0
+Requires-Dist: scikit-optimize==0.10.2
+Requires-Dist: scipy==1.13.1
+Requires-Dist: six==1.16.0
+Requires-Dist: tensorboard==2.16.2
+Requires-Dist: tensorboard-data-server==0.7.2
+Requires-Dist: tensorflow==2.16.1
+Requires-Dist: tensorflow-io-gcs-filesystem==0.37.0
+Requires-Dist: termcolor==2.4.0
+Requires-Dist: threadpoolctl==3.5.0
+Requires-Dist: typing_extensions==4.12.2
+Requires-Dist: urllib3==2.2.1
+Requires-Dist: virtualenv==20.26.2
+Requires-Dist: Werkzeug==3.0.3
+Requires-Dist: wrapt==1.16.0
+
+All the code for my master's thesis exists here. The presentation and videos for each of the different behaviors have also been uploaded.
+
+Everything is organized around a project class and a parameter dictionary.
+
+The project class handles all the data and model tracking for individual use cases. The parameter dictionary is coupled with the project class to implement all the different parameter changes for the models one wants. All this will be updated as the project continues. 
+
+
+Currently working is:
+-Autoencoder Reconstruction
+-Autoencoder Preprocessing
+-Autoencoder Training
+
+Next steps are:
+-Feature Extraction (Somehow couple this with an excel sheet?)
+	-Parameter changes (filtering, etc...)
+-Embedding (Decision between autoencoder, tsne, or umap would be nice, for now we can just go with tsne)
+-Pick a reembeding method (everything will be defaulted to what I used for my masters thesis)
+-Embed all sleap files and make movies
+ -Movie handling will be a big undertaking. How do we want to handle tracking the corresponding mp4's... Currently we are relying on the mp4 output filenames for tracking, that should continue to work. 
+-Integration with fiber photometry
+-Plotting functionality
+-TACI integration
