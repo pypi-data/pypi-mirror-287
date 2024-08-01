@@ -1,0 +1,44 @@
+Metadata-Version: 2.3
+Name: video-compress
+Version: 0.1.0
+Summary: Compress video like magic!
+Project-URL: Repository, https://github.com/jiacai2050/video-compress
+Project-URL: Issues, https://github.com/jiacai2050/video-compress/issues
+Author-email: Jiacai Liu <dev@liujiacai.net>
+License-Expression: GPL-3.0
+License-File: LICENSE
+Keywords: compress,ffmpeg,videos
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development
+Requires-Python: >=3.0.0
+Description-Content-Type: text/markdown
+
+# Video-compress
+
+[![](https://img.shields.io/pypi/v/video-compress.svg)](https://pypi.org/project/video-compress)
+[![](https://github.com/jiacai2050/video-compress/actions/workflows/ci.yml/badge.svg)](https://github.com/jiacai2050/video-compress/actions/workflows/ci.yml)
+
+Inspired by <https://x.com/mortenjust/status/1818027566932136062>
+
+# Usage
+
+First install the [ffmpeg](https://www.ffmpeg.org/download.html), then
+
+``` bash
+pip install video-compress
+```
+
+This will install two commands: `vc`{.verbatim},
+`video-compress`{.verbatim}, which are identical.
