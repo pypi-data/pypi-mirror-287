@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+src/autctapi/__init__.py
+src/autctapi/wsapi.py
+src/autctapi.egg-info/PKG-INFO
+src/autctapi.egg-info/SOURCES.txt
+src/autctapi.egg-info/dependency_links.txt
+src/autctapi.egg-info/requires.txt
+src/autctapi.egg-info/top_level.txt
