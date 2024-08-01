@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: virtulizorAdmin
+Version: 0.1.0
+Summary: A brief description of your library
+Home-page: https://github.com/yourusername/virtulizorAdmin
+Author: Your Name
+Author-email: your.email@example.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# virtulizorAdmin
+
+A brief description of what your library does.
+
+## Installation
+
+You can install the library using pip:
+
+```
+pip install virtulizorAdmin
+```
+
+## Usage
+
+An example of how to use your library:
+
+```python
+from virtulizorAdmin import admin
+
+# Your code here
+```
+
+
