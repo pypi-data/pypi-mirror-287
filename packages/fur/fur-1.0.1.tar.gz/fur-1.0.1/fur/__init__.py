@@ -1,0 +1,12 @@
+__version__ = "1.0.1"
+__title__ = "fur"
+__author__ = "Mitchell Medeiros"
+__license__ = "MIT"
+__description__ = ""
+__docformat__ = "restructuredtext"
+# __docs_url__ = "https://fur.readthedocs.io/en/latest/api_reference"
+# __github_url__ = "https://github.com/MitchMedeiros/fur"
+# __github_issues_url__ = "https://github.com/MitchMedeiros/fur/issues"
+# __doc__ = f"""See the docs for more info: {__docs_url__}."""
+__keywords__ = ["python"]
+__all__ = [""]
