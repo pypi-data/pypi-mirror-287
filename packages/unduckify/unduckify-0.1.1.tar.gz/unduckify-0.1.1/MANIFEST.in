@@ -1,0 +1,2 @@
+recursive-include src/unduckify/library/win *.json
+recursive-include src/unduckify/library/mac *.json
