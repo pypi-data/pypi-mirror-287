@@ -1,0 +1,15 @@
+.gitignore
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+.github/workflows/publish.yml
+progress_basic/__init__.py
+progress_basic/progress_bar.py
+progress_basic/progress_basic.py
+progress_basic.egg-info/PKG-INFO
+progress_basic.egg-info/SOURCES.txt
+progress_basic.egg-info/dependency_links.txt
+progress_basic.egg-info/requires.txt
+progress_basic.egg-info/top_level.txt
+progress_basic/format/color_text.py
