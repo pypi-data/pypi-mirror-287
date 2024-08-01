@@ -1,0 +1,10 @@
+libvalkey/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+libvalkey/libvalkey.cpython-310-powerpc64le-linux-gnu.so,sha256=4nvh_n7yDsUD1MMgEUsk6x_3EDmv3pLnfnFE_p3FK7M,531680
+libvalkey/libvalkey.pyi,sha256=-wbbXxky_8B-EqDup_XizhNqHGsTVtROufVC6ndutkQ,1032
+libvalkey/version.py,sha256=EPmgXOdWKks5S__ZMH7Nu6xpAeVrZpfxaFy4pykuyeI,22
+libvalkey/__init__.py,sha256=8BH438HSh8QB2nGQYoDNGA1lhBoc_E1rtT-bYlm_hAc,253
+libvalkey-3.0.0.dist-info/RECORD,,
+libvalkey-3.0.0.dist-info/WHEEL,sha256=NEykjVymDiJLxhVtqMD9bY8befMvZTNHXdTWTDR0gRQ,153
+libvalkey-3.0.0.dist-info/LICENSE,sha256=Mla1t36YqjT_MaTSwsEPfxd7DzBYdTpgREMKFomHNTs,1095
+libvalkey-3.0.0.dist-info/top_level.txt,sha256=gi6FE63IEu45XD4W_yho-3AeC_gthFnEZVXDI9zburA,10
+libvalkey-3.0.0.dist-info/METADATA,sha256=MqW9PSRJeQV6V_heRWFACDNHlrt4V009lMGwzo0YOxw,6895
