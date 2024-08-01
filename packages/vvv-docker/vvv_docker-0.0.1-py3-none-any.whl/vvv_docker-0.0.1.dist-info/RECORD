@@ -1,0 +1,9 @@
+vvv_docker/__init__.py,sha256=WufANOix3isbd5I3s17V7vZ9_Sqvw7-A4JQChrGDclM,17456
+vvv_docker/gogs.tar.xz,sha256=hoO2MAZzubEPNNzRpEzV40MulPITjdPgGjPLu6bYnAs,35849452
+vvv_docker/node21.tar.xz,sha256=lCVk4qMUNU5vtRv1IxzaF8l1HkzELEQ7BQA7WK2cqMo,32441032
+vvv_docker/openresty_ja3.tar.xz,sha256=mMvp6kWJ4pLDPI_ByI8biaFdI8w5HqWiUAXkkkNBIiA,33339340
+vvv_docker-0.0.1.dist-info/METADATA,sha256=gS6OYphI8xG4FMutiw30IdYc1Yp8QACHSmsyf7f7UyM,198
+vvv_docker-0.0.1.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+vvv_docker-0.0.1.dist-info/entry_points.txt,sha256=JcJo-vmPYNlo8BdSf2yCcyFvHDHvnLbWV_fnEiGE_OM,49
+vvv_docker-0.0.1.dist-info/top_level.txt,sha256=uObzoP8fIJZukCX2EbSN5I3ejTsAIrfRJhlpkQyj5mQ,11
+vvv_docker-0.0.1.dist-info/RECORD,,
