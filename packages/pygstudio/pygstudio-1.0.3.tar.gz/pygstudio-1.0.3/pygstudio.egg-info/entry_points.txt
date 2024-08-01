@@ -1,0 +1,2 @@
+[console_scripts]
+pygstudio = pygstudio.__main__:main
