@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scs_test_package_eugenerrr"
+version = "0.0.3"
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{name = '<div class="github-repo-info" data-controller="github-repo-info"><ul class="vertical-tabs__list"><li><a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="stargazersUrl" rel="noopener" href="https://github.com/santinic/pampy/stargazers"><i class="fa fa-star" aria-hidden="true"></i><strong>Stars:</strong><span data-github-repo-info-target="stargazersCount">3510</span><li><a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="openPRsUrl" rel="noopener" href="https://github.com/santinic/pampy/pulls"><i class="fa fa-code-pull-request" aria-hidden="true"></i><strong>Open PRs:</strong><span data-github-repo-info-target="openPRsCount">5</span></a></li></a></li><li><a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="forksUrl" rel="noopener" href="https://github.com/santinic/pampy/network/members"><i class="fa fa-code-branch" aria-hidden="true"></i><strong>Forks:</strong><span data-github-repo-info-target="forksCount">126</span></a></li><li><a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" data-github-repo-info-target="openIssuesUrl" rel="noopener" href="https://github.com/santinic/pampy/issues"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>'}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+[project.urls]
+Repository="https://github.com/DiceDB/dice.git"
