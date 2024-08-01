@@ -1,0 +1,24 @@
+name: nectarchain
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python=3.11
+  - ctapipe=0.19
+  - ctapipe-io-nectarcam
+  - jinja2=3.0.1
+  - jupyterlab
+  - jupytext
+  - pre-commit
+  - pytest-runner
+  - pip
+  - pandas
+  - scipy=1.11.4
+  - sphinx
+  - sphinx-automodapi
+  - pydata-sphinx-theme
+  - pip:
+      - zeo
+      - zodb
+      - mechanize
+      - browser-cookie3
