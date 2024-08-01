@@ -1,0 +1,9 @@
+zoozl/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zoozl/__main__.py,sha256=m2PTVnHSJEEi7HaJBArpe61lpzx_f65KmMmC3_gOjtk,969
+zoozl/server.py,sha256=CdBxICwKTaJPZO3ulOwMEDKlldxXJ1m-ZawV64JtFrY,3859
+zoozl/websocket.py,sha256=qx6_CnEq2X55KuLW0Ci5ycne5pfVKD9T9cRiRyKo2lo,3095
+zoozl-0.0.19.dist-info/LICENSE,sha256=1HBxnHlhfO_4Izb7ZhucavwsD9g4IBOn0nJbXXL-V5U,1513
+zoozl-0.0.19.dist-info/METADATA,sha256=_u1PVM7VTAEbLtb74eMy-e_moaDRXWLmsJYwvG6rt1s,575
+zoozl-0.0.19.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+zoozl-0.0.19.dist-info/top_level.txt,sha256=8oMjuTU-WgyyrOePtAJ5ii9-YDLI0qrMkHBRsWZAnJA,6
+zoozl-0.0.19.dist-info/RECORD,,
