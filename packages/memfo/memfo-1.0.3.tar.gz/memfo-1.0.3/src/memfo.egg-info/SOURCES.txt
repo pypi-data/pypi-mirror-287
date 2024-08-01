@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/memfo/PowerWindow.py
+src/memfo/__init__.py
+src/memfo/main.py
+src/memfo.egg-info/PKG-INFO
+src/memfo.egg-info/SOURCES.txt
+src/memfo.egg-info/dependency_links.txt
+src/memfo.egg-info/entry_points.txt
+src/memfo.egg-info/top_level.txt
