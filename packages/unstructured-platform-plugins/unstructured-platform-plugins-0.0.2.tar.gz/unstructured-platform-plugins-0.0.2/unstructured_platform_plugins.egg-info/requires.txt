@@ -1,0 +1,6 @@
+click
+uvicorn
+unstructured-ingest
+fastapi
+click
+requests
