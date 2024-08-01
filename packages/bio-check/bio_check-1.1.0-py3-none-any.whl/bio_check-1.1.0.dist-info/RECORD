@@ -1,0 +1,7 @@
+bio_check/.VERSION,sha256=n9KGQtOsoZHlx_wjg8_W-rsqrIdD8Cnau4mJrFhOMbw,6
+bio_check/__init__.py,sha256=Vn5ROo-T42ldSyuhI5VhZkARekGbBtWeQdA3_8CpsrE,41
+bio_check/tests.py,sha256=gzA_qcU9ROUOkNsuU8nWhbNQBWQBnBP3_d0wsQD0Xd0,103
+bio_check/verifier.py,sha256=Yik_78V4xpZAy8uUplU3yTOx4qz5ZcXIZeSUrmoG5F8,9779
+bio_check-1.1.0.dist-info/METADATA,sha256=rU80UfsajCmXzGv3uIJcPq7iNlLbji-7KVKiKV8v2HY,3385
+bio_check-1.1.0.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+bio_check-1.1.0.dist-info/RECORD,,
