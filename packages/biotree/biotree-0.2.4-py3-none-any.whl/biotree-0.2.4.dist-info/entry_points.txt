@@ -1,0 +1,3 @@
+[console_scripts]
+biotree=biotree.cli.main:app
+
