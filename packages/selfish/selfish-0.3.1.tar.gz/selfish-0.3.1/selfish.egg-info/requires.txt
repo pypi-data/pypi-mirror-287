@@ -1,0 +1,5 @@
+ambiguous
+
+[test]
+isort>=5.13
+pytest>=8.2
