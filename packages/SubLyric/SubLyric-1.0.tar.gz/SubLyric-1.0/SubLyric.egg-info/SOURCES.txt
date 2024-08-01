@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+SubLyric/Converter.py
+SubLyric/__init__.py
+SubLyric.egg-info/PKG-INFO
+SubLyric.egg-info/SOURCES.txt
+SubLyric.egg-info/dependency_links.txt
+SubLyric.egg-info/top_level.txt
