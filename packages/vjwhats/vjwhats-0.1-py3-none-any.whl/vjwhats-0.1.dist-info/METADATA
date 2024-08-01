@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: vjwhats
+Version: 0.1
+Summary: A Python library to interact with WhatsApp Web using Selenium.
+Home-page: https://github.com/Fioruci/vjwhats
+Author: Fioruci
+Author-email: notfryska@gmail.com
+Requires-Dist: selenium
+
