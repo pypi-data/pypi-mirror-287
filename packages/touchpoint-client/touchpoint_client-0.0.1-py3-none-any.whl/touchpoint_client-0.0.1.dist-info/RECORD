@@ -1,0 +1,17 @@
+touchpoint_client/__about__.py,sha256=Qs9rbD3QRHuHAzR5ZZ3t2ZJHzYU7ez90XgCUHAqjutE,245
+touchpoint_client/__init__.py,sha256=ylaA1gMmxZo13CG3OwJDDFJvx7JhWXL9LlNfsRb_OlE,256
+touchpoint_client/_auth.py,sha256=E1M4DukDQRLlWlUsn8wgm4TDyPVSKmy00qg2A8tqMWk,1940
+touchpoint_client/_client.py,sha256=TEPPLaH_eWNpdfO5OEkMRm4Z2b8jyZAAFn9vB0inkF0,5294
+touchpoint_client/_connector.py,sha256=rK7ewi8OpoM2nxmJmXF2onSjZFDcA7P-OM96lBemoUs,2636
+touchpoint_client/_decorators.py,sha256=TaI_X-L07TC_kabgll8dv5Z0WgNn3eBiFARZvWm2lKQ,361
+touchpoint_client/_profile.py,sha256=80Y5mbha9IpFNhik0U4Mu3ubWOpXv4RzpSSFousQNQU,1795
+touchpoint_client/_project.py,sha256=d6zxiVSqcy2gWtyEZHY5TAnMiHKA8kV7c01nz1GsvqI,32684
+touchpoint_client/_storage.py,sha256=ECcfS1M1cRWM1UOhE07Ov8pXtCJWRuwZYiBlbd4vNS0,11804
+touchpoint_client/_users.py,sha256=mjoYnJDgSafnGuQx3bqmJ2w8nAgK8kFKNl8OJRGOEw8,25649
+touchpoint_client/exceptions.py,sha256=_uii9eIE4Gmsv76lHzFEqZwTZmX9gPom_wGmdgyz84g,806
+touchpoint_client/helpers.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+touchpoint_client/types.py,sha256=awfG3OKXus8VVO9q1qdRNRVywUgc-ju0ADFp11c_vkk,9754
+touchpoint_client-0.0.1.dist-info/METADATA,sha256=kemkfYY_P5BTdpfaCQjlCXkdJorvRa3uZatRdEmtLpc,1543
+touchpoint_client-0.0.1.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+touchpoint_client-0.0.1.dist-info/licenses/LICENSE.txt,sha256=jelAPXEc5A9OMtajti6JD6Vl4nVQVs1Rf4SuooiE0ww,1128
+touchpoint_client-0.0.1.dist-info/RECORD,,

@@ -1,0 +1,43 @@
+Metadata-Version: 2.3
+Name: touchpoint-client
+Version: 0.0.1
+Project-URL: Documentation, http://gitlab.lan/ingest/packages/touchpoint-client#readme
+Project-URL: Issues, http://gitlab.lan/ingest/packages/touchpoint-client/issues
+Project-URL: Source, http://gitlab.lan/ingest/packages/touchpoint-client
+Author-email: Евгений Садовник <e.sadovnik@3itech.ru>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: requests
+Description-Content-Type: text/markdown
+
+# Touchpoint Client
+
+[![PyPI - Version](https://img.shields.io/pypi/v/touchpoint-client.svg)](https://pypi.org/project/touchpoint-client)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/touchpoint-client.svg)](https://pypi.org/project/touchpoint-client)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+python -m pip install git+http://gitlab.lan/ingest/packages/touchpoint-client.git[@<version>]
+```
+
+## License
+
+`touchpoint-client` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+
