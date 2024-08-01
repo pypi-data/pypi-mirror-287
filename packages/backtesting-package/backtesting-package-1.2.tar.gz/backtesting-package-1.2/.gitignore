@@ -1,0 +1,13 @@
+# Ignore all Excel files
+*.xlsx
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore distribution folder
+backtesting_package.egg-info/
+build/
+dist/
