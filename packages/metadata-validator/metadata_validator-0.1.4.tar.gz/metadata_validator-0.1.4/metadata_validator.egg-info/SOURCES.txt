@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+metadata_validator/__init__.py
+metadata_validator/contributors.py
+metadata_validator/dataset.py
+metadata_validator/functions.py
+metadata_validator/funders.py
+metadata_validator/main.py
+metadata_validator/metadata_main.py
+metadata_validator/publication.py
+metadata_validator/specimen.py
+metadata_validator.egg-info/PKG-INFO
+metadata_validator.egg-info/SOURCES.txt
+metadata_validator.egg-info/dependency_links.txt
+metadata_validator.egg-info/requires.txt
+metadata_validator.egg-info/top_level.txt
