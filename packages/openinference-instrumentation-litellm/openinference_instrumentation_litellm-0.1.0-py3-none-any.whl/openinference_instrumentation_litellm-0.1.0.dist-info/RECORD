@@ -1,0 +1,8 @@
+openinference/instrumentation/litellm/__init__.py,sha256=IyYVpcc9I7C21pPSIwfvqcQvFv0lwopNWH1vzf8dn38,9762
+openinference/instrumentation/litellm/package.py,sha256=TiUi8Eedug8T5afmuh6KkywUa0CGvuErt6UxG5Ez3nA,54
+openinference/instrumentation/litellm/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+openinference/instrumentation/litellm/version.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+openinference_instrumentation_litellm-0.1.0.dist-info/METADATA,sha256=jyBS-KrGeMKu3ZhvZwKwR3cyTltJ_YA8ZxpaI-sjX8Y,4426
+openinference_instrumentation_litellm-0.1.0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+openinference_instrumentation_litellm-0.1.0.dist-info/licenses/LICENSE,sha256=Qd7mEYbriakf6dZkV8o1YKJfwuVxladksZj_3rcO53g,10870
+openinference_instrumentation_litellm-0.1.0.dist-info/RECORD,,
