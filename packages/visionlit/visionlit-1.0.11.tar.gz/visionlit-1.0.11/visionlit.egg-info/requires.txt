@@ -1,0 +1,5 @@
+numpy
+requests
+urllib3
+requests_toolbelt
+Pillow
