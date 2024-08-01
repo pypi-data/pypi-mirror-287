@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: hud-pysdk
+Version: 0.0.0a0
+Summary: Hud package
+Author-email: Hud <support@hud.io>
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
