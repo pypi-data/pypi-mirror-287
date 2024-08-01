@@ -1,0 +1,14 @@
+sage_bbb/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sage_bbb/helpers/__init__.py,sha256=EgHpJv_vCm4k20c6hbaZBIb56BkPgQcz-Ui1sfEgYi8,30
+sage_bbb/helpers/meeting.py,sha256=KwfxbBX2zBpYRQSkYRrMSInrpEr4R7Vkgz3WZTDnIwo,401
+sage_bbb/services/__init__.py,sha256=Yp96hyQnee4mvzAb4Nlk269E3pJA6mUQAxlXfLQTksY,112
+sage_bbb/services/client.py,sha256=c0AEOQ6IdsNwjXQ6_Ku2bu1_SkaC1XKMj4NSl2176fY,3548
+sage_bbb/services/configurations.py,sha256=aaqlZbn24bcCL_-sGogTaYiETo1A8Oz4PSWVPCmXaj4,2574
+sage_bbb/services/factory.py,sha256=Sp9Nl5-YnAp3SiaVzyAJFwpPSK6qMMuz20m5-JtxihY,2245
+sage_bbb/services/meetings.py,sha256=HR0avybt5Fj1ujEsf6QydeIwdf8OEjLOrlcx4I7qm_s,5836
+sage_bbb/services/recordings.py,sha256=6TEv4P9PtSpq_NacP9HRtMjmQv7CD_yZtjCJ3dt-K1I,5829
+sage_bbb/utils.py,sha256=QjcCqMDLEEOiu0QKrGS5-RVWi98U3GOwFxzBFvSnuI4,7378
+python_sage_bbb-0.1.1.dist-info/LICENSE,sha256=YKzhHLzSai5Z6-LxiqPm8cehfYNqPfORMDkXEVOcBnQ,1076
+python_sage_bbb-0.1.1.dist-info/METADATA,sha256=S-cSknedFQJZF2i4LGIVcq1NlMxJn-38yJhGytT3ywU,4700
+python_sage_bbb-0.1.1.dist-info/WHEEL,sha256=sP946D7jFCHeNz5Iq4fL4Lu-PrWrFsgfLXbbkciIZwg,88
+python_sage_bbb-0.1.1.dist-info/RECORD,,
