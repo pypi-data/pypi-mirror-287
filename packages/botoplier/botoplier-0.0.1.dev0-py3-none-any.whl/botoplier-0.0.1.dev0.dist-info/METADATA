@@ -1,0 +1,90 @@
+Metadata-Version: 2.3
+Name: botoplier
+Version: 0.0.1.dev0
+Summary: A powerful yet simple way to use AWS APIs, built on boto3
+Project-URL: Repository, https://github.com/ManoManoTech/botoplier
+Author-email: Elie Bleton <elie.bleton@manomano.com>
+License: Copyright (c) 2024 "ManoMano" Colibri SAS
+        
+        Permission to use, copy, modify, and distribute this software for any purpose
+        with or without fee is hereby granted, provided that the above copyright notice
+        and this permission notice appear in all copies.
+        
+        THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+        REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+        FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+        INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+        OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+        TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+        THIS SOFTWARE.
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: ISC License (ISCL)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: Typing :: Typed
+Requires-Python: >=3.9
+Requires-Dist: boto3>=1.34.139
+Requires-Dist: jq>=1.7.0
+Requires-Dist: treelib>=1.7.0
+Description-Content-Type: text/markdown
+
+# botoplier
+
+A nicer way to use AWS APIs, built on boto3.
+
+- Asyncio-based multi-session management
+- Automatic fetching of paginated results
+- Automatic un-nesting of deeply nested data
+- All of it relatively configurable
+
+## `smart_query`
+
+### Basic examples
+
+### Result shape and un-nesting
+
+### Pagination detection
+
+## Multisession / Parallelism
+
+### Creating / Configuring multisession
+
+### Synchronizing with `gather_dict`
+
+## Smart query cookbook
+
+## Environment variables
+
+### Changing the environment variable prefix
+
+If you're writing a tool that uses botoplier, it is sometimes more expedient to
+change the recognized prefix for environment variables, which defaults to `BOTOPLIER`.
+
+In your `src/__init__.py`:
+~~~~python
+import botoplier.config
+botoplier.config.PREFIX = "MYTOOL"
+~~~~
+
+## Contributing 
+
+### Setup guide
+XXX
+
+### Roadmap
+Syntax and advance type-hinting tricks are areas we'd like to improve.
+
+The multi-region / multi-account support takes some of the tedium away. We're open
+to improving this aspect further should an interested party come up with something.
+
+Outside of this, we're happy with the limited scope of this library and are unlikely to
+accept contributions widening its scope.
