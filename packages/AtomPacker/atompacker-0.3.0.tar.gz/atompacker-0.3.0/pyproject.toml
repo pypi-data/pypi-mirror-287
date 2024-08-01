@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=62.0", "wheel>=0.37.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AtomPacker"
+description = "A python package for packing nanoclusters into supramolecular cages"
+authors = [
+    { name = "João V. S. Guerra", email = "jvsguerra@gmail.com" },
+    { name = "Gabriel E. Jara" },
+    { name = "Paulo S. Lopes-de-Oliveira" },
+    { name = "György Szalóki" },
+]
+maintainers = [{ name = "João V. S. Guerra", email = "jvsguerra@gmail.com" }]
+license = { file = "LICENSE" }
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+keywords = ["computational chemistry", "atom packing", "sphere packing"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    'Programming Language :: Python',
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: Unix',
+    'Operating System :: MacOS',
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "ase==3.23.0",
+    "biopython==1.84.0",
+    "MDAnalysis==2.7.0",
+    "numpy==1.26.4",
+    "pandas==2.2.2",
+    "plotly==5.23.0",
+    "pyKVFinder==0.6.15",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = ["black==24.4.2", "flake8==7.1.0", "pytest==8.3.2"]
+docs = ["sphinx==7.3.7", "sphinx-rtd-theme==2.0.0"]
+
+[project.urls]
+api = "https://cnpem.github.io/AtomPacker/"
+homepage = "https://github.com/cnpem/AtomPacker"
+issues = "https://github.com/cnpem/AtomPacker/issues"
+
+[tool.setuptools]
+packages = [
+    "AtomPacker",
+    "AtomPacker.core",
+    "AtomPacker.core.io",
+    "AtomPacker.core.io.mmcif",
+    "AtomPacker.core.io.mol2",
+    "AtomPacker.core.io.pdb",
+    "AtomPacker.core.io.vdw",
+    "AtomPacker.core.io.xyz",
+    "AtomPacker.core.grid",
+    "AtomPacker.structure",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "AtomPacker.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--import-mode=importlib"]
