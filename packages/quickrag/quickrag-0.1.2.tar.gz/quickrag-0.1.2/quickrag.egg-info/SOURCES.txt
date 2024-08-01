@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+quickrag/__init__.py
+quickrag/quickrag.py
+quickrag.egg-info/PKG-INFO
+quickrag.egg-info/SOURCES.txt
+quickrag.egg-info/dependency_links.txt
+quickrag.egg-info/requires.txt
+quickrag.egg-info/top_level.txt

@@ -1,0 +1,91 @@
+Metadata-Version: 2.1
+Name: quickrag
+Version: 0.1.2
+Summary: A Quick Retrieval-Augmented Generation (RAG) system using transformers.
+Home-page: https://github.com/VanshK7/quickrag
+Author: Vansh Kharidia
+Author-email: vanshkharidia7@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# QuickRAG
+
+QuickRAG is a Python library that implements a Retrieval-Augmented Generation (RAG) pipeline for question answering on PDF documents. It combines document processing, embedding generation, and language model inference to provide context-aware answers to user queries.
+
+## Features
+
+- PDF processing and text extraction
+- Text chunking and embedding generation
+- Efficient similarity search for relevant context retrieval
+- Integration with Hugging Face Transformers for language model inference
+- Support for quantization to optimize memory usage and inference speed
+
+## Installation
+
+```bash
+pip install quickrag
+```
+
+## Usage
+
+Here's a basic example of how to use QuickRAG:
+
+```python
+from quickrag import QuickRAG
+
+# Initialize QuickRAG
+rag = QuickRAG("path/to/your/document.pdf", huggingface_token="YOUR_HUGGINGFACE_TOKEN")
+
+# Process the PDF and create embeddings
+rag.process_pdf()
+rag.create_embeddings()
+
+# Load the language model
+rag.load_llm()
+
+# Ask a question
+query = "What are the macronutrients, and what roles do they play in the human body?"
+answer = rag.ask(query)
+
+print(f"Query: {query}")
+print(f"Answer: {answer}")
+```
+
+## Configuration
+
+QuickRAG can be customized with the following parameters:
+
+- `pdf_path`: Path to the PDF document
+- `embedding_model_name`: Name of the sentence transformer model for embeddings (default: "all-mpnet-base-v2")
+- `llm_model_name`: Name of the language model for answer generation (default: "google/gemma-2b-it")
+- `use_quantization`: Whether to use quantization for the language model (default: True)
+- `huggingface_token`: Your Hugging Face API token
+
+## Requirements
+
+- Python 3.7+
+- PyTorch
+- Transformers
+- Sentence-Transformers
+- PyMuPDF
+- spaCy
+- NumPy
+- Pandas
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Acknowledgements
+
+- Hugging Face for their Transformers library
+- Sentence-Transformers for the embedding models
+- PyMuPDF for PDF processing
