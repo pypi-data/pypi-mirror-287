@@ -1,0 +1,12 @@
+durakgame/__init__.py,sha256=RlmYK7tOe7NM9MP0DPT2lciKumr9n-qNMKKmYpFdSas,143
+durakgame/game.py,sha256=7yuKBybPn3EeZfgvucx9V3LwvEjU6ZaenyglSFccEnM,8048
+durakgame/gameutils.py,sha256=IvzFbSaxGEnFLxkQ1ui8ftmVC7yo_ZBdJ_FRWK7xGp0,1233
+durakgame/history.py,sha256=5fBdX50DJljHYXmtnul0SnPpBQulM7UP9z9Mzs0P3zY,631
+durakgame/interface.py,sha256=djDYbTO5-jmPPH6Jly09AKMJv9Bk9SKZsJbsOCJAXkM,1384
+durakgame/move.py,sha256=a-NHCvKhtQtShGway8D2cB2t51HcJMKvcKdHJZwxJU8,935
+durakgame/player.py,sha256=hZrJxBjlPgYQnmFj0FI546RNdSA5j1ELQevLCn57fD0,780
+durakgame/primitives.py,sha256=d23npent2VsBFB_Zd4A0v-iGtGcWVyUeIpO_DhE2lBo,1180
+durakgame-1.0.0.dist-info/METADATA,sha256=qQ8IS9OViOz9DMMZiLk1ZpdeksS1uHgKzRJfHQyWHAM,497
+durakgame-1.0.0.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+durakgame-1.0.0.dist-info/licenses/LICENCE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+durakgame-1.0.0.dist-info/RECORD,,
