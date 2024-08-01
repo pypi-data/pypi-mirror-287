@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orchestra-sdk"
+version = "0.0.9"
+
+description = "Orchestra SDK for updating self-hosted Tasks."
+readme = "README.md"
+
+requires-python = ">=3.8.0"
+
+license = { file = "LICENSE.md" }
+
+authors = [
+    { name = "Orchestra Technologies", email = "support@getorchestra.io" },
+]
+keywords = ["python", "logging", "data", "orchestration"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+]
+
+dependencies = ["requests"]
+
+[project.optional-dependencies]
+dev = ["black", "build", "pyright", "pytest", "ruff", "twine"]
