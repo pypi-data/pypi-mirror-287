@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+WeightedLDA/WeightedLDA.py
+WeightedLDA/__init__.py
+WeightedLDA.egg-info/PKG-INFO
+WeightedLDA.egg-info/SOURCES.txt
+WeightedLDA.egg-info/dependency_links.txt
+WeightedLDA.egg-info/top_level.txt
