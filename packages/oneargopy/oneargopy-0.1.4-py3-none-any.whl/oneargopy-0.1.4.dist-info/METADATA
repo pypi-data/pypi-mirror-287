@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: oneargopy
+Version: 0.1.4
+Summary: An alpha version of oneargopy.
+Author: Savannah Stephenson and Hartmut Frenzel
+Author-email: Savannah Stephenson <stephensonsavannah@ymail.com>, Hartmut Frenzel <hartmut.frenzel@noaa.gov>
+Project-URL: Homepage, https://github.com/NOAA-PMEL/OneArgoPy
+Project-URL: Issues, https://github.com/NOAA-PMEL/OneArgoPy/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# OneArgoPy
+A Python library for accessing and visualizing Argo data.
+
+The recommended installation is via pip (pip install oneargopy).
+
+The included Jupyter notebook (oneargopy_demo.ipynb) demonstrates the basic usage of this library.
