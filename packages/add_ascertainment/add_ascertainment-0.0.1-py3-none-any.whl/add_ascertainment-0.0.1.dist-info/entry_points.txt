@@ -1,0 +1,3 @@
+[console_scripts]
+add_ascertainment=add_ascertainment.__main__:main
+
