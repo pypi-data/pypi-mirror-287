@@ -1,0 +1,2 @@
+[console_scripts]
+fwd = fwd.cli.fwd:main

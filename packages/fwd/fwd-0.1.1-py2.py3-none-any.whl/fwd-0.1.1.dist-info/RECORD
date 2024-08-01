@@ -1,0 +1,17 @@
+fwd/__init__.py,sha256=AFHnziVOGLRLPgMgloUqoIeDewMgCuW1dxe6Mi7ID2A,385
+fwd/_version.py,sha256=uwVp-rA6LY31fZhfjZ3ulxNQk_hcoKAZDg_RrWve2HI,497
+fwd/fwd.py,sha256=E8RwXQLwrxz3udCnmuqBFm1XeJeLkVmRT53n0H4Rvmw,66
+fwd/cli/.gitkeep,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fwd/cli/fwd.py,sha256=GpUUtY1VveCM4qNhFhEHkvstyiuCBRb9-a6pG3xBTmM,429
+fwd/data/.gitkeep,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fwd/data/emacs-logo/emacs-128x128.png,sha256=jZMWcc9OiojUsX1hu_6bJEbqJLDzWxlaTtHCyFo73-A,9818
+fwd/data/emacs-logo/emacs.svg,sha256=L3-WtCuOBCvhgs9kWVApm_IsMoJIHmx4pIq20y1Ez-M,13358
+fwd/tests/__init__.py,sha256=QgztwY-_aMXKl_9i7_PFZYh5ekASZPhLhMP_1Y3soVU,33
+fwd/tests/test_fwd.py,sha256=9b4SwIBOsvLJraVuCKqvBpO-gs_jgQITc0c8T3yft2w,554
+fwd-0.1.1.dist-info/AUTHORS.rst,sha256=n5bRfapqPJRPCLfltn9xZWvwmaGPj0OWaM6owwYvIKc,151
+fwd-0.1.1.dist-info/LICENSE,sha256=ienWqFQ_D8fKNDYhOnIrgI7aocExgyn0zRRcpkJ0TqU,1524
+fwd-0.1.1.dist-info/METADATA,sha256=p_orC6QtVtH6KYvmN3oNkJw3xpCSYwXQcga31baKywM,4609
+fwd-0.1.1.dist-info/WHEEL,sha256=XRxW4r1PNiVhMpP4bT9oWtu3HyndxpJ84SkubFgzp_Y,109
+fwd-0.1.1.dist-info/entry_points.txt,sha256=qFBUVOHW7srMk1FKKx4mGbFwqnbR62WTDOVoipDZU44,41
+fwd-0.1.1.dist-info/top_level.txt,sha256=MM_In309uOWODhBgY4Zjqa3ZVMOHf1ELTXrr8RIO_5g,4
+fwd-0.1.1.dist-info/RECORD,,
