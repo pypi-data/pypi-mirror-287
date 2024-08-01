@@ -1,0 +1,10 @@
+libvalkey/version.py,sha256=EPmgXOdWKks5S__ZMH7Nu6xpAeVrZpfxaFy4pykuyeI,22
+libvalkey/__init__.py,sha256=8BH438HSh8QB2nGQYoDNGA1lhBoc_E1rtT-bYlm_hAc,253
+libvalkey/libvalkey.pypy38-pp73-darwin.so,sha256=kyUHuzwBAysW9Qwb6dF22E2ADYSPiqIdvo8hdkSKQk4,81376
+libvalkey/libvalkey.pyi,sha256=-wbbXxky_8B-EqDup_XizhNqHGsTVtROufVC6ndutkQ,1032
+libvalkey/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+libvalkey-3.0.0.dist-info/RECORD,,
+libvalkey-3.0.0.dist-info/LICENSE,sha256=Mla1t36YqjT_MaTSwsEPfxd7DzBYdTpgREMKFomHNTs,1095
+libvalkey-3.0.0.dist-info/WHEEL,sha256=Rw7FkD74XZdv99R-fB7ZRCXmtzrm5ij3nwgI1ugiVx0,116
+libvalkey-3.0.0.dist-info/top_level.txt,sha256=gi6FE63IEu45XD4W_yho-3AeC_gthFnEZVXDI9zburA,10
+libvalkey-3.0.0.dist-info/METADATA,sha256=MqW9PSRJeQV6V_heRWFACDNHlrt4V009lMGwzo0YOxw,6895
