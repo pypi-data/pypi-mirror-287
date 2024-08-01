@@ -1,0 +1,12 @@
+rsmf/__init__.py,sha256=95YXc-RLv4tCtRsW1vNBmvzavjd6BPIUiNSP9inf2Rw,140
+rsmf/abstract_formatter.py,sha256=Y3CYfvBui5x7XZTWpbiXUx8PJ7Txxl2TFNTMISXTYJc,4438
+rsmf/custom_formatter.py,sha256=VswAtWZu7017Flf-ice5K53DJL7tsxbZnuMPWJFJaBI,1764
+rsmf/fontsizes.py,sha256=fjgsQ-007WBt8VRnQKvroHKZiPhvMzWva05QUCbBnt4,2386
+rsmf/quantumarticle.py,sha256=RYD84x4WpaFEkt3NzUd-mutHB31IUdKZ8I-ri21wMb4,2171
+rsmf/revtex.py,sha256=Afu9jZPDeAWqzaWgVYmPSgcCHu_Mxmx26ZFmn2mwgPc,1448
+rsmf/revtexlike.py,sha256=G_Ws7lw2Jgh-u1-EW8od3pDCySUBW4bA8mVkm-Z5su8,4122
+rsmf/setup.py,sha256=wGnfmg5kJlfKxMlGx1Md22trtsOXlYmwIAdy5UnuoAY,1960
+rsmf-0.2.1.dist-info/METADATA,sha256=dtMdK3wJpiBEKbN6WDm9KmSeKZy9_myCoFjyvarcMZI,7385
+rsmf-0.2.1.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+rsmf-0.2.1.dist-info/top_level.txt,sha256=6Es1mquLCTb_2x6tL8i0a7ZJ-y60k6zor5cVCfHBMkw,5
+rsmf-0.2.1.dist-info/RECORD,,
