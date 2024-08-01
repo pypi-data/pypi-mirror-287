@@ -1,0 +1,7 @@
+setup.py
+ChalcedonPy/VectorCalculus.py
+ChalcedonPy/__init__.py
+ChalcedonPy.egg-info/PKG-INFO
+ChalcedonPy.egg-info/SOURCES.txt
+ChalcedonPy.egg-info/dependency_links.txt
+ChalcedonPy.egg-info/top_level.txt
