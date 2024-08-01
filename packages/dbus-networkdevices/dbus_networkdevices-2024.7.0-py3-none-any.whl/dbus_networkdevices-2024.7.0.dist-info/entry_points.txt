@@ -1,0 +1,2 @@
+[console_scripts]
+dbus-networkdevices = dbus_networkdevices.__main__:main
