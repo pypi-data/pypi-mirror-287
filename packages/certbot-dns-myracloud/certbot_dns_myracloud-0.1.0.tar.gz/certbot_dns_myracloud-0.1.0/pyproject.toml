@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "certbot-dns-myracloud"
+version = "0.1.0"
+description = "Provide Myracloud DNS with Certbot for DNS-01 challenge type"
+authors = ["Myra Security <noc@myrasecurity.com>"]
+readme = "README.md"
+license = "Apache-2.0"
+homepage = "https://myrasecurity.com"
+repository = "https://github.com/Myra-Security-GmbH/certbot-dns-myracloud"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Plugins",
+    "Intended Audience :: System Administrators",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Security",
+    "Topic :: System :: Installation/Setup",
+    "Topic :: System :: Networking",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+keywords = ["myracloud", "certbot", "myrasecurity", "myra"]
+include = ["SECURITY.md"]
+exclude = ["pyproject.toml"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+certbot = "^2.11.0"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
