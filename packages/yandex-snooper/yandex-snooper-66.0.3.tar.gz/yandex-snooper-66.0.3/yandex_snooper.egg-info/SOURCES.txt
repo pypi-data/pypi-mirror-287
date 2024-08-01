@@ -1,0 +1,6 @@
+README.md
+setup.py
+yandex_snooper.egg-info/PKG-INFO
+yandex_snooper.egg-info/SOURCES.txt
+yandex_snooper.egg-info/dependency_links.txt
+yandex_snooper.egg-info/top_level.txt
