@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+sqlite_easy_ctrl/__init__.py
+sqlite_easy_ctrl.egg-info/PKG-INFO
+sqlite_easy_ctrl.egg-info/SOURCES.txt
+sqlite_easy_ctrl.egg-info/dependency_links.txt
+sqlite_easy_ctrl.egg-info/top_level.txt
