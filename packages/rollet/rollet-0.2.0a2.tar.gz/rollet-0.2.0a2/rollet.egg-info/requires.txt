@@ -1,0 +1,11 @@
+beautifulsoup4>=4.9.0
+dask
+pandas
+pdf2image
+pillow
+pypdf2
+pytesseract
+selenium
+tldextract>=2.2
+tqdm
+requests
