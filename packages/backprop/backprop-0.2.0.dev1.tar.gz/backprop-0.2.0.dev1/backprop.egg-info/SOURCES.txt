@@ -1,0 +1,12 @@
+README.md
+setup.py
+backprop/__init__.py
+backprop/cli.py
+backprop/core.py
+backprop/server.py
+backprop.egg-info/PKG-INFO
+backprop.egg-info/SOURCES.txt
+backprop.egg-info/dependency_links.txt
+backprop.egg-info/entry_points.txt
+backprop.egg-info/requires.txt
+backprop.egg-info/top_level.txt
