@@ -1,0 +1,7 @@
+pydantic_sqlalchemy_mapper/__init__.py,sha256=JPe6wUqy-_7rd3kWO0M6tiwGBjw1tM88CNJmm0g2YqY,168
+pydantic_sqlalchemy_mapper/loader.py,sha256=HflY2A55XjF6loy0CoqzzIj5FfEesO0BsgysD5jskcI,8285
+pydantic_sqlalchemy_mapper/mapper.py,sha256=k01D5EcgJWMuHQrlUVwoAZEmQa6-FyMJ1dr_HfZauGY,3429
+pydantic_sqlalchemy_mapper-0.1.0.dist-info/LICENSE,sha256=2ZZpMpOTNnKctX5hkN5DG8BN5RxyZnnUA6PI2RiUdpg,1054
+pydantic_sqlalchemy_mapper-0.1.0.dist-info/METADATA,sha256=HjcCqEhmFVvpiNboythDArwit2X9XfI8sqa6MPWn2RE,550
+pydantic_sqlalchemy_mapper-0.1.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+pydantic_sqlalchemy_mapper-0.1.0.dist-info/RECORD,,
