@@ -1,0 +1,13 @@
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_banner.py,sha256=IyKD8egezCbzf3jziUPoAbQXe4EaYuupNVMKpfZaDrY,326
+tests/test_styler.py,sha256=PRfWg87p7gkacpOKmtocZLb5ZRajbCWKakCl16FMEhk,397
+tests/test_utils.py,sha256=7Xl26fkvvKBqU6_JHgJOzPs4E0WmngpAZTvDkfRzzM4,295
+textstyler/__init__.py,sha256=zSOE35EEfMcGX6J5oU3Mmc2OFjzx7m7b7x4iWTPsyrM,151
+textstyler/banner.py,sha256=Tog5qHt1Lgv_N5J8_1In2o_07T2RpGSuhPIjtAv9q9Q,325
+textstyler/styler.py,sha256=v6oyyqe8nylu0oyf_eF0LAQbaWf_ULwvwCgE55bJbes,506
+textstyler/utils.py,sha256=KoJ-9X0xJVTSw1Lg3XWRrvZGr-vwP5HB8vYxfkHfHpU,180
+textstyler-0.1.dist-info/LICENSE,sha256=c2XYIenR_g0rYYvHV684cmx1153Y7CIxx081Mogu4zo,1053
+textstyler-0.1.dist-info/METADATA,sha256=_v7J1JN39uwjcOumVCMdXka2ddIgoeym_Vv58-tNclY,1304
+textstyler-0.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+textstyler-0.1.dist-info/top_level.txt,sha256=XayeZy2mQBkxtTnlsC-9cZ2waKjdNLVok0G6e_JVSHY,17
+textstyler-0.1.dist-info/RECORD,,
