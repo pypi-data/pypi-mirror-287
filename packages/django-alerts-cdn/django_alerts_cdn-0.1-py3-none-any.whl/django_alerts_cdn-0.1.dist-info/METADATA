@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: django_alerts_cdn
+Version: 0.1
+Summary: A library for generating alerts in Django MVT projects using Bootstrap or Tailwind CSS.
+Home-page: https://github.com/Jj64aA/django_alerts_cdn
+Author: Khamed Mohammed Taha
+Author-email: khamedkh297@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: MIT License
+
