@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: llmgen
+Version: 0.1.0
+Summary: Effortlessly generate LLM APIs by simply defining input and output schemas.
+Author: koswu
+Author-email: koswu@outlook.com
+Requires-Python: >=3.8.1,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: langchain (>=0.2.11,<0.3.0)
+Requires-Dist: langchain-openai (>=0.1.19,<0.2.0)
+Requires-Dist: pydantic (>=2.8.2,<3.0.0)
+Requires-Dist: typing-extensions (>=4.12.2,<5.0.0)
+Description-Content-Type: text/markdown
+
+# iogen
+
+Define the I/O schema, then let the LLM handle the rest thing!
+
+
+
