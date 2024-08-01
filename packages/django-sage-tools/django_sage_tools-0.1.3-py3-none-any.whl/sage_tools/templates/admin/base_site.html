@@ -1,0 +1,27 @@
+<!-- templates/admin/base_site.html -->
+{% extends "admin/base.html" %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    .usertools .timezone-selector {
+        display: inline-block;
+        margin-left: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block usertools %}
+    {{ block.super }}
+    <form method="post" action="{% url 'set_timezone' %}" class="timezone-selector">
+        {% csrf_token %}
+        <select name="timezone" onchange="this.form.submit()">
+            {% for timezone in timezones %}
+                <option value="{{ timezone }}" {% if timezone == request.session.django_timezone %}selected{% endif %}>
+                    UTC{{ timezone }}
+                </option>
+            {% endfor %}
+        </select>
+        <input type="hidden" name="next" value="{{ request.path }}">
+    </form>
+{% endblock %}
