@@ -1,0 +1,16 @@
+uvicorn
+hypercorn
+starlette>=0.38.0
+loguru
+pydantic
+pyhumps
+azure-storage-blob
+motor
+aimmocore-db
+nest_asyncio
+pillow
+IPython
+aiohttp
+aiofiles
+psutil
+apscheduler
