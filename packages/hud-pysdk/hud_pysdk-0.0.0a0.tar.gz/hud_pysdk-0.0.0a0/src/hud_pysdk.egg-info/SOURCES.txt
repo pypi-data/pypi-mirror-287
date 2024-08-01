@@ -1,0 +1,6 @@
+pyproject.toml
+src/hud_pysdk.egg-info/PKG-INFO
+src/hud_pysdk.egg-info/SOURCES.txt
+src/hud_pysdk.egg-info/dependency_links.txt
+src/hud_pysdk.egg-info/top_level.txt
+src/pyhud/__init__.py
