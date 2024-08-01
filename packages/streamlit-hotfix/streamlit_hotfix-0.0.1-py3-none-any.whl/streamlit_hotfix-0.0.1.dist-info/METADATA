@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: streamlit-hotfix
+Version: 0.0.1
+Summary: 
+Author: weihong.xu
+Author-email: xuweihong.cn@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Description-Content-Type: text/markdown
+
+# streamlit-hotfix
+A command line tool to provide advanced features (CDN, etc) for streamlit by apply patch to the installed packages.
+
