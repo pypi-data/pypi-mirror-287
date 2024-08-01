@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: textstyler
+Version: 0.1
+Summary: A package for styling text and creating text banners
+Home-page: https://github.com/PrestigeOcean1/textstyler
+Author: Your Name
+Author-email: dexterawesome16@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: termcolor
+Requires-Dist: pyfiglet
+
+# TextStyler
+
+**TextStyler** is a powerful and user-friendly Python package designed for enhancing text presentation in your console applications. It provides a straightforward way to apply colors, styles, and backgrounds to text, and to generate visually appealing text banners. Built on top of the `termcolor` and `pyfiglet` libraries, TextStyler makes it easy to create dynamic and eye-catching text outputs.
+
+# Features
+- Text Styling: Apply colors, backgrounds, and attributes (bold, underline, etc.) to your text.
+- Text Banners: Generate text banners in various fonts to make your text stand out.
+- Font Listing: Retrieve and display available fonts for creating text banners.
+
+# Installation
+To install TextStyler, use pip:
+
+```
+pip install textstyler
+```

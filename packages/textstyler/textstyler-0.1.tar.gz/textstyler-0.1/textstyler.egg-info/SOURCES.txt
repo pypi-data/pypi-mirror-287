@@ -1,0 +1,15 @@
+LICENSE
+setup.py
+tests/__init__.py
+tests/test_banner.py
+tests/test_styler.py
+tests/test_utils.py
+textstyler/__init__.py
+textstyler/banner.py
+textstyler/styler.py
+textstyler/utils.py
+textstyler.egg-info/PKG-INFO
+textstyler.egg-info/SOURCES.txt
+textstyler.egg-info/dependency_links.txt
+textstyler.egg-info/requires.txt
+textstyler.egg-info/top_level.txt
