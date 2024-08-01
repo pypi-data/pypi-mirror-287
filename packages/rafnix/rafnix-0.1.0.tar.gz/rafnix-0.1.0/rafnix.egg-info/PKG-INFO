@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: rafnix
+Version: 0.1.0
+Summary: A library for disease prediction using machine learning
+Home-page: https://github.com/EmekaIwuagwu/rafnix
+Author: Emeka Iwuagwu
+Author-email: e.iwuagwu@hotmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+
+# Rafnix
+
+Rafnix is a Python library for disease prediction based on symptoms using machine learning.
+
+## Installation
+
+To install the library, use pip:
+
+```bash
+pip install rafnix
+
+## Usage
+
+Import the library:
+
+from rafnix import predict_disease
+
+Predict disease:
+
+data = [age, fever, cough, headache, fatigue, diarrhea, sneezing, body_ache, nausea, vomiting]
+result = predict_disease(data)
+print(f"Predicted illness: {result}")
+
+"# rafnix" 

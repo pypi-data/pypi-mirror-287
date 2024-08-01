@@ -1,0 +1,12 @@
+README.md
+setup.py
+rafnix/__init__.py
+rafnix/model.py
+rafnix/predict.py
+rafnix.egg-info/PKG-INFO
+rafnix.egg-info/SOURCES.txt
+rafnix.egg-info/dependency_links.txt
+rafnix.egg-info/requires.txt
+rafnix.egg-info/top_level.txt
+tests/test_model.py
+tests/test_predict.py
