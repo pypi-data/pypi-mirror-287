@@ -1,0 +1,95 @@
+Metadata-Version: 2.1
+Name: GroundingMeasurementApplication
+Version: 0.0.2
+Summary: Jupyter Notebook zur Vorbereitung, Durchführung und Auswertung von Erdungsmessungen.
+Home-page: https://github.com/Kalandoros/Grounding_Measurement_Application
+Author: Kalandoros
+License: BSD
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Framework :: IPython
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: ==3.11.5
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# Erdungsmessung
+Applikation als Jupyter Notebook zur Vorbereitung, DurchfÃ¼hrung und Auswertung von Erdungsmessungen.\
+Die Applikation eignet sich fÃ¼r Erdungsmessungen bis zu 3 Messtagen, max. 4 Spannungsebenen und einen Messstrom. 
+
+
+## Installation
+Installiere Miniconda https://docs.anaconda.com/free/miniconda/index.html 
+
+Starte die CMD und erstelle eine neue virtuelle Umgebung:
+
+`conda create --name DevGround -c anaconda python=3.11.5`
+
+Die Applikation ist unter https://pypi.org/project/GroundingMeasurementApplication/ aufrufbar:
+Zur Installation der AbhÃ¤gigkeiten den folgenden Befahl in die Python Konsole eingeben und bestÃ¤tigen.
+
+`pip install GroundingMeasurementApplication`
+
+In der zuvor erstellten virtuellen Umgebung wird die Application und die dafÃ¼r notwendigen Module heruntergeladen und installiert. 
+
+Nun das Packet aus dem Repository downloaden, am gewÃ¼nschten Ort platzieren und entpacken: 
+Link: https://github.com/Kalandoros/GroundingMeasurementApplication/releases/download/v0.0.1/GroundingMeasurementApplication.v0.0.1.zip
+
+## Konfiguration
+1. Windows Einstellungen -> Datenschutz und Sicherheit -> Standort:
+    * Ortungsdienste: Ein
+    * Apps den Zugriff auf Ihren Standort erlauben: Ein
+    * Browser (Microsoft Edge, Google Chrome) -> Zulasssen, dass Desptop-Apps auf Ihren Standort zugreifen: Ein
+   
+2. Installation GPS-Sensor:
+    * GPS-Sensor Columbus P-9 Race anschliessen.
+    * Datei `ubloxGnssUsb.inf` per Rechtsklick installieren (Warnungen kÃ¶nnen ignoriert werden)
+
+      ![image](https://github.com/Kalandoros/Grounding_Measurement_Application/assets/129214458/5163bf9c-a9b7-4060-8226-7ee23a383b34)
+    * PC Neustarten. 
+    * Nach Neustart im GerÃ¤temanager die Installation des GPS-Sensors Ã¼berprÃ¼fen.
+                                                  
+      ![image](https://github.com/Kalandoros/Grounding_Measurement_Application/assets/129214458/a89c181c-ce87-4510-b1ea-8d26bb195516)
+  
+3. JupyterLab Konfiguration -> Jupyter Terminal:
+   Hintergrund: StandardmÃ¤ssig werden vom Jupyter Kernel nur Dateien bis 10MB verarbeitet.
+    * Generiere default JupyterLab Konfigurationsdatei: `jupyter-lab --generate-config` 
+    * Finden der Konfigurationsdatei: `C:\Users\<WindowsUserName>\.jupyter`
+    * Editieren der Konfigurationsdatei (ca. bei Zeile 1100): `"websocket_max_message_size": 1000 * 1024 * 1024` (um Dateien bis zu einer GrÃ¶sse von 1GB zu erlauben).
+      Die vollstÃ¤ndige Zeile in der Konfigurationsdatei sieht dann wie folgt aus: `c.ServerApp.tornado_settings = {"websocket_max_message_size": 1000 * 1024 * 1024}`
+      Dabei das Auskommentieren nicht vergessen.
+    * Aufruf des Notebooks Ã¼ber JupyterLab: `jupyter-lab --config="jupyter_notebook_config.py"  Erdungsmessung.ipynb`
+    * Aufruf des Notebooks Ã¼ber Voila: `voila --config="jupyter_notebook_config.py"  Erdungsmessung.ipynb`
+    * Aufruf des Notebooks Ã¼ber Voila (alternativ): `voila Erdungsmessung.ipynb --Voila.tornado_settings="{'websocket_max_message_size': 1048576000}"`
+
+4. Frontkamera deaktivieren -> Windows GerÃ¤temanager:
+   Hintergrund: Richtige Auswahl der Kamera bei Aufnahme von Massnahmen
+    * Windows GerÃ¤temanager Ã¶ffen: `jupyter-lab --generate-config` 
+    * Kategorie `SystemgerÃ¤te` auswÃ¤hlen und enfalten.
+    * GerÃ¤t `Surface Camera Front` mit Rechtsklick auswÃ¤hlen.
+    * WÃ¤hle `GerÃ¤t deaktivieren`.
+
+      ![image](https://github.com/Kalandoros/GroundingMeasurementApplication/assets/129214458/e7451a21-5dc9-42a0-9a1f-340f6a9300f7)
+
+## Benutzung
+Einfach die Erdungsmessung.bat Datei doppelt anklicken. 
+Die Application Ã¶ffnet sich im Browser.
+
+Alternative 1:
+Ã–ffne cmd und gebe `conda voila Erdungsmessung.ipynb` ein und fÃ¼hre dieses Kommando aus.
+
+Alternative 2:
+Ã–ffne Anaconda und aktiviere die Entwicklungsumgebung "DevGround".
+Starte Jupyter Lab Ã¼ber das Menu und Ã¶ffne die `Erdungsmessung.ipynb` Datei.
+FÃ¼hre den Code (2 Zellen) aus.
+
+FÃ¼r Entwicklungszwecke kÃ¶nnen die beiden folgenden Befehle verwendet werden:
+
+Jupyter Lab:\
+`jupyter-lab --config="jupyter_notebook_config.py"  Erdungsmessung.ipynb --VoilaConfiguration.file_allowlist="['.*']" --VoilaConfiguration.file_whitelist=".*\.js"`
+
+Voila:\
+`voila --config="jupyter_notebook_config.py"  Erdungsmessung.ipynb --enable_nbextensions=True --VoilaConfiguration.file_allowlist="['.*']" --VoilaConfiguration.file_whitelist=".*\.js"`
+
+
+         
