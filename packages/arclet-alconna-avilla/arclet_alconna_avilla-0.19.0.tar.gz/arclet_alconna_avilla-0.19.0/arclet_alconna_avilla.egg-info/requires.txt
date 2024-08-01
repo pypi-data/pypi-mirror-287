@@ -1,0 +1,10 @@
+arclet-alconna<2.0.0,>=1.8.12
+arclet-alconna-tools<0.8.0,>=0.7.4
+tarina>=0.5.0
+nepattern<0.8.0,>=0.7.3
+graia-amnesia>=0.5.0
+graia-broadcast>=0.18.2
+graia-saya>=0.0.17
+avilla-core>=1.0.0a20
+launart>=0.5.0
+creart>=0.3.0
