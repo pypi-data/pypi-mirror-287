@@ -1,0 +1,18 @@
+Metadata-Version: 2.3
+Name: command_queue
+Version: 0.0.1
+Summary: A Command Queue for Python
+Project-URL: Homepage, https://github.com/meowmeowahr/command_queue
+Project-URL: Issues, https://github.com/meowmeowahr/command_queue/issues
+Author: meowmeowahr
+License-File: LICENSE
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.11
+Requires-Dist: loguru~=0.7.2
+Description-Content-Type: text/markdown
+
+# A Command Queue for Python
+
+wip
