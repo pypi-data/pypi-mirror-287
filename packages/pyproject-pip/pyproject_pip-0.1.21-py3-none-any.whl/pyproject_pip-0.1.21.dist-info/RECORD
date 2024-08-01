@@ -1,0 +1,10 @@
+pyproject_pip/__about__.py,sha256=hwv1DmSM6xi9LqmFua-Bds-4YdxdssN16R1sh12DKPA,141
+pyproject_pip/__init__.py,sha256=ZujPZE5wObrWcSW_-pLWwVcYB0tvRxdsLMyDyk8b3A0,118
+pyproject_pip/cli.py,sha256=bhLx7IJf_DWcId-N6i4DXk0Bh9Ux6quf-5atK6ZCcJI,10616
+pyproject_pip/create.py,sha256=1EFUf0CAJFQ0NCS-O0EeKJT0vioxv1k3AHu6dPx9rMQ,9506
+pyproject_pip/pypip.py,sha256=EjtecR_nAz5M4cKhQIdtqak_2m42riOGO7nGb1hpBNg,18980
+pyproject_pip-0.1.21.dist-info/METADATA,sha256=kiTDjosQmclsd4inUsaxz8cN5Uz4Yf8zIUjJhhtI81E,2437
+pyproject_pip-0.1.21.dist-info/WHEEL,sha256=1yFddiXMmvYK7QYTqtRNtX66WJ0Mz8PYEiEUoOUUxRY,87
+pyproject_pip-0.1.21.dist-info/entry_points.txt,sha256=HQyKp5nNjQGnQQD3vLT72qXiu4jaQH5jQGy6qBFD6jQ,48
+pyproject_pip-0.1.21.dist-info/licenses/LICENSE,sha256=ufv7fH68SJM3IBc79lq9_jbu9jq8YtkuzYWO9P3AuU8,1062
+pyproject_pip-0.1.21.dist-info/RECORD,,
