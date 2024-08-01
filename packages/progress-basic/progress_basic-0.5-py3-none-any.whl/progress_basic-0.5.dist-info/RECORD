@@ -1,0 +1,8 @@
+progress_basic/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+progress_basic/progress_bar.py,sha256=TbaeIUI7Gvv8i8ly_a7KZoo3QyGewVgHZiimxBacf18,2061
+progress_basic/progress_basic.py,sha256=9VJEZ3QXa4aLBkOgGWRryW308_O_lK0DTE1JR27yrHk,2964
+progress_basic/format/color_text.py,sha256=3APU-Bqvr_7Wrcxzlx73caGC9Yes00DAh7d0gk9R_4g,417
+progress_basic-0.5.dist-info/METADATA,sha256=n7aUJU43THz0_i1lKQA42V4COlOoHN0s8wFELPijH1M,2436
+progress_basic-0.5.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+progress_basic-0.5.dist-info/top_level.txt,sha256=1HyfWoALq9yPEEU2Cz7Z70XfJAAw40wGmd_qf8tMotE,15
+progress_basic-0.5.dist-info/RECORD,,
