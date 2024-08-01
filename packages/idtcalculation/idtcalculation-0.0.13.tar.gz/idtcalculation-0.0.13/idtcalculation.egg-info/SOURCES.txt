@@ -1,0 +1,12 @@
+setup.py
+IDT_lib/IDT_calculation.py
+IDT_lib/__init__.py
+IDT_lib/species.py
+IDT_lib/thermo_real.py
+IDT_lib/thermo_structure.py
+IDT_lib/virial_structure.py
+idtcalculation.egg-info/PKG-INFO
+idtcalculation.egg-info/SOURCES.txt
+idtcalculation.egg-info/dependency_links.txt
+idtcalculation.egg-info/requires.txt
+idtcalculation.egg-info/top_level.txt
