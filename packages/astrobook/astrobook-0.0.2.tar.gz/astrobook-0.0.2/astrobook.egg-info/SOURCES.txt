@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+astrobook/__init__.py
+astrobook/core.py
+astrobook.egg-info/PKG-INFO
+astrobook.egg-info/SOURCES.txt
+astrobook.egg-info/dependency_links.txt
+astrobook.egg-info/requires.txt
+astrobook.egg-info/top_level.txt
