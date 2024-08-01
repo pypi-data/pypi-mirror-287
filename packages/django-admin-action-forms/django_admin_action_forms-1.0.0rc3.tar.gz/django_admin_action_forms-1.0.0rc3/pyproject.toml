@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["django_admin_action_forms"]
+
+[project]
+name = "django-admin-action-forms"
+version = "1.0.0rc3"
+description = "Extension for the Django admin panel that allows passing additional parameters to actions by creating intermediate pages with forms."
+readme = "README.md"
+keywords = ["django", "admin", "action", "actions", "form", "forms", "pass", "intermediate", "args", "arguments", "params", "parameters"]
+dependencies = ["django>=3.2"]
+
+[project.urls]
+Repository = "https://github.com/michalpokusa/django-admin-action-forms"
