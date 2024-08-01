@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: zoozl
+Version: 0.0.17
+Summary: Zoozl services
+Home-page: https://github.com/Kolumbs/zoozl
+Author: Juris Kaminskis
+Author-email: juris@zoozl.net
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rapidfuzz ==2.11.1
+Requires-Dist: membank >=0.4.1
+Requires-Dist: chatbot >=0.0.5
+Requires-Dist: chatbot-fifa-extension >=0.0.3
+
+# zoozl
+
+Install dependencies:
+pip install -r odoo/requirements.txt
+Run:
+python zoozl.py
