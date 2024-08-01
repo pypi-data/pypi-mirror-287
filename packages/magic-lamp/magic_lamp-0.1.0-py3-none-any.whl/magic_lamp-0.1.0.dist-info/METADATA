@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: magic-lamp
+Version: 0.1.0
+Summary: Easily integrate LLMs into Python code.
+License: MIT
+Author: Varun Ramesh
+Author-email: varunramesh@live.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: openai (>=1.37.1,<2.0.0)
+Description-Content-Type: text/markdown
+
+# magic-lamp
+
+Easily integrate LLM calls into Python code. Requires environment variable `OPENAI_API_KEY` to be set.
+
+```python
+import magic_lamp
+
+format_name = magic_lamp.Function(
+    'Format this surname in a way that it would be written out.',
+    examples=[
+        ("PERALTA", "Peralta"),
+        ("OCONNELL", "O'Connel"),
+        ("MCDONALD", "McDonald")
+    ],
+    model="gpt-4o-mini"
+)
+
+print(format_name("MCDOWELL"))
+```
+
+## Alternatives
+- https://github.com/jackmpcollins/magentic
+
