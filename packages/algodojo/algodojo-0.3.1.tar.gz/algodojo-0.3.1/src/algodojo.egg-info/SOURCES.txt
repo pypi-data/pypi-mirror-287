@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+pyproject.toml
+src/algodojo/__init__.py
+src/algodojo/ib.py
+src/algodojo.egg-info/PKG-INFO
+src/algodojo.egg-info/SOURCES.txt
+src/algodojo.egg-info/dependency_links.txt
+src/algodojo.egg-info/requires.txt
+src/algodojo.egg-info/top_level.txt
+src/algodojo/base/__init__.py
+src/algodojo/base/auth.py
+src/algodojo/base/report.py
