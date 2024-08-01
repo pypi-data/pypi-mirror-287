@@ -1,0 +1,145 @@
+{
+    "config": {
+        "create_entry": {
+            "default": "\u30c6\u30b9\u30e9\u3068\u306e\u8a8d\u8a3c\u306b\u6210\u529f\u3057\u307e\u3057\u305f\u3002"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "charge_state_battery_level": {
+                "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u6b8b\u91cf"
+            },
+            "charge_state_battery_range": {
+                "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u7bc4\u56f2"
+            },
+            "charge_state_charger_actual_current": {
+                "name": "\u5145\u96fb\u5668\u306e\u96fb\u6d41"
+            },
+            "charge_state_charger_power": {
+                "name": "\u5145\u96fb\u5668\u306e\u96fb\u529b"
+            },
+            "charge_state_charger_voltage": {
+                "name": "\u5145\u96fb\u5668\u306e\u96fb\u5727"
+            },
+            "charge_state_charging_state": {
+                "name": "\u5145\u96fb\u4e2d",
+                "state": {
+                    "charging": "\u5145\u96fb\u4e2d",
+                    "complete": "\u5b8c\u4e86",
+                    "disconnected": "\u5207\u65ad",
+                    "no_power": "\u96fb\u6e90\u306a\u3057",
+                    "starting": "\u958b\u59cb\u4e2d",
+                    "stopped": "\u505c\u6b62"
+                }
+            },
+            "charge_state_conn_charge_cable": {
+                "name": "\u5145\u96fb\u30b1\u30fc\u30d6\u30eb"
+            },
+            "charge_state_fast_charger_type": {
+                "name": "\u6025\u901f\u5145\u96fb\u5668\u30bf\u30a4\u30d7"
+            },
+            "charge_state_ideal_battery_range": {
+                "name": "\u7406\u60f3\u7684\u306a\u30d0\u30c3\u30c6\u30ea\u30fc\u7bc4\u56f2"
+            },
+            "charge_state_minutes_to_full_charge": {
+                "name": "\u30d5\u30eb\u5145\u96fb\u307e\u3067\u306e\u6642\u9593"
+            },
+            "charge_state_usable_battery_level": {
+                "name": "\u4f7f\u7528\u53ef\u80fd\u306a\u30d0\u30c3\u30c6\u30ea\u30fc\u6b8b\u91cf"
+            },
+            "climate_state_driver_temp_setting": {
+                "name": "\u904b\u8ee2\u5e2d\u6e29\u5ea6\u8a2d\u5b9a"
+            },
+            "climate_state_inside_temp": {
+                "name": "\u8eca\u5185\u6e29\u5ea6"
+            },
+            "climate_state_outside_temp": {
+                "name": "\u5916\u6c17\u6e29"
+            },
+            "climate_state_passenger_temp_setting": {
+                "name": "\u52a9\u624b\u5e2d\u6e29\u5ea6\u8a2d\u5b9a"
+            },
+            "drive_state_active_route_destination": {
+                "name": "\u76ee\u7684\u5730"
+            },
+            "drive_state_active_route_energy_at_arrival": {
+                "name": "\u5230\u7740\u6642\u306e\u5145\u96fb\u6b8b\u91cf"
+            },
+            "drive_state_active_route_miles_to_arrival": {
+                "name": "\u5230\u7740\u307e\u3067\u306e\u8ddd\u96e2"
+            },
+            "drive_state_active_route_minutes_to_arrival": {
+                "name": "\u5230\u7740\u307e\u3067\u306e\u6642\u9593"
+            },
+            "drive_state_active_route_traffic_minutes_delay": {
+                "name": "\u4ea4\u901a\u9045\u5ef6"
+            },
+            "drive_state_power": {
+                "name": "\u30d1\u30ef\u30fc"
+            },
+            "drive_state_shift_state": {
+                "name": "\u30b7\u30d5\u30c8\u306e\u72b6\u614b",
+                "state": {
+                    "d": "\u30c9\u30e9\u30a4\u30d6",
+                    "n": "\u30cb\u30e5\u30fc\u30c8\u30e9\u30eb",
+                    "p": "\u30d1\u30fc\u30ad\u30f3\u30b0",
+                    "r": "\u30ea\u30d0\u30fc\u30b9"
+                }
+            },
+            "drive_state_speed": {
+                "name": "\u901f\u5ea6"
+            },
+            "energy_left": {
+                "name": "\u6b8b\u308a\u30a8\u30cd\u30eb\u30ae\u30fc"
+            },
+            "generator_power": {
+                "name": "\u767a\u96fb\u6a5f\u306e\u96fb\u529b"
+            },
+            "grid_power": {
+                "name": "\u30b0\u30ea\u30c3\u30c9\u96fb\u529b"
+            },
+            "grid_services_power": {
+                "name": "\u30b0\u30ea\u30c3\u30c9\u30b5\u30fc\u30d3\u30b9\u96fb\u529b"
+            },
+            "load_power": {
+                "name": "\u8ca0\u8377\u96fb\u529b"
+            },
+            "percentage_charged": {
+                "name": "\u8ab2\u91d1\u7387"
+            },
+            "solar_power": {
+                "name": "\u592a\u967d\u5149\u767a\u96fb"
+            },
+            "total_pack_energy": {
+                "name": "\u30d1\u30c3\u30af\u306e\u7dcf\u30a8\u30cd\u30eb\u30ae\u30fc"
+            },
+            "vehicle_state_odometer": {
+                "name": "\u7dcf\u8d70\u884c\u8ddd\u96e2"
+            },
+            "vehicle_state_tpms_pressure_fl": {
+                "name": "\u30bf\u30a4\u30e4\u7a7a\u6c17\u5727 \u30d5\u30ed\u30f3\u30c8\u5de6"
+            },
+            "vehicle_state_tpms_pressure_fr": {
+                "name": "\u30bf\u30a4\u30e4\u7a7a\u6c17\u5727 \u30d5\u30ed\u30f3\u30c8\u53f3"
+            },
+            "vehicle_state_tpms_pressure_rl": {
+                "name": "\u30bf\u30a4\u30e4\u7a7a\u6c17\u5727 \u30ea\u30a2\u5de6"
+            },
+            "vehicle_state_tpms_pressure_rr": {
+                "name": "\u30bf\u30a4\u30e4\u7a7a\u6c17\u5727 \u30ea\u30a2\u53f3"
+            },
+            "version": {
+                "name": "\u30d0\u30fc\u30b8\u30e7\u30f3"
+            },
+            "vin": {
+                "name": "\u8eca\u4e21"
+            },
+            "wall_connector_fault_state": {
+                "name": "\u969c\u5bb3\u72b6\u614b\u30b3\u30fc\u30c9"
+            },
+            "wall_connector_power": {
+                "name": "\u30d1\u30ef\u30fc"
+            }
+        }
+    }
+}
