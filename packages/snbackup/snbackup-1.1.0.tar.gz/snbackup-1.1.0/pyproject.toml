@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "snbackup"
+version = "1.1.0"
+authors = [
+  { name="devdevindev", email="devinwrx@gmail.com" },
+]
+description = "CLI tool to backup Supernote note files"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "httpx"
+]
+
+[project.scripts]
+snbackup = "snbackup.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/theburningbush/snbackup"
+Issues = "https://github.com/theburningbush/snbackup/issues"
