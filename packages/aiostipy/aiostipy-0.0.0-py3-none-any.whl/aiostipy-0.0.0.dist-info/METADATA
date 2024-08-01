@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: aiostipy
+Version: 0.0.0
+Summary: A python framework build on top of aiohttp with a Nestjs like architecture
+License: Apache 2.0
+Author: Agustin Arce
+Author-email: agustinarceprincich@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: aiohttp (>=3.9.5,<4.0.0)
+Requires-Dist: pytest-aiohttp (>=1.0.5,<2.0.0)
+Requires-Dist: typing-extensions (>=4.12.2,<5.0.0)
+Description-Content-Type: text/markdown
+
+# Aiostipy
+
+A simple framework based on aiohttp inspired by Nestjs modular architecture.\
+Also taking some ideas from other python frameworks, e.g., FastAPI ⚡️, Litestar ⭐, Blacksheep 🐑.
+
+_aiohttp + Nestjs + python 🐍 = aiostipy_
+
+PD: <small><i>Names like [_nestipy_](https://nestipy.vercel.app), [_pynest_](https://pythonnest.github.io/PyNest/introduction/) were already taken 😞.</i></small>
+
+## ⚠️ Warning
+
+**This is just experimental.**\
+**Under development 🛠️**.
+
+### Motivation
+
+_Made just for fun and learning_ 🤓.
