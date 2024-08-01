@@ -1,0 +1,12 @@
+models:
+  problems: f25ec9423958e8d6
+  meds/allergies: a146c741501cf1f7
+annotators:
+  problems: ProblemsAnnotator
+  meds/allergies: MedsAllergiesAnnotator
+general:
+  problems:
+    lookup_data_path: ./lookup_data/
+    negation_detection: None
+    structured_list_limit: 0  # if more than this number of concepts in structure section, ignore concepts in prose
+    add_numbering: True
