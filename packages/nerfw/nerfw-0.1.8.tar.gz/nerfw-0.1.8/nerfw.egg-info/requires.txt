@@ -1,0 +1,15 @@
+python-dotenv
+flask
+pyjwt
+authlib
+requests
+patreon
+pillow
+
+[dev]
+black
+pylint
+pytest
+sphinx
+sphinx-rtd-theme
+myst-parser
