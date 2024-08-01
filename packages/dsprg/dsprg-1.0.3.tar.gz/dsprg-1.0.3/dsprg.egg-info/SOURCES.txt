@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+dsprg/__init__.py
+dsprg/data.txt
+dsprg/dsprg.py
+dsprg/main.py
+dsprg.egg-info/PKG-INFO
+dsprg.egg-info/SOURCES.txt
+dsprg.egg-info/dependency_links.txt
+dsprg.egg-info/top_level.txt
