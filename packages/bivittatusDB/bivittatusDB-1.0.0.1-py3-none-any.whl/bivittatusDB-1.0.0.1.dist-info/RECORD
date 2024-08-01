@@ -1,0 +1,13 @@
+BivittatusDB/BDB_io.py,sha256=B_65aUcRBXFPUu4bV941whIyUKOPGRAmuHFSUg4-Yn8,8967
+BivittatusDB/BDB_metadata.py,sha256=r4uLPsLoFFMBdtL1_xjxC0I6tSDiHJdixYw5vVcG5YA,6643
+BivittatusDB/BDB_tb.py,sha256=0mwZVZPWkX54sxPWKOGJ2FO2UmxJVLq0MQc2LU4wRM4,15189
+BivittatusDB/BivittatusDB.py,sha256=O1DutRvTsHzVeDwmGdt5jLtQhmuuWq9Wwdhw2lKDOQQ,1546
+BivittatusDB/__init__.py,sha256=Ms_LSK91CXZDVM4AJgt9crGPOmfZJeuZhVxz_21v_80,146
+BivittatusDB/bdb_aggregate.py,sha256=gboEHmS-ECx8AjxRjRLQ1FSApixyqOyVuFTryHEx-m8,3332
+BivittatusDB/encrypt.py,sha256=E1gQrfHo4MptKHOmoIiAh2kOQWSeOcLLtH2bL3_8SqU,2834
+BivittatusDB/lib_bdb.so,sha256=-adPSXKtvGj2ssjEVdgodXHVVohX6bgd03RaE4oU1kw,121987
+BivittatusDB/metaclass.py,sha256=bm0IU8cLGxGAnSG4Uq_RiEbxh0bDhX2SUGL3erw74BA,1769
+bivittatusDB-1.0.0.1.dist-info/METADATA,sha256=E4AOb4qfcrJnyfFu94YsWPiS9AxT0GUztkSXGWt3Btw,3353
+bivittatusDB-1.0.0.1.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+bivittatusDB-1.0.0.1.dist-info/top_level.txt,sha256=AJtCdJ4mx_lBUoHW5YluezVo_3wZUcHry8HIH1gsUk0,13
+bivittatusDB-1.0.0.1.dist-info/RECORD,,
