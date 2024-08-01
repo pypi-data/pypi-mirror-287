@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: my_quiz_plugin
+Version: 0.2
+Summary: A MkDocs plugin to create quizzes
+Home-page: UNKNOWN
+Author-email: your.email@example.com
+License: MIT
+Project-URL: Bug Reports, https://github.com/bdllard/my_quiz_plugin/issues
+Project-URL: Source, https://github.com/bdallard/my_quiz_plugin
+Description: UNKNOWN
+Keywords: mkdocs plugin quizz
+Platform: UNKNOWN
