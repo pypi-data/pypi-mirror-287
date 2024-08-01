@@ -1,0 +1,145 @@
+[project]
+name = "environmental-biophysics"
+dynamic = []
+description = "Add your description here"
+authors = [
+    { name = "Gustavo Camargo", email = "" },
+]
+dependencies = [
+    "numpy~=2.0.1",
+    "pyright~=1.1.374",
+    "black~=24.4.2",
+]
+readme = "README.md"
+requires-python = "~= 3.12"
+version = "0.0.4"
+
+[tool.pdm.version]
+source = "scm"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "N",
+    "UP",
+    "B",
+    "SIM",
+    "I",
+    "YTT",
+    "ANN",
+    "S",
+    "FBT",
+    "A",
+    "COM",
+    "C4",
+    "DTZ",
+    "T10",
+    "FA",
+    "ISC",
+    "ICN",
+    "G",
+    "INP",
+    "PIE",
+    "PYI",
+    "PT",
+    "Q",
+    "RSE",
+    "RET",
+    "SLF",
+    "SLOT",
+    "SIM",
+    "TID",
+    "TCH",
+    "INT",
+    "ARG",
+    "TD",
+    "FIX",
+    "ERA",
+    "PD",
+    "PGH",
+    "PL",
+    "TRY",
+    "FLY",
+    "NPY",
+    "AIR",
+    "PERF",
+    "FURB",
+    "LOG",
+    "RUF",
+]
+ignore = [
+    "ANN202",
+    "S101",
+    "RET504",
+    "PD901",
+    "PLR0912",
+    "PLR0913",
+    "ISC001",
+    "FURB101",
+    "PLW1514",
+    "PTH123",
+    "TRY003",
+    "B023",
+    "PD015",
+    "COM812",
+]
+
+[tool.ruff.lint.flake8-import-conventions.aliases]
+altair = "alt"
+"matplotlib.pyplot" = "plt"
+numpy = "np"
+pandas = "pd"
+seaborn = "sns"
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "environmental_biophysics",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/{tests,docs,tools}/*" = [
+    "PLR2004",
+    "ANN201",
+]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "basic"
+pythonVersion = "3.12"
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pyright~=1.1.373",
+    "pytest~=8.3.2",
+]
+
+[tool.rye.scripts]
+fmt = "rye fmt"
+lint = "rye lint --fix"
+check = "pyright"
+test = "rye test"
+
+[tool.rye.scripts.all]
+chain = [
+    "fmt",
+    "lint",
+    "check",
+    "test",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
