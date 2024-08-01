@@ -1,0 +1,126 @@
+Metadata-Version: 2.1
+Name: miade
+Version: 1.0.7
+Summary: A set of tools for extracting formattable data from clinical notes stored in electronic health record systems.
+Author-email: Jennifer Jiang-Kells <jennifer.jiang.13@ucl.ac.uk>, James Brandreth <j.brandreth@ucl.ac.uk>
+Project-URL: Homepage, https://github.com/uclh-criu/miade
+Project-URL: Documentation, https://uclh-criu.github.io/miade/
+Keywords: nlp,natural-language-processing,ml,ehr,electronic-health-records,ai,health,healthcare
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENCE.md
+Requires-Dist: medcat ==1.9.3
+Requires-Dist: spacy <3.5.0,>=3.4.2
+Requires-Dist: numpy >=1.22.0
+Requires-Dist: pandas >=1.4.2
+Requires-Dist: gensim >=4.3.0
+Requires-Dist: typer >=0.7.0
+Requires-Dist: typing >=3.7.4
+Requires-Dist: pathlib >=1.0.1
+Requires-Dist: pydantic >=1.10.0
+Requires-Dist: negspacy >=1.0.3
+Provides-Extra: dashboard
+Requires-Dist: streamlit >=1.20.0 ; extra == 'dashboard'
+Requires-Dist: streamlit-aggrid >=0.3.4.post3 ; extra == 'dashboard'
+Requires-Dist: spacy-streamlit >=1.0.5 ; extra == 'dashboard'
+Requires-Dist: seaborn >=0.12.2 ; extra == 'dashboard'
+Requires-Dist: python-dotenv >=1.0.0 ; extra == 'dashboard'
+Provides-Extra: dev
+Requires-Dist: pytest >=7.1.3 ; extra == 'dev'
+Requires-Dist: ruff >=0.5.2 ; extra == 'dev'
+
+# <img src="https://uclh-criu.github.io/miade/assets/miade-logo.png" width="40%">
+
+[![Build Status](https://github.com/uclh-criu/miade/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/uclh-criu/miade/actions/workflows/ci.yml?query=Tests)
+![License: Elastic License 2.0](https://img.shields.io/badge/License-Elastic%202.0-blue.svg)
+
+A set of tools for extracting formattable data from clinical notes stored in electronic health record systems. Powered by [MedCAT](https://github.com/CogStack/MedCAT) models.
+
+
+## Installing
+
+### Install MiADE
+
+To install the stable release:
+```bash
+pip install miade
+```
+
+To install the latest development version of MiADE, clone this repository and run:
+```bash
+pip install .
+```
+
+### Downloading models
+You may also need to download these additional models to run MiADE:
+
+[spaCy](https://spacy.io/models/en) - required for MedCAT
+```bash
+python -m spacy download en_core_web_md
+```
+[med7](https://huggingface.co/kormilitzin/en_core_med7_lg) - required for medication dosage extraction
+```bash
+pip install https://huggingface.co/kormilitzin/en_core_med7_lg/resolve/main/en_core_med7_lg-any-py3-none-any.whl
+```
+
+## Quickstart
+
+Initialise MiADE with the path that you have saved your trained MedCAT models:
+
+```python
+miade = NoteProcessor(Path("path/to/model/dir"))
+```
+Add annotators:
+
+```python
+miade.add_annotator("problems")
+miade.add_annotator("meds/allergies")
+```
+
+Create a note:
+
+```python
+text = "Patient has penicillin allergy with rash"
+note = Note(text)
+```
+
+Extract concepts:
+
+```python
+concepts = miade.process(note)
+
+for concept in concepts:
+    print(concept)
+    
+# {name: breaking out - eruption, id: 271807003, category: Category.REACTION, start: 204, end: 208, dosage: None, negex: False, meta: None} 
+# {name: penicillin, id: 764146007, category: Category.ALLERGY, start: 191, end: 201, dosage: None, negex: False, meta: None} 
+```
+
+## Contributing
+See [contributing](CONTRIBUTING.md)
+
+### Maintainers
+
+| Name            | Email                       |
+|-----------------|-----------------------------|
+| James Brandreth | j.brandreth@ucl.ac.uk       |
+| Jennifer Jiang  | jennifer.jiang.13@ucl.ac.uk |
+
+
+## Acknowledgement
+
+This project wouldn't be possible without the work at [Cogstack](https://cogstack.org/), [spaCy](https://spacy.io/), and [med7](https://huggingface.co/kormilitzin/en_core_med7_lg)!
+
+
+## Licence
+
+This project is licensed under the Elastic License 2.0. See [LICENSE](https://github.com/uclh-criu/miade/blob/documentation/LICENCE.md) for the full license text.
