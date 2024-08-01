@@ -1,0 +1,4 @@
+
+
+class GuardogWarning(UserWarning):
+    pass
