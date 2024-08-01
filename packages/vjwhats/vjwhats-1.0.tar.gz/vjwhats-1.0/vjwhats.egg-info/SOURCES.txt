@@ -1,0 +1,8 @@
+setup.py
+vjwhats/__init__.py
+vjwhats/whatsapp.py
+vjwhats.egg-info/PKG-INFO
+vjwhats.egg-info/SOURCES.txt
+vjwhats.egg-info/dependency_links.txt
+vjwhats.egg-info/requires.txt
+vjwhats.egg-info/top_level.txt
