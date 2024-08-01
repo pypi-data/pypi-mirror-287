@@ -1,0 +1,11 @@
+README.md
+setup.py
+bincache/__init__.py
+bincache/cli.py
+bincache.egg-info/PKG-INFO
+bincache.egg-info/SOURCES.txt
+bincache.egg-info/dependency_links.txt
+bincache.egg-info/entry_points.txt
+bincache.egg-info/requires.txt
+bincache.egg-info/top_level.txt
+tests/test_cli.py
