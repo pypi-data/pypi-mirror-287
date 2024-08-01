@@ -1,0 +1,6 @@
+*__pycache__*
+src/isr_matcher/cache/*
+*pytest_cache*
+*egg-info*
+dist
+examples/results

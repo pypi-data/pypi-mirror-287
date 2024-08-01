@@ -1,0 +1,78 @@
+# Example configuration for Black.
+
+# NOTE: you have to use single-quoted strings in TOML for regular expressions.
+# It's the equivalent of r-strings in Python.  Multiline strings are treated as
+# verbose regular expressions by Black.  Use [ ] to denote a significant space
+# character.
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+skip-string-normalization = 'True'
+include = '\.pyi?$'
+extend-exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+
+
+# Configuration for pytest
+[tool.pytest.ini_options]
+pythonpath = [
+  ".", "src",
+]
+
+
+# Configuration of setuptools
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "isr_matcher"
+version = "0.0.7"
+authors = [
+  { name="Marco Gillwald", email="marco.gillwald@gmx.de" },
+]
+description = "A package for map matching to german rail network"
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["map matching", "rail", "ISR"]
+license = {file = "LICENSE"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "folium>=0.15.1",
+  "matplotlib>=3.8.2",
+  "numpy>=1.26.4",
+  "pandas>=2.2.1",
+  "pyproj>=3.6.0",
+  "pytest>=7.4.3",
+  "requests>=2.31.0",
+  "scipy>=1.12.0",
+  "shapely>=2.0.3",
+]
+
+[tool.setuptools_scm]
+
+[project.urls]
+Homepage = "https://github.com/mgillwald/isr_matcher"
+Issues = "https://github.com/mgillwald/isr_matcher/issues"
