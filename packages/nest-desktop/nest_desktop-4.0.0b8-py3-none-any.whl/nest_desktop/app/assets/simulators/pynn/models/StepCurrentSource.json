@@ -1,0 +1,23 @@
+{
+  "abbreviation": "sc",
+  "elementType": "stimulator",
+  "id": "StepCurrentSource",
+  "label": "step current",
+  "params": [
+    {
+      "component": "arrayInput",
+      "id": "amplitude_times",
+      "label": "times at which current changes",
+      "unit": "ms"
+    },
+    {
+      "component": "arrayInput",
+      "id": "amplitude_values",
+      "label": "amplitudes of step current current",
+      "unit": "pA"
+    }
+  ],
+  "recordables": [
+    "I"
+  ]
+}
