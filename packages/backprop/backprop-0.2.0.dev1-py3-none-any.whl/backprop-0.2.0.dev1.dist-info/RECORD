@@ -1,0 +1,9 @@
+backprop/__init__.py,sha256=Rlfq1Hleota7770zdssXTt83odnxdqGzE5buXtlaU30,112
+backprop/cli.py,sha256=1jBLSlARCjJiKCjR-XcaDzugXFbzZsoaxagryDAa4s4,2341
+backprop/core.py,sha256=pd4mPikpyuexZnw068-uCvJqV7FYROuKbA0hb8ELqmU,1813
+backprop/server.py,sha256=OZJH-hZfnwOkkP3eSWXI8ZsgVLndPyxPKMptyDt_dJg,611
+backprop-0.2.0.dev1.dist-info/METADATA,sha256=Dz9cr_pZdOvwJr8K8x8z8vHypLMoSQTFvXWzADS9_E0,829
+backprop-0.2.0.dev1.dist-info/WHEEL,sha256=GJ7t_kWBFywbagK5eo9IoUwLW6oyOeTKmQ-9iHFVNxQ,92
+backprop-0.2.0.dev1.dist-info/entry_points.txt,sha256=3jFhsXKMC_03e4pJcDj8kVOFmttoi2KHzzJem-XfdUI,46
+backprop-0.2.0.dev1.dist-info/top_level.txt,sha256=6w0tkmSv5CW0XwQUd4tpXTkXBdSApJkX_zKi-c_aj7w,9
+backprop-0.2.0.dev1.dist-info/RECORD,,
