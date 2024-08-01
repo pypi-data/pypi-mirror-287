@@ -1,0 +1,17 @@
+[project]
+name = "peppi-py"
+dependencies = [
+	"pyarrow~=17.0",
+	"inflection~=0.5",
+]
+
+[build-system]
+build-backend = "maturin"
+requires = ["pyarrow~=17.0"]
+
+[tool.maturin]
+python-source = "python"
+module-name = "peppi_py._peppi"
+
+[pytest]
+testpaths = "tests"
