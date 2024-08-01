@@ -1,0 +1,5 @@
+setup.py
+Durrani_SMAKD.egg-info/PKG-INFO
+Durrani_SMAKD.egg-info/SOURCES.txt
+Durrani_SMAKD.egg-info/dependency_links.txt
+Durrani_SMAKD.egg-info/top_level.txt
