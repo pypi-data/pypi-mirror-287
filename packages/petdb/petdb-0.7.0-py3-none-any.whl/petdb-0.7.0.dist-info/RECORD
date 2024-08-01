@@ -1,0 +1,17 @@
+petdb/__init__.py,sha256=Pc6JOw1eEAzbdBaXRLdd1i46o5HGwb3KwtxHMOJcU74,304
+petdb/pcollection.py,sha256=ATYoQolzszdZ_neKXfYACaUPhjiJlsu1y0dP0W5tB0A,17457
+petdb/pdb.py,sha256=5ssCW7Qitb5hGiN6PNRqsdp1TltP7U9EAPVjgScdAfY,2961
+petdb/pexceptions.py,sha256=nH4lFXWOOG-vjVpBMK3g1W_hPROHuJlCTlaXcg9tuOI,78
+petdb/putils.py,sha256=dsVMCdCiTV4-hE-dgpqHyhWIQzbhbHBtTjOV9xR1FPE,10246
+petdb/service/__init__.py,sha256=WL7KFjsVUQ8TvIMzhC6st_dHWRBZXgEuET_fIk9kvew,209
+petdb/service/__main__.py,sha256=qUYePLHVWDOuQ3DtAZB68aiQrokPfca7Jmccnm5ACZw,1924
+petdb/service/api.py,sha256=p7YfNOh_tyr4O4sqhVdiJGT5MybYx5FrdYU_XekL6QY,1456
+petdb/service/pcollection.py,sha256=QvdS4Iec4CpChhib995w05bHTWWsGpmdIdMgbjyV8mQ,9142
+petdb/service/pdb.py,sha256=Vbx_2ErL4pAPqC6lkQ-yxcL95GY0sIgkh9E5rK_53Ss,500
+petdb/service/qlock.py,sha256=3w2Zkm0IBEQKTg5LbSrj6pAOu4KflqGfjT6gMxNNZBk,741
+petdb/service/server.py,sha256=ybycIuinIrnQKTftqXNa9lRnHcj-0hn5XeUyXQXf-TE,2746
+petdb-0.7.0.dist-info/LICENSE,sha256=VG7J2qOUep8UKDcvYdBsySfJQXkXLTVM7dxsA0o9ky0,1063
+petdb-0.7.0.dist-info/METADATA,sha256=eGFgT2I_MEyOvKG4R_Eu1rr41uediLoMF-qciXA21GQ,3607
+petdb-0.7.0.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+petdb-0.7.0.dist-info/top_level.txt,sha256=I8S5VmTBA_eeJOhOuvkpIclqQz_0e1xm0yDoBs4VYlc,6
+petdb-0.7.0.dist-info/RECORD,,
