@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: nornir-nuts
+Version: 0.1.0
+Summary: 
+Author: ubaumann
+Author-email: github@m.ubaumann.ch
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: nornir (>=3,<4)
+Description-Content-Type: text/markdown
+
+# Nornir Nuts Plugin
+
+This repository contains Nornir plugins designed for use with Nuts.
+
+# CachedThreaded Runner
+
+The `CachedThreadedRunner` is an extension of the threaded runner from Nornir. Task results are cached in a class variable, and if the cache contains the task result, the cached result is returned. Be aware of the limitations: significant memory consumption is possible, and the results are shared. Therefore, modifying a Result object can lead to side effects.
+
+```bash
+pip install nornir-nuts
+```
+
+```python
+InitNornir(
+    runner={
+        "plugin": "cachedThreaded",
+        "options": {
+            "num_workers": 100,
+        },
+    },
+    inventory={
+        "plugin": "SimpleInventory",
+        "options": {
+            "host_file": "tests/demo_inventory/hosts.yaml",
+            "group_file": "tests/demo_inventory/groups.yaml",
+        },
+    },
+)
+```
