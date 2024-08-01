@@ -1,0 +1,6 @@
+setup.py
+Wav2lip_integration.egg-info/PKG-INFO
+Wav2lip_integration.egg-info/SOURCES.txt
+Wav2lip_integration.egg-info/dependency_links.txt
+Wav2lip_integration.egg-info/requires.txt
+Wav2lip_integration.egg-info/top_level.txt

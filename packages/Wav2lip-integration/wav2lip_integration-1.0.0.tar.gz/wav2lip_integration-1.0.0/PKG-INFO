@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: Wav2lip_integration
+Version: 1.0.0
+Author: Kevin3777
+Author-email: wyj3777@outlook.com
+License: Apache
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: librosa
+Requires-Dist: pyaudio==0.2.14
+Requires-Dist: opencv-python
+Requires-Dist: torch
+Requires-Dist: tqdm
+Requires-Dist: numba
+Requires-Dist: setuptools
+Requires-Dist: flask==3.0.3
+Requires-Dist: openvino==2024.1.0
+Requires-Dist: batch-face==1.4.0
+Requires-Dist: watchdog==4.0.0
