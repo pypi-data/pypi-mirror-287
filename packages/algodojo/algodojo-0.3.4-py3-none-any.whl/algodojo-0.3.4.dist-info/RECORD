@@ -1,0 +1,10 @@
+algodojo/__init__.py,sha256=Fb9g87ZUyI4-iEAcWa7TEMU6sI3TCw1_vee8oMwAkDE,138
+algodojo/ib.py,sha256=a1NCZUR-apKPUD51Uk2vISaI6doOnQo5EIWX2fz99hM,51236
+algodojo/base/__init__.py,sha256=CLC2ATr2aL3eV3GcEGbrVal6c8C3ZBESVksNgWrPfD4,64
+algodojo/base/auth.py,sha256=z5J530SVwBI1JZoGeruf-pmCwQcnBESxEP6ql1dg7LM,8320
+algodojo/base/report.py,sha256=FzUofk0whmpet7kVROAoYyowmC9FIAMKIFsGfMPsN44,15667
+algodojo-0.3.4.dist-info/LICENSE.txt,sha256=tQWzpa_U0GNX8lY8RwMUQGP5LrHNUv2myetJDoHJOYI,40679
+algodojo-0.3.4.dist-info/METADATA,sha256=KitDp09sYH6AsnwfLn36miW6erOo7j-b5usUzezq84I,42725
+algodojo-0.3.4.dist-info/WHEEL,sha256=R0nc6qTxuoLk7ShA2_Y-UWkN8ZdfDBG2B6Eqpz2WXbs,91
+algodojo-0.3.4.dist-info/top_level.txt,sha256=I0NGgmAOR4qnBOySlge9SMFyVvMNPFHFyKgpKaMq_BY,9
+algodojo-0.3.4.dist-info/RECORD,,
